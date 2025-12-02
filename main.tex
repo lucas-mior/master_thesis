@@ -221,6 +221,9 @@ section=TITLE, % Título de seções em caixa alta
 % https://tex.stackexchange.com/questions/499580/how-to-keep-my-default-floating-environment-spacing-before-them-while-reducing
 % \xpretocmd{\figure}{\setlength{\belowcaptionskip}{-10pt}}{}{}
 
+\renewcommand\familydefault{\sfdefault}
+\renewcommand{\sfdefault}{cmss}
+
 
 \begin{document}
     % FIXME: Comment this after finishing the thesis, so you can start fixing the \flushbottom vs \raggedbottom
