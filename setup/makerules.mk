@@ -317,7 +317,7 @@ setup_envinronment: pre_setup_envinronment
 	printf '\n';
 	readarray -td' ' DIRECTORIES_TO_CREATE <<<"$(shell "${FIND_EXEC}" \
 			-not -path "./**.git**" \
-			-not -path "./pictures**" -type d \
+			-not -path "./fig**" -type d \
 			-not -path "./${CACHE_DIRECTORY}**" -type d \
 			-not -path "./setup**" -type d) "; \
 	unset 'DIRECTORIES_TO_CREATE[-1]'; \
@@ -474,7 +474,7 @@ clean:
 veryclean: veryclean_hidden clean
 veryclean_hidden:
 	$(if ${ENABLE_DEBUG_MODE},printf '\n',)
-	readarray -td' ' DIRECTORIES_TO_CLEAN <<<"$(shell "${FIND_EXEC}" -not -path "./**.git**" -not -path "./pictures**" -type d) "; \
+	readarray -td' ' DIRECTORIES_TO_CLEAN <<<"$(shell "${FIND_EXEC}" -not -path "./**.git**" -not -path "./fig**" -type d) "; \
 	unset 'DIRECTORIES_TO_CLEAN[-1]'; \
 	declare -p DIRECTORIES_TO_CLEAN; \
 	readarray -td' ' GITIGNORE_CONTENTS <<<"$(shell printf '%s' \
