@@ -1,11 +1,11 @@
 #!/bin/bash
 #
-# _generic_timer.sh
+# generic_timer.sh
 # Copyright (c) 2019 Evandro Coan
 #
 # Version: 1.0.0
 # Always ensure you are using the latest version by checking:
-# wget https://raw.githubusercontent.com/evandrocoan/MyLinuxSettings/tree/master/.local/bin/_generic_timer.sh
+# wget https://raw.githubusercontent.com/evandrocoan/MyLinuxSettings/tree/master/.local/bin/generic_timer.sh
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
