@@ -72,9 +72,9 @@ chapter=TITLE, % Título de capítulos em caixa alta
 section=TITLE, % Título de seções em caixa alta
 ]{setup/ufscthesisx}
 
-% Utilize o arquivo aftertext/references.bib para incluir sua bibliografia.
+% Utilize o arquivo references.bib para incluir sua bibliografia.
 % http://tug.ctan.org/tex-archive/macros/latex/contrib/cleveref/cleveref.pdf
-\addbibresource{aftertext/references.bib}
+\addbibresource{references.bib}
 
 % https://www.overleaf.com/learn/latex/Inserting_Images
 \graphicspath{{fig/}}
@@ -195,7 +195,7 @@ section=TITLE, % Título de seções em caixa alta
 % Part 2
 \addtoincludeonly{chapters/object_beautifier}
 % \addtoincludeonly{chapters/conclusion}
-% \addtoincludeonly{aftertext/aftertext}
+% \addtoincludeonly{aftertext}
 
 % Control whether the full document will be generated
 % Note: It will also generate severals errors like the following, can be ignored
@@ -313,7 +313,7 @@ section=TITLE, % Título de seções em caixa alta
         \setlength\midchapskip{20pt}
         \setlength\afterchapskip{20pt}
 
-        \include{aftertext/apendice_a}
+        \include{apendice_a}
     \end{apendicesenv}
 
     % Inicia os anexos
@@ -324,8 +324,8 @@ section=TITLE, % Título de seções em caixa alta
         \setlength\midchapskip{20pt}
         \setlength\afterchapskip{20pt}
 
-        \include{aftertext/anexo_a}
-        \include{aftertext/anexo_b}
+        \include{anexo_a}
+        \include{anexo_b}
     \end{anexosenv}
 
     % INDICE REMISSIVO

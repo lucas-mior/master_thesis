@@ -3,6 +3,7 @@ latexcache/
 *.bcf
 *.bcf-SAVE-ERROR
 *.blg
+*.bbl
 *.fdb_latexmk
 *.fls
 *.idx

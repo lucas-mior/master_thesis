@@ -35,9 +35,9 @@ chapter=TITLE, % Título de capítulos em caixa alta
 section=TITLE, % Título de seções em caixa alta
 ]{setup/ufscthesisx}
 
-% Utilize o arquivo aftertext/references.bib para incluir sua bibliografia.
+% Utilize o arquivo references.bib para incluir sua bibliografia.
 % http://tug.ctan.org/tex-archive/macros/latex/contrib/cleveref/cleveref.pdf
-\addbibresource{aftertext/references.bib}
+\addbibresource{references.bib}
 ```
 
 Uma maneira  de utilizar esse **template**,
