@@ -19,3 +19,5 @@ latexcache/
 *.synctex.gz
 *.toc
 *.pdf
+*.xcf
+*.png
