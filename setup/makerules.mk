@@ -130,7 +130,7 @@ endif
 THESIS_OUTPUT_NAME := main
 
 # This is the directory where the temporary files are going to be
-CACHE_DIRECTORY := latexcache
+CACHE_DIRECTORY := .
 THESIS_MAIN_FILE_PATH := ${CACHE_DIRECTORY}/${THESIS_MAIN_FILE}.pdf
 
 # Find all files ending with `main.tex`

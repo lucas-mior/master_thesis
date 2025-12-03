@@ -1,8 +1,11 @@
-%https://github.com/SublimeText/LaTeXTools/issues/1439
+% https://github.com/SublimeText/LaTeXTools/issues/1439
 %!TEX output_directory=latexcache
 
 % You can build this using the command:
-% latexmk -pdf -jobname=output -output-directory=cache -aux-directory=cache -pdflatex="pdflatex -interaction=nonstopmode" -use-make main.tex
+% latexmk -pdf -jobname=output \
+% -output-directory=. -aux-directory=. \
+% -pdflatex="pdflatex -interaction=nonstopmode" -use-make \
+% main.tex
 
 % When the bibliography includes a cyclic reference to another bibliography,
 % you need to run `pdflatex` 5 times on the following order:
@@ -20,7 +23,8 @@
 % 3. https://github.com/evandrocoan/ufscthesisx
 % 4. http://www.latextemplates.com/template/simple-sectioned-essay
 
-% Initially translated from Portuguese with help of https://github.com/omegat-org/omegat <Computer Assisted Translation of LaTeX document>
+% Initially translated from Portuguese with help of
+% https://github.com/omegat-org/omegat
 % https://tex.stackexchange.com/questions/313732/computer-assisted-translation-of-latex-document
 
 % Allows you to write your thesis both in English and Portuguese
@@ -28,7 +32,7 @@
 \newif\ifenglish\englishfalse
 \newif\ifadvisor\advisorfalse
 
-% Uncomment the line `\englishtrue` to set the document default language to English
+% Uncomment `\englishtrue` to set the document default language to English
 % \englishtrue
 \advisortrue
 
@@ -50,7 +54,8 @@
 \newcommand{\brazilword}[1]{\protect\foreignlanguage{brazil}{#1}}
 \newcommand{\englishword}[1]{\protect\foreignlanguage{english}{#1}}
 
-% Allow you to write `Evandro's house` in latex as `Evandro\s house` instead of `Evandro\textquotesingle{}s house`
+% Allow you to write `Evandro's house` in latex as `Evandro\s house` instead of
+% `Evandro\textquotesingle{}s house`
 % https://tex.stackexchange.com/questions/31091/space-after-latex-commands
 \newcommand{\s}[0]{\textquotesingle{}s\xspace}
 \newcommand{\q}[0]{\textquotesingle{}\xspace}
@@ -58,7 +63,8 @@
 % Uncomment the following line if you want to use other biblatex settings
 % \PassOptionsToPackage{style=numeric,repeatfields=true,backend=biber,backref=true,citecounter=true}{biblatex}
 \documentclass[
-\lang{english}{brazilian,brazil}, % https://tex.stackexchange.com/questions/484400/changing-the-cleveref-package-language-conjunction-definition
+% https://tex.stackexchange.com/questions/484400/changing-the-cleveref-package-language-conjunction-definition
+\lang{english}{brazilian,brazil},
 12pt, % Padrão UFSC para versão final
 a4paper, % Padrão UFSC para versão final
 oneside, % Impressão nos dois lados da folha
@@ -128,7 +134,8 @@ section=TITLE, % Título de seções em caixa alta
 % FIXME: Data da sua defesa
 \data{\lang{30 of march of}{30 de março de} 2019}
 
-% O preambulo deve conter tipo do trabalho, objetivo, nome da instituição e a área de concentração.
+% O preambulo deve conter tipo do trabalho, objetivo, nome da instituição e a
+% área de concentração.
 \preambulo{\lang%
     {%
         \imprimirtipotrabalho~submitted to the \imprimirprograma~of
@@ -164,11 +171,12 @@ section=TITLE, % Título de seções em caixa alta
     pdfkeywords={\lang{\palavraschaveinglessemitem}{\palavraschaveportuguessemitem}},
 }
 
-% Altere o arquivo 'settings.tex' para incluir customizações de aparência da sua tese
+% Altere 'settings.tex' para customizar aparência da sua tese
 \input{settings.tex}
 
-% When writing a large document, it is sometimes useful to work on selected sections of the document
-% to speed up compilation time: https://en.wikibooks.org/wiki/TeX/includeonly
+% When writing a large document, it is sometimes useful to work on selected
+% sections of the document to speed up compilation time:
+% https://en.wikibooks.org/wiki/TeX/includeonly
 \newif\ifforcedinclude\forcedincludefalse
 
 % \addtoincludeonly{beforetext/agradecimentos}
@@ -190,7 +198,7 @@ section=TITLE, % Título de seções em caixa alta
 % \addtoincludeonly{aftertext/aftertext}
 
 % Control whether the full document will be generated
-% Note: It will also generate severals errors like the following, which can be ignored
+% Note: It will also generate severals errors like the following, can be ignored
 %       Latexmk: Missing input file: 'chapters/test.aux'
 %
 % You can make latex stop generate these errors, if you generate a full version
@@ -210,7 +218,8 @@ section=TITLE, % Título de seções em caixa alta
 % https://tex.stackexchange.com/questions/32208/footnote-runs-onto-second-page
 \interfootnotelinepenalty=10000
 
-% Disable the empty pages automatically put by memoir class, except the ones by \cleardoublepage
+% Disable the empty pages automatically put by memoir class,
+% except the ones by \cleardoublepage
 \ifforcedinclude\openany\else\fi
 
 % https://tex.stackexchange.com/questions/171999/overfull-hbox-in-biblatex
@@ -293,7 +302,7 @@ section=TITLE, % Título de seções em caixa alta
         \printbibliography[title=\lang{REFERENCES}{REFERÊNCIAS}]
     \endgroup
 
-    % Glossário, consulte o manual da classe abntex2 para orientações sobre o glossário.
+    % Glossário, consulte o manual da classe abntex2
     % \ifforcedinclude\else\glossary\fi
 
     % Inicia os apêndices
