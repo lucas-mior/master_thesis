@@ -73,7 +73,7 @@
     \PRIVATEbookmarkthis{Ficha Catalográfica}
     \addtotextpreliminarycontent{Ficha Catalográfica}
 
-    \include{beforetext/fichacatalografica}
+    \include{fichacatalografica}
     % https://tex.stackexchange.com/questions/91440/how-to-include-multiple-pages-in-latex
     % \includepdf{fig/Ficha_Catalografica.pdf}
     \ifforcedinclude\else\cleardoublepage\fi
@@ -87,21 +87,21 @@
 % Após isso, substitua todo o conteúdo deste arquivo por uma imagem da página assinada pela
 % banca com o comando abaixo:
 \ifforcedinclude\else\cleardoublepage\fi
-\include{beforetext/folhadeaprovacao}
+\include{folhadeaprovacao}
 % \includepdf{fig/folhadeaprovacao_final.pdf}
 
 
 % Dedicatória
 \ifforcedinclude\else\cleardoublepage\fi
-\ifforcedinclude\else\input{beforetext/dedicatoria.tex}\fi
+\ifforcedinclude\else\input{dedicatoria.tex}\fi
 
 % Agradecimentos
 \ifforcedinclude\else\cleardoublepage\fi
-\include{beforetext/agradecimentos}
+\include{agradecimentos}
 
 % Epígrafe
 \ifforcedinclude\else\cleardoublepage\fi
-\include{beforetext/epigrafe}
+\include{epigrafe}
 
 
 % Ajusta o espaçamento dos parágrafos do resumo
@@ -109,7 +109,7 @@
 
 % RESUMOS
 \ifforcedinclude\else\cleardoublepage\fi
-\include{beforetext/resumos}
+\include{resumos}
 
 % Some tables of contents
 \ifforcedinclude\else
@@ -163,11 +163,11 @@
 
 % inserir lista de abreviaturas e siglas
 \ifforcedinclude\else\cleardoublepage\fi
-\include{beforetext/siglas}
+\include{siglas}
 
 % Inserir lista de símbolos
 \ifforcedinclude\else\cleardoublepage\fi
-\include{beforetext/simbolos}
+\include{simbolos}
 
 % How to remove the self-reference of the ToC from the ToC?
 % https://tex.stackexchange.com/questions/10943/how-to-remove-the-self-reference-of-the-toc-from-the-toc

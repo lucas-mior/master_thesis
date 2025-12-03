@@ -72,9 +72,9 @@ chapter=TITLE, % Título de capítulos em caixa alta
 section=TITLE, % Título de seções em caixa alta
 ]{setup/ufscthesisx}
 
-% Utilize o arquivo aftertext/references.bib para incluir sua bibliografia.
+% Utilize o arquivo references.bib para incluir sua bibliografia.
 % http://tug.ctan.org/tex-archive/macros/latex/contrib/cleveref/cleveref.pdf
-\addbibresource{aftertext/references.bib}
+\addbibresource{references.bib}
 
 % https://www.overleaf.com/learn/latex/Inserting_Images
 \graphicspath{{fig/}}
@@ -179,27 +179,27 @@ section=TITLE, % Título de seções em caixa alta
 % https://en.wikibooks.org/wiki/TeX/includeonly
 \newif\ifforcedinclude\forcedincludefalse
 
-% \addtoincludeonly{beforetext/agradecimentos}
-% \addtoincludeonly{beforetext/epigrafe}
-% \addtoincludeonly{beforetext/fichacatalografica}
-% \addtoincludeonly{beforetext/folhadeaprovacao}
-% \addtoincludeonly{beforetext/resumos}
-% \addtoincludeonly{beforetext/siglas}
-% \addtoincludeonly{beforetext/simbolos}
+% \addtoincludeonly{agradecimentos}
+% \addtoincludeonly{epigrafe}
+% \addtoincludeonly{fichacatalografica}
+% \addtoincludeonly{folhadeaprovacao}
+% \addtoincludeonly{resumos}
+% \addtoincludeonly{siglas}
+% \addtoincludeonly{simbolos}
 
 % Part 1
-% \addtoincludeonly{chapters/introduction}
-% \addtoincludeonly{chapters/motivation}
-% \addtoincludeonly{chapters/beautifiers}
+% \addtoincludeonly{introduction}
+% \addtoincludeonly{motivation}
+% \addtoincludeonly{beautifiers}
 
 % Part 2
-\addtoincludeonly{chapters/object_beautifier}
-% \addtoincludeonly{chapters/conclusion}
-% \addtoincludeonly{aftertext/aftertext}
+\addtoincludeonly{object_beautifier}
+% \addtoincludeonly{conclusion}
+% \addtoincludeonly{aftertext}
 
 % Control whether the full document will be generated
 % Note: It will also generate severals errors like the following, can be ignored
-%       Latexmk: Missing input file: 'chapters/test.aux'
+%       Latexmk: Missing input file: 'test.aux'
 %
 % You can make latex stop generate these errors, if you generate a full version
 % of the document, before uncommenting these lines.
@@ -246,7 +246,7 @@ section=TITLE, % Título de seções em caixa alta
     \advisor{}{\addGoToSummary}
 
     % ELEMENTOS PRÉ-TEXTUAIS
-    \input{beforetext/beforetext.tex}
+    \input{beforetext.tex}
 
     % ELEMENTOS TEXTUAIS
     \textual
@@ -259,30 +259,30 @@ section=TITLE, % Título de seções em caixa alta
     \label{primeira_parte}
 
     % Introdução (exemplo de capítulo sem numeração, mas presente no Sumário)
-    \include{chapters/intro}
+    \include{intro}
 
     % Capitulo com exemplos de comandos inseridos de arquivo externo
-    \include{chapters/chapter_1}
+    \include{chapter_1}
 
     % Capitulo de revisão de literatura
-    \include{chapters/chapter_2}
+    \include{chapter_2}
 
     % Primeiro capitulo de Resultados
-    \include{chapters/chapter_3}
+    \include{chapter_3}
 
     % PARTE
     \ifforcedinclude\else\part{\lang{Implementation}{Implementação}}\fi
     \label{segunda_parte}
 
     % Segundo capitulo de Resultados
-    \include{chapters/chapter_4}
+    \include{chapter_4}
 
     % Finaliza a parte no bookmark do PDF para que se inicie o bookmark na raiz
     % e adiciona espaço de parte no Sumário
     \phantompart
 
     % Conclusão (outro exemplo de capítulo sem numeração e presente no sumário)
-    \include{chapters/conclusion}
+    \include{conclusion}
 
     % ELEMENTOS PÓS-TEXTUAIS
     \postextual
@@ -313,7 +313,7 @@ section=TITLE, % Título de seções em caixa alta
         \setlength\midchapskip{20pt}
         \setlength\afterchapskip{20pt}
 
-        \include{aftertext/apendice_a}
+        \include{apendice_a}
     \end{apendicesenv}
 
     % Inicia os anexos
@@ -324,8 +324,8 @@ section=TITLE, % Título de seções em caixa alta
         \setlength\midchapskip{20pt}
         \setlength\afterchapskip{20pt}
 
-        \include{aftertext/anexo_a}
-        \include{aftertext/anexo_b}
+        \include{anexo_a}
+        \include{anexo_b}
     \end{anexosenv}
 
     % INDICE REMISSIVO
