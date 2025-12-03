@@ -118,7 +118,7 @@ quem o Software seja fornecido tenham estes mesmos direitos, ambos sujeitos às 
 O aviso de direitos autorais acima e este aviso de permissão devem ser incluídos em todas as cópias
 ou partes substanciais do Software.
 
-Os arquivos `chapters/intro.tex`, `chapters/chapter_1.tex` e `setup/ufscthesisx.sty` estão
+Os arquivos `intro.tex`, `chapter_1.tex` e `setup/ufscthesisx.sty` estão
 licenciados sobre a licença LPPL (The Latex Project License). Portanto você deve respeitar essa
 licença para esses arquivos ao invés dessa. Entretanto a condição a seguir continuará valendo sobre
 esses arquivos licenciados pela licença LPPL:
