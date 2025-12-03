@@ -4,10 +4,10 @@
 \makeatletter
 
 % Uncomment this if you are debugging pages' badness Underfull & Overflow
-% https://tex.stackexchange.com/questions/115908/geometry-showframe-landscape
-% https://tex.stackexchange.com/questions/387077/what-is-the-difference-between-usepackageshowframe-and-usepackageshowframe
-% https://tex.stackexchange.com/questions/387257/how-to-do-the-memoir-headings-fix-but-not-have-my-text-going-over-the-page-botto
-% https://tex.stackexchange.com/questions/14508/print-page-margins-of-a-document
+% questions/115908/geometry-showframe-landscape
+% questions/387077/what-is-the-difference-between-usepackageshowframe-and-usepackageshowframe
+% questions/387257/how-to-do-the-memoir-headings-fix-but-not-have-my-text-going-over-the-page-botto
+% questions/14508/print-page-margins-of-a-document
 % \usepackage[showframe,pass]{geometry}
 
 % To use the font Times New Roman, instead of the default LaTeX font
@@ -15,12 +15,12 @@
 \usepackage{newtxtext}
 \usepackage{newtxmath}
 
-% https://tex.stackexchange.com/questions/182569/how-to-manually-set-where-a-word-is-split
+% questions/182569/how-to-manually-set-where-a-word-is-split
 \hyphenation{Ge-la-im}
 \hyphenation{Cis-la-ghi}
 
 % Add missing translations for Portuguese
-% https://tex.stackexchange.com/questions/8564/what-is-the-right-way-to-redefine-macros-defined-by-babel
+% questions/8564/what-is-the-right-way-to-redefine-macros-defined-by-babel
 \@ifpackageloaded{babel}{\@ifpackagewith{babel}{brazil}{\addto\captionsbrazil{%
   \renewcommand{\mytextpreliminarylistname}{Breve Sumário}
 }}{}}{}
@@ -33,7 +33,7 @@
 % \renewcommand{\ttdefault}{cmtt}
 
 % Spacing between lines and paragraphs
-% https://tex.stackexchange.com/questions/70212/ifpackageloaded-question
+% questions/70212/ifpackageloaded-question
 \@ifclassloaded{memoir}
 {
   % New custom chapter style VZ14, see other chapters styles in:
@@ -73,7 +73,7 @@
   \setlength\afterchapskip{15pt}
 
   % Memoir: Warnings “The material used in the headers is too large” w/ accented titles
-  % https://tex.stackexchange.com/questions/387293/how-to-change-the-page-layout-with-memoir
+  % questions/387293/how-to-change-the-page-layout-with-memoir
   \setheadfoot{30.0pt}{\footskip}
   \checkandfixthelayout
 }{}
@@ -86,14 +86,14 @@
 % Default value for UFSC 1.5cm
 % \setlength{\parindent}{1.3cm}
 
-% https://tex.stackexchange.com/questions/148647/how-to-remove-space-before-enumerate
-% https://tex.stackexchange.com/questions/433543/behaviour-of-enumitem-setlist
+% questions/148647/how-to-remove-space-before-enumerate
+% questions/433543/behaviour-of-enumitem-setlist
 \advisor{}{
     \setlist*[enumerate]{label=\arabic*,}
     \setlist*[enumerateoptional]{label=\arabic*,}
 
-    % https://tex.stackexchange.com/questions/24454/space-after-float-with-h
-    % https://tex.stackexchange.com/questions/23313/how-can-i-reduce-padding-after-figure
+    % questions/24454/space-after-float-with-h
+    % questions/23313/how-can-i-reduce-padding-after-figure
     \AtBeginEnvironment{figure}{
       \setlength{\intextsep}{5pt} % Vertical space above & below [h] floats
       % \setlength{\textfloatsep}{10pt} % Vertical space below (above) [t] ([b]) floats
@@ -102,7 +102,7 @@
     }
 
     % Patch the `abntex2` citacao environment removing the extra space from its top
-    % https://tex.stackexchange.com/questions/300340/topsep-itemsep-partopsep-and-parsep-what-does-each-of-them-mean-and-wha
+    % questions/300340/topsep-itemsep-partopsep-and-parsep-what-does-each-of-them-mean-and-wha
     \xpatchcmd{\citacao}
     {\list{}}
     {\list{}{\topsep=0pt}}
@@ -151,20 +151,20 @@
 % Filtering and Mapping Bibliographies
 % \DeclareFieldFormat{url}{Disponível~em:\addspace\url{#1}}
 
-% https://tex.stackexchange.com/questions/517526/how-to-make-biblatex-url-links-generated-with-brackets-around-it-url-correctly
+% questions/517526/how-to-make-biblatex-url-links-generated-with-brackets-around-it-url-correctly
 \DeclareFieldFormat{url}{\bibstring{urlfrom}\addcolon\space\textless\url{#1}\textgreater}
 \DefineBibliographyStrings{brazil}{urlfrom = {Disponível em}}
 \DefineBibliographyStrings{english}{urlfrom = {Available from}}
 
-% https://tex.stackexchange.com/questions/391695/is-possible-to-remove-the-link-color-of-the-comma-on-the-citation-link
+% questions/391695/is-possible-to-remove-the-link-color-of-the-comma-on-the-citation-link
 % \DeclareFieldFormat{citehyperref}{#1}
 
-% % https://tex.stackexchange.com/questions/203764/reduce-font-size-of-bibliography-overfull-bibliography
+% % questions/203764/reduce-font-size-of-bibliography-overfull-bibliography
 % \newcommand{\bibliographyfontsize}{\fontsize{10.0pt}{10.5pt}\selectfont}
 % \renewcommand*{\bibfont}{\bibliographyfontsize}
 
 % Uncomment this to insert the abstract into your bibliography entries when the abstract is available
-% https://tex.stackexchange.com/questions/398666/how-to-correctly-insert-and-justify-abstract
+% questions/398666/how-to-correctly-insert-and-justify-abstract
 \ifadvisor
 \else
   \DeclareFieldFormat{abstract}%
@@ -197,7 +197,7 @@
   }}{}}{}
   \@ifpackageloaded{biblatex}
   {%
-    % https://tex.stackexchange.com/questions/483707/how-to-detect-whether-the-option-citecounter-was-enabled-on-biblatex
+    % questions/483707/how-to-detect-whether-the-option-citecounter-was-enabled-on-biblatex
     \ifx\blx@citecounter\relax
       \message{Is citecounter defined? NO!^^J}
     \else
@@ -206,7 +206,7 @@
         \message{Is backtracker defined? YES!^^J}
         \renewbibmacro*{pageref}
         {%
-          % https://tex.stackexchange.com/questions/516054/how-to-use-a-dot-to-separate-my-new-bibliography-entry
+          % questions/516054/how-to-use-a-dot-to-separate-my-new-bibliography-entry
           \renewcommand*{\bibpagerefpunct}{\addperiod\space}%
           \iflistundef{pageref}%
           {\printtext{\biblatexcitednotimes}}
@@ -243,7 +243,7 @@
   }{}
 \fi
 
-% https://tex.stackexchange.com/questions/516056/why-an-empty-or-not-biblatex-declaresourcemap-is-removing-my-bibliography-acces
+% questions/516056/why-an-empty-or-not-biblatex-declaresourcemap-is-removing-my-bibliography-acces
 % https://github.com/abntex/biblatex-abnt/pull/56/files
 \DeclareStyleSourcemap{%% >>>2
   % This maps some fields used in abntex2cite to biblatex fields.
@@ -310,7 +310,7 @@
   }%
 }% <<<2
 
-% https://tex.stackexchange.com/questions/14314/changing-the-font-of-the-numbers-in-the-toc-in-the-memoir-class
+% questions/14314/changing-the-font-of-the-numbers-in-the-toc-in-the-memoir-class
 \renewcommand{\cftpartfont}{\ABNTEXpartfont\color{black}}
 \renewcommand{\cftpartpagefont}{\ABNTEXpartfont\color{black}}
 
@@ -334,8 +334,8 @@
 % width is of the box into which the number is typeset (so needs to be wide enough for the largest
 % number, with the necessary spacing to separate it from what comes after it in the line.
 % http://www.tex.ac.uk/FAQ-tocloftwrong.html
-% https://tex.stackexchange.com/questions/264668/memoir-indentation-of-unnumbered-sections-in-table-of-contents
-% https://tex.stackexchange.com/questions/394227/memoir-toc-indent-the-second-line-by-numberspace
+% questions/264668/memoir-indentation-of-unnumbered-sections-in-table-of-contents
+% questions/394227/memoir-toc-indent-the-second-line-by-numberspace
 %
 % `\cftlastnumwidth` and these `\cftsetindents` are defined by the abntex2 class,
 % obeying the `ABNTEXsumario-abnt-6027-2012`. \newlength{\cftlastnumwidth}
@@ -400,7 +400,7 @@
       }%
     }
 
-    % https://tex.stackexchange.com/questions/264668/memoir-indentation-of-unnumbered-sections-in-table-of-contents
+    % questions/264668/memoir-indentation-of-unnumbered-sections-in-table-of-contents
     \renewcommand{\tocinnonumchapter}{%
       \addtocontents{toc}{\cftsetindents{chapter}{2.5em}{2em}}%
       \cftinserthook{toc}{A}}

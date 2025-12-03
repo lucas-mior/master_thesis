@@ -25,10 +25,10 @@
 
 % Initially translated from Portuguese with help of
 % https://github.com/omegat-org/omegat
-% https://tex.stackexchange.com/questions/313732/computer-assisted-translation-of-latex-document
+% questions/313732/computer-assisted-translation-of-latex-document
 
 % Allows you to write your thesis both in English and Portuguese
-% https://tex.stackexchange.com/questions/5076/is-it-possible-to-keep-my-translation-together-with-original-text
+% questions/5076/is-it-possible-to-keep-my-translation-together-with-original-text
 \newif\ifenglish\englishfalse
 \newif\ifadvisor\advisorfalse
 
@@ -36,13 +36,13 @@
 % \englishtrue
 \advisortrue
 
-% https://tex.stackexchange.com/questions/131002/how-to-expand-ifthenelse-so-that-it-can-be-used-in-parshape
+% questions/131002/how-to-expand-ifthenelse-so-that-it-can-be-used-in-parshape
 \newcommand{\lang}[2]{\ifenglish#1\else#2\fi}
 \newcommand{\advisor}[2]{\ifadvisor#1\else#2\fi}
 
-% https://tex.stackexchange.com/questions/385895/how-to-make-passoptionstopackage-add-the-option-as-the-last
-% https://tex.stackexchange.com/questions/484400/changing-the-cleveref-package-language-conjunction-definition
-% https://tex.stackexchange.com/questions/516058/why-isnt-my-biblatex-language-changing-when-passing-the-language-on-my-document
+% questions/385895/how-to-make-passoptionstopackage-add-the-option-as-the-last
+% questions/484400/changing-the-cleveref-package-language-conjunction-definition
+% questions/516058/why-isnt-my-biblatex-language-changing-when-passing-the-language-on-my-document
 \ifenglish
     \PassOptionsToPackage{brazil,main=english}{babel}
 \else
@@ -50,20 +50,20 @@
 \fi
 
 % Simple alias for English and Portuguese words
-% https://tex.stackexchange.com/questions/513019/argument-of-bbltempd-has-an-extra
+% questions/513019/argument-of-bbltempd-has-an-extra
 \newcommand{\brazilword}[1]{\protect\foreignlanguage{brazil}{#1}}
 \newcommand{\englishword}[1]{\protect\foreignlanguage{english}{#1}}
 
 % Allow you to write `Evandro's house` in latex as `Evandro\s house` instead of
 % `Evandro\textquotesingle{}s house`
-% https://tex.stackexchange.com/questions/31091/space-after-latex-commands
+% questions/31091/space-after-latex-commands
 \newcommand{\s}[0]{\textquotesingle{}s\xspace}
 \newcommand{\q}[0]{\textquotesingle{}\xspace}
 
 % Uncomment the following line if you want to use other biblatex settings
 % \PassOptionsToPackage{style=numeric,repeatfields=true,backend=biber,backref=true,citecounter=true}{biblatex}
 \documentclass[
-% https://tex.stackexchange.com/questions/484400/changing-the-cleveref-package-language-conjunction-definition
+% questions/484400/changing-the-cleveref-package-language-conjunction-definition
 \lang{english}{brazilian,brazil},
 12pt, % Padrão UFSC para versão final
 a4paper, % Padrão UFSC para versão final
@@ -147,9 +147,9 @@ section=TITLE, % Título de seções em caixa alta
 }
 
 % Allows you to use ~= instead of `\hyp{}`
-% https://tex.stackexchange.com/questions/488008/how-to-create-an-alternative-to-shortcut-or-hyp
-% https://tex.stackexchange.com/questions/405718/depending-on-babel-language-setting-i-get-biblatex-error-argument-of-language
-% https://tex.stackexchange.com/questions/340661/argument-of-languageactivearg-has-an-extra-i-use-includegraphics-and-r
+% questions/488008/how-to-create-an-alternative-to-shortcut-or-hyp
+% questions/405718/depending-on-babel-language-setting-i-get-biblatex-error-argument-of-language
+% questions/340661/argument-of-languageactivearg-has-an-extra-i-use-includegraphics-and-r
 \useshorthands{~}\defineshorthand{~=}{\hyp{}}
 
 \palavraschaveufsc{palavraschaveingles}   {Keyword 1}
@@ -207,25 +207,25 @@ section=TITLE, % Título de seções em caixa alta
 % \doincludeonly
 % \forcedincludetrue
 
-% https://tex.stackexchange.com/questions/85113/xrightarrow-text
+% questions/85113/xrightarrow-text
 \makeatletter
 \newcommand{\xRightarrow}[2][]{\ext@arrow 0359\Rightarrowfill@{#1}{#2}}
 \newcommand{\xLeftarrow}[2][]{\ext@arrow 0359\Leftarrowfill@{#1}{#2}}
 \makeatother
 
-% https://tex.stackexchange.com/questions/32208/footnote-runs-onto-second-page
+% questions/32208/footnote-runs-onto-second-page
 \interfootnotelinepenalty=10000
 
 % Disable the empty pages automatically put by memoir class,
 % except the ones by \cleardoublepage
 \ifforcedinclude\openany\else\fi
 
-% https://tex.stackexchange.com/questions/171999/overfull-hbox-in-biblatex
-% https://tex.stackexchange.com/questions/499457/why-my-document-is-not-hyphenation-on-words-starting-with-upper-case-letter-i
+% questions/171999/overfull-hbox-in-biblatex
+% questions/499457/why-my-document-is-not-hyphenation-on-words-starting-with-upper-case-letter-i
 \emergencystretch=5em
 
-% https://tex.stackexchange.com/questions/23313/how-can-i-reduce-padding-after-figure
-% https://tex.stackexchange.com/questions/499580/how-to-keep-my-default-floating-environment-spacing-before-them-while-reducing
+% questions/23313/how-can-i-reduce-padding-after-figure
+% questions/499580/how-to-keep-my-default-floating-environment-spacing-before-them-while-reducing
 % \xpretocmd{\figure}{\setlength{\belowcaptionskip}{-10pt}}{}{}
 
 \renewcommand\familydefault{\sfdefault}
@@ -233,10 +233,10 @@ section=TITLE, % Título de seções em caixa alta
 
 \begin{document}
     % FIXME: Comment this after finishing the thesis, so you can start fixing the \flushbottom vs \raggedbottom
-    % https://tex.stackexchange.com/questions/65355/flushbottom-vs-raggedbottom
+    % questions/65355/flushbottom-vs-raggedbottom
     \raggedbottom
 
-    % https://tex.stackexchange.com/questions/4705/double-space-between-sentences
+    % questions/4705/double-space-between-sentences
     \frenchspacing
 
     % Uncomment this to put a ←← | ← (Go To Top/Go Back) on each section header
@@ -247,7 +247,7 @@ section=TITLE, % Título de seções em caixa alta
         % Fix the \textpreliminarycontents not showing up when @twoside is disabled
         \newif\ifufscThesisXisMemoirTwoSidesEnabled
 
-        % https://tex.stackexchange.com/questions/360785/how-do-i-check-if-a-document-is-oneside-or-twoside
+        % questions/360785/how-do-i-check-if-a-document-is-oneside-or-twoside
         \ifthenelse{\boolean{@twoside}}{%
             \ufscThesisXisMemoirTwoSidesEnabledtrue%
         }{%
@@ -256,8 +256,8 @@ section=TITLE, % Título de seções em caixa alta
         \setboolean{@twoside}{true}
 
         % pretextual settings
-        % https://tex.stackexchange.com/questions/386446/how-to-fix-destination-with-the-same-identifier-namepage-a-has-been-already
-        % https://tex.stackexchange.com/questions/67989/pdftex-warning-has-been-referenced-but-does-not-exist-replaced-by-a-fixed-one
+        % questions/386446/how-to-fix-destination-with-the-same-identifier-namepage-a-has-been-already
+        % questions/67989/pdftex-warning-has-been-referenced-but-does-not-exist-replaced-by-a-fixed-one
         \hypersetup{pageanchor=false}
         \PRIVATEbookmarkthis{Capa}
         \addtotextpreliminarycontent{Capa}
@@ -265,24 +265,24 @@ section=TITLE, % Título de seções em caixa alta
 
         % Capa
         % \includepdf{fig/FrenteCapaUFSC.pdf}
-        % https://tex.stackexchange.com/questions/227711/blank-page-after-titlingpage
+        % questions/227711/blank-page-after-titlingpage
         \advisor{}{\AtBeginShipoutNext{\AtBeginShipoutNext{\AtBeginShipoutDiscard}}}
         \imprimircapa
 
-        % https://tex.stackexchange.com/questions/386446/how-to-fix-destination-with-the-same-identifier-namepage-a-has-been-already
-        % https://tex.stackexchange.com/questions/67989/pdftex-warning-has-been-referenced-but-does-not-exist-replaced-by-a-fixed-one
+        % questions/386446/how-to-fix-destination-with-the-same-identifier-namepage-a-has-been-already
+        % questions/67989/pdftex-warning-has-been-referenced-but-does-not-exist-replaced-by-a-fixed-one
         \hypersetup{pageanchor=true}
 
         % Custom list throw LaTeX Error: Command \mycustomfiction already defined?
-        % https://tex.stackexchange.com/questions/388489/custom-list-throw-latex-error-command-mycustomfiction-already-defined/
+        % questions/388489/custom-list-throw-latex-error-command-mycustomfiction-already-defined/
         \advisor{}{%
             % Manually add the `\textpreliminarycontents` to the Table of Contents here
             % to keep the hyper link pointing to the beginning of the page, instead of
             % the beginning of `\textpreliminarycontents`
-            % https://tex.stackexchange.com/questions/44088/when-do-i-need-to-invoke-phantomsection
+            % questions/44088/when-do-i-need-to-invoke-phantomsection
             \phantomsection\addcontentsline{toc}{chapter}{\mytextpreliminarylistname}
 
-            % https://tex.stackexchange.com/questions/234398/list-of-figures-and-tables-when-there-are-no-figures-or-tables
+            % questions/234398/list-of-figures-and-tables-when-there-are-no-figures-or-tables
             \whenlistisnotempty{\mytextpreliminarylistname}{%
                 \begin{KeepFromToc}
                     \textpreliminarycontents
@@ -300,7 +300,7 @@ section=TITLE, % Título de seções em caixa alta
         \fi
 
         % Folha de rosto (o * indica que haverá a ficha bibliográfica)
-        % https://tex.stackexchange.com/questions/74439/table-of-contents-incorrect-page-numbering
+        % questions/74439/table-of-contents-incorrect-page-numbering
         \addtotextpreliminarycontent{\folhaderostoname}
         \imprimirfolhaderosto*{}
 
@@ -316,7 +316,7 @@ section=TITLE, % Título de seções em caixa alta
         \addtotextpreliminarycontent{Ficha Catalográfica}
 
         \include{03fichacatalografica}
-        % https://tex.stackexchange.com/questions/91440/how-to-include-multiple-pages-in-latex
+        % questions/91440/how-to-include-multiple-pages-in-latex
         % \includepdf{fig/Ficha_Catalografica.pdf}
         \ifforcedinclude\else\cleardoublepage\fi
     \fi
@@ -353,46 +353,46 @@ section=TITLE, % Título de seções em caixa alta
     % Some tables of contents
     \ifforcedinclude\else
     {
-        % https://tex.stackexchange.com/questions/179506/disable-colorlinks-locally-or-just-for-the-toc
+        % questions/179506/disable-colorlinks-locally-or-just-for-the-toc
         \hypersetup{hidelinks}
 
         % inserir lista de figuras
         \ifforcedinclude\else\cleardoublepage\fi
-        % https://tex.stackexchange.com/questions/234398/list-of-figures-and-tables-when-there-are-no-figures-or-tables
+        % questions/234398/list-of-figures-and-tables-when-there-are-no-figures-or-tables
         \whenlistisnotempty{\listfigurename}{%
             \addtotextpreliminarycontent{\listfigurename}
-            % https://tex.stackexchange.com/questions/121879/remove-spacing-between-per-chapter-figures-in-lof
+            % questions/121879/remove-spacing-between-per-chapter-figures-in-lof
             {\renewcommand{\addvspace}[1]{}
             \listoffigures*}
         }{\pdfbookmark[0]{\listfigurename}{lof}}
 
         % inserir lista de quadros
         \ifforcedinclude\else\cleardoublepage\fi
-        % https://tex.stackexchange.com/questions/234398/list-of-figures-and-tables-when-there-are-no-figures-or-tables
+        % questions/234398/list-of-figures-and-tables-when-there-are-no-figures-or-tables
         \whenlistisnotempty{\listofquadrosname}{%
             \addtotextpreliminarycontent{\listofquadrosname}
-            % https://tex.stackexchange.com/questions/121879/remove-spacing-between-per-chapter-figures-in-lof
+            % questions/121879/remove-spacing-between-per-chapter-figures-in-lof
             {\renewcommand{\addvspace}[1]{}
             \listofquadros*}
         }{\pdfbookmark[0]{\listofquadrosname}{loq}}
 
         % inserir lista de tabelas
         \ifforcedinclude\else\cleardoublepage\fi
-        % https://tex.stackexchange.com/questions/234398/list-of-figures-and-tables-when-there-are-no-figures-or-tables
+        % questions/234398/list-of-figures-and-tables-when-there-are-no-figures-or-tables
         \whenlistisnotempty{\listtablename}{%
             \addtotextpreliminarycontent{\listtablename}
-            % https://tex.stackexchange.com/questions/121879/remove-spacing-between-per-chapter-figures-in-lof
+            % questions/121879/remove-spacing-between-per-chapter-figures-in-lof
             {\renewcommand{\addvspace}[1]{}
             \listoftables*}
         }{\pdfbookmark[0]{\listtablename}{lot}}
 
         % inserir códigos fonte (List of Listings `lol`)
-        % https://tex.stackexchange.com/questions/511519/latex-keeps-showing-minted-environment-as-figures-instead-of-listening/511579#511579
+        % questions/511519/latex-keeps-showing-minted-environment-as-figures-instead-of-listening/511579#511579
         \ifforcedinclude\else\cleardoublepage\fi
-        % https://tex.stackexchange.com/questions/234398/list-of-figures-and-tables-when-there-are-no-figures-or-tables
+        % questions/234398/list-of-figures-and-tables-when-there-are-no-figures-or-tables
         \whenlistisnotempty{\lstlistlistingname}{%
             \addtotextpreliminarycontent{\lstlistlistingname}
-            % https://tex.stackexchange.com/questions/121879/remove-spacing-between-per-chapter-figures-in-lof
+            % questions/121879/remove-spacing-between-per-chapter-figures-in-lof
             {\renewcommand{\addvspace}[1]{}
             \lstlistoflistings*}
         }{\pdfbookmark[0]{\lstlistlistingname}{lol}}
@@ -408,31 +408,31 @@ section=TITLE, % Título de seções em caixa alta
     \include{14simbolos}
 
     % How to remove the self-reference of the ToC from the ToC?
-    % https://tex.stackexchange.com/questions/10943/how-to-remove-the-self-reference-of-the-toc-from-the-toc
+    % questions/10943/how-to-remove-the-self-reference-of-the-toc-from-the-toc
     \ifforcedinclude\else\cleardoublepage\fi
 
     \begin{KeepFromToc}
-        % https://tex.stackexchange.com/questions/35/what-does-overfull-hbox-mean
-        % https://tex.stackexchange.com/questions/59122/how-to-avoid-using-sloppy-document-wide-to-fix-overfull-hbox-problems
-        % https://tex.stackexchange.com/questions/257007/adding-color-to-table-of-contents-and-section-headings
+        % questions/35/what-does-overfull-hbox-mean
+        % questions/59122/how-to-avoid-using-sloppy-document-wide-to-fix-overfull-hbox-problems
+        % questions/257007/adding-color-to-table-of-contents-and-section-headings
         {
-            % https://tex.stackexchange.com/questions/179506/disable-colorlinks-locally-or-just-for-the-toc
+            % questions/179506/disable-colorlinks-locally-or-just-for-the-toc
             \hypersetup{hidelinks}
 
-            % https://tex.stackexchange.com/questions/65711/underfull-vbox-badness-10000-with-memoir
+            % questions/65711/underfull-vbox-badness-10000-with-memoir
             \raggedbottom
 
-            % https://tex.stackexchange.com/questions/49887/overfull-hbox-warning-for-toc-entries-when-using-memoir-documentclass
+            % questions/49887/overfull-hbox-warning-for-toc-entries-when-using-memoir-documentclass
             % \makeatletter
                 % \renewcommand{\@pnumwidth}{2em}
                 % \renewcommand{\@tocrmarg}{3em}
             % \makeatother
 
-            % https://tex.stackexchange.com/questions/57544/memoir-mysterious-overfull-hbox-in-toc-when-mathptmx-is-used
+            % questions/57544/memoir-mysterious-overfull-hbox-in-toc-when-mathptmx-is-used
             % \setlength{\cftchapternumwidth}{2.25em}
 
             % Add the table of contents to the brief table of contents
-            % https://tex.stackexchange.com/questions/234398/list-of-figures-and-tables-when-there-are-no-figures-or-tables
+            % questions/234398/list-of-figures-and-tables-when-there-are-no-figures-or-tables
             \whenlistisnotempty{\contentsname}{%
                 \addtotextpreliminarycontent{\contentsname}
                 \tableofcontents
@@ -485,12 +485,12 @@ section=TITLE, % Título de seções em caixa alta
 
     % Referências bibliográficas
     \begingroup
-        % https://tex.stackexchange.com/questions/163559/how-to-modify-line-spacing-per-entry-of-bibliography
-        % https://tex.stackexchange.com/questions/19105/how-can-i-put-more-space-between-bibliography-entries-biblatex
+        % questions/163559/how-to-modify-line-spacing-per-entry-of-bibliography
+        % questions/19105/how-can-i-put-more-space-between-bibliography-entries-biblatex
         \setlength\bibitemsep{\baselineskip}
         \advisor{}{\linespread{1.18}\selectfont}
 
-        % https://tex.stackexchange.com/questions/17128/using-bibtex-to-make-a-list-of-references-without-having-citations-in-the-body
+        % questions/17128/using-bibtex-to-make-a-list-of-references-without-having-citations-in-the-body
         % \nocite{*}
         \printbibliography[title=\lang{REFERENCES}{REFERÊNCIAS}]
     \endgroup
