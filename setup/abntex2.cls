@@ -160,7 +160,6 @@
      \@makecaption{\ABNTEXfontereduzida #1}{\ignorespaces\ABNTEXfontereduzida #2}\par
   \endgroup}
 
- %
 % Define o comando \notas que respeita as configurações de caption do memoir ou do caption
 \newcommand{\ABNTEXnota}[2][\ABNTEXnotaname]{\ABNTEXfonte[#1]{#2}}
 
@@ -407,7 +406,7 @@
 }
 
 \AtBeginDocument{%
- \captiondelim{\ABNTEXcaptiondelim}
+  \captiondelim{\ABNTEXcaptiondelim}
 }
 
 % -----
@@ -866,38 +865,38 @@
 
 % Apendices - comando
 \newcommand{\ABNTEXapendices}{%
- \ABNTEXPRIVATEapendiceconfig{\ABNTEXapendicename}{\ABNTEXapendicesname}
- \appendix
+  \ABNTEXPRIVATEapendiceconfig{\ABNTEXapendicename}{\ABNTEXapendicesname}
+  \appendix
 }
 % Apendices - ambiente
 \newenvironment{abntexEnvApendicesenv}{%
- \ABNTEXPRIVATEapendiceconfig{\ABNTEXapendicename}{\ABNTEXapendicesname}
- \begin{appendix}
+  \ABNTEXPRIVATEapendiceconfig{\ABNTEXapendicename}{\ABNTEXapendicesname}
+  \begin{appendix}
 }{%
- \end{appendix}
- \setboolean{abntex@apendiceousecao}{false}
- \bookmarksetup{startatroot}
+  \end{appendix}
+  \setboolean{abntex@apendiceousecao}{false}
+  \bookmarksetup{startatroot}
 }
 
 % Anexos - comando
 \newcommand{\ABNTEXanexos}{%
- \cftinserthook{toc}{AAA}
+  \cftinserthook{toc}{AAA}
 
- \ABNTEXPRIVATEapendiceconfig{\ABNTEXanexoname}{\ABNTEXanexosname}
- \appendix
- \renewcommand\theHchapter{anexochapback.\arabic{chapter}}
+  \ABNTEXPRIVATEapendiceconfig{\ABNTEXanexoname}{\ABNTEXanexosname}
+  \appendix
+  \renewcommand\theHchapter{anexochapback.\arabic{chapter}}
 }
 % Anexos - ambiente
 \newenvironment{abntexEnvAnexosenv}{%
- \cftinserthook{toc}{AAA}
+  \cftinserthook{toc}{AAA}
 
- \ABNTEXPRIVATEapendiceconfig{\ABNTEXanexoname}{\ABNTEXanexosname}
- \begin{appendix}
- \renewcommand\theHchapter{anexochapback.\arabic{chapter}}
+  \ABNTEXPRIVATEapendiceconfig{\ABNTEXanexoname}{\ABNTEXanexosname}
+  \begin{appendix}
+  \renewcommand\theHchapter{anexochapback.\arabic{chapter}}
 }{%
- \end{appendix}
- \setboolean{abntex@apendiceousecao}{false}
- \bookmarksetup{startatroot}
+  \end{appendix}
+  \setboolean{abntex@apendiceousecao}{false}
+  \bookmarksetup{startatroot}
 }
 
 % Imprime uma pagina de divisao no estilo parte
