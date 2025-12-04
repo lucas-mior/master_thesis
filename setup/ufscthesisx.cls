@@ -1439,8 +1439,12 @@
 
     % q/what-is-the-plain-tex-equivalent-of-settowidth
     \newlength\cftquadroinitialnumwidth
-    \settowidth\cftquadroinitialnumwidth{\cftquadropresnum\cftquadroaftersnum ab}%
-    \setlength\cftquadronumwidth{\dimexpr\cftquadrooldnumwidth+\cftquadroinitialnumwidth}%
+    \settowidth\cftquadroinitialnumwidth{%
+      \cftquadropresnum\cftquadroaftersnum ab%
+    }%
+    \setlength\cftquadronumwidth{%
+      \dimexpr\cftquadrooldnumwidth+\cftquadroinitialnumwidth%
+    }%
     \renewcommand\cftquadroaftersnum{\hfill\textendash\hfill}%
   }
 
@@ -1457,9 +1461,15 @@
   \newcommand{\calculatelfigureheader}{%
     % q/what-is-the-plain-tex-equivalent-of-settowidth
     \newlength\cftfigureinitialnumwidth
-    \settowidth\cftfigureinitialnumwidth{\cftfigurepresnum\cftfigureaftersnum a}%
-    \setlength\cftfigurenumwidth{\dimexpr\cftfigureoldnumwidth+\cftfigureinitialnumwidth}%
-    \renewcommand\cftfigureaftersnum{\hfill\textendash\hfill}%
+    \settowidth\cftfigureinitialnumwidth{%
+      \cftfigurepresnum\cftfigureaftersnum a%
+    }%
+    \setlength\cftfigurenumwidth{%
+      \dimexpr\cftfigureoldnumwidth+\cftfigureinitialnumwidth%
+    }%
+    \renewcommand\cftfigureaftersnum{%
+      \hfill\textendash\hfill%
+    }%
   }
 
   % q/how-to-automatically-add-text-immediately-after-begindocument
@@ -1475,7 +1485,9 @@
     % q/what-is-the-plain-tex-equivalent-of-settowidth
     \newlength\cfttableinitialnumwidth
     \settowidth\cfttableinitialnumwidth{\cfttablepresnum\cfttableaftersnum a}%
-    \setlength\cfttablenumwidth{\dimexpr\cfttableoldnumwidth+\cfttableinitialnumwidth}%
+    \setlength\cfttablenumwidth{%
+      \dimexpr\cfttableoldnumwidth+\cfttableinitialnumwidth%
+    }%
     \renewcommand\cfttableaftersnum{\hfill\textendash\hfill}%
   }
 
