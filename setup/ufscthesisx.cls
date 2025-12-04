@@ -531,7 +531,7 @@
 \renewcommand{\ABNTEXtocprintchapter}{%
   \addtocontents{toc}{\cftsetindents{chapter}{0em}{\cftlastnumwidth}}
 }
-%
+
 \renewcommand{\ABNTEXtocinnonumchapter}{%
   \addtocontents{toc}{%
     \cftsetindents{chapter}{\cftlastnumwidth}{\cftnumberboxnumberwidth}
@@ -543,14 +543,14 @@
     \cftsetindents{chapter}{\cftlastnumwidth}{\cftnumberboxnumberwidth}
   }%
 }
-%
+
 \renewcommand{\ABNTEXtocpartapendices}{%
   \addtocontents{toc}{%
     \cftsetindents{chapter}{\cftlastnumwidth}{\cftnumberboxnumberwidth}
   }%
   \cftinserthook{toc}{A}
 }
-%
+
 \renewcommand{\ABNTEXtocpartanexos}{%
   \addtocontents{toc}{%
     \cftsetindents{chapter}{\cftlastnumwidth}{\cftnumberboxnumberwidth}
@@ -2139,9 +2139,6 @@
 % For the new command \latex
 % q/space-after-latex-commands
 \usepackage{xspace}
-
-% Write the word LaTeX nicely.
-\newcommand{\latex}{\LaTeX\xspace}
 
 % Create a bold title all in upper case.
 \newcommand{\Title}[1]{\textbf{\MakeUppercase{#1}}}
