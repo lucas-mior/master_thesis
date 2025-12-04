@@ -54,14 +54,22 @@
 
 % Simple alias for English and Portuguese words
 % q/argument-of-bbltempd-has-an-extra
-\newcommand{\brazilword}[1]{\protect\foreignlanguage{brazil}{#1}}
-\newcommand{\englishword}[1]{\protect\foreignlanguage{english}{#1}}
+\newcommand{\brazilword}[1]{%
+  \protect\foreignlanguage{brazil}{#1}
+}
+\newcommand{\englishword}[1]{%
+  \protect\foreignlanguage{english}{#1}
+}
 
 % Allow you to write `Evandro's house` in latex as `Evandro\s house` instead of
 % `Evandro\textquotesingle{}s house`
 % q/space-after-latex-commands
-\newcommand{\s}[0]{\textquotesingle{}s\xspace}
-\newcommand{\q}[0]{\textquotesingle{}\xspace}
+\newcommand{\s}[0]{%
+  \textquotesingle{}s\xspace
+}
+\newcommand{\q}[0]{%
+  \textquotesingle{}\xspace
+}
 
 % Uncomment the following line if you want to use other biblatex settings
 % \PassOptionsToPackage{style=numeric,
@@ -94,7 +102,7 @@ section=TITLE, % Título de seções em caixa alta
        {Título do trabalho\protect\\Pode ser Quebrado em duas linhas}
 }
 
-% FIXME: Se houver subtítulo, descomente a linha abaixo
+% FIXME: Se houver subtítulo
 \UFSCsubtitulo{\lang{Subtitle}{Subtítulo}}
 
 % FIXME: Siglas para grau de formação
@@ -111,7 +119,9 @@ section=TITLE, % Título de seções em caixa alta
 {\brazilword{Nome do Coordenador(a)}, \lang{Phd.}{Dr.}}
 
 % FIXME: Local da sua defesa
-\ABNTEXlocal{\brazilword{Florianópolis, Santa Catarina} -- \lang{Brazil}{Brasil}}
+\ABNTEXlocal{%
+  \brazilword{Florianópolis, Santa Catarina} -- \lang{Brazil}{Brasil}
+}
 
 % FIXME: Ano da sua defesa
 \UFSCano{2019}
@@ -229,8 +239,12 @@ section=TITLE, % Título de seções em caixa alta
 
 % q/xrightarrow-text
 \makeatletter
-\newcommand{\xRightarrow}[2][]{\ext@arrow 0359\Rightarrowfill@{#1}{#2}}
-\newcommand{\xLeftarrow}[2][]{\ext@arrow 0359\Leftarrowfill@{#1}{#2}}
+\newcommand{\xRightarrow}[2][]{%
+  \ext@arrow 0359\Rightarrowfill@{#1}{#2}%
+}
+\newcommand{\xLeftarrow}[2][]{%
+  \ext@arrow 0359\Leftarrowfill@{#1}{#2}%
+}
 \makeatother
 
 % q/footnote-runs-onto-second-page
@@ -261,7 +275,9 @@ section=TITLE, % Título de seções em caixa alta
 \newcommand{\image}[3]{%
   % Remove path
   \StrBehind{#1}{/}[\tmpA]%
-  \IfEq{\tmpA}{}{\def\tmpA{#1}}{}%
+  \IfEq{\tmpA}{}{%
+    \def\tmpA{#1}%
+  }{}%
   % Remove extension
   \StrBefore{\tmpA}{.}[\imglabel]%
   %
@@ -282,11 +298,15 @@ section=TITLE, % Título de seções em caixa alta
 % #7 = legenda geral
 \newcommand{\duasimages}[7]{%
   \StrBehind{#1}{/}[\tmpA]%
-  \IfEq{\tmpA}{}{\def\tmpA{#1}}{}%
+  \IfEq{\tmpA}{}{%
+    \def\tmpA{#1}%
+  }{}%
   \StrBefore{\tmpA}{.}[\imglabelA]%
 
   \StrBehind{#4}{/}[\tmpB]%
-  \IfEq{\tmpB}{}{\def\tmpB{#4}}{}%
+  \IfEq{\tmpB}{}{%
+    \def\tmpB{#4}%
+  }{}%
   \StrBefore{\tmpB}{.}[\imglabelB]%
 
   \edef\mainlabel{fig:\imglabelA-\imglabelB}%
@@ -558,7 +578,9 @@ section=TITLE, % Título de seções em caixa alta
     \include{15b_chapter_3.tex}
 
     % PARTE
-    \ifforcedinclude\else\part{\lang{Implementation}{Implementação}}\fi
+    \ifforcedinclude\else
+      \part{\lang{Implementation}{Implementação}}
+    \fi
     \label{segunda_parte}
 
     % Segundo capitulo de Resultados
