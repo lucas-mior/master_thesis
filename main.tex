@@ -111,7 +111,7 @@ section=TITLE, % Título de seções em caixa alta
 {\brazilword{Nome do Coordenador(a)}, \lang{Phd.}{Dr.}}
 
 % FIXME: Local da sua defesa
-\local{\brazilword{Florianópolis, Santa Catarina} -- \lang{Brazil}{Brasil}}
+\abntex2local{\brazilword{Florianópolis, Santa Catarina} -- \lang{Brazil}{Brasil}}
 
 % FIXME: Ano da sua defesa
 \UFSCano{2019}
@@ -119,11 +119,11 @@ section=TITLE, % Título de seções em caixa alta
 
 % FIXME: Sigla da sua instituição
 \UFSCinstituicaoSigla{UFSC}
-\instituicao{\brazilword{Universidade Federal de Santa Catarina}}
+\abntex2instituicao{\brazilword{Universidade Federal de Santa Catarina}}
 
 % FIXME: Preencha com 
 % Tese, Dissertação, Trabalho de Conclusão de Curso, Bachelor's Thesis, etc
-\tipotrabalho{\lang{Bachelor\s Thesis}{Trabalho de Conclusão de Curso}}
+\abntex2tipotrabalho{\lang{Bachelor\s Thesis}{Trabalho de Conclusão de Curso}}
 
 % FIXME: Se houver Área de Concentração, descomente a linha abaixo
 % \UFSCarea{\lang{Formal Languages}{Linguagens Formais}}
@@ -150,11 +150,11 @@ section=TITLE, % Título de seções em caixa alta
 \UFSCcampus{\brazilword{Campus Reitor João David Ferreira Lima}}
 
 % FIXME: Data da sua defesa
-\data{\lang{30 of march of}{30 de março de} 2019}
+\abntex2data{\lang{30 of march of}{30 de março de} 2019}
 
 % O preambulo deve conter tipo do trabalho, objetivo, nome da instituição e a
 % área de concentração.
-\preambulo{\lang%
+\abntex2preambulo{\lang%
     {%
         \imprimirtipotrabalho~submitted to the \imprimirprograma~of
         \imprimirinstituicao~for degree acquirement in \imprimirformacao.%
@@ -342,9 +342,9 @@ section=TITLE, % Título de seções em caixa alta
         % q/how-to-fix-destination-with-the-same-identifier-namepage-a-has-been-already
         % q/pdftex-warning-has-been-referenced-but-does-not-exist-replaced-by-a-fixed-one
         \hypersetup{pageanchor=false}
-        \PRIVATEbookmarkthis{Capa}
+        \abntex2PRIVATEbookmarkthis{Capa}
         \addtotextpreliminarycontent{Capa}
-        \pretextual
+        \abntex2pretextual
 
         % Capa
         % \includepdf{fig/FrenteCapaUFSC.pdf}
@@ -352,7 +352,7 @@ section=TITLE, % Título de seções em caixa alta
         \advisor{}{
           \AtBeginShipoutNext{\AtBeginShipoutNext{\AtBeginShipoutDiscard}}
         }
-        \imprimircapa
+        \abntex2imprimircapa
 
         % q/how-to-fix-destination-with-the-same-identifier-namepage-a-has-been-already
         % q/pdftex-warning-has-been-referenced-but-does-not-exist-replaced-by-a-fixed-one
@@ -400,7 +400,7 @@ section=TITLE, % Título de seções em caixa alta
         % catalográfica definitiva após a defesa do trabalho. Quando estiver com
         % o documento, salve-o como PDF no diretório do seu projeto e substitua
         % todo o conteúdo de implementação deste arquivo pelo comando abaixo:
-        \PRIVATEbookmarkthis{Ficha Catalográfica}
+        \abntex2PRIVATEbookmarkthis{Ficha Catalográfica}
         \addtotextpreliminarycontent{Ficha Catalográfica}
 
         \include{03_fichacatalografica.tex}
@@ -532,7 +532,7 @@ section=TITLE, % Título de seções em caixa alta
 
     % ELEMENTOS TEXTUAIS
     \clearpage
-    \textual
+    \abntex2textual
     \setlength\beforechapskip{50pt}
     \setlength\midchapskip{20pt}
     \setlength\afterchapskip{20pt}
@@ -562,13 +562,13 @@ section=TITLE, % Título de seções em caixa alta
 
     % Finaliza a parte no bookmark do PDF para que se inicie o bookmark na raiz
     % e adiciona espaço de parte no Sumário
-    \phantompart
+    \abntex2phantompart
 
     % Conclusão (outro exemplo de capítulo sem numeração e presente no sumário)
     \include{15z_conclusion.tex}
 
     % ELEMENTOS PÓS-TEXTUAIS
-    \postextual
+    \abntex2postextual
     \setlength\beforechapskip{0pt}
     \setlength\midchapskip{15pt}
     \setlength\afterchapskip{15pt}
@@ -590,7 +590,7 @@ section=TITLE, % Título de seções em caixa alta
 
     \begin{apendicesenv}
         % Imprime uma página indicando o início dos apêndices
-        \ifforcedinclude\else\partapendices\fi
+        \ifforcedinclude\else\abntex2partapendices\fi
         \setlength\beforechapskip{50pt}
         \setlength\midchapskip{20pt}
         \setlength\afterchapskip{20pt}
@@ -600,7 +600,7 @@ section=TITLE, % Título de seções em caixa alta
 
     \begin{anexosenv}
         % Imprime uma página indicando o início dos anexos
-        \ifforcedinclude\else\partanexos\fi
+        \ifforcedinclude\else\abntex2partanexos\fi
         \setlength\beforechapskip{50pt}
         \setlength\midchapskip{20pt}
         \setlength\afterchapskip{20pt}
@@ -611,7 +611,7 @@ section=TITLE, % Título de seções em caixa alta
 
     % INDICE REMISSIVO
     \ifforcedinclude\else
-        \phantompart
+        \abntex2phantompart
         \printindex
     \fi
 

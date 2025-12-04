@@ -432,7 +432,7 @@
 
 % Comando que simula a finalizacao de uma parte no bookmark e
 % adiciona espaco de \part no sumario
-\renewcommand{\phantompart}
+\renewcommand{\abntex2phantompart}
 {%
   \bookmarksetup{startatroot}%
   \phantomsection%
@@ -494,28 +494,28 @@
 
 \newlength{\cftnumberboxnumberwidth}
 \setlength{\cftnumberboxnumberwidth}{2em}
-\renewcommand{\tocprintchapter}
+\renewcommand{\abntex2tocprintchapter}
 {%
   \addtocontents{toc}{\cftsetindents{chapter}{0em}{\cftlastnumwidth}}
 }
 %
-\renewcommand{\tocinnonumchapter}
+\renewcommand{\abntex2tocinnonumchapter}
 {%
   \addtocontents{toc}{\cftsetindents{chapter}{\cftlastnumwidth}{\cftnumberboxnumberwidth}}%
   \cftinserthook{toc}{A}
 }
-\renewcommand{\tocprintchapternonum}
+\renewcommand{\abntex2tocprintchapternonum}
 {%
   \addtocontents{toc}{\cftsetindents{chapter}{\cftlastnumwidth}{\cftnumberboxnumberwidth}}
 }
 %
-\renewcommand{\tocpartapendices}
+\renewcommand{\abntex2tocpartapendices}
 {%
   \addtocontents{toc}{\cftsetindents{chapter}{\cftlastnumwidth}{\cftnumberboxnumberwidth}}
   \cftinserthook{toc}{A}
 }
 %
-\renewcommand{\tocpartanexos}
+\renewcommand{\abntex2tocpartanexos}
 {%
   \addtocontents{toc}{\cftsetindents{chapter}{\cftlastnumwidth}{\cftnumberboxnumberwidth}}
   \cftinserthook{toc}{A}
@@ -616,15 +616,15 @@
 
 \renewenvironment{resumo}[1][\abntex2resumoname]
 {%
-  % Fixed double bookmark entries as `\pretextualchapter`
-  % bellow is already calling `\PRIVATEbookmarkthis`
-  % \PRIVATEbookmarkthis{#1}
+  % Fixed double bookmark entries as `\abntex2pretextualchapter`
+  % bellow is already calling `\abntex2PRIVATEbookmarkthis`
+  % \abntex2PRIVATEbookmarkthis{#1}
   % \renewcommand{\abstractnamefont}{\chaptitlefont}
   % \renewcommand{\abstractname}{\ABNTEXchapterupperifneeded{#1}}
-  \pretextualchapter{#1}
+  \abntex2pretextualchapter{#1}
 }
 {%
-  \PRIVATEclearpageifneeded
+  \abntex2PRIVATEclearpageifneeded
 }
 
 % Fix the resumo environment, which does not accept paragraphs on ufscthesisx
@@ -686,9 +686,9 @@
 % ------------------------------------------------------------------------
 
 % Configura layout para elementos textuais,
-% redefining the ABNT command `\textual`.
+% redefining the ABNT command `\abntex2textual`.
 % Delete his to restore the ABNT default behavior.
-\renewcommand{\textual}
+\renewcommand{\abntex2textual}
 {%
   % Estilo original do Abntex2
   \pagestyle{abntheadings}
@@ -706,7 +706,7 @@
 % ------------------------------------------------------------------------
 % ---
 % Imprime uma pagina de divisao no estilo parte
-\renewcommand{\partpage}
+\renewcommand{\abntex2partpage}
 {%
   % \phantomsection
   % \addcontentsline{toc}{part}{\appendixtocname}
@@ -715,7 +715,7 @@
 
 % ---
 % Impressão da Capa
-\renewcommand{\imprimircapa}
+\renewcommand{\abntex2imprimircapa}
 {%
   \begin{capa}%
 
@@ -763,7 +763,7 @@
 %
 % How to add an empty line between paragraphs?
 % q/how-to-add-an-empty-line-between-paragraphs
-\renewcommand{\folhaderostocontent}
+\renewcommand{\abntex2folhaderostocontent}
 {%
   \begin{center}
     {\theauthor}

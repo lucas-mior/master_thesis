@@ -11,4 +11,4 @@ while read -r pair; do
      for f in **/*.cls *.tex; do
          sed -Ei 's/\\'$old'/\\'$new'/g' "$f"
      done
-done < renames
+done < renames2
