@@ -1107,11 +1107,13 @@
 % A comprehensive (SI) units package
 \usepackage{siunitx}
 \sisetup{detect-all}
-\sisetup{scientific-notation = fixed,
-         fixed-exponent = 0,
-         round-mode = places,
-         round-precision = 2,
-         output-decimal-marker = {,} }
+\sisetup{
+  scientific-notation = fixed,
+  fixed-exponent = 0,
+  round-mode = places,
+  round-precision = 2,
+  output-decimal-marker = {,}
+}
 \DeclareSIUnit \VA {VA} % apparent power
 
 % We need to load it after `siunitx` package,
