@@ -338,362 +338,362 @@ section=TITLE, % Título de seções em caixa alta
 }
 
 \begin{document}
-    % FIXME: Comment this after finishing the thesis,
-    %        so you can start fixing the \flushbottom vs \raggedbottom
-    % q/flushbottom-vs-raggedbottom
-    \raggedbottom
+  % FIXME: Comment this after finishing the thesis,
+  %        so you can start fixing the \flushbottom vs \raggedbottom
+  % q/flushbottom-vs-raggedbottom
+  \raggedbottom
 
-    % q/double-space-between-sentences
-    \frenchspacing
+  % q/double-space-between-sentences
+  \frenchspacing
 
-    % Uncomment this to put a ←← | ← (Go To Top/Go Back) on each section header
-    \ifadvisor\else
-      \addGoToSummary
+  % Uncomment this to put a ←← | ← (Go To Top/Go Back) on each section header
+  \ifadvisor\else
+    \addGoToSummary
+  \fi
+
+  % ELEMENTOS PRÉ-TEXTUAIS
+  \ifforcedinclude\else
+  % Fix the \textpreliminarycontents not showing up when @twoside is off
+  \newif\ifufscThesisXisMemoirTwoSidesEnabled
+
+  % q/how-do-i-check-if-a-document-is-oneside-or-twoside
+  \ifthenelse{\boolean{@twoside}}{%
+    \ufscThesisXisMemoirTwoSidesEnabledtrue%
+  }{%
+    \ufscThesisXisMemoirTwoSidesEnabledfalse%
+  }%
+  \setboolean{@twoside}{true}
+
+  % pretextual settings
+  % q/how-to-fix-destination-with-the-same-identifier-namepage-a-has-been-already
+  % q/pdftex-warning-has-been-referenced-but-does-not-exist-replaced-by-a-fixed-one
+  \hypersetup{pageanchor=false}
+  \ABNTEXPRIVATEbookmarkthis{Capa}
+  \addtotextpreliminarycontent{Capa}
+  \ABNTEXpretextual
+
+  % \includepdf{fig/FrenteCapaUFSC.pdf}
+  % q/blank-page-after-titlingpage
+  \ifadvisor\else
+    \AtBeginShipoutNext{\AtBeginShipoutNext{\AtBeginShipoutDiscard}}
+  \fi
+  \ABNTEXimprimircapa
+
+  % q/how-to-fix-destination-with-the-same-identifier-namepage-a-has-been-already
+  % q/pdftex-warning-has-been-referenced-but-does-not-exist-replaced-by-a-fixed-one
+  \hypersetup{pageanchor=true}
+
+  % Custom list throw LaTeX Error:
+  % Command \mycustomfiction already defined?
+  % q/custom-list-throw-latex-error-command-mycustomfiction-already-defined
+  \ifadvisor\else
+    % Manually add the `\textpreliminarycontents` to the Table of
+    % Contents here to keep the hyper link pointing to the beginning of
+    % the page, instead of the beginning of `\textpreliminarycontents`
+    % q/when-do-i-need-to-invoke-phantomsection
+    \phantomsection\addcontentsline{toc}{chapter}
+      {\UFSCtextPreliminaryListName}
+
+      % q/list-of-figures-and-tables-when-there-are-no-figures-or-tables
+      \whenlistisnotempty{\UFSCtextPreliminaryListName}{%
+        \begin{KeepFromToc}
+          \textpreliminarycontents
+        \end{KeepFromToc}
+      }
+
+      \clearpage
     \fi
 
-    % ELEMENTOS PRÉ-TEXTUAIS
-    \ifforcedinclude\else
-      % Fix the \textpreliminarycontents not showing up when @twoside is off
-      \newif\ifufscThesisXisMemoirTwoSidesEnabled
-
-      % q/how-do-i-check-if-a-document-is-oneside-or-twoside
-      \ifthenelse{\boolean{@twoside}}{%
-        \ufscThesisXisMemoirTwoSidesEnabledtrue%
-      }{%
-        \ufscThesisXisMemoirTwoSidesEnabledfalse%
-      }%
+    % Fix the \textpreliminarycontents not showing up when @twoside is off
+    \ifufscThesisXisMemoirTwoSidesEnabled
       \setboolean{@twoside}{true}
-
-      % pretextual settings
-      % q/how-to-fix-destination-with-the-same-identifier-namepage-a-has-been-already
-      % q/pdftex-warning-has-been-referenced-but-does-not-exist-replaced-by-a-fixed-one
-      \hypersetup{pageanchor=false}
-      \ABNTEXPRIVATEbookmarkthis{Capa}
-      \addtotextpreliminarycontent{Capa}
-      \ABNTEXpretextual
-
-      % \includepdf{fig/FrenteCapaUFSC.pdf}
-      % q/blank-page-after-titlingpage
-      \ifadvisor\else
-        \AtBeginShipoutNext{\AtBeginShipoutNext{\AtBeginShipoutDiscard}}
-      \fi
-      \ABNTEXimprimircapa
-
-      % q/how-to-fix-destination-with-the-same-identifier-namepage-a-has-been-already
-      % q/pdftex-warning-has-been-referenced-but-does-not-exist-replaced-by-a-fixed-one
-      \hypersetup{pageanchor=true}
-
-      % Custom list throw LaTeX Error:
-      % Command \mycustomfiction already defined?
-      % q/custom-list-throw-latex-error-command-mycustomfiction-already-defined
-      \ifadvisor\else
-        % Manually add the `\textpreliminarycontents` to the Table of
-        % Contents here to keep the hyper link pointing to the beginning of
-        % the page, instead of the beginning of `\textpreliminarycontents`
-        % q/when-do-i-need-to-invoke-phantomsection
-        \phantomsection\addcontentsline{toc}{chapter}
-        {\UFSCtextPreliminaryListName}
-
-        % q/list-of-figures-and-tables-when-there-are-no-figures-or-tables
-        \whenlistisnotempty{\UFSCtextPreliminaryListName}{%
-          \begin{KeepFromToc}
-            \textpreliminarycontents
-          \end{KeepFromToc}
-        }
-
-        \clearpage
-      \fi
-
-      % Fix the \textpreliminarycontents not showing up when @twoside is off
-      \ifufscThesisXisMemoirTwoSidesEnabled
-        \setboolean{@twoside}{true}
-      \else
-        \setboolean{@twoside}{false}
-      \fi
-
-      % Folha de rosto (o * indica que haverá a ficha bibliográfica)
-      % q/table-of-contents-incorrect-page-numbering
-      \addtotextpreliminarycontent{\ABNTEXfolhaderostoname}
-      \ABNTEXimprimirFolhaDeRosto*{}
-
-      % Inserir a ficha bibliografica
-      %
-      % Isto é um exemplo de Ficha Catalográfica,
-      % ou ``Dados internacionais de % catalogação-na-publicação''.
-      % Você pode utilizar este modelo como referência.  Porém, provavelmente
-      % a biblioteca da sua universidade lhe fornecerá um PDF com a ficha
-      % catalográfica definitiva após a defesa do trabalho. Quando estiver com
-      % o documento, salve-o como PDF no diretório do seu projeto e substitua
-      % todo o conteúdo de implementação deste arquivo pelo comando abaixo:
-      \ABNTEXPRIVATEbookmarkthis{Ficha Catalográfica}
-      \addtotextpreliminarycontent{Ficha Catalográfica}
-
-      \include{03_fichacatalografica.tex}
-      % q/how-to-include-multiple-pages-in-latex
-      % \includepdf{fig/Ficha_Catalografica.pdf}
-      \ifforcedinclude\else
-        \cleardoublepage
-      \fi
+    \else
+      \setboolean{@twoside}{false}
     \fi
 
-    % Inserir errata
+    % Folha de rosto (o * indica que haverá a ficha bibliográfica)
+    % q/table-of-contents-incorrect-page-numbering
+    \addtotextpreliminarycontent{\ABNTEXfolhaderostoname}
+    \ABNTEXimprimirFolhaDeRosto*{}
 
-    % Inserir folha de aprovação. Isto é um exemplo de Folha de aprovação,
-    % elemento obrigatório da NBR 14724/2011 (seção 4.2.1.3). Você pode utilizar
-    % este modelo até a aprovação do trabalho.  Após isso, substitua todo o
-    % conteúdo deste arquivo por uma imagem da página assinada pela banca com o
-    % comando abaixo:
+    % Inserir a ficha bibliografica
+    %
+    % Isto é um exemplo de Ficha Catalográfica,
+    % ou ``Dados internacionais de % catalogação-na-publicação''.
+    % Você pode utilizar este modelo como referência.  Porém, provavelmente
+    % a biblioteca da sua universidade lhe fornecerá um PDF com a ficha
+    % catalográfica definitiva após a defesa do trabalho. Quando estiver com
+    % o documento, salve-o como PDF no diretório do seu projeto e substitua
+    % todo o conteúdo de implementação deste arquivo pelo comando abaixo:
+    \ABNTEXPRIVATEbookmarkthis{Ficha Catalográfica}
+    \addtotextpreliminarycontent{Ficha Catalográfica}
+
+    \include{03_fichacatalografica.tex}
+    % q/how-to-include-multiple-pages-in-latex
+    % \includepdf{fig/Ficha_Catalografica.pdf}
     \ifforcedinclude\else
       \cleardoublepage
     \fi
-    \include{04_folhadeaprovacao.tex}
-    % \includepdf{fig/folhadeaprovacao_final.pdf}
+  \fi
 
-    % Dedicatória
+  % Inserir errata
+
+  % Inserir folha de aprovação. Isto é um exemplo de Folha de aprovação,
+  % elemento obrigatório da NBR 14724/2011 (seção 4.2.1.3). Você pode utilizar
+  % este modelo até a aprovação do trabalho.  Após isso, substitua todo o
+  % conteúdo deste arquivo por uma imagem da página assinada pela banca com o
+  % comando abaixo:
+  \ifforcedinclude\else
+    \cleardoublepage
+  \fi
+  \include{04_folhadeaprovacao.tex}
+  % \includepdf{fig/folhadeaprovacao_final.pdf}
+
+  % Dedicatória
+  \ifforcedinclude\else
+    \cleardoublepage
+  \fi
+  \ifforcedinclude\else
+    \input{05_dedicatoria.tex}
+  \fi
+
+  % Agradecimentos
+  \ifforcedinclude\else
+    \cleardoublepage
+  \fi
+  \include{06_agradecimentos.tex}
+
+  % Epígrafe
+  \ifforcedinclude\else
+    \cleardoublepage
+  \fi
+  \include{07_epigrafe.tex}
+
+  % Ajusta o espaçamento dos parágrafos do resumo
+  \setlength{\absparsep}{18pt}
+
+  % RESUMOS
+  \ifforcedinclude\else
+    \cleardoublepage
+  \fi
+  \include{08_resumos.tex}
+
+  % Some tables of contents
+  \ifforcedinclude\else
+  {
+    % q/disable-colorlinks-locally-or-just-for-the-toc
+    \hypersetup{hidelinks}
+
+    % inserir lista de figuras
     \ifforcedinclude\else
       \cleardoublepage
     \fi
-    \ifforcedinclude\else
-      \input{05_dedicatoria.tex}
-    \fi
+    % q/list-of-figures-and-tables-when-there-are-no-figures-or-tables
+    \whenlistisnotempty{\listfigurename}{%
+      \addtotextpreliminarycontent{\listfigurename}
+      {
+        % q/remove-spacing-between-per-chapter-figures-in-lof
+        \renewcommand{\addvspace}[1]{}
+        \listoffigures*
+      }
+    }{
+      \pdfbookmark[0]{\listfigurename}{lof}
+    }
 
-    % Agradecimentos
-    \ifforcedinclude\else
-      \cleardoublepage
-    \fi
-    \include{06_agradecimentos.tex}
-
-    % Epígrafe
-    \ifforcedinclude\else
-      \cleardoublepage
-    \fi
-    \include{07_epigrafe.tex}
-
-    % Ajusta o espaçamento dos parágrafos do resumo
-    \setlength{\absparsep}{18pt}
-
-    % RESUMOS
+    % inserir lista de quadros
     \ifforcedinclude\else
       \cleardoublepage
     \fi
-    \include{08_resumos.tex}
+    % q/list-of-figures-and-tables-when-there-are-no-figures-or-tables
+    \whenlistisnotempty{\listofquadrosname}{%
+      \addtotextpreliminarycontent{\listofquadrosname}
+      {
+        % q/remove-spacing-between-per-chapter-figures-in-lof
+        \renewcommand{\addvspace}[1]{}
+        \listofquadros*
+      }
+    }{
+      \pdfbookmark[0]{\listofquadrosname}{loq}
+    }
 
-    % Some tables of contents
+    % inserir lista de tabelas
     \ifforcedinclude\else
+      \cleardoublepage
+    \fi
+    % q/list-of-figures-and-tables-when-there-are-no-figures-or-tables
+    \whenlistisnotempty{\listtablename}{%
+      \addtotextpreliminarycontent{\listtablename}
+      {
+        % q/remove-spacing-between-per-chapter-figures-in-lof
+        \renewcommand{\addvspace}[1]{}
+        \listoftables*
+      }
+    }{
+      \pdfbookmark[0]{\listtablename}{lot}
+    }
+
+    % inserir códigos fonte (List of Listings `lol`)
+    % q/latex-keeps-showing-minted-environment-as-figures-instead-of-listening
+    \ifforcedinclude\else
+      \cleardoublepage
+    \fi
+    % q/list-of-figures-and-tables-when-there-are-no-figures-or-tables
+    \whenlistisnotempty{\lstlistlistingname}{%
+      \addtotextpreliminarycontent{\lstlistlistingname}
+      {
+        % q/remove-spacing-between-per-chapter-figures-in-lof
+        \renewcommand{\addvspace}[1]{}
+        \lstlistoflistings*
+      }
+    }{
+      \pdfbookmark[0]{\lstlistlistingname}{lol}
+    }
+  }
+  \fi
+
+  \ifforcedinclude\else
+    \cleardoublepage
+  \fi
+  \include{12_siglas.tex}
+
+  \ifforcedinclude\else
+    \cleardoublepage
+  \fi
+  \include{13_simbolos.tex}
+
+  % How to remove the self-reference of the ToC from the ToC?
+  % q/how-to-remove-the-self-reference-of-the-toc-from-the-toc
+  \ifforcedinclude\else
+    \cleardoublepage
+  \fi
+
+  \begin{KeepFromToc}
+    % q/what-does-overfull-hbox-mean
+    % q/how-to-avoid-using-sloppy-document-wide-to-fix-overfull-hbox-problems
+    % q/adding-color-to-table-of-contents-and-section-headings
     {
       % q/disable-colorlinks-locally-or-just-for-the-toc
       \hypersetup{hidelinks}
 
-      % inserir lista de figuras
-      \ifforcedinclude\else
-        \cleardoublepage
-      \fi
-      % q/list-of-figures-and-tables-when-there-are-no-figures-or-tables
-      \whenlistisnotempty{\listfigurename}{%
-        \addtotextpreliminarycontent{\listfigurename}
-        {
-          % q/remove-spacing-between-per-chapter-figures-in-lof
-          \renewcommand{\addvspace}[1]{}
-          \listoffigures*
-        }
-      }{
-        \pdfbookmark[0]{\listfigurename}{lof}
-      }
+      % q/underfull-vbox-badness-10000-with-memoir
+      \raggedbottom
 
-      % inserir lista de quadros
-      \ifforcedinclude\else
-        \cleardoublepage
-      \fi
-      % q/list-of-figures-and-tables-when-there-are-no-figures-or-tables
-      \whenlistisnotempty{\listofquadrosname}{%
-        \addtotextpreliminarycontent{\listofquadrosname}
-        {
-          % q/remove-spacing-between-per-chapter-figures-in-lof
-          \renewcommand{\addvspace}[1]{}
-          \listofquadros*
-        }
-      }{
-        \pdfbookmark[0]{\listofquadrosname}{loq}
-      }
+      % q/overfull-hbox-warning-for-toc-entries-when-using-memoir-documentclass
+      % \makeatletter
+          % \renewcommand{\@pnumwidth}{2em}
+          % \renewcommand{\@tocrmarg}{3em}
+      % \makeatother
 
-      % inserir lista de tabelas
-      \ifforcedinclude\else
-        \cleardoublepage
-      \fi
-      % q/list-of-figures-and-tables-when-there-are-no-figures-or-tables
-      \whenlistisnotempty{\listtablename}{%
-        \addtotextpreliminarycontent{\listtablename}
-        {
-          % q/remove-spacing-between-per-chapter-figures-in-lof
-          \renewcommand{\addvspace}[1]{}
-          \listoftables*
-        }
-      }{
-        \pdfbookmark[0]{\listtablename}{lot}
-      }
+      % q/memoir-mysterious-overfull-hbox-in-toc-when-mathptmx-is-used
+      % \setlength{\cftchapternumwidth}{2.25em}
 
-      % inserir códigos fonte (List of Listings `lol`)
-      % q/latex-keeps-showing-minted-environment-as-figures-instead-of-listening
-      \ifforcedinclude\else
-        \cleardoublepage
-      \fi
+      % Add the table of contents to the brief table of contents
       % q/list-of-figures-and-tables-when-there-are-no-figures-or-tables
-      \whenlistisnotempty{\lstlistlistingname}{%
-        \addtotextpreliminarycontent{\lstlistlistingname}
-        {
-          % q/remove-spacing-between-per-chapter-figures-in-lof
-          \renewcommand{\addvspace}[1]{}
-          \lstlistoflistings*
-        }
+      \whenlistisnotempty{\contentsname}{%
+        \addtotextpreliminarycontent{\contentsname}
+        \tableofcontents
       }{
-        \pdfbookmark[0]{\lstlistlistingname}{lol}
+        \pdfbookmark[0]{\contentsname}{toc}
       }
     }
+
+  \end{KeepFromToc}
+
+  % ELEMENTOS TEXTUAIS
+  \clearpage
+  \ABNTEXtextual
+  \setlength\beforechapskip{50pt}
+  \setlength\midchapskip{20pt}
+  \setlength\afterchapskip{20pt}
+
+  % PARTE
+  \ifforcedinclude\else
+    \part{\lang{Research}{Pesquisa}}
+  \fi
+  \label{primeira_parte}
+
+  % Introdução (exemplo de capítulo sem numeração, mas presente no Sumário)
+  \include{15a_intro.tex}
+
+  % Capitulo com exemplos de comandos inseridos de arquivo externo
+  \include{15b_chapter_1.tex}
+
+  % Capitulo de revisão de literatura
+  \include{15b_chapter_2.tex}
+
+  % Primeiro capitulo de Resultados
+  \include{15b_chapter_3.tex}
+
+  % PARTE
+  \ifforcedinclude\else
+    \part{\lang{Implementation}{Implementação}}
+  \fi
+  \label{segunda_parte}
+
+  % Segundo capitulo de Resultados
+  \include{15b_chapter_4.tex}
+
+  % Finaliza a parte no bookmark do PDF para que se inicie o bookmark na raiz
+  % e adiciona espaço de parte no Sumário
+  \ABNTEXphantompart
+
+  % Conclusão (outro exemplo de capítulo sem numeração e presente no sumário)
+  \include{15z_conclusion.tex}
+
+  % ELEMENTOS PÓS-TEXTUAIS
+  \ABNTEXpostextual
+  \setlength\beforechapskip{0pt}
+  \setlength\midchapskip{15pt}
+  \setlength\afterchapskip{15pt}
+
+  % Referências bibliográficas
+  \begingroup
+    % q/how-to-modify-line-spacing-per-entry-of-bibliography
+    % q/how-can-i-put-more-space-between-bibliography-entries-biblatex
+    \setlength\bibitemsep{\baselineskip}
+    \ifadvisor\else
+      \linespread{1.18}\selectfont
     \fi
 
+    % q/using-bibtex-to-make-a-list-of-references-without-having-citations-in-the-body
+    % \nocite{*}
+    \printbibliography[title=\lang{REFERENCES}{REFERÊNCIAS}]
+  \endgroup
+
+  % Glossário, consulte o manual da classe abntex2
+  % \ifforcedinclude\else
+  %   \glossary
+  % \fi
+
+  \begin{abntexEnvApendicesenv}
+    % Imprime uma página indicando o início dos apêndices
     \ifforcedinclude\else
-      \cleardoublepage
+      \ABNTEXpartapendices
     \fi
-    \include{12_siglas.tex}
-
-    \ifforcedinclude\else
-      \cleardoublepage
-    \fi
-    \include{13_simbolos.tex}
-
-    % How to remove the self-reference of the ToC from the ToC?
-    % q/how-to-remove-the-self-reference-of-the-toc-from-the-toc
-    \ifforcedinclude\else
-      \cleardoublepage
-    \fi
-
-    \begin{KeepFromToc}
-      % q/what-does-overfull-hbox-mean
-      % q/how-to-avoid-using-sloppy-document-wide-to-fix-overfull-hbox-problems
-      % q/adding-color-to-table-of-contents-and-section-headings
-      {
-        % q/disable-colorlinks-locally-or-just-for-the-toc
-        \hypersetup{hidelinks}
-
-        % q/underfull-vbox-badness-10000-with-memoir
-        \raggedbottom
-
-        % q/overfull-hbox-warning-for-toc-entries-when-using-memoir-documentclass
-        % \makeatletter
-            % \renewcommand{\@pnumwidth}{2em}
-            % \renewcommand{\@tocrmarg}{3em}
-        % \makeatother
-
-        % q/memoir-mysterious-overfull-hbox-in-toc-when-mathptmx-is-used
-        % \setlength{\cftchapternumwidth}{2.25em}
-
-        % Add the table of contents to the brief table of contents
-        % q/list-of-figures-and-tables-when-there-are-no-figures-or-tables
-        \whenlistisnotempty{\contentsname}{%
-          \addtotextpreliminarycontent{\contentsname}
-          \tableofcontents
-        }{
-          \pdfbookmark[0]{\contentsname}{toc}
-        }
-      }
-
-    \end{KeepFromToc}
-
-    % ELEMENTOS TEXTUAIS
-    \clearpage
-    \ABNTEXtextual
     \setlength\beforechapskip{50pt}
     \setlength\midchapskip{20pt}
     \setlength\afterchapskip{20pt}
 
-    % PARTE
+    \include{18_apendice_a.tex}
+  \end{abntexEnvApendicesenv}
+
+  \begin{abntexEnvAnexosenv}
+    % Imprime uma página indicando o início dos anexos
     \ifforcedinclude\else
-      \part{\lang{Research}{Pesquisa}}
+      \ABNTEXpartanexos
     \fi
-    \label{primeira_parte}
+    \setlength\beforechapskip{50pt}
+    \setlength\midchapskip{20pt}
+    \setlength\afterchapskip{20pt}
 
-    % Introdução (exemplo de capítulo sem numeração, mas presente no Sumário)
-    \include{15a_intro.tex}
+    \include{19_anexo_a.tex}
+    \include{19_anexo_b.tex}
+  \end{abntexEnvAnexosenv}
 
-    % Capitulo com exemplos de comandos inseridos de arquivo externo
-    \include{15b_chapter_1.tex}
-
-    % Capitulo de revisão de literatura
-    \include{15b_chapter_2.tex}
-
-    % Primeiro capitulo de Resultados
-    \include{15b_chapter_3.tex}
-
-    % PARTE
-    \ifforcedinclude\else
-      \part{\lang{Implementation}{Implementação}}
-    \fi
-    \label{segunda_parte}
-
-    % Segundo capitulo de Resultados
-    \include{15b_chapter_4.tex}
-
-    % Finaliza a parte no bookmark do PDF para que se inicie o bookmark na raiz
-    % e adiciona espaço de parte no Sumário
+  % INDICE REMISSIVO
+  \ifforcedinclude\else
     \ABNTEXphantompart
-
-    % Conclusão (outro exemplo de capítulo sem numeração e presente no sumário)
-    \include{15z_conclusion.tex}
-
-    % ELEMENTOS PÓS-TEXTUAIS
-    \ABNTEXpostextual
-    \setlength\beforechapskip{0pt}
-    \setlength\midchapskip{15pt}
-    \setlength\afterchapskip{15pt}
-
-    % Referências bibliográficas
-    \begingroup
-      % q/how-to-modify-line-spacing-per-entry-of-bibliography
-      % q/how-can-i-put-more-space-between-bibliography-entries-biblatex
-      \setlength\bibitemsep{\baselineskip}
-      \ifadvisor\else
-        \linespread{1.18}\selectfont
-      \fi
-
-      % q/using-bibtex-to-make-a-list-of-references-without-having-citations-in-the-body
-      % \nocite{*}
-      \printbibliography[title=\lang{REFERENCES}{REFERÊNCIAS}]
-    \endgroup
-
-    % Glossário, consulte o manual da classe abntex2
-    % \ifforcedinclude\else
-    %   \glossary
-    % \fi
-
-    \begin{abntexEnvApendicesenv}
-      % Imprime uma página indicando o início dos apêndices
-      \ifforcedinclude\else
-        \ABNTEXpartapendices
-      \fi
-      \setlength\beforechapskip{50pt}
-      \setlength\midchapskip{20pt}
-      \setlength\afterchapskip{20pt}
-
-      \include{18_apendice_a.tex}
-    \end{abntexEnvApendicesenv}
-
-    \begin{abntexEnvAnexosenv}
-      % Imprime uma página indicando o início dos anexos
-      \ifforcedinclude\else
-        \ABNTEXpartanexos
-      \fi
-      \setlength\beforechapskip{50pt}
-      \setlength\midchapskip{20pt}
-      \setlength\afterchapskip{20pt}
-
-      \include{19_anexo_a.tex}
-      \include{19_anexo_b.tex}
-    \end{abntexEnvAnexosenv}
-
-    % INDICE REMISSIVO
-    \ifforcedinclude\else
-      \ABNTEXphantompart
-      \printindex
-    \fi
+    \printindex
+  \fi
 
 \end{document}
