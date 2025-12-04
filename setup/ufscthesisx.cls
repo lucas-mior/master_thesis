@@ -2508,7 +2508,7 @@
 \lstdefinestyle{ufscthesisx_style}{
   aboveskip=3mm,
   belowskip=3mm,
-  backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}
+  backgroundcolor=\color{white},
   basicstyle={\small\fontfamily{zi4}\selectfont},    % the size of the fonts that are used for the code
   breakatwhitespace=true,          % sets if automatic breaks should only happen at whitespace
   breaklines=true,                 % sets automatic line breaking
