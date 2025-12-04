@@ -157,16 +157,18 @@
 
 \ifwindows
   \providecommand{\DeleteFile}[2][]{%
-  \ifthenelse{\equal{#1}{}}%
-    {\IfFileExists{#2}{\ShellEscape{del #2}}{}}%
-    {\IfFileExists{#1/#2}{%
-    \StrSubstitute{#1}{/}{\@backslashchar}[\mintedwindir]
-    \ShellEscape{del \mintedwindir\@backslashchar #2}}{}}}
+    \ifthenelse{\equal{#1}{}}%
+      {\IfFileExists{#2}{\ShellEscape{del #2}}{}}%
+      {\IfFileExists{#1/#2}{%
+      \StrSubstitute{#1}{/}{\@backslashchar}[\mintedwindir]
+      \ShellEscape{del \mintedwindir\@backslashchar #2}}{}}
+  }
 \else
   \providecommand{\DeleteFile}[2][]{%
   \ifthenelse{\equal{#1}{}}%
     {\IfFileExists{#2}{\ShellEscape{rm #2}}{}}%
-    {\IfFileExists{#1/#2}{\ShellEscape{rm #1/#2}}{}}}
+    {\IfFileExists{#1/#2}{\ShellEscape{rm #1/#2}}{}}
+  }
 \fi
 
 \newboolean{AppMotherFuckerExists}
@@ -317,8 +319,7 @@
 
 \newcounter{ufscthesisx@assuntos}
 \providecommand{\listaassuntos}{}
-\providecommand{\imprimirassuntos}
-{%
+\providecommand{\imprimirassuntos}{%
   \setcounter{ufscthesisx@assuntos}{1}
   \@for\assunto:={\listaassuntos}\do
   {%
