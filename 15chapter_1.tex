@@ -37,7 +37,8 @@
 \phantomsection
 
 % q/is-it-possible-to-keep-my-translation-together-with-original-text
-\chapter[\lang{Abbreviation for the Table of Contents}{Abreviação para o Sumário}]
+\chapter[\lang{Abbreviation for the Table of Contents}
+{Abreviação para o Sumário}]
 {
     \lang
     {Long title to present in the chapter, Axioms, Theorems, Postulates,
@@ -836,9 +837,13 @@ No entanto, você pode compilar os documentos \LaTeX{} usando os seguintes
 comandos, que devem ser digitados no \emph{Prompt de Comandos} do Windows ou no
 \emph{Terminal} do Mac ou do Linux -- \showfont:
 
-\begin{lstlisting}[language=bash,caption={[Você pode compilar os documentos \LaTeX{} usando os seguintes
-        comandos.]{Você pode compilar os documentos \LaTeX{} usando os seguintes
-        comandos. -- \showfont}},label={lst:compilarLatex}]
+\begin{lstlisting}
+[language=bash,caption={
+  [Você pode compilar os documentos \LaTeX{} usando os seguintes comandos.]
+  {Você pode compilar os documentos \LaTeX{} usando os seguintes
+   comandos. -- \showfont}
+},
+label={lst:compilarLatex}]
    pdflatex ARQUIVO_PRINCIPAL.tex
    bibtex ARQUIVO_PRINCIPAL.aux
    makeindex ARQUIVO_PRINCIPAL.idx
@@ -869,7 +874,8 @@ seções, subseções e subsubseções.
 
 O código usado para produzir o texto desta seção é -- \showfont:
 
-\begin{lstlisting}[language=TeX,caption={[TeX example]{TeX example -- \showfont}}]
+\begin{lstlisting}
+[language=TeX,caption={[TeX example]{TeX example -- \showfont}}]
 Ao nomear a \autoref{tab-nivinv} e a \autoref{fig_circulo}, apresentamos um
 exemplo de remissão interna, que também pode ser feita quando indicamos o
 \autoref{cap_exemplos}, que tem o nome \emph{\nameref{cap_exemplos}}. O número
@@ -979,7 +985,9 @@ Exemplo de hifenização em inglês\footnote{Extraído de:
 \end{otherlanguage*}
 
 Exemplo de hifenização em francês\footnote{Extraído de:
-\url{http://bigbrowser.blog.lemonde.fr/2013/02/17/tu-ne-tweeteras-point-le-vatican-interdit-aux-cardinaux-de-tweeter-pendant-le-conclave/} -- \showfont}:
+\url{http://bigbrowser.blog.lemonde.fr/2013/02/17
+     /tu-ne-tweeteras-point-le-vatican-interdit-aux-cardinaux-de-tweeter
+     -pendant-le-conclave/} -- \showfont}:
 
 % q/changing-babel-package-inside-a-single-chapter
 \begin{otherlanguage*}{french}
@@ -994,7 +1002,8 @@ connecter à leur compte. -- \showfont}
 \end{otherlanguage*}
 
 Pequeno texto em espanhol\footnote{Extraído de:
-\url{http://internacional.elpais.com/internacional/2013/02/17/actualidad/1361102009_913423.html} -- \showfont}:
+\url{http://internacional.elpais.com/
+     internacional/2013/02/17/actualidad/1361102009_913423.html} -- \showfont}:
 
 \foreignlanguage{spanish}{\textit{Decenas de miles de personas ovacionan al
 pontífice en su penúltimo ángelus dominical, el primero desde que anunciase su

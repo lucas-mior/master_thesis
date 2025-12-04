@@ -85,20 +85,26 @@ section=TITLE, % Título de seções em caixa alta
 
 % FIXME: Preencha com seus dados
 \autor{\brazilword{Escreva aqui o Nome completo do Autor ou da Autora}}
-\titulo{\lang{Work Title\protect\\Could be break into two lines}{Título do trabalho\protect\\Pode ser Quebrado em duas linhas}}
+\titulo{
+  \lang{Work Title\protect\\Could be break into two lines}
+       {Título do trabalho\protect\\Pode ser Quebrado em duas linhas}
+}
 
 % FIXME: Se houver subtítulo, descomente a linha abaixo
 \subtitulo{\lang{Subtitle}{Subtítulo}}
 
 % FIXME: Siglas para grau de formação
 % Dr./Dra., Me./Ma, Bel. Bela. (inglês: PhD., MSc., Bs.)
-\orientador[\lang{Supervisor}{Orientador(a)}]{\brazilword{Nome completo do Orientador(a)}, \lang{Phd.}{Dr.}}
+\orientador[\lang{Supervisor}{Orientador(a)}]
+{\brazilword{Nome completo do Orientador(a)}, \lang{Phd.}{Dr.}}
 
 % FIXME: Se houver coorientador, descomente a linha abaixo
-% \coorientador[\lang{Co-supervisor}{Coorientador(a)}]{\brazilword{Nome do coorientador(a)}, \lang{Phd.}{Dr.}}
+% \coorientador[\lang{Co-supervisor}{Coorientador(a)}]
+% {\brazilword{Nome do coorientador(a)}, \lang{Phd.}{Dr.}}
 
 % FIXME: Preencher com o nome do Coordenador de TCCs/Teses do seu curso
-\coordenador[\lang{Coordinator}{Coordenador(a)}]{\brazilword{Nome do Coordenador(a)}, \lang{Phd.}{Dr.}}
+\coordenador[\lang{Coordinator}{Coordenador(a)}]
+{\brazilword{Nome do Coordenador(a)}, \lang{Phd.}{Dr.}}
 
 % FIXME: Local da sua defesa
 \local{\brazilword{Florianópolis, Santa Catarina} -- \lang{Brazil}{Brasil}}
@@ -175,7 +181,8 @@ section=TITLE, % Título de seções em caixa alta
     pdfcreator={LaTeX with abnTeX2 for UFSC},
     pdftitle={\imprimirtitulo},
     pdfauthor={\imprimirautor},
-    pdfkeywords={\lang{\palavraschaveinglessemitem}{\palavraschaveportuguessemitem}},
+    pdfkeywords={\lang{\palavraschaveinglessemitem}
+                {\palavraschaveportuguessemitem}},
 }
 
 % Altere 'settings.tex' para customizar aparência da sua tese
@@ -275,21 +282,25 @@ section=TITLE, % Título de seções em caixa alta
         % Capa
         % \includepdf{fig/FrenteCapaUFSC.pdf}
         % q/blank-page-after-titlingpage
-        \advisor{}{\AtBeginShipoutNext{\AtBeginShipoutNext{\AtBeginShipoutDiscard}}}
+        \advisor{}{
+          \AtBeginShipoutNext{\AtBeginShipoutNext{\AtBeginShipoutDiscard}}
+        }
         \imprimircapa
 
         % q/how-to-fix-destination-with-the-same-identifier-namepage-a-has-been-already
         % q/pdftex-warning-has-been-referenced-but-does-not-exist-replaced-by-a-fixed-one
         \hypersetup{pageanchor=true}
 
-        % Custom list throw LaTeX Error: Command \mycustomfiction already defined?
-        % q/custom-list-throw-latex-error-command-mycustomfiction-already-defined/
+        % Custom list throw LaTeX Error:
+        % Command \mycustomfiction already defined?
+        % q/custom-list-throw-latex-error-command-mycustomfiction-already-defined
         \advisor{}{%
             % Manually add the `\textpreliminarycontents` to the Table of
             % Contents here to keep the hyper link pointing to the beginning of
             % the page, instead of the beginning of `\textpreliminarycontents`
             % q/when-do-i-need-to-invoke-phantomsection
-            \phantomsection\addcontentsline{toc}{chapter}{\mytextpreliminarylistname}
+            \phantomsection\addcontentsline{toc}{chapter}
+            {\mytextpreliminarylistname}
 
             % q/list-of-figures-and-tables-when-there-are-no-figures-or-tables
             \whenlistisnotempty{\mytextpreliminarylistname}{%
