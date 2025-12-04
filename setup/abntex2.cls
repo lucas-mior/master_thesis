@@ -716,7 +716,7 @@
 % ------------------------------------------------------------------------
 
 % Ambiente para definicao da Capa
-\newenvironment{capa}{\begin{titlingpage}}{\end{titlingpage}\cleardoublepage}
+\newenvironment{abntexEnvCapa}{\begin{titlingpage}}{\end{titlingpage}\cleardoublepage}
 
 % Titulos em lingua estrangeira para artigos: ABNT NBR 6022:2018
 \ifthenelse{\equal{\ABNTEXisarticle}{true}}{%
@@ -725,7 +725,7 @@
 
 % Ficha catalografica (Dados internacionais de
 % catalogação-na-publicacao)
-\newenvironment{fichacatalografica}{%
+\newenvironment{abntexEnvFichacatalografica}{%
     \thispagestyle{empty}
     \begin{SingleSpacing}
       \ABNTEXfontereduzida
@@ -734,31 +734,31 @@
 }%
 
 % Errata
-\newenvironment{errata}[1][\ABNTEXerrataname]{%
+\newenvironment{abntexEnvErrata}[1][\ABNTEXerrataname]{%
    \ABNTEXpretextualchapter{#1}
   }{\ABNTEXPRIVATEclearpageifneeded}
 
 % Folha de aprovacao - NBR 14724/2011 - 4.2.1.3
-\newenvironment{folhadeaprovacao}[1][\ABNTEXfolhadeaprovacaoname]{%
+\newenvironment{abntexEnvFolhadeaprovacao}[1][\ABNTEXfolhadeaprovacaoname]{%
    \clearpage%
    \ABNTEXPRIVATEbookmarkthis{#1}%
    \begin{Spacing}{1.0}
 }{\end{Spacing}\ABNTEXPRIVATEclearpageifneeded}
 
 % Dedicatoria
-\newenvironment{dedicatoria}[1][]{%
+\newenvironment{abntexEnvDedicatoria}[1][]{%
    \ifthenelse{\equal{#1}{}}{%
     \ABNTEXPRIVATEbookmarkthis{\ABNTEXdedicatorianame}
     }{\ABNTEXpretextualchapter{#1}}
   }{\ABNTEXPRIVATEclearpageifneeded}
 
 % Agradecimentos
-\newenvironment{agradecimentos}[1][\ABNTEXagradecimentosname]{%
+\newenvironment{abntexEnvAgradecimentos}[1][\ABNTEXagradecimentosname]{%
    \ABNTEXpretextualchapter{#1}
   }{\ABNTEXPRIVATEclearpageifneeded}
 
 % Epigrafe
-\newenvironment{epigrafe}[1][]{%
+\newenvironment{abntexEnvEpigrafe}[1][]{%
    \ifthenelse{\equal{#1}{}}{%
     \ABNTEXPRIVATEbookmarkthis{\ABNTEXepigraphname}
     }{\ABNTEXpretextualchapter{#1}}
@@ -784,14 +784,14 @@
    \setlength{\absparindent}{0pt}
 }
 
-\newenvironment{resumo}[1][\ABNTEXresumoname]{%
+\newenvironment{abntexEnvResumo}[1][\ABNTEXresumoname]{%
    \ABNTEXPRIVATEbookmarkthis{#1}
    \renewcommand{\abstractnamefont}{\chaptitlefont}
    \renewcommand{\abstractname}{\ABNTEXchapterupperifneeded{#1}}
    \begin{abstract}
   }{\end{abstract}\ABNTEXPRIVATEclearpageifneeded}
 
-\newenvironment{resumoumacoluna}[1][\ABNTEXresumoname]{%
+\newenvironment{abntexEnvResumoumacoluna}[1][\ABNTEXresumoname]{%
    \ABNTEXPRIVATEbookmarkthis{#1}
    \renewcommand{\abstractnamefont}{\chaptitlefont}
    \renewcommand{\abstractname}{\ABNTEXchapterupperifneeded{#1}}
@@ -799,7 +799,7 @@
 }{\end{onecolabstract}\ABNTEXPRIVATEclearpageifneeded}
 
 % Lista de abreviaturas e siglas
-\newenvironment{siglas}{%
+\newenvironment{abntexEnvSiglas}{%
   \ABNTEXpretextualchapter{\ABNTEXlistadesiglasname}
   \begin{symbols}
 }{%
@@ -808,7 +808,7 @@
 }
 
 % Lista de simbolos
-\newenvironment{simbolos}{%
+\newenvironment{abntexEnvSimbolos}{%
   \ABNTEXpretextualchapter{\ABNTEXlistadesimbolosname}
   \begin{symbols}
 }{%
@@ -842,7 +842,7 @@
  \appendix
 }
 % Apendices - ambiente
-\newenvironment{apendicesenv}{%
+\newenvironment{abntexEnvApendicesenv}{%
  \ABNTEXPRIVATEapendiceconfig{\ABNTEXapendicename}{\ABNTEXapendicesname}
  \begin{appendix}
 }{%
@@ -860,7 +860,7 @@
  \renewcommand\theHchapter{anexochapback.\arabic{chapter}}
 }
 % Anexos - ambiente
-\newenvironment{anexosenv}{%
+\newenvironment{abntexEnvAnexosenv}{%
  \cftinserthook{toc}{AAA}
 
  \ABNTEXPRIVATEapendiceconfig{\ABNTEXanexoname}{\ABNTEXanexosname}
@@ -957,7 +957,7 @@
 
 % Impressão da Capa
 \newcommand{\ABNTEXimprimircapa}{%
-  \begin{capa}%
+  \begin{abntexEnvCapa}%
     \center
     \ABNTEXchapterfont\large\theauthor
 
@@ -972,7 +972,7 @@
     \large\ABNTEXimprimirdata
 
     \vspace*{1cm}
-  \end{capa}
+  \end{abntexEnvCapa}
 }
 
 % Folha de rosto
@@ -980,8 +980,8 @@
 %   página no caso de estar no modo twoside. Util para imprimir a Ficha
 %   Bibliografica. Porem, se estiver no modo oneside, a versao sem estrela
 %   é identica.
-\newenvironment{folhaderosto}[1][\ABNTEXfolhaderostoname]{\clearpage\ABNTEXPRIVATEbookmarkthis{#1}}{\cleardoublepage}
-\newenvironment{folhaderosto*}[1][\ABNTEXfolhaderostoname]{\clearpage\ABNTEXPRIVATEbookmarkthis{#1}}{\newpage}%
+\newenvironment{abntexEnvFolhaderosto}[1][\ABNTEXfolhaderostoname]{\clearpage\ABNTEXPRIVATEbookmarkthis{#1}}{\cleardoublepage}
+\newenvironment{abntexEnvFolhaderosto*}[1][\ABNTEXfolhaderostoname]{\clearpage\ABNTEXPRIVATEbookmarkthis{#1}}{\newpage}%
 
 % Conteudo padrao da Folha de Rosto
 \newcommand{\ABNTEXfolhaderostocontent}{%
@@ -1022,15 +1022,15 @@
 }
 
 \newcommand{\ABNTEXimprimirFolhaDeRostostar}[1]{%
-  \begin{folhaderosto*}{#1}
+  \begin{abntexEnvFolhaderosto*}{#1}
      \ABNTEXfolhaderostocontent
-  \end{folhaderosto*}
+  \end{abntexEnvFolhaderosto*}
 }
 
 \newcommand{\ABNTEXimprimirFolhaDeRostonostar}[1]{%
-  \begin{folhaderosto}{#1}
+  \begin{abntexEnvFolhaderosto}{#1}
      \ABNTEXfolhaderostocontent
-  \end{folhaderosto}
+  \end{abntexEnvFolhaderosto}
 }
 
 \newcommand{\ABNTEXimprimirFolhaDeRosto}[1][\ABNTEXfolhaderostoname]{%

@@ -403,7 +403,7 @@
 % Set the UFSC epigrafe font size
 % Changing font size in an example environment
 % q/changing-font-size-in-an-example-environment
-\expandafter\def\expandafter\epigrafe\expandafter{\epigrafe\UFSCcaptionSize}
+\expandafter\def\expandafter\abntexEnvEpigrafe\expandafter{\abntexEnvEpigrafe\UFSCcaptionSize}
 
 % Selects a roman (i.e., serifed) font family
 % \renewcommand{\rmdefault}{cmr}
@@ -463,7 +463,9 @@
 }
 
 % Tamanho da fonte para a epígrafe UFSC
-\expandafter\def\expandafter\epigrafe\expandafter{\epigrafe\ABNTEXfontereduzida}
+\expandafter\def\expandafter\abntexEnvEpigrafe\expandafter{%
+  \abntexEnvEpigrafe\ABNTEXfontereduzida
+}
 
 % Comando que simula a finalizacao de uma parte no bookmark e
 % adiciona espaco de \part no sumario
@@ -647,7 +649,7 @@
 \newcommand{\secref}[1]{Seção~\ref{#1}}     % Cross-reference of equations
 \newcommand{\defref}[1]{Definição~\ref{#1}} %
 
-\renewenvironment{resumo}[1][\ABNTEXresumoname]{%
+\renewenvironment{abntexEnvResumo}[1][\ABNTEXresumoname]{%
   % Fixed double bookmark entries as `\ABNTEXpretextualchapter`
   % bellow is already calling `\ABNTEXPRIVATEbookmarkthis`
   % \ABNTEXPRIVATEbookmarkthis{#1}
@@ -745,7 +747,7 @@
 
 % Impressão da Capa
 \renewcommand{\ABNTEXimprimircapa}{%
-  \begin{capa}%
+  \begin{abntexEnvCapa}%
 
     \center
     {%
@@ -779,7 +781,7 @@
       \imprimirano\par
     }
     \vspace*{1cm}
-  \end{capa}
+  \end{abntexEnvCapa}
 }
 
 % Conteúdo padrao da Folha de Rosto
@@ -1722,7 +1724,7 @@
 \newcommand{\siglalista}[2]{\newacronym{#1}{#1}{#2}}
 
 % q/printnoidxglossaries-vs-printglossaries
-\newglossary{simbolos}{simbolos}{sbl}{simbolos}
+\newglossary{abntexEnvSimbolos}{abntexEnvSimbolos}{sbl}{abntexEnvSimbolos}
 
 % Só dá entrada na lista. Ainda não funciona com o limarka
 % q/printnoidxglossaries-vs-printglossaries

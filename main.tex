@@ -210,13 +210,13 @@ section=TITLE, % Título de seções em caixa alta
 % https://en.wikibooks.org/wiki/TeX/includeonly
 \newif\ifforcedinclude\forcedincludefalse
 
-% \addtoincludeonly{agradecimentos}
-% \addtoincludeonly{epigrafe}
-% \addtoincludeonly{fichacatalografica}
-% \addtoincludeonly{folhadeaprovacao}
+% \addtoincludeonly{abntexEnvAgradecimentos}
+% \addtoincludeonly{abntexEnvEpigrafe}
+% \addtoincludeonly{abntexEnvFichacatalografica}
+% \addtoincludeonly{abntexEnvFolhadeaprovacao}
 % \addtoincludeonly{resumos}
-% \addtoincludeonly{siglas}
-% \addtoincludeonly{simbolos}
+% \addtoincludeonly{abntexEnvSiglas}
+% \addtoincludeonly{abntexEnvSimbolos}
 
 % Part 1
 % \addtoincludeonly{introduction}
@@ -665,7 +665,7 @@ section=TITLE, % Título de seções em caixa alta
     %   \glossary
     % \fi
 
-    \begin{apendicesenv}
+    \begin{abntexEnvApendicesenv}
       % Imprime uma página indicando o início dos apêndices
       \ifforcedinclude\else
         \ABNTEXpartapendices
@@ -675,9 +675,9 @@ section=TITLE, % Título de seções em caixa alta
       \setlength\afterchapskip{20pt}
 
       \include{18_apendice_a.tex}
-    \end{apendicesenv}
+    \end{abntexEnvApendicesenv}
 
-    \begin{anexosenv}
+    \begin{abntexEnvAnexosenv}
       % Imprime uma página indicando o início dos anexos
       \ifforcedinclude\else
         \ABNTEXpartanexos
@@ -688,7 +688,7 @@ section=TITLE, % Título de seções em caixa alta
 
       \include{19_anexo_a.tex}
       \include{19_anexo_b.tex}
-    \end{anexosenv}
+    \end{abntexEnvAnexosenv}
 
     % INDICE REMISSIVO
     \ifforcedinclude\else
