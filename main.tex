@@ -338,28 +338,28 @@ section=TITLE, % Título de seções em caixa alta
 }
 
 \begin{document}
-    % FIXME: Comment this after finishing the thesis,
-    %        so you can start fixing the \flushbottom vs \raggedbottom
-    % q/flushbottom-vs-raggedbottom
-    \raggedbottom
+  % FIXME: Comment this after finishing the thesis,
+  %        so you can start fixing the \flushbottom vs \raggedbottom
+  % q/flushbottom-vs-raggedbottom
+  \raggedbottom
 
-    % q/double-space-between-sentences
-    \frenchspacing
+  % q/double-space-between-sentences
+  \frenchspacing
 
-    % Uncomment this to put a ←← | ← (Go To Top/Go Back) on each section header
-    \ifadvisor\else
-      \addGoToSummary
-    \fi
+  % Uncomment this to put a ←← | ← (Go To Top/Go Back) on each section header
+  \ifadvisor\else
+    \addGoToSummary
+  \fi
 
-    % ELEMENTOS PRÉ-TEXTUAIS
-    \ifforcedinclude\else
-      % Fix the \textpreliminarycontents not showing up when @twoside is off
-      \newif\ifufscThesisXisMemoirTwoSidesEnabled
+  % ELEMENTOS PRÉ-TEXTUAIS
+  \ifforcedinclude\else
+    % Fix the \textpreliminarycontents not showing up when @twoside is off
+    \newif\ifufscThesisXisMemoirTwoSidesEnabled
 
-      % q/how-do-i-check-if-a-document-is-oneside-or-twoside
-      \ifthenelse{\boolean{@twoside}}{%
-        \ufscThesisXisMemoirTwoSidesEnabledtrue%
-      }{%
+    % q/how-do-i-check-if-a-document-is-oneside-or-twoside
+    \ifthenelse{\boolean{@twoside}}{%
+      \ufscThesisXisMemoirTwoSidesEnabledtrue%
+    }{%
         \ufscThesisXisMemoirTwoSidesEnabledfalse%
       }%
       \setboolean{@twoside}{true}
