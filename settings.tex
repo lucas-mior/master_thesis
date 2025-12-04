@@ -4,10 +4,10 @@
 \makeatletter
 
 % Uncomment this if you are debugging pages' badness Underfull & Overflow
-% questions/115908/geometry-showframe-landscape
-% questions/387077/what-is-the-difference-between-usepackageshowframe-and-usepackageshowframe
-% questions/387257/how-to-do-the-memoir-headings-fix-but-not-have-my-text-going-over-the-page-botto
-% questions/14508/print-page-margins-of-a-document
+% q/geometry-showframe-landscape
+% q/what-is-the-difference-between-usepackageshowframe-and-usepackageshowframe
+% q/how-to-do-the-memoir-headings-fix-but-not-have-my-text-going-over-the-page-botto
+% q/print-page-margins-of-a-document
 % \usepackage[showframe,pass]{geometry}
 
 % To use the font Times New Roman, instead of the default LaTeX font
@@ -15,12 +15,12 @@
 \usepackage{newtxtext}
 \usepackage{newtxmath}
 
-% questions/182569/how-to-manually-set-where-a-word-is-split
+% q/how-to-manually-set-where-a-word-is-split
 \hyphenation{Ge-la-im}
 \hyphenation{Cis-la-ghi}
 
 % Add missing translations for Portuguese
-% questions/8564/what-is-the-right-way-to-redefine-macros-defined-by-babel
+% q/what-is-the-right-way-to-redefine-macros-defined-by-babel
 \@ifpackageloaded{babel}{\@ifpackagewith{babel}{brazil}{\addto\captionsbrazil{%
   \renewcommand{\mytextpreliminarylistname}{Breve Sumário}
 }}{}}{}
@@ -33,7 +33,7 @@
 % \renewcommand{\ttdefault}{cmtt}
 
 % Spacing between lines and paragraphs
-% questions/70212/ifpackageloaded-question
+% q/ifpackageloaded-question
 \@ifclassloaded{memoir}
 {
   % New custom chapter style VZ14, see other chapters styles in:
@@ -87,8 +87,8 @@
 % Default value for UFSC 1.5cm
 % \setlength{\parindent}{1.3cm}
 
-% questions/148647/how-to-remove-space-before-enumerate
-% questions/433543/behaviour-of-enumitem-setlist
+% q/how-to-remove-space-before-enumerate
+% q/behaviour-of-enumitem-setlist
 \advisor{}{
     \setlist*[enumerate]{label=\arabic*,}
     \setlist*[enumerateoptional]{label=\arabic*,}
@@ -153,12 +153,12 @@
 % Filtering and Mapping Bibliographies
 % \DeclareFieldFormat{url}{Disponível~em:\addspace\url{#1}}
 
-% questions/517526/how-to-make-biblatex-url-links-generated-with-brackets-around-it-url-correctly
+% q/how-to-make-biblatex-url-links-generated-with-brackets-around-it-url-correctly
 \DeclareFieldFormat{url}{\bibstring{urlfrom}\addcolon\space\textless\url{#1}\textgreater}
 \DefineBibliographyStrings{brazil}{urlfrom = {Disponível em}}
 \DefineBibliographyStrings{english}{urlfrom = {Available from}}
 
-% questions/391695/is-possible-to-remove-the-link-color-of-the-comma-on-the-citation-link
+% q/is-possible-to-remove-the-link-color-of-the-comma-on-the-citation-link
 % \DeclareFieldFormat{citehyperref}{#1}
 
 % % questions/203764/reduce-font-size-of-bibliography-overfull-bibliography
@@ -167,7 +167,7 @@
 
 % Uncomment this to insert the abstract
 % into your bibliography entries when the abstract is available
-% questions/398666/how-to-correctly-insert-and-justify-abstract
+% q/how-to-correctly-insert-and-justify-abstract
 \ifadvisor
 \else
   \DeclareFieldFormat{abstract}%
@@ -246,7 +246,7 @@
   }{}
 \fi
 
-% questions/516056/why-an-empty-or-not-biblatex-declaresourcemap-is-removing-my-bibliography-acces
+% q/why-an-empty-or-not-biblatex-declaresourcemap-is-removing-my-bibliography-acces
 % https://github.com/abntex/biblatex-abnt/pull/56/files
 \DeclareStyleSourcemap{%% >>>2
   % This maps some fields used in abntex2cite to biblatex fields.
@@ -313,7 +313,7 @@
   }%
 }% <<<2
 
-% questions/14314/changing-the-font-of-the-numbers-in-the-toc-in-the-memoir-class
+% q/changing-the-font-of-the-numbers-in-the-toc-in-the-memoir-class
 \renewcommand{\cftpartfont}{\ABNTEXpartfont\color{black}}
 \renewcommand{\cftpartpagefont}{\ABNTEXpartfont\color{black}}
 
@@ -339,8 +339,8 @@
 % enough for the largest number, with the necessary spacing to separate it from
 % what comes after it in the line.
 % http://www.tex.ac.uk/FAQ-tocloftwrong.html
-% questions/264668/memoir-indentation-of-unnumbered-sections-in-table-of-contents
-% questions/394227/memoir-toc-indent-the-second-line-by-numberspace
+% q/memoir-indentation-of-unnumbered-sections-in-table-of-contents
+% q/memoir-toc-indent-the-second-line-by-numberspace
 %
 % `\cftlastnumwidth` and these `\cftsetindents` are defined by the abntex2
 % class, obeying the `ABNTEXsumario-abnt-6027-2012`.

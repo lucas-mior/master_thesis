@@ -25,10 +25,10 @@
 
 % Initially translated from Portuguese with help of
 % https://github.com/omegat-org/omegat
-% questions/313732/computer-assisted-translation-of-latex-document
+% q/computer-assisted-translation-of-latex-document
 
 % Allows you to write your thesis both in English and Portuguese
-% questions/5076/is-it-possible-to-keep-my-translation-together-with-original-text
+% q/is-it-possible-to-keep-my-translation-together-with-original-text
 \newif\ifenglish\englishfalse
 \newif\ifadvisor\advisorfalse
 
@@ -36,13 +36,13 @@
 % \englishtrue
 \advisortrue
 
-% questions/131002/how-to-expand-ifthenelse-so-that-it-can-be-used-in-parshape
+% q/how-to-expand-ifthenelse-so-that-it-can-be-used-in-parshape
 \newcommand{\lang}[2]{\ifenglish#1\else#2\fi}
 \newcommand{\advisor}[2]{\ifadvisor#1\else#2\fi}
 
-% questions/385895/how-to-make-passoptionstopackage-add-the-option-as-the-last
-% questions/484400/changing-the-cleveref-package-language-conjunction-definition
-% questions/516058/why-isnt-my-biblatex-language-changing-when-passing-the-language-on-my-document
+% q/how-to-make-passoptionstopackage-add-the-option-as-the-last
+% q/changing-the-cleveref-package-language-conjunction-definition
+% q/why-isnt-my-biblatex-language-changing-when-passing-the-language-on-my-document
 \ifenglish
     \PassOptionsToPackage{brazil,main=english}{babel}
 \else
@@ -50,13 +50,13 @@
 \fi
 
 % Simple alias for English and Portuguese words
-% questions/513019/argument-of-bbltempd-has-an-extra
+% q/argument-of-bbltempd-has-an-extra
 \newcommand{\brazilword}[1]{\protect\foreignlanguage{brazil}{#1}}
 \newcommand{\englishword}[1]{\protect\foreignlanguage{english}{#1}}
 
 % Allow you to write `Evandro's house` in latex as `Evandro\s house` instead of
 % `Evandro\textquotesingle{}s house`
-% questions/31091/space-after-latex-commands
+% q/space-after-latex-commands
 \newcommand{\s}[0]{\textquotesingle{}s\xspace}
 \newcommand{\q}[0]{\textquotesingle{}\xspace}
 
@@ -67,7 +67,7 @@
 %                       backref=true,
 %                       citecounter=true}{biblatex}
 \documentclass[
-% questions/484400/changing-the-cleveref-package-language-conjunction-definition
+% q/changing-the-cleveref-package-language-conjunction-definition
 \lang{english}{brazilian,brazil},
 12pt, % Padrão UFSC para versão final
 a4paper, % Padrão UFSC para versão final
@@ -155,9 +155,9 @@ section=TITLE, % Título de seções em caixa alta
 }
 
 % Allows you to use ~= instead of `\hyp{}`
-% questions/488008/how-to-create-an-alternative-to-shortcut-or-hyp
-% questions/405718/depending-on-babel-language-setting-i-get-biblatex-error-argument-of-language
-% questions/340661/argument-of-languageactivearg-has-an-extra-i-use-includegraphics-and-r
+% q/how-to-create-an-alternative-to-shortcut-or-hyp
+% q/depending-on-babel-language-setting-i-get-biblatex-error-argument-of-language
+% q/argument-of-languageactivearg-has-an-extra-i-use-includegraphics-and-r
 \useshorthands{~}\defineshorthand{~=}{\hyp{}}
 
 \palavraschaveufsc{palavraschaveingles}   {Keyword 1}
@@ -215,25 +215,25 @@ section=TITLE, % Título de seções em caixa alta
 % \doincludeonly
 % \forcedincludetrue
 
-% questions/85113/xrightarrow-text
+% q/xrightarrow-text
 \makeatletter
 \newcommand{\xRightarrow}[2][]{\ext@arrow 0359\Rightarrowfill@{#1}{#2}}
 \newcommand{\xLeftarrow}[2][]{\ext@arrow 0359\Leftarrowfill@{#1}{#2}}
 \makeatother
 
-% questions/32208/footnote-runs-onto-second-page
+% q/footnote-runs-onto-second-page
 \interfootnotelinepenalty=10000
 
 % Disable the empty pages automatically put by memoir class,
 % except the ones by \cleardoublepage
 \ifforcedinclude\openany\else\fi
 
-% questions/171999/overfull-hbox-in-biblatex
-% questions/499457/why-my-document-is-not-hyphenation-on-words-starting-with-upper-case-letter-i
+% q/overfull-hbox-in-biblatex
+% q/why-my-document-is-not-hyphenation-on-words-starting-with-upper-case-letter-i
 \emergencystretch=5em
 
-% questions/23313/how-can-i-reduce-padding-after-figure
-% questions/499580/how-to-keep-my-default-floating-environment-spacing-before-them-while-reducing
+% q/how-can-i-reduce-padding-after-figure
+% q/how-to-keep-my-default-floating-environment-spacing-before-them-while-reducing
 % \xpretocmd{\figure}{\setlength{\belowcaptionskip}{-10pt}}{}{}
 
 \renewcommand\familydefault{\sfdefault}
