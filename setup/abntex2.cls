@@ -1020,7 +1020,10 @@
        \vspace*{\fill}
     }%
 
-    {\abntex@UFSCifNotEmpty{\abnteximprimirinstituicao}{\abnteximprimirinstituicao\vspace*{\fill}}}
+    {%
+      \abntex@UFSCifNotEmpty{\abnteximprimirinstituicao}
+                            {\abnteximprimirinstituicao\vspace*{\fill}}
+    }
 
     {\large\abnteximprimirorientadorRotulo~\abnteximprimirorientador\par}
     \abntex@UFSCifNotEmpty{\abnteximprimircoorientador}{%
