@@ -539,30 +539,30 @@ section=TITLE, % Título de seções em caixa alta
     \label{primeira_parte}
 
     % Introdução (exemplo de capítulo sem numeração, mas presente no Sumário)
-    \include{15intro.tex}
+    \include{15a_intro.tex}
 
     % Capitulo com exemplos de comandos inseridos de arquivo externo
-    \include{15chapter_1.tex}
+    \include{15b_chapter_1.tex}
 
     % Capitulo de revisão de literatura
-    \include{15chapter_2.tex}
+    \include{15b_chapter_2.tex}
 
     % Primeiro capitulo de Resultados
-    \include{15chapter_3.tex}
+    \include{15b_chapter_3.tex}
 
     % PARTE
     \ifforcedinclude\else\part{\lang{Implementation}{Implementação}}\fi
     \label{segunda_parte}
 
     % Segundo capitulo de Resultados
-    \include{15chapter_4.tex}
+    \include{15b_chapter_4.tex}
 
     % Finaliza a parte no bookmark do PDF para que se inicie o bookmark na raiz
     % e adiciona espaço de parte no Sumário
     \phantompart
 
     % Conclusão (outro exemplo de capítulo sem numeração e presente no sumário)
-    \include{15conclusion.tex}
+    \include{15z_conclusion.tex}
 
     % ELEMENTOS PÓS-TEXTUAIS
     \postextual

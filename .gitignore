@@ -21,3 +21,5 @@ latexcache/
 *.pdf
 *.xcf
 *.png
+*.jpg
+tags
