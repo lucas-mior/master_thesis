@@ -1,8 +1,9 @@
 \newcommand{\imprimirbrazilabstract}{%
-    \cleardoublepage\phantomsection
+    \cleardoublepage
+    \phantomsection
     \addtotextpreliminarycontent{Resumo em Português}
     \begin{otherlanguage*}{brazil}
-    \begin{abntexEnvResumo}[Resumo]
+      \begin{abntexEnvResumo}[Resumo]
 
         Segundo a \textcite[3.1-3.2]{NBR6028:2003}, o resumo deve ressaltar o
         objetivo, o método, os resultados e as conclusões do documento. A ordem
@@ -24,14 +25,15 @@
         \UFSCimprimirPalavrasChave{Palavras-chaves}
         {\begin{inparaitem}[]\palavraschaveportugues\end{inparaitem}}
 
-    \end{abntexEnvResumo}
+      \end{abntexEnvResumo}
     \end{otherlanguage*}
 }
 
 \newcommand{\imprimirenglishabstract}{%
     % q/changing-babel-package-inside-a-single-chapter
     % q/multiple-language-document-babel-selectlanguage-vs-begin-endotherlanguage
-    \cleardoublepage\phantomsection
+    \cleardoublepage
+    \phantomsection
     \addtotextpreliminarycontent{English's Abstract}
     \begin{otherlanguage*}{english}
     \begin{abntexEnvResumo}[Abstract]
