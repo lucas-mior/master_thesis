@@ -716,8 +716,8 @@
 % ------------------------------------------------------------------------
 
 % Comandos de dados - titulo do documento
-\newcommand{\ABNTEXtituloestrangeiro}[1]{\providecommand{\theforeigntitle}{#1}}
-\newcommand{\ABNTEXimprimirtituloestrangeiro}{\theforeigntitle}
+\newcommand{\ABNTEXtituloestrangeiro}[1]{\providecommand{\abntextheforeigntitle}{#1}}
+\newcommand{\ABNTEXimprimirtituloestrangeiro}{\abntextheforeigntitle}
 
 % Comandos de dados - data
 \let\olddate\date
@@ -726,34 +726,34 @@
 \newcommand{\ABNTEXimprimirdata}{\thedate}
 
 % Comandos de dados - instituicao
-\providecommand{\imprimirinstituicao}{}
-\newcommand{\ABNTEXinstituicao}[1]{\renewcommand{\imprimirinstituicao}{#1}}
+\providecommand{\abnteximprimirinstituicao}{}
+\newcommand{\ABNTEXinstituicao}[1]{\renewcommand{\abnteximprimirinstituicao}{#1}}
 
 % Comandos de dados - local
-\providecommand{\imprimirlocal}{}
-\newcommand{\ABNTEXlocal}[1]{\renewcommand{\imprimirlocal}{#1}}
+\providecommand{\abnteximprimirlocal}{}
+\newcommand{\ABNTEXlocal}[1]{\renewcommand{\abnteximprimirlocal}{#1}}
 
 % Comandos de dados - preambulo
-\providecommand{\imprimirpreambulo}{}
-\newcommand{\ABNTEXpreambulo}[1]{\renewcommand{\imprimirpreambulo}{#1}}
+\providecommand{\abnteximprimirpreambulo}{}
+\newcommand{\ABNTEXpreambulo}[1]{\renewcommand{\abnteximprimirpreambulo}{#1}}
 
 % Comandos de dados - orientador
-\providecommand{\imprimirorientadorRotulo}{}
-\providecommand{\imprimirorientador}{}
+\providecommand{\abnteximprimirorientadorRotulo}{}
+\providecommand{\abnteximprimirorientador}{}
 \newcommand{\ABNTEXorientador}[2][\ABNTEXorientadorname]%
-  {\renewcommand{\imprimirorientadorRotulo}{#1}%
-   \renewcommand{\imprimirorientador}{#2}}
+  {\renewcommand{\abnteximprimirorientadorRotulo}{#1}%
+   \renewcommand{\abnteximprimirorientador}{#2}}
 
 % Comandos de dados - coorientador
-\providecommand{\imprimircoorientadorRotulo}{}
-\providecommand{\imprimircoorientador}{}
+\providecommand{\abnteximprimircoorientadorRotulo}{}
+\providecommand{\abnteximprimircoorientador}{}
 \newcommand{\ABNTEXcoorientador}[2][\ABNTEXcoorientadorname]%
-  {\renewcommand{\imprimircoorientadorRotulo}{#1}%
-   \renewcommand{\imprimircoorientador}{#2}}
+  {\renewcommand{\abnteximprimircoorientadorRotulo}{#1}%
+   \renewcommand{\abnteximprimircoorientador}{#2}}
 
 % Comandos de dados - tipo de trabalho
-\providecommand{\imprimirtipotrabalho}{}
-\newcommand{\ABNTEXtipotrabalho}[1]{\renewcommand{\imprimirtipotrabalho}{#1}}
+\providecommand{\abnteximprimirtipotrabalho}{}
+\newcommand{\ABNTEXtipotrabalho}[1]{\renewcommand{\abnteximprimirtipotrabalho}{#1}}
 
 % ------------------------------------------------------------------------
 % Comandos e ambientes de editoracao PRE-TEXTUAIS
@@ -767,7 +767,7 @@
 % ---
 % Titulos em lingua estrangeira para artigos: ABNT NBR 6022:2018
 \ifthenelse{\equal{\ABNTEXisarticle}{true}}{%
-\renewcommand{\maketitlehookb}{\LARGE\center\textit{\theforeigntitle}}
+\renewcommand{\maketitlehookb}{\LARGE\center\textit{\abntextheforeigntitle}}
 }{}
 % ---
 
@@ -1049,7 +1049,7 @@
     \end{center}
     \vfill
 
-    \large\imprimirlocal
+    \large\abnteximprimirlocal
 
     \large\ABNTEXimprimirdata
 
@@ -1081,24 +1081,24 @@
     \end{center}
     \vspace*{\fill}
 
-    \abntex@UFSCifNotEmpty{\imprimirpreambulo}{%
+    \abntex@UFSCifNotEmpty{\abnteximprimirpreambulo}{%
       \hspace{.45\textwidth}
       \begin{minipage}{.5\textwidth}
         \SingleSpacing
-         \imprimirpreambulo
+         \abnteximprimirpreambulo
        \end{minipage}%
        \vspace*{\fill}
     }%
 
-    {\abntex@UFSCifNotEmpty{\imprimirinstituicao}{\imprimirinstituicao\vspace*{\fill}}}
+    {\abntex@UFSCifNotEmpty{\abnteximprimirinstituicao}{\abnteximprimirinstituicao\vspace*{\fill}}}
 
-    {\large\imprimirorientadorRotulo~\imprimirorientador\par}
-    \abntex@UFSCifNotEmpty{\imprimircoorientador}{%
-       {\large\imprimircoorientadorRotulo~\imprimircoorientador}%
+    {\large\abnteximprimirorientadorRotulo~\abnteximprimirorientador\par}
+    \abntex@UFSCifNotEmpty{\abnteximprimircoorientador}{%
+       {\large\abnteximprimircoorientadorRotulo~\abnteximprimircoorientador}%
     }%
     \vspace*{\fill}
 
-    {\large\imprimirlocal}
+    {\large\abnteximprimirlocal}
     \par
     {\large\ABNTEXimprimirdata}
     \vspace*{1cm}
