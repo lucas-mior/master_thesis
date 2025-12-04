@@ -385,32 +385,32 @@
 %\captiontitlefont{\ABNTEXfontereduzida}
 
 % Para uso com pacotes subfig e caption dentro do memoir se estes forem carregados ou não.
-% É necessário para que os comandos \IBGEtab e \abntex2fonte funcionem
+% É necessário para que os comandos \abntex2IBGEtab e \abntex2fonte funcionem
 % independente do carregamento de pacotes externos ao memoir que tratam captions.
-\newcommand{\IBGEtabfontsize}{\ABNTEXfontereduzida}
+\newcommand{\abntex2IBGEtabfontsize}{\ABNTEXfontereduzida}
 \AtBeginDocument{%
-  % comandos auxiliares para manipular os captions dentro do comando \IBGEtab.
+  % comandos auxiliares para manipular os captions dentro do comando \abntex2IBGEtab.
   \newcommand{\abntex2configurecaptions}{\captionstyle[\raggedright]{}}
   \newcommand{\abntex2configureseparator}{\captiondelim{\ABNTEXcaptiondelim}}
-  % Define o comando \IBGEtab{}{}{} com caption e legenda da largura do conteúdo tabular, tabular*, etc
+  % Define o comando \abntex2IBGEtab{}{}{} com caption e legenda da largura do conteúdo tabular, tabular*, etc
   % Parece funcionar com qualque pacote
   \newsavebox{\myptabbox}
   \newlength{\myptabboxwidth}
-  \newcommand{\IBGEtab}[3]{%
-    \savebox{\myptabbox}{{\IBGEtabfontsize #2}}%
+  \newcommand{\abntex2IBGEtab}[3]{%
+    \savebox{\myptabbox}{{\abntex2IBGEtabfontsize #2}}%
     \settowidth{\myptabboxwidth}{\usebox{\myptabbox}}%
     \centering%
     \parbox{\myptabboxwidth}{%
     \abntex2configurecaptions
     #1%
     \par%
-    {\IBGEtabfontsize%
+    {\abntex2IBGEtabfontsize%
     #2%
     }%
     \par%
     #3}%
   }
-  \let\abntex2ibgetab\IBGEtab
+  \let\abntex2ibgetab\abntex2IBGEtab
 }
 
 % Altera os comandos \abntex2configurecaptions e \abntex2configureseparator para trabalhar com
