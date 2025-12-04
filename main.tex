@@ -356,46 +356,46 @@ section=TITLE, % Título de seções em caixa alta
 
   % ELEMENTOS PRÉ-TEXTUAIS
   \ifforcedinclude\else
-  % Fix the \textpreliminarycontents not showing up when @twoside is off
-  \newif\ifufscThesisXisMemoirTwoSidesEnabled
+    % Fix the \textpreliminarycontents not showing up when @twoside is off
+    \newif\ifufscThesisXisMemoirTwoSidesEnabled
 
-  % q/how-do-i-check-if-a-document-is-oneside-or-twoside
-  \ifthenelse{\boolean{@twoside}}{%
-    \ufscThesisXisMemoirTwoSidesEnabledtrue%
-  }{%
-    \ufscThesisXisMemoirTwoSidesEnabledfalse%
-  }%
-  \setboolean{@twoside}{true}
+    % q/how-do-i-check-if-a-document-is-oneside-or-twoside
+    \ifthenelse{\boolean{@twoside}}{%
+      \ufscThesisXisMemoirTwoSidesEnabledtrue%
+    }{%
+      \ufscThesisXisMemoirTwoSidesEnabledfalse%
+    }%
+    \setboolean{@twoside}{true}
 
-  % pretextual settings
-  % q/how-to-fix-destination-with-the-same-identifier-namepage-a-has-been-already
-  % q/pdftex-warning-has-been-referenced-but-does-not-exist-replaced-by-a-fixed-one
-  \hypersetup{pageanchor=false}
-  \ABNTEXPRIVATEbookmarkthis{Capa}
-  \UFSCaddToTextPreliminaryContent{Capa}
-  \ABNTEXpretextual
+    % pretextual settings
+    % q/how-to-fix-destination-with-the-same-identifier-namepage-a-has-been-already
+    % q/pdftex-warning-has-been-referenced-but-does-not-exist-replaced-by-a-fixed-one
+    \hypersetup{pageanchor=false}
+    \ABNTEXPRIVATEbookmarkthis{Capa}
+    \UFSCaddToTextPreliminaryContent{Capa}
+    \ABNTEXpretextual
 
-  % \includepdf{fig/FrenteCapaUFSC.pdf}
-  % q/blank-page-after-titlingpage
-  \ifadvisor\else
-    \AtBeginShipoutNext{\AtBeginShipoutNext{\AtBeginShipoutDiscard}}
-  \fi
-  \ABNTEXimprimircapa
+    % \includepdf{fig/FrenteCapaUFSC.pdf}
+    % q/blank-page-after-titlingpage
+    \ifadvisor\else
+      \AtBeginShipoutNext{\AtBeginShipoutNext{\AtBeginShipoutDiscard}}
+    \fi
+    \ABNTEXimprimircapa
 
-  % q/how-to-fix-destination-with-the-same-identifier-namepage-a-has-been-already
-  % q/pdftex-warning-has-been-referenced-but-does-not-exist-replaced-by-a-fixed-one
-  \hypersetup{pageanchor=true}
+    % q/how-to-fix-destination-with-the-same-identifier-namepage-a-has-been-already
+    % q/pdftex-warning-has-been-referenced-but-does-not-exist-replaced-by-a-fixed-one
+    \hypersetup{pageanchor=true}
 
-  % Custom list throw LaTeX Error:
-  % Command \mycustomfiction already defined?
-  % q/custom-list-throw-latex-error-command-mycustomfiction-already-defined
-  \ifadvisor\else
-    % Manually add the `\textpreliminarycontents` to the Table of
-    % Contents here to keep the hyper link pointing to the beginning of
-    % the page, instead of the beginning of `\textpreliminarycontents`
-    % q/when-do-i-need-to-invoke-phantomsection
-    \phantomsection\addcontentsline{toc}{chapter}
-      {\UFSCtextPreliminaryListName}
+    % Custom list throw LaTeX Error:
+    % Command \mycustomfiction already defined?
+    % q/custom-list-throw-latex-error-command-mycustomfiction-already-defined
+    \ifadvisor\else
+      % Manually add the `\textpreliminarycontents` to the Table of
+      % Contents here to keep the hyper link pointing to the beginning of
+      % the page, instead of the beginning of `\textpreliminarycontents`
+      % q/when-do-i-need-to-invoke-phantomsection
+      \phantomsection\addcontentsline{toc}{chapter}
+        {\UFSCtextPreliminaryListName}
 
       % q/list-of-figures-and-tables-when-there-are-no-figures-or-tables
       \whenlistisnotempty{\UFSCtextPreliminaryListName}{%
