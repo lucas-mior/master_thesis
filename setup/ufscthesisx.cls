@@ -968,12 +968,15 @@
 \patchcmd{\chapternumberline}{\@cftasnumb}{%
   \@cftasnumb%
   \@chapapp@extrahyphenspaces%
+}{%
+  \message{%
+    ^^J^^JChapterformat patch 4 for chapternumberline could SUCCESSFULLY!^^J % ^^J^^J^^J
+  }%
+}{%
+  \message{%
+    ^^J^^JChapterformat patch 4 for chapternumberline could NOT be applied!^^J^^J^^J^^J
+  }%
 }
-{\message{^^J^^JChapterformat patch 4 for chapternumberline could SUCCESSFULLY!^^J
-% ^^J^^J^^J
-}}
-{\message{^^J^^JChapterformat patch 4 for chapternumberline could NOT be applied!^^J^^J^^J^^J
-}}
 
 % q/the-appendix-word-disappears-from-the-table-of-contents-when-using-include
 % q/whats-the-difference-between-newcommand-and-newcommand
