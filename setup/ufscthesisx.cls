@@ -2194,8 +2194,7 @@
 % but macro ttfamily is not hyphenating?
 % q/why-the-environment-ttfamily-is-hyphenated-but-macro-ttfamily-is-not-hyphenatin
 \LetLtxMacro\origttfamily\ttfamily
-\DeclareRobustCommand*{\ttfamily}
-{%
+\DeclareRobustCommand*{\ttfamily}{%
   \origttfamily
   \hyphenchar\font=`\-\relax
   \fontdimen3\font=.25em\relax
@@ -2203,8 +2202,7 @@
   \fontdimen7\font=.167em\relax
 }
 
-\DeclareRobustCommand\vttfamily
-{%
+\DeclareRobustCommand\vttfamily{%
   \not@math@alphabet\vttfamily\relax
   \fontfamily{cmvtt}% cmvtt (Computer Modern) or lmvtt (Latin Modern)
   \selectfont
@@ -2270,8 +2268,7 @@
 \@ifpackagewith{babel}{english}{ \def\englishhyphenmins{11} }{}
 \@ifpackagewith{babel}{french}{  \def\frenchhyphenmins{11} }{}
 
-\@ifpackageloaded{url}
-{
+\@ifpackageloaded{url}{
   % Bad formatting using URLs in bibtex
   % q/bad-formatting-using-urls-in-bibtex
   \usepackage{etoolbox}
