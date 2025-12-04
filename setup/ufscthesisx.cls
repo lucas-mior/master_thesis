@@ -30,11 +30,12 @@
 
 \makeatletter
 
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 %   PACKAGES AND OTHER DOCUMENT CONFIGURATIONS BEFORE LOADING abntex2
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 
-% For web links and paths with \path{..} and \url{https://www.python.org/downloads/}
+% For web links and paths with \path{..}
+% and \url{https://www.python.org/downloads/}
 % ftp://tug.ctan.org/pub/tex-archive/macros/latex/contrib/hyperref/doc/options.pdf
 % q/forcing-linebreaks-in-url
 % q/applying-options-to-already-loaded-package
@@ -50,19 +51,21 @@
 \PassOptionsToPackage{hyperfootnotes=false}{hyperref}
 
 % The class `abntex2` loads the `enumitem` package with options.
-% With the package option shortlabels you can use an enumerate-like syntax, where A, a, I, i and 1
-% stand for \Alph*, \alph*, \Roman*, \roman* and \arabic*. This is intended mainly as a sort of
-% compatibility mode with the enumerate package, and therefore the following special rule applies:
-% if the very first option (at any level) is not recognized as a valid key, then it will be
-% considered a label with the enumerate-like syntax.
+% With the package option shortlabels you can use an enumerate-like syntax,
+% where A, a, I, i and 1 stand for \Alph*, \alph*, \Roman*, \roman* and
+% \arabic*. This is intended mainly as a sort of compatibility mode with the
+% enumerate package, and therefore the following special rule applies: if the
+% very first option (at any level) is not recognized as a valid key, then it
+% will be considered a label with the enumerate-like syntax.
 % q/no-spacing-between-enumerated-items-with-usepackageenumerate
 \PassOptionsToPackage{shortlabels}{enumitem}
 
-% Fixes `pdfTeX warning (ext4): destination with the same identifier (name{figure.1.1}) has been
-% already used, duplicate ignored`.
+% Fixes `pdfTeX warning (ext4):
+% destination with the same identifier (name{figure.1.1}) has been already used,
+% duplicate ignored`.
 %
-% The `abntex2` package loads the `hyperref` package, however there are several packages which are
-% required to be loaded after and before `hyperref`.
+% The `abntex2` package loads the `hyperref` package, however there are several
+% packages which are required to be loaded after and before `hyperref`.
 %
 % q/which-packages-should-be-loaded-after-hyperref-instead-of-before
 % q/hyperref-is-loaded-by-the-class-and-i-need-to-load-packages-that-are-supposed-t
@@ -73,7 +76,8 @@
   \RequirePackage{float}
 }
 
-% The class `abntex2` loads the package `enumitem`, but `paralist` must be loaded before it
+% The class `abntex2`
+% loads the package `enumitem`, but `paralist` must be loaded before it
 % q/compilation-error-when-including-enumitem-and-paralist-packages
 \AfterClass{memoir}
 {
@@ -92,7 +96,11 @@
   \message{Have options been passed for biblatex? YES!^^J}
 \else
   \message{Have options been passed for biblatex? NO!^^J}
-  \PassOptionsToPackage{style=abnt,backend=biber,repeatfields=true,backref=true,citecounter=true}{biblatex}
+  \PassOptionsToPackage{style=abnt,
+                        backend=biber,
+                        repeatfields=true,
+                        backref=true,
+                        citecounter=true}{biblatex}
 \fi
 
 \AfterClass{memoir}
@@ -100,7 +108,8 @@
   \RequirePackage{biblatex}
 }
 
-% Package longtable must be put before hyperref and arydshln, hyperref after arydshln generates an error
+% Package longtable must be put before hyperref and arydshln,
+% hyperref after arydshln generates an error
 % http://ctan.sharelatex.com/tex-archive/macros/latex/contrib/hyperref/README.pdf
 \AfterClass{memoir}
 {
@@ -211,8 +220,8 @@
   }\expandafter\x\@classoptionslist\@nil
   }
 \else
-  \PackageWarning{minted}{You must have `pygmentize' installed to use the minted package}
-  % \PackageError{minted}{You must have `pygmentize' installed to use the minted package}{Minted Error}
+  \PackageWarning{minted}
+  {You must have `pygmentize' installed to use the minted package}
 \fi
 
 % Custom list throw LaTeX Error: Command \mycustomfiction already defined?
@@ -235,7 +244,8 @@
 % q/please-tutor-the-usage-of-patchcmd-and-xpatch
 \RequirePackage{xpatch}
 
-% Why the environment ttfamily is hyphenated, but macro ttfamily is not hyphenating?
+% Why the environment ttfamily is hyphenated,
+% but macro ttfamily is not hyphenating?
 % q/why-the-environment-ttfamily-is-hyphenated-but-macro-ttfamily-is-not-hyphenatin
 \RequirePackage{letltxmacro}
 
@@ -255,7 +265,8 @@
 \RequirePackage{newfloat}
 \RequirePackage{caption}
 
-% How to auto adjust my last table column width, and why is there Underfull \vbox badness on this table?
+% How to auto adjust my last table column width,
+% and why is there Underfull \vbox badness on this table?
 % q/how-to-auto-adjust-my-last-table-column-width-and-why-is-there-underfull-vbox/387251
 %
 % Why ltablex package breaks the changepage package?
@@ -296,7 +307,7 @@
    \renewcommand{\imprimircoordenador}{#2}}
 
 % inclui subtitulo na capa, folha de rosto e ficha catalografica
-% https://github.com/lrsantos11/abntex2-ufsc/commit/fd30245353dcc49e193d281c78104afe54df9fe7
+% lrsantos11/abntex2-ufsc/commit/fd30245353dcc49e193d281c78104afe54df9fe7
 %
 % Cria o comando \subtitulo. A norma define que o TITULO deve ser em caixa alta
 % negrito, mas o subtitulo deve ser em caixa baixa.
@@ -351,7 +362,8 @@
 % Fontes dos títulos e seções
 % Tamanho da fonte padrão do 'ABNTEX'
 % q/set-font-size-and-line-spacing
-% Set the default font size as 12pt with 1.5cm spacing between lines, 12/2 = 6, 12+6 = 18, i.e., one half spacing
+% Set the default font size as 12pt
+% with 1.5cm spacing between lines, 12/2 = 6, 12+6 = 18, i.e., one half spacing
 % \renewcommand{\normalsize}{\fontsize{12pt}{16pt}\selectfont}
 % \renewcommand{\normalsize}{\fontsize{12.0pt}{18.0pt}\selectfont}
 
@@ -452,19 +464,22 @@
 
 % No caso de Sumario (TOC) UFSC
 %
-% Memoir has another mechanism for the job: \cftsetindents{‹kind›}{indent}{numwidth}. Here kind is
-% chapter, section, or whatever; the indent specifies the ‘margin’ before the entry starts; and the
-% width is of the box into which the number is typeset (so needs to be wide enough for the largest
-% number, with the necessary spacing to separate it from what comes after it in the line.
+% Memoir has another mechanism for the job:
+% \cftsetindents{‹kind›}{indent}{numwidth}. Here kind is chapter, section, or
+% whatever; the indent specifies the ‘margin’ before the entry starts; and the
+% width is of the box into which the number is typeset (so needs to be wide
+% enough for the largest number, with the necessary spacing to separate it from
+% what comes after it in the line.
 % http://www.tex.ac.uk/FAQ-tocloftwrong.html
 %
 % memoir: indentation of unnumbered sections in table of contents
 % q/memoir-indentation-of-unnumbered-sections-in-table-of-contents
 %
-% Memoir ToC: indent the second line by number+space width in the previous line OR set standard
+% Memoir ToC: indent the second line by number+space width
+% in the previous line OR set standard
 % q/memoir-toc-indent-the-second-line-by-numberspace
 
-% `\cftlastnumwidth` and these `\cftsetindents` are defined by the abntex2 class,
+% `\cftlastnumwidth` and these `\cftsetindents` are defined by abntex2 class,
 % obeying the `ABNTEXsumario-abnt-6027-2012`. \newlength{\cftlastnumwidth}
 \setlength{\cftlastnumwidth}{\cftsubsubsectionnumwidth}
 \addtolength{\cftlastnumwidth}{1em}
@@ -603,7 +618,8 @@
 
 \renewenvironment{resumo}[1][\resumoname]
 {%
-  % Fixed double bookmark entries as `\pretextualchapter` bellow is already calling `\PRIVATEbookmarkthis`
+  % Fixed double bookmark entries as `\pretextualchapter`
+  % bellow is already calling `\PRIVATEbookmarkthis`
   % \PRIVATEbookmarkthis{#1}
   % \renewcommand{\abstractnamefont}{\chaptitlefont}
   % \renewcommand{\abstractname}{\ABNTEXchapterupperifneeded{#1}}
@@ -673,7 +689,8 @@
 %% criar um novo estilo incluindo logos da UFSC
 % ------------------------------------------------------------------------
 
-% Configura layout para elementos textuais, redefining the ABNT command `\textual`.
+% Configura layout para elementos textuais,
+% redefining the ABNT command `\textual`.
 % Delete his to restore the ABNT default behavior.
 \renewcommand{\textual}
 {%
@@ -803,7 +820,8 @@
   \pdfstringdefDisableCommands{\let\uppercase\relax}
 }{}
 
-% Backward compatibility with `abntex2cite` package `\citeonline` command with the new `biblatex` package
+% Backward compatibility with `abntex2cite` package
+% `\citeonline` command with the new `biblatex` package
 % q/what-is-the-difference-between-def-and-newcommand
 \let\citeonline\textcite
 
@@ -871,7 +889,7 @@
 \definecolor{mauve}{rgb}{0.58,0,0.82}
 
 % Increase the space around the hyphen or dash - on the table of contents
-% APÊNDICE A –- SOMETHING . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+% APÊNDICE A –- SOMETHING . . . . . . . . . . . . . . . . . . . . . . . . . . 3
 %
 % q/how-to-increase-memoir-table-of-contents-spacing-between-appendix-and-its-hyphen
 % q/word-appendix-in-toc-with-memoir-class
@@ -919,14 +937,16 @@
   \renewcommand*{\cftappendixname}{\apendicename\space\space}
 }{}
 
-% Allows putting an [H] in \begin{figure} to specify the exact location of the figure
+% Allows putting an [H] in \begin{figure}
+% to specify the exact location of the figure
 % q/force-figure-placement-in-text
 %
 % Package float must be put before hyperref
 % http://ctan.sharelatex.com/tex-archive/macros/latex/contrib/hyperref/README.pdf
 \usepackage{float}
 
-% bigfoot.sty:61: Package hyperref Warning: Option `hyperfootnotes' has already been used
+% bigfoot.sty:61:
+% Package hyperref Warning: Option `hyperfootnotes' has already been used
 % q/bigfoot-sty61-package-hyperref-warning-option-hyperfootnotes-has-already-be
 \@ifpackageloaded{hyperref}{\hypersetup{hyperfootnotes=false}}{\PassOptionsToPackage{hyperfootnotes=false}{hyperref}}
 \usepackage{hyperref}
@@ -947,7 +967,8 @@
 % Use its macro adjustwidth* to extend tables out of outer text border.
 % q/how-to-write-a-table-a-little-larger-than-the-paragraphs-with-centered-columns
 %
-% The `memoir` class emulates this package, so not try to load it when using `memoir`, ifpackageloaded question
+% The `memoir` class emulates this package,
+% so not try to load it when using `memoir`, ifpackageloaded question
 % q/ifpackageloaded-question
 \@ifpackageloaded{changepage}{}{\usepackage[strict]{changepage}}
 
@@ -961,11 +982,12 @@
 % Replace the `paralist` package implementation of enumerate lists
 \usepackage{enumerate}
 
-% With the package option shortlabels you can use an enumerate-like syntax, where A, a, I, i and 1
-% stand for \Alph*, \alph*, \Roman*, \roman* and \arabic*. This is intended mainly as a sort of
-% compatibility mode with the enumerate package, and therefore the following special rule applies:
-% if the very first option (at any level) is not recognized as a valid key, then it will be
-% considered a label with the enumerate-like syntax.
+% With the package option shortlabels you can use an enumerate-like syntax,
+% where A, a, I, i and 1 stand for \Alph*, \alph*, \Roman*, \roman* and
+% \arabic*. This is intended mainly as a sort of compatibility mode with the
+% enumerate package, and therefore the following special rule applies: if the
+% very first option (at any level) is not recognized as a valid key, then it
+% will be considered a label with the enumerate-like syntax.
 %
 % No spacing between enumerated items with \usepackage{enumerate}
 % q/no-spacing-between-enumerated-items-with-usepackageenumerate
@@ -974,10 +996,13 @@
 \usepackage{tabularx}
 \usepackage{multirow}
 
-% The package supports the Text Companion fonts, which provide many text symbols (such as
-% baht, bullet, copyright, musicalnote, onequarter, section, and yen), in the TS1 encoding.
+% The package supports the Text Companion fonts,
+% which provide many text symbols
+% such as % baht, bullet, copyright, musicalnote, onequarter, section, and yen)
+% in the TS1 encoding.
 %
-% `LaTeX Error: Option clash for package textcomp` with the package `mathcomp`, it need to be loaded before it.
+% `LaTeX Error: Option clash for package textcomp` with the package `mathcomp`,
+% it need to be loaded before it.
 % q/how-do-you-resolve-the-error-in-latex-option-clash-for-package-inputenc-usepa
 % q/setting-familydefault-as-sfdefault-is-causing-the-arrow-character-%e2%86%92-to-throw-p
 \usepackage[full,warn]{textcomp}
@@ -1013,7 +1038,8 @@
 % Needs to be loaded after hyperref
 % http://ctan.sharelatex.com/tex-archive/macros/latex/contrib/hyperref/README.pdf
 %
-% Package incompatibilty between alphalph, and hyperref with amsmath subequations
+% Package incompatibilty between alphalph,
+% and hyperref with amsmath subequations
 % q/package-incompatibilty-between-alphalph-and-hyperref-with-amsmath-subequations
 \usepackage{amsmath}
 \let\equation\gather
@@ -1036,10 +1062,15 @@
 % A comprehensive (SI) units package
 \usepackage{siunitx}
 \sisetup{detect-all}
-\sisetup{scientific-notation = fixed, fixed-exponent = 0, round-mode = places,round-precision = 2,output-decimal-marker = {,} }
+\sisetup{scientific-notation = fixed,
+         fixed-exponent = 0,
+         round-mode = places,
+         round-precision = 2,
+         output-decimal-marker = {,} }
 \DeclareSIUnit \VA {VA} % apparent power
 
-% We need to load it after `siunitx` package, otherwise it will cause to the package `bigfoot` to throw
+% We need to load it after `siunitx` package,
+% otherwise it will cause to the package `bigfoot` to throw
 % the error `input stack size=5000`
 % q/while-loading-fancyvrb-siunitx-and-bigfoot-i-got-input-stack-size-5000-tex-st
 \usepackage{fancyvrb}
@@ -1139,7 +1170,9 @@
 
     \bool_if:nTF {#1}
     {
-      % (section, Section, sections or Sections) or (theorem, Theorem, ...) or...
+      % (section, Section, sections or Sections)
+      % or (theorem, Theorem, ...)
+      % or...
       \user_name_cref:xV
         { \bool_if:nTF {#2} { C } { c }
           ref
@@ -1348,7 +1381,7 @@
   % q/how-to-automatically-add-text-immediately-after-begindocument
   \AtBeginDocument{\calculateltableheader}
 
-  % http://tex.stackexchange.com/questions/228936/setting-entries-of-list-of-listings-in-latex-package-listings
+  % q/setting-entries-of-list-of-listings-in-latex-package-listings
   % q/you-cant-use-a-prefix-with-charfb-error-when-importing-csv-into-latex
   % q/why-latex-does-not-tell-me-which-command-is-undefined
   \@ifpackageloaded{babel}{\@ifpackagewith{babel}{brazil}{\addto\captionsbrazil{\renewcommand{\lstlistingname}{Código}}}{}}{}
@@ -1409,9 +1442,14 @@
 
   % q/minted-setstretch-and-font-size
   % q/how-to-change-overall-font-size-of-minted
-  \setminted{fontsize=\small,fontfamily=zi4,linenos=true,numberblanklines=true,breaklines=true,breakanywhere=true}
+  \setminted{fontsize=\small,
+             fontfamily=zi4,
+             linenos=true,
+             numberblanklines=true,
+             breaklines=true,
+             breakanywhere=true}
 
-  % https://stackoverflow.com/questions/3245007/how-to-change-the-font-size-of-line-numbers-using-the-minted-latex-package
+  % q/how-to-change-the-font-size-of-line-numbers-using-the-minted-latex-package
   \renewcommand\theFancyVerbLine{\normalsize\color{gray}\arabic{FancyVerbLine}}
 
   % q/adjust-vertical-spacing-between-caption-and-listing-in-koma-scrartcl
@@ -1587,7 +1625,8 @@
 % q/no-indent-in-the-first-paragraph-in-a-section
 \usepackage{indentfirst}
 
-% Why the environment ttfamily is hyphenated, but macro ttfamily is not hyphenating?
+% Why the environment ttfamily is hyphenated,
+% but macro ttfamily is not hyphenating?
 % q/why-the-environment-ttfamily-is-hyphenated-but-macro-ttfamily-is-not-hyphenatin
 \usepackage{letltxmacro}
 
@@ -1603,7 +1642,8 @@
 % q/how-to-make-section-name-uppercase-in-toc
 \usepackage{textcase}
 
-% The class memoir already provides these functionalities: Caption package and Memoir
+% The class memoir already provides these functionalities:
+% Caption package and Memoir
 % https://groups.google.com/forum/#!topic/comp.text.tex/RzpI2ATMev0
 % q/memoir-class-with-subcaption-and-hyperref-packages
 % \usepackage{subfig}
@@ -1613,7 +1653,8 @@
 % q/how-to-create-my-own-caption-type-with-declarecaptiontype-on-memoir-class
 \usepackage{caption}
 
-% The package `layouts` causes the: Warning: layout scale set to 0.5 on input line
+% The package `layouts` causes the
+% Warning: layout scale set to 0.5 on input line
 % q/warning-layout-scale-set-to-0-5-on-input-line
 % \usepackage{layouts}
 
@@ -1625,7 +1666,8 @@
 % q/how-to-add-babel-captions-to-newfloat-package-environments
 \usepackage{newfloat}
 
-% How to auto adjust my last table column width, and why is there Underfull \vbox badness on this table?
+% How to auto adjust my last table column width,
+% and why is there Underfull \vbox badness on this table?
 % q/how-to-auto-adjust-my-last-table-column-width-and-why-is-there-underfull-vbox/387251
 %
 % Why ltablex package breaks the changepage package?
@@ -1644,7 +1686,8 @@
 \usepackage{bigfoot}
 \let\hypersetup\truehypersetup
 
-% While loading fancyvrb, siunitx and bigfoot, I got input stack size=5000, TeX STOPPED: fatal errors occurred
+% While loading fancyvrb, siunitx and bigfoot,
+% I got input stack size=5000, TeX STOPPED: fatal errors occurred
 % q/while-loading-fancyvrb-siunitx-and-bigfoot-i-got-input-stack-size-5000-tex-st
 \xpatchcmd{\FN@allmarks}{266}{256}{}{}
 
@@ -1729,7 +1772,8 @@
 
 % Some text \brkurl{http://www.example.com/this/directory/here}
 %
-% How to break long URLs using common hyphenation but adding a line feed indicator?
+% How to break long URLs using common hyphenation
+% but adding a line feed indicator?
 % q/how-to-break-long-urls-using-common-hyphenation-but
 \def\addurlspace#1
 {%
@@ -1908,7 +1952,8 @@
 % New commands
 %
 
-% Allow to push long words on new lines when they do not fit entirely on the current line.
+% Allow to push long words on new lines
+% when they do not fit entirely on the current line.
 % q/push-long-words-in-a-new-line
 \newcommand\lword[1]{\leavevmode\nobreak\hskip0pt plus\linewidth\penalty50\hskip0pt plus-\linewidth\nobreak{#1}}
 \newcommand\lurl[1]{\leavevmode\nobreak\hskip0pt plus\linewidth\penalty50\hskip0pt plus-\linewidth\nobreak{\url{#1}}}
@@ -1948,7 +1993,7 @@
 }
 
 % Unable to link to inserted pages with pdfpages
-% Solution from http://tex.stackexchange.com/questions/25105/unable-to-link-to-inserted-pages-with-pdfpages
+% q/unable-to-link-to-inserted-pages-with-pdfpages
 \newcounter{includepdfpage}
 \newcounter{currentpagecounter}
 
@@ -1971,7 +2016,8 @@
 % Example about hyphenation with ttfamily font
 % q/example-about-hyphenation-with-ttfamily-font
 %
-% Why the environment ttfamily is hyphenated, but macro ttfamily is not hyphenating?
+% Why the environment ttfamily is hyphenated,
+% but macro ttfamily is not hyphenating?
 % q/why-the-environment-ttfamily-is-hyphenated-but-macro-ttfamily-is-not-hyphenatin
 \LetLtxMacro\origttfamily\ttfamily
 \DeclareRobustCommand*{\ttfamily}
@@ -2052,7 +2098,8 @@
 \def\@textbottom{\vskip \z@ \@plus 7pt}
 \let\@texttop\relax
 
-% Why Latex is hyphenating some words automatically, but others dont? hyphenmins{22} %left=2, right=2
+% Why Latex is hyphenating some words automatically,
+% but others dont? hyphenmins{22} %left=2, right=2
 % q/why-latex-is-hyphenating-some-words-automatically-but-others-dont
 \@ifpackagewith{babel}{brazil}{  \def\brazilhyphenmins{11} }{}
 \@ifpackagewith{babel}{english}{ \def\englishhyphenmins{11} }{}
@@ -2133,7 +2180,7 @@
 \usepackage[varqu]{zi4}
 
 % Latex: Listings with monospace fonts
-% https://stackoverflow.com/questions/2913141/latex-listings-with-monospace-fonts
+% q/latex-listings-with-monospace-fonts
 % q/how-to-have-straight-single-quotes-in-lstlistings
 % q/double-quote-charater-with-listings-create-problem
 \lstset{frame=,
@@ -2157,7 +2204,7 @@
        {>}{{\textcolor{red}\textgreater}}1
        {|}{{\textcolor{red}\textbar}}1
        {\ -\ }{{\mdseries\ -\ }}3,
-  inputencoding=utf8, % http://stackoverflow.com/questions/1116266/listings-in-latex-with-utf-8-or-at-least-german-umlauts
+  inputencoding=utf8, % q/listings-in-latex-with-utf-8-or-at-least-german-umlauts
   extendedchars=true, % q/having-problems-with-listings-and-utf-8-can-it-be-fixed
   literate=%
   {£}{{\pounds}}1
@@ -2250,7 +2297,8 @@
   {€}{{\EUR}}1
 }
 
-% Defining `lstset` parameters for multiple languages & How can I highlight YAML code in a pretty way with listings?
+% Defining `lstset` parameters for multiple languages
+% & How can I highlight YAML code in a pretty way with listings?
 %
 % Usage \begin{lstlisting}[style=yaml_style] ... \end{lstlisting}
 %
@@ -2587,8 +2635,9 @@
     tag=[s]
 }
 
-% Ao contrario da norma abnt-6027-2012, que as figuras estejam listadas na Lista de
-% Ilustrações,  a UFSC pede que as figuras estejam na Lista de Figuras.
+% Ao contrario da norma abnt-6027-2012,
+% que as figuras estejam listadas na Lista de Ilustrações,
+% a UFSC pede que as figuras estejam na Lista de Figuras.
 %
 % Remove the colon appended to variables by 'abntex2' because they show up on places they shouldn't
 %
