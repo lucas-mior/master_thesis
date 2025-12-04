@@ -142,13 +142,13 @@
      \if@minipage
        \@setminipage
      \fi
-     % https://tex.stackexchange.com/questions/23313/how-can-i-reduce-padding-after-figure
+     % q/how-can-i-reduce-padding-after-figure
      % \setlength{\parskip}{10pt}
      % \setlength{\abovecaptionskip}{10pt}
      \setlength{\belowcaptionskip}{4pt}
      \ABNTEXfontereduzida
      % \captiondelim{\ABNTEXcaptionfontedelim}
-     % https://tex.stackexchange.com/questions/515460/misplaced-noalign-captionsetup-noalign-when-using-captionsetup-inside-mem
+     % q/misplaced-noalign-captionsetup-noalign-when-using-captionsetup-inside-mem
      \ifdefined\caption@setlabelseparator
        \caption@setlabelseparator{colon}%
      \else%
@@ -165,19 +165,19 @@
 % Customiza listas
 \RequirePackage[shortlabels]{enumitem}
 
-% https://tex.stackexchange.com/questions/512413/how-to-recognize-the-enumerate-shortlabels-in-my-custom-environment
-% https://tex.stackexchange.com/questions/512692/how-to-define-commands-before-loading-the-hyperref-package-which-is-loaded-by
-% https://tex.stackexchange.com/questions/513020/how-can-i-stop-this-useless-empty-line-popping-up-in-the-middle-of-my-lists
+% q/how-to-recognize-the-enumerate-shortlabels-in-my-custom-environment
+% q/how-to-define-commands-before-loading-the-hyperref-package-which-is-loaded-by
+% q/how-can-i-stop-this-useless-empty-line-popping-up-in-the-middle-of-my-lists
 \RequirePackage{etoolbox}
 
-% https://tex.stackexchange.com/questions/514708/illegal-parameter-number-in-definition-of-enitc-after-using-setlistenumerat
+% q/illegal-parameter-number-in-definition-of-enitc-after-using-setlistenumerat
 \let\@itemenumerateoptional\@item
 \patchcmd\@itemenumerateoptional{\if@noitemarg}{\iftrue}{}{\FAILEDCREATEENUMERAOPTIONAL}
 \newcommand\enumerateoptionallabelformat[1]{#1~\@itemlabel}
 
-% https://tex.stackexchange.com/questions/88990/enumitem-revert-nolistsep
-% https://tex.stackexchange.com/questions/75578/how-to-change-list-settings-globally
-% https://tex.stackexchange.com/questions/463151/why-does-setlistnosep-doesnt-work-in-a-tabular-environment
+% q/enumitem-revert-nolistsep
+% q/how-to-change-list-settings-globally
+% q/why-does-setlistnosep-doesnt-work-in-a-tabular-environment
 \newlist{enumerateoptional}{enumerate}{1}
 \setlist[enumerateoptional]{%
     before=\let\@item\@itemenumerateoptional,
@@ -1011,10 +1011,10 @@
 }
 
 % Patch the `abntex2` citacao environment removing the extra space from its top
-% https://tex.stackexchange.com/questions/300340/topsep-itemsep-partopsep-and-parsep-what-does-each-of-them-mean-and-wha
-% https://tex.stackexchange.com/questions/82859/redefine-environment-to-be-a-synonym-for-another
+% q/topsep-itemsep-partopsep-and-parsep-what-does-each-of-them-mean-and-wha
+% q/redefine-environment-to-be-a-synonym-for-another
 \newenvironment*{citacao}[1][default]{%
-   % https://tex.stackexchange.com/questions/300340/topsep-itemsep-partopsep-and-parsep-what-does-each-of-them-mean-and-wha
+   % q/topsep-itemsep-partopsep-and-parsep-what-does-each-of-them-mean-and-wha
    \list{}{\topsep=4pt}%
    \addtolength{\leftskip}{\ABNTEXcitacaorecuo}%
    \item[]%
