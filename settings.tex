@@ -19,7 +19,9 @@
 % Add missing translations for Portuguese
 % q/what-is-the-right-way-to-redefine-macros-defined-by-babel
 \@ifpackageloaded{babel}{\@ifpackagewith{babel}{brazil}{\addto\captionsbrazil{%
-  \renewcommand{\mytextpreliminarylistname}{Breve Sumário}
+  \renewcommand{\mytextpreliminarylistname}{%
+    Breve Sumário
+  }
 }}{}}{}
 \@ifundefined{advisor}{\newcommand{\advisor}[2]{#1}}{}
 
@@ -136,8 +138,7 @@
   \definecolor{blue}{RGB}{41,5,195}
 
   % PDF Hyperlinks settings
-  \@ifpackageloaded{hyperref}
-  {
+  \@ifpackageloaded{hyperref}{
     \hypersetup
     {
       colorlinks=true,  % false: boxed links; true: colored links
