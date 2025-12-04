@@ -51,9 +51,9 @@
 % q/changing-the-cleveref-package-language-conjunction-definition
 % q/why-isnt-my-biblatex-language-changing-when-passing-the-language-on-my-document
 \ifenglish
-    \PassOptionsToPackage{brazil,main=english}{babel}
+  \PassOptionsToPackage{brazil,main=english}{babel}
 \else
-    \PassOptionsToPackage{main=brazil,english}{babel}
+  \PassOptionsToPackage{main=brazil,english}{babel}
 \fi
 
 % Simple alias for English and Portuguese words
@@ -154,10 +154,10 @@ section=TITLE, % Título de seções em caixa alta
 
 % FIXME: Preencha com Departamento de XXXXXX, Centro de XXXXXX
 \UFSCcentro{\lang
-    {INE -- Department of Informatics and Statistics, CTC -- Technological
-     Center}
-    {INE -- Departamento de Informática e Estatística, CTC -- Centro
-     Tecnológico}%
+  {INE -- Department of Informatics and Statistics,
+   CTC -- Technological Center}
+  {INE -- Departamento de Informática e Estatística,
+   CTC -- Centro Tecnológico}%
 }
 
 % FIXME: Preencha com Campus XXXXXX     ou     Centro de XXXXXX
@@ -193,14 +193,13 @@ section=TITLE, % Título de seções em caixa alta
 \UFSCpalavrasChave{palavraschaveingles}   {Keyword 3}
 \UFSCpalavrasChave{palavraschaveportugues}{Palavra~=Chave 3}
 
-\hypersetup
-{
-    pdfsubject={Thesis' Abstract},
-    pdfcreator={LaTeX with abnTeX2 for UFSC},
-    pdftitle={\thetitle},
-    pdfauthor={\theauthor},
-    pdfkeywords={\lang{\palavraschaveinglessemitem}
-                {\palavraschaveportuguessemitem}},
+\hypersetup{
+  pdfsubject={Thesis' Abstract},
+  pdfcreator={LaTeX with abnTeX2 for UFSC},
+  pdftitle={\thetitle},
+  pdfauthor={\theauthor},
+  pdfkeywords={\lang{\palavraschaveinglessemitem}
+              {\palavraschaveportuguessemitem}},
 }
 
 % Altere 'settings.tex' para customizar aparência da sua tese
@@ -237,7 +236,6 @@ section=TITLE, % Título de seções em caixa alta
 % Uncomment these lines to only partially generate the document
 % \ifnum\StrLen{\includeonlyfilelist}>0\relax
 %   \includeonly{\includeonlyfilelist}
-% \else
 % \fi
 % \forcedincludetrue
 
@@ -349,9 +347,8 @@ section=TITLE, % Título de seções em caixa alta
     \frenchspacing
 
     % Uncomment this to put a ←← | ← (Go To Top/Go Back) on each section header
-    \ifadvisor
-    \else
-    \addGoToSummary
+    \ifadvisor\else
+      \addGoToSummary
     \fi
 
     % ELEMENTOS PRÉ-TEXTUAIS
@@ -377,8 +374,7 @@ section=TITLE, % Título de seções em caixa alta
 
       % \includepdf{fig/FrenteCapaUFSC.pdf}
       % q/blank-page-after-titlingpage
-      \ifadvisor
-      \else
+      \ifadvisor\else
         \AtBeginShipoutNext{\AtBeginShipoutNext{\AtBeginShipoutDiscard}}
       \fi
       \ABNTEXimprimircapa
@@ -390,8 +386,7 @@ section=TITLE, % Título de seções em caixa alta
       % Custom list throw LaTeX Error:
       % Command \mycustomfiction already defined?
       % q/custom-list-throw-latex-error-command-mycustomfiction-already-defined
-      \ifadvisor
-      \else
+      \ifadvisor\else
         % Manually add the `\textpreliminarycontents` to the Table of
         % Contents here to keep the hyper link pointing to the beginning of
         % the page, instead of the beginning of `\textpreliminarycontents`
@@ -496,9 +491,14 @@ section=TITLE, % Título de seções em caixa alta
       % q/list-of-figures-and-tables-when-there-are-no-figures-or-tables
       \whenlistisnotempty{\listfigurename}{%
         \addtotextpreliminarycontent{\listfigurename}
-        % q/remove-spacing-between-per-chapter-figures-in-lof
-        {\renewcommand{\addvspace}[1]{}\listoffigures*}
-      }{\pdfbookmark[0]{\listfigurename}{lof}}
+        {
+          % q/remove-spacing-between-per-chapter-figures-in-lof
+          \renewcommand{\addvspace}[1]{}
+          \listoffigures*
+        }
+      }{
+        \pdfbookmark[0]{\listfigurename}{lof}
+      }
 
       % inserir lista de quadros
       \ifforcedinclude\else
@@ -507,9 +507,14 @@ section=TITLE, % Título de seções em caixa alta
       % q/list-of-figures-and-tables-when-there-are-no-figures-or-tables
       \whenlistisnotempty{\listofquadrosname}{%
         \addtotextpreliminarycontent{\listofquadrosname}
-        % q/remove-spacing-between-per-chapter-figures-in-lof
-        {\renewcommand{\addvspace}[1]{}\listofquadros*}
-      }{\pdfbookmark[0]{\listofquadrosname}{loq}}
+        {
+          % q/remove-spacing-between-per-chapter-figures-in-lof
+          \renewcommand{\addvspace}[1]{}
+          \listofquadros*
+        }
+      }{
+        \pdfbookmark[0]{\listofquadrosname}{loq}
+      }
 
       % inserir lista de tabelas
       \ifforcedinclude\else
@@ -518,9 +523,14 @@ section=TITLE, % Título de seções em caixa alta
       % q/list-of-figures-and-tables-when-there-are-no-figures-or-tables
       \whenlistisnotempty{\listtablename}{%
         \addtotextpreliminarycontent{\listtablename}
-        % q/remove-spacing-between-per-chapter-figures-in-lof
-        {\renewcommand{\addvspace}[1]{}\listoftables*}
-      }{\pdfbookmark[0]{\listtablename}{lot}}
+        {
+          % q/remove-spacing-between-per-chapter-figures-in-lof
+          \renewcommand{\addvspace}[1]{}
+          \listoftables*
+        }
+      }{
+        \pdfbookmark[0]{\listtablename}{lot}
+      }
 
       % inserir códigos fonte (List of Listings `lol`)
       % q/latex-keeps-showing-minted-environment-as-figures-instead-of-listening
@@ -530,9 +540,14 @@ section=TITLE, % Título de seções em caixa alta
       % q/list-of-figures-and-tables-when-there-are-no-figures-or-tables
       \whenlistisnotempty{\lstlistlistingname}{%
         \addtotextpreliminarycontent{\lstlistlistingname}
-        % q/remove-spacing-between-per-chapter-figures-in-lof
-        {\renewcommand{\addvspace}[1]{}\lstlistoflistings*}
-      }{\pdfbookmark[0]{\lstlistlistingname}{lol}}
+        {
+          % q/remove-spacing-between-per-chapter-figures-in-lof
+          \renewcommand{\addvspace}[1]{}
+          \lstlistoflistings*
+        }
+      }{
+        \pdfbookmark[0]{\lstlistlistingname}{lol}
+      }
     }
     \fi
 
@@ -577,7 +592,9 @@ section=TITLE, % Título de seções em caixa alta
         \whenlistisnotempty{\contentsname}{%
           \addtotextpreliminarycontent{\contentsname}
           \tableofcontents
-        }{\pdfbookmark[0]{\contentsname}{toc}}
+        }{
+          \pdfbookmark[0]{\contentsname}{toc}
+        }
       }
 
     \end{KeepFromToc}
@@ -634,9 +651,8 @@ section=TITLE, % Título de seções em caixa alta
       % q/how-to-modify-line-spacing-per-entry-of-bibliography
       % q/how-can-i-put-more-space-between-bibliography-entries-biblatex
       \setlength\bibitemsep{\baselineskip}
-      \ifadvisor
-      \else
-      \linespread{1.18}\selectfont
+      \ifadvisor\else
+        \linespread{1.18}\selectfont
       \fi
 
       % q/using-bibtex-to-make-a-list-of-references-without-having-citations-in-the-body
@@ -676,8 +692,8 @@ section=TITLE, % Título de seções em caixa alta
 
     % INDICE REMISSIVO
     \ifforcedinclude\else
-        \ABNTEXphantompart
-        \printindex
+      \ABNTEXphantompart
+      \printindex
     \fi
 
 \end{document}

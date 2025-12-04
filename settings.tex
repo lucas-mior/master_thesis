@@ -18,9 +18,16 @@
 
 % Add missing translations for Portuguese
 % q/what-is-the-right-way-to-redefine-macros-defined-by-babel
-\@ifpackageloaded{babel}{\@ifpackagewith{babel}{brazil}{\addto\captionsbrazil{%
-  \renewcommand{\mytextpreliminarylistname}{Breve Sumário}
-}}{}}{}
+\@ifpackageloaded{babel}{%
+  \@ifpackagewith{babel}{brazil}{%
+    \addto\captionsbrazil{%
+      \renewcommand{\mytextpreliminarylistname}{%
+        Breve Sumário
+      }
+    }
+  }{}
+}{}
+
 \@ifundefined{advisor}{\newcommand{\advisor}[2]{#1}}{}
 
 % Selects a sans serif font family
@@ -136,8 +143,7 @@
   \definecolor{blue}{RGB}{41,5,195}
 
   % PDF Hyperlinks settings
-  \@ifpackageloaded{hyperref}
-  {
+  \@ifpackageloaded{hyperref}{
     \hypersetup
     {
       colorlinks=true,  % false: boxed links; true: colored links
@@ -156,8 +162,9 @@
 % \DeclareFieldFormat{url}{Disponível~em:\addspace\url{#1}}
 
 % q/how-to-make-biblatex-url-links-generated-with-brackets-around-it-url-correctly
-\DeclareFieldFormat{url}
-{\bibstring{urlfrom}\addcolon\space\textless\url{#1}\textgreater}
+\DeclareFieldFormat{url}{%
+  \bibstring{urlfrom}\addcolon\space\textless\url{#1}\textgreater
+}
 \DefineBibliographyStrings{brazil}{urlfrom = {Disponível em}}
 \DefineBibliographyStrings{english}{urlfrom = {Available from}}
 
@@ -171,17 +178,14 @@
 % Uncomment this to insert the abstract
 % into your bibliography entries when the abstract is available
 % q/how-to-correctly-insert-and-justify-abstract
-\ifadvisor
-\else
-  \DeclareFieldFormat{abstract}%
-  {%
+\ifadvisor\else
+  \DeclareFieldFormat{abstract}{%
     \par\justifying
     \begin{adjustwidth}{1cm}{}
       \textbf{\bibsentence\bibstring{abstract}:} #1
     \end{adjustwidth}
   }
-  \renewbibmacro*{finentry}%
-  {%
+  \renewbibmacro*{finentry}{%
     \iffieldundef{abstract}
     {\finentry}
     {\finentrypunct
@@ -192,17 +196,33 @@
   }
 
   % Backref package settings, pages with citations in bibliography
-  \newcommand{\biblatexcitedntimes}{\autocap{c}ited \arabic{citecounter} times}
-  \newcommand{\biblatexcitedonetime}{\autocap{c}ited one time}
-  \newcommand{\biblatexcitednotimes}{\autocap{n}o citation in the text}
+  \newcommand{\biblatexcitedntimes}{%
+    \autocap{c}ited \arabic{citecounter} times
+  }
+  \newcommand{\biblatexcitedonetime}{%
+    \autocap{c}ited one time
+  }
+  \newcommand{\biblatexcitednotimes}{%
+    \autocap{n}o citation in the text
+  }
 
-  \@ifpackageloaded{babel}{\@ifpackagewith{babel}{brazil}{\addto\captionsbrazil{%
-    \renewcommand{\biblatexcitedntimes}{\autocap{c}itado \arabic{citecounter} vezes}
-    \renewcommand{\biblatexcitedonetime}{\autocap{c}itado uma vez}
-    \renewcommand{\biblatexcitednotimes}{\autocap{n}enhuma citação no texto}
-  }}{}}{}
-  \@ifpackageloaded{biblatex}
-  {%
+  \@ifpackageloaded{babel}{%
+    \@ifpackagewith{babel}{brazil}{%
+      \addto\captionsbrazil{%
+        \renewcommand{\biblatexcitedntimes}{%
+          \autocap{c}itado \arabic{citecounter} vezes
+        }
+        \renewcommand{\biblatexcitedonetime}{%
+          \autocap{c}itado uma vez
+        }
+        \renewcommand{\biblatexcitednotimes}{%
+          \autocap{n}enhuma citação no texto
+        }
+      }
+    }{}
+  }{}
+
+  \@ifpackageloaded{biblatex}{%
     % q/how-to-detect-whether-the-option-citecounter-was-enabled-on-biblatex
     \ifx\blx@citecounter\relax
       \message{Is citecounter defined? NO!^^J}
@@ -210,35 +230,35 @@
       \message{Is citecounter defined? YES!^^J}
       \ifbacktracker
         \message{Is backtracker defined? YES!^^J}
-        \renewbibmacro*{pageref}
-        {%
+        \renewbibmacro*{pageref}{%
           % q/how-to-use-a-dot-to-separate-my-new-bibliography-entry
           \renewcommand*{\bibpagerefpunct}{\addperiod\space}%
-          \iflistundef{pageref}%
-          {\printtext{\biblatexcitednotimes}}
-          {%
-            \printtext
-            {%
-              \ifnumgreater{\value{citecounter}}{1}
-                {\biblatexcitedntimes}
-                {\biblatexcitedonetime}%
+          \iflistundef{pageref}{%
+            \printtext{\biblatexcitednotimes}
+          }{%
+            \printtext{%
+              \ifnumgreater{\value{citecounter}}{1}{%
+                \biblatexcitedntimes
+              }{%
+                \biblatexcitedonetime
+              }%
             }%
             \setunit{\addspace}%
-            \ifnumgreater{\value{pageref}}{1}
-              {\bibstring{backrefpages}\ppspace}
-              {\bibstring{backrefpage}\ppspace}%
+            \ifnumgreater{\value{pageref}}{1}{
+              \bibstring{backrefpages}\ppspace
+            }{%
+              \bibstring{backrefpage}\ppspace
+            }%
             \printlist[pageref][-\value{listtotal}]{pageref}%
           }%
         }
 
-        \DefineBibliographyStrings{brazil}
-        {
+        \DefineBibliographyStrings{brazil}{
           backrefpage  = {na página},
           backrefpages = {nas páginas},
         }
 
-        \DefineBibliographyStrings{english}
-        {
+        \DefineBibliographyStrings{english}{
           backrefpage  = {on page},
           backrefpages = {on pages},
         }
