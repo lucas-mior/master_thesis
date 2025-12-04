@@ -605,7 +605,7 @@
   })%
 }
 
-%Numeração dos floats por capítulo
+% Numeração dos floats por capítulo
 \counterwithin{figure}{chapter}
 \counterwithin{table}{chapter}
 
