@@ -1507,11 +1507,35 @@
     }{}
   }{}
 
-  \@ifpackageloaded{babel}{\@ifpackagewith{babel}{english}{\addto\captionsenglish{\renewcommand{\lstlistingname}{Code}}}{}}{}
-  \@ifpackageloaded{babel}{\@ifpackagewith{babel}{english}{\addto\captionsenglish{\renewcommand{\lstlistlistingname}{List of Codes}}}{}}{}
+  \@ifpackageloaded{babel}{%
+    \@ifpackagewith{babel}{english}{%
+      \addto\captionsenglish{%
+        \renewcommand{\lstlistingname}{Code}
+      }
+    }{}
+  }{}
+  \@ifpackageloaded{babel}{%
+    \@ifpackagewith{babel}{english}{%
+      \addto\captionsenglish{%
+        \renewcommand{\lstlistlistingname}{List of Codes}
+      }
+    }{}
+  }{}
 
-  \@ifpackageloaded{babel}{\@ifpackagewith{babel}{brazil}{\addto\captionsbrazil{\crefname{listing}{código}{códigos}}}{}}{}
-  \@ifpackageloaded{babel}{\@ifpackagewith{babel}{brazil}{\addto\captionsbrazil{\Crefname{listing}{Código}{Códigos}}}{}}{}
+  \@ifpackageloaded{babel}{%
+    \@ifpackagewith{babel}{brazil}{%
+      \addto\captionsbrazil{%
+        \crefname{listing}{código}{códigos}
+      }
+    }{}
+  }{}
+  \@ifpackageloaded{babel}{%
+    \@ifpackagewith{babel}{brazil}{%
+      \addto\captionsbrazil{%
+        \Crefname{listing}{Código}{Códigos}
+      }
+    }{}
+  }{}
 
   \begingroup
     \let\newcounter\@gobble\let\setcounter\@gobbletwo
