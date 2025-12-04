@@ -605,15 +605,15 @@
   })%
 }
 
-%Numeração dos floats por capítulo
+% Numeração dos floats por capítulo
 \counterwithin{figure}{chapter}
 \counterwithin{table}{chapter}
 
 % Macros for Cross-reference
-\newcommand{\figref}[1]{Figura~\ref{#1}}   % Cross-reference of figures
+\newcommand{\figref}[1]{Figura~\ref{#1}}    % Cross-reference of figures
 \newcommand{\tabref}[1]{Tabela~\ref{#1}}    % Cross-reference of tables
-\newcommand{\eqnref}[1]{\eqref{#1}}      % Cross-reference of equations
-\newcommand{\secref}[1]{Seção~\ref{#1}}  % Cross-reference of equations
+\newcommand{\eqnref}[1]{\eqref{#1}}         % Cross-reference of equations
+\newcommand{\secref}[1]{Seção~\ref{#1}}     % Cross-reference of equations
 \newcommand{\defref}[1]{Definição~\ref{#1}} %
 
 \renewenvironment{resumo}[1][\resumoname]
