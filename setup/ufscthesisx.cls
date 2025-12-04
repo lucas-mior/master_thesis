@@ -659,8 +659,7 @@
   % \renewcommand{\abstractnamefont}{\chaptitlefont}
   % \renewcommand{\abstractname}{\ABNTEXchapterupperifneeded{#1}}
   \ABNTEXpretextualchapter{#1}
-}
-{%
+}{%
   \ABNTEXPRIVATEclearpageifneeded
 }
 
@@ -1605,10 +1604,10 @@
   % q/customizing-the-list-of-listings-generated-by-lstlistoflistings
   % q/setting-entries-of-list-of-listings-in-latex-package-listings
   \newenvironment{code}{
-  \captionsetup{type=lstlisting,skip=0pt,position=top}
-  \setlength{\abovecaptionskip}{0pt}
-  \setlength{\belowcaptionskip}{10pt}
-  \setlength{\parskip}{0pt}
+    \captionsetup{type=lstlisting,skip=0pt,position=top}
+    \setlength{\abovecaptionskip}{0pt}
+    \setlength{\belowcaptionskip}{10pt}
+    \setlength{\parskip}{0pt}
   }{}
 
   % q/red-box-drawn-around-question-mark-operator-in-minted-erlang-code
