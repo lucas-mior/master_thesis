@@ -2183,7 +2183,9 @@
 
 % \MakeUppercase in \section and \chapter with hyperref cause trouble
 % q/makeuppercase-in-section-and-chapter-with-hyperref-cause-trouble
-\newcommand{\HyperrefUppercase}[1]{\texorpdfstring{\MakeTextUppercase{#1}}{#1}}
+\newcommand{\HyperrefUppercase}[1]{%
+  \texorpdfstring{\MakeTextUppercase{#1}}{#1}
+}
 
 % Example about hyphenation with ttfamily font
 % q/example-about-hyphenation-with-ttfamily-font
