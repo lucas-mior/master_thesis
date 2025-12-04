@@ -930,41 +930,53 @@
 % q/word-appendix-in-toc-with-memoir-class
 % q/please-tutor-the-usage-of-patchcmd-and-xpatch
 % https://texfaq.org/FAQ-protect
-\xpretocmd{\l@appendix}{\def\@chapapp@extrahyphenspaces{~}}
-{\message{^^J^^JChapterformat patch 1 for chapternumberline could SUCCESSFULLY!^^J
-% ^^J^^J^^J
-}}
-{\message{^^J^^JChapterformat patch 1 for chapternumberline could NOT be applied!^^J^^J^^J^^J
-}}
+\xpretocmd{\l@appendix}{\def\@chapapp@extrahyphenspaces{~}}{%
+  \message{%
+    ^^J^^JChapterformat patch 1 for chapternumberline could SUCCESSFULLY!^^J % ^^J^^J^^J
+  }
+}{%
+  \message{%
+    ^^J^^JChapterformat patch 1 for chapternumberline could NOT be applied!^^J^^J^^J^^J
+  }%
+}
 
-\xpretocmd{\l@chapter}{\def\@chapapp@extrahyphenspaces{}}
-{\message{^^J^^JChapterformat patch 2 for chapternumberline could SUCCESSFULLY!^^J
-% ^^J^^J^^J
-}}
-{\message{^^J^^JChapterformat patch 2 for chapternumberline could NOT be applied!^^J^^J^^J^^J
-}}
+\xpretocmd{\l@chapter}{\def\@chapapp@extrahyphenspaces{}}{%
+  \message{%
+    ^^J^^JChapterformat patch 2 for chapternumberline could SUCCESSFULLY!^^J % ^^J^^J^^J
+  }%
+}{%
+  \message{%
+    ^^J^^JChapterformat patch 2 for chapternumberline could NOT be applied!^^J^^J^^J^^J
+  }%
+}
 
 \patchcmd{\chapternumberline}{\@cftasnum}{%
   \@chapapp@extrahyphenspaces%
   \@chapapp@extrahyphenspaces%
   \@cftasnum%
   \@chapapp@extrahyphenspaces%
+}{%
+  \message{%
+    ^^J^^JChapterformat patch 3 for chapternumberline could SUCCESSFULLY!^^J % ^^J^^J^^J
+  }%
+}{%
+  \message{%
+    ^^J^^JChapterformat patch 3 for chapternumberline could NOT be applied!^^J^^J^^J^^J
+  }%
 }
-{\message{^^J^^JChapterformat patch 3 for chapternumberline could SUCCESSFULLY!^^J
-% ^^J^^J^^J
-}}
-{\message{^^J^^JChapterformat patch 3 for chapternumberline could NOT be applied!^^J^^J^^J^^J
-}}
 
 \patchcmd{\chapternumberline}{\@cftasnumb}{%
   \@cftasnumb%
   \@chapapp@extrahyphenspaces%
+}{%
+  \message{%
+    ^^J^^JChapterformat patch 4 for chapternumberline could SUCCESSFULLY!^^J % ^^J^^J^^J
+  }%
+}{%
+  \message{%
+    ^^J^^JChapterformat patch 4 for chapternumberline could NOT be applied!^^J^^J^^J^^J
+  }%
 }
-{\message{^^J^^JChapterformat patch 4 for chapternumberline could SUCCESSFULLY!^^J
-% ^^J^^J^^J
-}}
-{\message{^^J^^JChapterformat patch 4 for chapternumberline could NOT be applied!^^J^^J^^J^^J
-}}
 
 % q/the-appendix-word-disappears-from-the-table-of-contents-when-using-include
 % q/whats-the-difference-between-newcommand-and-newcommand
