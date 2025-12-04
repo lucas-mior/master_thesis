@@ -1,5 +1,5 @@
 #!/usr/bin/make -f
-# https://stackoverflow.com/questions/7123241/makefile-as-an-executable-script-with-shebang
+# q/makefile-as-an-executable-script-with-shebang
 #
 #   Copyright 2017-2019 @ Evandro Coan
 #   Helper functions and classes
@@ -42,10 +42,10 @@ ifdef debug
 	endif
 endif
 
-# http://stackoverflow.com/questions/1789594/how-do-i-write-the-cd-command-in-a-makefile
+# q/how-do-i-write-the-cd-command-in-a-makefile
 .ONESHELL:
 
-# https://stackoverflow.com/questions/24005166/gnu-make-silent-by-default
+# q/gnu-make-silent-by-default
 ifeq (,${ENABLE_DEBUG_MODE})
 	MAKEFLAGS += --silent
 endif
