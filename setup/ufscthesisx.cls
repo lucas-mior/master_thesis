@@ -768,8 +768,9 @@
       % https://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions
       \includegraphics[width=1.84cm,keepaspectratio]{UFSC_sigla_fundo_claro.png}
 
-      % q/controlling-the-spacing-between-lines-with-fontsize-selectfont
-      {\OnehalfSpacing
+      {%
+        % q/controlling-the-spacing-between-lines-with-fontsize-selectfont
+        \OnehalfSpacing
         \MakeTextUppercase{\abnteximprimirinstituicao}\par
         \MakeTextUppercase{\imprimircampus}\par
         \MakeTextUppercase{\imprimirprograma}\par
