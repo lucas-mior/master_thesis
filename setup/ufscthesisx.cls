@@ -1567,8 +1567,12 @@
 
     % q/what-is-the-plain-tex-equivalent-of-settowidth
     \newlength\cftlstlistinginitialnumwidth
-    \settowidth\cftlstlistinginitialnumwidth{\cftlstlistingpresnum\cftlstlistingaftersnum ab}%
-    \setlength\cftlstlistingnumwidth{\dimexpr\cftlstlistingoldnumwidth+\cftlstlistinginitialnumwidth+2pt}%
+    \settowidth\cftlstlistinginitialnumwidth{%
+      \cftlstlistingpresnum\cftlstlistingaftersnum ab%
+    }%
+    \setlength\cftlstlistingnumwidth{%
+      \dimexpr\cftlstlistingoldnumwidth+\cftlstlistinginitialnumwidth+2pt%
+    }%
     \renewcommand\cftlstlistingaftersnum{\hfill\textendash\hfill}%
   }
 
@@ -2049,13 +2053,21 @@
 }{}
 
 \newcommand{\addGoToSummary}{%
-  \@ifundefined{printparttitle}{\message{printparttitle patch for addGoToSummary could NOT
-        be applied because there is no printparttitle command available!^^J}}{%
+  \@ifundefined{printparttitle}{%
+    \message{%
+      printparttitle patch for addGoToSummary could NOT
+      be applied because there is no printparttitle command available!^^J
+    }%
+  }{%
     \let\oldAddGoToprintparttitle\printparttitle
     \xapptocmd{\printparttitle}{~\protect\goToSummaryText}{}{}
   }
-  \@ifundefined{Sectionformat}{\message{Sectionformat patch for addGoToSummary could NOT
-        be applied because there is no Sectionformat command available!^^J}}{%
+  \@ifundefined{Sectionformat}{%
+    \message{%
+      Sectionformat patch for addGoToSummary could NOT
+      be applied because there is no Sectionformat command available!^^J
+    }%
+  }{%
     \let\oldAddGoToSectionformat\Sectionformat
     \xapptocmd{\Sectionformat}{~\protect\goToSummaryText}{}{}
   }
@@ -2069,8 +2081,12 @@
       \xapptocmd{\printchaptertitle}{~\protect\goToSummaryText}{}{}
     \fi
   \else
-    \@ifundefined{Chapterformat}{\message{Chapterformat patch for addGoToSummary could NOT
-          be applied because there is no Chapterformat command available!^^J}}{%
+    \@ifundefined{Chapterformat}{%
+      \message{%
+        Chapterformat patch for addGoToSummary could NOT
+        be applied because there is no Chapterformat command available!^^J
+      }%
+    }{%
       \let\oldAddGoToChapterformat\Chapterformat
       \xapptocmd{\Chapterformat}{~\protect\goToSummaryText}{}{}
     }
