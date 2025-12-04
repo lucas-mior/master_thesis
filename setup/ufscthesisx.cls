@@ -316,8 +316,7 @@
 \providecommand{\listaassuntos}{}
 \providecommand{\imprimirassuntos}{%
   \setcounter{ufscthesisx@assuntos}{1}
-  \@for\assunto:={\listaassuntos}\do
-  {%
+  \@for\assunto:={\listaassuntos}\do{%
     \arabic{ufscthesisx@assuntos}.\assunto. %
     \addtocounter{ufscthesisx@assuntos}{1}
   }
@@ -2290,8 +2289,7 @@
 
   % How to fix this url bad box for stackoverflow link?
   % q/how-to-fix-this-url-bad-box-for-stackoverflow-link
-  \g@addto@macro{\UrlBreaks}
-  {%
+  \g@addto@macro{\UrlBreaks}{%
     \do\a\do\b\do\c\do\d\do\e\do\f\do\g%
     \do\h\do\i\do\j\do\k\do\l\do\m\do\n%
     \do\o\do\p\do\q\do\r\do\s\do\t\do\u%
