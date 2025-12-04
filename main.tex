@@ -150,17 +150,21 @@ section=TITLE, % Título de seções em caixa alta
   {Bachelor of Science degree in Computer Science}
   {Bacharel em Ciências da Computação}%
 }
-\UFSCprograma{\lang
-  {Undergraduate Program in Computer Science}
-  {Programa de Graduação em Ciências da Computação}%
+\UFSCprograma{%
+  \lang{%
+    Undergraduate Program in Computer Science
+  }{%
+    Programa de Graduação em Ciências da Computação
+  }%
 }
 
 % FIXME: Preencha com Departamento de XXXXXX, Centro de XXXXXX
-\UFSCcentro{\lang
-  {INE -- Department of Informatics and Statistics,
-   CTC -- Technological Center}
-  {INE -- Departamento de Informática e Estatística,
-   CTC -- Centro Tecnológico}%
+\UFSCcentro{%
+  \lang{
+    INE -- Department of Informatics and Statistics, CTC -- Technological Center
+  }{%
+    INE -- Departamento de Informática e Estatística, CTC -- Centro Tecnológico
+  }%
 }
 
 % FIXME: Preencha com Campus XXXXXX     ou     Centro de XXXXXX
@@ -201,8 +205,11 @@ section=TITLE, % Título de seções em caixa alta
   pdfcreator={LaTeX with abnTeX2 for UFSC},
   pdftitle={\thetitle},
   pdfauthor={\theauthor},
-  pdfkeywords={\lang{\palavraschaveinglessemitem}
-              {\palavraschaveportuguessemitem}},
+  pdfkeywords={\lang{%
+                 \palavraschaveinglessemitem
+              }{%
+                 \palavraschaveportuguessemitem
+              }}
 }
 
 % Altere 'settings.tex' para customizar aparência da sua tese
@@ -583,8 +590,8 @@ section=TITLE, % Título de seções em caixa alta
 
       % q/overfull-hbox-warning-for-toc-entries-when-using-memoir-documentclass
       % \makeatletter
-          % \renewcommand{\@pnumwidth}{2em}
-          % \renewcommand{\@tocrmarg}{3em}
+        % \renewcommand{\@pnumwidth}{2em}
+        % \renewcommand{\@tocrmarg}{3em}
       % \makeatother
 
       % q/memoir-mysterious-overfull-hbox-in-toc-when-mathptmx-is-used
