@@ -220,8 +220,12 @@ draft,
 % You can make latex stop generate these errors, if you generate a full version
 % of the document, before uncommenting these lines.
 %
-% Uncomment these two lines, to only partially generate the document
-\doincludeonly
+% Uncomment these lines to only partially generate the document
+\StrLen{\includeonlyfilelist}[\includeonlyfilelistlen]
+\ifnum\includeonlyfilelistlen>0
+\includeonly{\includeonlyfilelist}
+\else
+\fi
 \forcedincludetrue
 
 % q/xrightarrow-text
