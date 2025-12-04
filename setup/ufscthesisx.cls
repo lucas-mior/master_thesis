@@ -1321,8 +1321,20 @@
 % q/here-is-another-example-where-cleveref-does-not-capitalize-when-it-should
 \crefname{quadro}{frame}{frames}
 \Crefname{quadro}{Frame}{Frames}
-\@ifpackageloaded{babel}{\@ifpackagewith{babel}{brazil}{\addto\captionsbrazil{\crefname{quadro}{quadro}{quadros}}}{}}{}
-\@ifpackageloaded{babel}{\@ifpackagewith{babel}{brazil}{\addto\captionsbrazil{\Crefname{quadro}{Quadro}{Quadros}}}{}}{}
+\@ifpackageloaded{babel}{%
+  \@ifpackagewith{babel}{brazil}{%
+    \addto\captionsbrazil{%
+      \crefname{quadro}{quadro}{quadros}
+    }
+  }{}
+}{}
+\@ifpackageloaded{babel}{%
+  \@ifpackagewith{babel}{brazil}{%
+    \addto\captionsbrazil{
+      \Crefname{quadro}{Quadro}{Quadros}
+    }
+  }{}
+}{}
 
 % fix fig. being used instead of figure
 % q/cleveref-capitalise-option-not-working-with-babel-translations
