@@ -275,7 +275,6 @@ section=TITLE, % Título de seções em caixa alta
 % #5 = legenda 2
 % #6 = largura relativa 2
 % #7 = legenda geral
-
 \newcommand{\duasimages}[7]{%
   % --- imagem 1 ---
   \StrBehind{#1}{/}[\tmpA]%
@@ -402,7 +401,7 @@ section=TITLE, % Título de seções em caixa alta
         \PRIVATEbookmarkthis{Ficha Catalográfica}
         \addtotextpreliminarycontent{Ficha Catalográfica}
 
-        \include{03fichacatalografica.tex}
+        \include{03_fichacatalografica.tex}
         % q/how-to-include-multiple-pages-in-latex
         % \includepdf{fig/Ficha_Catalografica.pdf}
         \ifforcedinclude\else\cleardoublepage\fi
@@ -416,27 +415,27 @@ section=TITLE, % Título de seções em caixa alta
     % conteúdo deste arquivo por uma imagem da página assinada pela banca com o
     % comando abaixo:
     \ifforcedinclude\else\cleardoublepage\fi
-    \include{04folhadeaprovacao.tex}
+    \include{04_folhadeaprovacao.tex}
     % \includepdf{fig/folhadeaprovacao_final.pdf}
 
     % Dedicatória
     \ifforcedinclude\else\cleardoublepage\fi
-    \ifforcedinclude\else\input{05dedicatoria.tex}\fi
+    \ifforcedinclude\else\input{05_dedicatoria.tex}\fi
 
     % Agradecimentos
     \ifforcedinclude\else\cleardoublepage\fi
-    \include{06agradecimentos.tex}
+    \include{06_agradecimentos.tex}
 
     % Epígrafe
     \ifforcedinclude\else\cleardoublepage\fi
-    \include{07epigrafe.tex}
+    \include{07_epigrafe.tex}
 
     % Ajusta o espaçamento dos parágrafos do resumo
     \setlength{\absparsep}{18pt}
 
     % RESUMOS
     \ifforcedinclude\else\cleardoublepage\fi
-    \include{08resumos.tex}
+    \include{08_resumos.tex}
 
     % Some tables of contents
     \ifforcedinclude\else
@@ -489,11 +488,11 @@ section=TITLE, % Título de seções em caixa alta
 
     % inserir lista de abreviaturas e siglas
     \ifforcedinclude\else\cleardoublepage\fi
-    \include{12siglas.tex}
+    \include{12_siglas.tex}
 
     % Inserir lista de símbolos
     \ifforcedinclude\else\cleardoublepage\fi
-    \include{14simbolos.tex}
+    \include{13_simbolos.tex}
 
     % How to remove the self-reference of the ToC from the ToC?
     % q/how-to-remove-the-self-reference-of-the-toc-from-the-toc
@@ -540,30 +539,30 @@ section=TITLE, % Título de seções em caixa alta
     \label{primeira_parte}
 
     % Introdução (exemplo de capítulo sem numeração, mas presente no Sumário)
-    \include{15intro.tex}
+    \include{15a_intro.tex}
 
     % Capitulo com exemplos de comandos inseridos de arquivo externo
-    \include{15chapter_1.tex}
+    \include{15b_chapter_1.tex}
 
     % Capitulo de revisão de literatura
-    \include{15chapter_2.tex}
+    \include{15b_chapter_2.tex}
 
     % Primeiro capitulo de Resultados
-    \include{15chapter_3.tex}
+    \include{15b_chapter_3.tex}
 
     % PARTE
     \ifforcedinclude\else\part{\lang{Implementation}{Implementação}}\fi
     \label{segunda_parte}
 
     % Segundo capitulo de Resultados
-    \include{15chapter_4.tex}
+    \include{15b_chapter_4.tex}
 
     % Finaliza a parte no bookmark do PDF para que se inicie o bookmark na raiz
     % e adiciona espaço de parte no Sumário
     \phantompart
 
     % Conclusão (outro exemplo de capítulo sem numeração e presente no sumário)
-    \include{15conclusion.tex}
+    \include{15z_conclusion.tex}
 
     % ELEMENTOS PÓS-TEXTUAIS
     \postextual
@@ -594,7 +593,7 @@ section=TITLE, % Título de seções em caixa alta
         \setlength\midchapskip{20pt}
         \setlength\afterchapskip{20pt}
 
-        \include{18apendice_a.tex}
+        \include{18_apendice_a.tex}
     \end{apendicesenv}
 
     % Inicia os anexos
@@ -605,8 +604,8 @@ section=TITLE, % Título de seções em caixa alta
         \setlength\midchapskip{20pt}
         \setlength\afterchapskip{20pt}
 
-        \include{19anexo_a.tex}
-        \include{19anexo_b.tex}
+        \include{19_anexo_a.tex}
+        \include{19_anexo_b.tex}
     \end{anexosenv}
 
     % INDICE REMISSIVO
