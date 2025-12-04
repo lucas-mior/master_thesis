@@ -242,10 +242,10 @@ section=TITLE, % Título de seções em caixa alta
 \begin{document}
     % FIXME: Comment this after finishing the thesis,
     %        so you can start fixing the \flushbottom vs \raggedbottom
-    % questions/65355/flushbottom-vs-raggedbottom
+    % q/flushbottom-vs-raggedbottom
     \raggedbottom
 
-    % questions/4705/double-space-between-sentences
+    % q/double-space-between-sentences
     \frenchspacing
 
     % Uncomment this to put a ←← | ← (Go To Top/Go Back) on each section header
@@ -256,7 +256,7 @@ section=TITLE, % Título de seções em caixa alta
         % Fix the \textpreliminarycontents not showing up when @twoside is off
         \newif\ifufscThesisXisMemoirTwoSidesEnabled
 
-        % questions/360785/how-do-i-check-if-a-document-is-oneside-or-twoside
+        % q/how-do-i-check-if-a-document-is-oneside-or-twoside
         \ifthenelse{\boolean{@twoside}}{%
             \ufscThesisXisMemoirTwoSidesEnabledtrue%
         }{%
@@ -265,8 +265,8 @@ section=TITLE, % Título de seções em caixa alta
         \setboolean{@twoside}{true}
 
         % pretextual settings
-        % questions/386446/how-to-fix-destination-with-the-same-identifier-namepage-a-has-been-already
-        % questions/67989/pdftex-warning-has-been-referenced-but-does-not-exist-replaced-by-a-fixed-one
+        % q/how-to-fix-destination-with-the-same-identifier-namepage-a-has-been-already
+        % q/pdftex-warning-has-been-referenced-but-does-not-exist-replaced-by-a-fixed-one
         \hypersetup{pageanchor=false}
         \PRIVATEbookmarkthis{Capa}
         \addtotextpreliminarycontent{Capa}
@@ -274,24 +274,24 @@ section=TITLE, % Título de seções em caixa alta
 
         % Capa
         % \includepdf{fig/FrenteCapaUFSC.pdf}
-        % questions/227711/blank-page-after-titlingpage
+        % q/blank-page-after-titlingpage
         \advisor{}{\AtBeginShipoutNext{\AtBeginShipoutNext{\AtBeginShipoutDiscard}}}
         \imprimircapa
 
-        % questions/386446/how-to-fix-destination-with-the-same-identifier-namepage-a-has-been-already
-        % questions/67989/pdftex-warning-has-been-referenced-but-does-not-exist-replaced-by-a-fixed-one
+        % q/how-to-fix-destination-with-the-same-identifier-namepage-a-has-been-already
+        % q/pdftex-warning-has-been-referenced-but-does-not-exist-replaced-by-a-fixed-one
         \hypersetup{pageanchor=true}
 
         % Custom list throw LaTeX Error: Command \mycustomfiction already defined?
-        % questions/388489/custom-list-throw-latex-error-command-mycustomfiction-already-defined/
+        % q/custom-list-throw-latex-error-command-mycustomfiction-already-defined/
         \advisor{}{%
             % Manually add the `\textpreliminarycontents` to the Table of
             % Contents here to keep the hyper link pointing to the beginning of
             % the page, instead of the beginning of `\textpreliminarycontents`
-            % questions/44088/when-do-i-need-to-invoke-phantomsection
+            % q/when-do-i-need-to-invoke-phantomsection
             \phantomsection\addcontentsline{toc}{chapter}{\mytextpreliminarylistname}
 
-            % questions/234398/list-of-figures-and-tables-when-there-are-no-figures-or-tables
+            % q/list-of-figures-and-tables-when-there-are-no-figures-or-tables
             \whenlistisnotempty{\mytextpreliminarylistname}{%
                 \begin{KeepFromToc}
                     \textpreliminarycontents
@@ -309,7 +309,7 @@ section=TITLE, % Título de seções em caixa alta
         \fi
 
         % Folha de rosto (o * indica que haverá a ficha bibliográfica)
-        % questions/74439/table-of-contents-incorrect-page-numbering
+        % q/table-of-contents-incorrect-page-numbering
         \addtotextpreliminarycontent{\folhaderostoname}
         \imprimirfolhaderosto*{}
 
@@ -326,7 +326,7 @@ section=TITLE, % Título de seções em caixa alta
         \addtotextpreliminarycontent{Ficha Catalográfica}
 
         \include{03fichacatalografica.tex}
-        % questions/91440/how-to-include-multiple-pages-in-latex
+        % q/how-to-include-multiple-pages-in-latex
         % \includepdf{fig/Ficha_Catalografica.pdf}
         \ifforcedinclude\else\cleardoublepage\fi
     \fi
@@ -364,46 +364,46 @@ section=TITLE, % Título de seções em caixa alta
     % Some tables of contents
     \ifforcedinclude\else
     {
-        % questions/179506/disable-colorlinks-locally-or-just-for-the-toc
+        % q/disable-colorlinks-locally-or-just-for-the-toc
         \hypersetup{hidelinks}
 
         % inserir lista de figuras
         \ifforcedinclude\else\cleardoublepage\fi
-        % questions/234398/list-of-figures-and-tables-when-there-are-no-figures-or-tables
+        % q/list-of-figures-and-tables-when-there-are-no-figures-or-tables
         \whenlistisnotempty{\listfigurename}{%
             \addtotextpreliminarycontent{\listfigurename}
-            % questions/121879/remove-spacing-between-per-chapter-figures-in-lof
+            % q/remove-spacing-between-per-chapter-figures-in-lof
             {\renewcommand{\addvspace}[1]{}
             \listoffigures*}
         }{\pdfbookmark[0]{\listfigurename}{lof}}
 
         % inserir lista de quadros
         \ifforcedinclude\else\cleardoublepage\fi
-        % questions/234398/list-of-figures-and-tables-when-there-are-no-figures-or-tables
+        % q/list-of-figures-and-tables-when-there-are-no-figures-or-tables
         \whenlistisnotempty{\listofquadrosname}{%
             \addtotextpreliminarycontent{\listofquadrosname}
-            % questions/121879/remove-spacing-between-per-chapter-figures-in-lof
+            % q/remove-spacing-between-per-chapter-figures-in-lof
             {\renewcommand{\addvspace}[1]{}
             \listofquadros*}
         }{\pdfbookmark[0]{\listofquadrosname}{loq}}
 
         % inserir lista de tabelas
         \ifforcedinclude\else\cleardoublepage\fi
-        % questions/234398/list-of-figures-and-tables-when-there-are-no-figures-or-tables
+        % q/list-of-figures-and-tables-when-there-are-no-figures-or-tables
         \whenlistisnotempty{\listtablename}{%
             \addtotextpreliminarycontent{\listtablename}
-            % questions/121879/remove-spacing-between-per-chapter-figures-in-lof
+            % q/remove-spacing-between-per-chapter-figures-in-lof
             {\renewcommand{\addvspace}[1]{}
             \listoftables*}
         }{\pdfbookmark[0]{\listtablename}{lot}}
 
         % inserir códigos fonte (List of Listings `lol`)
-        % questions/511519/latex-keeps-showing-minted-environment-as-figures-instead-of-listening/511579#511579
+        % q/latex-keeps-showing-minted-environment-as-figures-instead-of-listening/511579#511579
         \ifforcedinclude\else\cleardoublepage\fi
-        % questions/234398/list-of-figures-and-tables-when-there-are-no-figures-or-tables
+        % q/list-of-figures-and-tables-when-there-are-no-figures-or-tables
         \whenlistisnotempty{\lstlistlistingname}{%
             \addtotextpreliminarycontent{\lstlistlistingname}
-            % questions/121879/remove-spacing-between-per-chapter-figures-in-lof
+            % q/remove-spacing-between-per-chapter-figures-in-lof
             {\renewcommand{\addvspace}[1]{}
             \lstlistoflistings*}
         }{\pdfbookmark[0]{\lstlistlistingname}{lol}}
@@ -419,31 +419,31 @@ section=TITLE, % Título de seções em caixa alta
     \include{14simbolos.tex}
 
     % How to remove the self-reference of the ToC from the ToC?
-    % questions/10943/how-to-remove-the-self-reference-of-the-toc-from-the-toc
+    % q/how-to-remove-the-self-reference-of-the-toc-from-the-toc
     \ifforcedinclude\else\cleardoublepage\fi
 
     \begin{KeepFromToc}
-        % questions/35/what-does-overfull-hbox-mean
-        % questions/59122/how-to-avoid-using-sloppy-document-wide-to-fix-overfull-hbox-problems
-        % questions/257007/adding-color-to-table-of-contents-and-section-headings
+        % q/what-does-overfull-hbox-mean
+        % q/how-to-avoid-using-sloppy-document-wide-to-fix-overfull-hbox-problems
+        % q/adding-color-to-table-of-contents-and-section-headings
         {
-            % questions/179506/disable-colorlinks-locally-or-just-for-the-toc
+            % q/disable-colorlinks-locally-or-just-for-the-toc
             \hypersetup{hidelinks}
 
-            % questions/65711/underfull-vbox-badness-10000-with-memoir
+            % q/underfull-vbox-badness-10000-with-memoir
             \raggedbottom
 
-            % questions/49887/overfull-hbox-warning-for-toc-entries-when-using-memoir-documentclass
+            % q/overfull-hbox-warning-for-toc-entries-when-using-memoir-documentclass
             % \makeatletter
                 % \renewcommand{\@pnumwidth}{2em}
                 % \renewcommand{\@tocrmarg}{3em}
             % \makeatother
 
-            % questions/57544/memoir-mysterious-overfull-hbox-in-toc-when-mathptmx-is-used
+            % q/memoir-mysterious-overfull-hbox-in-toc-when-mathptmx-is-used
             % \setlength{\cftchapternumwidth}{2.25em}
 
             % Add the table of contents to the brief table of contents
-            % questions/234398/list-of-figures-and-tables-when-there-are-no-figures-or-tables
+            % q/list-of-figures-and-tables-when-there-are-no-figures-or-tables
             \whenlistisnotempty{\contentsname}{%
                 \addtotextpreliminarycontent{\contentsname}
                 \tableofcontents
@@ -496,12 +496,12 @@ section=TITLE, % Título de seções em caixa alta
 
     % Referências bibliográficas
     \begingroup
-        % questions/163559/how-to-modify-line-spacing-per-entry-of-bibliography
-        % questions/19105/how-can-i-put-more-space-between-bibliography-entries-biblatex
+        % q/how-to-modify-line-spacing-per-entry-of-bibliography
+        % q/how-can-i-put-more-space-between-bibliography-entries-biblatex
         \setlength\bibitemsep{\baselineskip}
         \advisor{}{\linespread{1.18}\selectfont}
 
-        % questions/17128/using-bibtex-to-make-a-list-of-references-without-having-citations-in-the-body
+        % q/using-bibtex-to-make-a-list-of-references-without-having-citations-in-the-body
         % \nocite{*}
         \printbibliography[title=\lang{REFERENCES}{REFERÊNCIAS}]
     \endgroup
