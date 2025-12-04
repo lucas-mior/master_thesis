@@ -1,5 +1,3 @@
-% setup/ufscthesisx.sty
-%
 % Copyright 2017 Evandro Coan
 % Copyright 2012-2016 by abnTeX2 group at https://www.abntex.net.br/
 %
