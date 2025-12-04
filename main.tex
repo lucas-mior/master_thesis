@@ -501,7 +501,9 @@ section=TITLE, % Título de seções em caixa alta
           \renewcommand{\addvspace}[1]{}
           \listoffigures*
         }
-      }{\pdfbookmark[0]{\listfigurename}{lof}}
+      }{
+        \pdfbookmark[0]{\listfigurename}{lof}
+      }
 
       % inserir lista de quadros
       \ifforcedinclude\else
@@ -515,7 +517,9 @@ section=TITLE, % Título de seções em caixa alta
           \renewcommand{\addvspace}[1]{}
           \listofquadros*
         }
-      }{\pdfbookmark[0]{\listofquadrosname}{loq}}
+      }{
+        \pdfbookmark[0]{\listofquadrosname}{loq}
+      }
 
       % inserir lista de tabelas
       \ifforcedinclude\else
@@ -529,7 +533,9 @@ section=TITLE, % Título de seções em caixa alta
           \renewcommand{\addvspace}[1]{}
           \listoftables*
         }
-      }{\pdfbookmark[0]{\listtablename}{lot}}
+      }{
+        \pdfbookmark[0]{\listtablename}{lot}
+      }
 
       % inserir códigos fonte (List of Listings `lol`)
       % q/latex-keeps-showing-minted-environment-as-figures-instead-of-listening
@@ -544,7 +550,9 @@ section=TITLE, % Título de seções em caixa alta
           \renewcommand{\addvspace}[1]{}
           \lstlistoflistings*
         }
-      }{\pdfbookmark[0]{\lstlistlistingname}{lol}}
+      }{
+        \pdfbookmark[0]{\lstlistlistingname}{lol}
+      }
     }
     \fi
 
@@ -589,7 +597,9 @@ section=TITLE, % Título de seções em caixa alta
         \whenlistisnotempty{\contentsname}{%
           \addtotextpreliminarycontent{\contentsname}
           \tableofcontents
-        }{\pdfbookmark[0]{\contentsname}{toc}}
+        }{
+          \pdfbookmark[0]{\contentsname}{toc}
+        }
       }
 
     \end{KeepFromToc}
