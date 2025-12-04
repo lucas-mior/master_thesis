@@ -122,7 +122,7 @@
 
 % ---
 % Do pacote de if/them/else
-\newcommand{\abntex@ifnotempty}[2]{\ifthenelse{\not\equal{#1}{}}{#2}{}}
+\newcommand{\abntex@UFSCifNotEmpty}[2]{\ifthenelse{\not\equal{#1}{}}{#2}{}}
 % ---
 
 % Define o comando \fonte que respeita as configurações de caption do memoir ou do caption
@@ -1089,7 +1089,7 @@
     \end{center}
     \vspace*{\fill}
 
-    \abntex@ifnotempty{\imprimirpreambulo}{%
+    \abntex@UFSCifNotEmpty{\imprimirpreambulo}{%
       \hspace{.45\textwidth}
       \begin{minipage}{.5\textwidth}
         \SingleSpacing
@@ -1098,10 +1098,10 @@
        \vspace*{\fill}
     }%
 
-    {\abntex@ifnotempty{\imprimirinstituicao}{\imprimirinstituicao\vspace*{\fill}}}
+    {\abntex@UFSCifNotEmpty{\imprimirinstituicao}{\imprimirinstituicao\vspace*{\fill}}}
 
     {\large\imprimirorientadorRotulo~\imprimirorientador\par}
-    \abntex@ifnotempty{\imprimircoorientador}{%
+    \abntex@UFSCifNotEmpty{\imprimircoorientador}{%
        {\large\imprimircoorientadorRotulo~\imprimircoorientador}%
     }%
     \vspace*{\fill}

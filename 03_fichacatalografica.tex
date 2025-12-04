@@ -48,10 +48,10 @@ contidos.
                 \imprimirautor
 
                 \hspace{0.5cm} \imprimirtitulo%
-                \ifnotempty{\imprimirsubtitulo}{~:~\imprimirsubtitulo}%
+                \UFSCifNotEmpty{\imprimirsubtitulo}{~:~\imprimirsubtitulo}%
                 ~/~\imprimirautor%
                 ;~\imprimirorientadorRotulo,~\imprimirorientador%
-                \ifnotempty{\imprimircoorientador}{;~\imprimircoorientadorRotulo,~\imprimircoorientador}%
+                \UFSCifNotEmpty{\imprimircoorientador}{;~\imprimircoorientadorRotulo,~\imprimircoorientador}%
                 ~--~\imprimirlocal,~\imprimirdata.
 
                 % Prints how much pages there are on the document
@@ -74,7 +74,7 @@ contidos.
                 \end{inparaenum}%
                 \begin{inparaenum}[I.]
                     \item \imprimirorientador~
-                    \ifnotempty{\imprimircoorientador}{\item \imprimircoorientador~}
+                    \UFSCifNotEmpty{\imprimircoorientador}{\item \imprimircoorientador~}
                     \item \imprimirprograma~
                     \item \imprimirtitulo~
                 \end{inparaenum}%
