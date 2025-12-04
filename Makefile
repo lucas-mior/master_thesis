@@ -34,26 +34,6 @@
 ECHOCMD:=/bin/echo -e
 SHELL := /bin/bash
 
-ifeq (${UFSCTHESISX_RSYNC_DIRECTORY},)
-	useless := $(eval export UFSCTHESISX_RSYNC_DIRECTORY=.)
-endif
-
-ifeq (${UFSCTHESISX_MAINTEX_DIRECTORY},)
-	useless := $(eval export UFSCTHESISX_MAINTEX_DIRECTORY=.)
-endif
-
-ifeq (${UFSCTHESISX_ROOT_DIRECTORY},)
-	useless := $(eval export UFSCTHESISX_ROOT_DIRECTORY=LatexBuild/ufscthesisx)
-endif
-
-ifeq (${UFSCTHESISX_REMOTE_PASSWORD},)
-	useless := $(eval export UFSCTHESISX_REMOTE_PASSWORD=admin123)
-endif
-
-ifeq (${UFSCTHESISX_REMOTE_ADDRESS},)
-	useless := $(eval export UFSCTHESISX_REMOTE_ADDRESS=root@192.168.0.222)
-endif
-
 # https://stackoverflow.com/questions/7123241/makefile-as-an-executable-script-with-shebang
 #
 #   Copyright 2017-2019 @ Evandro Coan
