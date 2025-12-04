@@ -1214,36 +1214,36 @@
 % #2: boolean expression (true: start with capitalized letter, as in \Cref)
 % #3: boolean expression (true: disable hyperlinks)
 % #4: comma list of refs
-\cs_new_protected:Npn \user_name_refs:nnnn #1#2#3#4
-  {
-    \seq_set_from_clist:Nn \l__user_name_refs_tmpa_seq {#4}
-    \int_set:Nn \l__user_name_refs_nbrefs_int
-                { \seq_count:N \l__user_name_refs_tmpa_seq }
-    \seq_get_left:NN \l__user_name_refs_tmpa_seq \l__user_name_refs_firstref_tl
+\cs_new_protected:Npn \user_name_refs:nnnn #1#2#3#4 {
+  \seq_set_from_clist:Nn \l__user_name_refs_tmpa_seq {#4}
+  \int_set:Nn \l__user_name_refs_nbrefs_int
+    { \seq_count:N \l__user_name_refs_tmpa_seq }
+  \seq_get_left:NN \l__user_name_refs_tmpa_seq \l__user_name_refs_firstref_tl
 
-    \bool_if:nTF {#1}
-    {
-      % (section, Section, sections or Sections)
-      % or (theorem, Theorem, ...)
-      % or...
-      \user_name_cref:xV
-        { \bool_if:nTF {#2} { C } { c }
-          ref
-         \int_compare:nNnTF { \l__user_name_refs_nbrefs_int } > { 1 } { s } { } }
-       \l__user_name_refs_firstref_tl
-      \nobreakspace
-    }{}
-
-    % Now print the references.
-    \seq_clear:N \l__user_name_refs_tmpb_seq
-    \seq_map_inline:Nn \l__user_name_refs_tmpa_seq
-      {
-        \seq_put_right:Nn \l__user_name_refs_tmpb_seq
-                          { \user_name_ref:nn {#3} {##1} }
+  \bool_if:nTF {#1} {
+    % (section, Section, sections or Sections)
+    % or (theorem, Theorem, ...)
+    % or...
+    \user_name_cref:xV
+      { \bool_if:nTF {#2} { C } { c }
+        ref
+        \int_compare:nNnTF { \l__user_name_refs_nbrefs_int } > { 1 } { s } { } 
       }
-    \seq_use:Nnnn \l__user_name_refs_tmpb_seq { \crefpairconjunction }
-                  { \crefmiddleconjunction } { \creflastconjunction }
+      \l__user_name_refs_firstref_tl
+    \nobreakspace
+  } {}
+
+  % Now print the references.
+  \seq_clear:N \l__user_name_refs_tmpb_seq
+  \seq_map_inline:Nn \l__user_name_refs_tmpa_seq {
+    \seq_put_right:Nn \l__user_name_refs_tmpb_seq
+      { \user_name_ref:nn {#3} {##1} }
   }
+  \seq_use:Nnnn \l__user_name_refs_tmpb_seq
+    { \crefpairconjunction }
+    { \crefmiddleconjunction }
+    { \creflastconjunction }
+}
 
 \cs_generate_variant:Nn \user_name_refs:nnnn { nx }
 \cs_generate_variant:Nn \user_name_refs:nnnn { nnxn }
