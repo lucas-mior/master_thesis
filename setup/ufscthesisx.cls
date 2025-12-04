@@ -1890,8 +1890,7 @@
 
 % How could the `\everypar` justification statement be used?
 % q/how-could-the-everypar-justification-statement-be-used
-\everypar=
-{%
+\everypar={%
   \setbox0=\lastbox \par%
   \vbox\bgroup \everypar={}\def\par{\endgraf\eatlines\egroup}%
 }
