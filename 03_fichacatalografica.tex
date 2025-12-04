@@ -45,11 +45,11 @@ contidos.
             \begingroup \let\\=\space
 
                 \ttfamily
-                \imprimirautor
+                \theauthor
 
-                \hspace{0.5cm} \imprimirtitulo%
+                \hspace{0.5cm} \thetitle%
                 \UFSCifNotEmpty{\imprimirsubtitulo}{~:~\imprimirsubtitulo}%
-                ~/~\imprimirautor%
+                ~/~\theauthor%
                 ;~\imprimirorientadorRotulo,~\imprimirorientador%
                 \UFSCifNotEmpty{\imprimircoorientador}{;~\imprimircoorientadorRotulo,~\imprimircoorientador}%
                 ~--~\imprimirlocal,~\imprimirdata.
@@ -76,7 +76,7 @@ contidos.
                     \item \imprimirorientador~
                     \UFSCifNotEmpty{\imprimircoorientador}{\item \imprimircoorientador~}
                     \item \imprimirprograma~
-                    \item \imprimirtitulo~
+                    \item \thetitle~
                 \end{inparaenum}%
                 \bigskip
 

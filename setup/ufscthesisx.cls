@@ -736,7 +736,7 @@
 
     \vfill
 
-    {\imprimirautor}
+    {\theauthor}
 
     \vfill
     {%
@@ -768,7 +768,7 @@
 \renewcommand{\folhaderostocontent}
 {%
   \begin{center}
-    {\imprimirautor}
+    {\theauthor}
 
     \vspace*{\fill}\vspace*{\fill}
     \begin{center}

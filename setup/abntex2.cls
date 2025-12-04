@@ -716,16 +716,8 @@
 % ------------------------------------------------------------------------
 
 % Comandos de dados - titulo do documento
-\newcommand{\titulo}[1]{\title{#1}}
-\newcommand{\imprimirtitulo}{\thetitle}
-
-% Comandos de dados - titulo do documento
 \newcommand{\tituloestrangeiro}[1]{\providecommand{\theforeigntitle}{#1}}
 \newcommand{\imprimirtituloestrangeiro}{\theforeigntitle}
-
-% Comandos de dados - autor (use \and para multiplos autores)
-\newcommand{\autor}[1]{\author{#1}}
-\newcommand{\imprimirautor}{\theauthor}
 
 % Comandos de dados - data
 \let\olddate\date
@@ -1049,7 +1041,7 @@
 \newcommand{\imprimircapa}{%
   \begin{capa}%
     \center
-    \ABNTEXchapterfont\large\imprimirautor
+    \ABNTEXchapterfont\large\theauthor
 
     \vfill
     \begin{center}
@@ -1081,7 +1073,7 @@
   \begin{center}
 
     %\vspace*{1cm}
-    {\ABNTEXchapterfont\large\imprimirautor}
+    {\ABNTEXchapterfont\large\theauthor}
 
     \vspace*{\fill}\vspace*{\fill}
     \begin{center}
