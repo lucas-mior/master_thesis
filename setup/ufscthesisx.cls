@@ -2048,14 +2048,6 @@
     \g@addto@macro\includeonlyfilelist{#1}
   \fi
 }
-\newcommand{\doincludeonly}[0]
-{%
-  \StrLen{\includeonlyfilelist}[\includeonlyfilelistlen]
-  \ifnum\includeonlyfilelistlen>0
-    \includeonly{\includeonlyfilelist}
-  \else
-  \fi
-}
 
 %% README.md
 %% Copyright 2017 Evandro Coan
