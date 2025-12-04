@@ -157,16 +157,18 @@
 
 \ifwindows
   \providecommand{\DeleteFile}[2][]{%
-  \ifthenelse{\equal{#1}{}}%
-    {\IfFileExists{#2}{\ShellEscape{del #2}}{}}%
-    {\IfFileExists{#1/#2}{%
-    \StrSubstitute{#1}{/}{\@backslashchar}[\mintedwindir]
-    \ShellEscape{del \mintedwindir\@backslashchar #2}}{}}}
+    \ifthenelse{\equal{#1}{}}%
+      {\IfFileExists{#2}{\ShellEscape{del #2}}{}}%
+      {\IfFileExists{#1/#2}{%
+      \StrSubstitute{#1}{/}{\@backslashchar}[\mintedwindir]
+      \ShellEscape{del \mintedwindir\@backslashchar #2}}{}}
+  }
 \else
   \providecommand{\DeleteFile}[2][]{%
   \ifthenelse{\equal{#1}{}}%
     {\IfFileExists{#2}{\ShellEscape{rm #2}}{}}%
-    {\IfFileExists{#1/#2}{\ShellEscape{rm #1/#2}}{}}}
+    {\IfFileExists{#1/#2}{\ShellEscape{rm #1/#2}}{}}
+  }
 \fi
 
 \newboolean{AppMotherFuckerExists}
@@ -317,8 +319,7 @@
 
 \newcounter{ufscthesisx@assuntos}
 \providecommand{\listaassuntos}{}
-\providecommand{\imprimirassuntos}
-{%
+\providecommand{\imprimirassuntos}{%
   \setcounter{ufscthesisx@assuntos}{1}
   \@for\assunto:={\listaassuntos}\do
   {%
@@ -487,14 +488,14 @@
 \let\oldcontentsline\contentsline
 \def\contentsline#1#2{%
   \expandafter\ifx\csname l@#1\endcsname\l@section
-  \expandafter\@firstoftwo
+    \expandafter\@firstoftwo
   \else
-  \expandafter\@secondoftwo
+    \expandafter\@secondoftwo
   \fi
   {%
-  \oldcontentsline{#1}{\MakeTextUppercase{#2}}%
+    \oldcontentsline{#1}{\MakeTextUppercase{#2}}%
   }{%
-  \oldcontentsline{#1}{#2}%
+    \oldcontentsline{#1}{#2}%
   }%
 }
 
@@ -532,8 +533,7 @@
 
 \newlength{\cftnumberboxnumberwidth}
 \setlength{\cftnumberboxnumberwidth}{2em}
-\renewcommand{\ABNTEXtocprintchapter}
-{%
+\renewcommand{\ABNTEXtocprintchapter}{%
   \addtocontents{toc}{\cftsetindents{chapter}{0em}{\cftlastnumwidth}}
 }
 %
@@ -582,8 +582,7 @@
 \renewcommand{\cftparagraphpagefont}{\cftparagraphfont}
 
 % Ajusta entrada Referencias
-\renewcommand{\bibsection}
-{%
+\renewcommand{\bibsection}{%
   \chapter*{\bibname}
   \bibmark
   \ifnobibintoc\else
@@ -606,16 +605,14 @@
 \setlength{\ABNTEXcitacaorecuo}{3cm} %4, mas abntex2 está somando 1cm
 
 % Comando para inverter sobrenome e nome
-\newcommand{\ufscthesisx@inverter}[1]
-{%
+\newcommand{\ufscthesisx@inverter}[1]{%
   \StrBehind{#1}{{}},
   \StrBefore{#1}{{}}
 }
 
 % Comandos auxiliares
 % q/how-can-i-see-the-line-spacing-between-lines
-\newcommand{\UFSCshowFont}
-{%
+\newcommand{\UFSCshowFont}{%
   (\foreignlanguage{english}
   {%
     encoding: \f@encoding{},
@@ -630,8 +627,7 @@
 }
 
 % Comandos auxiliares
-\newcommand{\UFSCjustShowFont}
-{%
+\newcommand{\UFSCjustShowFont}{%
   (\foreignlanguage{english}
   {%
     \f@encoding{},
@@ -656,16 +652,14 @@
 \newcommand{\secref}[1]{Seção~\ref{#1}}     % Cross-reference of equations
 \newcommand{\defref}[1]{Definição~\ref{#1}} %
 
-\renewenvironment{resumo}[1][\ABNTEXresumoname]
-{%
+\renewenvironment{resumo}[1][\ABNTEXresumoname]{%
   % Fixed double bookmark entries as `\ABNTEXpretextualchapter`
   % bellow is already calling `\ABNTEXPRIVATEbookmarkthis`
   % \ABNTEXPRIVATEbookmarkthis{#1}
   % \renewcommand{\abstractnamefont}{\chaptitlefont}
   % \renewcommand{\abstractname}{\ABNTEXchapterupperifneeded{#1}}
   \ABNTEXpretextualchapter{#1}
-}
-{%
+}{%
   \ABNTEXPRIVATEclearpageifneeded
 }
 
@@ -732,8 +726,7 @@
 % Configura layout para elementos textuais,
 % redefining the ABNT command `\ABNTEXtextual`.
 % Delete his to restore the ABNT default behavior.
-\renewcommand{\ABNTEXtextual}
-{%
+\renewcommand{\ABNTEXtextual}{%
   % Estilo original do Abntex2
   \pagestyle{abntheadings}
 
@@ -749,16 +742,14 @@
 % Comandos e ambientes de editoracao APENDICES e ANEXOS
 % ------------------------------------------------------------------------
 % Imprime uma pagina de divisao no estilo parte
-\renewcommand{\ABNTEXpartpage}
-{%
+\renewcommand{\ABNTEXpartpage}{%
   % \phantomsection
   % \addcontentsline{toc}{part}{\appendixtocname}
   \appendixpage*
 }
 
 % Impressão da Capa
-\renewcommand{\ABNTEXimprimircapa}
-{%
+\renewcommand{\ABNTEXimprimircapa}{%
   \begin{capa}%
 
     \center
@@ -856,8 +847,7 @@
 
 % If document class is equal to something then do not use package
 % q/if-document-class-is-equal-to-something-then-do-not-use-package
-\@ifclassloaded{setup/abntex2}
-{
+\@ifclassloaded{setup/abntex2}{
   % Package hyperref Warning: Token not allowed in a PDF string?
   % q/package-hyperref-warning-token-not-allowed-in-a-pdf-string
   \pdfstringdefDisableCommands{\let\uppercase\relax}
@@ -993,7 +983,11 @@
 % bigfoot.sty:61:
 % Package hyperref Warning: Option `hyperfootnotes' has already been used
 % q/bigfoot-sty61-package-hyperref-warning-option-hyperfootnotes-has-already-be
-\@ifpackageloaded{hyperref}{\hypersetup{hyperfootnotes=false}}{\PassOptionsToPackage{hyperfootnotes=false}{hyperref}}
+\@ifpackageloaded{hyperref}{%
+  \hypersetup{hyperfootnotes=false}
+}{%
+  \PassOptionsToPackage{hyperfootnotes=false}{hyperref}
+}
 \usepackage{hyperref}
 
 % \lettrine{O}{nce} upon a time...
@@ -1512,11 +1506,35 @@
     }{}
   }{}
 
-  \@ifpackageloaded{babel}{\@ifpackagewith{babel}{english}{\addto\captionsenglish{\renewcommand{\lstlistingname}{Code}}}{}}{}
-  \@ifpackageloaded{babel}{\@ifpackagewith{babel}{english}{\addto\captionsenglish{\renewcommand{\lstlistlistingname}{List of Codes}}}{}}{}
+  \@ifpackageloaded{babel}{%
+    \@ifpackagewith{babel}{english}{%
+      \addto\captionsenglish{%
+        \renewcommand{\lstlistingname}{Code}
+      }
+    }{}
+  }{}
+  \@ifpackageloaded{babel}{%
+    \@ifpackagewith{babel}{english}{%
+      \addto\captionsenglish{%
+        \renewcommand{\lstlistlistingname}{List of Codes}
+      }
+    }{}
+  }{}
 
-  \@ifpackageloaded{babel}{\@ifpackagewith{babel}{brazil}{\addto\captionsbrazil{\crefname{listing}{código}{códigos}}}{}}{}
-  \@ifpackageloaded{babel}{\@ifpackagewith{babel}{brazil}{\addto\captionsbrazil{\Crefname{listing}{Código}{Códigos}}}{}}{}
+  \@ifpackageloaded{babel}{%
+    \@ifpackagewith{babel}{brazil}{%
+      \addto\captionsbrazil{%
+        \crefname{listing}{código}{códigos}
+      }
+    }{}
+  }{}
+  \@ifpackageloaded{babel}{%
+    \@ifpackagewith{babel}{brazil}{%
+      \addto\captionsbrazil{%
+        \Crefname{listing}{Código}{Códigos}
+      }
+    }{}
+  }{}
 
   \begingroup
     \let\newcounter\@gobble\let\setcounter\@gobbletwo
@@ -1586,10 +1604,10 @@
   % q/customizing-the-list-of-listings-generated-by-lstlistoflistings
   % q/setting-entries-of-list-of-listings-in-latex-package-listings
   \newenvironment{code}{
-  \captionsetup{type=lstlisting,skip=0pt,position=top}
-  \setlength{\abovecaptionskip}{0pt}
-  \setlength{\belowcaptionskip}{10pt}
-  \setlength{\parskip}{0pt}
+    \captionsetup{type=lstlisting,skip=0pt,position=top}
+    \setlength{\abovecaptionskip}{0pt}
+    \setlength{\belowcaptionskip}{10pt}
+    \setlength{\parskip}{0pt}
   }{}
 
   % q/red-box-drawn-around-question-mark-operator-in-minted-erlang-code
@@ -1674,16 +1692,18 @@
 % Criação de estilo
 \newglossarystyle{mylong1}{% modificado de a/166209/151962
   \setglossarystyle{long}%
-  \renewenvironment{theglossary}%
-  {\begin{longtable}[l]{@{}p{\dimexpr 3.0cm-\tabcolsep}p{0.78\hsize}}}% <-- change the value here
+  \renewenvironment{theglossary}{%
+    \begin{longtable}[l]{@{}p{\dimexpr 3.0cm-\tabcolsep}p{0.78\hsize}}
+  }% <-- change the value here
   {\end{longtable}}%
 }
 
 % Só um pequeno récuo em relação ao primeiro
 \newglossarystyle{mylong2}{% modificado de a/166209/151962
   \setglossarystyle{long}%
-  \renewenvironment{theglossary}%
-  {\begin{longtable}[l]{@{}p{\dimexpr 2.0cm-\tabcolsep}p{0.86\hsize}}}% <-- change the value here
+  \renewenvironment{theglossary}{%
+    \begin{longtable}[l]{@{}p{\dimexpr 2.0cm-\tabcolsep}p{0.86\hsize}}
+  }% <-- change the value here
   {\end{longtable}}%
 }
 
@@ -1870,8 +1890,7 @@
 
 % How could the `\everypar` justification statement be used?
 % q/how-could-the-everypar-justification-statement-be-used
-\everypar=
-{%
+\everypar={%
   \setbox0=\lastbox \par%
   \vbox\bgroup \everypar={}\def\par{\endgraf\eatlines\egroup}%
 }
@@ -1885,21 +1904,20 @@
 % \end{foo}
 %
 % q/push-long-words-in-a-new-line
-\newenvironment{foo}
-{%
+\newenvironment{foo}{%
   \par%
   \hyphenpenalty=10000%
   \exhyphenpenalty=10000%
+}{%
+  \par%
 }
-{\par}
 
 % Some text \brkurl{http://www.example.com/this/directory/here}
 %
 % How to break long URLs using common hyphenation
 % but adding a line feed indicator?
 % q/how-to-break-long-urls-using-common-hyphenation-but
-\def\addurlspace#1
-{%
+\def\addurlspace#1{%
   \ifx\relax#1%
   \else%
   \ifx/#1\space\fi%
@@ -1914,8 +1932,7 @@
 \@namedef{OT1-zwidthchar}{255}
 \@namedef{T1-zwidthchar}{"17}
 
-\def\brkurl#1
-{%
+\def\brkurl#1{%
   \edef\savedhchar{\the\hyphenchar\font}%
   \global\setbox1\hbox{}%
   \setbox0=\vbox
@@ -1932,7 +1949,9 @@
     \ifvoid4 \else%
     \global\setbox1\hbox%
     {%
-      \unhbox4\unskip\unskip\discretionary{\hbox{\rlap{$\leftarrow$}}}{}{}\unhbox1%
+      \unhbox4\unskip\unskip\discretionary{%
+        \hbox{\rlap{$\leftarrow$}}%
+      }{}{}\unhbox1%
     }%
     \unskip%
     \unskip%
@@ -1984,8 +2003,7 @@
 \usepackage{array}
 \newcolumntype{B}{>{\global\let\currentrowstyle\relax}}
 \newcolumntype{^}{>{\currentrowstyle}}
-\newcommand{\rowstyle}[1]
-{%
+\newcommand{\rowstyle}[1]{%
   \gdef\currentrowstyle{#1}#1\ignorespaces
 }
 
@@ -2018,8 +2036,7 @@
   \isabntexloadedtrue%
 }{}
 
-\newcommand{\addGoToSummary}
-{%
+\newcommand{\addGoToSummary}{%
   \@ifundefined{printparttitle}{\message{printparttitle patch for addGoToSummary could NOT
         be applied because there is no printparttitle command available!^^J}}{%
     \let\oldAddGoToprintparttitle\printparttitle
@@ -2049,17 +2066,27 @@
 }
 
 \newcommand{\UFSCremoveGoToSummary}{%
-  \@ifundefined{oldAddGoToprintparttitle}{}{\let\printparttitle\oldAddGoToprintparttitle}
-  \@ifundefined{oldAddGoToSectionformat}{}{\let\Sectionformat\oldAddGoToSectionformat}
+  \@ifundefined{oldAddGoToprintparttitle}{}{%
+    \let\printparttitle\oldAddGoToprintparttitle
+  }
+  \@ifundefined{oldAddGoToSectionformat}{}{%
+    \let\Sectionformat\oldAddGoToSectionformat
+  }
 
   \ifismemoirloaded
     \ifisabntexloaded
-      \@ifundefined{oldAddGoToABNTEXchapterupperifneeded}{}{\let\ABNTEXchapterupperifneeded\oldAddGoToABNTEXchapterupperifneeded}
+      \@ifundefined{oldAddGoToABNTEXchapterupperifneeded}{}{%
+        \let\ABNTEXchapterupperifneeded\oldAddGoToABNTEXchapterupperifneeded
+      }
     \else
-      \@ifundefined{oldAddGoToprintchaptertitle}{}{\let\printchaptertitle\oldAddGoToprintchaptertitle}
+      \@ifundefined{oldAddGoToprintchaptertitle}{}{%
+        \let\printchaptertitle\oldAddGoToprintchaptertitle
+      }
     \fi
   \else
-    \@ifundefined{oldAddGoToChapterformat}{}{\let\Chapterformat\oldAddGoToChapterformat}
+    \@ifundefined{oldAddGoToChapterformat}{}{%
+      \let\Chapterformat\oldAddGoToChapterformat
+    }
   \fi
 }
 
@@ -2077,8 +2104,14 @@
 % Allow to push long words on new lines
 % when they do not fit entirely on the current line.
 % q/push-long-words-in-a-new-line
-\newcommand\lword[1]{\leavevmode\nobreak\hskip0pt plus\linewidth\penalty50\hskip0pt plus-\linewidth\nobreak{#1}}
-\newcommand\lurl[1]{\leavevmode\nobreak\hskip0pt plus\linewidth\penalty50\hskip0pt plus-\linewidth\nobreak{\url{#1}}}
+\newcommand\lword[1]{%
+  \leavevmode\nobreak\hskip0pt %
+  plus\linewidth\penalty50\hskip0pt plus-\linewidth\nobreak{#1}%
+}
+\newcommand\lurl[1]{%
+  \leavevmode\nobreak\hskip0pt %
+  plus\linewidth\penalty50\hskip0pt plus-\linewidth\nobreak{\url{#1}}%
+}
 
 % For the new command \latex
 % q/space-after-latex-commands
@@ -2106,10 +2139,11 @@
 
 % Reset section numbering between unnumbered chapters
 % q/reset-section-numbering-between-unnumbered-chapters
-\newcommand{\addtotextpreliminarycontent}[1]
-{%
+\newcommand{\addtotextpreliminarycontent}[1]{%
   \refstepcounter{textpreliminarycounter}%
-  \addcontentsline{tpc}{textpreliminarycounter}{\protect\numberline{\thetextpreliminarycounter}#1}\par%
+  \addcontentsline{tpc}%
+                  {textpreliminarycounter}%
+                  {\protect\numberline{\thetextpreliminarycounter}#1}\par%
 }
 
 % Unable to link to inserted pages with pdfpages
@@ -2117,16 +2151,15 @@
 \newcounter{includepdfpage}
 \newcounter{currentpagecounter}
 
-\newcommand{\addlabelstoallincludedpages}[1]
-{%
+\newcommand{\addlabelstoallincludedpages}[1]{%
   \refstepcounter{includepdfpage}%
   \stepcounter{currentpagecounter}%
   \label{#1.\thecurrentpagecounter}%
 }
-\newcommand{\modifiedincludepdf}[4]
-{%
+\newcommand{\modifiedincludepdf}[4]{%
   \setcounter{currentpagecounter}{0}%
-  \includepdf[pages=#1,pagecommand=\addlabelstoallincludedpages{#2},scale=#4]{#3}%
+  \includepdf[pages=#1,pagecommand=\addlabelstoallincludedpages{#2},scale=#4]
+             {#3}%
 }
 
 % \MakeUppercase in \section and \chapter with hyperref cause trouble
@@ -2160,8 +2193,7 @@
 % Logical String Length
 % q/logical-string-length
 \newcommand{\includeonlyfilelist}[0]{}
-\newcommand{\addtoincludeonly}[1]
-{%
+\newcommand{\addtoincludeonly}[1]{%
   \StrLen{\includeonlyfilelist}[\includeonlyfilelistlen]
 
   % How to concatenate strings into a single command?
