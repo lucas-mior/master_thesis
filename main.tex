@@ -251,7 +251,8 @@ section=TITLE, % Título de seções em caixa alta
 
 % #1 = filename (with path)
 % #2 = caption
-\newcommand{\image}[2]{%
+% #3 = scale (e.g., 0.35)
+\newcommand{\image}[3]{%
   % Remove path
   \StrBehind{#1}{/}[\tmpA]%
   \IfEq{\tmpA}{}{\def\tmpA{#1}}{}%
@@ -260,7 +261,7 @@ section=TITLE, % Título de seções em caixa alta
   %
   \begin{figure}[htb]
     \centering
-    \includegraphics[scale=0.35]{#1}
+    \includegraphics[scale=#3]{#1}
     \caption{#2}
     \label{fig:\imglabel}
   \end{figure}
