@@ -51,9 +51,9 @@
 % q/changing-the-cleveref-package-language-conjunction-definition
 % q/why-isnt-my-biblatex-language-changing-when-passing-the-language-on-my-document
 \ifenglish
-    \PassOptionsToPackage{brazil,main=english}{babel}
+  \PassOptionsToPackage{brazil,main=english}{babel}
 \else
-    \PassOptionsToPackage{main=brazil,english}{babel}
+  \PassOptionsToPackage{main=brazil,english}{babel}
 \fi
 
 % Simple alias for English and Portuguese words
@@ -350,7 +350,7 @@ section=TITLE, % Título de seções em caixa alta
 
     % Uncomment this to put a ←← | ← (Go To Top/Go Back) on each section header
     \ifadvisor\else
-    \addGoToSummary
+      \addGoToSummary
     \fi
 
     % ELEMENTOS PRÉ-TEXTUAIS
@@ -654,7 +654,7 @@ section=TITLE, % Título de seções em caixa alta
       % q/how-can-i-put-more-space-between-bibliography-entries-biblatex
       \setlength\bibitemsep{\baselineskip}
       \ifadvisor\else
-      \linespread{1.18}\selectfont
+        \linespread{1.18}\selectfont
       \fi
 
       % q/using-bibtex-to-make-a-list-of-references-without-having-citations-in-the-body
@@ -694,8 +694,8 @@ section=TITLE, % Título de seções em caixa alta
 
     % INDICE REMISSIVO
     \ifforcedinclude\else
-        \ABNTEXphantompart
-        \printindex
+      \ABNTEXphantompart
+      \printindex
     \fi
 
 \end{document}
