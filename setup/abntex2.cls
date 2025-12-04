@@ -76,10 +76,12 @@
 \setboolean{ABNTEXsumario-abnt-6027-2012}{true}
 \DeclareOption{sumario=tradicional}{%
   \setboolean{ABNTEXsumario-tradicional}{true}%
-  \setboolean{ABNTEXsumario-abnt-6027-2012}{false}}
+  \setboolean{ABNTEXsumario-abnt-6027-2012}{false}
+}
 \DeclareOption{sumario=abnt-6027-2012}{%
   \setboolean{ABNTEXsumario-abnt-6027-2012}{true}
-  \setboolean{ABNTEXsumario-tradicional}{false}}
+  \setboolean{ABNTEXsumario-tradicional}{false}
+}
 %
 % Repassa demais opcoes a memoir
 %
@@ -107,11 +109,21 @@
 % pacote que prove \MakeTextUppercase
 \RequirePackage{textcase}
 
-\newcommand{\ABNTEXchapterupperifneeded}[1]{\ifthenelse{\boolean{ABNTEXupperchapter}}{\MakeTextUppercase{#1}}{#1}}
-\newcommand{\ABNTEXsectionupperifneeded}{\ifthenelse{\boolean{ABNTEXuppersection}}{\MakeTextUppercase}{}}
-\newcommand{\ABNTEXsubsectionupperifneeded}{\ifthenelse{\boolean{ABNTEXuppersubsection}}{\MakeTextUppercase}{}}
-\newcommand{\ABNTEXsubsubsectionupperifneeded}{\ifthenelse{\boolean{ABNTEXuppersubsubsection}}{\MakeTextUppercase}{}}
-\newcommand{\ABNTEXsubsubsubsectionupperifneeded}{\ifthenelse{\boolean{ABNTEXuppersubsubsubsection}}{\MakeTextUppercase}{}}
+\newcommand{\ABNTEXchapterupperifneeded}[1]{
+  \ifthenelse{\boolean{ABNTEXupperchapter}}{\MakeTextUppercase{#1}}{#1}
+}
+\newcommand{\ABNTEXsectionupperifneeded}{
+  \ifthenelse{\boolean{ABNTEXuppersection}}{\MakeTextUppercase}{}
+}
+\newcommand{\ABNTEXsubsectionupperifneeded}{
+  \ifthenelse{\boolean{ABNTEXuppersubsection}}{\MakeTextUppercase}{}
+}
+\newcommand{\ABNTEXsubsubsectionupperifneeded}{
+  \ifthenelse{\boolean{ABNTEXuppersubsubsection}}{\MakeTextUppercase}{}
+}
+\newcommand{\ABNTEXsubsubsubsectionupperifneeded}{
+  \ifthenelse{\boolean{ABNTEXuppersubsubsubsection}}{\MakeTextUppercase}{}
+}
 
 % ------------------------------------------------------------------------
 % Pacotes adicionais e customizacoes gerais do memoir
@@ -1009,12 +1021,14 @@
 \newcommand{\ABNTEXimprimirFolhaDeRostostar}[1]{%
   \begin{folhaderosto*}{#1}
      \ABNTEXfolhaderostocontent
-  \end{folhaderosto*}}
+  \end{folhaderosto*}
+}
 
 \newcommand{\ABNTEXimprimirFolhaDeRostonostar}[1]{%
   \begin{folhaderosto}{#1}
      \ABNTEXfolhaderostocontent
-  \end{folhaderosto}}
+  \end{folhaderosto}
+}
 
 \newcommand{\ABNTEXimprimirFolhaDeRosto}[1][\ABNTEXfolhaderostoname]{%
    \@ifstar
