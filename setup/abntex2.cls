@@ -730,8 +730,8 @@
 \renewcommand{\maketitlehookb}{\LARGE\center\textit{\abntextheforeigntitle}}
 }{}
 
-% Ficha catalografica (Dados internacionais de
-% catalogação-na-publicacao)
+% Ficha catalografica
+% (Dados internacionais de catalogação-na-publicacao)
 \newenvironment{abntexEnvFichacatalografica}{%
   \thispagestyle{empty}
   \begin{SingleSpacing}
@@ -1020,7 +1020,10 @@
        \vspace*{\fill}
     }%
 
-    {\abntex@UFSCifNotEmpty{\abnteximprimirinstituicao}{\abnteximprimirinstituicao\vspace*{\fill}}}
+    {%
+      \abntex@UFSCifNotEmpty{\abnteximprimirinstituicao}
+                            {\abnteximprimirinstituicao\vspace*{\fill}}
+    }
 
     {\large\abnteximprimirorientadorRotulo~\abnteximprimirorientador\par}
     \abntex@UFSCifNotEmpty{\abnteximprimircoorientador}{%
