@@ -1292,10 +1292,28 @@
 \def\listofquadrosname{List of Frames}
 \def\quadrosname{Frame}
 
-\DeclareFloatingEnvironment[fileext=loq,placement={!hbtp},name=\quadrosname,within=chapter,listname=\listofquadrosname]{quadro}
+\DeclareFloatingEnvironment[
+  fileext=loq,
+  placement={!hbtp},
+  name=\quadrosname,
+  within=chapter,
+  listname=\listofquadrosname
+]{quadro}
 
-\@ifpackageloaded{babel}{\@ifpackagewith{babel}{brazil}{\addto\captionsbrazil{\renewcommand{\quadrosname}{Quadro}}}{}}{}
-\@ifpackageloaded{babel}{\@ifpackagewith{babel}{brazil}{\addto\captionsbrazil{\renewcommand{\listofquadrosname}{Lista de Quadros}}}{}}{}
+\@ifpackageloaded{babel}{%
+  \@ifpackagewith{babel}{brazil}{%
+    \addto\captionsbrazil{%
+      \renewcommand{\quadrosname}{Quadro}
+    }
+  }{}
+}{}
+\@ifpackageloaded{babel}{%
+  \@ifpackagewith{babel}{brazil}{%
+    \addto\captionsbrazil{%
+      \renewcommand{\listofquadrosname}{Lista de Quadros}
+    }
+  }{}
+}{}
 
 % Create cleveref names for quadro environment captions
 % https://github.com/abntex/abntex2/issues/176
