@@ -246,6 +246,26 @@ section=TITLE, % Título de seções em caixa alta
 \renewcommand\familydefault{\sfdefault}
 \renewcommand{\sfdefault}{cmss}
 
+% Extract only the basename (no directories, no extension)
+\usepackage{xstring}
+
+% #1 = filename (with path)
+% #2 = caption
+\newcommand{\image}[2]{%
+  % Remove path
+  \StrBehind{#1}{/}[\tmpA]%
+  \IfEq{\tmpA}{}{\def\tmpA{#1}}{}%
+  % Remove extension
+  \StrBefore{\tmpA}{.}[\imglabel]%
+  %
+  \begin{figure}[htb]
+    \centering
+    \includegraphics[scale=0.35]{#1}
+    \caption{#2}
+    \label{fig:\imglabel}
+  \end{figure}
+}
+
 \begin{document}
     % FIXME: Comment this after finishing the thesis,
     %        so you can start fixing the \flushbottom vs \raggedbottom
