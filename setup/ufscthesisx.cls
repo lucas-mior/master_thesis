@@ -614,7 +614,7 @@
 \newcommand{\secref}[1]{Seção~\ref{#1}}     % Cross-reference of equations
 \newcommand{\defref}[1]{Definição~\ref{#1}} %
 
-\renewenvironment{resumo}[1][\resumoname]
+\renewenvironment{resumo}[1][\abntex2resumoname]
 {%
   % Fixed double bookmark entries as `\pretextualchapter`
   % bellow is already calling `\PRIVATEbookmarkthis`
@@ -928,7 +928,7 @@
 % q/the-appendix-word-disappears-from-the-table-of-contents-when-using-include
 % q/whats-the-difference-between-newcommand-and-newcommand
 \@ifclassloaded{setup/abntex2}{
-  \renewcommand*{\cftappendixname}{\apendicename\space\space}
+  \renewcommand*{\cftappendixname}{\abntex2apendicename\space\space}
 }{}
 
 % Allows putting an [H] in \begin{figure}
@@ -2632,10 +2632,10 @@
 % q/how-to-override-command-on-my-preamble-after-its-redefinition-by-my-class-with
 \@ifpackageloaded{babel}{\@ifpackagewith{babel}{brazil}{\addto\captionsbrazil{%
   \renewcommand{\abntex2orientadorname}{Orientador}
-  \renewcommand{\coorientadorname}{Coorientador}
+  \renewcommand{\abntex2coorientadorname}{Coorientador}
   \renewcommand{\quadrosname}{Quadro}
-  \renewcommand{\folhadeaprovacaoname}{Folha de Aprovação}
-  \renewcommand{\folhaderostoname}{Folha de Rosto}
+  \renewcommand{\abntex2folhadeaprovacaoname}{Folha de Aprovação}
+  \renewcommand{\abntex2folhaderostoname}{Folha de Rosto}
   \renewcommand{\listfigurename}{Lista de Ilustrações}
   \renewcommand{\listtablename}{Lista de Tabelas}
   \renewcommand{\listofquadrosname}{Lista de Quadros}
@@ -2655,9 +2655,9 @@
 \@ifpackageloaded{babel}{\@ifpackagewith{babel}{english}{\addto\captionsenglish{%
   \renewcommand{\UFSCcovername}{Cover}
   \renewcommand{\abntex2orientadorname}{Supervisor}
-  \renewcommand{\coorientadorname}{Co\hyp{}supervisor}
-  \renewcommand{\folhadeaprovacaoname}{Approval}
-  \renewcommand{\folhaderostoname}{Title Page}
+  \renewcommand{\abntex2coorientadorname}{Co\hyp{}supervisor}
+  \renewcommand{\abntex2folhadeaprovacaoname}{Approval}
+  \renewcommand{\abntex2folhaderostoname}{Title Page}
   \renewcommand{\abntex2errataname}{Errata Sheet}
   \renewcommand{\listfigurename}{List of Illustrations}
   \renewcommand{\listtablename}{List of Tables}
