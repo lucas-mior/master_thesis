@@ -125,8 +125,8 @@
 \newcommand{\abntex@UFSCifNotEmpty}[2]{\ifthenelse{\not\equal{#1}{}}{#2}{}}
 % ---
 
-% Define o comando \abntex2fonte que respeita as configurações de caption do memoir ou do caption
-\newcommand{\abntex2fonte}[2][\abntex2fontename]{%
+% Define o comando \ABNTEXfonte que respeita as configurações de caption do memoir ou do caption
+\newcommand{\ABNTEXfonte}[2][\ABNTEXfontename]{%
   \M@gettitle{#2}%
   \memlegendinfo{#2}%
   \par
@@ -152,7 +152,7 @@
 
  %
 % Define o comando \notas que respeita as configurações de caption do memoir ou do caption
-\newcommand{\abntex2nota}[2][\abntex2notaname]{\abntex2fonte[#1]{#2}}
+\newcommand{\ABNTEXnota}[2][\ABNTEXnotaname]{\ABNTEXfonte[#1]{#2}}
 
 % ---
 % Customiza listas
@@ -197,23 +197,23 @@
 \RequirePackage[brazil]{babel}
 %
 % Nomes constantes do abnTeX2 em portugues (definicoes padroes)
-\newcommand{\abntex2folhaderostoname}{Folha de rosto}
-\newcommand{\abntex2epigraphname}{Ep\'igrafe}
-\newcommand{\abntex2dedicatorianame}{Dedicat\'oria}
-\newcommand{\abntex2errataname}{Errata}
-\newcommand{\abntex2agradecimentosname}{Agradecimentos}
-\newcommand{\abntex2anexoname}{ANEXO}
-\newcommand{\abntex2anexosname}{Anexos}
-\newcommand{\abntex2apendicename}{AP\^ENDICE}
-\newcommand{\abntex2apendicesname}{Ap\^endices}
-\newcommand{\abntex2orientadorname}{Orientador:}
-\newcommand{\abntex2coorientadorname}{Coorientador:}
-\newcommand{\abntex2folhadeaprovacaoname}{Folha de aprova\c{c}\~ao}
-\newcommand{\abntex2resumoname}{Resumo}
-\newcommand{\abntex2listadesiglasname}{Lista de abreviaturas e siglas}
-\newcommand{\abntex2listadesimbolosname}{Lista de s\'imbolos}
-\newcommand{\abntex2fontename}{Fonte}
-\newcommand{\abntex2notaname}{Nota}
+\newcommand{\ABNTEXfolhaderostoname}{Folha de rosto}
+\newcommand{\ABNTEXepigraphname}{Ep\'igrafe}
+\newcommand{\ABNTEXdedicatorianame}{Dedicat\'oria}
+\newcommand{\ABNTEXerrataname}{Errata}
+\newcommand{\ABNTEXagradecimentosname}{Agradecimentos}
+\newcommand{\ABNTEXanexoname}{ANEXO}
+\newcommand{\ABNTEXanexosname}{Anexos}
+\newcommand{\ABNTEXapendicename}{AP\^ENDICE}
+\newcommand{\ABNTEXapendicesname}{Ap\^endices}
+\newcommand{\ABNTEXorientadorname}{Orientador:}
+\newcommand{\ABNTEXcoorientadorname}{Coorientador:}
+\newcommand{\ABNTEXfolhadeaprovacaoname}{Folha de aprova\c{c}\~ao}
+\newcommand{\ABNTEXresumoname}{Resumo}
+\newcommand{\ABNTEXlistadesiglasname}{Lista de abreviaturas e siglas}
+\newcommand{\ABNTEXlistadesimbolosname}{Lista de s\'imbolos}
+\newcommand{\ABNTEXfontename}{Fonte}
+\newcommand{\ABNTEXnotaname}{Nota}
 %
 \addto\captionsbrazil{% portugues-brasil
   %% ajusta nomes padroes do babel
@@ -230,23 +230,23 @@
 }
 \addto\captionsenglish{% ingles
   %% adjusts names from abnTeX2
-  \renewcommand{\abntex2folhaderostoname}{Title page}
-  \renewcommand{\abntex2epigraphname}{Epigraph}
-  \renewcommand{\abntex2dedicatorianame}{Dedication}
-  \renewcommand{\abntex2errataname}{Errata sheet}
-  \renewcommand{\abntex2agradecimentosname}{Acknowledgements}
-  \renewcommand{\abntex2anexoname}{ANNEX}
-  \renewcommand{\abntex2anexosname}{Annex}
-  \renewcommand{\abntex2apendicename}{APPENDIX}
-  \renewcommand{\abntex2apendicesname}{Appendix}
-  \renewcommand{\abntex2orientadorname}{Supervisor:}
-  \renewcommand{\abntex2coorientadorname}{Co-supervisor:}
-  \renewcommand{\abntex2folhadeaprovacaoname}{Approval}
-  \renewcommand{\abntex2resumoname}{Abstract}
-  \renewcommand{\abntex2listadesiglasname}{List of abbreviations and acronyms}
-  \renewcommand{\abntex2listadesimbolosname}{List of symbols}
-  \renewcommand{\abntex2fontename}{Source}
-  \renewcommand{\abntex2notaname}{Note}
+  \renewcommand{\ABNTEXfolhaderostoname}{Title page}
+  \renewcommand{\ABNTEXepigraphname}{Epigraph}
+  \renewcommand{\ABNTEXdedicatorianame}{Dedication}
+  \renewcommand{\ABNTEXerrataname}{Errata sheet}
+  \renewcommand{\ABNTEXagradecimentosname}{Acknowledgements}
+  \renewcommand{\ABNTEXanexoname}{ANNEX}
+  \renewcommand{\ABNTEXanexosname}{Annex}
+  \renewcommand{\ABNTEXapendicename}{APPENDIX}
+  \renewcommand{\ABNTEXapendicesname}{Appendix}
+  \renewcommand{\ABNTEXorientadorname}{Supervisor:}
+  \renewcommand{\ABNTEXcoorientadorname}{Co-supervisor:}
+  \renewcommand{\ABNTEXfolhadeaprovacaoname}{Approval}
+  \renewcommand{\ABNTEXresumoname}{Abstract}
+  \renewcommand{\ABNTEXlistadesiglasname}{List of abbreviations and acronyms}
+  \renewcommand{\ABNTEXlistadesimbolosname}{List of symbols}
+  \renewcommand{\ABNTEXfontename}{Source}
+  \renewcommand{\ABNTEXnotaname}{Note}
    %% adjusts names used by \autoref
   \renewcommand{\pageautorefname}{page}
   \renewcommand{\sectionautorefname}{section}
@@ -320,7 +320,7 @@
 % ---
 \newcounter{abntex@bookmarkcounter}
 \setcounter{abntex@bookmarkcounter}{0}
-\newcommand{\abntex2PRIVATEbookmarkthis}[1]{%
+\newcommand{\ABNTEXPRIVATEbookmarkthis}[1]{%
   \addtocounter{abntex@bookmarkcounter}{1}%
   \phantomsection\pdfbookmark[0]{#1}{chapterb\arabic{abntex@bookmarkcounter}}
 }
@@ -329,9 +329,9 @@
 % ---
 % Comando que cria capítulos não numerados já com bookmark anotado
 % ---
-\newcommand{\abntex2pretextualchapter}[1]{%
+\newcommand{\ABNTEXpretextualchapter}[1]{%
   \addtocounter{abntex@bookmarkcounter}{1}%
-  \abntex2PRIVATEbookmarkthis{#1}%
+  \ABNTEXPRIVATEbookmarkthis{#1}%
   \chapter*[#1]{#1}%
   }
 \provideboolean{abntex@apendiceousecao}
@@ -341,7 +341,7 @@
 % ---
 % cleardoublepage se este documento não for article
 % ---
-\newcommand{\abntex2PRIVATEclearpageifneeded}{%
+\newcommand{\ABNTEXPRIVATEclearpageifneeded}{%
   \ifthenelse{\equal{\ABNTEXisarticle}{true}}{%
     %
   }{ % else
@@ -385,35 +385,35 @@
 %\captiontitlefont{\ABNTEXfontereduzida}
 
 % Para uso com pacotes subfig e caption dentro do memoir se estes forem carregados ou não.
-% É necessário para que os comandos \abntex2IBGEtab e \abntex2fonte funcionem
+% É necessário para que os comandos \ABNTEXIBGEtab e \ABNTEXfonte funcionem
 % independente do carregamento de pacotes externos ao memoir que tratam captions.
-\newcommand{\abntex2IBGEtabfontsize}{\ABNTEXfontereduzida}
+\newcommand{\ABNTEXIBGEtabfontsize}{\ABNTEXfontereduzida}
 \AtBeginDocument{%
-  % comandos auxiliares para manipular os captions dentro do comando \abntex2IBGEtab.
-  \newcommand{\abntex2configurecaptions}{\captionstyle[\raggedright]{}}
-  \newcommand{\abntex2configureseparator}{\captiondelim{\ABNTEXcaptiondelim}}
-  % Define o comando \abntex2IBGEtab{}{}{} com caption e legenda da largura do conteúdo tabular, tabular*, etc
+  % comandos auxiliares para manipular os captions dentro do comando \ABNTEXIBGEtab.
+  \newcommand{\ABNTEXconfigurecaptions}{\captionstyle[\raggedright]{}}
+  \newcommand{\ABNTEXconfigureseparator}{\captiondelim{\ABNTEXcaptiondelim}}
+  % Define o comando \ABNTEXIBGEtab{}{}{} com caption e legenda da largura do conteúdo tabular, tabular*, etc
   % Parece funcionar com qualque pacote
   \newsavebox{\myptabbox}
   \newlength{\myptabboxwidth}
-  \newcommand{\abntex2IBGEtab}[3]{%
-    \savebox{\myptabbox}{{\abntex2IBGEtabfontsize #2}}%
+  \newcommand{\ABNTEXIBGEtab}[3]{%
+    \savebox{\myptabbox}{{\ABNTEXIBGEtabfontsize #2}}%
     \settowidth{\myptabboxwidth}{\usebox{\myptabbox}}%
     \centering%
     \parbox{\myptabboxwidth}{%
-    \abntex2configurecaptions
+    \ABNTEXconfigurecaptions
     #1%
     \par%
-    {\abntex2IBGEtabfontsize%
+    {\ABNTEXIBGEtabfontsize%
     #2%
     }%
     \par%
     #3}%
   }
-  \let\abntex2ibgetab\abntex2IBGEtab
+  \let\ABNTEXibgetab\ABNTEXIBGEtab
 }
 
-% Altera os comandos \abntex2configurecaptions e \abntex2configureseparator para trabalhar com
+% Altera os comandos \ABNTEXconfigurecaptions e \ABNTEXconfigureseparator para trabalhar com
 % o pacote caption e amigos.
 \AtEndPackage{caption}{
   \AtBeginDocument{%
@@ -424,10 +424,10 @@
                     %labelfont=ABNTEXfontereduzida,
                     %font=ABNTEXfontereduzida
                     }
-      \renewcommand{\abntex2configurecaptions}{%
+      \renewcommand{\ABNTEXconfigurecaptions}{%
                   \captionsetup{justification=justified,%
                                 singlelinecheck=false}}
-      \renewcommand{\abntex2configureseparator}{\captionsetup{labelsep=colon}}
+      \renewcommand{\ABNTEXconfigureseparator}{\captionsetup{labelsep=colon}}
   }
 }
 
@@ -447,10 +447,10 @@
 \maxsecnumdepth{paragraph}
 
 % redefine os comandos *paragraph* para *subsubsubsection* ****
-\newcommand{\abntex2subsubsubsection}{\paragraph}
-\newcommand{\abntex2cftbeforesubsubsubsectionskip}{\cftbeforeparagraphskip}
-\newcommand{\abntex2cftsubsubsubsectionfont}{\cftparagraphfont}
-\newcommand{\abntex2setsubsubsubsecheadstyle}{\setparaheadstyle}
+\newcommand{\ABNTEXsubsubsubsection}{\paragraph}
+\newcommand{\ABNTEXcftbeforesubsubsubsectionskip}{\cftbeforeparagraphskip}
+\newcommand{\ABNTEXcftsubsubsubsectionfont}{\cftparagraphfont}
+\newcommand{\ABNTEXsetsubsubsubsecheadstyle}{\setparaheadstyle}
 
 \setafterparaskip{1.0\onelineskip plus 0.5\onelineskip minus 0.2\onelineskip}
 \setparaheadstyle{\normalfont\sffamily\raggedright}%
@@ -480,11 +480,11 @@
 \setlength{\cftlastnumwidth}{\cftsubsubsectionnumwidth}
 \addtolength{\cftlastnumwidth}{1em}
 
-\newcommand{\abntex2tocprintchapter}{}
-\newcommand{\abntex2tocinnonumchapter}{}
-\newcommand{\abntex2tocprintchapternonum}{}
-\newcommand{\abntex2tocpartapendices}{}
-\newcommand{\abntex2tocpartanexos}{}
+\newcommand{\ABNTEXtocprintchapter}{}
+\newcommand{\ABNTEXtocinnonumchapter}{}
+\newcommand{\ABNTEXtocprintchapternonum}{}
+\newcommand{\ABNTEXtocpartapendices}{}
+\newcommand{\ABNTEXtocpartanexos}{}
 
 % insere o hifen no anexo/apendice do toc
 \cftinsertcode{A}{\renewcommand{\cftchapteraftersnum}{\hfill\textendash\hfill}}
@@ -519,21 +519,21 @@
   \cftsetindents{paragraph}{0em}{\cftlastnumwidth}
   \cftsetindents{subparagraph}{0em}{\cftlastnumwidth}
   %
-  \renewcommand{\abntex2tocprintchapter}{%
+  \renewcommand{\ABNTEXtocprintchapter}{%
     \addtocontents{toc}{\cftsetindents{chapter}{0em}{\cftlastnumwidth}}}
   %
-  \renewcommand{\abntex2tocinnonumchapter}{%
+  \renewcommand{\ABNTEXtocinnonumchapter}{%
     \addtocontents{toc}{\cftsetindents{chapter}{\cftlastnumwidth}{2em}}%
     \cftinserthook{toc}{A}}
   %
-  \renewcommand{\abntex2tocprintchapternonum}{%
+  \renewcommand{\ABNTEXtocprintchapternonum}{%
     \addtocontents{toc}{\cftsetindents{chapter}{\cftlastnumwidth}{2em}}}
   %
-  \renewcommand{\abntex2tocpartapendices}{%
+  \renewcommand{\ABNTEXtocpartapendices}{%
     \addtocontents{toc}{\cftsetindents{part}{\cftlastnumwidth}{2em}}
     \cftinserthook{toc}{A}}
   %
-  \renewcommand{\abntex2tocpartanexos}{%
+  \renewcommand{\ABNTEXtocpartanexos}{%
     \addtocontents{toc}{\cftsetindents{part}{\cftlastnumwidth}{2em}}
     \cftinserthook{toc}{A}}
   %
@@ -574,7 +574,7 @@
 
 % Comando que simula a finalizacao de uma parte no bookmark e
 % adiciona espaco de \part no sumario
-\newcommand{\abntex2phantompart}{%
+\newcommand{\ABNTEXphantompart}{%
   \bookmarksetup{startatroot}%
   \phantomsection%
   \ifthenelse{\boolean{ABNTEXsumario-abnt-6027-2012}}{%
@@ -614,7 +614,7 @@
   \setsecheadstyle{\ABNTEXsectionfont\ABNTEXsectionfontsize\ABNTEXsectionupperifneeded}
   \setsubsecheadstyle{\ABNTEXsubsectionfont\ABNTEXsubsectionfontsize\ABNTEXsubsectionupperifneeded}
   \setsubsubsecheadstyle{\ABNTEXsubsubsectionfont\ABNTEXsubsubsectionfontsize\ABNTEXsubsubsectionupperifneeded}
-  \abntex2setsubsubsubsecheadstyle{\ABNTEXsubsubsubsectionfont\ABNTEXsubsubsubsectionfontsize\ABNTEXsubsubsubsectionupperifneeded}
+  \ABNTEXsetsubsubsubsecheadstyle{\ABNTEXsubsubsubsectionfont\ABNTEXsubsubsubsectionfontsize\ABNTEXsubsubsubsectionupperifneeded}
 
   % impressao do numero do capitulo
   \renewcommand{\chapternamenum}{}
@@ -641,12 +641,12 @@
 
   % impressao do numero do capitulo
   \renewcommand{\printchapternum}{%
-     \abntex2tocprintchapter%
+     \ABNTEXtocprintchapter%
      \setboolean{abntex@innonumchapter}{false}%
      \chapnumfont%
      \space\thechapter%
      \ifthenelse{\boolean{abntex@apendiceousecao}}{%
-       \abntex2tocinnonumchapter%
+       \ABNTEXtocinnonumchapter%
        \ABNTEXcaptiondelim%
      }{}%
      \space%
@@ -655,7 +655,7 @@
 
   % impressao do capitulo não numerado
   \renewcommand\printchapternonum{%
-     \abntex2tocprintchapternonum%
+     \ABNTEXtocprintchapternonum%
      \setboolean{abntex@innonumchapter}{true}%
     }
 }
@@ -678,21 +678,21 @@
 
 % ---
 % Configura layout para elementos pre-textuais
-\newcommand{\abntex2pretextual}{%
+\newcommand{\ABNTEXpretextual}{%
   \aliaspagestyle{chapter}{empty}% customizing chapter pagestyle
   \pagestyle{empty}
   \aliaspagestyle{cleared}{empty}
   \aliaspagestyle{part}{empty}
 }
-\renewcommand{\frontmatter}{\abntex2pretextual}
+\renewcommand{\frontmatter}{\ABNTEXpretextual}
 
 % por default, inicializa o documento com elementos \pretextuais
-\AtBeginDocument{\abntex2pretextual}
+\AtBeginDocument{\ABNTEXpretextual}
 % ---
 
 % ---
 % Configura layout para elementos textuais
-\newcommand{\abntex2textual}{%
+\newcommand{\ABNTEXtextual}{%
   \ifthenelse{\equal{\ABNTEXisarticle}{true}}{%
     \pagestyle{plain}%
   }{%else
@@ -702,13 +702,13 @@
   \nouppercaseheads%
   \bookmarksetup{startatroot}%
 }
-\renewcommand{\mainmatter}{\abntex2textual}
+\renewcommand{\mainmatter}{\ABNTEXtextual}
 % ---
 
 % ---
 % Configura layout para elementos pos-textuais
-\newcommand{\abntex2postextual}{\abntex2phantompart}
-\renewcommand{\backmatter}{\abntex2postextual}
+\newcommand{\ABNTEXpostextual}{\ABNTEXphantompart}
+\renewcommand{\backmatter}{\ABNTEXpostextual}
 % -----
 
 % ------------------------------------------------------------------------
@@ -716,44 +716,44 @@
 % ------------------------------------------------------------------------
 
 % Comandos de dados - titulo do documento
-\newcommand{\abntex2tituloestrangeiro}[1]{\providecommand{\theforeigntitle}{#1}}
-\newcommand{\abntex2imprimirtituloestrangeiro}{\theforeigntitle}
+\newcommand{\ABNTEXtituloestrangeiro}[1]{\providecommand{\theforeigntitle}{#1}}
+\newcommand{\ABNTEXimprimirtituloestrangeiro}{\theforeigntitle}
 
 % Comandos de dados - data
 \let\olddate\date
 \renewcommand{\date}[1]{\AtBeginDocument{\olddate{#1}}}
-\newcommand{\abntex2data}[1]{\date{#1}}
-\newcommand{\abntex2imprimirdata}{\thedate}
+\newcommand{\ABNTEXdata}[1]{\date{#1}}
+\newcommand{\ABNTEXimprimirdata}{\thedate}
 
 % Comandos de dados - instituicao
 \providecommand{\imprimirinstituicao}{}
-\newcommand{\abntex2instituicao}[1]{\renewcommand{\imprimirinstituicao}{#1}}
+\newcommand{\ABNTEXinstituicao}[1]{\renewcommand{\imprimirinstituicao}{#1}}
 
 % Comandos de dados - local
 \providecommand{\imprimirlocal}{}
-\newcommand{\abntex2local}[1]{\renewcommand{\imprimirlocal}{#1}}
+\newcommand{\ABNTEXlocal}[1]{\renewcommand{\imprimirlocal}{#1}}
 
 % Comandos de dados - preambulo
 \providecommand{\imprimirpreambulo}{}
-\newcommand{\abntex2preambulo}[1]{\renewcommand{\imprimirpreambulo}{#1}}
+\newcommand{\ABNTEXpreambulo}[1]{\renewcommand{\imprimirpreambulo}{#1}}
 
 % Comandos de dados - orientador
 \providecommand{\imprimirorientadorRotulo}{}
 \providecommand{\imprimirorientador}{}
-\newcommand{\abntex2orientador}[2][\abntex2orientadorname]%
+\newcommand{\ABNTEXorientador}[2][\ABNTEXorientadorname]%
   {\renewcommand{\imprimirorientadorRotulo}{#1}%
    \renewcommand{\imprimirorientador}{#2}}
 
 % Comandos de dados - coorientador
 \providecommand{\imprimircoorientadorRotulo}{}
 \providecommand{\imprimircoorientador}{}
-\newcommand{\abntex2coorientador}[2][\abntex2coorientadorname]%
+\newcommand{\ABNTEXcoorientador}[2][\ABNTEXcoorientadorname]%
   {\renewcommand{\imprimircoorientadorRotulo}{#1}%
    \renewcommand{\imprimircoorientador}{#2}}
 
 % Comandos de dados - tipo de trabalho
 \providecommand{\imprimirtipotrabalho}{}
-\newcommand{\abntex2tipotrabalho}[1]{\renewcommand{\imprimirtipotrabalho}{#1}}
+\newcommand{\ABNTEXtipotrabalho}[1]{\renewcommand{\imprimirtipotrabalho}{#1}}
 
 % ------------------------------------------------------------------------
 % Comandos e ambientes de editoracao PRE-TEXTUAIS
@@ -785,43 +785,43 @@
 
 % ---
 % Errata
-\newenvironment{errata}[1][\abntex2errataname]{%
-   \abntex2pretextualchapter{#1}
-  }{\abntex2PRIVATEclearpageifneeded}
+\newenvironment{errata}[1][\ABNTEXerrataname]{%
+   \ABNTEXpretextualchapter{#1}
+  }{\ABNTEXPRIVATEclearpageifneeded}
 % ---
 
 % ---
 % Folha de aprovacao - NBR 14724/2011 - 4.2.1.3
-\newenvironment{folhadeaprovacao}[1][\abntex2folhadeaprovacaoname]{%
+\newenvironment{folhadeaprovacao}[1][\ABNTEXfolhadeaprovacaoname]{%
    \clearpage%
-   \abntex2PRIVATEbookmarkthis{#1}%
+   \ABNTEXPRIVATEbookmarkthis{#1}%
    \begin{Spacing}{1.0}
-}{\end{Spacing}\abntex2PRIVATEclearpageifneeded}
+}{\end{Spacing}\ABNTEXPRIVATEclearpageifneeded}
 % ---
 
 % ---
 % Dedicatoria
 \newenvironment{dedicatoria}[1][]{%
    \ifthenelse{\equal{#1}{}}{%
-    \abntex2PRIVATEbookmarkthis{\abntex2dedicatorianame}
-    }{\abntex2pretextualchapter{#1}}
-  }{\abntex2PRIVATEclearpageifneeded}
+    \ABNTEXPRIVATEbookmarkthis{\ABNTEXdedicatorianame}
+    }{\ABNTEXpretextualchapter{#1}}
+  }{\ABNTEXPRIVATEclearpageifneeded}
 % ---
 
 % ---
 % Agradecimentos
-\newenvironment{agradecimentos}[1][\abntex2agradecimentosname]{%
-   \abntex2pretextualchapter{#1}
-  }{\abntex2PRIVATEclearpageifneeded}
+\newenvironment{agradecimentos}[1][\ABNTEXagradecimentosname]{%
+   \ABNTEXpretextualchapter{#1}
+  }{\ABNTEXPRIVATEclearpageifneeded}
 % ---
 
 % ---
 % Epigrafe
 \newenvironment{epigrafe}[1][]{%
    \ifthenelse{\equal{#1}{}}{%
-    \abntex2PRIVATEbookmarkthis{\abntex2epigraphname}
-    }{\abntex2pretextualchapter{#1}}
-  }{\abntex2PRIVATEclearpageifneeded}
+    \ABNTEXPRIVATEbookmarkthis{\ABNTEXepigraphname}
+    }{\ABNTEXpretextualchapter{#1}}
+  }{\ABNTEXPRIVATEclearpageifneeded}
 % ---
 
 % ---
@@ -845,25 +845,25 @@
    \setlength{\absparindent}{0pt}
 }
 
-\newenvironment{resumo}[1][\abntex2resumoname]{%
-   \abntex2PRIVATEbookmarkthis{#1}
+\newenvironment{resumo}[1][\ABNTEXresumoname]{%
+   \ABNTEXPRIVATEbookmarkthis{#1}
    \renewcommand{\abstractnamefont}{\chaptitlefont}
    \renewcommand{\abstractname}{\ABNTEXchapterupperifneeded{#1}}
    \begin{abstract}
-  }{\end{abstract}\abntex2PRIVATEclearpageifneeded}
+  }{\end{abstract}\ABNTEXPRIVATEclearpageifneeded}
 
-\newenvironment{resumoumacoluna}[1][\abntex2resumoname]{%
-   \abntex2PRIVATEbookmarkthis{#1}
+\newenvironment{resumoumacoluna}[1][\ABNTEXresumoname]{%
+   \ABNTEXPRIVATEbookmarkthis{#1}
    \renewcommand{\abstractnamefont}{\chaptitlefont}
    \renewcommand{\abstractname}{\ABNTEXchapterupperifneeded{#1}}
    \begin{onecolabstract}
-}{\end{onecolabstract}\abntex2PRIVATEclearpageifneeded}
+}{\end{onecolabstract}\ABNTEXPRIVATEclearpageifneeded}
 % ---
 
 % ---
 % Lista de abreviaturas e siglas
 \newenvironment{siglas}{%
-  \abntex2pretextualchapter{\abntex2listadesiglasname}
+  \ABNTEXpretextualchapter{\ABNTEXlistadesiglasname}
   \begin{symbols}
 }{%
   \end{symbols}
@@ -874,7 +874,7 @@
 % ---
 % Lista de simbolos
 \newenvironment{simbolos}{%
-  \abntex2pretextualchapter{\abntex2listadesimbolosname}
+  \ABNTEXpretextualchapter{\ABNTEXlistadesimbolosname}
   \begin{symbols}
 }{%
   \end{symbols}
@@ -890,9 +890,9 @@
 % Definicoes compartilhadas entre Apendices e Anexos
 % ---
 \newcommand\@switch[1]{ \@writefile{toc}{\renewcommand*{\cftappendixname}{#1 \space}} }
-\newcommand{\abntex2switchchapname}[1]{ \protected@write \@auxout {}{\string\@switch{#1} }}
+\newcommand{\ABNTEXswitchchapname}[1]{ \protected@write \@auxout {}{\string\@switch{#1} }}
 
-\newcommand{\abntex2PRIVATEapendiceconfig}[2]{%
+\newcommand{\ABNTEXPRIVATEapendiceconfig}[2]{%
  \setboolean{abntex@apendiceousecao}{true}%
  \renewcommand{\appendixname}{#1}
  \ifthenelse{\boolean{ABNTEXsumario-abnt-6027-2012}}{
@@ -900,20 +900,20 @@
   }{%
   \renewcommand{\appendixtocname}{#2}}
  \renewcommand{\appendixpagename}{#2}
- \abntex2switchchapname{#1}% Corrected from \switchapname -> \abntex2switchchapname
+ \ABNTEXswitchchapname{#1}% Corrected from \switchapname -> \ABNTEXswitchchapname
  \renewcommand*{\cftappendixname}{#1 \space}
 }
 % ---
 
 % ---
 % Apendices - comando
-\newcommand{\abntex2apendices}{%
- \abntex2PRIVATEapendiceconfig{\abntex2apendicename}{\abntex2apendicesname}
+\newcommand{\ABNTEXapendices}{%
+ \ABNTEXPRIVATEapendiceconfig{\ABNTEXapendicename}{\ABNTEXapendicesname}
  \appendix
 }
 % Apendices - ambiente
 \newenvironment{apendicesenv}{%
- \abntex2PRIVATEapendiceconfig{\abntex2apendicename}{\abntex2apendicesname}
+ \ABNTEXPRIVATEapendiceconfig{\ABNTEXapendicename}{\ABNTEXapendicesname}
  \begin{appendix}
 }{
  \end{appendix}
@@ -924,10 +924,10 @@
 
 % ---
 % Anexos - comando
-\newcommand{\abntex2anexos}{%
+\newcommand{\ABNTEXanexos}{%
  \cftinserthook{toc}{AAA}
 
- \abntex2PRIVATEapendiceconfig{\abntex2anexoname}{\abntex2anexosname}
+ \ABNTEXPRIVATEapendiceconfig{\ABNTEXanexoname}{\ABNTEXanexosname}
  \appendix
  \renewcommand\theHchapter{anexochapback.\arabic{chapter}}
 }
@@ -935,7 +935,7 @@
 \newenvironment{anexosenv}{%
  \cftinserthook{toc}{AAA}
 
- \abntex2PRIVATEapendiceconfig{\abntex2anexoname}{\abntex2anexosname}
+ \ABNTEXPRIVATEapendiceconfig{\ABNTEXanexoname}{\ABNTEXanexosname}
  \begin{appendix}
  \renewcommand\theHchapter{anexochapback.\arabic{chapter}}
 }{
@@ -947,21 +947,21 @@
 
 % ---
 % Imprime uma pagina de divisao no estilo parte
-\newcommand{\abntex2partpage}{%
+\newcommand{\ABNTEXpartpage}{%
   \cleardoublepage
   \phantomsection
   \addcontentsline{toc}{part}{\appendixtocname}%
   \appendixpage*
 }
 
-% atalhos para \abntex2partpage ou \appendixpage*
-\newcommand{\abntex2partapendices}{%
-\abntex2tocpartapendices%
-\@ifstar{\appendixpage*}{\abntex2partpage}}
+% atalhos para \ABNTEXpartpage ou \appendixpage*
+\newcommand{\ABNTEXpartapendices}{%
+\ABNTEXtocpartapendices%
+\@ifstar{\appendixpage*}{\ABNTEXpartpage}}
 
-\newcommand{\abntex2partanexos}{%
-\abntex2tocpartanexos%
-\@ifstar{\appendixpage*}{\abntex2partpage}}
+\newcommand{\ABNTEXpartanexos}{%
+\ABNTEXtocpartanexos%
+\@ifstar{\appendixpage*}{\ABNTEXpartpage}}
 % ---
 
 % ------------------------------------------------------------------------
@@ -1006,7 +1006,7 @@
 % ---
 
 % ---
-% Comando \abntex2assinatura for signature
+% Comando \ABNTEXassinatura for signature
    % width of the line and text under the line
 \newlength{\ABNTEXsignwidth}
 \setlength{\ABNTEXsignwidth}{8cm}
@@ -1016,11 +1016,11 @@
    % ammount of space left between previous text and th signature line
 \newlength{\ABNTEXsignskip}
 \setlength{\ABNTEXsignskip}{0.7cm}
-   % \abntex2assinatura{name} -> types a line with name under the line, centralized
-   % \abntex2assinatura*{name} -> Creates the box with the line and name under
+   % \ABNTEXassinatura{name} -> types a line with name under the line, centralized
+   % \ABNTEXassinatura*{name} -> Creates the box with the line and name under
    %     it, but the box has no position assigned. However the line and the
    %     name are centralized with respect to each other.
-\newcommand{\abntex2assinatura}{\@ifstar{\ABNTEXsign}{\ABNTEXcsign}}
+\newcommand{\ABNTEXassinatura}{\@ifstar{\ABNTEXsign}{\ABNTEXcsign}}
    % assinatura com estrela
 \newcommand{\ABNTEXsign}[1]{%
   \parbox[t]{\ABNTEXsignwidth}{\SingleSpacing\vspace*{\ABNTEXsignskip}\centering%
@@ -1038,7 +1038,7 @@
 
 % ---
 % Impressão da Capa
-\newcommand{\abntex2imprimircapa}{%
+\newcommand{\ABNTEXimprimircapa}{%
   \begin{capa}%
     \center
     \ABNTEXchapterfont\large\theauthor
@@ -1051,7 +1051,7 @@
 
     \large\imprimirlocal
 
-    \large\abntex2imprimirdata
+    \large\ABNTEXimprimirdata
 
     \vspace*{1cm}
   \end{capa}
@@ -1060,16 +1060,16 @@
 
 % ---
 % Folha de rosto
-%   usar \abntex2imprimirfolhaderosto* casodeseje imprimir algo no verso da
+%   usar \ABNTEXimprimirfolhaderosto* casodeseje imprimir algo no verso da
 %   página no caso de estar no modo twoside. Util para imprimir a Ficha
 %   Bibliografica. Porem, se estiver no modo oneside, a versao sem estrela
 %   é identica.
-\newenvironment{folhaderosto}[1][\abntex2folhaderostoname]{\clearpage\abntex2PRIVATEbookmarkthis{#1}}{\cleardoublepage}
-\newenvironment{folhaderosto*}[1][\abntex2folhaderostoname]{\clearpage\abntex2PRIVATEbookmarkthis{#1}}{\newpage}%
+\newenvironment{folhaderosto}[1][\ABNTEXfolhaderostoname]{\clearpage\ABNTEXPRIVATEbookmarkthis{#1}}{\cleardoublepage}
+\newenvironment{folhaderosto*}[1][\ABNTEXfolhaderostoname]{\clearpage\ABNTEXPRIVATEbookmarkthis{#1}}{\newpage}%
 
 % ---
 % Conteudo padrao da Folha de Rosto
-\newcommand{\abntex2folhaderostocontent}{
+\newcommand{\ABNTEXfolhaderostocontent}{
   \begin{center}
 
     %\vspace*{1cm}
@@ -1100,26 +1100,26 @@
 
     {\large\imprimirlocal}
     \par
-    {\large\abntex2imprimirdata}
+    {\large\ABNTEXimprimirdata}
     \vspace*{1cm}
 
   \end{center}
 }
 
-\newcommand{\abntex2imprimirfolhaderostostar}[1]{%
+\newcommand{\ABNTEXimprimirfolhaderostostar}[1]{%
   \begin{folhaderosto*}{#1}
-     \abntex2folhaderostocontent
+     \ABNTEXfolhaderostocontent
   \end{folhaderosto*}}
 
-\newcommand{\abntex2imprimirfolhaderostonostar}[1]{%
+\newcommand{\ABNTEXimprimirfolhaderostonostar}[1]{%
   \begin{folhaderosto}{#1}
-     \abntex2folhaderostocontent
+     \ABNTEXfolhaderostocontent
   \end{folhaderosto}}
 
-\newcommand{\abntex2imprimirfolhaderosto}[1][\abntex2folhaderostoname]{%
+\newcommand{\ABNTEXimprimirfolhaderosto}[1][\ABNTEXfolhaderostoname]{%
    \@ifstar
-     \abntex2imprimirfolhaderostostar
-     \abntex2imprimirfolhaderostonostar
+     \ABNTEXimprimirfolhaderostostar
+     \ABNTEXimprimirfolhaderostonostar
 }
 
 % ---
