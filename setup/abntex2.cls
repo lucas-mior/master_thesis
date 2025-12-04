@@ -1029,7 +1029,7 @@
       \hspace{.45\textwidth}
       \begin{minipage}{.5\textwidth}
         \SingleSpacing
-         \abnteximprimirpreambulo
+        \abnteximprimirpreambulo
       \end{minipage}%
       \vspace*{\fill}
     }%
