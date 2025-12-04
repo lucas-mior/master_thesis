@@ -160,7 +160,6 @@
      \@makecaption{\ABNTEXfontereduzida #1}{\ignorespaces\ABNTEXfontereduzida #2}\par
   \endgroup}
 
- %
 % Define o comando \notas que respeita as configurações de caption do memoir ou do caption
 \newcommand{\ABNTEXnota}[2][\ABNTEXnotaname]{\ABNTEXfonte[#1]{#2}}
 
@@ -407,7 +406,7 @@
 }
 
 \AtBeginDocument{%
- \captiondelim{\ABNTEXcaptiondelim}
+  \captiondelim{\ABNTEXcaptiondelim}
 }
 
 % -----
@@ -771,8 +770,10 @@
 
 % Agradecimentos
 \newenvironment{abntexEnvAgradecimentos}[1][\ABNTEXagradecimentosname]{%
-   \ABNTEXpretextualchapter{#1}
-  }{\ABNTEXPRIVATEclearpageifneeded}
+  \ABNTEXpretextualchapter{#1}
+}{%
+  \ABNTEXPRIVATEclearpageifneeded
+}
 
 % Epigrafe
 \newenvironment{abntexEnvEpigrafe}[1][]{%
@@ -802,22 +803,26 @@
 % A norma não diz nada sobre identação e separação entre parágrafos no abstract,
 % porém o uso mostra que muitos abstracts são montados sem identação.
 \AtBeginDocument{%
-   \setlength{\absparindent}{0pt}
+  \setlength{\absparindent}{0pt}
 }
 
 \newenvironment{abntexEnvResumo}[1][\ABNTEXresumoname]{%
-   \ABNTEXPRIVATEbookmarkthis{#1}
-   \renewcommand{\abstractnamefont}{\chaptitlefont}
-   \renewcommand{\abstractname}{\ABNTEXchapterupperifneeded{#1}}
-   \begin{abstract}
-  }{\end{abstract}\ABNTEXPRIVATEclearpageifneeded}
+  \ABNTEXPRIVATEbookmarkthis{#1}
+  \renewcommand{\abstractnamefont}{\chaptitlefont}
+  \renewcommand{\abstractname}{\ABNTEXchapterupperifneeded{#1}}
+  \begin{abstract}
+}{%
+  \end{abstract}\ABNTEXPRIVATEclearpageifneeded
+}
 
 \newenvironment{abntexEnvResumoumacoluna}[1][\ABNTEXresumoname]{%
-   \ABNTEXPRIVATEbookmarkthis{#1}
-   \renewcommand{\abstractnamefont}{\chaptitlefont}
-   \renewcommand{\abstractname}{\ABNTEXchapterupperifneeded{#1}}
-   \begin{onecolabstract}
-}{\end{onecolabstract}\ABNTEXPRIVATEclearpageifneeded}
+  \ABNTEXPRIVATEbookmarkthis{#1}
+  \renewcommand{\abstractnamefont}{\chaptitlefont}
+  \renewcommand{\abstractname}{\ABNTEXchapterupperifneeded{#1}}
+  \begin{onecolabstract}
+}{%
+  \end{onecolabstract}\ABNTEXPRIVATEclearpageifneeded
+}
 
 % Lista de abreviaturas e siglas
 \newenvironment{abntexEnvSiglas}{%
@@ -846,51 +851,52 @@
 \newcommand{\ABNTEXswitchchapname}[1]{ \protected@write \@auxout {}{\string\@switch{#1} }}
 
 \newcommand{\ABNTEXPRIVATEapendiceconfig}[2]{%
- \setboolean{abntex@apendiceousecao}{true}%
- \renewcommand{\appendixname}{#1}
- \ifthenelse{\boolean{ABNTEXsumario-abnt-6027-2012}}{%
-   \renewcommand{\appendixtocname}{\uppercase{#2}}
+  \setboolean{abntex@apendiceousecao}{true}%
+  \renewcommand{\appendixname}{#1}
+  \ifthenelse{\boolean{ABNTEXsumario-abnt-6027-2012}}{%
+    \renewcommand{\appendixtocname}{\uppercase{#2}}
   }{%
-  \renewcommand{\appendixtocname}{#2}}
- \renewcommand{\appendixpagename}{#2}
- \ABNTEXswitchchapname{#1}% Corrected from \switchapname -> \ABNTEXswitchchapname
- \renewcommand*{\cftappendixname}{#1 \space}
+    \renewcommand{\appendixtocname}{#2}
+  }
+  \renewcommand{\appendixpagename}{#2}
+  \ABNTEXswitchchapname{#1}% Corrected from \switchapname -> \ABNTEXswitchchapname
+  \renewcommand*{\cftappendixname}{#1 \space}
 }
 
 % Apendices - comando
 \newcommand{\ABNTEXapendices}{%
- \ABNTEXPRIVATEapendiceconfig{\ABNTEXapendicename}{\ABNTEXapendicesname}
- \appendix
+  \ABNTEXPRIVATEapendiceconfig{\ABNTEXapendicename}{\ABNTEXapendicesname}
+  \appendix
 }
 % Apendices - ambiente
 \newenvironment{abntexEnvApendicesenv}{%
- \ABNTEXPRIVATEapendiceconfig{\ABNTEXapendicename}{\ABNTEXapendicesname}
- \begin{appendix}
+  \ABNTEXPRIVATEapendiceconfig{\ABNTEXapendicename}{\ABNTEXapendicesname}
+  \begin{appendix}
 }{%
- \end{appendix}
- \setboolean{abntex@apendiceousecao}{false}
- \bookmarksetup{startatroot}
+  \end{appendix}
+  \setboolean{abntex@apendiceousecao}{false}
+  \bookmarksetup{startatroot}
 }
 
 % Anexos - comando
 \newcommand{\ABNTEXanexos}{%
- \cftinserthook{toc}{AAA}
+  \cftinserthook{toc}{AAA}
 
- \ABNTEXPRIVATEapendiceconfig{\ABNTEXanexoname}{\ABNTEXanexosname}
- \appendix
- \renewcommand\theHchapter{anexochapback.\arabic{chapter}}
+  \ABNTEXPRIVATEapendiceconfig{\ABNTEXanexoname}{\ABNTEXanexosname}
+  \appendix
+  \renewcommand\theHchapter{anexochapback.\arabic{chapter}}
 }
 % Anexos - ambiente
 \newenvironment{abntexEnvAnexosenv}{%
- \cftinserthook{toc}{AAA}
+  \cftinserthook{toc}{AAA}
 
- \ABNTEXPRIVATEapendiceconfig{\ABNTEXanexoname}{\ABNTEXanexosname}
- \begin{appendix}
- \renewcommand\theHchapter{anexochapback.\arabic{chapter}}
+  \ABNTEXPRIVATEapendiceconfig{\ABNTEXanexoname}{\ABNTEXanexosname}
+  \begin{appendix}
+  \renewcommand\theHchapter{anexochapback.\arabic{chapter}}
 }{%
- \end{appendix}
- \setboolean{abntex@apendiceousecao}{false}
- \bookmarksetup{startatroot}
+  \end{appendix}
+  \setboolean{abntex@apendiceousecao}{false}
+  \bookmarksetup{startatroot}
 }
 
 % Imprime uma pagina de divisao no estilo parte
@@ -926,16 +932,17 @@
 % q/topsep-itemsep-partopsep-and-parsep-what-does-each-of-them-mean-and-wha
 % q/redefine-environment-to-be-a-synonym-for-another
 \newenvironment*{citacao}[1][default]{%
-   % q/topsep-itemsep-partopsep-and-parsep-what-does-each-of-them-mean-and-wha
-   \list{}{\topsep=4pt}%
-   \addtolength{\leftskip}{\ABNTEXcitacaorecuo}%
-   \item[]%
-   \begin{SingleSpace}%
-   \ifthenelse{\not\equal{#1}{default}}{\itshape\selectlanguage{#1}}{}%
-   \ABNTEXfontereduzida%
- }{%
-   \end{SingleSpace}%
-   \endlist}%
+  % q/topsep-itemsep-partopsep-and-parsep-what-does-each-of-them-mean-and-wha
+  \list{}{\topsep=4pt}%
+  \addtolength{\leftskip}{\ABNTEXcitacaorecuo}%
+  \item[]%
+  \begin{SingleSpace}%
+  \ifthenelse{\not\equal{#1}{default}}{\itshape\selectlanguage{#1}}{}%
+  \ABNTEXfontereduzida%
+}{%
+  \end{SingleSpace}%
+  \endlist
+}%
 
 % Ambiente para alineas e e subalineas (incisos)
 % ABNT NBR 6024/2012 - 4.2 e 4.3
@@ -948,27 +955,27 @@
 \setlist[incisos,1]{label={--},topsep=0pt,itemsep=0pt,leftmargin=*}%
 
 % Comando \ABNTEXassinatura for signature
-   % width of the line and text under the line
+% width of the line and text under the line
 \newlength{\ABNTEXsignwidth}
 \setlength{\ABNTEXsignwidth}{8cm}
-   % thickness of the line
+% thickness of the line
 \newlength{\ABNTEXsignthickness}
 \setlength{\ABNTEXsignthickness}{1pt}
-   % ammount of space left between previous text and th signature line
+% ammount of space left between previous text and th signature line
 \newlength{\ABNTEXsignskip}
 \setlength{\ABNTEXsignskip}{0.7cm}
-   % \ABNTEXassinatura{name} -> types a line with name under the line, centralized
-   % \ABNTEXassinatura*{name} -> Creates the box with the line and name under
-   %     it, but the box has no position assigned. However the line and the
-   %     name are centralized with respect to each other.
+% \ABNTEXassinatura{name} -> types a line with name under the line, centralized
+% \ABNTEXassinatura*{name} -> Creates the box with the line and name under
+%     it, but the box has no position assigned. However the line and the
+%     name are centralized with respect to each other.
 \newcommand{\ABNTEXassinatura}{\@ifstar{\ABNTEXsign}{\ABNTEXcsign}}
-   % assinatura com estrela
+% assinatura com estrela
 \newcommand{\ABNTEXsign}[1]{%
   \parbox[t]{\ABNTEXsignwidth}{\SingleSpacing\vspace*{\ABNTEXsignskip}\centering%
   \rule{\ABNTEXsignwidth}{\ABNTEXsignthickness}\\%
   \nopagebreak #1\par}%
 }
-   % assinatura sem estrela
+% assinatura sem estrela
 \newcommand{\ABNTEXcsign}[1]%
   {\begingroup\par\centering\ABNTEXsign{#1}\par\endgroup}
 
@@ -1058,9 +1065,9 @@
 }
 
 \newcommand{\ABNTEXimprimirFolhaDeRosto}[1][\ABNTEXfolhaderostoname]{%
-   \@ifstar
-     \ABNTEXimprimirFolhaDeRostostar
-     \ABNTEXimprimirFolhaDeRostonostar
+  \@ifstar
+    \ABNTEXimprimirFolhaDeRostostar
+    \ABNTEXimprimirFolhaDeRostonostar
 }
 
 \makeatother
