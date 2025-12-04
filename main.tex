@@ -1,5 +1,5 @@
 % https://github.com/SublimeText/LaTeXTools/issues/1439
-%!TEX output_directory=latexcache
+%!TEX output_directory=.
 
 % You can build this using the command:
 % latexmk -pdf -jobname=main \
@@ -276,17 +276,14 @@ section=TITLE, % Título de seções em caixa alta
 % #6 = largura relativa 2
 % #7 = legenda geral
 \newcommand{\duasimages}[7]{%
-  % --- imagem 1 ---
   \StrBehind{#1}{/}[\tmpA]%
   \IfEq{\tmpA}{}{\def\tmpA{#1}}{}%
   \StrBefore{\tmpA}{.}[\imglabelA]%
 
-  % --- imagem 2 ---
   \StrBehind{#4}{/}[\tmpB]%
   \IfEq{\tmpB}{}{\def\tmpB{#4}}{}%
   \StrBefore{\tmpB}{.}[\imglabelB]%
 
-  % --- label geral derivado dos dois sublabels ---
   \edef\mainlabel{fig:\imglabelA-\imglabelB}%
 
   \begin{figure}[htb]

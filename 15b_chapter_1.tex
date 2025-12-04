@@ -1,30 +1,28 @@
-%% chapter_1.tex
-%%
-%% Copyright 2017 Evandro Coan
-%% Copyright 2012-2014 by abnTeX2 group at http://abntex2.googlecode.com/
-%%
-%% This work may be distributed and/or modified under the
-%% conditions of the LaTeX Project Public License, either version 1.3
-%% of this license or (at your option) any later version.
-%% The latest version of this license is in
-%%   http://www.latex-project.org/lppl.txt
-%% and version 1.3 or later is part of all distributions of LaTeX
-%% version 2005/12/01 or later.
-%%
-%% This work has the LPPL maintenance status `maintained'.
-%%
-%% The Current Maintainer of this work is the Evandro Coan.
-%%
-%% The last Maintainer of this work was the abnTeX2 team, led
-%% by Lauro César Araujo. Further information are available on
-%% https://www.abntex.net.br/
-%%
-%% This work consists of a bunch of files. But originally there were 2 files
-%% which are renamed as follows:
-%% Deleted the `abntex2-modelo-img-marca.pdf`
-%% Renamed the `abntex2-modelo-include-comandos.tex, v-1.9.2 laurocesar`
-%%          to `chapter_1.tex`
-%%
+% Copyright 2017 Evandro Coan
+% Copyright 2012-2014 by abnTeX2 group at http://abntex2.googlecode.com/
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.3
+% of this license or (at your option) any later version.
+% The latest version of this license is in
+%   http://www.latex-project.org/lppl.txt
+% and version 1.3 or later is part of all distributions of LaTeX
+% version 2005/12/01 or later.
+%
+% This work has the LPPL maintenance status `maintained'.
+%
+% The Current Maintainer of this work is the Evandro Coan.
+%
+% The last Maintainer of this work was the abnTeX2 team, led
+% by Lauro César Araujo. Further information are available on
+% https://www.abntex.net.br/
+%
+% This work consists of a bunch of files. But originally there were 2 files
+% which are renamed as follows:
+% Deleted the `abntex2-modelo-img-marca.pdf`
+% Renamed the `abntex2-modelo-include-comandos.tex, v-1.9.2 laurocesar`
+%          to `chapter_1.tex`
+
 % ---
 % Este capítulo, utilizado por diferentes exemplos do abnTeX2, ilustra o uso de
 % comandos do abnTeX2 e de LaTeX.
@@ -298,18 +296,14 @@ Outra forma é utilizar o pacote pdflscape
 
 \end{landscape}
 
-% ---
 \section{Codificação dos arquivos: UTF8}
-% ---
 
 A codificação de todos os arquivos do \abnTeX{} é \texttt{UTF8}. É necessário
 que você utilize a mesma codificação nos documentos que escrever, inclusive nos
 arquivos de base bibliográficas |.bib| .
 
-% ---
 \section{Citações diretas}
 \label{sec-citacao}
-% ---
 
 \index{citações!diretas}Utilize o ambiente \texttt{citacao} para incluir
 citações diretas com mais de três linhas :
@@ -352,9 +346,7 @@ Text in English language in italic with correct hyphenation.
 incluídas com aspas. Observe que em \LaTeX{} as aspas iniciais são diferentes
 das finais: ``Amor é fogo que arde sem se ver''. 
 
-% ---
 \section{Notas de rodapé}
-% ---
 
 As notas de rodapé são detalhadas pela NBR 14724:2011 na seção 5.2.1\footnote{As
     notas devem ser digitadas ou datilografadas dentro das margens, ficando
@@ -368,9 +360,7 @@ vírgula seja colocada após cada número do expoente que indica a nota de rodap
 no corpo do texto. }\footnote{Verifique se os números do expoente
     possuem uma vírgula para dividi-los no corpo do texto. }.
 
-% ---
 \section{Tabelas}
-% ---
 
 \index{tabelas}A \autoref{tab-nivinv} é um exemplo de tabela construída em
 \LaTeX{} .
@@ -461,9 +451,7 @@ acadêmicos .
 \end{table}
 
 \clearpage
-% ---
 \section{Figuras}
-% ---
 
 \index{figuras}Figuras podem ser criadas diretamente em \LaTeX{},
 como o exemplo da \autoref{fig_circulo} .
@@ -534,9 +522,7 @@ Photoshop\index{Adobe Photoshop}.
     \fonte{\textcite[p. 24]{araujo2012} }
 \end{figure}
 
-% ---
 \subsection{Figuras em minipages}
-% ---
 
 Minipages são usadas para inserir textos ou outros elementos em quadros com
 tamanhos e posições controladas. Veja o exemplo da
@@ -579,9 +565,7 @@ texto e inserida o mais próximo possível do trecho a que se
 refere. \cite[seções 5.8]{NBR14724:2011} 
 \end{citacao}
 
-% ---
 \section{Quadros}
-% ---
 
 Depois de definir o ambiente \texttt{quadro} podemos ter um quadro :
 
@@ -612,9 +596,7 @@ Este é o conteúdo do segundo quadro.\\
 \fonte{O autor. }
 \end{quadro}
 
-% ---
 \section{Expressões matemáticas}
-% ---
 
 \index{expressões matemáticas} Use o ambiente \texttt{equation} para escrever
 expressões matemáticas numeradas :
@@ -641,9 +623,7 @@ matemática que não é numerada .
 Consulte mais informações sobre expressões matemáticas em
 \url{https://code.google.com/p/abntex2/wiki/Referencias} .
 
-% ---
 \section{Enumerações: alíneas e subalíneas}
-% ---
 
 \index{alíneas}\index{subalíneas}\index{incisos}Quando for necessário enumerar
 os diversos assuntos de uma seção que não possua título, esta deve ser
@@ -705,9 +685,7 @@ subdividida em alíneas  \cite[4.2]{NBR6024:2012}:
 
 \end{alineas}
 
-% ---
 \section{Espaçamento entre parágrafos e linhas}
-% ---
 
 \index{espaçamento!dos parágrafos}O tamanho do parágrafo, espaço entre a margem
 e o início da frase do parágrafo, é definido por:
@@ -755,9 +733,7 @@ Para isso, também estão disponíveis os ambientes:
 
 Para mais informações, consulte \textcite[p. 47-52 e 135]{memoir} .
 
-% ---
 \section{Inclusão de código fonte}\label{sec-codeinsert}
-% ---
 
 \begin{lstlisting}[caption={[Leitura dos dados simulados e conversão para
 estados topológicos.]{Leitura dos dados simulados e conversão para estados
@@ -811,9 +787,7 @@ def incmatrix(genl1,genl2):
     return M
 \end{lstlisting}
 
-% ---
 \section{Inclusão de outros arquivos}\label{sec-include}
-% ---
 
 É uma boa prática dividir o seu documento em diversos arquivos, e não
 apenas escrever tudo em um único. Esse recurso foi utilizado neste
@@ -831,9 +805,7 @@ Para incluir documentos sem quebra de páginas, utilize :
    \input{documento-a-ser-incluido}      % sem a extensão .tex
 \end{lstlisting}
 
-% ---
 \section{Compilar o documento \LaTeX{}}
-% ---
 
 Geralmente os editores \LaTeX{}, como o
 TeXlipse\footnote{\url{http://texlipse.sourceforge.net/} }, o
@@ -866,9 +838,7 @@ a very long and totruous path which you can check to see if it breaks and where
 at the end of the line
 \end{lstlisting}
 
-% ---
 \section{Remissões internas}
-% ---
 
 Ao nomear a \autoref{tab-nivinv} e a \autoref{fig_circulo}, apresentamos um
 exemplo de remissão interna, que também pode ser feita quando indicamos o
@@ -895,9 +865,7 @@ Veja a \autoref{sec-divisoes} para outros exemplos de remissões internas entre
 seções, subseções e subsubseções.
 \end{lstlisting}
 
-% ---
 \section{Divisões do documento: seção}\label{sec-divisoes}
-% ---
 
 Esta seção testa o uso de divisões de documentos. Esta é a
 \autoref{sec-divisoes}. Veja a \autoref{sec-divisoes-subsection} .
@@ -921,19 +889,15 @@ Isto é outra subsubseção .
 
 Isto é uma subseção .
 
-% ---
 \section[Exemplo muito longo]{Este é um exemplo de nome de seção longo. Ele deve
 estar alinhado à esquerda e a segunda e demais linhas devem iniciar logo abaixo
 da primeira palavra da primeira linha }
-% ---
 
 Isso atende à norma \textcite[seções de 5.2.2 a 5.2.4]{NBR14724:2011}
  e \textcite[seções de 3.1 a 3.8]{NBR6024:2012}.
 
-% ---
 \section{Diferentes idiomas e hifenizações}
 \label{sec-hifenizacao}
-% ---
 
 Para usar hifenizações de diferentes idiomas, inclua nas opções do documento o
 nome dos idiomas que o seu texto contém. Por exemplo (para melhor
@@ -1031,9 +995,7 @@ de documentos produzidos com \abnTeX{} .
 A \autoref{sec-citacao} descreve o ambiente \texttt{citacao} que pode receber
 como parâmetro um idioma a ser usado na citação .
 
-% ---
 \section{Consulte o manual da classe \textsf{abntex2}}
-% ---
 
 Consulte o manual da classe \textsf{abntex2} \cite{abntex2classe} para uma
 referência completa das macros e ambientes disponíveis .
@@ -1044,9 +1006,7 @@ não atendidos, como o caso da \textcite[seção 5.2.2]{NBR14724:2011}, que
 especifica o espaçamento entre os capítulos e o início do texto, regra
 propositalmente não atendida pelo presente modelo .
 
-% ---
 \section{Referências bibliográficas}
-% ---
 
 A formatação das referências bibliográficas conforme as regras da ABNT são um
 dos principais objetivos do \abnTeX{}. Consulte os manuais
@@ -1080,9 +1040,7 @@ acento & \textsf{bibtex}\\
 \fonte{Manual do LaTeX \cite{memoir} }
 \end{table}
 
-% ---
 \section{Precisa de ajuda?}
-% ---
 
 Consulte a FAQ com perguntas frequentes e comuns no portal do \abnTeX{}:
 \url{https://code.google.com/p/abntex2/wiki/FAQ}.
@@ -1095,9 +1053,7 @@ Participe também do grupo de desenvolvedores do \abnTeX{}:
 \url{http://groups.google.com/group/abntex2} e faça sua contribuição à
 ferramenta.
 
-% ---
 \section{Você pode ajudar?}
-% ---
 
 Sua contribuição é muito importante! Você pode ajudar na divulgação, no
 desenvolvimento e de várias outras formas. Veja como contribuir com o \abnTeX{}
