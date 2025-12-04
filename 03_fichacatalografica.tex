@@ -50,16 +50,16 @@ contidos.
                 \hspace{0.5cm} \thetitle%
                 \UFSCifNotEmpty{\imprimirsubtitulo}{~:~\imprimirsubtitulo}%
                 ~/~\theauthor%
-                ;~\imprimirorientadorRotulo,~\imprimirorientador%
-                \UFSCifNotEmpty{\imprimircoorientador}{;~\imprimircoorientadorRotulo,~\imprimircoorientador}%
-                ~--~\imprimirlocal,~\ABNTEXimprimirdata.
+                ;~\abnteximprimirorientadorRotulo,~\abnteximprimirorientador%
+                \UFSCifNotEmpty{\abnteximprimircoorientador}{;~\abnteximprimircoorientadorRotulo,~\abnteximprimircoorientador}%
+                ~--~\abnteximprimirlocal,~\ABNTEXimprimirdata.
 
                 % Prints how much pages there are on the document
                 % and links to the last page
                 \hspace{0.5cm} \pageref{LastPage} p.
                 \bigskip
 
-                \hspace{0.5cm} \imprimirtipotrabalho~--~\imprimirinstituicao,
+                \hspace{0.5cm} \abnteximprimirtipotrabalho~--~\abnteximprimirinstituicao,
                 \imprimircentro,~\imprimirprograma.
                 \bigskip
 
@@ -73,8 +73,8 @@ contidos.
                     \lang{\palavraschaveinglescomvirgula}{\palavraschaveportuguescomvirgula}%
                 \end{inparaenum}%
                 \begin{inparaenum}[I.]
-                    \item \imprimirorientador~
-                    \UFSCifNotEmpty{\imprimircoorientador}{\item \imprimircoorientador~}
+                    \item \abnteximprimirorientador~
+                    \UFSCifNotEmpty{\abnteximprimircoorientador}{\item \abnteximprimircoorientador~}
                     \item \imprimirprograma~
                     \item \thetitle~
                 \end{inparaenum}%

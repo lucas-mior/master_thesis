@@ -288,8 +288,8 @@
 \providecommand{\imprimirbiblioteca}{}
 \newcommand{\UFSCbiblioteca}[1]{\renewcommand{\imprimirbiblioteca}{#1}}
 
-\providecommand{\imprimirinstituicaosigla}{}
-\newcommand{\UFSCinstituicaoSigla}[1]{\renewcommand{\imprimirinstituicaosigla}{#1}}
+\providecommand{\abnteximprimirinstituicaosigla}{}
+\newcommand{\UFSCinstituicaoSigla}[1]{\renewcommand{\abnteximprimirinstituicaosigla}{#1}}
 
 \providecommand{\imprimirano}{}
 \newcommand{\UFSCano}[1]{\renewcommand{\imprimirano}{#1}}
@@ -726,7 +726,7 @@
 
       % q/controlling-the-spacing-between-lines-with-fontsize-selectfont
       {\OnehalfSpacing
-        \MakeTextUppercase{\imprimirinstituicao}\par
+        \MakeTextUppercase{\abnteximprimirinstituicao}\par
         \MakeTextUppercase{\imprimircampus}\par
         \MakeTextUppercase{\imprimirprograma}\par
       }
@@ -745,7 +745,7 @@
     \vfill
 
     {%
-      \imprimirlocal\par
+      \abnteximprimirlocal\par
       \imprimirano\par
     }
     \vspace*{1cm}
@@ -777,19 +777,19 @@
     \end{center}
     \vspace*{\fill}
 
-    \abntex@UFSCifNotEmpty{\imprimirpreambulo}
+    \abntex@UFSCifNotEmpty{\abnteximprimirpreambulo}
     {%
       \hspace{\textwidth}
       \begin{adjustwidth*}{8cm}{}%8.5
 
         \SingleSpacing
-        {\UFSCcaptionSize\imprimirpreambulo}
+        {\UFSCcaptionSize\abnteximprimirpreambulo}
 
         {
-          \UFSCcaptionSize\textbf{\imprimirorientadorRotulo:}~\imprimirorientador\par
-          \abntex@UFSCifNotEmpty{\imprimircoorientador}
+          \UFSCcaptionSize\textbf{\abnteximprimirorientadorRotulo:}~\abnteximprimirorientador\par
+          \abntex@UFSCifNotEmpty{\abnteximprimircoorientador}
           {
-            {\textbf{\imprimircoorientadorRotulo:}~\imprimircoorientador}%
+            {\textbf{\abnteximprimircoorientadorRotulo:}~\abnteximprimircoorientador}%
           }
         }
 
@@ -798,7 +798,7 @@
 
     \vspace*{\fill}
     {%
-      \imprimirlocal\par
+      \abnteximprimirlocal\par
       \imprimirano\par
     }
 
