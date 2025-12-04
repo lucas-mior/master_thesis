@@ -332,23 +332,23 @@
 \providecommand{\imprimircampus}{}
 \newcommand{\UFSCcampus}[1]{\renewcommand{\imprimircampus}{#1}}
 
-\newtheorem{axioma}{Axioma}[chapter]
-\newtheorem{postulado}{Postulado}[chapter]
-\newtheorem{teorema}{Teorema}[chapter]
-\newtheorem{conjectura}{Conjectura}[chapter]
-\newtheorem{corolario}[teorema]{Corol\'ario}
-\newtheorem{lema}[teorema]{Lema}
-\newtheorem{proposicao}[teorema]{Proposi\c{c}\~ao}
+\newtheorem{UFSCaxioma}{Axioma}[chapter]
+\newtheorem{UFSCpostulado}{Postulado}[chapter]
+\newtheorem{UFSCteorema}{Teorema}[chapter]
+\newtheorem{UFSCconjectura}{Conjectura}[chapter]
+\newtheorem{UFSCcorolario}[UFSCteorema]{Corol\'ario}
+\newtheorem{UFSClema}[UFSCteorema]{Lema}
+\newtheorem{UFSCproposicao}[UFSCteorema]{Proposi\c{c}\~ao}
 
 % Commonly used in definitions, conditions, problems and examples.
 \theoremstyle{definition}
-\newtheorem{definicao}{Defini\c{c}\~ao}[chapter]
-\newtheorem{exemplo}{Exemplo}[section]
-\newtheorem{exercicio}{Exerc\'icio}[section]
-\newtheorem{condicao}{Condi\c{c}\~ao}[chapter]
+\newtheorem{UFSCdefinicao}{Defini\c{c}\~ao}[chapter]
+\newtheorem{UFSCexemplo}{Exemplo}[section]
+\newtheorem{UFSCexercicio}{Exerc\'icio}[section]
+\newtheorem{UFSCcondicao}{Condi\c{c}\~ao}[chapter]
 
 \theoremstyle{remark}
-\newtheorem{observacao}{Observa\c{c}\~ao}
+\newtheorem{UFSCobservacao}{Observa\c{c}\~ao}
 
 \renewcommand{\qedsymbol}{$\blacksquare$}
 
