@@ -250,7 +250,7 @@
   \renewcommand{\ABNTEXlistadesimbolosname}{List of symbols}
   \renewcommand{\ABNTEXfontename}{Source}
   \renewcommand{\ABNTEXnotaname}{Note}
-   %% adjusts names used by \autoref
+  %% adjusts names used by \autoref
   \renewcommand{\pageautorefname}{page}
   \renewcommand{\sectionautorefname}{section}
   \renewcommand{\subsectionautorefname}{subsection}
@@ -572,13 +572,13 @@
   \fi
 
   % tamanhos de fontes de chapter e part
-   \ifthenelse{\equal{\ABNTEXisarticle}{true}}{%
-     \setlength\beforechapskip{\baselineskip}%
-     \renewcommand{\chaptitlefont}{\ABNTEXsectionfont\ABNTEXsectionfontsize}%
-   }{%else
-     \setlength{\beforechapskip}{0pt}%
-     \renewcommand{\chaptitlefont}{\ABNTEXchapterfont\ABNTEXchapterfontsize}%
-   }
+  \ifthenelse{\equal{\ABNTEXisarticle}{true}}{%
+    \setlength\beforechapskip{\baselineskip}%
+    \renewcommand{\chaptitlefont}{\ABNTEXsectionfont\ABNTEXsectionfontsize}%
+  }{
+    \setlength{\beforechapskip}{0pt}%
+    \renewcommand{\chaptitlefont}{\ABNTEXchapterfont\ABNTEXchapterfontsize}%
+  }
 
   \renewcommand{\chapnumfont}{\chaptitlefont}
   \renewcommand{\parttitlefont}{\ABNTEXpartfont\ABNTEXpartfontsize}
@@ -596,8 +596,8 @@
 
   % impressao do nome do capitulo
   \renewcommand{\printchaptername}{%
-   \chaptitlefont%
-   \ifthenelse{\boolean{abntex@apendiceousecao}}{\appendixname}{}%
+    \chaptitlefont%
+    \ifthenelse{\boolean{abntex@apendiceousecao}}{\appendixname}{}%
   }
 
   % impressao do titulo do capitulo
@@ -705,15 +705,17 @@
 
 \providecommand{\abnteximprimirorientadorRotulo}{}
 \providecommand{\abnteximprimirorientador}{}
-\newcommand{\ABNTEXorientador}[2][\ABNTEXorientadorname]%
-  {\renewcommand{\abnteximprimirorientadorRotulo}{#1}%
-   \renewcommand{\abnteximprimirorientador}{#2}}
+\newcommand{\ABNTEXorientador}[2][\ABNTEXorientadorname]{%
+  \renewcommand{\abnteximprimirorientadorRotulo}{#1}%
+  \renewcommand{\abnteximprimirorientador}{#2}%
+}
 
 \providecommand{\abnteximprimircoorientadorRotulo}{}
 \providecommand{\abnteximprimircoorientador}{}
-\newcommand{\ABNTEXcoorientador}[2][\ABNTEXcoorientadorname]%
-  {\renewcommand{\abnteximprimircoorientadorRotulo}{#1}%
-   \renewcommand{\abnteximprimircoorientador}{#2}}
+\newcommand{\ABNTEXcoorientador}[2][\ABNTEXcoorientadorname]{%
+  \renewcommand{\abnteximprimircoorientadorRotulo}{#1}%
+  \renewcommand{\abnteximprimircoorientador}{#2}%
+}
 
 \providecommand{\abnteximprimirtipotrabalho}{}
 \newcommand{\ABNTEXtipotrabalho}[1]{\renewcommand{\abnteximprimirtipotrabalho}{#1}}
@@ -742,15 +744,19 @@
 
 % Errata
 \newenvironment{abntexEnvErrata}[1][\ABNTEXerrataname]{%
-   \ABNTEXpretextualchapter{#1}
-  }{\ABNTEXPRIVATEclearpageifneeded}
+  \ABNTEXpretextualchapter{#1}
+}{%
+  \ABNTEXPRIVATEclearpageifneeded
+}
 
 % Folha de aprovacao - NBR 14724/2011 - 4.2.1.3
 \newenvironment{abntexEnvFolhadeaprovacao}[1][\ABNTEXfolhadeaprovacaoname]{%
-   \clearpage%
-   \ABNTEXPRIVATEbookmarkthis{#1}%
-   \begin{Spacing}{1.0}
-}{\end{Spacing}\ABNTEXPRIVATEclearpageifneeded}
+  \clearpage%
+  \ABNTEXPRIVATEbookmarkthis{#1}%
+  \begin{Spacing}{1.0}
+}{%
+  \end{Spacing}\ABNTEXPRIVATEclearpageifneeded
+}
 
 % Dedicatoria
 \newenvironment{abntexEnvDedicatoria}[1][]{%

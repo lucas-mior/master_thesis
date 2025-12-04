@@ -182,9 +182,11 @@
   \endlinechar=-1\relax
   \readline\mintedappexistsfile to \mintedapppathifexists
   \endlinechar=\@tmp@cr
-  \ifthenelse{\equal{\mintedapppathifexists}{}}
-   {\AppMotherFuckerExistsfalse}
-   {\AppMotherFuckerExiststrue}
+  \ifthenelse{\equal{\mintedapppathifexists}{}}{
+    \AppMotherFuckerExistsfalse
+  }{
+    \AppMotherFuckerExiststrue
+  }
   \immediate\closein\mintedappexistsfile
   \DeleteFile{\mintedjobname.aex}
   \else
@@ -299,9 +301,10 @@
 \newcommand{\UFSCcoordenadorname}{Coordenador}
 \providecommand{\imprimircoordenadorRotulo}{}
 \providecommand{\imprimircoordenador}{}
-\newcommand{\UFSCcoordenador}[2][UFSCcoordenadorname]%
-  {\renewcommand{\imprimircoordenadorRotulo}{#1}%
-   \renewcommand{\imprimircoordenador}{#2}}
+\newcommand{\UFSCcoordenador}[2][UFSCcoordenadorname]{%
+  \renewcommand{\imprimircoordenadorRotulo}{#1}%
+  \renewcommand{\imprimircoordenador}{#2}%
+}
 
 % inclui subtitulo na capa, folha de rosto e ficha catalografica
 % lrsantos11/abntex2-ufsc/commit/fd30245353dcc49e193d281c78104afe54df9fe7
