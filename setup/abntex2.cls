@@ -91,9 +91,10 @@
 \ProcessOptions\relax
 \LoadClass{memoir}
 
-% sumario=abnt-6027-2012 : Sumário conforme recomendação da ABNT NBR 6027:2012, que
-%    soh pode ser usado com memoir v3.6k ou superior
-%    \settocpreprocessor \changes{v3.6k}{2012/09/18}{Added}
+% sumario=abnt-6027-2012:
+% Sumário conforme recomendação da ABNT NBR 6027:2012, que
+% soh pode ser usado com memoir v3.6k ou superior
+% \settocpreprocessor \changes{v3.6k}{2012/09/18}{Added}
 \ifdefined\settocpreprocessor
 \else
   \setboolean{ABNTEXsumario-tradicional}{true}
