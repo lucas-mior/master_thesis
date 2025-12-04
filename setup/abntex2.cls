@@ -152,7 +152,7 @@
 
  %
 % Define o comando \notas que respeita as configurações de caption do memoir ou do caption
-\newcommand{\nota}[2][\notaname]{\fonte[#1]{#2}}
+\newcommand{\abntex2nota}[2][\notaname]{\fonte[#1]{#2}}
 
 % ---
 % Customiza listas
