@@ -1338,11 +1338,35 @@
 
 % fix fig. being used instead of figure
 % q/cleveref-capitalise-option-not-working-with-babel-translations
-\@ifpackageloaded{babel}{\@ifpackagewith{babel}{brazil}{\addto\captionsbrazil{\crefname{figure}{Figura}{Figuras}}}{}}{}
-\@ifpackageloaded{babel}{\@ifpackagewith{babel}{brazil}{\addto\captionsbrazil{\Crefname{figure}{Figura}{Figuras}}}{}}{}
+\@ifpackageloaded{babel}{%
+  \@ifpackagewith{babel}{brazil}{%
+    \addto\captionsbrazil{%
+      \crefname{figure}{Figura}{Figuras}
+    }
+  }{}
+}{}
+\@ifpackageloaded{babel}{%
+  \@ifpackagewith{babel}{brazil}{%
+    \addto\captionsbrazil{
+      \Crefname{figure}{Figura}{Figuras}
+    }
+  }{}
+}{}
 
-\@ifpackageloaded{babel}{\@ifpackagewith{babel}{english}{\addto\captionsenglish{\crefname{figure}{figure}{figures}}}{}}{}
-\@ifpackageloaded{babel}{\@ifpackagewith{babel}{english}{\addto\captionsenglish{\Crefname{figure}{Figure}{Figures}}}{}}{}
+\@ifpackageloaded{babel}{%
+  \@ifpackagewith{babel}{english}{%
+    \addto\captionsenglish{%
+      \crefname{figure}{figure}{figures}
+    }
+  }{}
+}{}
+\@ifpackageloaded{babel}{%
+  \@ifpackagewith{babel}{english}{%
+    \addto\captionsenglish{%
+      \Crefname{figure}{Figure}{Figures}
+    }
+  }{}
+}{}
 
 % Caption package and Memoir
 % https://groups.google.com/forum/#!topic/comp.text.tex/RzpI2ATMev0
