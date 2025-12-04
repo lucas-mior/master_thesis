@@ -21,7 +21,9 @@ pdflatex -halt-on-error -interaction=nonstopmode main.tex
 end_sec=$(date +%s)
 end_nsec=$(date +%N)
 
-elapsed_ms=$(( (end_sec - start_sec) * 1000 + (end_nsec / 1000000 - start_nsec / 1000000) ))
+elapsed=$(awk -v s1="$start_sec" -v n1="$start_nsec" \
+              -v s2="$end_sec" -v n2="$end_nsec" \
+          'BEGIN { printf "%.3f\n", (s2 - s1) + (n2 - n1)/1000000000 }')
 
 printf "%b" "$RESET"
-echo "Total compilation time: ${elapsed_ms} ms"
+echo "Total compilation time: ${elapsed} s"
