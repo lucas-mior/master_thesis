@@ -1919,8 +1919,7 @@
 % How to break long URLs using common hyphenation
 % but adding a line feed indicator?
 % q/how-to-break-long-urls-using-common-hyphenation-but
-\def\addurlspace#1
-{%
+\def\addurlspace#1{%
   \ifx\relax#1%
   \else%
   \ifx/#1\space\fi%
