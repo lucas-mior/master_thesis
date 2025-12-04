@@ -126,7 +126,6 @@
 % Commenting this allow to use this as a relative package, with no warnings.
 % \ProvidesPackage{ufscthesisx}[2017/08/28 v0.0.1 Evandro]
 
-%
 % Repassa todos os parâmetros a classe abntex2,
 \DeclareOption*{%
   \PassOptionsToClass{\CurrentOption}{setup/abntex2}%
