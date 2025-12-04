@@ -2159,7 +2159,7 @@
 
 % Reset section numbering between unnumbered chapters
 % q/reset-section-numbering-between-unnumbered-chapters
-\newcommand{\addtotextpreliminarycontent}[1]{%
+\newcommand{\UFSCaddToTextPreliminaryContent}[1]{%
   \refstepcounter{textpreliminarycounter}%
   \addcontentsline{tpc}%
                   {textpreliminarycounter}%
