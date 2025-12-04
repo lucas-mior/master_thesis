@@ -376,14 +376,14 @@ no corpo do texto. }\footnote{Verifique se os números do expoente
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{p{2.6cm}p{6.0cm}p{2.25cm}p{3.40cm}}
   \toprule
-   {\raggedright \bfseries Nível de \\ Investigação} & \textbf{Insumos}  & \textbf{Sistemas de Investigação}  & \textbf{Produtos}  \\
-    \midrule
-    Meta-nível & Filosofia\index{filosofia} da Ciência  & Epistemologia &
-    Paradigma \\
-    Nível do objeto & Paradigmas do metanível e evidências do nível inferior &
-    Ciência  & Teorias e modelos \\
-    Nível inferior & Modelos e métodos do nível do objeto e problemas do nível inferior & Prática & Solução de problemas  \\
-   \bottomrule
+  {\raggedright \bfseries Nível de \\ Investigação} & \textbf{Insumos}  & \textbf{Sistemas de Investigação}  & \textbf{Produtos}  \\
+   \midrule
+   Meta-nível & Filosofia\index{filosofia} da Ciência  & Epistemologia &
+   Paradigma \\
+   Nível do objeto & Paradigmas do metanível e evidências do nível inferior &
+   Ciência  & Teorias e modelos \\
+   Nível inferior & Modelos e métodos do nível do objeto e problemas do nível inferior & Prática & Solução de problemas  \\
+  \bottomrule
 \end{tabular}
 }
 \ABNTEXfonte{\textcite{van86} }
@@ -402,13 +402,13 @@ acadêmicos .
 }{%
   \begin{tabular}{ccc}
   \toprule
-   \textbf{Nome} & \textbf{Nascimento} & \textbf{Documento} \\
+    \textbf{Nome} & \textbf{Nascimento} & \textbf{Documento} \\
   \midrule
-   Maria da Silva & 11/11/1111 & 111.111.111-11 \\
+    Maria da Silva & 11/11/1111 & 111.111.111-11 \\
   \midrule
-   João Souza & 11/11/2111 & 211.111.111-11 \\
+    João Souza & 11/11/2111 & 211.111.111-11 \\
   \midrule
-   Laura Vicuña & 05/04/1891 & 3111.111.111-11 \\
+    Laura Vicuña & 05/04/1891 & 3111.111.111-11 \\
   \bottomrule
 \end{tabular}%
 }{%
@@ -694,7 +694,7 @@ subdividida em alíneas  \cite[4.2]{NBR6024:2012}:
 e o início da frase do parágrafo, é definido por:
 
 \begin{lstlisting}[language=tex]
-   \setlength{\parindent}{1.3cm}
+  \setlength{\parindent}{1.3cm}
 \end{lstlisting}
 
 \index{espaçamento!do primeiro parágrafo}Por padrão, não há espaçamento no
@@ -704,7 +704,7 @@ também seja indentado, como é o caso deste documento. Para isso, apenas inclua
 pacote \textsf{indentfirst} no preâmbulo do documento:
 
 \begin{lstlisting}[language=tex]
-   \usepackage{indentfirst}      % Indenta o primeiro parágrafo de cada seção.
+  \usepackage{indentfirst}      % Indenta o primeiro parágrafo de cada seção.
 \end{lstlisting}
 
 \index{espaçamento!entre os parágrafos}O espaçamento entre um parágrafo e outro
@@ -799,13 +799,13 @@ de modo que cada arquivo incluído fique em uma página diferente, utilize o
 comando :
 
 \begin{lstlisting}[language=tex]
-   \include{documento-a-ser-incluido.tex}
+  \include{documento-a-ser-incluido.tex}
 \end{lstlisting}
 
 Para incluir documentos sem quebra de páginas, utilize :
 
 \begin{lstlisting}[language=tex]
-   \input{documento-a-ser-incluido}      % sem a extensão .tex
+  \input{documento-a-ser-incluido}      % sem a extensão .tex
 \end{lstlisting}
 
 \section{Compilar o documento \LaTeX{}}
@@ -827,12 +827,12 @@ comandos, que devem ser digitados no \emph{Prompt de Comandos} do Windows ou no
    comandos. }
 },
 label={lst:compilarLatex}]
-   pdflatex ARQUIVO_PRINCIPAL.tex
-   bibtex ARQUIVO_PRINCIPAL.aux
-   makeindex ARQUIVO_PRINCIPAL.idx
-   makeindex ARQUIVO_PRINCIPAL.nlo -s nomencl.ist -o ARQUIVO_PRINCIPAL.nls
-   pdflatex ARQUIVO_PRINCIPAL.tex
-   pdflatex ARQUIVO_PRINCIPAL.tex
+  pdflatex ARQUIVO_PRINCIPAL.tex
+  bibtex ARQUIVO_PRINCIPAL.aux
+  makeindex ARQUIVO_PRINCIPAL.idx
+  makeindex ARQUIVO_PRINCIPAL.nlo -s nomencl.ist -o ARQUIVO_PRINCIPAL.nls
+  pdflatex ARQUIVO_PRINCIPAL.tex
+  pdflatex ARQUIVO_PRINCIPAL.tex
 \end{lstlisting}
 
 \begin{lstlisting}[language=bash]
