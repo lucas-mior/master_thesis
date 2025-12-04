@@ -1984,8 +1984,7 @@
 \usepackage{array}
 \newcolumntype{B}{>{\global\let\currentrowstyle\relax}}
 \newcolumntype{^}{>{\currentrowstyle}}
-\newcommand{\rowstyle}[1]
-{%
+\newcommand{\rowstyle}[1]{%
   \gdef\currentrowstyle{#1}#1\ignorespaces
 }
 
@@ -2018,8 +2017,7 @@
   \isabntexloadedtrue%
 }{}
 
-\newcommand{\addGoToSummary}
-{%
+\newcommand{\addGoToSummary}{%
   \@ifundefined{printparttitle}{\message{printparttitle patch for addGoToSummary could NOT
         be applied because there is no printparttitle command available!^^J}}{%
     \let\oldAddGoToprintparttitle\printparttitle
@@ -2049,17 +2047,27 @@
 }
 
 \newcommand{\UFSCremoveGoToSummary}{%
-  \@ifundefined{oldAddGoToprintparttitle}{}{\let\printparttitle\oldAddGoToprintparttitle}
-  \@ifundefined{oldAddGoToSectionformat}{}{\let\Sectionformat\oldAddGoToSectionformat}
+  \@ifundefined{oldAddGoToprintparttitle}{}{%
+    \let\printparttitle\oldAddGoToprintparttitle
+  }
+  \@ifundefined{oldAddGoToSectionformat}{}{%
+    \let\Sectionformat\oldAddGoToSectionformat
+  }
 
   \ifismemoirloaded
     \ifisabntexloaded
-      \@ifundefined{oldAddGoToABNTEXchapterupperifneeded}{}{\let\ABNTEXchapterupperifneeded\oldAddGoToABNTEXchapterupperifneeded}
+      \@ifundefined{oldAddGoToABNTEXchapterupperifneeded}{}{%
+        \let\ABNTEXchapterupperifneeded\oldAddGoToABNTEXchapterupperifneeded
+      }
     \else
-      \@ifundefined{oldAddGoToprintchaptertitle}{}{\let\printchaptertitle\oldAddGoToprintchaptertitle}
+      \@ifundefined{oldAddGoToprintchaptertitle}{}{%
+        \let\printchaptertitle\oldAddGoToprintchaptertitle
+      }
     \fi
   \else
-    \@ifundefined{oldAddGoToChapterformat}{}{\let\Chapterformat\oldAddGoToChapterformat}
+    \@ifundefined{oldAddGoToChapterformat}{}{%
+      \let\Chapterformat\oldAddGoToChapterformat
+    }
   \fi
 }
 
@@ -2077,8 +2085,14 @@
 % Allow to push long words on new lines
 % when they do not fit entirely on the current line.
 % q/push-long-words-in-a-new-line
-\newcommand\lword[1]{\leavevmode\nobreak\hskip0pt plus\linewidth\penalty50\hskip0pt plus-\linewidth\nobreak{#1}}
-\newcommand\lurl[1]{\leavevmode\nobreak\hskip0pt plus\linewidth\penalty50\hskip0pt plus-\linewidth\nobreak{\url{#1}}}
+\newcommand\lword[1]{%
+  \leavevmode\nobreak\hskip0pt %
+  plus\linewidth\penalty50\hskip0pt plus-\linewidth\nobreak{#1}%
+}
+\newcommand\lurl[1]{%
+  \leavevmode\nobreak\hskip0pt %
+  plus\linewidth\penalty50\hskip0pt plus-\linewidth\nobreak{\url{#1}}%
+}
 
 % For the new command \latex
 % q/space-after-latex-commands
@@ -2106,10 +2120,11 @@
 
 % Reset section numbering between unnumbered chapters
 % q/reset-section-numbering-between-unnumbered-chapters
-\newcommand{\addtotextpreliminarycontent}[1]
-{%
+\newcommand{\addtotextpreliminarycontent}[1]{%
   \refstepcounter{textpreliminarycounter}%
-  \addcontentsline{tpc}{textpreliminarycounter}{\protect\numberline{\thetextpreliminarycounter}#1}\par%
+  \addcontentsline{tpc}%
+                  {textpreliminarycounter}%
+                  {\protect\numberline{\thetextpreliminarycounter}#1}\par%
 }
 
 % Unable to link to inserted pages with pdfpages
@@ -2117,16 +2132,15 @@
 \newcounter{includepdfpage}
 \newcounter{currentpagecounter}
 
-\newcommand{\addlabelstoallincludedpages}[1]
-{%
+\newcommand{\addlabelstoallincludedpages}[1]{%
   \refstepcounter{includepdfpage}%
   \stepcounter{currentpagecounter}%
   \label{#1.\thecurrentpagecounter}%
 }
-\newcommand{\modifiedincludepdf}[4]
-{%
+\newcommand{\modifiedincludepdf}[4]{%
   \setcounter{currentpagecounter}{0}%
-  \includepdf[pages=#1,pagecommand=\addlabelstoallincludedpages{#2},scale=#4]{#3}%
+  \includepdf[pages=#1,pagecommand=\addlabelstoallincludedpages{#2},scale=#4]
+             {#3}%
 }
 
 % \MakeUppercase in \section and \chapter with hyperref cause trouble
@@ -2160,8 +2174,7 @@
 % Logical String Length
 % q/logical-string-length
 \newcommand{\includeonlyfilelist}[0]{}
-\newcommand{\addtoincludeonly}[1]
-{%
+\newcommand{\addtoincludeonly}[1]{%
   \StrLen{\includeonlyfilelist}[\includeonlyfilelistlen]
 
   % How to concatenate strings into a single command?
