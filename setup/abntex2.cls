@@ -198,20 +198,20 @@
 %
 % Nomes constantes do abnTeX2 em portugues (definicoes padroes)
 \newcommand{\folhaderostoname}{Folha de rosto}
-\newcommand{\epigraphname}{Ep\'igrafe}
-\newcommand{\dedicatorianame}{Dedicat\'oria}
-\newcommand{\errataname}{Errata}
+\newcommand{\abntex2epigraphname}{Ep\'igrafe}
+\newcommand{\abntex2dedicatorianame}{Dedicat\'oria}
+\newcommand{\abntex2errataname}{Errata}
 \newcommand{\agradecimentosname}{Agradecimentos}
 \newcommand{\anexoname}{ANEXO}
 \newcommand{\anexosname}{Anexos}
 \newcommand{\apendicename}{AP\^ENDICE}
 \newcommand{\apendicesname}{Ap\^endices}
-\newcommand{\orientadorname}{Orientador:}
+\newcommand{\abntex2orientadorname}{Orientador:}
 \newcommand{\coorientadorname}{Coorientador:}
 \newcommand{\folhadeaprovacaoname}{Folha de aprova\c{c}\~ao}
 \newcommand{\resumoname}{Resumo}
-\newcommand{\listadesiglasname}{Lista de abreviaturas e siglas}
-\newcommand{\listadesimbolosname}{Lista de s\'imbolos}
+\newcommand{\abntex2listadesiglasname}{Lista de abreviaturas e siglas}
+\newcommand{\abntex2listadesimbolosname}{Lista de s\'imbolos}
 \newcommand{\fontename}{Fonte}
 \newcommand{\notaname}{Nota}
 %
@@ -231,20 +231,20 @@
 \addto\captionsenglish{% ingles
   %% adjusts names from abnTeX2
   \renewcommand{\folhaderostoname}{Title page}
-  \renewcommand{\epigraphname}{Epigraph}
-  \renewcommand{\dedicatorianame}{Dedication}
-  \renewcommand{\errataname}{Errata sheet}
+  \renewcommand{\abntex2epigraphname}{Epigraph}
+  \renewcommand{\abntex2dedicatorianame}{Dedication}
+  \renewcommand{\abntex2errataname}{Errata sheet}
   \renewcommand{\agradecimentosname}{Acknowledgements}
   \renewcommand{\anexoname}{ANNEX}
   \renewcommand{\anexosname}{Annex}
   \renewcommand{\apendicename}{APPENDIX}
   \renewcommand{\apendicesname}{Appendix}
-  \renewcommand{\orientadorname}{Supervisor:}
+  \renewcommand{\abntex2orientadorname}{Supervisor:}
   \renewcommand{\coorientadorname}{Co-supervisor:}
   \renewcommand{\folhadeaprovacaoname}{Approval}
   \renewcommand{\resumoname}{Abstract}
-  \renewcommand{\listadesiglasname}{List of abbreviations and acronyms}
-  \renewcommand{\listadesimbolosname}{List of symbols}
+  \renewcommand{\abntex2listadesiglasname}{List of abbreviations and acronyms}
+  \renewcommand{\abntex2listadesimbolosname}{List of symbols}
   \renewcommand{\fontename}{Source}
   \renewcommand{\notaname}{Note}
    %% adjusts names used by \autoref
@@ -740,7 +740,7 @@
 % Comandos de dados - orientador
 \providecommand{\imprimirorientadorRotulo}{}
 \providecommand{\imprimirorientador}{}
-\newcommand{\orientador}[2][\orientadorname]%
+\newcommand{\orientador}[2][\abntex2orientadorname]%
   {\renewcommand{\imprimirorientadorRotulo}{#1}%
    \renewcommand{\imprimirorientador}{#2}}
 
@@ -785,7 +785,7 @@
 
 % ---
 % Errata
-\newenvironment{errata}[1][\errataname]{%
+\newenvironment{errata}[1][\abntex2errataname]{%
    \pretextualchapter{#1}
   }{\PRIVATEclearpageifneeded}
 % ---
@@ -803,7 +803,7 @@
 % Dedicatoria
 \newenvironment{dedicatoria}[1][]{%
    \ifthenelse{\equal{#1}{}}{%
-    \PRIVATEbookmarkthis{\dedicatorianame}
+    \PRIVATEbookmarkthis{\abntex2dedicatorianame}
     }{\pretextualchapter{#1}}
   }{\PRIVATEclearpageifneeded}
 % ---
@@ -819,7 +819,7 @@
 % Epigrafe
 \newenvironment{epigrafe}[1][]{%
    \ifthenelse{\equal{#1}{}}{%
-    \PRIVATEbookmarkthis{\epigraphname}
+    \PRIVATEbookmarkthis{\abntex2epigraphname}
     }{\pretextualchapter{#1}}
   }{\PRIVATEclearpageifneeded}
 % ---
@@ -863,7 +863,7 @@
 % ---
 % Lista de abreviaturas e siglas
 \newenvironment{siglas}{%
-  \pretextualchapter{\listadesiglasname}
+  \pretextualchapter{\abntex2listadesiglasname}
   \begin{symbols}
 }{%
   \end{symbols}
@@ -874,7 +874,7 @@
 % ---
 % Lista de simbolos
 \newenvironment{simbolos}{%
-  \pretextualchapter{\listadesimbolosname}
+  \pretextualchapter{\abntex2listadesimbolosname}
   \begin{symbols}
 }{%
   \end{symbols}
