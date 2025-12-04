@@ -126,7 +126,6 @@
 % Commenting this allow to use this as a relative package, with no warnings.
 % \ProvidesPackage{ufscthesisx}[2017/08/28 v0.0.1 Evandro]
 
-%
 % Repassa todos os parâmetros a classe abntex2,
 \DeclareOption*{%
   \PassOptionsToClass{\CurrentOption}{setup/abntex2}%
@@ -532,7 +531,7 @@
 \renewcommand{\ABNTEXtocprintchapter}{%
   \addtocontents{toc}{\cftsetindents{chapter}{0em}{\cftlastnumwidth}}
 }
-%
+
 \renewcommand{\ABNTEXtocinnonumchapter}{%
   \addtocontents{toc}{%
     \cftsetindents{chapter}{\cftlastnumwidth}{\cftnumberboxnumberwidth}
@@ -544,14 +543,14 @@
     \cftsetindents{chapter}{\cftlastnumwidth}{\cftnumberboxnumberwidth}
   }%
 }
-%
+
 \renewcommand{\ABNTEXtocpartapendices}{%
   \addtocontents{toc}{%
     \cftsetindents{chapter}{\cftlastnumwidth}{\cftnumberboxnumberwidth}
   }%
   \cftinserthook{toc}{A}
 }
-%
+
 \renewcommand{\ABNTEXtocpartanexos}{%
   \addtocontents{toc}{%
     \cftsetindents{chapter}{\cftlastnumwidth}{\cftnumberboxnumberwidth}
@@ -1223,7 +1222,7 @@
     \user_name_cref:xV
       { \bool_if:nTF {#2} { C } { c }
         ref
-        \int_compare:nNnTF { \l__user_name_refs_nbrefs_int } > { 1 } { s } { } 
+        \int_compare:nNnTF { \l__user_name_refs_nbrefs_int } > { 1 } { s } { }
       }
       \l__user_name_refs_firstref_tl
     \nobreakspace
@@ -2137,12 +2136,8 @@
   plus\linewidth\penalty50\hskip0pt plus-\linewidth\nobreak{\url{#1}}%
 }
 
-% For the new command \latex
 % q/space-after-latex-commands
 \usepackage{xspace}
-
-% Write the word LaTeX nicely.
-\newcommand{\latex}{\LaTeX\xspace}
 
 % Create a bold title all in upper case.
 \newcommand{\Title}[1]{\textbf{\MakeUppercase{#1}}}
@@ -2528,7 +2523,7 @@
   showtabs=false,                  % show tabs within strings adding underscores
   stepnumber=2,                    % the step between two line-numbers. If it's 1, each line will be numbered
   stringstyle=\color{mymauve},     % string literal style
-  tabsize=4,                 
+  tabsize=4,
   texcl=true,                      % Permite o uso de acentuação no código
   title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
 }
