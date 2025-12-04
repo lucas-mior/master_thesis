@@ -275,7 +275,7 @@ section=TITLE, % Título de seções em caixa alta
 % #5 = legenda 2
 % #6 = largura relativa 2
 
-\newcommand{\duasimages}[6]{%
+\newcommand{\duasimages}[7]{%
   % --- imagem 1 ---
   \StrBehind{#1}{/}[\tmpA]%
   \IfEq{\tmpA}{}{\def\tmpA{#1}}{}%
@@ -287,6 +287,7 @@ section=TITLE, % Título de seções em caixa alta
 
   \begin{figure}[htb]
     \centering
+    \caption{#7}
 
     \begin{subfigure}[t]{0.48\textwidth}
       \centering
