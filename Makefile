@@ -68,7 +68,7 @@ define DEFAULTTARGET :=
 	fi;
 endef
 
-all:
+%:
 	@:
 	$(if ${ENABLE_DEBUG_MODE}, \
 		printf 'IS_MAKEFILE_RUNNING_TARGETS="%s"\n' \
