@@ -727,8 +727,7 @@
 % Configura layout para elementos textuais,
 % redefining the ABNT command `\ABNTEXtextual`.
 % Delete his to restore the ABNT default behavior.
-\renewcommand{\ABNTEXtextual}
-{%
+\renewcommand{\ABNTEXtextual}{%
   % Estilo original do Abntex2
   \pagestyle{abntheadings}
 
@@ -744,16 +743,14 @@
 % Comandos e ambientes de editoracao APENDICES e ANEXOS
 % ------------------------------------------------------------------------
 % Imprime uma pagina de divisao no estilo parte
-\renewcommand{\ABNTEXpartpage}
-{%
+\renewcommand{\ABNTEXpartpage}{%
   % \phantomsection
   % \addcontentsline{toc}{part}{\appendixtocname}
   \appendixpage*
 }
 
 % Impressão da Capa
-\renewcommand{\ABNTEXimprimircapa}
-{%
+\renewcommand{\ABNTEXimprimircapa}{%
   \begin{capa}%
 
     \center
@@ -851,8 +848,7 @@
 
 % If document class is equal to something then do not use package
 % q/if-document-class-is-equal-to-something-then-do-not-use-package
-\@ifclassloaded{setup/abntex2}
-{
+\@ifclassloaded{setup/abntex2}{
   % Package hyperref Warning: Token not allowed in a PDF string?
   % q/package-hyperref-warning-token-not-allowed-in-a-pdf-string
   \pdfstringdefDisableCommands{\let\uppercase\relax}
@@ -988,7 +984,11 @@
 % bigfoot.sty:61:
 % Package hyperref Warning: Option `hyperfootnotes' has already been used
 % q/bigfoot-sty61-package-hyperref-warning-option-hyperfootnotes-has-already-be
-\@ifpackageloaded{hyperref}{\hypersetup{hyperfootnotes=false}}{\PassOptionsToPackage{hyperfootnotes=false}{hyperref}}
+\@ifpackageloaded{hyperref}{%
+  \hypersetup{hyperfootnotes=false}
+}{%
+  \PassOptionsToPackage{hyperfootnotes=false}{hyperref}
+}
 \usepackage{hyperref}
 
 % \lettrine{O}{nce} upon a time...
