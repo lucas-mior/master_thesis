@@ -777,7 +777,7 @@
 
     \vfill
 
-    {\theauthor}
+    \theauthor
 
     \vfill
     {%
