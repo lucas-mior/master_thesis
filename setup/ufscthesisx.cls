@@ -2136,7 +2136,6 @@
   plus\linewidth\penalty50\hskip0pt plus-\linewidth\nobreak{\url{#1}}%
 }
 
-% For the new command \latex
 % q/space-after-latex-commands
 \usepackage{xspace}
 
