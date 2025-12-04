@@ -1222,7 +1222,7 @@
     \user_name_cref:xV
       { \bool_if:nTF {#2} { C } { c }
         ref
-        \int_compare:nNnTF { \l__user_name_refs_nbrefs_int } > { 1 } { s } { } 
+        \int_compare:nNnTF { \l__user_name_refs_nbrefs_int } > { 1 } { s } { }
       }
       \l__user_name_refs_firstref_tl
     \nobreakspace
@@ -2527,7 +2527,7 @@
   showtabs=false,                  % show tabs within strings adding underscores
   stepnumber=2,                    % the step between two line-numbers. If it's 1, each line will be numbered
   stringstyle=\color{mymauve},     % string literal style
-  tabsize=4,                 
+  tabsize=4,
   texcl=true,                      % Permite o uso de acentuação no código
   title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
 }
