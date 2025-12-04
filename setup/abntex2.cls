@@ -38,12 +38,12 @@
 % Captura as options article e twocolumn
 %
 \providecommand{\ABNTEXisarticle}{false}
-\DeclareOption{article}{
+\DeclareOption{article}{%
   \renewcommand{\ABNTEXisarticle}{true}
   \PassOptionsToClass{article}{memoir}%}
 }
 \providecommand{\ABNTEXistwocolumn}{false}
-\DeclareOption{twocolumn}{
+\DeclareOption{twocolumn}{%
   \renewcommand{\ABNTEXistwocolumn}{true}
   \PassOptionsToClass{twocolumn}{memoir}%}
 }
@@ -110,19 +110,19 @@
 % pacote que prove \MakeTextUppercase
 \RequirePackage{textcase}
 
-\newcommand{\ABNTEXchapterupperifneeded}[1]{
+\newcommand{\ABNTEXchapterupperifneeded}[1]{%
   \ifthenelse{\boolean{ABNTEXupperchapter}}{\MakeTextUppercase{#1}}{#1}
 }
-\newcommand{\ABNTEXsectionupperifneeded}{
+\newcommand{\ABNTEXsectionupperifneeded}{%
   \ifthenelse{\boolean{ABNTEXuppersection}}{\MakeTextUppercase}{}
 }
-\newcommand{\ABNTEXsubsectionupperifneeded}{
+\newcommand{\ABNTEXsubsectionupperifneeded}{%
   \ifthenelse{\boolean{ABNTEXuppersubsection}}{\MakeTextUppercase}{}
 }
-\newcommand{\ABNTEXsubsubsectionupperifneeded}{
+\newcommand{\ABNTEXsubsubsectionupperifneeded}{%
   \ifthenelse{\boolean{ABNTEXuppersubsubsection}}{\MakeTextUppercase}{}
 }
-\newcommand{\ABNTEXsubsubsubsectionupperifneeded}{
+\newcommand{\ABNTEXsubsubsubsectionupperifneeded}{%
   \ifthenelse{\boolean{ABNTEXuppersubsubsubsection}}{\MakeTextUppercase}{}
 }
 
@@ -131,7 +131,7 @@
 % ------------------------------------------------------------------------
 
 % Do pacote de if/them/else
-\newcommand{\abntex@UFSCifNotEmpty}[2]{
+\newcommand{\abntex@UFSCifNotEmpty}[2]{%
   \ifthenelse{\not\equal{#1}{}}{#2}{}
 }
 
@@ -388,7 +388,7 @@
 
 % Altera os comandos \ABNTEXconfigurecaptions e \ABNTEXconfigureseparator para trabalhar com
 % o pacote caption e amigos.
-\AtEndPackage{caption}{
+\AtEndPackage{caption}{%
   \AtBeginDocument{%
     \DeclareCaptionLabelSeparator{barr}{\ABNTEXcaptiondelim}
     \DeclareCaptionFont{ABNTEXfontereduzida}{\ABNTEXfontereduzida}
@@ -404,7 +404,7 @@
   }
 }
 
-\AtBeginDocument{
+\AtBeginDocument{%
  \captiondelim{\ABNTEXcaptiondelim}
 }
 
@@ -468,7 +468,7 @@
 
 % No caso de Sumario (TOC) especifico da ABNT-6027-2012
 
-\ifthenelse{\boolean{ABNTEXsumario-abnt-6027-2012}}{
+\ifthenelse{\boolean{ABNTEXsumario-abnt-6027-2012}}{%
   \settocpreprocessor{chapter}{%
   \let\tempf@rtoc\f@rtoc%
   \def\f@rtoc{%
@@ -827,7 +827,7 @@
 \newcommand{\ABNTEXPRIVATEapendiceconfig}[2]{%
  \setboolean{abntex@apendiceousecao}{true}%
  \renewcommand{\appendixname}{#1}
- \ifthenelse{\boolean{ABNTEXsumario-abnt-6027-2012}}{
+ \ifthenelse{\boolean{ABNTEXsumario-abnt-6027-2012}}{%
    \renewcommand{\appendixtocname}{\uppercase{#2}}
   }{%
   \renewcommand{\appendixtocname}{#2}}
@@ -845,7 +845,7 @@
 \newenvironment{apendicesenv}{%
  \ABNTEXPRIVATEapendiceconfig{\ABNTEXapendicename}{\ABNTEXapendicesname}
  \begin{appendix}
-}{
+}{%
  \end{appendix}
  \setboolean{abntex@apendiceousecao}{false}
  \bookmarksetup{startatroot}
@@ -866,7 +866,7 @@
  \ABNTEXPRIVATEapendiceconfig{\ABNTEXanexoname}{\ABNTEXanexosname}
  \begin{appendix}
  \renewcommand\theHchapter{anexochapback.\arabic{chapter}}
-}{
+}{%
  \end{appendix}
  \setboolean{abntex@apendiceousecao}{false}
  \bookmarksetup{startatroot}
@@ -984,7 +984,7 @@
 \newenvironment{folhaderosto*}[1][\ABNTEXfolhaderostoname]{\clearpage\ABNTEXPRIVATEbookmarkthis{#1}}{\newpage}%
 
 % Conteudo padrao da Folha de Rosto
-\newcommand{\ABNTEXfolhaderostocontent}{
+\newcommand{\ABNTEXfolhaderostocontent}{%
   \begin{center}
 
     %\vspace*{1cm}
