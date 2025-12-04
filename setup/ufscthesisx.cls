@@ -1574,12 +1574,12 @@
 % imprime lista de siglas ordenado alfabeticamente
 % q/printnoidxglossaries-vs-printglossaries
 \newcommand{\imprimirlistadesiglas}{%
-  \pdfbookmark[0]{\listadesiglasname}{acn}
+  \pdfbookmark[0]{\abntex2listadesiglasname}{acn}
   \printnoidxglossary[
   style=mylong1,
   type=acronym,
   sort=letter,
-  title={\listadesiglasname\vspace{-0.2cm}}
+  title={\abntex2listadesiglasname\vspace{-0.2cm}}
   ]
   \cleardoublepage
 }
@@ -1587,12 +1587,12 @@
 % imprime lista de símbolos na ordem em que aparece no texto
 % q/printnoidxglossaries-vs-printglossaries
 \newcommand{\imprimirlistadesimbolos}{%
-  \pdfbookmark[0]{\listadesimbolosname}{sbl}
+  \pdfbookmark[0]{\abntex2listadesimbolosname}{sbl}
   \printnoidxglossary[
   style=mylong2,
   type=simbolos,
   sort=use,
-  title={\listadesimbolosname}
+  title={\abntex2listadesimbolosname}
   ]
   \cleardoublepage
 }
@@ -2631,7 +2631,7 @@
 % q/how-to-add-babel-captions-to-newfloat-package-environments
 % q/how-to-override-command-on-my-preamble-after-its-redefinition-by-my-class-with
 \@ifpackageloaded{babel}{\@ifpackagewith{babel}{brazil}{\addto\captionsbrazil{%
-  \renewcommand{\orientadorname}{Orientador}
+  \renewcommand{\abntex2orientadorname}{Orientador}
   \renewcommand{\coorientadorname}{Coorientador}
   \renewcommand{\quadrosname}{Quadro}
   \renewcommand{\folhadeaprovacaoname}{Folha de Aprovação}
@@ -2640,8 +2640,8 @@
   \renewcommand{\listtablename}{Lista de Tabelas}
   \renewcommand{\listofquadrosname}{Lista de Quadros}
   \renewcommand{\listfigurename}{Lista de Figuras}
-  \renewcommand{\listadesiglasname}{Lista de Abreviaturas e Siglas}
-  \renewcommand{\listadesimbolosname}{Lista de Símbolos}
+  \renewcommand{\abntex2listadesiglasname}{Lista de Abreviaturas e Siglas}
+  \renewcommand{\abntex2listadesimbolosname}{Lista de Símbolos}
   \renewcommand{\tableautorefname}{Tabela}
   \renewcommand{\figureautorefname}{Figura}
   \renewcommand{\chapterautorefname}{Capítulo}
@@ -2654,16 +2654,16 @@
 
 \@ifpackageloaded{babel}{\@ifpackagewith{babel}{english}{\addto\captionsenglish{%
   \renewcommand{\UFSCcovername}{Cover}
-  \renewcommand{\orientadorname}{Supervisor}
+  \renewcommand{\abntex2orientadorname}{Supervisor}
   \renewcommand{\coorientadorname}{Co\hyp{}supervisor}
   \renewcommand{\folhadeaprovacaoname}{Approval}
   \renewcommand{\folhaderostoname}{Title Page}
-  \renewcommand{\errataname}{Errata Sheet}
+  \renewcommand{\abntex2errataname}{Errata Sheet}
   \renewcommand{\listfigurename}{List of Illustrations}
   \renewcommand{\listtablename}{List of Tables}
   \renewcommand{\listfigurename}{List of Figures}
-  \renewcommand{\listadesiglasname}{List of Abbreviations and Acronyms}
-  \renewcommand{\listadesimbolosname}{List of Symbols}
+  \renewcommand{\abntex2listadesiglasname}{List of Abbreviations and Acronyms}
+  \renewcommand{\abntex2listadesimbolosname}{List of Symbols}
   \renewcommand{\tableautorefname}{Table}
   \renewcommand{\figureautorefname}{Figure}
   \renewcommand{\chapterautorefname}{Chapter}
