@@ -369,7 +369,7 @@ section=TITLE, % Título de seções em caixa alta
   % q/pdftex-warning-has-been-referenced-but-does-not-exist-replaced-by-a-fixed-one
   \hypersetup{pageanchor=false}
   \ABNTEXPRIVATEbookmarkthis{Capa}
-  \addtotextpreliminarycontent{Capa}
+  \UFSCaddToTextPreliminaryContent{Capa}
   \ABNTEXpretextual
 
   % \includepdf{fig/FrenteCapaUFSC.pdf}
@@ -413,7 +413,7 @@ section=TITLE, % Título de seções em caixa alta
 
     % Folha de rosto (o * indica que haverá a ficha bibliográfica)
     % q/table-of-contents-incorrect-page-numbering
-    \addtotextpreliminarycontent{\ABNTEXfolhaderostoname}
+    \UFSCaddToTextPreliminaryContent{\ABNTEXfolhaderostoname}
     \ABNTEXimprimirFolhaDeRosto*{}
 
     % Inserir a ficha bibliografica
@@ -426,7 +426,7 @@ section=TITLE, % Título de seções em caixa alta
     % o documento, salve-o como PDF no diretório do seu projeto e substitua
     % todo o conteúdo de implementação deste arquivo pelo comando abaixo:
     \ABNTEXPRIVATEbookmarkthis{Ficha Catalográfica}
-    \addtotextpreliminarycontent{Ficha Catalográfica}
+    \UFSCaddToTextPreliminaryContent{Ficha Catalográfica}
 
     \include{03_fichacatalografica.tex}
     % q/how-to-include-multiple-pages-in-latex
@@ -490,7 +490,7 @@ section=TITLE, % Título de seções em caixa alta
     \fi
     % q/list-of-figures-and-tables-when-there-are-no-figures-or-tables
     \whenlistisnotempty{\listfigurename}{%
-      \addtotextpreliminarycontent{\listfigurename}
+      \UFSCaddToTextPreliminaryContent{\listfigurename}
       {
         % q/remove-spacing-between-per-chapter-figures-in-lof
         \renewcommand{\addvspace}[1]{}
@@ -506,7 +506,7 @@ section=TITLE, % Título de seções em caixa alta
     \fi
     % q/list-of-figures-and-tables-when-there-are-no-figures-or-tables
     \whenlistisnotempty{\listofquadrosname}{%
-      \addtotextpreliminarycontent{\listofquadrosname}
+      \UFSCaddToTextPreliminaryContent{\listofquadrosname}
       {
         % q/remove-spacing-between-per-chapter-figures-in-lof
         \renewcommand{\addvspace}[1]{}
@@ -522,7 +522,7 @@ section=TITLE, % Título de seções em caixa alta
     \fi
     % q/list-of-figures-and-tables-when-there-are-no-figures-or-tables
     \whenlistisnotempty{\listtablename}{%
-      \addtotextpreliminarycontent{\listtablename}
+      \UFSCaddToTextPreliminaryContent{\listtablename}
       {
         % q/remove-spacing-between-per-chapter-figures-in-lof
         \renewcommand{\addvspace}[1]{}
@@ -539,7 +539,7 @@ section=TITLE, % Título de seções em caixa alta
     \fi
     % q/list-of-figures-and-tables-when-there-are-no-figures-or-tables
     \whenlistisnotempty{\lstlistlistingname}{%
-      \addtotextpreliminarycontent{\lstlistlistingname}
+      \UFSCaddToTextPreliminaryContent{\lstlistlistingname}
       {
         % q/remove-spacing-between-per-chapter-figures-in-lof
         \renewcommand{\addvspace}[1]{}
@@ -590,7 +590,7 @@ section=TITLE, % Título de seções em caixa alta
       % Add the table of contents to the brief table of contents
       % q/list-of-figures-and-tables-when-there-are-no-figures-or-tables
       \whenlistisnotempty{\contentsname}{%
-        \addtotextpreliminarycontent{\contentsname}
+        \UFSCaddToTextPreliminaryContent{\contentsname}
         \tableofcontents
       }{
         \pdfbookmark[0]{\contentsname}{toc}
