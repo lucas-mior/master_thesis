@@ -813,8 +813,11 @@
     \vspace*{\fill}\vspace*{\fill}
     \begin{center}
 
-      {\ABNTEXchapterfont\MakeUppercase{\thetitle}}
-      \abntex@UFSCifNotEmpty{\imprimirsubtitulo}{{\ABNTEXchapterfont\!:} \\ \imprimirsubtitulo}
+      {
+        \ABNTEXchapterfont\MakeUppercase{\thetitle}
+      }
+      \abntex@UFSCifNotEmpty{\imprimirsubtitulo}
+                            {{\ABNTEXchapterfont\!:} \\ \imprimirsubtitulo}
 
     \end{center}
     \vspace*{\fill}
@@ -828,10 +831,14 @@
         {\UFSCcaptionSize\abnteximprimirpreambulo}
 
         {
-          \UFSCcaptionSize\textbf{\abnteximprimirorientadorRotulo:}~\abnteximprimirorientador\par
+          \UFSCcaptionSize\textbf{%
+            \abnteximprimirorientadorRotulo:%
+          }~\abnteximprimirorientador\par
           \abntex@UFSCifNotEmpty{\abnteximprimircoorientador}
           {
-            {\textbf{\abnteximprimircoorientadorRotulo:}~\abnteximprimircoorientador}%
+            \textbf{%
+              \abnteximprimircoorientadorRotulo:%
+            }~\abnteximprimircoorientador%
           }
         }
 
