@@ -141,24 +141,25 @@
   \memlegendinfo{#2}%
   \par
   \begingroup
-     \@parboxrestore
-     \if@minipage
-       \@setminipage
-     \fi
-     % q/how-can-i-reduce-padding-after-figure
-     % \setlength{\parskip}{10pt}
-     % \setlength{\abovecaptionskip}{10pt}
-     \setlength{\belowcaptionskip}{4pt}
-     \ABNTEXfontereduzida
-     % \captiondelim{\ABNTEXcaptionfontedelim}
-     % q/misplaced-noalign-captionsetup-noalign-when-using-captionsetup-inside-mem
-     \ifdefined\caption@setlabelseparator
-       \caption@setlabelseparator{colon}%
-     \else%
-       \caption@set{labelseparator}{colon}%
-     \fi%
-     \@makecaption{\ABNTEXfontereduzida #1}{\ignorespaces\ABNTEXfontereduzida #2}\par
-  \endgroup}
+    \@parboxrestore
+    \if@minipage
+      \@setminipage
+    \fi
+    % q/how-can-i-reduce-padding-after-figure
+    % \setlength{\parskip}{10pt}
+    % \setlength{\abovecaptionskip}{10pt}
+    \setlength{\belowcaptionskip}{4pt}
+    \ABNTEXfontereduzida
+    % \captiondelim{\ABNTEXcaptionfontedelim}
+    % q/misplaced-noalign-captionsetup-noalign-when-using-captionsetup-inside-mem
+    \ifdefined\caption@setlabelseparator
+      \caption@setlabelseparator{colon}%
+    \else%
+      \caption@set{labelseparator}{colon}%
+    \fi%
+    \@makecaption{\ABNTEXfontereduzida #1}{\ignorespaces\ABNTEXfontereduzida #2}\par
+  \endgroup%
+}
 
 % Define o comando \notas que respeita as configurações de caption do memoir ou do caption
 \newcommand{\ABNTEXnota}[2][\ABNTEXnotaname]{\ABNTEXfonte[#1]{#2}}
@@ -618,22 +619,22 @@
 
   % impressao do numero do capitulo
   \renewcommand{\printchapternum}{%
-     \ABNTEXtocprintchapter%
-     \setboolean{abntex@innonumchapter}{false}%
-     \chapnumfont%
-     \space\thechapter%
-     \ifthenelse{\boolean{abntex@apendiceousecao}}{%
-       \ABNTEXtocinnonumchapter%
-       \ABNTEXcaptiondelim%
-     }{}%
-     \space%
+    \ABNTEXtocprintchapter%
+    \setboolean{abntex@innonumchapter}{false}%
+    \chapnumfont%
+    \space\thechapter%
+    \ifthenelse{\boolean{abntex@apendiceousecao}}{%
+      \ABNTEXtocinnonumchapter%
+      \ABNTEXcaptiondelim%
+    }{}%
+    \space%
   }
   \renewcommand{\afterchapternum}{}
 
   % impressao do capitulo não numerado
   \renewcommand\printchapternonum{%
-     \ABNTEXtocprintchapternonum%
-     \setboolean{abntex@innonumchapter}{true}%
+    \ABNTEXtocprintchapternonum%
+    \setboolean{abntex@innonumchapter}{true}%
   }
 }
 \chapterstyle{abnt}
@@ -1054,13 +1055,13 @@
 
 \newcommand{\ABNTEXimprimirFolhaDeRostostar}[1]{%
   \begin{abntexEnvFolhaderosto*}{#1}
-     \ABNTEXfolhaderostocontent
+    \ABNTEXfolhaderostocontent
   \end{abntexEnvFolhaderosto*}
 }
 
 \newcommand{\ABNTEXimprimirFolhaDeRostonostar}[1]{%
   \begin{abntexEnvFolhaderosto}{#1}
-     \ABNTEXfolhaderostocontent
+    \ABNTEXfolhaderostocontent
   \end{abntexEnvFolhaderosto}
 }
 
