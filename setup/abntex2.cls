@@ -130,7 +130,9 @@
 % ------------------------------------------------------------------------
 
 % Do pacote de if/them/else
-\newcommand{\abntex@UFSCifNotEmpty}[2]{\ifthenelse{\not\equal{#1}{}}{#2}{}}
+\newcommand{\abntex@UFSCifNotEmpty}[2]{
+  \ifthenelse{\not\equal{#1}{}}{#2}{}
+}
 
 % Define o comando \ABNTEXfonte que respeita as configurações de caption do memoir ou do caption
 \newcommand{\ABNTEXfonte}[2][\ABNTEXfontename]{%
