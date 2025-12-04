@@ -512,45 +512,49 @@ section=TITLE, % Título de seções em caixa alta
     }
     \fi
 
-    % inserir lista de abreviaturas e siglas
-    \ifforcedinclude\else\cleardoublepage\fi
+    \ifforcedinclude\else
+      \cleardoublepage
+    \fi
     \include{12_siglas.tex}
 
-    % Inserir lista de símbolos
-    \ifforcedinclude\else\cleardoublepage\fi
+    \ifforcedinclude\else
+      \cleardoublepage
+    \fi
     \include{13_simbolos.tex}
 
     % How to remove the self-reference of the ToC from the ToC?
     % q/how-to-remove-the-self-reference-of-the-toc-from-the-toc
-    \ifforcedinclude\else\cleardoublepage\fi
+    \ifforcedinclude\else
+      \cleardoublepage
+    \fi
 
     \begin{KeepFromToc}
-        % q/what-does-overfull-hbox-mean
-        % q/how-to-avoid-using-sloppy-document-wide-to-fix-overfull-hbox-problems
-        % q/adding-color-to-table-of-contents-and-section-headings
-        {
-            % q/disable-colorlinks-locally-or-just-for-the-toc
-            \hypersetup{hidelinks}
+      % q/what-does-overfull-hbox-mean
+      % q/how-to-avoid-using-sloppy-document-wide-to-fix-overfull-hbox-problems
+      % q/adding-color-to-table-of-contents-and-section-headings
+      {
+        % q/disable-colorlinks-locally-or-just-for-the-toc
+        \hypersetup{hidelinks}
 
-            % q/underfull-vbox-badness-10000-with-memoir
-            \raggedbottom
+        % q/underfull-vbox-badness-10000-with-memoir
+        \raggedbottom
 
-            % q/overfull-hbox-warning-for-toc-entries-when-using-memoir-documentclass
-            % \makeatletter
-                % \renewcommand{\@pnumwidth}{2em}
-                % \renewcommand{\@tocrmarg}{3em}
-            % \makeatother
+        % q/overfull-hbox-warning-for-toc-entries-when-using-memoir-documentclass
+        % \makeatletter
+            % \renewcommand{\@pnumwidth}{2em}
+            % \renewcommand{\@tocrmarg}{3em}
+        % \makeatother
 
-            % q/memoir-mysterious-overfull-hbox-in-toc-when-mathptmx-is-used
-            % \setlength{\cftchapternumwidth}{2.25em}
+        % q/memoir-mysterious-overfull-hbox-in-toc-when-mathptmx-is-used
+        % \setlength{\cftchapternumwidth}{2.25em}
 
-            % Add the table of contents to the brief table of contents
-            % q/list-of-figures-and-tables-when-there-are-no-figures-or-tables
-            \whenlistisnotempty{\contentsname}{%
-                \addtotextpreliminarycontent{\contentsname}
-                \tableofcontents
-            }{\pdfbookmark[0]{\contentsname}{toc}}
-        }
+        % Add the table of contents to the brief table of contents
+        % q/list-of-figures-and-tables-when-there-are-no-figures-or-tables
+        \whenlistisnotempty{\contentsname}{%
+          \addtotextpreliminarycontent{\contentsname}
+          \tableofcontents
+        }{\pdfbookmark[0]{\contentsname}{toc}}
+      }
 
     \end{KeepFromToc}
 
@@ -601,41 +605,41 @@ section=TITLE, % Título de seções em caixa alta
 
     % Referências bibliográficas
     \begingroup
-        % q/how-to-modify-line-spacing-per-entry-of-bibliography
-        % q/how-can-i-put-more-space-between-bibliography-entries-biblatex
-        \setlength\bibitemsep{\baselineskip}
-        \ifadvisor
-        \else
-        \linespread{1.18}\selectfont
-        \fi
+      % q/how-to-modify-line-spacing-per-entry-of-bibliography
+      % q/how-can-i-put-more-space-between-bibliography-entries-biblatex
+      \setlength\bibitemsep{\baselineskip}
+      \ifadvisor
+      \else
+      \linespread{1.18}\selectfont
+      \fi
 
-        % q/using-bibtex-to-make-a-list-of-references-without-having-citations-in-the-body
-        % \nocite{*}
-        \printbibliography[title=\lang{REFERENCES}{REFERÊNCIAS}]
+      % q/using-bibtex-to-make-a-list-of-references-without-having-citations-in-the-body
+      % \nocite{*}
+      \printbibliography[title=\lang{REFERENCES}{REFERÊNCIAS}]
     \endgroup
 
     % Glossário, consulte o manual da classe abntex2
     % \ifforcedinclude\else\glossary\fi
 
     \begin{apendicesenv}
-        % Imprime uma página indicando o início dos apêndices
-        \ifforcedinclude\else\ABNTEXpartapendices\fi
-        \setlength\beforechapskip{50pt}
-        \setlength\midchapskip{20pt}
-        \setlength\afterchapskip{20pt}
+      % Imprime uma página indicando o início dos apêndices
+      \ifforcedinclude\else\ABNTEXpartapendices\fi
+      \setlength\beforechapskip{50pt}
+      \setlength\midchapskip{20pt}
+      \setlength\afterchapskip{20pt}
 
-        \include{18_apendice_a.tex}
+      \include{18_apendice_a.tex}
     \end{apendicesenv}
 
     \begin{anexosenv}
-        % Imprime uma página indicando o início dos anexos
-        \ifforcedinclude\else\ABNTEXpartanexos\fi
-        \setlength\beforechapskip{50pt}
-        \setlength\midchapskip{20pt}
-        \setlength\afterchapskip{20pt}
+      % Imprime uma página indicando o início dos anexos
+      \ifforcedinclude\else\ABNTEXpartanexos\fi
+      \setlength\beforechapskip{50pt}
+      \setlength\midchapskip{20pt}
+      \setlength\afterchapskip{20pt}
 
-        \include{19_anexo_a.tex}
-        \include{19_anexo_b.tex}
+      \include{19_anexo_a.tex}
+      \include{19_anexo_b.tex}
     \end{anexosenv}
 
     % INDICE REMISSIVO
