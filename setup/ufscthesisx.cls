@@ -488,14 +488,14 @@
 \let\oldcontentsline\contentsline
 \def\contentsline#1#2{%
   \expandafter\ifx\csname l@#1\endcsname\l@section
-  \expandafter\@firstoftwo
+    \expandafter\@firstoftwo
   \else
-  \expandafter\@secondoftwo
+    \expandafter\@secondoftwo
   \fi
   {%
-  \oldcontentsline{#1}{\MakeTextUppercase{#2}}%
+    \oldcontentsline{#1}{\MakeTextUppercase{#2}}%
   }{%
-  \oldcontentsline{#1}{#2}%
+    \oldcontentsline{#1}{#2}%
   }%
 }
 
