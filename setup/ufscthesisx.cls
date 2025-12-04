@@ -806,8 +806,7 @@
 %
 % How to add an empty line between paragraphs?
 % q/how-to-add-an-empty-line-between-paragraphs
-\renewcommand{\ABNTEXfolhaderostocontent}
-{%
+\renewcommand{\ABNTEXfolhaderostocontent}{%
   \begin{center}
     {\theauthor}
 
