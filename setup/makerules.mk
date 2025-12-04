@@ -71,32 +71,6 @@ ifdef debug
 	endif
 endif
 
-ifeq (${UFSCTHESISX_RSYNC_DIRECTORY},)
-	UFSCTHESISX_RSYNC_DIRECTORY := .
-endif
-
-ifeq (${UFSCTHESISX_MAINTEX_DIRECTORY},)
-	UFSCTHESISX_MAINTEX_DIRECTORY := .
-endif
-
-ifeq (${UFSCTHESISX_ROOT_DIRECTORY},)
-	UFSCTHESISX_ROOT_DIRECTORY := LatexBuild
-endif
-
-ifeq (${UFSCTHESISX_REMOTE_PASSWORD},)
-	UFSCTHESISX_REMOTE_PASSWORD := admin123
-endif
-
-ifeq (${UFSCTHESISX_REMOTE_ADDRESS},)
-	UFSCTHESISX_REMOTE_ADDRESS := root@192.168.0.222
-endif
-
-ifeq (${UFSCTHESISX_RSYNC_ARGUMENTS},)
-	ifneq (${args},)
-		UFSCTHESISX_RSYNC_ARGUMENTS := ${args}
-	endif
-endif
-
 ## Use halt=1 to stop running on errors instead of continuing the compilation!
 ## Also, use debug=1 to halt on errors and fix the errors dynamically.
 ##
@@ -169,8 +143,8 @@ endif
 
 # https://www.ctan.org/pkg/latexmk
 # http://docs.miktex.org/manual/texfeatures.html#auxdirectory
-# https://tex.stackexchange.com/questions/258814/what-is-the-difference-between-interaction-nonstopmode-and-halt-on-error
-# https://tex.stackexchange.com/questions/25267/what-reasons-if-any-are-there-for-compiling-in-interactive-mode
+# q/what-is-the-difference-between-interaction-nonstopmode-and-halt-on-error
+# q/what-reasons-if-any-are-there-for-compiling-in-interactive-mode
 LATEXMK_COMMAND := latexmk \
 	-f \
 	--pdf \
@@ -342,8 +316,6 @@ setup_envinronment: pre_setup_envinronment
 ##
 ##   thesis     Completely build the main file with minimum output logs
 ##   clean      Remove all cache directories and generated pdf files
-##   veryclean  Same as `clean`, but searches for all generated files outside
-##              the cache directories.
 ##
 # Keep updated our copy of the .gitignore
 # https://stackoverflow.com/questions/55886204/how-to-use-make-to-keep-a-file-synced
@@ -460,19 +432,14 @@ ${LATEXMK_THESIS}: setup_envinronment
 	printf '\n'
 
 
+# q/exclude-directory-from-find-command
+# q/split-string-into-an-array-in-bash
+# q/argument-list-too-long-error-for-rm-cp-mv-commands
+# q/how-to-stop-makefile-from-expanding-my-shell-output
+# q/how-to-expand-wildcard-inside-shell-code-block-in-a-makefile
 clean:
-	${RM} -rv ${CACHE_DIRECTORY}
 	${RM} -v ${THESIS_OUTPUT_NAME}.pdf
 	printf '\n'
-
-
-# https://stackoverflow.com/questions/4210042/exclude-directory-from-find-command
-# https://stackoverflow.com/questions/10586153/split-string-into-an-array-in-bash
-# https://stackoverflow.com/questions/11289551/argument-list-too-long-error-for-rm-cp-mv-commands
-# https://stackoverflow.com/questions/55527923/how-to-stop-makefile-from-expanding-my-shell-output
-# https://stackoverflow.com/questions/55545253/how-to-expand-wildcard-inside-shell-code-block-in-a-makefile
-veryclean: veryclean_hidden clean
-veryclean_hidden:
 	$(if ${ENABLE_DEBUG_MODE},printf '\n',)
 	readarray -td' ' DIRECTORIES_TO_CLEAN <<<"$(shell "${FIND_EXEC}" -not -path "./**.git**" -not -path "./fig**" -type d) "; \
 	unset 'DIRECTORIES_TO_CLEAN[-1]'; \
@@ -495,187 +462,3 @@ veryclean_hidden:
 			rm -vf $${full_expression}; \
 		done; \
 	done;
-
-
-# https://stackoverflow.com/questions/39767904/create-zip-archive-with-multiple-files
-# https://stackoverflow.com/questions/47588379/zip-multiple-files-with-multiple-result-in-python
-# https://stackoverflow.com/questions/16091904/python-zip-how-to-eliminate-absolute-path-in-zip-archive-if-absolute-paths-for
-define RELEASE_CODE :=
-from __future__ import print_function
-import os
-import zipfile
-
-version = "${version}"
-version_prefix = "${version_prefix}".strip()
-if not version:
-	print( "Error: You need pass the release version. For example: make release version=1.1", end="@NEWNEWLINE@" )
-	exit(1)
-
-CURRENT_DIRECTORY = os.path.dirname( os.path.abspath( __file__ ) )
-print( "Packing files on %s" % CURRENT_DIRECTORY, end="@NEWNEWLINE@" )
-
-file_names = set()
-initial_file_names = [
-	"Makefile",
-	"build.bat",
-	"fc-portuges.def",
-	os.path.join("setup", "README.md"),
-	os.path.join("setup", ".gitignore"),
-	os.path.join("setup", "makefile.mk"),
-	os.path.join("setup", "makerules.mk"),
-	os.path.join("setup", "abntex2.cls"),
-	os.path.join("setup", "remove_lang.py"),
-	os.path.join("setup", "ufscthesisx.cls"),
-	os.path.join("setup", "UFSC_sigla_fundo_claro.png"),
-	os.path.join("setup", "ufscthesisx.sublime-project"),
-	os.path.join("setup", "_generic_timer.sh"),
-]
-
-for direcory_name, dirs, files in os.walk(CURRENT_DIRECTORY, followlinks=True):
-
-	for filename in files:
-		filepath = os.path.join( direcory_name, filename )
-
-		if ".git" in filepath or not (
-					filepath.endswith( ".tex" )
-					or filepath.endswith( ".png" )
-					or filepath.endswith( ".jpg" )
-					or filepath.endswith( ".svg" )
-					or filepath.endswith( ".bib" )
-					or filepath.endswith( ".pdf" )
-				):
-			continue
-
-		file_names.add( filepath )
-
-for filename in initial_file_names:
-	filepath = os.path.join( CURRENT_DIRECTORY, filename )
-	file_names.add( filepath )
-
-versionname = version if version.endswith( ".zip" ) else version + ".zip"
-versiondirectory = version_prefix
-
-zipfilepath = os.path.join( CURRENT_DIRECTORY, versionname )
-zipfileobject = zipfile.ZipFile(zipfilepath, mode="w")
-zipfilepathreduced = os.path.dirname( zipfilepath )
-
-if not version_prefix:
-	zipfilepathreduced = os.path.dirname( zipfilepathreduced )
-
-try:
-	for filename in file_names:
-		relative_filename = filename.replace( zipfilepathreduced, versiondirectory )
-		print( relative_filename, end="@NEWNEWLINE@" )
-		zipfileobject.write( filename, relative_filename, compress_type=zipfile.ZIP_DEFLATED )
-
-except Exception as error:
-	print( "", end="@NEWNEWLINE@" )
-	print( "An error occurred: %s" % error, end="@NEWNEWLINE@" )
-	exit(1)
-
-finally:
-	zipfileobject.close()
-
-print( "", end="@NEWNEWLINE@" )
-print( "Successfully created the release version on:@NEWNEWLINE@  %s!" % zipfilepath , end="" )
-endef
-
-##   release version=1.1
-##       creates the zip file `1.1.zip` on the root of this project,
-##       within all latex required files. This is useful to share or
-##       public your thesis source files with others. If you are using
-##       Windows Command Prompt `cmd.exe`, you must use this command like this:
-##       set "version=1.1" && make release
-##
-# https://stackoverflow.com/questions/55839773/how-to-get-the-exit-status-and-the-output-of-a-shell-command-before-make-4-2
-release:
-	$(if ${ENABLE_DEBUG_MODE},printf '\n',)
-	printf '%s\n' "$(shell echo \
-		'$(subst ${NEWLINE},@NEWLINE@,${RELEASE_CODE})' | \
-		sed 's/@NEWLINE@/\n/g' | python3 - || \
-		( printf 'Error: Could not create the zip file!\n'; exit 1 ) )" | sed 's/@NEWNEWLINE@/\n/g'
-	exit "${.SHELLSTATUS}"
-
-
-define REMOTE_COMMAND_TO_RUN :=
-cd "${UFSCTHESISX_ROOT_DIRECTORY}/${UFSCTHESISX_MAINTEX_DIRECTORY}"; \
-printf '\nThe current directory is:\n'; pwd; \
-if [[ "w--delete" == "w$(findstring --delete,${UFSCTHESISX_RSYNC_ARGUMENTS})" ]]; \
-	then \
-		printf '\nRemoving cache directory...\n'; \
-		rm -rfv "${CACHE_DIRECTORY}"; \
-	fi; \
-printf '\nRunning the command: make ${rules}\n'; \
-make ${rules};
-endef
-
-##   remote     Runs the make command remotely on another machine by ssh.
-##              This requires `passh` program installed. You can download it from:
-##              https://github.com/clarkwang/passh
-##
-##       You can define the following parameters:
-##       4. args - arguments to pass to the rsync program, see 'rsync --help'
-##       3. rules - the rules/arguments to pass to the remote invocation of make
-##       5. UFSCTHESISX_ROOT_DIRECTORY  - the directory to put the files, defaults to 'LatexBuild'
-##       1. UFSCTHESISX_REMOTE_PASSWORD - the remote machine SHH password, defaults to 'admin123'
-##       2. UFSCTHESISX_REMOTE_ADDRESS  - the remote machine 'user@ipaddress', defaults to 'linux@192.168.0.222'
-##
-##     Example usage for Linux:
-##       make remote rules="latex debug=1" &&
-##              debug=1 &&
-##              args="--delete"
-##              UFSCTHESISX_ROOT_DIRECTORY="Downloads/Thesis" &&
-##              UFSCTHESISX_REMOTE_ADDRESS="linux@192.168.0.222" &&
-##              UFSCTHESISX_REMOTE_PASSWORD="123" &&
-##
-##     Example usage for Windows:
-##       set "rules=latex debug=1" &&
-##              set "debug=1" &&
-##              set "args=--delete" &&
-##              set "UFSCTHESISX_ROOT_DIRECTORY=Downloads/Thesis" &&
-##              set "UFSCTHESISX_REMOTE_ADDRESS=linux@192.168.0.222" &&
-##              set "UFSCTHESISX_REMOTE_PASSWORD=123" &&
-##              make remote
-##
-#https://serverfault.com/questions/330503/scp-without-known-hosts-check
-#https://stackoverflow.com/questions/4780893/use-expect-in-bash-script-to-provide-password-to-ssh-command
-remote: pre_setup_envinronment
-	$(if ${ENABLE_DEBUG_MODE},printf '\n',)
-
-	printf '\nJust ensures the directory '%s' is created...\n' "${UFSCTHESISX_ROOT_DIRECTORY}"
-	passh -p "${UFSCTHESISX_REMOTE_PASSWORD}" \
-		ssh -o StrictHostKeyChecking=no \
-		"${UFSCTHESISX_REMOTE_ADDRESS}" \
-		'mkdir -p "${UFSCTHESISX_ROOT_DIRECTORY}"'
-
-	printf '\nRunning the command which will actually send the files...\n'
-	passh -p "${UFSCTHESISX_REMOTE_PASSWORD}" \
-		rsync ${UFSCTHESISX_RSYNC_ARGUMENTS} \
-		--recursive \
-		--verbose \
-		--update \
-		--copy-links \
-		--exclude ".git" \
-		--exclude "_gsdata_" \
-		--exclude ".tmp.drivedownload" \
-		--exclude "${CACHE_DIRECTORY}" \
-		--exclude "${THESIS_MAIN_FILE}.pdf" \
-		"${CURRENT_DIR}/${UFSCTHESISX_RSYNC_DIRECTORY}/./" \
-		"${UFSCTHESISX_REMOTE_ADDRESS}:${UFSCTHESISX_ROOT_DIRECTORY}"
-
-	printf '\nRunning the command which will actually run make...\n'
-	passh -p "${UFSCTHESISX_REMOTE_PASSWORD}" \
-		ssh -o StrictHostKeyChecking=no \
-		"${UFSCTHESISX_REMOTE_ADDRESS}" \
-		"${REMOTE_COMMAND_TO_RUN}" || $(if ${HALT_ON_ERROR_MODE},exit "$$?",)
-
-	printf '\nRunning the command which will copy back the generated PDF...\n';
-	-passh -p "${UFSCTHESISX_REMOTE_PASSWORD}" \
-		scp -o StrictHostKeyChecking=no \
-		"${UFSCTHESISX_REMOTE_ADDRESS}:${UFSCTHESISX_ROOT_DIRECTORY}/${UFSCTHESISX_MAINTEX_DIRECTORY}/${CACHE_DIRECTORY}/main.log" \
-		"${CURRENT_DIR}/" || printf '\nNo log file to copy back!\n';
-	-passh -p "${UFSCTHESISX_REMOTE_PASSWORD}" \
-		scp -o StrictHostKeyChecking=no \
-		"${UFSCTHESISX_REMOTE_ADDRESS}:${UFSCTHESISX_ROOT_DIRECTORY}/${UFSCTHESISX_MAINTEX_DIRECTORY}/main.pdf" \
-		"${CURRENT_DIR}/" || printf '\nNo PDF to copy back!\n';
-
