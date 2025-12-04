@@ -1964,8 +1964,8 @@
 
 % How to create my own list of things
 % q/how-to-create-my-own-list-of-things
-\newcommand{\mytextpreliminarylistname}{Short Table of Contents}
-\newlistof{textpreliminarycontents}{tpc}{\mytextpreliminarylistname}
+\newcommand{\UFSCtextPreliminaryListName}{Short Table of Contents}
+\newlistof{textpreliminarycontents}{tpc}{\UFSCtextPreliminaryListName}
 
 % Resetting counter
 % q/resetting-counter
