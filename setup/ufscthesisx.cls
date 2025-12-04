@@ -418,40 +418,52 @@
 \renewcommand{\ABNTEXfontereduzida}{\fontsize{10pt}{12pt}\selectfont}
 
 \renewcommand{\ABNTEXchapterfont}{%
-  \sffamily\fontseries{bx}\fontshape{n}\selectfont
+  \sffamily\fontseries{bx}\fontshape{n}
+  \selectfont
 }
 \renewcommand{\ABNTEXchapterfontsize}{%
-  \normalsize\selectfont
+  \normalsize
+  \selectfont
 }
 \renewcommand{\ABNTEXpartfont}{%
-  \sffamily\fontseries{bx}\fontshape{n}\selectfont
+  \sffamily\fontseries{bx}\fontshape{n}
+  \selectfont
 }
 \renewcommand{\ABNTEXpartfontsize}{%
-  \Huge\selectfont
+  \Huge
+  \selectfont
 }
 \renewcommand{\ABNTEXsectionfont}{%
-  \sffamily\fontseries{m}\fontshape{n}\selectfont
+  \sffamily\fontseries{m}\fontshape{n}
+  \selectfont
 }
 \renewcommand{\ABNTEXsectionfontsize}{%
-  \normalsize\selectfont
+  \normalsize
+  \selectfont
 }
 \renewcommand{\ABNTEXsubsectionfont}{%
-  \sffamily\fontseries{b}\fontshape{n}\selectfont
+  \sffamily\fontseries{b}\fontshape{n}
+  \selectfont
 }
 \renewcommand{\ABNTEXsubsectionfontsize}{%
-  \normalsize\selectfont
+  \normalsize
+  \selectfont
 }
 \renewcommand{\ABNTEXsubsubsectionfont}{%
-  \sffamily\fontseries{m}\fontshape{n}\selectfont
+  \sffamily\fontseries{m}\fontshape{n}
+  \selectfont
 }
 \renewcommand{\ABNTEXsubsubsectionfontsize}{%
-  \normalsize\selectfont
+  \normalsize
+  \selectfont
 }
 \renewcommand{\ABNTEXsubsubsubsectionfont}{%
-  \sffamily\fontseries{m}\fontshape{it}\selectfont
+  \sffamily\fontseries{m}\fontshape{it}
+  \selectfont
 }
 \renewcommand{\ABNTEXsubsubsubsectionfontsize}{%
-  \normalsize\selectfont
+  \normalsize
+  \selectfont
 }
 
 % Tamanho da fonte para a epígrafe UFSC
