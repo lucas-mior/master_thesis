@@ -2048,7 +2048,7 @@
   \fi
 }
 
-\newcommand{\removeGoToSummary}{%
+\newcommand{\UFSCremoveGoToSummary}{%
   \@ifundefined{oldAddGoToprintparttitle}{}{\let\printparttitle\oldAddGoToprintparttitle}
   \@ifundefined{oldAddGoToSectionformat}{}{\let\Sectionformat\oldAddGoToSectionformat}
 
