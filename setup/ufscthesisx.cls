@@ -2721,11 +2721,15 @@
 % q/custom-equations-names
 % q/add-equation-name-besides-equation-number-so-that-eqref-inserts-only-the-numbe
 % q/add-equation-name-underneath-equation-number
-\@ifpackageloaded{babel}{\@ifpackagewith{babel}{english}{\addto\captionsenglish{%
-  \def\equationautorefname~#1\null{%
-  Equation~(#1)\null
-  }
-}}{}}{}
+\@ifpackageloaded{babel}{%
+  \@ifpackagewith{babel}{english}{%
+    \addto\captionsenglish{%
+      \def\equationautorefname~#1\null{%
+        Equation~(#1)\null
+      }
+    }
+  }{}
+}{}
 
 \@ifpackageloaded{babel}{\@ifpackagewith{babel}{brazil}{\addto\captionsbrazil{%
   \def\equationautorefname~#1\null{%
