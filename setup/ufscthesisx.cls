@@ -866,9 +866,9 @@
   \boolfalse{citetracker}%
   \boolfalse{pagetracker}%
   \usebibmacro{prenote}
-}{
+}{%
   \ifciteindex{%
-    \indexnames{labelname}\indexfield{indextitle}
+    \indexnames{labelname}\indexfield{indextitle}%
   }{}%
   \printfield{labeltitle}%
   \setunit{\addcomma\space}%
@@ -877,9 +877,11 @@
     \space%
     (\printfield{year})%
   }%
+}{%
+  \multicitedelim%
+}{%
+  \usebibmacro{postnote}%
 }
-  {\multicitedelim}
-  {\usebibmacro{postnote}}
 
 % q/how-to-appear-subsubsection-in-chapter-in-my-list-of-contents
 \setcounter{secnumdepth}{6}
