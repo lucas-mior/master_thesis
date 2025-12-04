@@ -323,7 +323,10 @@ section=TITLE, % Título de seções em caixa alta
     \frenchspacing
 
     % Uncomment this to put a ←← | ← (Go To Top/Go Back) on each section header
-    \advisor{}{\addGoToSummary}
+    \ifadvisor
+    \else
+    \addGoToSummary
+    \fi
 
     % ELEMENTOS PRÉ-TEXTUAIS
     \ifforcedinclude\else
@@ -349,9 +352,10 @@ section=TITLE, % Título de seções em caixa alta
         % Capa
         % \includepdf{fig/FrenteCapaUFSC.pdf}
         % q/blank-page-after-titlingpage
-        \advisor{}{
+        \ifadvisor
+        \else
           \AtBeginShipoutNext{\AtBeginShipoutNext{\AtBeginShipoutDiscard}}
-        }
+        \fi
         \ABNTEXimprimircapa
 
         % q/how-to-fix-destination-with-the-same-identifier-namepage-a-has-been-already
@@ -361,7 +365,8 @@ section=TITLE, % Título de seções em caixa alta
         % Custom list throw LaTeX Error:
         % Command \mycustomfiction already defined?
         % q/custom-list-throw-latex-error-command-mycustomfiction-already-defined
-        \advisor{}{%
+        \ifadvisor
+        \else
             % Manually add the `\textpreliminarycontents` to the Table of
             % Contents here to keep the hyper link pointing to the beginning of
             % the page, instead of the beginning of `\textpreliminarycontents`
@@ -377,7 +382,7 @@ section=TITLE, % Título de seções em caixa alta
             }
 
             \clearpage
-        }
+        \fi
 
         % Fix the \textpreliminarycontents not showing up when @twoside is off
         \ifufscThesisXisMemoirTwoSidesEnabled
@@ -578,7 +583,10 @@ section=TITLE, % Título de seções em caixa alta
         % q/how-to-modify-line-spacing-per-entry-of-bibliography
         % q/how-can-i-put-more-space-between-bibliography-entries-biblatex
         \setlength\bibitemsep{\baselineskip}
-        \advisor{}{\linespread{1.18}\selectfont}
+        \ifadvisor
+        \else
+        \linespread{1.18}\selectfont
+        \fi
 
         % q/using-bibtex-to-make-a-list-of-references-without-having-citations-in-the-body
         % \nocite{*}
