@@ -862,22 +862,22 @@
 \let\citeonline\textcite
 
 % q/inline-citations-with-only-author-title-and-year
-\DeclareCiteCommand{\citeauthortitleyear}
-  {\boolfalse{citetracker}%
-   \boolfalse{pagetracker}%
-   \usebibmacro{prenote}}
-  {\ifciteindex
-   {\indexnames{labelname}%
-    \indexfield{indextitle}}
-   {}%
-   \printfield{labeltitle}%
-   \setunit{\addcomma\space}%
-   \printtext[bibhyperref]{%
-     \printnames{labelname}%
-     \space%
-     (\printfield{year})%
-     }%
-  }
+\DeclareCiteCommand{\citeauthortitleyear}{%
+  \boolfalse{citetracker}%
+  \boolfalse{pagetracker}%
+  \usebibmacro{prenote}
+}{
+  \ifciteindex{%
+    \indexnames{labelname}\indexfield{indextitle}
+  }{}%
+  \printfield{labeltitle}%
+  \setunit{\addcomma\space}%
+  \printtext[bibhyperref]{%
+    \printnames{labelname}%
+    \space%
+    (\printfield{year})%
+  }%
+}
   {\multicitedelim}
   {\usebibmacro{postnote}}
 
