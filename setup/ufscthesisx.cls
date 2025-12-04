@@ -720,7 +720,7 @@
 % ------------------------------------------------------------------------
 
 % ------------------------------------------------------------------------
-%% criar um novo estilo incluindo logos da UFSC
+% criar um novo estilo incluindo logos da UFSC
 % ------------------------------------------------------------------------
 
 % Configura layout para elementos textuais,
@@ -884,8 +884,8 @@
 \setcounter{secnumdepth}{6}
 \setcounter{tocdepth}{6}
 
-%% README.md
-%% Copyright 2017 Evandro Coan
+% README.md
+% Copyright 2017 Evandro Coan
 %
 % This work may be distributed and/or modified under the
 % conditions of the LaTeX Project Public License, either version 1.3
@@ -1834,8 +1834,8 @@
 % q/while-loading-fancyvrb-siunitx-and-bigfoot-i-got-input-stack-size-5000-tex-st
 \xpatchcmd{\FN@allmarks}{266}{256}{}{}
 
-%% README.md
-%% Copyright 2017 Evandro Coan
+% README.md
+% Copyright 2017 Evandro Coan
 %
 % This work may be distributed and/or modified under the
 % conditions of the LaTeX Project Public License, either version 1.3
@@ -2205,8 +2205,8 @@
   \fi
 }
 
-%% README.md
-%% Copyright 2017 Evandro Coan
+% README.md
+% Copyright 2017 Evandro Coan
 %
 % This work may be distributed and/or modified under the
 % conditions of the LaTeX Project Public License, either version 1.3
@@ -2284,8 +2284,8 @@
   }
 }{}
 
-%% README.md
-%% Copyright 2017 Evandro Coan
+% README.md
+% Copyright 2017 Evandro Coan
 %
 % This work may be distributed and/or modified under the
 % conditions of the LaTeX Project Public License, either version 1.3
