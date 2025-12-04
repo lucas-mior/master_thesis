@@ -190,9 +190,15 @@
   }
 
   % Backref package settings, pages with citations in bibliography
-  \newcommand{\biblatexcitedntimes}{\autocap{c}ited \arabic{citecounter} times}
-  \newcommand{\biblatexcitedonetime}{\autocap{c}ited one time}
-  \newcommand{\biblatexcitednotimes}{\autocap{n}o citation in the text}
+  \newcommand{\biblatexcitedntimes}{%
+    \autocap{c}ited \arabic{citecounter} times
+  }
+  \newcommand{\biblatexcitedonetime}{%
+    \autocap{c}ited one time
+  }
+  \newcommand{\biblatexcitednotimes}{%
+    \autocap{n}o citation in the text
+  }
 
   \@ifpackageloaded{babel}{%
     \@ifpackagewith{babel}{brazil}{%
