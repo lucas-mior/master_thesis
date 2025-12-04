@@ -1030,8 +1030,8 @@
       \begin{minipage}{.5\textwidth}
         \SingleSpacing
          \abnteximprimirpreambulo
-       \end{minipage}%
-       \vspace*{\fill}
+      \end{minipage}%
+      \vspace*{\fill}
     }%
 
     {%
@@ -1041,7 +1041,7 @@
 
     {\large\abnteximprimirorientadorRotulo~\abnteximprimirorientador\par}
     \abntex@UFSCifNotEmpty{\abnteximprimircoorientador}{%
-       {\large\abnteximprimircoorientadorRotulo~\abnteximprimircoorientador}%
+      {\large\abnteximprimircoorientadorRotulo~\abnteximprimircoorientador}%
     }%
     \vspace*{\fill}
 
