@@ -642,8 +642,8 @@
 \xapptocmd{\resumo}{\setlength{\parindent}{0pt}\SingleSpacing\let\parOriginal\par\let\par\relax}{}{}
 \xpretocmd{\endresumo}{\endgraf}{}{}
 
-% \imprimirpalavraschave{Palavras-chaves}{latex. abntex. editoração de texto.}
-\newcommand{\imprimirpalavraschave}[2]{%
+% \UFSCimprimirPalavrasChave{Palavras-chaves}{latex. abntex. editoração de texto.}
+\newcommand{\UFSCimprimirPalavrasChave}[2]{%
   \@ifundefined{parOriginal}{}{\parOriginal}\vspace{\onelineskip}\textbf{#1}: #2
 }
 
