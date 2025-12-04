@@ -808,7 +808,7 @@
 % q/how-to-add-an-empty-line-between-paragraphs
 \renewcommand{\ABNTEXfolhaderostocontent}{%
   \begin{center}
-    {\theauthor}
+    \theauthor
 
     \vspace*{\fill}\vspace*{\fill}
     \begin{center}
