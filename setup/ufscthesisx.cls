@@ -2555,7 +2555,7 @@
 \newcommand*{\pythonprompt}{\textcolor{promptcolour}{{>}{>}{>}}}
 
 \lstdefinestyle{python_style}{
-  %keepspaces=true,
+  % keepspaces=true,
   language=python,
   showtabs=true,
   tab=,
@@ -2566,59 +2566,79 @@
   alsoletter={1234567890},
   otherkeywords={\%, \}, \{, \&, \|},
   keywordstyle=\color{keywordcolour}\bfseries,
-  emph={and,break,class,continue,def,yield,del,elif ,else,%
-  except,exec,finally,for,from,global,if,import,in,%
-  lambda,not,or,pass,print,raise,return,try,while,assert,with},
+  emph={
+    and, break, class, continue, def, yield, del, elif, else,
+    except, exec, finally, for, from, global, if, import, in,
+    lambda, not, or, pass, print, raise, return, try, while,
+    assert, with
+  },
   emphstyle=\color{blue}\bfseries,
-  emph={[2]True, False, None},
+  emph={[2] True, False, None},
   emphstyle=[2]\color{keywordcolour},
-  emph={[3]object,type,isinstance,copy,deepcopy,zip,enumerate,reversed,list,set,len,dict,tuple,xrange,append,execfile,real,imag,reduce,str,repr},
+  emph={[3] object, type, isinstance, copy, deepcopy, zip, enumerate,
+          reversed, list, set, len, dict, tuple, xrange, append,
+          execfile, real, imag, reduce, str, repr
+  },
   emphstyle=[3]\color{commandcolour},
-  emph={Exception,NameError,IndexError,SyntaxError,TypeError,ValueError,OverflowError,ZeroDivisionError},
+  emph={
+    Exception, NameError, IndexError, SyntaxError, TypeError,
+    ValueError, OverflowError, ZeroDivisionError
+  },
   emphstyle=\color{exceptioncolour}\bfseries,
-  %upquote=true,
+  % upquote=true,
   morecomment=[s]{"""}{"""},
   commentstyle=\color{commentcolour}\slshape,
-  %emph={[4]1, 2, 3, 4, 5, 6, 7, 8, 9, 0},
-  emph={[4]ode, fsolve, sqrt, exp, sin, cos,arctan, arctan2, arccos, pi,  array, norm, solve, dot, arange, isscalar, max, sum, flatten, shape, reshape, find, any, all, abs, plot, linspace, legend, quad, polyval,polyfit, hstack, concatenate,vstack,column_stack,empty,zeros,ones,rand,vander,grid,pcolor,eig,eigs,eigvals,svd,qr,tan,det,logspace,roll,min,mean,cumsum,cumprod,diff,vectorize,lstsq,cla,eye,xlabel,ylabel,squeeze},
+  % emph={[4]1, 2, 3, 4, 5, 6, 7, 8, 9, 0},
+  emph={[4] ode, fsolve, sqrt, exp, sin, cos, arctan, arctan2,
+          arccos, pi, array, norm, solve, dot, arange, isscalar,
+          max, sum, flatten, shape, reshape, find, any, all, abs,
+          plot, linspace, legend, quad, polyval, polyfit, hstack,
+          concatenate, vstack, column_stack, empty, zeros, ones,
+          rand, vander, grid, pcolor, eig, eigs, eigvals, svd,
+          qr, tan, det, logspace, roll, min, mean, cumsum, cumprod,
+          diff, vectorize, lstsq, cla, eye, xlabel, ylabel, squeeze
+  },
   emphstyle=[4]\color{numpycolour},
-  emph={[5]__init__,__add__,__mul__,__div__,__sub__,__call__,__getitem__,__setitem__,__eq__,__ne__,__nonzero__,__rmul__,__radd__,__repr__,__str__,__get__,__truediv__,__pow__,__name__,__future__,__all__},
+  emph={[5] __init__, __add__, __mul__, __div__, __sub__, __call__,
+          __getitem__, __setitem__, __eq__, __ne__, __nonzero__,
+          __rmul__, __radd__, __repr__, __str__, __get__,
+          __truediv__, __pow__, __name__, __future__, __all__
+  },
   emphstyle=[5]\color{specmethodcolour},
-  emph={[6]assert,yield},
+  emph={[6] assert, yield},
   emphstyle=[6]\color{keywordcolour}\bfseries,
-  emph={[7]range},
+  emph={[7] range},
   emphstyle={[7]\color{keywordcolour}\bfseries},
-  % emph={[7]self},
+  % emph={[7] self},
   % emphstyle=[7]\bfseries,
   literate=*%
-  {:}{{\literatecolour:}}{1}%
-  {=}{{\literatecolour=}}{1}%
-  {-}{{\literatecolour-}}{1}%
-  {+}{{\literatecolour+}}{1}%
-  {*}{{\literatecolour*}}{1}%
-  {**}{{\literatecolour{**}}}2%
-  {/}{{\literatecolour/}}{1}%
-  {//}{{\literatecolour{//}}}2%
-  {!}{{\literatecolour!}}{1}%
-  %{(}{{\literatecolour(}}{1}%
-  %{)}{{\literatecolour)}}{1}%
-  {[}{{\literatecolour[}}{1}%
-  {]}{{\literatecolour]}}{1}%
-  {<}{{\literatecolour<}}{1}%
-  {>}{{\literatecolour>}}{1}%
-  {>>>}{\pythonprompt}{3}%
-  ,%
-  %aboveskip=.5ex,
+    {:}{{\literatecolour:}}{1}%
+    {=}{{\literatecolour=}}{1}%
+    {-}{{\literatecolour-}}{1}%
+    {+}{{\literatecolour+}}{1}%
+    {*}{{\literatecolour*}}{1}%
+    {**}{{\literatecolour{**}}}2%
+    {/}{{\literatecolour/}}{1}%
+    {//}{{\literatecolour{//}}}2%
+    {!}{{\literatecolour!}}{1}%
+    {[}{{\literatecolour[}}{1}%
+    {]}{{\literatecolour]}}{1}%
+    {<}{{\literatecolour<}}{1}%
+    {>}{{\literatecolour>}}{1}%
+    {>>>}{\pythonprompt}{3}%
+    ,%
+  % aboveskip=.5ex,
   frame=,
-  %frameround=tttt,
-  %framesep=.3ex,
+  % frameround=tttt,
+  % framesep=.3ex,
   rulecolor=\color{black!40},
-  %framexleftmargin=\framemargin,
-  %framextopmargin=.1ex,
-  %framexbottommargin=.1ex,
-  %framexrightmargin=\framemargin,
-  %framexleftmargin=1mm, framextopmargin=1mm, frame=shadowbox, rulesepcolor=\color{blue},#1
-  %frame=tb,
+  % framexleftmargin=\framemargin,
+  % framextopmargin=.1ex,
+  % framexbottommargin=.1ex,
+  % framexrightmargin=\framemargin,
+  % framexleftmargin=1mm, framextopmargin=1mm, frame=shadowbox,
+  % rulesepcolor=\color{blue},#1
+  % frame=tb,
   % backgroundcolor=\color{white},
   % breakindent=.5\textwidth,frame=single,breaklines=true%
 }
