@@ -1060,7 +1060,7 @@
 
 % ---
 % Folha de rosto
-%   usar \ABNTEXimprimirfolhaderosto* casodeseje imprimir algo no verso da
+%   usar \ABNTEXimprimirFolhaDeRosto* casodeseje imprimir algo no verso da
 %   página no caso de estar no modo twoside. Util para imprimir a Ficha
 %   Bibliografica. Porem, se estiver no modo oneside, a versao sem estrela
 %   é identica.
@@ -1106,20 +1106,20 @@
   \end{center}
 }
 
-\newcommand{\ABNTEXimprimirfolhaderostostar}[1]{%
+\newcommand{\ABNTEXimprimirFolhaDeRostostar}[1]{%
   \begin{folhaderosto*}{#1}
      \ABNTEXfolhaderostocontent
   \end{folhaderosto*}}
 
-\newcommand{\ABNTEXimprimirfolhaderostonostar}[1]{%
+\newcommand{\ABNTEXimprimirFolhaDeRostonostar}[1]{%
   \begin{folhaderosto}{#1}
      \ABNTEXfolhaderostocontent
   \end{folhaderosto}}
 
-\newcommand{\ABNTEXimprimirfolhaderosto}[1][\ABNTEXfolhaderostoname]{%
+\newcommand{\ABNTEXimprimirFolhaDeRosto}[1][\ABNTEXfolhaderostoname]{%
    \@ifstar
-     \ABNTEXimprimirfolhaderostostar
-     \ABNTEXimprimirfolhaderostonostar
+     \ABNTEXimprimirFolhaDeRostostar
+     \ABNTEXimprimirFolhaDeRostonostar
 }
 
 % ---
