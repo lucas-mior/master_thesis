@@ -2779,27 +2779,31 @@
   \renewcommand{\paragraphautorefname}{Parágrafo}
 }}{}}{}
 
-\@ifpackageloaded{babel}{\@ifpackagewith{babel}{english}{\addto\captionsenglish{%
-  \renewcommand{\UFSCcovername}{Cover}
-  \renewcommand{\ABNTEXorientadorname}{Supervisor}
-  \renewcommand{\ABNTEXcoorientadorname}{Co\hyp{}supervisor}
-  \renewcommand{\ABNTEXfolhadeaprovacaoname}{Approval}
-  \renewcommand{\ABNTEXfolhaderostoname}{Title Page}
-  \renewcommand{\ABNTEXerrataname}{Errata Sheet}
-  \renewcommand{\listfigurename}{List of Illustrations}
-  \renewcommand{\listtablename}{List of Tables}
-  \renewcommand{\listfigurename}{List of Figures}
-  \renewcommand{\ABNTEXlistadesiglasname}{List of Abbreviations and Acronyms}
-  \renewcommand{\ABNTEXlistadesimbolosname}{List of Symbols}
-  \renewcommand{\tableautorefname}{Table}
-  \renewcommand{\figureautorefname}{Figure}
-  \renewcommand{\chapterautorefname}{Chapter}
-  \renewcommand{\pageautorefname}{Page}
-  \renewcommand{\sectionautorefname}{Section}
-  \renewcommand{\subsectionautorefname}{Subsection}
-  \renewcommand{\subsubsectionautorefname}{Subsubsection}
-  \renewcommand{\paragraphautorefname}{Paragraph}
-}}{}}{}
+\@ifpackageloaded{babel}{%
+  \@ifpackagewith{babel}{english}{%
+    \addto\captionsenglish{%
+      \renewcommand{\UFSCcovername}{Cover}
+      \renewcommand{\ABNTEXorientadorname}{Supervisor}
+      \renewcommand{\ABNTEXcoorientadorname}{Co\hyp{}supervisor}
+      \renewcommand{\ABNTEXfolhadeaprovacaoname}{Approval}
+      \renewcommand{\ABNTEXfolhaderostoname}{Title Page}
+      \renewcommand{\ABNTEXerrataname}{Errata Sheet}
+      \renewcommand{\listfigurename}{List of Illustrations}
+      \renewcommand{\listtablename}{List of Tables}
+      \renewcommand{\listfigurename}{List of Figures}
+      \renewcommand{\ABNTEXlistadesiglasname}{List of Abbreviations and Acronyms}
+      \renewcommand{\ABNTEXlistadesimbolosname}{List of Symbols}
+      \renewcommand{\tableautorefname}{Table}
+      \renewcommand{\figureautorefname}{Figure}
+      \renewcommand{\chapterautorefname}{Chapter}
+      \renewcommand{\pageautorefname}{Page}
+      \renewcommand{\sectionautorefname}{Section}
+      \renewcommand{\subsectionautorefname}{Subsection}
+      \renewcommand{\subsubsectionautorefname}{Subsubsection}
+      \renewcommand{\paragraphautorefname}{Paragraph}
+    }
+  }{}
+}{}
 
 % Muda equação para 'Equação (n)'
 % q/autoref-does-not-expand-abbreviation-automatically-at-beginning-of-line
