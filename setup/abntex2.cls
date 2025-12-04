@@ -125,8 +125,8 @@
 \newcommand{\abntex@UFSCifNotEmpty}[2]{\ifthenelse{\not\equal{#1}{}}{#2}{}}
 % ---
 
-% Define o comando \fonte que respeita as configurações de caption do memoir ou do caption
-\newcommand{\fonte}[2][\abntex2fontename]{%
+% Define o comando \abntex2fonte que respeita as configurações de caption do memoir ou do caption
+\newcommand{\abntex2fonte}[2][\abntex2fontename]{%
   \M@gettitle{#2}%
   \memlegendinfo{#2}%
   \par
@@ -152,7 +152,7 @@
 
  %
 % Define o comando \notas que respeita as configurações de caption do memoir ou do caption
-\newcommand{\abntex2nota}[2][\abntex2notaname]{\fonte[#1]{#2}}
+\newcommand{\abntex2nota}[2][\abntex2notaname]{\abntex2fonte[#1]{#2}}
 
 % ---
 % Customiza listas
@@ -385,35 +385,35 @@
 %\captiontitlefont{\ABNTEXfontereduzida}
 
 % Para uso com pacotes subfig e caption dentro do memoir se estes forem carregados ou não.
-% É necessário para que os comandos \IBGEtab e \fonte funcionem
+% É necessário para que os comandos \abntex2IBGEtab e \abntex2fonte funcionem
 % independente do carregamento de pacotes externos ao memoir que tratam captions.
-\newcommand{\IBGEtabfontsize}{\ABNTEXfontereduzida}
+\newcommand{\abntex2IBGEtabfontsize}{\ABNTEXfontereduzida}
 \AtBeginDocument{%
-  % comandos auxiliares para manipular os captions dentro do comando \IBGEtab.
-  \newcommand{\configurecaptions}{\captionstyle[\raggedright]{}}
-  \newcommand{\configureseparator}{\captiondelim{\ABNTEXcaptiondelim}}
-  % Define o comando \IBGEtab{}{}{} com caption e legenda da largura do conteúdo tabular, tabular*, etc
+  % comandos auxiliares para manipular os captions dentro do comando \abntex2IBGEtab.
+  \newcommand{\abntex2configurecaptions}{\captionstyle[\raggedright]{}}
+  \newcommand{\abntex2configureseparator}{\captiondelim{\ABNTEXcaptiondelim}}
+  % Define o comando \abntex2IBGEtab{}{}{} com caption e legenda da largura do conteúdo tabular, tabular*, etc
   % Parece funcionar com qualque pacote
   \newsavebox{\myptabbox}
   \newlength{\myptabboxwidth}
-  \newcommand{\IBGEtab}[3]{%
-    \savebox{\myptabbox}{{\IBGEtabfontsize #2}}%
+  \newcommand{\abntex2IBGEtab}[3]{%
+    \savebox{\myptabbox}{{\abntex2IBGEtabfontsize #2}}%
     \settowidth{\myptabboxwidth}{\usebox{\myptabbox}}%
     \centering%
     \parbox{\myptabboxwidth}{%
-    \configurecaptions
+    \abntex2configurecaptions
     #1%
     \par%
-    {\IBGEtabfontsize%
+    {\abntex2IBGEtabfontsize%
     #2%
     }%
     \par%
     #3}%
   }
-  \let\ibgetab\IBGEtab
+  \let\abntex2ibgetab\abntex2IBGEtab
 }
 
-% Altera os comandos \configurecaptions e \configureseparator para trabalhar com
+% Altera os comandos \abntex2configurecaptions e \abntex2configureseparator para trabalhar com
 % o pacote caption e amigos.
 \AtEndPackage{caption}{
   \AtBeginDocument{%
@@ -424,10 +424,10 @@
                     %labelfont=ABNTEXfontereduzida,
                     %font=ABNTEXfontereduzida
                     }
-      \renewcommand{\configurecaptions}{%
+      \renewcommand{\abntex2configurecaptions}{%
                   \captionsetup{justification=justified,%
                                 singlelinecheck=false}}
-      \renewcommand{\configureseparator}{\captionsetup{labelsep=colon}}
+      \renewcommand{\abntex2configureseparator}{\captionsetup{labelsep=colon}}
   }
 }
 
@@ -740,14 +740,14 @@
 % Comandos de dados - orientador
 \providecommand{\imprimirorientadorRotulo}{}
 \providecommand{\imprimirorientador}{}
-\newcommand{\orientador}[2][\abntex2orientadorname]%
+\newcommand{\abntex2orientador}[2][\abntex2orientadorname]%
   {\renewcommand{\imprimirorientadorRotulo}{#1}%
    \renewcommand{\imprimirorientador}{#2}}
 
 % Comandos de dados - coorientador
 \providecommand{\imprimircoorientadorRotulo}{}
 \providecommand{\imprimircoorientador}{}
-\newcommand{\coorientador}[2][\abntex2coorientadorname]%
+\newcommand{\abntex2coorientador}[2][\abntex2coorientadorname]%
   {\renewcommand{\imprimircoorientadorRotulo}{#1}%
    \renewcommand{\imprimircoorientador}{#2}}
 
@@ -1006,7 +1006,7 @@
 % ---
 
 % ---
-% Comando \assinatura for signature
+% Comando \abntex2assinatura for signature
    % width of the line and text under the line
 \newlength{\ABNTEXsignwidth}
 \setlength{\ABNTEXsignwidth}{8cm}
@@ -1016,11 +1016,11 @@
    % ammount of space left between previous text and th signature line
 \newlength{\ABNTEXsignskip}
 \setlength{\ABNTEXsignskip}{0.7cm}
-   % \assinatura{name} -> types a line with name under the line, centralized
-   % \assinatura*{name} -> Creates the box with the line and name under
+   % \abntex2assinatura{name} -> types a line with name under the line, centralized
+   % \abntex2assinatura*{name} -> Creates the box with the line and name under
    %     it, but the box has no position assigned. However the line and the
    %     name are centralized with respect to each other.
-\newcommand{\assinatura}{\@ifstar{\ABNTEXsign}{\ABNTEXcsign}}
+\newcommand{\abntex2assinatura}{\@ifstar{\ABNTEXsign}{\ABNTEXcsign}}
    % assinatura com estrela
 \newcommand{\ABNTEXsign}[1]{%
   \parbox[t]{\ABNTEXsignwidth}{\SingleSpacing\vspace*{\ABNTEXsignskip}\centering%
@@ -1060,7 +1060,7 @@
 
 % ---
 % Folha de rosto
-%   usar \imprimirfolhaderosto* casodeseje imprimir algo no verso da
+%   usar \abntex2imprimirfolhaderosto* casodeseje imprimir algo no verso da
 %   página no caso de estar no modo twoside. Util para imprimir a Ficha
 %   Bibliografica. Porem, se estiver no modo oneside, a versao sem estrela
 %   é identica.
@@ -1116,7 +1116,7 @@
      \abntex2folhaderostocontent
   \end{folhaderosto}}
 
-\newcommand{\imprimirfolhaderosto}[1][\abntex2folhaderostoname]{%
+\newcommand{\abntex2imprimirfolhaderosto}[1][\abntex2folhaderostoname]{%
    \@ifstar
      \abntex2imprimirfolhaderostostar
      \abntex2imprimirfolhaderostonostar
