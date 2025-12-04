@@ -748,7 +748,6 @@
 % ------------------------------------------------------------------------
 % Comandos e ambientes de editoracao APENDICES e ANEXOS
 % ------------------------------------------------------------------------
-% ---
 % Imprime uma pagina de divisao no estilo parte
 \renewcommand{\ABNTEXpartpage}
 {%
@@ -757,7 +756,6 @@
   \appendixpage*
 }
 
-% ---
 % Impressão da Capa
 \renewcommand{\ABNTEXimprimircapa}
 {%
@@ -779,7 +777,7 @@
 
     \vfill
 
-    {\theauthor}
+    \theauthor
 
     \vfill
     {%
@@ -797,7 +795,6 @@
     \vspace*{1cm}
   \end{capa}
 }
-% ---
 
 % Conteúdo padrao da Folha de Rosto
 %
@@ -1558,10 +1555,8 @@
   in           = {\mkbibemph{In:}}
 }
 
-% ---
 % Posiciona figuras e tabelas no topo da página quando adicionadas sozinhas
 % em um página em branco. Ver https://github.com/abntex/abntex2/issues/170
-% ---
 \setlength{\@fptop}{5pt} % Set distance from top of page to first float
 
 % q/glossaries-conflict-with-memoir
