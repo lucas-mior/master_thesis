@@ -1906,13 +1906,13 @@
 % \end{foo}
 %
 % q/push-long-words-in-a-new-line
-\newenvironment{foo}
-{%
+\newenvironment{foo}{%
   \par%
   \hyphenpenalty=10000%
   \exhyphenpenalty=10000%
+}{%
+  \par%
 }
-{\par}
 
 % Some text \brkurl{http://www.example.com/this/directory/here}
 %
