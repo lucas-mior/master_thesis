@@ -739,7 +739,7 @@
     \vfill
     {%
     \center
-      {\ABNTEXchapterfont\MakeUppercase{\imprimirtitulo}}%
+      {\ABNTEXchapterfont\MakeUppercase{\thetitle}}%
       \UFSCifNotEmpty{\imprimirsubtitulo}{{\ABNTEXchapterfont:} \par \imprimirsubtitulo}
     }
     \vfill
@@ -771,7 +771,7 @@
     \vspace*{\fill}\vspace*{\fill}
     \begin{center}
 
-      {\ABNTEXchapterfont\MakeUppercase{\imprimirtitulo}}
+      {\ABNTEXchapterfont\MakeUppercase{\thetitle}}
       \abntex@UFSCifNotEmpty{\imprimirsubtitulo}{{\ABNTEXchapterfont\!:} \\ \imprimirsubtitulo}
 
     \end{center}
