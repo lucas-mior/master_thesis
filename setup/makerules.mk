@@ -272,8 +272,7 @@ printf 'LATEX_PDF_FILES: %s\n' "${LATEX_PDF_FILES}"; \
 ${print_results}; \
 if [[ -f "${THESIS_MAIN_FILE_PATH}" ]]; \
 then \
-	printf 'Coping PDF...\n'; \
-	cp "${THESIS_MAIN_FILE_PATH}" "${CURRENT_DIR}/${THESIS_OUTPUT_NAME}.pdf"; \
+	printf 'PDF is good...\n'; \
 else \
 	printf '\nError: The PDF %s was not generated!\n' "${THESIS_MAIN_FILE_PATH}"; \
 	exit 1; \
