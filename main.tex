@@ -270,24 +270,28 @@ section=TITLE, % Título de seções em caixa alta
 
 % #1 = arquivo 1
 % #2 = legenda 1
-% #3 = largura relativa 1 (ex.: 1, 0.8, 0.6)
+% #3 = largura relativa 1
 % #4 = arquivo 2
 % #5 = legenda 2
 % #6 = largura relativa 2
+% #7 = legenda geral
 
 \newcommand{\duasimages}[7]{%
   % --- imagem 1 ---
   \StrBehind{#1}{/}[\tmpA]%
   \IfEq{\tmpA}{}{\def\tmpA{#1}}{}%
   \StrBefore{\tmpA}{.}[\imglabelA]%
+
   % --- imagem 2 ---
   \StrBehind{#4}{/}[\tmpB]%
   \IfEq{\tmpB}{}{\def\tmpB{#4}}{}%
   \StrBefore{\tmpB}{.}[\imglabelB]%
 
+  % --- label geral derivado dos dois sublabels ---
+  \edef\mainlabel{fig:\imglabelA-\imglabelB}%
+
   \begin{figure}[htb]
     \centering
-    \caption{#7}
 
     \begin{subfigure}[t]{0.48\textwidth}
       \centering
@@ -303,6 +307,8 @@ section=TITLE, % Título de seções em caixa alta
       \label{fig:\imglabelB}
     \end{subfigure}
 
+    \caption{#7}
+    \label{\mainlabel}
   \end{figure}
 }
 
