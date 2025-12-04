@@ -174,7 +174,7 @@
 \newboolean{AppMotherFuckerExists}
 \newread\mintedappexistsfile
 
-\newcommand{\TestAppMotherfuckerExists}[1]{
+\newcommand{\UFSCTestAppMotherfuckerExists}[1]{
   \ifwindows
   \DeleteFile{\mintedjobname.aex}
   \ShellEscape{@echo off
@@ -201,7 +201,7 @@
   \fi
 }
 
-\TestAppMotherfuckerExists{pygmentize}
+\UFSCTestAppMotherfuckerExists{pygmentize}
 
 \ifAppMotherFuckerExists
   % q/testing-for-a-documentclass-option
@@ -274,45 +274,45 @@
 \RequirePackage{ltablex}\keepXColumns
 
 % CONFIGURAÇÕES DE PACOTES
-\newcommand{\ifnotempty}[2]{\ifthenelse{\not\equal{#1}{}}{#2}{}}
-\newcommand{\ifnotdefined}[3]{\ifdefined #1 #3 \else #2 \fi}
+\newcommand{\UFSCifNotEmpty}[2]{\ifthenelse{\not\equal{#1}{}}{#2}{}}
+\newcommand{\UFSCifNotDefined}[3]{\ifdefined #1 #3 \else #2 \fi}
 
 % Comandos de dados - programa
 \providecommand{\imprimirprograma}{}
-\newcommand{\programa}[1]{\renewcommand{\imprimirprograma}{#1}}
+\newcommand{\UFSCprograma}[1]{\renewcommand{\imprimirprograma}{#1}}
 
 \providecommand{\imprimirformacao}{}
-\newcommand{\formacao}[1]{\renewcommand{\imprimirformacao}{#1}}
+\newcommand{\UFSCformacao}[1]{\renewcommand{\imprimirformacao}{#1}}
 
 \providecommand{\imprimirarea}{}
-\newcommand{\area}[1]{\renewcommand{\imprimirarea}{#1}}
+\newcommand{\UFSCarea}[1]{\renewcommand{\imprimirarea}{#1}}
 
 \providecommand{\imprimirbiblioteca}{}
-\newcommand{\biblioteca}[1]{\renewcommand{\imprimirbiblioteca}{#1}}
+\newcommand{\UFSCbiblioteca}[1]{\renewcommand{\imprimirbiblioteca}{#1}}
 
 \providecommand{\imprimirinstituicaosigla}{}
-\newcommand{\instituicaosigla}[1]{\renewcommand{\imprimirinstituicaosigla}{#1}}
+\newcommand{\UFSCinstituicaoSigla}[1]{\renewcommand{\imprimirinstituicaosigla}{#1}}
 
 \providecommand{\imprimirano}{}
-\newcommand{\ano}[1]{\renewcommand{\imprimirano}{#1}}
+\newcommand{\UFSCano}[1]{\renewcommand{\imprimirano}{#1}}
 
-\newcommand{\covername}{Capa}
+\newcommand{\UFSCcovername}{Capa}
 
 % Comandos de dados - Coordenador
-\newcommand{\coordenadorname}{Coordenador}
+\newcommand{\UFSCcoordenadorname}{Coordenador}
 \providecommand{\imprimircoordenadorRotulo}{}
 \providecommand{\imprimircoordenador}{}
-\newcommand{\coordenador}[2][\coordenadorname]%
+\newcommand{\UFSCcoordenador}[2][UFSCcoordenadorname]%
   {\renewcommand{\imprimircoordenadorRotulo}{#1}%
    \renewcommand{\imprimircoordenador}{#2}}
 
 % inclui subtitulo na capa, folha de rosto e ficha catalografica
 % lrsantos11/abntex2-ufsc/commit/fd30245353dcc49e193d281c78104afe54df9fe7
 %
-% Cria o comando \subtitulo. A norma define que o TITULO deve ser em caixa alta
+% Cria o comando UFSCsubtitulo. A norma define que o TITULO deve ser em caixa alta
 % negrito, mas o subtitulo deve ser em caixa baixa.
 \providecommand{\imprimirsubtitulo}{}
-\newcommand{\subtitulo}[1]{\renewcommand{\imprimirsubtitulo}{#1}}
+\newcommand{\UFSCsubtitulo}[1]{\renewcommand{\imprimirsubtitulo}{#1}}
 
 \newcounter{ufscthesisx@assuntos}
 \providecommand{\listaassuntos}{}
@@ -325,13 +325,13 @@
     \addtocounter{ufscthesisx@assuntos}{1}
   }
 }
-\newcommand{\assuntos}[1]{\renewcommand{\listaassuntos}{#1}}
+\newcommand{\UFSCassuntos}[1]{\renewcommand{\listaassuntos}{#1}}
 
 \providecommand{\imprimircentro}{}
-\newcommand{\centro}[1]{\renewcommand{\imprimircentro}{#1}}
+\newcommand{\UFSCcentro}[1]{\renewcommand{\imprimircentro}{#1}}
 
 \providecommand{\imprimircampus}{}
-\newcommand{\campus}[1]{\renewcommand{\imprimircampus}{#1}}
+\newcommand{\UFSCcampus}[1]{\renewcommand{\imprimircampus}{#1}}
 
 \newtheorem{axioma}{Axioma}[chapter]
 \newtheorem{postulado}{Postulado}[chapter]
@@ -574,7 +574,7 @@
 
 % Comandos auxiliares
 % q/how-can-i-see-the-line-spacing-between-lines
-\newcommand{\showfont}
+\newcommand{\UFSCshowFont}
 {%
   (\foreignlanguage{english}
   {%
@@ -590,7 +590,7 @@
 }
 
 % Comandos auxiliares
-\newcommand{\justshowfont}
+\newcommand{\UFSCjustShowFont}
 {%
   (\foreignlanguage{english}
   {%
@@ -742,7 +742,7 @@
     {%
     \center
       {\ABNTEXchapterfont\MakeUppercase{\imprimirtitulo}}%
-      \ifnotempty{\imprimirsubtitulo}{{\ABNTEXchapterfont:} \par \imprimirsubtitulo}
+      \UFSCifNotEmpty{\imprimirsubtitulo}{{\ABNTEXchapterfont:} \par \imprimirsubtitulo}
     }
     \vfill
 
@@ -774,12 +774,12 @@
     \begin{center}
 
       {\ABNTEXchapterfont\MakeUppercase{\imprimirtitulo}}
-      \abntex@ifnotempty{\imprimirsubtitulo}{{\ABNTEXchapterfont\!:} \\ \imprimirsubtitulo}
+      \abntex@UFSCifNotEmpty{\imprimirsubtitulo}{{\ABNTEXchapterfont\!:} \\ \imprimirsubtitulo}
 
     \end{center}
     \vspace*{\fill}
 
-    \abntex@ifnotempty{\imprimirpreambulo}
+    \abntex@UFSCifNotEmpty{\imprimirpreambulo}
     {%
       \hspace{\textwidth}
       \begin{adjustwidth*}{8cm}{}%8.5
@@ -789,7 +789,7 @@
 
         {
           \ufsccaptionsize\textbf{\imprimirorientadorRotulo:}~\imprimirorientador\par
-          \abntex@ifnotempty{\imprimircoorientador}
+          \abntex@UFSCifNotEmpty{\imprimircoorientador}
           {
             {\textbf{\imprimircoorientadorRotulo:}~\imprimircoorientador}%
           }
@@ -2655,7 +2655,7 @@
 }}{}}{}
 
 \@ifpackageloaded{babel}{\@ifpackagewith{babel}{english}{\addto\captionsenglish{%
-  \renewcommand{\covername}{Cover}
+  \renewcommand{\UFSCcovername}{Cover}
   \renewcommand{\orientadorname}{Supervisor}
   \renewcommand{\coorientadorname}{Co\hyp{}supervisor}
   \renewcommand{\folhadeaprovacaoname}{Approval}

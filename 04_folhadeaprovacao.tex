@@ -8,14 +8,14 @@
         \begin{center}
             \ABNTEXchapterfont\bfseries\MakeUppercase
             {\imprimirtitulo}
-            \ifnotempty{\imprimirsubtitulo}{: \imprimirsubtitulo}
+            \UFSCifNotEmpty{\imprimirsubtitulo}{: \imprimirsubtitulo}
         \end{center}
 
         \begin{minipage}{\textwidth}
             \lang
             {
                 This \imprimirtipotrabalho~was considered appropriate to get the
-                \imprimirformacao, \ifnotempty{\imprimirarea}{in the area of
+                \imprimirformacao, \UFSCifNotEmpty{\imprimirarea}{in the area of
                     \imprimirarea,} and it was approved by the
                     \imprimirprograma~of \imprimircentro~of
                     \imprimirinstituicao.
@@ -23,7 +23,7 @@
             {
                 Este(a) \imprimirtipotrabalho~foi julgado adequado(a) para
                 obtenção do Título de \imprimirformacao,
-                \ifnotempty{\imprimirarea}{na área de concentração de
+                \UFSCifNotEmpty{\imprimirarea}{na área de concentração de
                     \imprimirarea,} e foi aprovado em sua forma final pelo
                     \imprimirprograma~ do \imprimircentro~da
                     \imprimirinstituicao.
@@ -50,7 +50,7 @@
         \imprimirinstituicao~--~\imprimirinstituicaosigla
     }
 
-    \ifnotempty{\imprimircoorientador}{%
+    \UFSCifNotEmpty{\imprimircoorientador}{%
         \assinatura{%
             \textbf{\imprimircoorientador} \\ \imprimircoorientadorRotulo \\
             \imprimirinstituicao~--~\imprimirinstituicaosigla
