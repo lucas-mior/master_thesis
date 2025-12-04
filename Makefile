@@ -75,15 +75,6 @@ define DEFAULTTARGET :=
 	fi;
 endef
 
-%:
-	@:
-	$(if ${ENABLE_DEBUG_MODE}, \
-		printf 'IS_MAKEFILE_RUNNING_TARGETS="%s"\n' \
-		"${IS_MAKEFILE_RUNNING_TARGETS}",)
-
-	$(if ${IS_MAKEFILE_RUNNING_TARGETS},,${DEFAULTTARGET})
-	$(eval IS_MAKEFILE_RUNNING_TARGETS = 1)
-
 all:
 	@:
 	$(if ${ENABLE_DEBUG_MODE}, \
