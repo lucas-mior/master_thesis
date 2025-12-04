@@ -537,25 +537,29 @@
   \addtocontents{toc}{\cftsetindents{chapter}{0em}{\cftlastnumwidth}}
 }
 %
-\renewcommand{\ABNTEXtocinnonumchapter}
-{%
-  \addtocontents{toc}{\cftsetindents{chapter}{\cftlastnumwidth}{\cftnumberboxnumberwidth}}%
+\renewcommand{\ABNTEXtocinnonumchapter}{%
+  \addtocontents{toc}{%
+    \cftsetindents{chapter}{\cftlastnumwidth}{\cftnumberboxnumberwidth}
+  }%
   \cftinserthook{toc}{A}
 }
-\renewcommand{\ABNTEXtocprintchapternonum}
-{%
-  \addtocontents{toc}{\cftsetindents{chapter}{\cftlastnumwidth}{\cftnumberboxnumberwidth}}
+\renewcommand{\ABNTEXtocprintchapternonum}{%
+  \addtocontents{toc}{%
+    \cftsetindents{chapter}{\cftlastnumwidth}{\cftnumberboxnumberwidth}
+  }%
 }
 %
-\renewcommand{\ABNTEXtocpartapendices}
-{%
-  \addtocontents{toc}{\cftsetindents{chapter}{\cftlastnumwidth}{\cftnumberboxnumberwidth}}
+\renewcommand{\ABNTEXtocpartapendices}{%
+  \addtocontents{toc}{%
+    \cftsetindents{chapter}{\cftlastnumwidth}{\cftnumberboxnumberwidth}
+  }%
   \cftinserthook{toc}{A}
 }
 %
-\renewcommand{\ABNTEXtocpartanexos}
-{%
-  \addtocontents{toc}{\cftsetindents{chapter}{\cftlastnumwidth}{\cftnumberboxnumberwidth}}
+\renewcommand{\ABNTEXtocpartanexos}{%
+  \addtocontents{toc}{%
+    \cftsetindents{chapter}{\cftlastnumwidth}{\cftnumberboxnumberwidth}
+  }%
   \cftinserthook{toc}{A}
 }
 
@@ -675,7 +679,9 @@
 %
 % How to disable paragraphs inside my environment with \let\par\relax?
 % q/how-to-disable-paragraphs-inside-my-environment-with-let-par-relax
-\xapptocmd{\resumo}{\setlength{\parindent}{0pt}\SingleSpacing\let\parOriginal\par\let\par\relax}{}{}
+\xapptocmd{\resumo}{%
+  \setlength{\parindent}{0pt}\SingleSpacing\let\parOriginal\par\let\par\relax
+}{}{}
 \xpretocmd{\endresumo}{\endgraf}{}{}
 
 % \UFSCimprimirPalavrasChave{Palavras-chaves}{latex. abntex. editoração de texto.}
