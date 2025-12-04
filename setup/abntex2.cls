@@ -126,7 +126,7 @@
 % ---
 
 % Define o comando \fonte que respeita as configurações de caption do memoir ou do caption
-\newcommand{\fonte}[2][\fontename]{%
+\newcommand{\fonte}[2][\abntex2fontename]{%
   \M@gettitle{#2}%
   \memlegendinfo{#2}%
   \par
@@ -152,7 +152,7 @@
 
  %
 % Define o comando \notas que respeita as configurações de caption do memoir ou do caption
-\newcommand{\abntex2nota}[2][\notaname]{\fonte[#1]{#2}}
+\newcommand{\abntex2nota}[2][\abntex2notaname]{\fonte[#1]{#2}}
 
 % ---
 % Customiza listas
@@ -197,23 +197,23 @@
 \RequirePackage[brazil]{babel}
 %
 % Nomes constantes do abnTeX2 em portugues (definicoes padroes)
-\newcommand{\folhaderostoname}{Folha de rosto}
+\newcommand{\abntex2folhaderostoname}{Folha de rosto}
 \newcommand{\abntex2epigraphname}{Ep\'igrafe}
 \newcommand{\abntex2dedicatorianame}{Dedicat\'oria}
 \newcommand{\abntex2errataname}{Errata}
-\newcommand{\agradecimentosname}{Agradecimentos}
-\newcommand{\anexoname}{ANEXO}
-\newcommand{\anexosname}{Anexos}
-\newcommand{\apendicename}{AP\^ENDICE}
-\newcommand{\apendicesname}{Ap\^endices}
+\newcommand{\abntex2agradecimentosname}{Agradecimentos}
+\newcommand{\abntex2anexoname}{ANEXO}
+\newcommand{\abntex2anexosname}{Anexos}
+\newcommand{\abntex2apendicename}{AP\^ENDICE}
+\newcommand{\abntex2apendicesname}{Ap\^endices}
 \newcommand{\abntex2orientadorname}{Orientador:}
-\newcommand{\coorientadorname}{Coorientador:}
-\newcommand{\folhadeaprovacaoname}{Folha de aprova\c{c}\~ao}
-\newcommand{\resumoname}{Resumo}
+\newcommand{\abntex2coorientadorname}{Coorientador:}
+\newcommand{\abntex2folhadeaprovacaoname}{Folha de aprova\c{c}\~ao}
+\newcommand{\abntex2resumoname}{Resumo}
 \newcommand{\abntex2listadesiglasname}{Lista de abreviaturas e siglas}
 \newcommand{\abntex2listadesimbolosname}{Lista de s\'imbolos}
-\newcommand{\fontename}{Fonte}
-\newcommand{\notaname}{Nota}
+\newcommand{\abntex2fontename}{Fonte}
+\newcommand{\abntex2notaname}{Nota}
 %
 \addto\captionsbrazil{% portugues-brasil
   %% ajusta nomes padroes do babel
@@ -230,23 +230,23 @@
 }
 \addto\captionsenglish{% ingles
   %% adjusts names from abnTeX2
-  \renewcommand{\folhaderostoname}{Title page}
+  \renewcommand{\abntex2folhaderostoname}{Title page}
   \renewcommand{\abntex2epigraphname}{Epigraph}
   \renewcommand{\abntex2dedicatorianame}{Dedication}
   \renewcommand{\abntex2errataname}{Errata sheet}
-  \renewcommand{\agradecimentosname}{Acknowledgements}
-  \renewcommand{\anexoname}{ANNEX}
-  \renewcommand{\anexosname}{Annex}
-  \renewcommand{\apendicename}{APPENDIX}
-  \renewcommand{\apendicesname}{Appendix}
+  \renewcommand{\abntex2agradecimentosname}{Acknowledgements}
+  \renewcommand{\abntex2anexoname}{ANNEX}
+  \renewcommand{\abntex2anexosname}{Annex}
+  \renewcommand{\abntex2apendicename}{APPENDIX}
+  \renewcommand{\abntex2apendicesname}{Appendix}
   \renewcommand{\abntex2orientadorname}{Supervisor:}
-  \renewcommand{\coorientadorname}{Co-supervisor:}
-  \renewcommand{\folhadeaprovacaoname}{Approval}
-  \renewcommand{\resumoname}{Abstract}
+  \renewcommand{\abntex2coorientadorname}{Co-supervisor:}
+  \renewcommand{\abntex2folhadeaprovacaoname}{Approval}
+  \renewcommand{\abntex2resumoname}{Abstract}
   \renewcommand{\abntex2listadesiglasname}{List of abbreviations and acronyms}
   \renewcommand{\abntex2listadesimbolosname}{List of symbols}
-  \renewcommand{\fontename}{Source}
-  \renewcommand{\notaname}{Note}
+  \renewcommand{\abntex2fontename}{Source}
+  \renewcommand{\abntex2notaname}{Note}
    %% adjusts names used by \autoref
   \renewcommand{\pageautorefname}{page}
   \renewcommand{\sectionautorefname}{section}
@@ -747,7 +747,7 @@
 % Comandos de dados - coorientador
 \providecommand{\imprimircoorientadorRotulo}{}
 \providecommand{\imprimircoorientador}{}
-\newcommand{\coorientador}[2][\coorientadorname]%
+\newcommand{\coorientador}[2][\abntex2coorientadorname]%
   {\renewcommand{\imprimircoorientadorRotulo}{#1}%
    \renewcommand{\imprimircoorientador}{#2}}
 
@@ -792,7 +792,7 @@
 
 % ---
 % Folha de aprovacao - NBR 14724/2011 - 4.2.1.3
-\newenvironment{folhadeaprovacao}[1][\folhadeaprovacaoname]{%
+\newenvironment{folhadeaprovacao}[1][\abntex2folhadeaprovacaoname]{%
    \clearpage%
    \PRIVATEbookmarkthis{#1}%
    \begin{Spacing}{1.0}
@@ -810,7 +810,7 @@
 
 % ---
 % Agradecimentos
-\newenvironment{agradecimentos}[1][\agradecimentosname]{%
+\newenvironment{agradecimentos}[1][\abntex2agradecimentosname]{%
    \pretextualchapter{#1}
   }{\PRIVATEclearpageifneeded}
 % ---
@@ -845,14 +845,14 @@
    \setlength{\absparindent}{0pt}
 }
 
-\newenvironment{resumo}[1][\resumoname]{%
+\newenvironment{resumo}[1][\abntex2resumoname]{%
    \PRIVATEbookmarkthis{#1}
    \renewcommand{\abstractnamefont}{\chaptitlefont}
    \renewcommand{\abstractname}{\ABNTEXchapterupperifneeded{#1}}
    \begin{abstract}
   }{\end{abstract}\PRIVATEclearpageifneeded}
 
-\newenvironment{resumoumacoluna}[1][\resumoname]{%
+\newenvironment{resumoumacoluna}[1][\abntex2resumoname]{%
    \PRIVATEbookmarkthis{#1}
    \renewcommand{\abstractnamefont}{\chaptitlefont}
    \renewcommand{\abstractname}{\ABNTEXchapterupperifneeded{#1}}
@@ -908,12 +908,12 @@
 % ---
 % Apendices - comando
 \newcommand{\apendices}{%
- \PRIVATEapendiceconfig{\apendicename}{\apendicesname}
+ \PRIVATEapendiceconfig{\abntex2apendicename}{\abntex2apendicesname}
  \appendix
 }
 % Apendices - ambiente
 \newenvironment{apendicesenv}{%
- \PRIVATEapendiceconfig{\apendicename}{\apendicesname}
+ \PRIVATEapendiceconfig{\abntex2apendicename}{\abntex2apendicesname}
  \begin{appendix}
 }{
  \end{appendix}
@@ -927,7 +927,7 @@
 \newcommand{\anexos}{%
  \cftinserthook{toc}{AAA}
 
- \PRIVATEapendiceconfig{\anexoname}{\anexosname}
+ \PRIVATEapendiceconfig{\abntex2anexoname}{\abntex2anexosname}
  \appendix
  \renewcommand\theHchapter{anexochapback.\arabic{chapter}}
 }
@@ -935,7 +935,7 @@
 \newenvironment{anexosenv}{%
  \cftinserthook{toc}{AAA}
 
- \PRIVATEapendiceconfig{\anexoname}{\anexosname}
+ \PRIVATEapendiceconfig{\abntex2anexoname}{\abntex2anexosname}
  \begin{appendix}
  \renewcommand\theHchapter{anexochapback.\arabic{chapter}}
 }{
@@ -1064,8 +1064,8 @@
 %   página no caso de estar no modo twoside. Util para imprimir a Ficha
 %   Bibliografica. Porem, se estiver no modo oneside, a versao sem estrela
 %   é identica.
-\newenvironment{folhaderosto}[1][\folhaderostoname]{\clearpage\PRIVATEbookmarkthis{#1}}{\cleardoublepage}
-\newenvironment{folhaderosto*}[1][\folhaderostoname]{\clearpage\PRIVATEbookmarkthis{#1}}{\newpage}%
+\newenvironment{folhaderosto}[1][\abntex2folhaderostoname]{\clearpage\PRIVATEbookmarkthis{#1}}{\cleardoublepage}
+\newenvironment{folhaderosto*}[1][\abntex2folhaderostoname]{\clearpage\PRIVATEbookmarkthis{#1}}{\newpage}%
 
 % ---
 % Conteudo padrao da Folha de Rosto
@@ -1116,7 +1116,7 @@
      \folhaderostocontent
   \end{folhaderosto}}
 
-\newcommand{\imprimirfolhaderosto}[1][\folhaderostoname]{%
+\newcommand{\imprimirfolhaderosto}[1][\abntex2folhaderostoname]{%
    \@ifstar
      \imprimirfolhaderostostar
      \imprimirfolhaderostonostar
