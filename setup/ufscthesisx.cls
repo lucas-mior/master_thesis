@@ -376,7 +376,7 @@
 % Set caption font size in memoir
 % q/set-caption-font-size-in-memoir
 % q/controlling-the-spacing-between-lines-with-fontsize-selectfont
-\newcommand{\ufsccaptionsize}{\fontsize{10pt}{12pt}\selectfont}
+\newcommand{\UFSCcaptionSize}{\fontsize{10pt}{12pt}\selectfont}
 
 % https://latex.org/forum/viewtopic.php?t=22437
 % q/how-does-footnotesep-work-anyway
@@ -386,8 +386,8 @@
 \setlength{\footnotesep}{\f@baselineskip}
 
 % q/how-to-put-figure-caption-on-top
-\captionnamefont{\ufsccaptionsize}
-\captiontitlefont{\ufsccaptionsize}
+\captionnamefont{\UFSCcaptionSize}
+\captiontitlefont{\UFSCcaptionSize}
 
 % Paragraph size is given by
 % Default value for UFSC 1.5cm
@@ -406,7 +406,7 @@
 % Set the UFSC epigrafe font size
 % Changing font size in an example environment
 % q/changing-font-size-in-an-example-environment
-\expandafter\def\expandafter\epigrafe\expandafter{\epigrafe\ufsccaptionsize}
+\expandafter\def\expandafter\epigrafe\expandafter{\epigrafe\UFSCcaptionSize}
 
 % Selects a roman (i.e., serifed) font family
 % \renewcommand{\rmdefault}{cmr}
@@ -785,10 +785,10 @@
       \begin{adjustwidth*}{8cm}{}%8.5
 
         \SingleSpacing
-        {\ufsccaptionsize\imprimirpreambulo}
+        {\UFSCcaptionSize\imprimirpreambulo}
 
         {
-          \ufsccaptionsize\textbf{\imprimirorientadorRotulo:}~\imprimirorientador\par
+          \UFSCcaptionSize\textbf{\imprimirorientadorRotulo:}~\imprimirorientador\par
           \abntex@UFSCifNotEmpty{\imprimircoorientador}
           {
             {\textbf{\imprimircoorientadorRotulo:}~\imprimircoorientador}%
