@@ -1962,7 +1962,6 @@
 % Create a bold title all in upper case.
 \newcommand{\Title}[1]{\textbf{\MakeUppercase{#1}}}
 
-% How to create my own list of things
 % q/how-to-create-my-own-list-of-things
 \newcommand{\UFSCtextPreliminaryListName}{Short Table of Contents}
 \newlistof{textpreliminarycontents}{tpc}{\UFSCtextPreliminaryListName}
@@ -1970,7 +1969,6 @@
 % Resetting counter
 % q/resetting-counter
 %
-% Custom list throw LaTeX Error: Command \mycustomfiction already defined?
 % q/custom-list-throw-latex-error-command-mycustomfiction-already-defined
 \newlistentry{textpreliminarycounter}{tpc}{0}
 
