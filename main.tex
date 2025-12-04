@@ -40,8 +40,12 @@
 \advisortrue
 
 % q/how-to-expand-ifthenelse-so-that-it-can-be-used-in-parshape
-\newcommand{\lang}[2]{\ifenglish#1\else#2\fi}
-\newcommand{\advisor}[2]{\ifadvisor#1\else#2\fi}
+\newcommand{\lang}[2]{%
+  \ifenglish#1\else#2\fi%
+}
+\newcommand{\advisor}[2]{%
+  \ifadvisor#1\else#2\fi%
+}
 
 % q/how-to-make-passoptionstopackage-add-the-option-as-the-last
 % q/changing-the-cleveref-package-language-conjunction-definition
@@ -252,7 +256,9 @@ section=TITLE, % Título de seções em caixa alta
 
 % Disable the empty pages automatically put by memoir class,
 % except the ones by \cleardoublepage
-\ifforcedinclude\openany\else\fi
+\ifforcedinclude
+  \openany
+\fi
 
 % q/overfull-hbox-in-biblatex
 % q/why-my-document-is-not-hyphenation-on-words-starting-with-upper-case-letter-i
@@ -430,7 +436,9 @@ section=TITLE, % Título de seções em caixa alta
       \include{03_fichacatalografica.tex}
       % q/how-to-include-multiple-pages-in-latex
       % \includepdf{fig/Ficha_Catalografica.pdf}
-      \ifforcedinclude\else\cleardoublepage\fi
+      \ifforcedinclude\else
+        \cleardoublepage
+      \fi
     \fi
 
     % Inserir errata
@@ -440,27 +448,39 @@ section=TITLE, % Título de seções em caixa alta
     % este modelo até a aprovação do trabalho.  Após isso, substitua todo o
     % conteúdo deste arquivo por uma imagem da página assinada pela banca com o
     % comando abaixo:
-    \ifforcedinclude\else\cleardoublepage\fi
+    \ifforcedinclude\else
+      \cleardoublepage
+    \fi
     \include{04_folhadeaprovacao.tex}
     % \includepdf{fig/folhadeaprovacao_final.pdf}
 
     % Dedicatória
-    \ifforcedinclude\else\cleardoublepage\fi
-    \ifforcedinclude\else\input{05_dedicatoria.tex}\fi
+    \ifforcedinclude\else
+      \cleardoublepage
+    \fi
+    \ifforcedinclude\else
+      \input{05_dedicatoria.tex}
+    \fi
 
     % Agradecimentos
-    \ifforcedinclude\else\cleardoublepage\fi
+    \ifforcedinclude\else
+      \cleardoublepage
+    \fi
     \include{06_agradecimentos.tex}
 
     % Epígrafe
-    \ifforcedinclude\else\cleardoublepage\fi
+    \ifforcedinclude\else
+      \cleardoublepage
+    \fi
     \include{07_epigrafe.tex}
 
     % Ajusta o espaçamento dos parágrafos do resumo
     \setlength{\absparsep}{18pt}
 
     % RESUMOS
-    \ifforcedinclude\else\cleardoublepage\fi
+    \ifforcedinclude\else
+      \cleardoublepage
+    \fi
     \include{08_resumos.tex}
 
     % Some tables of contents
@@ -470,7 +490,9 @@ section=TITLE, % Título de seções em caixa alta
         \hypersetup{hidelinks}
 
         % inserir lista de figuras
-        \ifforcedinclude\else\cleardoublepage\fi
+        \ifforcedinclude\else
+          \cleardoublepage
+        \fi
         % q/list-of-figures-and-tables-when-there-are-no-figures-or-tables
         \whenlistisnotempty{\listfigurename}{%
             \addtotextpreliminarycontent{\listfigurename}
@@ -480,7 +502,9 @@ section=TITLE, % Título de seções em caixa alta
         }{\pdfbookmark[0]{\listfigurename}{lof}}
 
         % inserir lista de quadros
-        \ifforcedinclude\else\cleardoublepage\fi
+        \ifforcedinclude\else
+          \cleardoublepage
+        \fi
         % q/list-of-figures-and-tables-when-there-are-no-figures-or-tables
         \whenlistisnotempty{\listofquadrosname}{%
             \addtotextpreliminarycontent{\listofquadrosname}
@@ -490,7 +514,9 @@ section=TITLE, % Título de seções em caixa alta
         }{\pdfbookmark[0]{\listofquadrosname}{loq}}
 
         % inserir lista de tabelas
-        \ifforcedinclude\else\cleardoublepage\fi
+        \ifforcedinclude\else
+          \cleardoublepage
+        \fi
         % q/list-of-figures-and-tables-when-there-are-no-figures-or-tables
         \whenlistisnotempty{\listtablename}{%
             \addtotextpreliminarycontent{\listtablename}
@@ -501,7 +527,9 @@ section=TITLE, % Título de seções em caixa alta
 
         % inserir códigos fonte (List of Listings `lol`)
         % q/latex-keeps-showing-minted-environment-as-figures-instead-of-listening
-        \ifforcedinclude\else\cleardoublepage\fi
+        \ifforcedinclude\else
+          \cleardoublepage
+        \fi
         % q/list-of-figures-and-tables-when-there-are-no-figures-or-tables
         \whenlistisnotempty{\lstlistlistingname}{%
             \addtotextpreliminarycontent{\lstlistlistingname}
@@ -566,7 +594,9 @@ section=TITLE, % Título de seções em caixa alta
     \setlength\afterchapskip{20pt}
 
     % PARTE
-    \ifforcedinclude\else\part{\lang{Research}{Pesquisa}}\fi
+    \ifforcedinclude\else
+      \part{\lang{Research}{Pesquisa}}
+    \fi
     \label{primeira_parte}
 
     % Introdução (exemplo de capítulo sem numeração, mas presente no Sumário)
@@ -619,11 +649,15 @@ section=TITLE, % Título de seções em caixa alta
     \endgroup
 
     % Glossário, consulte o manual da classe abntex2
-    % \ifforcedinclude\else\glossary\fi
+    % \ifforcedinclude\else
+    %   \glossary
+    % \fi
 
     \begin{apendicesenv}
       % Imprime uma página indicando o início dos apêndices
-      \ifforcedinclude\else\ABNTEXpartapendices\fi
+      \ifforcedinclude\else
+        \ABNTEXpartapendices
+      \fi
       \setlength\beforechapskip{50pt}
       \setlength\midchapskip{20pt}
       \setlength\afterchapskip{20pt}
@@ -633,7 +667,9 @@ section=TITLE, % Título de seções em caixa alta
 
     \begin{anexosenv}
       % Imprime uma página indicando o início dos anexos
-      \ifforcedinclude\else\ABNTEXpartanexos\fi
+      \ifforcedinclude\else
+        \ABNTEXpartanexos
+      \fi
       \setlength\beforechapskip{50pt}
       \setlength\midchapskip{20pt}
       \setlength\afterchapskip{20pt}
