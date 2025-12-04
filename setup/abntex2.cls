@@ -102,9 +102,7 @@
 % Comandos para tratamento de opcoes proprias
 % ------------------------------------------------------------------------
 
-% ---
 % Comandos para controlar as opcoes de titulos com letras maiusculas
-% ---
 
 % pacote que prove \MakeTextUppercase
 \RequirePackage{textcase}
@@ -114,16 +112,13 @@
 \newcommand{\ABNTEXsubsectionupperifneeded}{\ifthenelse{\boolean{ABNTEXuppersubsection}}{\MakeTextUppercase}{}}
 \newcommand{\ABNTEXsubsubsectionupperifneeded}{\ifthenelse{\boolean{ABNTEXuppersubsubsection}}{\MakeTextUppercase}{}}
 \newcommand{\ABNTEXsubsubsubsectionupperifneeded}{\ifthenelse{\boolean{ABNTEXuppersubsubsubsection}}{\MakeTextUppercase}{}}
-% ---
 
 % ------------------------------------------------------------------------
 % Pacotes adicionais e customizacoes gerais do memoir
 % ------------------------------------------------------------------------
 
-% ---
 % Do pacote de if/them/else
 \newcommand{\abntex@UFSCifNotEmpty}[2]{\ifthenelse{\not\equal{#1}{}}{#2}{}}
-% ---
 
 % Define o comando \ABNTEXfonte que respeita as configurações de caption do memoir ou do caption
 \newcommand{\ABNTEXfonte}[2][\ABNTEXfontename]{%
@@ -154,7 +149,6 @@
 % Define o comando \notas que respeita as configurações de caption do memoir ou do caption
 \newcommand{\ABNTEXnota}[2][\ABNTEXnotaname]{\ABNTEXfonte[#1]{#2}}
 
-% ---
 % Customiza listas
 \RequirePackage[shortlabels]{enumitem}
 
@@ -180,20 +174,14 @@
     leftmargin=*,
 }
 
-% ---
 % Controla as referencias internas do PDF
 \RequirePackage{hyperref}
 \pdfstringdefDisableCommands{\def\\{, }\def\and{; }}
-% ---
 
-% ---
 % Controla os bookmarks do PDF
 \RequirePackage{bookmark}
-% ---
 
-% ---
 % Hifenizacao e caracteres especiais portugues-brasil por padrao
-% ---
 \RequirePackage[brazil]{babel}
 %
 % Nomes constantes do abnTeX2 em portugues (definicoes padroes)
@@ -254,43 +242,28 @@
   \renewcommand{\subsubsectionautorefname}{subsubsection}
   \renewcommand{\paragraphautorefname}{subsubsubsection}
 }
-% ---
 
-% ---
 % Pacote que permite realizar operacoes matematicas no codigo TeX
 \RequirePackage{calc}
-% ---
 
-% ---
 % Margens - NBR 14724/2011 - 5.1 Formato
-% ---
 \setlrmarginsandblock{3cm}{2cm}{*}
 \setulmarginsandblock{3cm}{2cm}{*}
 \checkandfixthelayout
-% ---
 
-% ---
 % Espacamento entre linhas - NBR 14724/2011 - 5.2 Espacamento
-% ---
 \OnehalfSpacing
-% ---
 
 % ------------------------------------------------------------------------
 % Comandos publicos
 % ------------------------------------------------------------------------
 
-% ---
 % ``Tamanho menor e uniforme'' ditada pela NBR 14724/2011 - 5.1
-% ---
 \newcommand{\ABNTEXfontereduzida}{\footnotesize}
-% ---
 
-% ---
 % abnTeX2 name
 \newcommand{\abnTeX}{abn\TeX2}
-% ---
 
-% ---
 % Fontes padroes de part, chapter, section, subsection e subsubsection
 \newcommand{\ABNTEXchapterfont}{\sffamily}
 \newcommand{\ABNTEXchapterfontsize}{\Huge}
@@ -309,26 +282,20 @@
 
 \newcommand{\ABNTEXsubsubsubsectionfont}{\ABNTEXsubsectionfont}
 \newcommand{\ABNTEXsubsubsubsectionfontsize}{\normalsize}
-% ---
 
 % ------------------------------------------------------------------------
 % Comandos e variaveis privados
 % ------------------------------------------------------------------------
 
-% ---
 % Comando para registro do bookmark interno
-% ---
 \newcounter{abntex@bookmarkcounter}
 \setcounter{abntex@bookmarkcounter}{0}
 \newcommand{\ABNTEXPRIVATEbookmarkthis}[1]{%
   \addtocounter{abntex@bookmarkcounter}{1}%
   \phantomsection\pdfbookmark[0]{#1}{chapterb\arabic{abntex@bookmarkcounter}}
 }
-% ---
 
-% ---
 % Comando que cria capítulos não numerados já com bookmark anotado
-% ---
 \newcommand{\ABNTEXpretextualchapter}[1]{%
   \addtocounter{abntex@bookmarkcounter}{1}%
   \ABNTEXPRIVATEbookmarkthis{#1}%
@@ -336,11 +303,8 @@
   }
 \provideboolean{abntex@apendiceousecao}
 \setboolean{abntex@apendiceousecao}{false}
-% ---
 
-% ---
 % cleardoublepage se este documento não for article
-% ---
 \newcommand{\ABNTEXPRIVATEclearpageifneeded}{%
   \ifthenelse{\equal{\ABNTEXisarticle}{true}}{%
     %
@@ -353,7 +317,6 @@
 % Configuracoes de layout
 % ------------------------------------------------------------------------
 
-% ---
 % Notas de rodape - footnotes - NBR 14724/2011 - 5.2.1
 \setlength{\footmarkwidth}{1.2em} % largura do footnotemark
 \setlength{\footmarksep}{0em}
@@ -361,9 +324,7 @@
 
 % tamanho da fonte do footnote
 \renewcommand{\foottextfont}{\ABNTEXfontereduzida}
-% ---
 
-% ---
 % Numeracao continua das figuras
 \ifthenelse{\equal{\ABNTEXisarticle}{true}}{%
   \counterwithout{section}{chapter}
@@ -373,11 +334,8 @@
   \counterwithout{figure}{chapter}
   \counterwithout{table}{chapter}
 }
-% ---
 
-% ---
 % Estilos de caption
-% ---
 \hangcaption
 \newcommand{\ABNTEXcaptiondelim}{~\textendash~}
 \newcommand{\ABNTEXcaptionfontedelim}{:~}
@@ -434,7 +392,6 @@
 \AtBeginDocument{
  \captiondelim{\ABNTEXcaptiondelim}
 }
-% ---
 
 % -----
 % Configuracoes do TOC
@@ -583,7 +540,6 @@
 }
 % -----
 
-% ---
 % Configuracao dos titulos dos capítulos
 % Novo estido do memoir
 % ABNT NBR 14724-2011 - 5.2.2-5.2.4; ABNT NBR 6024-2003 - 3.1-3.8
@@ -660,7 +616,6 @@
     }
 }
 \chapterstyle{abnt}
-% ---
 
 % -----
 % Declaracoes de cabecalhos
@@ -674,9 +629,7 @@
 % Cabecalho do inicio do capitulo
 \makepagestyle{abntchapfirst}
 \makeoddhead{abntchapfirst}{}{}{\ABNTEXfontereduzida\thepage}
-% ---
 
-% ---
 % Configura layout para elementos pre-textuais
 \newcommand{\ABNTEXpretextual}{%
   \aliaspagestyle{chapter}{empty}% customizing chapter pagestyle
@@ -688,9 +641,7 @@
 
 % por default, inicializa o documento com elementos \pretextuais
 \AtBeginDocument{\ABNTEXpretextual}
-% ---
 
-% ---
 % Configura layout para elementos textuais
 \newcommand{\ABNTEXtextual}{%
   \ifthenelse{\equal{\ABNTEXisarticle}{true}}{%
@@ -703,9 +654,7 @@
   \bookmarksetup{startatroot}%
 }
 \renewcommand{\mainmatter}{\ABNTEXtextual}
-% ---
 
-% ---
 % Configura layout para elementos pos-textuais
 \newcommand{\ABNTEXpostextual}{\ABNTEXphantompart}
 \renewcommand{\backmatter}{\ABNTEXpostextual}
@@ -715,43 +664,35 @@
 % Comandos de dados para CAPA e FOLHA DE ROSTO
 % ------------------------------------------------------------------------
 
-% Comandos de dados - titulo do documento
 \newcommand{\ABNTEXtituloestrangeiro}[1]{\providecommand{\abntextheforeigntitle}{#1}}
 \newcommand{\ABNTEXimprimirtituloestrangeiro}{\abntextheforeigntitle}
 
-% Comandos de dados - data
 \let\olddate\date
 \renewcommand{\date}[1]{\AtBeginDocument{\olddate{#1}}}
 \newcommand{\ABNTEXdata}[1]{\date{#1}}
 \newcommand{\ABNTEXimprimirdata}{\thedate}
 
-% Comandos de dados - instituicao
 \providecommand{\abnteximprimirinstituicao}{}
 \newcommand{\ABNTEXinstituicao}[1]{\renewcommand{\abnteximprimirinstituicao}{#1}}
 
-% Comandos de dados - local
 \providecommand{\abnteximprimirlocal}{}
 \newcommand{\ABNTEXlocal}[1]{\renewcommand{\abnteximprimirlocal}{#1}}
 
-% Comandos de dados - preambulo
 \providecommand{\abnteximprimirpreambulo}{}
 \newcommand{\ABNTEXpreambulo}[1]{\renewcommand{\abnteximprimirpreambulo}{#1}}
 
-% Comandos de dados - orientador
 \providecommand{\abnteximprimirorientadorRotulo}{}
 \providecommand{\abnteximprimirorientador}{}
 \newcommand{\ABNTEXorientador}[2][\ABNTEXorientadorname]%
   {\renewcommand{\abnteximprimirorientadorRotulo}{#1}%
    \renewcommand{\abnteximprimirorientador}{#2}}
 
-% Comandos de dados - coorientador
 \providecommand{\abnteximprimircoorientadorRotulo}{}
 \providecommand{\abnteximprimircoorientador}{}
 \newcommand{\ABNTEXcoorientador}[2][\ABNTEXcoorientadorname]%
   {\renewcommand{\abnteximprimircoorientadorRotulo}{#1}%
    \renewcommand{\abnteximprimircoorientador}{#2}}
 
-% Comandos de dados - tipo de trabalho
 \providecommand{\abnteximprimirtipotrabalho}{}
 \newcommand{\ABNTEXtipotrabalho}[1]{\renewcommand{\abnteximprimirtipotrabalho}{#1}}
 
@@ -759,19 +700,14 @@
 % Comandos e ambientes de editoracao PRE-TEXTUAIS
 % ------------------------------------------------------------------------
 
-% ---
 % Ambiente para definicao da Capa
 \newenvironment{capa}{\begin{titlingpage}}{\end{titlingpage}\cleardoublepage}
-% ---
 
-% ---
 % Titulos em lingua estrangeira para artigos: ABNT NBR 6022:2018
 \ifthenelse{\equal{\ABNTEXisarticle}{true}}{%
 \renewcommand{\maketitlehookb}{\LARGE\center\textit{\abntextheforeigntitle}}
 }{}
-% ---
 
-% ---
 % Ficha catalografica (Dados internacionais de
 % catalogação-na-publicacao)
 \newenvironment{fichacatalografica}{%
@@ -781,50 +717,38 @@
 }{%
     \end{SingleSpacing}%
 }%
-% ---
 
-% ---
 % Errata
 \newenvironment{errata}[1][\ABNTEXerrataname]{%
    \ABNTEXpretextualchapter{#1}
   }{\ABNTEXPRIVATEclearpageifneeded}
-% ---
 
-% ---
 % Folha de aprovacao - NBR 14724/2011 - 4.2.1.3
 \newenvironment{folhadeaprovacao}[1][\ABNTEXfolhadeaprovacaoname]{%
    \clearpage%
    \ABNTEXPRIVATEbookmarkthis{#1}%
    \begin{Spacing}{1.0}
 }{\end{Spacing}\ABNTEXPRIVATEclearpageifneeded}
-% ---
 
-% ---
 % Dedicatoria
 \newenvironment{dedicatoria}[1][]{%
    \ifthenelse{\equal{#1}{}}{%
     \ABNTEXPRIVATEbookmarkthis{\ABNTEXdedicatorianame}
     }{\ABNTEXpretextualchapter{#1}}
   }{\ABNTEXPRIVATEclearpageifneeded}
-% ---
 
-% ---
 % Agradecimentos
 \newenvironment{agradecimentos}[1][\ABNTEXagradecimentosname]{%
    \ABNTEXpretextualchapter{#1}
   }{\ABNTEXPRIVATEclearpageifneeded}
-% ---
 
-% ---
 % Epigrafe
 \newenvironment{epigrafe}[1][]{%
    \ifthenelse{\equal{#1}{}}{%
     \ABNTEXPRIVATEbookmarkthis{\ABNTEXepigraphname}
     }{\ABNTEXpretextualchapter{#1}}
   }{\ABNTEXPRIVATEclearpageifneeded}
-% ---
 
-% ---
 % Resumo e abstracts em diferentes idiomas - NBR 14724/2011
 
 % altera as margens padrões do memoir para abstract caso não seja article
@@ -858,9 +782,7 @@
    \renewcommand{\abstractname}{\ABNTEXchapterupperifneeded{#1}}
    \begin{onecolabstract}
 }{\end{onecolabstract}\ABNTEXPRIVATEclearpageifneeded}
-% ---
 
-% ---
 % Lista de abreviaturas e siglas
 \newenvironment{siglas}{%
   \ABNTEXpretextualchapter{\ABNTEXlistadesiglasname}
@@ -869,9 +791,7 @@
   \end{symbols}
   \cleardoublepage
 }
-% ---
 
-% ---
 % Lista de simbolos
 \newenvironment{simbolos}{%
   \ABNTEXpretextualchapter{\ABNTEXlistadesimbolosname}
@@ -880,15 +800,12 @@
   \end{symbols}
   \cleardoublepage
 }
-% ---
 
 % ------------------------------------------------------------------------
 % Comandos e ambientes de editoracao APENDICES e ANEXOS
 % ------------------------------------------------------------------------
 
-% ---
 % Definicoes compartilhadas entre Apendices e Anexos
-% ---
 \newcommand\@switch[1]{ \@writefile{toc}{\renewcommand*{\cftappendixname}{#1 \space}} }
 \newcommand{\ABNTEXswitchchapname}[1]{ \protected@write \@auxout {}{\string\@switch{#1} }}
 
@@ -903,9 +820,7 @@
  \ABNTEXswitchchapname{#1}% Corrected from \switchapname -> \ABNTEXswitchchapname
  \renewcommand*{\cftappendixname}{#1 \space}
 }
-% ---
 
-% ---
 % Apendices - comando
 \newcommand{\ABNTEXapendices}{%
  \ABNTEXPRIVATEapendiceconfig{\ABNTEXapendicename}{\ABNTEXapendicesname}
@@ -920,9 +835,7 @@
  \setboolean{abntex@apendiceousecao}{false}
  \bookmarksetup{startatroot}
 }
-% ---
 
-% ---
 % Anexos - comando
 \newcommand{\ABNTEXanexos}{%
  \cftinserthook{toc}{AAA}
@@ -943,9 +856,7 @@
  \setboolean{abntex@apendiceousecao}{false}
  \bookmarksetup{startatroot}
 }
-% ---
 
-% ---
 % Imprime uma pagina de divisao no estilo parte
 \newcommand{\ABNTEXpartpage}{%
   \cleardoublepage
@@ -962,13 +873,11 @@
 \newcommand{\ABNTEXpartanexos}{%
 \ABNTEXtocpartanexos%
 \@ifstar{\appendixpage*}{\ABNTEXpartpage}}
-% ---
 
 % ------------------------------------------------------------------------
 % Comandos e ambientes de editoracao CITACAO, ALINEA, INCISO, ASSINATURA
 % ------------------------------------------------------------------------
 
-% ---
 % Citacao direta com mais de 3 linhas - ABNT NBR 10520/2002 - 5.3
 \newlength{\ABNTEXcitacaorecuo}% recuo de 4 cm da margem esquerda
 \ifthenelse{\equal{\ABNTEXistwocolumn}{true}}{%
@@ -991,9 +900,7 @@
  }{%
    \end{SingleSpace}%
    \endlist}%
-% ---
 
-% ---
 % Ambiente para alineas e e subalineas (incisos)
 % ABNT NBR 6024/2012 - 4.2 e 4.3
 \newlist{alineas}{enumerate}{2}
@@ -1003,9 +910,7 @@
 \setlist[subalineas,1]{label={--},topsep=0pt,itemsep=0pt,leftmargin=*}%
 \newlist{incisos}{enumerate}{1}
 \setlist[incisos,1]{label={--},topsep=0pt,itemsep=0pt,leftmargin=*}%
-% ---
 
-% ---
 % Comando \ABNTEXassinatura for signature
    % width of the line and text under the line
 \newlength{\ABNTEXsignwidth}
@@ -1030,13 +935,11 @@
    % assinatura sem estrela
 \newcommand{\ABNTEXcsign}[1]%
   {\begingroup\par\centering\ABNTEXsign{#1}\par\endgroup}
-% ---
 
 % ------------------------------------------------------------------------
 % IMPRESSOES PADROES DE CAPA E FOLHA DE ROSTO
 % ------------------------------------------------------------------------
 
-% ---
 % Impressão da Capa
 \newcommand{\ABNTEXimprimircapa}{%
   \begin{capa}%
@@ -1056,9 +959,7 @@
     \vspace*{1cm}
   \end{capa}
 }
-% ---
 
-% ---
 % Folha de rosto
 %   usar \ABNTEXimprimirFolhaDeRosto* casodeseje imprimir algo no verso da
 %   página no caso de estar no modo twoside. Util para imprimir a Ficha
@@ -1067,7 +968,6 @@
 \newenvironment{folhaderosto}[1][\ABNTEXfolhaderostoname]{\clearpage\ABNTEXPRIVATEbookmarkthis{#1}}{\cleardoublepage}
 \newenvironment{folhaderosto*}[1][\ABNTEXfolhaderostoname]{\clearpage\ABNTEXPRIVATEbookmarkthis{#1}}{\newpage}%
 
-% ---
 % Conteudo padrao da Folha de Rosto
 \newcommand{\ABNTEXfolhaderostocontent}{
   \begin{center}
@@ -1122,5 +1022,4 @@
      \ABNTEXimprimirFolhaDeRostonostar
 }
 
-% ---
 \makeatother
