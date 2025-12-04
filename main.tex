@@ -349,8 +349,7 @@ section=TITLE, % Título de seções em caixa alta
     \frenchspacing
 
     % Uncomment this to put a ←← | ← (Go To Top/Go Back) on each section header
-    \ifadvisor
-    \else
+    \ifadvisor\else
     \addGoToSummary
     \fi
 
@@ -377,8 +376,7 @@ section=TITLE, % Título de seções em caixa alta
 
       % \includepdf{fig/FrenteCapaUFSC.pdf}
       % q/blank-page-after-titlingpage
-      \ifadvisor
-      \else
+      \ifadvisor\else
         \AtBeginShipoutNext{\AtBeginShipoutNext{\AtBeginShipoutDiscard}}
       \fi
       \ABNTEXimprimircapa
@@ -390,8 +388,7 @@ section=TITLE, % Título de seções em caixa alta
       % Custom list throw LaTeX Error:
       % Command \mycustomfiction already defined?
       % q/custom-list-throw-latex-error-command-mycustomfiction-already-defined
-      \ifadvisor
-      \else
+      \ifadvisor\else
         % Manually add the `\textpreliminarycontents` to the Table of
         % Contents here to keep the hyper link pointing to the beginning of
         % the page, instead of the beginning of `\textpreliminarycontents`
@@ -656,8 +653,7 @@ section=TITLE, % Título de seções em caixa alta
       % q/how-to-modify-line-spacing-per-entry-of-bibliography
       % q/how-can-i-put-more-space-between-bibliography-entries-biblatex
       \setlength\bibitemsep{\baselineskip}
-      \ifadvisor
-      \else
+      \ifadvisor\else
       \linespread{1.18}\selectfont
       \fi
 
