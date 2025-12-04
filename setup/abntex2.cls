@@ -182,11 +182,11 @@
 % q/why-does-setlistnosep-doesnt-work-in-a-tabular-environment
 \newlist{enumerateoptional}{enumerate}{1}
 \setlist[enumerateoptional]{%
-    before=\let\@item\@itemenumerateoptional,
-    format=\enumerateoptionallabelformat,
-    label=\arabic*,
-    align=left,
-    leftmargin=*,
+  before=\let\@item\@itemenumerateoptional,
+  format=\enumerateoptionallabelformat,
+  label=\arabic*,
+  align=left,
+  leftmargin=*,
 }
 
 % Controla as referencias internas do PDF
@@ -323,7 +323,7 @@
 \newcommand{\ABNTEXPRIVATEclearpageifneeded}{%
   \ifthenelse{\equal{\ABNTEXisarticle}{true}}{%
     %
-  }{ % else
+  }{
     \cleardoublepage%
   }
 }
@@ -374,14 +374,16 @@
     \settowidth{\myptabboxwidth}{\usebox{\myptabbox}}%
     \centering%
     \parbox{\myptabboxwidth}{%
-    \ABNTEXconfigurecaptions
-    #1%
-    \par%
-    {\ABNTEXIBGEtabfontsize%
-    #2%
+      \ABNTEXconfigurecaptions
+      #1%
+      \par%
+      {%
+        \ABNTEXIBGEtabfontsize%
+        #2%
+      }%
+      \par%
+      #3%
     }%
-    \par%
-    #3}%
   }
   \let\ABNTEXibgetab\ABNTEXIBGEtab
 }
@@ -550,8 +552,10 @@
   \bookmarksetup{startatroot}%
   \phantomsection%
   \ifthenelse{\boolean{ABNTEXsumario-abnt-6027-2012}}{%
-    \addtocontents{toc}{\vspace{\cftbeforechapterskip}}}{%
-    \addtocontents{toc}{\vspace{\cftbeforepartskip}}}%
+    \addtocontents{toc}{\vspace{\cftbeforechapterskip}}%
+  }{%
+    \addtocontents{toc}{\vspace{\cftbeforepartskip}}%
+  }%
 }
 % -----
 
@@ -599,15 +603,18 @@
   % impressao do titulo do capitulo
   \def\printchaptertitle##1{%
     \chaptitlefont%
-    \ifthenelse{\boolean{abntex@innonumchapter}}{\centering\ABNTEXchapterupperifneeded{##1}}{%
+    \ifthenelse{\boolean{abntex@innonumchapter}}{%
+      \centering\ABNTEXchapterupperifneeded{##1}
+    }{%
     \ifthenelse{\boolean{abntex@apendiceousecao}}{%
         \centering%
         \settowidth{\chapternamenumlength}{\printchaptername\printchapternum\afterchapternum}%
         \ABNTEXchapterupperifneeded{##1}%
       }{%
         \settowidth{\chapternamenumlength}{\printchaptername\printchapternum\afterchapternum}%
-        \parbox[t]{\columnwidth-\chapternamenumlength}{\ABNTEXchapterupperifneeded{##1}}}%
-     }%
+        \parbox[t]{\columnwidth-\chapternamenumlength}{\ABNTEXchapterupperifneeded{##1}}
+      }%
+    }%
   }
 
   % impressao do numero do capitulo
@@ -628,7 +635,7 @@
   \renewcommand\printchapternonum{%
      \ABNTEXtocprintchapternonum%
      \setboolean{abntex@innonumchapter}{true}%
-    }
+  }
 }
 \chapterstyle{abnt}
 
@@ -726,11 +733,11 @@
 % Ficha catalografica (Dados internacionais de
 % catalogação-na-publicacao)
 \newenvironment{abntexEnvFichacatalografica}{%
-    \thispagestyle{empty}
-    \begin{SingleSpacing}
-      \ABNTEXfontereduzida
+  \thispagestyle{empty}
+  \begin{SingleSpacing}
+    \ABNTEXfontereduzida
 }{%
-    \end{SingleSpacing}%
+  \end{SingleSpacing}%
 }%
 
 % Errata
@@ -747,10 +754,14 @@
 
 % Dedicatoria
 \newenvironment{abntexEnvDedicatoria}[1][]{%
-   \ifthenelse{\equal{#1}{}}{%
+  \ifthenelse{\equal{#1}{}}{%
     \ABNTEXPRIVATEbookmarkthis{\ABNTEXdedicatorianame}
-    }{\ABNTEXpretextualchapter{#1}}
-  }{\ABNTEXPRIVATEclearpageifneeded}
+  }{%
+    \ABNTEXpretextualchapter{#1}
+  }
+}{%
+  \ABNTEXPRIVATEclearpageifneeded
+}
 
 % Agradecimentos
 \newenvironment{abntexEnvAgradecimentos}[1][\ABNTEXagradecimentosname]{%
@@ -759,24 +770,28 @@
 
 % Epigrafe
 \newenvironment{abntexEnvEpigrafe}[1][]{%
-   \ifthenelse{\equal{#1}{}}{%
+  \ifthenelse{\equal{#1}{}}{%
     \ABNTEXPRIVATEbookmarkthis{\ABNTEXepigraphname}
-    }{\ABNTEXpretextualchapter{#1}}
-  }{\ABNTEXPRIVATEclearpageifneeded}
+  }{%
+    \ABNTEXpretextualchapter{#1}
+  }
+}{%
+  \ABNTEXPRIVATEclearpageifneeded
+}
 
 % Resumo e abstracts em diferentes idiomas - NBR 14724/2011
 
 % altera as margens padrões do memoir para abstract caso não seja article
 \ifthenelse{\equal{\ABNTEXisarticle}{true}}{%
-    % em artigos, margens e fontes são as mesmas de memoir
-  }{ % else
-    % Ajusta as margens para serem a mesma do documento
-    \setlength\absleftindent{0cm}
-    \setlength\absrightindent{0cm}
-    % Garante que a fonte do texto do abstract será a mesma do documento, pois
-    % na classe memoir está \small
-    \renewcommand{\abstracttextfont}{\normalfont\normalsize}
-  }
+  % em artigos, margens e fontes são as mesmas de memoir
+}{%
+  % Ajusta as margens para serem a mesma do documento
+  \setlength\absleftindent{0cm}
+  \setlength\absrightindent{0cm}
+  % Garante que a fonte do texto do abstract será a mesma do documento, pois
+  % na classe memoir está \small
+  \renewcommand{\abstracttextfont}{\normalfont\normalsize}
+}
 
 % A norma não diz nada sobre identação e separação entre parágrafos no abstract,
 % porém o uso mostra que muitos abstracts são montados sem identação.
