@@ -221,12 +221,11 @@ draft,
 % of the document, before uncommenting these lines.
 %
 % Uncomment these lines to only partially generate the document
-\StrLen{\includeonlyfilelist}[\includeonlyfilelistlen]
-\ifnum\includeonlyfilelistlen>0
-\includeonly{\includeonlyfilelist}
-\else
-\fi
-\forcedincludetrue
+% \ifnum\StrLen{\includeonlyfilelist}>0\relax
+%   \includeonly{\includeonlyfilelist}
+% \else
+% \fi
+% \forcedincludetrue
 
 % q/xrightarrow-text
 \makeatletter
