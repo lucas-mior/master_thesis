@@ -25,7 +25,7 @@
 % Define versão necessária do LaTeX
 \NeedsTeXFormat{LaTeX2e}
 
-% questions/83484/missing-number-treated-as-zero-what-is-wrong-in-here
+% q/missing-number-treated-as-zero-what-is-wrong-in-here
 \errorcontextlines 10000
 
 \makeatletter
@@ -40,12 +40,12 @@
 
 % For web links and paths with \path{..} and \url{https://www.python.org/downloads/}
 % ftp://tug.ctan.org/pub/tex-archive/macros/latex/contrib/hyperref/doc/options.pdf
-% questions/3033/forcing-linebreaks-in-url
-% questions/124049/applying-options-to-already-loaded-package
+% q/forcing-linebreaks-in-url
+% q/applying-options-to-already-loaded-package
 \PassOptionsToPackage{hyphens}{url}
 
 % Use its macro adjustwidth* to extend tables out of outer text border.
-% questions/366155/how-to-write-a-table-a-little-larger-than-the-paragraphs-with-centered-columns
+% q/how-to-write-a-table-a-little-larger-than-the-paragraphs-with-centered-columns
 \PassOptionsToPackage{strict}{changepage}
 
 % Linked footnotes are not supported inside environment `tabularx', because they
@@ -59,7 +59,7 @@
 % compatibility mode with the enumerate package, and therefore the following special rule applies:
 % if the very first option (at any level) is not recognized as a valid key, then it will be
 % considered a label with the enumerate-like syntax.
-% questions/119919/no-spacing-between-enumerated-items-with-usepackageenumerate
+% q/no-spacing-between-enumerated-items-with-usepackageenumerate
 \PassOptionsToPackage{shortlabels}{enumitem}
 
 % Fixes `pdfTeX warning (ext4): destination with the same identifier (name{figure.1.1}) has been
@@ -68,9 +68,9 @@
 % The `abntex2` package loads the `hyperref` package, however there are several packages which are
 % required to be loaded after and before `hyperref`.
 %
-% questions/1863/which-packages-should-be-loaded-after-hyperref-instead-of-before
-% questions/50846/hyperref-is-loaded-by-the-class-and-i-need-to-load-packages-that-are-supposed-t
-% questions/51094/using-beforepackage-to-load-a-package-before-hyperref-does-not-work
+% q/which-packages-should-be-loaded-after-hyperref-instead-of-before
+% q/hyperref-is-loaded-by-the-class-and-i-need-to-load-packages-that-are-supposed-t
+% q/using-beforepackage-to-load-a-package-before-hyperref-does-not-work
 \RequirePackage{scrlfile}
 \AfterClass{memoir}
 {
@@ -78,20 +78,20 @@
 }
 
 % The class `abntex2` loads the package `enumitem`, but `paralist` must be loaded before it
-% questions/162799/compilation-error-when-including-enumitem-and-paralist-packages
+% q/compilation-error-when-including-enumitem-and-paralist-packages
 \AfterClass{memoir}
 {
   % How to make horizontal lists?
-  % questions/146306/how-to-make-horizontal-lists
+  % q/how-to-make-horizontal-lists
   \RequirePackage{paralist}
 }
 
-% questions/6529/newline-linebreak-in-message
-% questions/383054/biblatex-error-incompatible-backref-package
-% questions/115828/backreferencing-in-classicthesis-package-does-not-work
-% questions/390349/why-my-biblatex-document-is-not-accepting-utf-8-on-the-bibliography
-% questions/55478/how-to-print-out-to-log-without-affecting-anything-else-lua-print-equiv
-% questions/483570/how-to-detect-whether-passoptionstopackage-was-already-called
+% q/newline-linebreak-in-message
+% q/biblatex-error-incompatible-backref-package
+% q/backreferencing-in-classicthesis-package-does-not-work
+% q/why-my-biblatex-document-is-not-accepting-utf-8-on-the-bibliography
+% q/how-to-print-out-to-log-without-affecting-anything-else-lua-print-equiv
+% q/how-to-detect-whether-passoptionstopackage-was-already-called
 \ifcsname opt@biblatex.sty\endcsname
   \message{Have options been passed for biblatex? YES!^^J}
 \else
@@ -111,11 +111,11 @@
   \RequirePackage{longtable}
 }
 
-% questions/391993/how-to-silence-memoir-class-warning-against-the-use-of-caption-package
+% q/how-to-silence-memoir-class-warning-against-the-use-of-caption-package
 \RequirePackage{silence}
 \WarningFilter*{memoir}{You are using the caption package with the memoir class}
 
-% questions/402676/can-i-silence-a-warning-which-is-coming-from-a-file-like-bigfoot-sty
+% q/can-i-silence-a-warning-which-is-coming-from-a-file-like-bigfoot-sty
 \WarningFilter*{hyperref}{Option `hyperfootnotes' has already been used}
 
 
@@ -132,7 +132,7 @@
 \ProvidesClass{setup/ufscthesisx}[2016/11/15 1.0.0 setup/ufscthesisx]
 
 % How can I properly resolve relative paths in `\usepackage`?
-% questions/123999/how-can-i-properly-resolve-relative-paths-in-usepackage
+% q/how-can-i-properly-resolve-relative-paths-in-usepackage
 %
 % Commenting this allow to use this as a relative package, with no warnings.
 % \ProvidesPackage{ufscthesisx}[2017/08/28 v0.0.1 Evandro]
@@ -144,19 +144,19 @@
 }
 
 % https://en.wikibooks.org/wiki/LaTeX/Creating_Packages
-% questions/61487/processoptions-and-processkeyvaloptions
-% questions/12933/new-options-and-loaded-class-options-bug
+% q/processoptions-and-processkeyvaloptions
+% q/new-options-and-loaded-class-options-bug
 % Now we'll execute any options passed in
 \ProcessOptions\relax
 \LoadClass{setup/abntex2}
 
 % https://github.com/evandrocoan/ufscthesisx-light/runs/915876094?check_suite_focus=true#step:5:658
-\RequirePackage{ifthen} % questions/13866/why-is-the-ifthen-package-obsolete
+\RequirePackage{ifthen} % q/why-is-the-ifthen-package-obsolete
 \RequirePackage{ifplatform}
 \RequirePackage{shellesc}
 \RequirePackage{xstring}
 
-% questions/380799/warning-when-adding-package-minted
+% q/warning-when-adding-package-minted
 \StrSubstitute{\jobname}{ }{_}[\mintedjobname]
 \StrSubstitute{\mintedjobname}{*}{_}[\mintedjobname]
 \StrSubstitute{\mintedjobname}{"}{}[\mintedjobname]
@@ -209,8 +209,8 @@
 \TestAppMotherfuckerExists{pygmentize}
 
 \ifAppMotherFuckerExists
-  % questions/110292/testing-for-a-documentclass-option
-  % questions/514711/package-minted-warning-unexpected-value-for-option-chapterminted-is-ignored
+  % q/testing-for-a-documentclass-option
+  % q/package-minted-warning-unexpected-value-for-option-chapterminted-is-ignored
   \@ifclasswith{setup/ufscthesisx}{chapter=TITLE}{
   \begingroup
   \def\x#1chapter=TITLE,#2\@nil{%
@@ -237,7 +237,7 @@
 
 
 % Custom list throw LaTeX Error: Command \mycustomfiction already defined?
-% questions/388489/custom-list-throw-latex-error-command-mycustomfiction-already-defined
+% q/custom-list-throw-latex-error-command-mycustomfiction-already-defined
 \RequirePackage{morewrites}
 
 % Package csquotes Warning: Load 'inputenc' before 'csquotes'
@@ -245,42 +245,42 @@
 \RequirePackage[T1]{fontenc}
 
 % Indent the first section paragraphs
-% questions/39227/no-indent-in-the-first-paragraph-in-a-section
+% q/no-indent-in-the-first-paragraph-in-a-section
 \RequirePackage{indentfirst}
 
 % Is it possible to keep my translation together with original text?
-% questions/5076/is-it-possible-to-keep-my-translation-together-with-original-text
+% q/is-it-possible-to-keep-my-translation-together-with-original-text
 \RequirePackage{comment}
 
 % Please tutor the usage of patchcmd and xpatch
-% questions/152773/please-tutor-the-usage-of-patchcmd-and-xpatch
+% q/please-tutor-the-usage-of-patchcmd-and-xpatch
 \RequirePackage{xpatch}
 
 % Why the environment ttfamily is hyphenated, but macro ttfamily is not hyphenating?
-% questions/387678/why-the-environment-ttfamily-is-hyphenated-but-macro-ttfamily-is-not-hyphenatin
+% q/why-the-environment-ttfamily-is-hyphenated-but-macro-ttfamily-is-not-hyphenatin
 \RequirePackage{letltxmacro}
 
 % Theorem packages: which to use, which conflict?
-% questions/5599/theorem-packages-which-to-use-which-conflict
+% q/theorem-packages-which-to-use-which-conflict
 \RequirePackage{amsthm}
 
 % Why is the ifthen package obsolete? (It is used by the abntex2 class)
-% questions/13866/why-is-the-ifthen-package-obsolete
+% q/why-is-the-ifthen-package-obsolete
 \RequirePackage{ifthen}
 
 % How to make section name uppercase in ToC?
-% questions/156916/how-to-make-section-name-uppercase-in-toc
+% q/how-to-make-section-name-uppercase-in-toc
 \RequirePackage{textcase}
 
-% questions/482886/how-to-add-babel-captions-to-newfloat-package-environments
+% q/how-to-add-babel-captions-to-newfloat-package-environments
 \RequirePackage{newfloat}
 \RequirePackage{caption}
 
 % How to auto adjust my last table column width, and why is there Underfull \vbox badness on this table?
-% questions/387238/how-to-auto-adjust-my-last-table-column-width-and-why-is-there-underfull-vbox/387251
+% q/how-to-auto-adjust-my-last-table-column-width-and-why-is-there-underfull-vbox/387251
 %
 % Why ltablex package breaks the changepage package?
-% questions/404339/why-ltablex-package-breaks-the-changepage-package
+% q/why-ltablex-package-breaks-the-changepage-package
 \RequirePackage{ltablex}\keepXColumns
 
 
@@ -371,37 +371,37 @@
 
 
 % Margens
-% questions/378119/how-to-set-margins-in-memoir-class
+% q/how-to-set-margins-in-memoir-class
 \setlrmarginsandblock{3cm}{2cm}{*}
 \setulmarginsandblock{3cm}{2cm}{*}
 \checkandfixthelayout
 
 % Fontes dos títulos e seções
 % Tamanho da fonte padrão do 'ABNTEX'
-% questions/460835/set-font-size-and-line-spacing
+% q/set-font-size-and-line-spacing
 % Set the default font size as 12pt with 1.5cm spacing between lines, 12/2 = 6, 12+6 = 18, i.e., one half spacing
 % \renewcommand{\normalsize}{\fontsize{12pt}{16pt}\selectfont}
 % \renewcommand{\normalsize}{\fontsize{12.0pt}{18.0pt}\selectfont}
 
 % Caption package and Memoir
 % https://groups.google.com/forum/#!topic/comp.text.tex/RzpI2ATMev0
-% questions/18931/memoir-class-with-subcaption-and-hyperref-packages
+% q/memoir-class-with-subcaption-and-hyperref-packages
 \DeclareCaptionFont{small}{\fontsize{10pt}{12pt}\selectfont}
 \renewcommand{\footnotesize}{\fontsize{10pt}{12pt}\selectfont}
 
 % Set caption font size in memoir
-% questions/58943/set-caption-font-size-in-memoir
-% questions/103566/controlling-the-spacing-between-lines-with-fontsize-selectfont
+% q/set-caption-font-size-in-memoir
+% q/controlling-the-spacing-between-lines-with-fontsize-selectfont
 \newcommand{\ufsccaptionsize}{\fontsize{10pt}{12pt}\selectfont}
 
 % https://latex.org/forum/viewtopic.php?t=22437
-% questions/346411/how-does-footnotesep-work-anyway
-% questions/133008/make-footnotesep-same-as-line-spacing-using-custom-thesis-class
-% questions/514592/how-can-i-see-the-line-spacing-between-lines
-% questions/514682/how-to-get-the-normalsize-or-small-font-baselineskip-size
+% q/how-does-footnotesep-work-anyway
+% q/make-footnotesep-same-as-line-spacing-using-custom-thesis-class
+% q/how-can-i-see-the-line-spacing-between-lines
+% q/how-to-get-the-normalsize-or-small-font-baselineskip-size
 \setlength{\footnotesep}{\f@baselineskip}
 
-% questions/327843/how-to-put-figure-caption-on-top
+% q/how-to-put-figure-caption-on-top
 \captionnamefont{\ufsccaptionsize}
 \captiontitlefont{\ufsccaptionsize}
 
@@ -411,8 +411,8 @@
 
 % Package setspace must be put before hyperref
 % http://ctan.sharelatex.com/tex-archive/macros/latex/contrib/hyperref/README.pdf
-% questions/270557/undefined-control-sequence-on-onehalfspacing
-% questions/374401/setting-text-in-onehalfspacing-footnotes-singlespacing-with-memoir
+% q/undefined-control-sequence-on-onehalfspacing
+% q/setting-text-in-onehalfspacing-footnotes-singlespacing-with-memoir
 \@ifclassloaded{memoir}{}{
   % \SingleSpacing
   \OnehalfSpacing
@@ -421,12 +421,12 @@
 
 % Set the UFSC epigrafe font size
 % Changing font size in an example environment
-% questions/123528/changing-font-size-in-an-example-environment
+% q/changing-font-size-in-an-example-environment
 \expandafter\def\expandafter\epigrafe\expandafter{\epigrafe\ufsccaptionsize}
 
 % Selects a roman (i.e., serifed) font family
 % \renewcommand{\rmdefault}{cmr}
-% questions/517223/renewcommand-familydefault-sfdefault-is-causing-%e2%86%92-to-throw-package-textcomp
+% q/renewcommand-familydefault-sfdefault-is-causing-%e2%86%92-to-throw-package-textcomp
 \renewcommand{\familydefault}{\sfdefault}
 
 % Fontes padroes de part, chapter, section, subsection e subsubsection
@@ -458,13 +458,13 @@
 }
 
 % TOC Spacing in Memoir
-% questions/60317/toc-spacing-in-memoir
+% q/toc-spacing-in-memoir
 \setlength{\cftbeforechapterskip}{12pt}
 
 
 % Fontes das entradas do sumario
-% questions/399828/how-to-make-the-table-of-contents-section-title-upper-case-without-messing-with
-% questions/156916/how-to-make-section-name-uppercase-in-toc
+% q/how-to-make-the-table-of-contents-section-title-upper-case-without-messing-with
+% q/how-to-make-section-name-uppercase-in-toc
 \let\oldcontentsline\contentsline
 \def\contentsline#1#2{%
   \expandafter\ifx\csname l@#1\endcsname\l@section
@@ -489,10 +489,10 @@
 % http://www.tex.ac.uk/FAQ-tocloftwrong.html
 %
 % memoir: indentation of unnumbered sections in table of contents
-% questions/264668/memoir-indentation-of-unnumbered-sections-in-table-of-contents
+% q/memoir-indentation-of-unnumbered-sections-in-table-of-contents
 %
 % Memoir ToC: indent the second line by number+space width in the previous line OR set standard
-% questions/394227/memoir-toc-indent-the-second-line-by-numberspace
+% q/memoir-toc-indent-the-second-line-by-numberspace
 
 % `\cftlastnumwidth` and these `\cftsetindents` are defined by the abntex2 class,
 % obeying the `ABNTEXsumario-abnt-6027-2012`. \newlength{\cftlastnumwidth}
@@ -589,7 +589,7 @@
 }
 
 % Comandos auxiliares
-% questions/514592/how-can-i-see-the-line-spacing-between-lines
+% q/how-can-i-see-the-line-spacing-between-lines
 \newcommand{\showfont}
 {%
   (\foreignlanguage{english}
@@ -649,13 +649,13 @@
 % Fix the resumo environment, which does not accept paragraphs on ufscthesisx
 %
 % Changing font size in an example environment
-% questions/123528/changing-font-size-in-an-example-environment
+% q/changing-font-size-in-an-example-environment
 %
 % How to disable automatic indentation on new paragraphs?
-% questions/14375/how-to-disable-automatic-indentation-on-new-paragraphs
+% q/how-to-disable-automatic-indentation-on-new-paragraphs
 %
 % How to disable paragraphs inside my environment with \let\par\relax?
-% questions/388369/how-to-disable-paragraphs-inside-my-environment-with-let-par-relax
+% q/how-to-disable-paragraphs-inside-my-environment-with-let-par-relax
 \xapptocmd{\resumo}{\setlength{\parindent}{0pt}\SingleSpacing\let\parOriginal\par\let\par\relax}{}{}
 \xpretocmd{\endresumo}{\endgraf}{}{}
 
@@ -670,12 +670,12 @@
 %   \begin{inparaitem}[]\englishkeywordslist\end{inparaitem}
 %   \begin{inparaenum}\englishkeywordslist\end{inparaenum}
 %
-% questions/61811/how-to-define-inparaenum-in-the-preamble
-% questions/468862/lonely-item-perhaps-a-missing-list-environment-missing-package
-% questions/188476/how-do-you-define-one-macro-with-arguments-inside-another
-% questions/191266/defining-macros-with-arguments
-% questions/65780/macro-defining-macro
-% questions/20456/removing-a-backslash-when-passing-arguments-to-newcommand
+% q/how-to-define-inparaenum-in-the-preamble
+% q/lonely-item-perhaps-a-missing-list-environment-missing-package
+% q/how-do-you-define-one-macro-with-arguments-inside-another
+% q/defining-macros-with-arguments
+% q/macro-defining-macro
+% q/removing-a-backslash-when-passing-arguments-to-newcommand
 \newcommand{\palavraschaveufsc}[2]{%
   \@ifundefined{#1}{%
     \message{^^JNotice palavraschaveufsc: #1 is undefined with '#2'^^J}
@@ -748,7 +748,7 @@
       % https://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions
       \includegraphics[width=1.84cm,keepaspectratio]{setup/UFSC_sigla_fundo_claro.png}
 
-      % questions/103566/controlling-the-spacing-between-lines-with-fontsize-selectfont
+      % q/controlling-the-spacing-between-lines-with-fontsize-selectfont
       {\OnehalfSpacing
         \MakeTextUppercase{\imprimirinstituicao}\par
         \MakeTextUppercase{\imprimircampus}\par
@@ -781,13 +781,13 @@
 % Conteúdo padrao da Folha de Rosto
 %
 % Underfull \hbox (badness 10000) message
-% questions/199635/underfull-hbox-badness-10000-message
+% q/underfull-hbox-badness-10000-message
 %
 % Underfull \hbox (badness …) in paragraph at lines x-y
-% questions/356110/underfull-hbox-badness-in-paragraph-at-lines-x-y
+% q/underfull-hbox-badness-in-paragraph-at-lines-x-y
 %
 % How to add an empty line between paragraphs?
-% questions/135134/how-to-add-an-empty-line-between-paragraphs
+% q/how-to-add-an-empty-line-between-paragraphs
 \renewcommand{\folhaderostocontent}
 {%
   \begin{center}
@@ -831,20 +831,20 @@
 }
 
 % If document class is equal to something then do not use package
-% questions/46223/if-document-class-is-equal-to-something-then-do-not-use-package
+% q/if-document-class-is-equal-to-something-then-do-not-use-package
 \@ifclassloaded{setup/abntex2}
 {
   % Package hyperref Warning: Token not allowed in a PDF string?
-  % questions/384885/package-hyperref-warning-token-not-allowed-in-a-pdf-string
+  % q/package-hyperref-warning-token-not-allowed-in-a-pdf-string
   \pdfstringdefDisableCommands{\let\uppercase\relax}
 }{}
 
 
 % Backward compatibility with `abntex2cite` package `\citeonline` command with the new `biblatex` package
-% questions/655/what-is-the-difference-between-def-and-newcommand
+% q/what-is-the-difference-between-def-and-newcommand
 \let\citeonline\textcite
 
-% questions/123104/inline-citations-with-only-author-title-and-year
+% q/inline-citations-with-only-author-title-and-year
 \DeclareCiteCommand{\citeauthortitleyear}
   {\boolfalse{citetracker}%
    \boolfalse{pagetracker}%
@@ -864,7 +864,7 @@
   {\multicitedelim}
   {\usebibmacro{postnote}}
 
-% questions/443603/how-to-appear-subsubsection-in-chapter-in-my-list-of-contents
+% q/how-to-appear-subsubsection-in-chapter-in-my-list-of-contents
 \setcounter{secnumdepth}{6}
 \setcounter{tocdepth}{6}
 
@@ -903,11 +903,11 @@
 
 
 % Please tutor the usage of patchcmd and xpatch
-% questions/152773/please-tutor-the-usage-of-patchcmd-and-xpatch
+% q/please-tutor-the-usage-of-patchcmd-and-xpatch
 \usepackage{xpatch}
 
 % Incompatible color definition when using tikz with color package
-% questions/150369/incompatible-color-definition-when-using-tikz-with-color-package
+% q/incompatible-color-definition-when-using-tikz-with-color-package
 \usepackage{xcolor}
 
 % RGB colors in absolute values from 0 to 255 by using `RGB` tag
@@ -921,9 +921,9 @@
 % Increase the space around the hyphen or dash - on the table of contents
 % APÊNDICE A –- SOMETHING . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
 %
-% questions/512916/how-to-increase-memoir-table-of-contents-spacing-between-appendix-and-its-hyphen
-% questions/49905/word-appendix-in-toc-with-memoir-class
-% questions/152773/please-tutor-the-usage-of-patchcmd-and-xpatch
+% q/how-to-increase-memoir-table-of-contents-spacing-between-appendix-and-its-hyphen
+% q/word-appendix-in-toc-with-memoir-class
+% q/please-tutor-the-usage-of-patchcmd-and-xpatch
 % https://texfaq.org/FAQ-protect
 \xpretocmd{\l@appendix}{\def\@chapapp@extrahyphenspaces{~}}
 {\message{^^J^^JChapterformat patch 1 for chapternumberline could SUCCESSFULLY!^^J
@@ -961,21 +961,21 @@
 {\message{^^J^^JChapterformat patch 4 for chapternumberline could NOT be applied!^^J^^J^^J^^J
 }}
 
-% questions/512898/the-appendix-word-disappears-from-the-table-of-contents-when-using-include
-% questions/1050/whats-the-difference-between-newcommand-and-newcommand
+% q/the-appendix-word-disappears-from-the-table-of-contents-when-using-include
+% q/whats-the-difference-between-newcommand-and-newcommand
 \@ifclassloaded{setup/abntex2}{
   \renewcommand*{\cftappendixname}{\apendicename\space\space}
 }{}
 
 % Allows putting an [H] in \begin{figure} to specify the exact location of the figure
-% questions/8625/force-figure-placement-in-text
+% q/force-figure-placement-in-text
 %
 % Package float must be put before hyperref
 % http://ctan.sharelatex.com/tex-archive/macros/latex/contrib/hyperref/README.pdf
 \usepackage{float}
 
 % bigfoot.sty:61: Package hyperref Warning: Option `hyperfootnotes' has already been used
-% questions/402652/bigfoot-sty61-package-hyperref-warning-option-hyperfootnotes-has-already-be
+% q/bigfoot-sty61-package-hyperref-warning-option-hyperfootnotes-has-already-be
 \@ifpackageloaded{hyperref}{\hypersetup{hyperfootnotes=false}}{\PassOptionsToPackage{hyperfootnotes=false}{hyperref}}
 \usepackage{hyperref}
 
@@ -983,28 +983,28 @@
 % \lettrine{O}{nce} upon a time...
 % \lettrine[findent=2pt]{\fbox{\textbf{T}}}{ }his thesis deals with...
 %
-% questions/164298/starting-a-paragraph-with-a-big-letter
+% q/starting-a-paragraph-with-a-big-letter
 \usepackage{lettrine}
 
 % Allows in-line images such as the example fish picture
 \usepackage{wrapfig}
 
 % How to automatically force latex to not justify the text when it is not wise?
-% questions/365801/how-to-automatically-force-latex-to-not-justify-the-text-when-it-is-not-wise
+% q/how-to-automatically-force-latex-to-not-justify-the-text-when-it-is-not-wise
 \usepackage{array,ragged2e}
 
 % Use its macro adjustwidth* to extend tables out of outer text border.
-% questions/366155/how-to-write-a-table-a-little-larger-than-the-paragraphs-with-centered-columns
+% q/how-to-write-a-table-a-little-larger-than-the-paragraphs-with-centered-columns
 %
 % The `memoir` class emulates this package, so not try to load it when using `memoir`, ifpackageloaded question
-% questions/70212/ifpackageloaded-question
+% q/ifpackageloaded-question
 \@ifpackageloaded{changepage}{}{\usepackage[strict]{changepage}}
 
 % How to make horizontal lists?
-% questions/146306/how-to-make-horizontal-lists
+% q/how-to-make-horizontal-lists
 %
 % Compilation error when including enumitem and paralist packages
-% questions/162799/compilation-error-when-including-enumitem-and-paralist-packages
+% q/compilation-error-when-including-enumitem-and-paralist-packages
 \usepackage{paralist}
 
 % Replace the `paralist` package implementation of enumerate lists
@@ -1017,7 +1017,7 @@
 % considered a label with the enumerate-like syntax.
 %
 % No spacing between enumerated items with \usepackage{enumerate}
-% questions/119919/no-spacing-between-enumerated-items-with-usepackageenumerate
+% q/no-spacing-between-enumerated-items-with-usepackageenumerate
 \usepackage[shortlabels]{enumitem}
 
 \usepackage{tabularx}
@@ -1029,8 +1029,8 @@
 % baht, bullet, copyright, musicalnote, onequarter, section, and yen), in the TS1 encoding.
 %
 % `LaTeX Error: Option clash for package textcomp` with the package `mathcomp`, it need to be loaded before it.
-% questions/343546/how-do-you-resolve-the-error-in-latex-option-clash-for-package-inputenc-usepa
-% questions/517223/setting-familydefault-as-sfdefault-is-causing-the-arrow-character-%e2%86%92-to-throw-p
+% q/how-do-you-resolve-the-error-in-latex-option-clash-for-package-inputenc-usepa
+% q/setting-familydefault-as-sfdefault-is-causing-the-arrow-character-%e2%86%92-to-throw-p
 \usepackage[full,warn]{textcomp}
 \usepackage{mathcomp}
 
@@ -1043,14 +1043,14 @@
 % Usa a fonte Latin Modern
 \usepackage{lmodern}
 
-% questions/227711/blank-page-after-titlingpage
+% q/blank-page-after-titlingpage
 \usepackage{atbegshi}
 
 % Selecao de codigos de fonte
-% questions/664/why-should-i-use-usepackaget1fontenc
+% q/why-should-i-use-usepackaget1fontenc
 %
 % Will allow all displayable utf8 characters to be available as input
-% questions/13067/utf8x-vs-utf8-inputenc
+% q/utf8x-vs-utf8-inputenc
 \usepackage[T1]{fontenc}
 
 % Codificacao do documento (conversão automática dos acentos)
@@ -1065,7 +1065,7 @@
 % http://ctan.sharelatex.com/tex-archive/macros/latex/contrib/hyperref/README.pdf
 %
 % Package incompatibilty between alphalph, and hyperref with amsmath subequations
-% questions/134665/package-incompatibilty-between-alphalph-and-hyperref-with-amsmath-subequations
+% q/package-incompatibilty-between-alphalph-and-hyperref-with-amsmath-subequations
 \usepackage{amsmath}
 \let\equation\gather
 \let\endequation\endgather
@@ -1092,7 +1092,7 @@
 
 % We need to load it after `siunitx` package, otherwise it will cause to the package `bigfoot` to throw
 % the error `input stack size=5000`
-% questions/403651/while-loading-fancyvrb-siunitx-and-bigfoot-i-got-input-stack-size-5000-tex-st
+% q/while-loading-fancyvrb-siunitx-and-bigfoot-i-got-input-stack-size-5000-tex-st
 \usepackage{fancyvrb}
 
 % gives you the possibility to rotate any object of an arbitrary angle.
@@ -1109,16 +1109,16 @@
 \usepackage{longtable}
 \usepackage{tocloft}
 
-% questions/2441/how-to-add-a-forced-line-break-inside-a-table-cell
+% q/how-to-add-a-forced-line-break-inside-a-table-cell
 \usepackage{makecell}
 \usepackage{pbox}
 
 % LaTeX not hyphenating properly, text running off page
-% questions/28136/latex-not-hyphenating-properly-text-running-off-page
+% q/latex-not-hyphenating-properly-text-running-off-page
 \usepackage{hyphenat}
 
 % How to use \scalebox around my environment?
-% questions/387515/how-to-use-scalebox-around-my-environment
+% q/how-to-use-scalebox-around-my-environment
 \usepackage{verbatimbox}
 
 % LaTeX/Indexing
@@ -1128,15 +1128,15 @@
 \makeindex
 
 % Is it possible to keep my translation together with original text?
-% questions/5076/is-it-possible-to-keep-my-translation-together-with-original-text
+% q/is-it-possible-to-keep-my-translation-together-with-original-text
 \usepackage{comment}
 
 % Scoping \raggedbottom to a single page
-% questions/226716/scoping-raggedbottom-to-a-single-page
+% q/scoping-raggedbottom-to-a-single-page
 \usepackage{afterpage}
 
 % Logical String Length
-% questions/87638/logical-string-length
+% q/logical-string-length
 \usepackage{xstring}
 \usepackage{xifthen}
 \usepackage{ifplatform}
@@ -1147,14 +1147,14 @@
 \usepackage{calc}
 
 % cannot use \caption under minipage
-% questions/57433/cannot-use-caption-under-minipage
+% q/cannot-use-caption-under-minipage
 \usepackage{capt-of}
 
 % Custom list throw LaTeX Error: Command \mycustomfiction already defined?
-% questions/388489/custom-list-throw-latex-error-command-mycustomfiction-already-defined
+% q/custom-list-throw-latex-error-command-mycustomfiction-already-defined
 \usepackage{morewrites}
 
-% questions/505351/how-to-nameref-multiple-labels-simultaneously
+% q/how-to-nameref-multiple-labels-simultaneously
 % http://mirror.las.iastate.edu/tex-archive/macros/latex/contrib/l3kernel/expl3.pdf
 \ExplSyntaxOn
 
@@ -1250,16 +1250,16 @@
 
 \ExplSyntaxOff
 
-% questions/62611/how-to-make-ref-references-include-the-word-figure
-% questions/121865/nameref-how-to-display-section-name-and-its-number
-% questions/95663/several-nameref-and-page-margins
-% questions/515864/how-can-i-make-hyperref-stop-thinking-there-are-undefined-references
-% questions/519577/cleveref-capitalise-option-not-working-with-babel-translations
+% q/how-to-make-ref-references-include-the-word-figure
+% q/nameref-how-to-display-section-name-and-its-number
+% q/several-nameref-and-page-margins
+% q/how-can-i-make-hyperref-stop-thinking-there-are-undefined-references
+% q/cleveref-capitalise-option-not-working-with-babel-translations
 \usepackage[nameinlink,capitalise,noabbrev]{cleveref}
 \newcommand*{\typeref}[1]{\Cref{#1}}
 \newcommand*{\fullref}[1]{\Cref{#1}: \nameRefs{#1}}
 
-% questions/329631/creating-new-captions-and-caption-counters
+% q/creating-new-captions-and-caption-counters
 \def\listofquadrosname{List of Frames}
 \def\quadrosname{Frame}
 
@@ -1270,15 +1270,15 @@
 
 % Create cleveref names for quadro environment captions
 % https://github.com/abntex/abntex2/issues/176
-% questions/502367/how-to-add-babel-translations-to-cleveref-based-cross-references-to-my-custom-fl
-% questions/430498/here-is-another-example-where-cleveref-does-not-capitalize-when-it-should
+% q/how-to-add-babel-translations-to-cleveref-based-cross-references-to-my-custom-fl
+% q/here-is-another-example-where-cleveref-does-not-capitalize-when-it-should
 \crefname{quadro}{frame}{frames}
 \Crefname{quadro}{Frame}{Frames}
 \@ifpackageloaded{babel}{\@ifpackagewith{babel}{brazil}{\addto\captionsbrazil{\crefname{quadro}{quadro}{quadros}}}{}}{}
 \@ifpackageloaded{babel}{\@ifpackagewith{babel}{brazil}{\addto\captionsbrazil{\Crefname{quadro}{Quadro}{Quadros}}}{}}{}
 
 % fix fig. being used instead of figure
-% questions/519577/cleveref-capitalise-option-not-working-with-babel-translations
+% q/cleveref-capitalise-option-not-working-with-babel-translations
 \@ifpackageloaded{babel}{\@ifpackagewith{babel}{brazil}{\addto\captionsbrazil{\crefname{figure}{Figura}{Figuras}}}{}}{}
 \@ifpackageloaded{babel}{\@ifpackagewith{babel}{brazil}{\addto\captionsbrazil{\Crefname{figure}{Figura}{Figuras}}}{}}{}
 
@@ -1287,7 +1287,7 @@
 
 % Caption package and Memoir
 % https://groups.google.com/forum/#!topic/comp.text.tex/RzpI2ATMev0
-% questions/18931/memoir-class-with-subcaption-and-hyperref-packages
+% q/memoir-class-with-subcaption-and-hyperref-packages
 %
 % \captionsetup[table]{
 %   %  name=Tabela,
@@ -1304,7 +1304,7 @@
 
 % Caption package and Memoir
 % https://groups.google.com/forum/#!topic/comp.text.tex/RzpI2ATMev0
-% questions/18931/memoir-class-with-subcaption-and-hyperref-packages
+% q/memoir-class-with-subcaption-and-hyperref-packages
 %
 % \captionsetup[figure]{
 %   %  name=Tabela,
@@ -1319,19 +1319,19 @@
 %   font={normalsize}
 % }
 
-% questions/479086/styling-and-spacing-around-float-caption-for-listing
-% questions/97673/merge-items-in-list-of-floats
-% questions/23313/how-can-i-reduce-padding-after-figure
-% questions/515157/package-caption-warning-the-caption-type-was-already-set-to-quadro-on-input
+% q/styling-and-spacing-around-float-caption-for-listing
+% q/merge-items-in-list-of-floats
+% q/how-can-i-reduce-padding-after-figure
+% q/package-caption-warning-the-caption-type-was-already-set-to-quadro-on-input
 \AtBeginEnvironment{quadro}{
   \captionsetup{skip=5pt,belowskip=0pt}
 }
 
-% questions/26220/control-spacing-around-table-caption
+% q/control-spacing-around-table-caption
 \captionsetup[figure]{belowskip=5pt,aboveskip=5pt}
 
 \@ifclassloaded{memoir}{%
-  % questions/176418/remove-list-of-newfloat-from-toc
+  % q/remove-list-of-newfloat-from-toc
   \newcommand{\AdjustForMemoir}[1]{%
   \csletcs{kept@listof#1}{listof#1}%
   \csdef{listof#1}{%
@@ -1345,63 +1345,63 @@
   \AdjustForMemoir{quadro}
   \newlistentry{quadro}{loq}{0}
 
-  % questions/514996/how-to-have-a-dynamic-cft-numwidth-i-e-accordingly-to-the-number-size
+  % q/how-to-have-a-dynamic-cft-numwidth-i-e-accordingly-to-the-number-size
   \newlength\cftquadrooldnumwidth
   \setlength\cftquadrooldnumwidth{\cftquadronumwidth}
 
   % Calculate the size of the header
-  % questions/7453/what-is-the-use-of-percent-signs-at-the-end-of-lines
+  % q/what-is-the-use-of-percent-signs-at-the-end-of-lines
   \newcommand{\calculatelquadrosheader}{%
     \renewcommand\cftquadropresnum{\quadrosname~}%
 
-    % questions/52861/what-is-the-plain-tex-equivalent-of-settowidth
+    % q/what-is-the-plain-tex-equivalent-of-settowidth
     \newlength\cftquadroinitialnumwidth
     \settowidth\cftquadroinitialnumwidth{\cftquadropresnum\cftquadroaftersnum ab}%
     \setlength\cftquadronumwidth{\dimexpr\cftquadrooldnumwidth+\cftquadroinitialnumwidth}%
     \renewcommand\cftquadroaftersnum{\hfill\textendash\hfill}%
   }
 
-  % questions/14135/how-to-automatically-add-text-immediately-after-begindocument
+  % q/how-to-automatically-add-text-immediately-after-begindocument
   \AtBeginDocument{\calculatelquadrosheader}
 
-  % questions/514996/how-to-have-a-dynamic-cft-numwidth-i-e-accordingly-to-the-number-size
+  % q/how-to-have-a-dynamic-cft-numwidth-i-e-accordingly-to-the-number-size
   \newlength\cftfigureoldnumwidth
   \setlength\cftfigureoldnumwidth{\cftfigurenumwidth}
 
   % Calculate the size of the header
-  % questions/7453/what-is-the-use-of-percent-signs-at-the-end-of-lines
-  % questions/12865/list-of-figures-how-to-add-caption-label
+  % q/what-is-the-use-of-percent-signs-at-the-end-of-lines
+  % q/list-of-figures-how-to-add-caption-label
   \newcommand{\calculatelfigureheader}{%
-    % questions/52861/what-is-the-plain-tex-equivalent-of-settowidth
+    % q/what-is-the-plain-tex-equivalent-of-settowidth
     \newlength\cftfigureinitialnumwidth
     \settowidth\cftfigureinitialnumwidth{\cftfigurepresnum\cftfigureaftersnum a}%
     \setlength\cftfigurenumwidth{\dimexpr\cftfigureoldnumwidth+\cftfigureinitialnumwidth}%
     \renewcommand\cftfigureaftersnum{\hfill\textendash\hfill}%
   }
 
-  % questions/14135/how-to-automatically-add-text-immediately-after-begindocument
+  % q/how-to-automatically-add-text-immediately-after-begindocument
   \AtBeginDocument{\calculatelfigureheader}
 
-  % questions/514996/how-to-have-a-dynamic-cft-numwidth-i-e-accordingly-to-the-number-size
+  % q/how-to-have-a-dynamic-cft-numwidth-i-e-accordingly-to-the-number-size
   \newlength\cfttableoldnumwidth
   \setlength\cfttableoldnumwidth{\cfttablenumwidth}
 
   % Calculate the size of the header
-  % questions/7453/what-is-the-use-of-percent-signs-at-the-end-of-lines
+  % q/what-is-the-use-of-percent-signs-at-the-end-of-lines
   \newcommand{\calculateltableheader}{%
-    % questions/52861/what-is-the-plain-tex-equivalent-of-settowidth
+    % q/what-is-the-plain-tex-equivalent-of-settowidth
     \newlength\cfttableinitialnumwidth
     \settowidth\cfttableinitialnumwidth{\cfttablepresnum\cfttableaftersnum a}%
     \setlength\cfttablenumwidth{\dimexpr\cfttableoldnumwidth+\cfttableinitialnumwidth}%
     \renewcommand\cfttableaftersnum{\hfill\textendash\hfill}%
   }
 
-  % questions/14135/how-to-automatically-add-text-immediately-after-begindocument
+  % q/how-to-automatically-add-text-immediately-after-begindocument
   \AtBeginDocument{\calculateltableheader}
 
   % http://tex.stackexchange.com/questions/228936/setting-entries-of-list-of-listings-in-latex-package-listings
-  % questions/223079/you-cant-use-a-prefix-with-charfb-error-when-importing-csv-into-latex
-  % questions/485830/why-latex-does-not-tell-me-which-command-is-undefined
+  % q/you-cant-use-a-prefix-with-charfb-error-when-importing-csv-into-latex
+  % q/why-latex-does-not-tell-me-which-command-is-undefined
   \@ifpackageloaded{babel}{\@ifpackagewith{babel}{brazil}{\addto\captionsbrazil{\renewcommand{\lstlistingname}{Código}}}{}}{}
   \@ifpackageloaded{babel}{\@ifpackagewith{babel}{brazil}{\addto\captionsbrazil{\renewcommand{\lstlistlistingname}{Lista de Códigos}}}{}}{}
 
@@ -1419,30 +1419,30 @@
     \newlistentry{lstlisting}{lol}{0}
   \endgroup
 
-  % questions/388411/why-the-empty-space-size-is-increasing-each-call
+  % q/why-the-empty-space-size-is-increasing-each-call
   \newlength\cftlstlistingoldnumwidth
   \setlength\cftlstlistingoldnumwidth{\cftlstlistingnumwidth}
 
   % Calculate the size of the header
-  % questions/7453/what-is-the-use-of-percent-signs-at-the-end-of-lines
+  % q/what-is-the-use-of-percent-signs-at-the-end-of-lines
   \newcommand{\calculatelstlistingsheader}{%
     \renewcommand\cftlstlistingpresnum{\lstlistingname~}%
 
-    % questions/52861/what-is-the-plain-tex-equivalent-of-settowidth
+    % q/what-is-the-plain-tex-equivalent-of-settowidth
     \newlength\cftlstlistinginitialnumwidth
     \settowidth\cftlstlistinginitialnumwidth{\cftlstlistingpresnum\cftlstlistingaftersnum ab}%
     \setlength\cftlstlistingnumwidth{\dimexpr\cftlstlistingoldnumwidth+\cftlstlistinginitialnumwidth+2pt}%
     \renewcommand\cftlstlistingaftersnum{\hfill\textendash\hfill}%
   }
 
-  % questions/14135/how-to-automatically-add-text-immediately-after-begindocument
+  % q/how-to-automatically-add-text-immediately-after-begindocument
   \AtBeginDocument{\calculatelstlistingsheader}
 }{}
 
-% questions/234398/list-of-figures-and-tables-when-there-are-no-figures-or-tables
-% questions/515759/why-pdfbookmark-keeps-adding-to-the-pdf-bookmarks-while-addcontentslinetoc-d
-% questions/515815/how-to-stop-newsavebox-giving-me-bad-boxes-warnings-or-how-to-use-better-names
-% questions/515811/how-memoir-prints-the-titles-of-the-content-pages
+% q/list-of-figures-and-tables-when-there-are-no-figures-or-tables
+% q/why-pdfbookmark-keeps-adding-to-the-pdf-bookmarks-while-addcontentslinetoc-d
+% q/how-to-stop-newsavebox-giving-me-bad-boxes-warnings-or-how-to-use-better-names
+% q/how-memoir-prints-the-titles-of-the-content-pages
 \newcommand{\whenlistisnotempty}[3]{
   \setbox0\vbox{#2}%
   \typeout{The height of the list '#1' is '\the\ht0'}%
@@ -1454,26 +1454,26 @@
 
 
 \ifAppMotherFuckerExists
-  % questions/57353/how-to-get-caption-above-listing-with-minted
-  % questions/339931/latex-minted-package-using-custom-output-directory-build
-  % questions/223079/you-cant-use-a-prefix-with-charfb-error-when-importing-csv-into-latex
+  % q/how-to-get-caption-above-listing-with-minted
+  % q/latex-minted-package-using-custom-output-directory-build
+  % q/you-cant-use-a-prefix-with-charfb-error-when-importing-csv-into-latex
   \usepackage[newfloat,chapter,outputdir=latexcache]{minted}
 
-  % questions/35546/minted-setstretch-and-font-size
-  % questions/484788/how-to-change-overall-font-size-of-minted
+  % q/minted-setstretch-and-font-size
+  % q/how-to-change-overall-font-size-of-minted
   \setminted{fontsize=\small,fontfamily=zi4,linenos=true,numberblanklines=true,breaklines=true,breakanywhere=true}
 
   % https://stackoverflow.com/questions/3245007/how-to-change-the-font-size-of-line-numbers-using-the-minted-latex-package
   \renewcommand\theFancyVerbLine{\normalsize\color{gray}\arabic{FancyVerbLine}}
 
-  % questions/320185/adjust-vertical-spacing-between-caption-and-listing-in-koma-scrartcl
-  % questions/514835/how-to-replace-a-command-argument-as-2-with-something-else
-  % questions/514715/how-to-fix-minted-and-listings-hyphen-alignment-on-my-list-of-codes
-  % questions/269491/mixing-minted-with-lstlisting
-  % questions/26220/control-spacing-around-table-caption
-  % questions/515220/how-to-set-minted-listing-table-of-contents-numwidth/
-  % questions/27645/customizing-the-list-of-listings-generated-by-lstlistoflistings
-  % questions/228936/setting-entries-of-list-of-listings-in-latex-package-listings
+  % q/adjust-vertical-spacing-between-caption-and-listing-in-koma-scrartcl
+  % q/how-to-replace-a-command-argument-as-2-with-something-else
+  % q/how-to-fix-minted-and-listings-hyphen-alignment-on-my-list-of-codes
+  % q/mixing-minted-with-lstlisting
+  % q/control-spacing-around-table-caption
+  % q/how-to-set-minted-listing-table-of-contents-numwidth/
+  % q/customizing-the-list-of-listings-generated-by-lstlistoflistings
+  % q/setting-entries-of-list-of-listings-in-latex-package-listings
   \newenvironment{code}{
   \captionsetup{type=lstlisting,skip=0pt,position=top}
   \setlength{\abovecaptionskip}{0pt}
@@ -1481,37 +1481,37 @@
   \setlength{\parskip}{0pt}
   }{}
 
-  % questions/14166/red-box-drawn-around-question-mark-operator-in-minted-erlang-code
+  % q/red-box-drawn-around-question-mark-operator-in-minted-erlang-code
   \AtBeginEnvironment{code}{\renewcommand{\fcolorbox}[4][]{#4}}
 \else\fi
 
 
 % Memoir class conflict with datetime
-% questions/162353/memoir-class-conflict-with-datetime
-% questions/49071/difference-between-let-foo-relax-and-def-foo-for-disabling
+% q/memoir-class-conflict-with-datetime
+% q/difference-between-let-foo-relax-and-def-foo-for-disabling
 \let\ordinal\relax
 \usepackage{datetime}
 
 % % 'export' allows adjustbox keys in \includegraphics
-% questions/86350/includegraphics-maximum-width
+% q/includegraphics-maximum-width
 \usepackage[export]{adjustbox}
 
 % ufscthesis start, https://github.com/UFSC/ufscthesisx/issues/19
 \RequirePackage{helvet}
 
-% questions/28019/continuous-numbering-of-figures-and-tables
-% questions/28333/continuous-v-per-chapter-section-numbering-of-figures-tables-and-other-docume
+% q/continuous-numbering-of-figures-and-tables
+% q/continuous-v-per-chapter-section-numbering-of-figures-tables-and-other-docume
 \usepackage{chngcntr}
 \counterwithout{figure}{chapter}
 \counterwithout{table}{chapter}
 \counterwithout{quadro}{chapter}
 \counterwithout{equation}{chapter}
 
-% questions/45338/chngcntr-counterwithout-not-working
-% questions/316230/number-listings-the-same-way-as-figures-and-tables
+% q/chngcntr-counterwithout-not-working
+% q/number-listings-the-same-way-as-figures-and-tables
 \AtBeginDocument{\counterwithout{lstlisting}{chapter}}
 
-% questions/557099/class-memoir-error-listing-is-not-a-counter
+% q/class-memoir-error-listing-is-not-a-counter
 \ifAppMotherFuckerExists
   \AtBeginDocument{\counterwithout{listing}{chapter}}
 \else\fi
@@ -1539,7 +1539,7 @@
 % ---
 \setlength{\@fptop}{5pt} % Set distance from top of page to first float
 
-% questions/163479/glossaries-conflict-with-memoir
+% q/glossaries-conflict-with-memoir
 \let\printglossary\relax
 \let\theglossary\relax
 \let\endtheglossary\relax
@@ -1582,18 +1582,18 @@
 % Só dá entrada na lista. Ainda não funciona com o limarka
 \newcommand{\siglalista}[2]{\newacronym{#1}{#1}{#2}}
 
-% questions/426010/printnoidxglossaries-vs-printglossaries
+% q/printnoidxglossaries-vs-printglossaries
 \newglossary{simbolos}{simbolos}{sbl}{simbolos}
 
 % Só dá entrada na lista. Ainda não funciona com o limarka
-% questions/426010/printnoidxglossaries-vs-printglossaries
+% q/printnoidxglossaries-vs-printglossaries
 \newcommand{\simbololista}[3]{\newglossaryentry{#1}{%
   type=simbolos,
   name=#2,
   description=#3}}
 
 % imprime lista de siglas ordenado alfabeticamente
-% questions/426010/printnoidxglossaries-vs-printglossaries
+% q/printnoidxglossaries-vs-printglossaries
 \newcommand{\imprimirlistadesiglas}{%
   \pdfbookmark[0]{\listadesiglasname}{acn}
   \printnoidxglossary[
@@ -1606,7 +1606,7 @@
 }
 
 % imprime lista de símbolos na ordem em que aparece no texto
-% questions/426010/printnoidxglossaries-vs-printglossaries
+% q/printnoidxglossaries-vs-printglossaries
 \newcommand{\imprimirlistadesimbolos}{%
   \pdfbookmark[0]{\listadesimbolosname}{sbl}
   \printnoidxglossary[
@@ -1619,7 +1619,7 @@
 }
 
 % imprime glossário
-% questions/426010/printnoidxglossaries-vs-printglossaries
+% q/printnoidxglossaries-vs-printglossaries
 \newcommand{\imprimirglossario}{
   \cleardoublepage
   \pdfbookmark[0]{\glossaryname}{glo}
@@ -1634,72 +1634,72 @@
 
 % Package csquotes Warning: Load 'inputenc' before 'csquotes'
 % Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing
-% questions/229638/package-biblatex-warning-babel-polyglossia-detected-but-csquotes-missing
+% q/package-biblatex-warning-babel-polyglossia-detected-but-csquotes-missing
 \usepackage{csquotes}
 
 % Indent the first section paragraphs
-% questions/39227/no-indent-in-the-first-paragraph-in-a-section
+% q/no-indent-in-the-first-paragraph-in-a-section
 \usepackage{indentfirst}
 
 % Why the environment ttfamily is hyphenated, but macro ttfamily is not hyphenating?
-% questions/387678/why-the-environment-ttfamily-is-hyphenated-but-macro-ttfamily-is-not-hyphenatin
+% q/why-the-environment-ttfamily-is-hyphenated-but-macro-ttfamily-is-not-hyphenatin
 \usepackage{letltxmacro}
 
 % Theorem packages: which to use, which conflict?
-% questions/5599/theorem-packages-which-to-use-which-conflict
+% q/theorem-packages-which-to-use-which-conflict
 \usepackage{amsthm}
 
 % Why is the ifthen package obsolete? (It is used by the abntex2 class)
-% questions/13866/why-is-the-ifthen-package-obsolete
+% q/why-is-the-ifthen-package-obsolete
 \usepackage{ifthen}
 
 % How to make section name uppercase in ToC?
-% questions/156916/how-to-make-section-name-uppercase-in-toc
+% q/how-to-make-section-name-uppercase-in-toc
 \usepackage{textcase}
 
 % The class memoir already provides these functionalities: Caption package and Memoir
 % https://groups.google.com/forum/#!topic/comp.text.tex/RzpI2ATMev0
-% questions/18931/memoir-class-with-subcaption-and-hyperref-packages
+% q/memoir-class-with-subcaption-and-hyperref-packages
 % \usepackage{subfig}
 % \usepackage{etoolbox}
 %
 % How to create my own caption type with \DeclareCaptionType on memoir class?
-% questions/391901/how-to-create-my-own-caption-type-with-declarecaptiontype-on-memoir-class
+% q/how-to-create-my-own-caption-type-with-declarecaptiontype-on-memoir-class
 \usepackage{caption}
 
 % The package `layouts` causes the: Warning: layout scale set to 0.5 on input line
-% questions/299372/warning-layout-scale-set-to-0-5-on-input-line
+% q/warning-layout-scale-set-to-0-5-on-input-line
 % \usepackage{layouts}
 
 % Always use it as should improve full justification
-% questions/10377/texttt-overfull-hbox-problem
-% questions/66052/should-i-load-microtype-with-pdflatex
+% q/texttt-overfull-hbox-problem
+% q/should-i-load-microtype-with-pdflatex
 \usepackage[factor=1100,stretch=10,shrink=10]{microtype}
 
-% questions/482886/how-to-add-babel-captions-to-newfloat-package-environments
+% q/how-to-add-babel-captions-to-newfloat-package-environments
 \usepackage{newfloat}
 
 % How to auto adjust my last table column width, and why is there Underfull \vbox badness on this table?
-% questions/387238/how-to-auto-adjust-my-last-table-column-width-and-why-is-there-underfull-vbox/387251
+% q/how-to-auto-adjust-my-last-table-column-width-and-why-is-there-underfull-vbox/387251
 %
 % Why ltablex package breaks the changepage package?
-% questions/404339/why-ltablex-package-breaks-the-changepage-package
+% q/why-ltablex-package-breaks-the-changepage-package
 \usepackage{ltablex}\keepXColumns
 
 % Para incluir links com characteres especiais como # em URLs em `\footnote`
-% questions/12855/getting-those-signs-in-the-footnote
-% questions/299348/animate-gives-errors-when-i-also-use-bigfoot-or-cprotect
+% q/getting-those-signs-in-the-footnote
+% q/animate-gives-errors-when-i-also-use-bigfoot-or-cprotect
 %
 % Adding this will cause the warning``bigfoot.sty:61: Package hyperref Warning:
 % Option `hyperfootnotes' has 1`hyperfootnotes' has already been used
-% questions/402652/bigfoot-sty61-package-hyperref-warning-option-hyperfootnotes-has-already-be
+% q/bigfoot-sty61-package-hyperref-warning-option-hyperfootnotes-has-already-be
 \let\truehypersetup\hypersetup
 \renewcommand\hypersetup[1]{}
 \usepackage{bigfoot}
 \let\hypersetup\truehypersetup
 
 % While loading fancyvrb, siunitx and bigfoot, I got input stack size=5000, TeX STOPPED: fatal errors occurred
-% questions/403651/while-loading-fancyvrb-siunitx-and-bigfoot-i-got-input-stack-size-5000-tex-st
+% q/while-loading-fancyvrb-siunitx-and-bigfoot-i-got-input-stack-size-5000-tex-st
 \xpatchcmd{\FN@allmarks}{266}{256}{}{}
 
 
@@ -1750,7 +1750,7 @@
 
 
 
-% questions/511589/how-to-fix-useshorthands-defineshorthand-usage-on-bookmark-entries
+% q/how-to-fix-useshorthands-defineshorthand-usage-on-bookmark-entries
 \def\HyPsd@LetUnexpandableSpace#1{%
   \if\noexpand~\noexpand#1%
   \else
@@ -1760,7 +1760,7 @@
 
 
 % How could the `\everypar` justification statement be used?
-% questions/365818/how-could-the-everypar-justification-statement-be-used
+% q/how-could-the-everypar-justification-statement-be-used
 \newbox\linebox \newbox\snapbox
 \def\eatlines
 {%
@@ -1779,7 +1779,7 @@
 
 
 % How could the `\everypar` justification statement be used?
-% questions/365818/how-could-the-everypar-justification-statement-be-used
+% q/how-could-the-everypar-justification-statement-be-used
 \everypar=
 {%
   \setbox0=\lastbox \par%
@@ -1794,7 +1794,7 @@
 %   Text ...
 % \end{foo}
 %
-% questions/62333/push-long-words-in-a-new-line
+% q/push-long-words-in-a-new-line
 \newenvironment{foo}
 {%
   \par%
@@ -1808,7 +1808,7 @@
 % Some text \brkurl{http://www.example.com/this/directory/here}
 %
 % How to break long URLs using common hyphenation but adding a line feed indicator?
-% questions/69824/how-to-break-long-urls-using-common-hyphenation-but
+% q/how-to-break-long-urls-using-common-hyphenation-but
 \def\addurlspace#1
 {%
   \ifx\relax#1%
@@ -1859,7 +1859,7 @@
 
 
 % Change background color for text block
-% questions/238294/change-background-color-for-text-block
+% q/change-background-color-for-text-block
 \usepackage{framed}
 \usepackage[most]{tcolorbox}
 \definecolor{shadecolor}{RGB}{219, 229, 241}
@@ -1895,7 +1895,7 @@
 % Riscos  & 1 & 2 & 3 & Estratégia de resposta & Ações de prevenção \\ \hline
 %
 %
-% questions/4811/make-first-row-of-table-all-bold
+% q/make-first-row-of-table-all-bold
 \usepackage{array}
 \newcolumntype{B}{>{\global\let\currentrowstyle\relax}}
 \newcolumntype{^}{>{\currentrowstyle}}
@@ -1905,15 +1905,15 @@
 }
 
 
-% questions/485834/why-abntex2-class-is-inserting-a-new-line-after-the-chapter-title
-% questions/367859/how-to-automatically-put-a-go-to-summary-go-back-on-each-section
-% questions/388045/how-can-the-go-to-summary-be-fixed-so-the-sectionsomesome-more
-% questions/399635/what-is-the-equivalent-to-sectionformat-on-memoir-class-for-chapterformat
-% questions/485857/why-xapptocmd-is-reducing-the-vertical-space-between-partname-and-parttile
+% q/why-abntex2-class-is-inserting-a-new-line-after-the-chapter-title
+% q/how-to-automatically-put-a-go-to-summary-go-back-on-each-section
+% q/how-can-the-go-to-summary-be-fixed-so-the-sectionsomesome-more
+% q/what-is-the-equivalent-to-sectionformat-on-memoir-class-for-chapterformat
+% q/why-xapptocmd-is-reducing-the-vertical-space-between-partname-and-parttile
 \definecolor{ultramarine}{RGB}{0,32,96}
 \RequirePackage{xpatch}
 
-% questions/113147/patching-arguments-inside-a-macro
+% q/patching-arguments-inside-a-macro
 \tracingpatches
 
 \RequirePackage{amssymb}
@@ -1994,13 +1994,13 @@
 %
 
 % Allow to push long words on new lines when they do not fit entirely on the current line.
-% questions/62333/push-long-words-in-a-new-line
+% q/push-long-words-in-a-new-line
 \newcommand\lword[1]{\leavevmode\nobreak\hskip0pt plus\linewidth\penalty50\hskip0pt plus-\linewidth\nobreak{#1}}
 \newcommand\lurl[1]{\leavevmode\nobreak\hskip0pt plus\linewidth\penalty50\hskip0pt plus-\linewidth\nobreak{\url{#1}}}
 
 
 % For the new command \latex
-% questions/31091/space-after-latex-commands
+% q/space-after-latex-commands
 \usepackage{xspace}
 
 % Write the word LaTeX nicely.
@@ -2012,23 +2012,23 @@
 
 
 % How to create my own list of things
-% questions/61086/how-to-create-my-own-list-of-things
+% q/how-to-create-my-own-list-of-things
 \newcommand{\mytextpreliminarylistname}{Short Table of Contents}
 \newlistof{textpreliminarycontents}{tpc}{\mytextpreliminarylistname}
 
 % Resetting counter
-% questions/66604/resetting-counter
+% q/resetting-counter
 %
 % Custom list throw LaTeX Error: Command \mycustomfiction already defined?
-% questions/388489/custom-list-throw-latex-error-command-mycustomfiction-already-defined
+% q/custom-list-throw-latex-error-command-mycustomfiction-already-defined
 \newlistentry{textpreliminarycounter}{tpc}{0}
 
 % Continuing Page Numbering (Roman to Arabic)
-% questions/56131/continuing-page-numbering-roman-to-arabic
+% q/continuing-page-numbering-roman-to-arabic
 \renewcommand{\thetextpreliminarycounter}{\arabic{textpreliminarycounter}}
 
 % Reset section numbering between unnumbered chapters
-% questions/71162/reset-section-numbering-between-unnumbered-chapters
+% q/reset-section-numbering-between-unnumbered-chapters
 \newcommand{\addtotextpreliminarycontent}[1]
 {%
   \refstepcounter{textpreliminarycounter}%
@@ -2057,16 +2057,16 @@
 
 
 % \MakeUppercase in \section and \chapter with hyperref cause trouble
-% questions/199374/makeuppercase-in-section-and-chapter-with-hyperref-cause-trouble
+% q/makeuppercase-in-section-and-chapter-with-hyperref-cause-trouble
 \newcommand{\HyperrefUppercase}[1]{\texorpdfstring{\MakeTextUppercase{#1}}{#1}}
 
 
 
 % Example about hyphenation with ttfamily font
-% questions/386665/example-about-hyphenation-with-ttfamily-font
+% q/example-about-hyphenation-with-ttfamily-font
 %
 % Why the environment ttfamily is hyphenated, but macro ttfamily is not hyphenating?
-% questions/387678/why-the-environment-ttfamily-is-hyphenated-but-macro-ttfamily-is-not-hyphenatin
+% q/why-the-environment-ttfamily-is-hyphenated-but-macro-ttfamily-is-not-hyphenatin
 \LetLtxMacro\origttfamily\ttfamily
 \DeclareRobustCommand*{\ttfamily}
 {%
@@ -2088,14 +2088,14 @@
 
 
 % Logical String Length
-% questions/87638/logical-string-length
+% q/logical-string-length
 \newcommand{\includeonlyfilelist}[0]{}
 \newcommand{\addtoincludeonly}[1]
 {%
   \StrLen{\includeonlyfilelist}[\includeonlyfilelistlen]
 
   % How to concatenate strings into a single command?
-  % questions/74707/how-to-concatenate-strings-into-a
+  % q/how-to-concatenate-strings-into-a
   \ifnum\includeonlyfilelistlen>0
     \g@addto@macro\includeonlyfilelist{,#1}
   \else
@@ -2151,19 +2151,19 @@
 % Bad Boxes settings
 
 % Underfull \hbox in bibliography
-% questions/10924/underfull-hbox-in-bibliography
+% q/underfull-hbox-in-bibliography
 \apptocmd{\thebibliography}{\raggedright}{}{}
 
 % Underfull \hbox (badness 10000) has occurred while \output is active
-% questions/367369/underfull-hbox-badness-10000-has-occurred-while-output-is-active
+% q/underfull-hbox-badness-10000-has-occurred-while-output-is-active
 %
 % how to suppress “Underfull \vbox (badness 10000) … while \output is active”?
-% questions/62296/how-to-suppress-underfull-vbox-badness-10000-while-output-is-active
+% q/how-to-suppress-underfull-vbox-badness-10000-while-output-is-active
 \def\@textbottom{\vskip \z@ \@plus 7pt}
 \let\@texttop\relax
 
 % Why Latex is hyphenating some words automatically, but others dont? hyphenmins{22} %left=2, right=2
-% questions/387076/why-latex-is-hyphenating-some-words-automatically-but-others-dont
+% q/why-latex-is-hyphenating-some-words-automatically-but-others-dont
 \@ifpackagewith{babel}{brazil}{  \def\brazilhyphenmins{11} }{}
 \@ifpackagewith{babel}{english}{ \def\englishhyphenmins{11} }{}
 \@ifpackagewith{babel}{french}{  \def\frenchhyphenmins{11} }{}
@@ -2171,24 +2171,24 @@
 \@ifpackageloaded{url}
 {
   % Bad formatting using URLs in bibtex
-  % questions/22888/bad-formatting-using-urls-in-bibtex
+  % q/bad-formatting-using-urls-in-bibtex
   \usepackage{etoolbox}
 
   % How to avoid overfull error with url package?
   % See also the `\usepackage{url}` declarationon the file `basic.tex`.
   % Set this to 2mu or 3mu if URL start troubling again.
-  % questions/261776/how-to-avoid-overfull-error-with-url-package
+  % q/how-to-avoid-overfull-error-with-url-package
   \Urlmuskip=0mu plus 1mu
 
   % How to fix URL overfull & underfull on emumeration?
-  % questions/366803/how-to-fix-url-overfull-underfull-on-emumeration
+  % q/how-to-fix-url-overfull-underfull-on-emumeration
   %
   % Forcing linebreaks in \url
-  % questions/3033/forcing-linebreaks-in-url/10401
+  % q/forcing-linebreaks-in-url/10401
   \g@addto@macro{\UrlBreaks}{\UrlOrds}
 
   % How to fix this url bad box for stackoverflow link?
-  % questions/384427/how-to-fix-this-url-bad-box-for-stackoverflow-link
+  % q/how-to-fix-this-url-bad-box-for-stackoverflow-link
   \g@addto@macro{\UrlBreaks}
   {%
     \do\a\do\b\do\c\do\d\do\e\do\f\do\g%
@@ -2245,21 +2245,21 @@
 \usepackage{listings}
 
 % How to insert code with accents with listings?
-% questions/30512/how-to-insert-code-with-accents-with-listings
+% q/how-to-insert-code-with-accents-with-listings
 \usepackage{listingsutf8}
 
 % set the font family for lstlisting
-% questions/33685/set-the-font-family-for-lstlisting
+% q/set-the-font-family-for-lstlisting
 \usepackage{courier}
 
-% questions/34357/setting-up-specific-font-for-use-in-listings
-% questions/32275/setting-font-for-a-minted-environment-in-a-beamer-frame
+% q/setting-up-specific-font-for-use-in-listings
+% q/setting-font-for-a-minted-environment-in-a-beamer-frame
 \usepackage[varqu]{zi4}
 
 % Latex: Listings with monospace fonts
 % https://stackoverflow.com/questions/2913141/latex-listings-with-monospace-fonts
-% questions/145416/how-to-have-straight-single-quotes-in-lstlistings
-% questions/252443/double-quote-charater-with-listings-create-problem
+% q/how-to-have-straight-single-quotes-in-lstlistings
+% q/double-quote-charater-with-listings-create-problem
 \lstset{frame=,
   language=Python,% default language
   upquote=true,
@@ -2282,7 +2282,7 @@
        {|}{{\textcolor{red}\textbar}}1
        {\ -\ }{{\mdseries\ -\ }}3,
   inputencoding=utf8, % http://stackoverflow.com/questions/1116266/listings-in-latex-with-utf-8-or-at-least-german-umlauts
-  extendedchars=true, % questions/24528/having-problems-with-listings-and-utf-8-can-it-be-fixed
+  extendedchars=true, % q/having-problems-with-listings-and-utf-8-can-it-be-fixed
   literate=%
   {£}{{\pounds}}1
   {ß}{{\ss}}1
@@ -2378,8 +2378,8 @@
 %
 % Usage \begin{lstlisting}[style=yaml_style] ... \end{lstlisting}
 %
-% questions/45711/defining-lstset-parameters-for-multiple-languages
-% questions/152829/how-can-i-highlight-yaml-code-in-a-pretty-way-with-listings
+% q/defining-lstset-parameters-for-multiple-languages
+% q/how-can-i-highlight-yaml-code-in-a-pretty-way-with-listings
 \newcommand\YAMLcolonstyle{\color{red}\mdseries}
 \newcommand\YAMLkeystyle{\color{black}\bfseries}
 \newcommand\YAMLvaluestyle{\color{blue}\mdseries}
@@ -2441,7 +2441,7 @@
   title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
 }
 
-% questions/83882/how-to-highlight-python-syntax-in-latex-listings-lstinputlistings-command
+% q/how-to-highlight-python-syntax-in-latex-listings-lstinputlistings-command
 \definecolor{gray}{gray}{0.5}
 \colorlet{commentcolour}{green!50!black}
 
@@ -2527,7 +2527,7 @@
   % breakindent=.5\textwidth,frame=single,breaklines=true%
 }
 
-% questions/99500/listings-code-style-for-html5-css-html-javascript
+% q/listings-code-style-for-html5-css-html-javascript
 \lstdefinestyle{HTML5}{
     language=html,
     sensitive=true,
@@ -2722,9 +2722,9 @@
 %
 % Remove the colon appended to variables by 'abntex2' because they show up on places they shouldn't
 %
-% questions/485830/why-latex-does-not-tell-me-which-command-is-undefined
-% questions/482886/how-to-add-babel-captions-to-newfloat-package-environments
-% questions/482523/how-to-override-command-on-my-preamble-after-its-redefinition-by-my-class-with
+% q/why-latex-does-not-tell-me-which-command-is-undefined
+% q/how-to-add-babel-captions-to-newfloat-package-environments
+% q/how-to-override-command-on-my-preamble-after-its-redefinition-by-my-class-with
 \@ifpackageloaded{babel}{\@ifpackagewith{babel}{brazil}{\addto\captionsbrazil{%
   \renewcommand{\orientadorname}{Orientador}
   \renewcommand{\coorientadorname}{Coorientador}
@@ -2770,12 +2770,12 @@
 }}{}}{}
 
 % Muda equação para 'Equação (n)'
-% questions/153471/autoref-does-not-expand-abbreviation-automatically-at-beginning-of-line
-% questions/153496/combining-autoref-and-eqref
-% questions/62308/rename-sections-with-ngerman
-% questions/4925/custom-equations-names
-% questions/173970/add-equation-name-besides-equation-number-so-that-eqref-inserts-only-the-numbe
-% questions/128050/add-equation-name-underneath-equation-number
+% q/autoref-does-not-expand-abbreviation-automatically-at-beginning-of-line
+% q/combining-autoref-and-eqref
+% q/rename-sections-with-ngerman
+% q/custom-equations-names
+% q/add-equation-name-besides-equation-number-so-that-eqref-inserts-only-the-numbe
+% q/add-equation-name-underneath-equation-number
 \@ifpackageloaded{babel}{\@ifpackagewith{babel}{english}{\addto\captionsenglish{%
   \def\equationautorefname~#1\null{%
   Equation~(#1)\null
