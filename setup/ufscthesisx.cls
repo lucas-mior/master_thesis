@@ -471,8 +471,7 @@
 
 % Comando que simula a finalizacao de uma parte no bookmark e
 % adiciona espaco de \part no sumario
-\renewcommand{\ABNTEXphantompart}
-{%
+\renewcommand{\ABNTEXphantompart}{%
   \bookmarksetup{startatroot}%
   \phantomsection%
   \addtocontents{toc}{\vspace{0em}}
