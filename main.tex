@@ -325,7 +325,7 @@ section=TITLE, % Título de seções em caixa alta
         \PRIVATEbookmarkthis{Ficha Catalográfica}
         \addtotextpreliminarycontent{Ficha Catalográfica}
 
-        \include{03fichacatalografica}
+        \include{03fichacatalografica.tex}
         % questions/91440/how-to-include-multiple-pages-in-latex
         % \includepdf{fig/Ficha_Catalografica.pdf}
         \ifforcedinclude\else\cleardoublepage\fi
@@ -339,7 +339,7 @@ section=TITLE, % Título de seções em caixa alta
     % conteúdo deste arquivo por uma imagem da página assinada pela banca com o
     % comando abaixo:
     \ifforcedinclude\else\cleardoublepage\fi
-    \include{04folhadeaprovacao}
+    \include{04folhadeaprovacao.tex}
     % \includepdf{fig/folhadeaprovacao_final.pdf}
 
     % Dedicatória
@@ -348,18 +348,18 @@ section=TITLE, % Título de seções em caixa alta
 
     % Agradecimentos
     \ifforcedinclude\else\cleardoublepage\fi
-    \include{06agradecimentos}
+    \include{06agradecimentos.tex}
 
     % Epígrafe
     \ifforcedinclude\else\cleardoublepage\fi
-    \include{07epigrafe}
+    \include{07epigrafe.tex}
 
     % Ajusta o espaçamento dos parágrafos do resumo
     \setlength{\absparsep}{18pt}
 
     % RESUMOS
     \ifforcedinclude\else\cleardoublepage\fi
-    \include{08resumos}
+    \include{08resumos.tex}
 
     % Some tables of contents
     \ifforcedinclude\else
@@ -412,11 +412,11 @@ section=TITLE, % Título de seções em caixa alta
 
     % inserir lista de abreviaturas e siglas
     \ifforcedinclude\else\cleardoublepage\fi
-    \include{12siglas}
+    \include{12siglas.tex}
 
     % Inserir lista de símbolos
     \ifforcedinclude\else\cleardoublepage\fi
-    \include{14simbolos}
+    \include{14simbolos.tex}
 
     % How to remove the self-reference of the ToC from the ToC?
     % questions/10943/how-to-remove-the-self-reference-of-the-toc-from-the-toc
@@ -463,30 +463,30 @@ section=TITLE, % Título de seções em caixa alta
     \label{primeira_parte}
 
     % Introdução (exemplo de capítulo sem numeração, mas presente no Sumário)
-    \include{15intro}
+    \include{15intro.tex}
 
     % Capitulo com exemplos de comandos inseridos de arquivo externo
-    \include{15chapter_1}
+    \include{15chapter_1.tex}
 
     % Capitulo de revisão de literatura
-    \include{15chapter_2}
+    \include{15chapter_2.tex}
 
     % Primeiro capitulo de Resultados
-    \include{15chapter_3}
+    \include{15chapter_3.tex}
 
     % PARTE
     \ifforcedinclude\else\part{\lang{Implementation}{Implementação}}\fi
     \label{segunda_parte}
 
     % Segundo capitulo de Resultados
-    \include{15chapter_4}
+    \include{15chapter_4.tex}
 
     % Finaliza a parte no bookmark do PDF para que se inicie o bookmark na raiz
     % e adiciona espaço de parte no Sumário
     \phantompart
 
     % Conclusão (outro exemplo de capítulo sem numeração e presente no sumário)
-    \include{15conclusion}
+    \include{15conclusion.tex}
 
     % ELEMENTOS PÓS-TEXTUAIS
     \postextual
@@ -517,7 +517,7 @@ section=TITLE, % Título de seções em caixa alta
         \setlength\midchapskip{20pt}
         \setlength\afterchapskip{20pt}
 
-        \include{18apendice_a}
+        \include{18apendice_a.tex}
     \end{apendicesenv}
 
     % Inicia os anexos
@@ -528,8 +528,8 @@ section=TITLE, % Título de seções em caixa alta
         \setlength\midchapskip{20pt}
         \setlength\afterchapskip{20pt}
 
-        \include{19anexo_a}
-        \include{19anexo_b}
+        \include{19anexo_a.tex}
+        \include{19anexo_b.tex}
     \end{anexosenv}
 
     % INDICE REMISSIVO
