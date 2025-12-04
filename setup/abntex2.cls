@@ -715,43 +715,35 @@
 % Comandos de dados para CAPA e FOLHA DE ROSTO
 % ------------------------------------------------------------------------
 
-% Comandos de dados - titulo do documento
 \newcommand{\ABNTEXtituloestrangeiro}[1]{\providecommand{\abntextheforeigntitle}{#1}}
 \newcommand{\ABNTEXimprimirtituloestrangeiro}{\abntextheforeigntitle}
 
-% Comandos de dados - data
 \let\olddate\date
 \renewcommand{\date}[1]{\AtBeginDocument{\olddate{#1}}}
 \newcommand{\ABNTEXdata}[1]{\date{#1}}
 \newcommand{\ABNTEXimprimirdata}{\thedate}
 
-% Comandos de dados - instituicao
 \providecommand{\abnteximprimirinstituicao}{}
 \newcommand{\ABNTEXinstituicao}[1]{\renewcommand{\abnteximprimirinstituicao}{#1}}
 
-% Comandos de dados - local
 \providecommand{\abnteximprimirlocal}{}
 \newcommand{\ABNTEXlocal}[1]{\renewcommand{\abnteximprimirlocal}{#1}}
 
-% Comandos de dados - preambulo
 \providecommand{\abnteximprimirpreambulo}{}
 \newcommand{\ABNTEXpreambulo}[1]{\renewcommand{\abnteximprimirpreambulo}{#1}}
 
-% Comandos de dados - orientador
 \providecommand{\abnteximprimirorientadorRotulo}{}
 \providecommand{\abnteximprimirorientador}{}
 \newcommand{\ABNTEXorientador}[2][\ABNTEXorientadorname]%
   {\renewcommand{\abnteximprimirorientadorRotulo}{#1}%
    \renewcommand{\abnteximprimirorientador}{#2}}
 
-% Comandos de dados - coorientador
 \providecommand{\abnteximprimircoorientadorRotulo}{}
 \providecommand{\abnteximprimircoorientador}{}
 \newcommand{\ABNTEXcoorientador}[2][\ABNTEXcoorientadorname]%
   {\renewcommand{\abnteximprimircoorientadorRotulo}{#1}%
    \renewcommand{\abnteximprimircoorientador}{#2}}
 
-% Comandos de dados - tipo de trabalho
 \providecommand{\abnteximprimirtipotrabalho}{}
 \newcommand{\ABNTEXtipotrabalho}[1]{\renewcommand{\abnteximprimirtipotrabalho}{#1}}
 
