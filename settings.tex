@@ -391,7 +391,7 @@
     \setsubsubsecheadstyle{
       \ABNTEXsubsubsectionfont\ABNTEXsubsubsectionfontsize\ABNTEXsubsubsectionupperifneeded
     }
-    \abntex2setsubsubsubsecheadstyle{
+    \ABNTEXsetsubsubsubsecheadstyle{
       \ABNTEXsubsubsubsectionfont\ABNTEXsubsubsubsectionfontsize\ABNTEXsubsubsubsectionupperifneeded
     }
 
@@ -419,7 +419,7 @@
     }
 
     % q/memoir-indentation-of-unnumbered-sections-in-table-of-contents
-    \renewcommand{\abntex2tocinnonumchapter}{%
+    \renewcommand{\ABNTEXtocinnonumchapter}{%
       \addtocontents{toc}{\cftsetindents{chapter}{2.5em}{2em}}%
       \cftinserthook{toc}{A}}
 
@@ -429,7 +429,7 @@
       \chapnumfont%
       ~~\thechapter~%
       \ifthenelse{\boolean{abntex@apendiceousecao}}{%
-        \abntex2tocinnonumchapter%
+        \ABNTEXtocinnonumchapter%
         ~\ABNTEXcaptiondelim~~%
       }{}%
     }

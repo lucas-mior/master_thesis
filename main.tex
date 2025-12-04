@@ -99,11 +99,11 @@ section=TITLE, % Título de seções em caixa alta
 
 % FIXME: Siglas para grau de formação
 % Dr./Dra., Me./Ma, Bel. Bela. (inglês: PhD., MSc., Bs.)
-\abntex2orientador[\lang{Supervisor}{Orientador(a)}]
+\ABNTEXorientador[\lang{Supervisor}{Orientador(a)}]
 {\brazilword{Nome completo do Orientador(a)}, \lang{Phd.}{Dr.}}
 
 % FIXME: Se houver coorientador, descomente a linha abaixo
-% \abntex2coorientador[\lang{Co-supervisor}{Coorientador(a)}]
+% \ABNTEXcoorientador[\lang{Co-supervisor}{Coorientador(a)}]
 % {\brazilword{Nome do coorientador(a)}, \lang{Phd.}{Dr.}}
 
 % FIXME: Preencher com o nome do Coordenador de TCCs/Teses do seu curso
@@ -111,7 +111,7 @@ section=TITLE, % Título de seções em caixa alta
 {\brazilword{Nome do Coordenador(a)}, \lang{Phd.}{Dr.}}
 
 % FIXME: Local da sua defesa
-\abntex2local{\brazilword{Florianópolis, Santa Catarina} -- \lang{Brazil}{Brasil}}
+\ABNTEXlocal{\brazilword{Florianópolis, Santa Catarina} -- \lang{Brazil}{Brasil}}
 
 % FIXME: Ano da sua defesa
 \UFSCano{2019}
@@ -119,11 +119,11 @@ section=TITLE, % Título de seções em caixa alta
 
 % FIXME: Sigla da sua instituição
 \UFSCinstituicaoSigla{UFSC}
-\abntex2instituicao{\brazilword{Universidade Federal de Santa Catarina}}
+\ABNTEXinstituicao{\brazilword{Universidade Federal de Santa Catarina}}
 
 % FIXME: Preencha com 
 % Tese, Dissertação, Trabalho de Conclusão de Curso, Bachelor's Thesis, etc
-\abntex2tipotrabalho{\lang{Bachelor\s Thesis}{Trabalho de Conclusão de Curso}}
+\ABNTEXtipotrabalho{\lang{Bachelor\s Thesis}{Trabalho de Conclusão de Curso}}
 
 % FIXME: Se houver Área de Concentração, descomente a linha abaixo
 % \UFSCarea{\lang{Formal Languages}{Linguagens Formais}}
@@ -150,11 +150,11 @@ section=TITLE, % Título de seções em caixa alta
 \UFSCcampus{\brazilword{Campus Reitor João David Ferreira Lima}}
 
 % FIXME: Data da sua defesa
-\abntex2data{\lang{30 of march of}{30 de março de} 2019}
+\ABNTEXdata{\lang{30 of march of}{30 de março de} 2019}
 
 % O preambulo deve conter tipo do trabalho, objetivo, nome da instituição e a
 % área de concentração.
-\abntex2preambulo{\lang%
+\ABNTEXpreambulo{\lang%
     {%
         \imprimirtipotrabalho~submitted to the \imprimirprograma~of
         \imprimirinstituicao~for degree acquirement in \imprimirformacao.%
@@ -342,9 +342,9 @@ section=TITLE, % Título de seções em caixa alta
         % q/how-to-fix-destination-with-the-same-identifier-namepage-a-has-been-already
         % q/pdftex-warning-has-been-referenced-but-does-not-exist-replaced-by-a-fixed-one
         \hypersetup{pageanchor=false}
-        \abntex2PRIVATEbookmarkthis{Capa}
+        \ABNTEXPRIVATEbookmarkthis{Capa}
         \addtotextpreliminarycontent{Capa}
-        \abntex2pretextual
+        \ABNTEXpretextual
 
         % Capa
         % \includepdf{fig/FrenteCapaUFSC.pdf}
@@ -352,7 +352,7 @@ section=TITLE, % Título de seções em caixa alta
         \advisor{}{
           \AtBeginShipoutNext{\AtBeginShipoutNext{\AtBeginShipoutDiscard}}
         }
-        \abntex2imprimircapa
+        \ABNTEXimprimircapa
 
         % q/how-to-fix-destination-with-the-same-identifier-namepage-a-has-been-already
         % q/pdftex-warning-has-been-referenced-but-does-not-exist-replaced-by-a-fixed-one
@@ -388,8 +388,8 @@ section=TITLE, % Título de seções em caixa alta
 
         % Folha de rosto (o * indica que haverá a ficha bibliográfica)
         % q/table-of-contents-incorrect-page-numbering
-        \addtotextpreliminarycontent{\abntex2folhaderostoname}
-        \abntex2imprimirfolhaderosto*{}
+        \addtotextpreliminarycontent{\ABNTEXfolhaderostoname}
+        \ABNTEXimprimirfolhaderosto*{}
 
         % Inserir a ficha bibliografica
         %
@@ -400,7 +400,7 @@ section=TITLE, % Título de seções em caixa alta
         % catalográfica definitiva após a defesa do trabalho. Quando estiver com
         % o documento, salve-o como PDF no diretório do seu projeto e substitua
         % todo o conteúdo de implementação deste arquivo pelo comando abaixo:
-        \abntex2PRIVATEbookmarkthis{Ficha Catalográfica}
+        \ABNTEXPRIVATEbookmarkthis{Ficha Catalográfica}
         \addtotextpreliminarycontent{Ficha Catalográfica}
 
         \include{03_fichacatalografica.tex}
@@ -532,7 +532,7 @@ section=TITLE, % Título de seções em caixa alta
 
     % ELEMENTOS TEXTUAIS
     \clearpage
-    \abntex2textual
+    \ABNTEXtextual
     \setlength\beforechapskip{50pt}
     \setlength\midchapskip{20pt}
     \setlength\afterchapskip{20pt}
@@ -562,13 +562,13 @@ section=TITLE, % Título de seções em caixa alta
 
     % Finaliza a parte no bookmark do PDF para que se inicie o bookmark na raiz
     % e adiciona espaço de parte no Sumário
-    \abntex2phantompart
+    \ABNTEXphantompart
 
     % Conclusão (outro exemplo de capítulo sem numeração e presente no sumário)
     \include{15z_conclusion.tex}
 
     % ELEMENTOS PÓS-TEXTUAIS
-    \abntex2postextual
+    \ABNTEXpostextual
     \setlength\beforechapskip{0pt}
     \setlength\midchapskip{15pt}
     \setlength\afterchapskip{15pt}
@@ -590,7 +590,7 @@ section=TITLE, % Título de seções em caixa alta
 
     \begin{apendicesenv}
         % Imprime uma página indicando o início dos apêndices
-        \ifforcedinclude\else\abntex2partapendices\fi
+        \ifforcedinclude\else\ABNTEXpartapendices\fi
         \setlength\beforechapskip{50pt}
         \setlength\midchapskip{20pt}
         \setlength\afterchapskip{20pt}
@@ -600,7 +600,7 @@ section=TITLE, % Título de seções em caixa alta
 
     \begin{anexosenv}
         % Imprime uma página indicando o início dos anexos
-        \ifforcedinclude\else\abntex2partanexos\fi
+        \ifforcedinclude\else\ABNTEXpartanexos\fi
         \setlength\beforechapskip{50pt}
         \setlength\midchapskip{20pt}
         \setlength\afterchapskip{20pt}
@@ -611,7 +611,7 @@ section=TITLE, % Título de seções em caixa alta
 
     % INDICE REMISSIVO
     \ifforcedinclude\else
-        \abntex2phantompart
+        \ABNTEXphantompart
         \printindex
     \fi
 

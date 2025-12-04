@@ -432,7 +432,7 @@
 
 % Comando que simula a finalizacao de uma parte no bookmark e
 % adiciona espaco de \part no sumario
-\renewcommand{\abntex2phantompart}
+\renewcommand{\ABNTEXphantompart}
 {%
   \bookmarksetup{startatroot}%
   \phantomsection%
@@ -494,28 +494,28 @@
 
 \newlength{\cftnumberboxnumberwidth}
 \setlength{\cftnumberboxnumberwidth}{2em}
-\renewcommand{\abntex2tocprintchapter}
+\renewcommand{\ABNTEXtocprintchapter}
 {%
   \addtocontents{toc}{\cftsetindents{chapter}{0em}{\cftlastnumwidth}}
 }
 %
-\renewcommand{\abntex2tocinnonumchapter}
+\renewcommand{\ABNTEXtocinnonumchapter}
 {%
   \addtocontents{toc}{\cftsetindents{chapter}{\cftlastnumwidth}{\cftnumberboxnumberwidth}}%
   \cftinserthook{toc}{A}
 }
-\renewcommand{\abntex2tocprintchapternonum}
+\renewcommand{\ABNTEXtocprintchapternonum}
 {%
   \addtocontents{toc}{\cftsetindents{chapter}{\cftlastnumwidth}{\cftnumberboxnumberwidth}}
 }
 %
-\renewcommand{\abntex2tocpartapendices}
+\renewcommand{\ABNTEXtocpartapendices}
 {%
   \addtocontents{toc}{\cftsetindents{chapter}{\cftlastnumwidth}{\cftnumberboxnumberwidth}}
   \cftinserthook{toc}{A}
 }
 %
-\renewcommand{\abntex2tocpartanexos}
+\renewcommand{\ABNTEXtocpartanexos}
 {%
   \addtocontents{toc}{\cftsetindents{chapter}{\cftlastnumwidth}{\cftnumberboxnumberwidth}}
   \cftinserthook{toc}{A}
@@ -614,17 +614,17 @@
 \newcommand{\secref}[1]{Seção~\ref{#1}}     % Cross-reference of equations
 \newcommand{\defref}[1]{Definição~\ref{#1}} %
 
-\renewenvironment{resumo}[1][\abntex2resumoname]
+\renewenvironment{resumo}[1][\ABNTEXresumoname]
 {%
-  % Fixed double bookmark entries as `\abntex2pretextualchapter`
-  % bellow is already calling `\abntex2PRIVATEbookmarkthis`
-  % \abntex2PRIVATEbookmarkthis{#1}
+  % Fixed double bookmark entries as `\ABNTEXpretextualchapter`
+  % bellow is already calling `\ABNTEXPRIVATEbookmarkthis`
+  % \ABNTEXPRIVATEbookmarkthis{#1}
   % \renewcommand{\abstractnamefont}{\chaptitlefont}
   % \renewcommand{\abstractname}{\ABNTEXchapterupperifneeded{#1}}
-  \abntex2pretextualchapter{#1}
+  \ABNTEXpretextualchapter{#1}
 }
 {%
-  \abntex2PRIVATEclearpageifneeded
+  \ABNTEXPRIVATEclearpageifneeded
 }
 
 % Fix the resumo environment, which does not accept paragraphs on ufscthesisx
@@ -686,9 +686,9 @@
 % ------------------------------------------------------------------------
 
 % Configura layout para elementos textuais,
-% redefining the ABNT command `\abntex2textual`.
+% redefining the ABNT command `\ABNTEXtextual`.
 % Delete his to restore the ABNT default behavior.
-\renewcommand{\abntex2textual}
+\renewcommand{\ABNTEXtextual}
 {%
   % Estilo original do Abntex2
   \pagestyle{abntheadings}
@@ -706,7 +706,7 @@
 % ------------------------------------------------------------------------
 % ---
 % Imprime uma pagina de divisao no estilo parte
-\renewcommand{\abntex2partpage}
+\renewcommand{\ABNTEXpartpage}
 {%
   % \phantomsection
   % \addcontentsline{toc}{part}{\appendixtocname}
@@ -715,7 +715,7 @@
 
 % ---
 % Impressão da Capa
-\renewcommand{\abntex2imprimircapa}
+\renewcommand{\ABNTEXimprimircapa}
 {%
   \begin{capa}%
 
@@ -763,7 +763,7 @@
 %
 % How to add an empty line between paragraphs?
 % q/how-to-add-an-empty-line-between-paragraphs
-\renewcommand{\abntex2folhaderostocontent}
+\renewcommand{\ABNTEXfolhaderostocontent}
 {%
   \begin{center}
     {\theauthor}
@@ -928,7 +928,7 @@
 % q/the-appendix-word-disappears-from-the-table-of-contents-when-using-include
 % q/whats-the-difference-between-newcommand-and-newcommand
 \@ifclassloaded{setup/abntex2}{
-  \renewcommand*{\cftappendixname}{\abntex2apendicename\space\space}
+  \renewcommand*{\cftappendixname}{\ABNTEXapendicename\space\space}
 }{}
 
 % Allows putting an [H] in \begin{figure}
@@ -1574,12 +1574,12 @@
 % imprime lista de siglas ordenado alfabeticamente
 % q/printnoidxglossaries-vs-printglossaries
 \newcommand{\imprimirlistadesiglas}{%
-  \pdfbookmark[0]{\abntex2listadesiglasname}{acn}
+  \pdfbookmark[0]{\ABNTEXlistadesiglasname}{acn}
   \printnoidxglossary[
   style=mylong1,
   type=acronym,
   sort=letter,
-  title={\abntex2listadesiglasname\vspace{-0.2cm}}
+  title={\ABNTEXlistadesiglasname\vspace{-0.2cm}}
   ]
   \cleardoublepage
 }
@@ -1587,12 +1587,12 @@
 % imprime lista de símbolos na ordem em que aparece no texto
 % q/printnoidxglossaries-vs-printglossaries
 \newcommand{\imprimirlistadesimbolos}{%
-  \pdfbookmark[0]{\abntex2listadesimbolosname}{sbl}
+  \pdfbookmark[0]{\ABNTEXlistadesimbolosname}{sbl}
   \printnoidxglossary[
   style=mylong2,
   type=simbolos,
   sort=use,
-  title={\abntex2listadesimbolosname}
+  title={\ABNTEXlistadesimbolosname}
   ]
   \cleardoublepage
 }
@@ -2631,17 +2631,17 @@
 % q/how-to-add-babel-captions-to-newfloat-package-environments
 % q/how-to-override-command-on-my-preamble-after-its-redefinition-by-my-class-with
 \@ifpackageloaded{babel}{\@ifpackagewith{babel}{brazil}{\addto\captionsbrazil{%
-  \renewcommand{\abntex2orientadorname}{Orientador}
-  \renewcommand{\abntex2coorientadorname}{Coorientador}
+  \renewcommand{\ABNTEXorientadorname}{Orientador}
+  \renewcommand{\ABNTEXcoorientadorname}{Coorientador}
   \renewcommand{\quadrosname}{Quadro}
-  \renewcommand{\abntex2folhadeaprovacaoname}{Folha de Aprovação}
-  \renewcommand{\abntex2folhaderostoname}{Folha de Rosto}
+  \renewcommand{\ABNTEXfolhadeaprovacaoname}{Folha de Aprovação}
+  \renewcommand{\ABNTEXfolhaderostoname}{Folha de Rosto}
   \renewcommand{\listfigurename}{Lista de Ilustrações}
   \renewcommand{\listtablename}{Lista de Tabelas}
   \renewcommand{\listofquadrosname}{Lista de Quadros}
   \renewcommand{\listfigurename}{Lista de Figuras}
-  \renewcommand{\abntex2listadesiglasname}{Lista de Abreviaturas e Siglas}
-  \renewcommand{\abntex2listadesimbolosname}{Lista de Símbolos}
+  \renewcommand{\ABNTEXlistadesiglasname}{Lista de Abreviaturas e Siglas}
+  \renewcommand{\ABNTEXlistadesimbolosname}{Lista de Símbolos}
   \renewcommand{\tableautorefname}{Tabela}
   \renewcommand{\figureautorefname}{Figura}
   \renewcommand{\chapterautorefname}{Capítulo}
@@ -2654,16 +2654,16 @@
 
 \@ifpackageloaded{babel}{\@ifpackagewith{babel}{english}{\addto\captionsenglish{%
   \renewcommand{\UFSCcovername}{Cover}
-  \renewcommand{\abntex2orientadorname}{Supervisor}
-  \renewcommand{\abntex2coorientadorname}{Co\hyp{}supervisor}
-  \renewcommand{\abntex2folhadeaprovacaoname}{Approval}
-  \renewcommand{\abntex2folhaderostoname}{Title Page}
-  \renewcommand{\abntex2errataname}{Errata Sheet}
+  \renewcommand{\ABNTEXorientadorname}{Supervisor}
+  \renewcommand{\ABNTEXcoorientadorname}{Co\hyp{}supervisor}
+  \renewcommand{\ABNTEXfolhadeaprovacaoname}{Approval}
+  \renewcommand{\ABNTEXfolhaderostoname}{Title Page}
+  \renewcommand{\ABNTEXerrataname}{Errata Sheet}
   \renewcommand{\listfigurename}{List of Illustrations}
   \renewcommand{\listtablename}{List of Tables}
   \renewcommand{\listfigurename}{List of Figures}
-  \renewcommand{\abntex2listadesiglasname}{List of Abbreviations and Acronyms}
-  \renewcommand{\abntex2listadesimbolosname}{List of Symbols}
+  \renewcommand{\ABNTEXlistadesiglasname}{List of Abbreviations and Acronyms}
+  \renewcommand{\ABNTEXlistadesimbolosname}{List of Symbols}
   \renewcommand{\tableautorefname}{Table}
   \renewcommand{\figureautorefname}{Figure}
   \renewcommand{\chapterautorefname}{Chapter}

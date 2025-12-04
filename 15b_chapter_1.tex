@@ -385,7 +385,7 @@ no corpo do texto. }\footnote{Verifique se os números do expoente
    \bottomrule
 \end{tabular}
 }
-\abntex2fonte{\textcite{van86} }
+\ABNTEXfonte{\textcite{van86} }
 \end{table}
 
 Já a \autoref{tabela-ibge} apresenta uma tabela criada conforme o padrão do
@@ -393,7 +393,7 @@ Já a \autoref{tabela-ibge} apresenta uma tabela criada conforme o padrão do
 acadêmicos .
 
 \begin{table}[htb]
-\abntex2IBGEtab{%
+\ABNTEXIBGEtab{%
   \caption[Um Exemplo de tabela alinhada que pode ser longa ou curta, conforme
   padrão IBGE.]{Um Exemplo de tabela alinhada que pode ser longa ou curta,
   conforme padrão IBGE. }%
@@ -411,10 +411,10 @@ acadêmicos .
   \bottomrule
 \end{tabular}%
 }{%
-  \abntex2fonte{Produzido pelos autores. }%
-  \abntex2nota{Esta é uma nota, que diz que os dados são baseados na
+  \ABNTEXfonte{Produzido pelos autores. }%
+  \ABNTEXnota{Esta é uma nota, que diz que os dados são baseados na
   regressão linear. }%
-  \abntex2nota[Anotações]{Uma anotação adicional, que pode ser seguida de várias
+  \ABNTEXnota[Anotações]{Uma anotação adicional, que pode ser seguida de várias
   outras. }%
   }
 \end{table}
@@ -449,7 +449,7 @@ acadêmicos .
             $I_{Ca3}$&$\SI{1.2598194e+000}{\A}$&  $I_{Cb3}$&$\SI{1.4708279e+000}{\A}$& $I_{Cc3}$&$\SI{1.3017673e+000}{\A}$ \\
             \bottomrule
         \end{tabular}}
-\abntex2fonte{O autor }
+\ABNTEXfonte{O autor }
 \end{table}
 
 \clearpage
@@ -491,7 +491,7 @@ como o exemplo da \autoref{fig_circulo} .
         \put(0,0){\line(6,5){1}}
         \end{picture}
     \end{center}
-    \abntex2fonte{os autores }
+    \ABNTEXfonte{os autores }
 \end{figure}
 
 Ou então figuras podem ser incorporadas de arquivos externos, como é o caso da
@@ -521,7 +521,7 @@ Photoshop\index{Adobe Photoshop}.
     \begin{center}
         \includegraphics[scale=0.35]{fig/abntex2-modelo-img-grafico.pdf}
     \end{center}
-    \abntex2fonte{\textcite[p. 24]{araujo2012} }
+    \ABNTEXfonte{\textcite[p. 24]{araujo2012} }
 \end{figure}
 
 \subsection{Figuras em minipages}
@@ -539,7 +539,7 @@ tamanhos e posições controladas. Veja o exemplo da
    \label{fig_minipage_imagem1}
    \centering
    \includegraphics[width=\textwidth]{fig/abntex2-modelo-img-marca.pdf}
-   \abntex2fonte{Produzido pelos autores }
+   \ABNTEXfonte{Produzido pelos autores }
  \end{minipage}
  \hfill
  \begin{minipage}{0.49\textwidth}
@@ -547,7 +547,7 @@ tamanhos e posições controladas. Veja o exemplo da
    \label{fig_minipage_grafico2}
    \centering
    \includegraphics[width=\textwidth]{fig/abntex2-modelo-img-grafico.pdf}
-   \abntex2fonte{\textcite[p. 24]{araujo2012} }
+   \ABNTEXfonte{\textcite[p. 24]{araujo2012} }
  \end{minipage}
 \end{figure}
 
@@ -580,7 +580,7 @@ Depois de definir o ambiente \texttt{quadro} podemos ter um quadro :
 Este é o conteúdo do primeiro quadro.\\
 \hline
 \end{tabular}
-\abntex2fonte{Teste. }
+\ABNTEXfonte{Teste. }
 \end{quadro}
 
 Além do \autoref{quad:quadro_modelo1}, também é possível especificar outra ordem
@@ -595,7 +595,7 @@ de posicionamento como [htb] :
 Este é o conteúdo do segundo quadro.\\
 \hline
 \end{tabular}
-\abntex2fonte{O autor. }
+\ABNTEXfonte{O autor. }
 \end{quadro}
 
 \section{Expressões matemáticas}
@@ -1039,7 +1039,7 @@ acento & \textsf{bibtex}\\
 ç & \verb+{\c c}+\\
 \hline\hline
 \end{tabular}
-\abntex2fonte{Manual do LaTeX \cite{memoir} }
+\ABNTEXfonte{Manual do LaTeX \cite{memoir} }
 \end{table}
 
 \section{Precisa de ajuda?}
