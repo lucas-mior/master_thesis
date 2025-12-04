@@ -18,11 +18,16 @@
 
 % Add missing translations for Portuguese
 % q/what-is-the-right-way-to-redefine-macros-defined-by-babel
-\@ifpackageloaded{babel}{\@ifpackagewith{babel}{brazil}{\addto\captionsbrazil{%
-  \renewcommand{\mytextpreliminarylistname}{%
-    Breve Sumário
-  }
-}}{}}{}
+\@ifpackageloaded{babel}{%
+  \@ifpackagewith{babel}{brazil}{%
+    \addto\captionsbrazil{%
+      \renewcommand{\mytextpreliminarylistname}{%
+        Breve Sumário
+      }
+    }
+  }{}
+}{}
+
 \@ifundefined{advisor}{\newcommand{\advisor}[2]{#1}}{}
 
 % Selects a sans serif font family
