@@ -1,5 +1,5 @@
 #!/usr/bin/make -f
-# https://stackoverflow.com/questions/7123241/makefile-as-an-executable-script-with-shebang
+# q/makefile-as-an-executable-script-with-shebang
 #
 #   Copyright 2017-2019 @ Evandro Coan
 #   Helper functions and classes
@@ -113,12 +113,12 @@ LATEX_SOURCE_FILES := $(wildcard *main.tex)
 # Create a new variable within all `LATEX_SOURCE_FILES` file names ending with `.pdf`
 LATEX_PDF_FILES := ${LATEX_SOURCE_FILES:.tex=.pdf}
 
-# https://stackoverflow.com/questions/24005166/gnu-make-silent-by-default
+# q/gnu-make-silent-by-default
 ifeq (,${ENABLE_DEBUG_MODE})
 	MAKEFLAGS += --silent
 endif
 
-# https://stackoverflow.com/questions/55642491/how-to-check-whether-a-file-exists-outside-a-makefile-rule
+# q/how-to-check-whether-a-file-exists-outside-a-makefile-rule
 FIND_EXEC := $(if $(wildcard /bin/find),,/usr)/bin/find
 
 LATEXMK_THESIS := thesis
@@ -128,11 +128,11 @@ GITIGNORE_SOURCE_PATH := .gitignore
 GITIGNORE_DESTINE_PATH := ./setup/.gitignore
 FIX_GITIGNORE := $(if $(wildcard ${GITIGNORE_DESTINE_PATH}),,${GITIGNORE_DESTINE_PATH})
 
-# http://stackoverflow.com/questions/1789594/how-do-i-write-the-cd-command-in-a-makefile
+# q/how-do-i-write-the-cd-command-in-a-makefile
 .ONESHELL:
 
-# https://tex.stackexchange.com/questions/91592/where-to-find-official-and-extended-documentation-for-tex-latexs-commandlin
-# https://tex.stackexchange.com/questions/52988/avoid-linebreaks-in-latex-console-log-output-or-increase-columns-in-terminal
+# q/where-to-find-official-and-extended-documentation-for-tex-latexs-commandlin
+# q/avoid-linebreaks-in-latex-console-log-output-or-increase-columns-in-terminal
 PDF_LATEX_COMMAND = pdflatex -shell-escape --synctex=1 $(if ${HALT_ON_ERROR_MODE},-halt-on-error,) -file-line-error
 PDF_LATEX_COMMAND += $(if $(shell pdflatex --help | grep time-statistics),--time-statistics,)
 PDF_LATEX_COMMAND += $(if $(shell pdflatex --help | grep max-print-line),--max-print-line=10000,)
@@ -171,7 +171,7 @@ ifeq (,${ENABLE_DEBUG_MODE})
 	BIBER_FLAGS += --quiet
 endif
 
-# https://stackoverflow.com/questions/55681576/how-to-send-input-on-stdin-to-a-python-script-defined-inside-a-makefile
+# q/how-to-send-input-on-stdin-to-a-python-script-defined-inside-a-makefile
 define NEWLINE
 
 
@@ -190,25 +190,25 @@ else:
 endef
 
 ifneq (,${ENABLE_DEBUG_MODE})
-	# https://stackoverflow.com/questions/55662085/how-to-print-text-in-a-makefile-outside-a-target
+	# q/how-to-print-text-in-a-makefile-outside-a-target
 	ifeq (,$(shell tex --version >/dev/null 2>&1 || (echo "Your command failed with $$?")))
 		useless := $(shell printf 'Success: latex is installed!\n' 1>&2)
 	else
 		useless := $(error Error: latex was not installed!)
 	endif
 
-	# https://stackoverflow.com/questions/5618615/check-if-a-program-exists-from-a-makefile
+	# q/check-if-a-program-exists-from-a-makefile
 	ifeq (,$(shell latexmk --version >/dev/null 2>&1 || (echo "Your command failed with $$?")))
 		useless := $(shell printf 'Success: latexmk is installed!\n' 1>&2)
 	else
 		useless := $(shell printf 'Warning: latexmk is not found installed!\n' 1>&2)
 	endif
 
-	# https://stackoverflow.com/questions/5618615/check-if-a-program-exists-from-a-makefile
+	# q/check-if-a-program-exists-from-a-makefile
 	ifeq (,$(shell python3 --version >/dev/null 2>&1 || (echo "Your command failed with $$?")))
 		useless := $(shell printf 'Success: python3 is installed!\n' 1>&2)
 
-		# https://stackoverflow.com/questions/55681576/how-to-send-input-on-stdin-to-a-python-script-defined-inside-a-makefile
+		# q/how-to-send-input-on-stdin-to-a-python-script-defined-inside-a-makefile
 		LATEX_VERSION := $(shell echo \
 			'$(subst ${NEWLINE},@NEWLINE@,${LATEX_VERSION_CODE})' | \
 			sed 's/@NEWLINE@/\n/g' | python3 -)
@@ -217,28 +217,28 @@ ifneq (,${ENABLE_DEBUG_MODE})
 		LATEX_VERSION := 0
 	endif
 
-	# https://stackoverflow.com/questions/5618615/check-if-a-program-exists-from-a-makefile
+	# q/check-if-a-program-exists-from-a-makefile
 	ifeq (,$(shell fgrep --version >/dev/null 2>&1 || (echo "Your command failed with $$?")))
 		useless := $(shell printf 'Success: fgrep is installed!\n' 1>&2)
 	else
 		useless := $(shell printf 'Warning: fgrep is not found installed!\n' 1>&2)
 	endif
 
-	# https://stackoverflow.com/questions/5618615/check-if-a-program-exists-from-a-makefile
+	# q/check-if-a-program-exists-from-a-makefile
 	ifeq (,$(shell passh -h -V >/dev/null 2>&1 || (echo "Your command failed with $$?")))
 		useless := $(shell printf 'Success: passh is installed!\n' 1>&2)
 	else
 		useless := $(shell printf 'Warning: passh is not found installed!\n' 1>&2)
 	endif
 
-	# https://stackoverflow.com/questions/5618615/check-if-a-program-exists-from-a-makefile
+	# q/check-if-a-program-exists-from-a-makefile
 	ifeq (,$(shell rsync --version >/dev/null 2>&1 || (echo "Your command failed with $$?")))
 		useless := $(shell printf 'Success: rsync is installed!\n' 1>&2)
 	else
 		useless := $(shell printf 'Warning: rsync is not found installed!\n' 1>&2)
 	endif
 
-	# https://stackoverflow.com/questions/5618615/check-if-a-program-exists-from-a-makefile
+	# q/check-if-a-program-exists-from-a-makefile
 	ifeq (,$(shell ssh -V >/dev/null 2>&1 || (echo "Your command failed with $$?")))
 		useless := $(shell printf 'Success: ssh is installed!\n' 1>&2)
 	else
@@ -266,7 +266,7 @@ printf '\n'
 endef
 
 # Copies the PDF to the current directory
-# https://stackoverflow.com/questions/55671541/how-define-a-makefile-condition-and-reuse-it-in-several-build-rules/
+# q/how-define-a-makefile-condition-and-reuse-it-in-several-build-rules/
 define copy_resulting_pdf =
 printf 'LATEX_PDF_FILES: %s\n' "${LATEX_PDF_FILES}"; \
 ${print_results}; \
@@ -281,9 +281,9 @@ fi
 printf '\n'
 endef
 
-# https://stackoverflow.com/questions/4210042/exclude-directory-from-find-command
-# https://tex.stackexchange.com/questions/323820/i-cant-write-on-file-foo-aux
-# https://stackoverflow.com/questions/11469989/how-can-i-strip-first-x-characters-from-string-using-sed
+# q/exclude-directory-from-find-command
+# q/i-cant-write-on-file-foo-aux
+# q/how-can-i-strip-first-x-characters-from-string-using-sed
 pre_setup_envinronment: ${FIX_GITIGNORE}
 	$(eval CURRENT_DIR := $(shell pwd)) echo ${CURRENT_DIR} > /dev/null
 
@@ -318,7 +318,7 @@ setup_envinronment: pre_setup_envinronment
 ##   clean      Remove all cache directories and generated pdf files
 ##
 # Keep updated our copy of the .gitignore
-# https://stackoverflow.com/questions/55886204/how-to-use-make-to-keep-a-file-synced
+# q/how-to-use-make-to-keep-a-file-synced
 ${GITIGNORE_DESTINE_PATH}: ${GITIGNORE_SOURCE_PATH}
 	if [[ ! -z "${ENABLE_DEBUG_MODE}" ]]; \
 	then \
@@ -327,12 +327,12 @@ ${GITIGNORE_DESTINE_PATH}: ${GITIGNORE_SOURCE_PATH}
 	cp -$(if ${ENABLE_DEBUG_MODE},v,)r "${GITIGNORE_SOURCE_PATH}" "${GITIGNORE_DESTINE_PATH}"
 
 
-# https://stackoverflow.com/questions/46135614/how-to-call-makefile-recipe-rule-multiple-times
+# q/how-to-call-makefile-recipe-rule-multiple-times
 ${LATEXMK_REPLACEMENT}: setup_envinronment pdflatex_hook1 biber_hook1 pdflatex_hook2 pdflatex_hook3 index pdflatex_hook4 biber_hook2 pdflatex_hook5
 	${copy_resulting_pdf}
 
 
-# https://tex.stackexchange.com/questions/98204/index-not-working
+# q/index-not-working
 index_hook1 index_hook2 index_hook3 index_hook4 index_hook5:
 	makeindex "${CACHE_DIRECTORY}/${THESIS_MAIN_FILE}.idx"
 	printf '\n'
@@ -360,7 +360,7 @@ index4: setup_envinronment $(if $(wildcard ${CACHE_DIRECTORY}/${THESIS_MAIN_FILE
 
 # Call biber to process the bibliography and does not attempt to show the elapsed time
 # https://www.mankier.com/1/biber --debug
-# https://stackoverflow.com/questions/35552028/gnu-make-add-a-file-as-a-dependency-only-if-it-doesnt-exist-yet
+# q/gnu-make-add-a-file-as-a-dependency-only-if-it-doesnt-exist-yet
 biber_hook1 biber_hook2 biber_hook3 biber_hook4 biber_hook5: $(if $(wildcard ${CACHE_DIRECTORY}/${THESIS_MAIN_FILE}.bcf),,pdflatex_hook1)
 	printf 'Running biber...\n'
 	biber ${BIBER_FLAGS} "${THESIS_MAIN_FILE}.bcf" $(if ${ENABLE_DEBUG_MODE},--validate_datamodel,)
@@ -388,7 +388,7 @@ biber4: setup_envinronment index_hook5 biber_hook5 $(if ${ENABLE_DEBUG_MODE},,pd
 	${copy_resulting_pdf}
 
 
-# https://stackoverflow.com/questions/46135614/how-to-call-makefile-recipe-rule-multiple-times
+# q/how-to-call-makefile-recipe-rule-multiple-times
 pdflatex_hook1 pdflatex_hook2 pdflatex_hook3 pdflatex_hook4 pdflatex_hook5 pdflatex_hook6:
 	printf 'LATEX_SOURCE_FILES: %s\n' "${LATEX_SOURCE_FILES}"
 	@${LATEX} ${LATEX_SOURCE_FILES} || $(if ${HALT_ON_ERROR_MODE},eval "${print_results}; exit $$?",)
