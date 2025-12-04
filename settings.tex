@@ -74,7 +74,7 @@
 
   % Memoir:
   % Warnings “The material used in the headers is too large” w/ accented titles
-  % questions/387293/how-to-change-the-page-layout-with-memoir
+  % q/how-to-change-the-page-layout-with-memoir
   \setheadfoot{30.0pt}{\footskip}
   \checkandfixthelayout
 }{}
@@ -93,8 +93,8 @@
     \setlist*[enumerate]{label=\arabic*,}
     \setlist*[enumerateoptional]{label=\arabic*,}
 
-    % questions/24454/space-after-float-with-h
-    % questions/23313/how-can-i-reduce-padding-after-figure
+    % q/space-after-float-with-h
+    % q/how-can-i-reduce-padding-after-figure
     \AtBeginEnvironment{figure}{
       \setlength{\intextsep}{5pt} % Vertical space above & below [h] floats
       % \setlength{\textfloatsep}{10pt} % Vertical space below (above) [t] ([b]) floats
@@ -103,7 +103,7 @@
     }
 
     % Patch the `abntex2` citacao environment removing the extra space from its top
-    % questions/300340/topsep-itemsep-partopsep-and-parsep-what-does-each-of-them-mean-and-wha
+    % q/topsep-itemsep-partopsep-and-parsep-what-does-each-of-them-mean-and-wha
     \xpatchcmd{\citacao}
     {\list{}}
     {\list{}{\topsep=0pt}}
@@ -161,7 +161,7 @@
 % q/is-possible-to-remove-the-link-color-of-the-comma-on-the-citation-link
 % \DeclareFieldFormat{citehyperref}{#1}
 
-% % questions/203764/reduce-font-size-of-bibliography-overfull-bibliography
+% % q/reduce-font-size-of-bibliography-overfull-bibliography
 % \newcommand{\bibliographyfontsize}{\fontsize{10.0pt}{10.5pt}\selectfont}
 % \renewcommand*{\bibfont}{\bibliographyfontsize}
 
@@ -200,7 +200,7 @@
   }}{}}{}
   \@ifpackageloaded{biblatex}
   {%
-    % questions/483707/how-to-detect-whether-the-option-citecounter-was-enabled-on-biblatex
+    % q/how-to-detect-whether-the-option-citecounter-was-enabled-on-biblatex
     \ifx\blx@citecounter\relax
       \message{Is citecounter defined? NO!^^J}
     \else
@@ -209,7 +209,7 @@
         \message{Is backtracker defined? YES!^^J}
         \renewbibmacro*{pageref}
         {%
-          % questions/516054/how-to-use-a-dot-to-separate-my-new-bibliography-entry
+          % q/how-to-use-a-dot-to-separate-my-new-bibliography-entry
           \renewcommand*{\bibpagerefpunct}{\addperiod\space}%
           \iflistundef{pageref}%
           {\printtext{\biblatexcitednotimes}}
@@ -406,7 +406,7 @@
       }%
     }
 
-    % questions/264668/memoir-indentation-of-unnumbered-sections-in-table-of-contents
+    % q/memoir-indentation-of-unnumbered-sections-in-table-of-contents
     \renewcommand{\tocinnonumchapter}{%
       \addtocontents{toc}{\cftsetindents{chapter}{2.5em}{2em}}%
       \cftinserthook{toc}{A}}
