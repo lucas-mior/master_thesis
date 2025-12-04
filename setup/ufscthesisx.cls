@@ -69,16 +69,14 @@
 % q/hyperref-is-loaded-by-the-class-and-i-need-to-load-packages-that-are-supposed-t
 % q/using-beforepackage-to-load-a-package-before-hyperref-does-not-work
 \RequirePackage{scrlfile}
-\AfterClass{memoir}
-{
+\AfterClass{memoir}{
   \RequirePackage{float}
 }
 
 % The class `abntex2`
 % loads the package `enumitem`, but `paralist` must be loaded before it
 % q/compilation-error-when-including-enumitem-and-paralist-packages
-\AfterClass{memoir}
-{
+\AfterClass{memoir}{
   % How to make horizontal lists?
   % q/how-to-make-horizontal-lists
   \RequirePackage{paralist}
@@ -101,16 +99,14 @@
                         citecounter=true}{biblatex}
 \fi
 
-\AfterClass{memoir}
-{
+\AfterClass{memoir}{
   \RequirePackage{biblatex}
 }
 
 % Package longtable must be put before hyperref and arydshln,
 % hyperref after arydshln generates an error
 % http://ctan.sharelatex.com/tex-archive/macros/latex/contrib/hyperref/README.pdf
-\AfterClass{memoir}
-{
+\AfterClass{memoir}{
   \RequirePackage{longtable}
 }
 
