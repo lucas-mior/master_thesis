@@ -100,7 +100,6 @@
   \setboolean{ABNTEXsumario-abnt-6027-2012}{false}
 \fi
 
-
 % ------------------------------------------------------------------------
 % ------------------------------------------------------------------------
 % Comandos para tratamento de opcoes proprias
@@ -738,7 +737,6 @@
 \newcommand{\tituloestrangeiro}[1]{\providecommand{\theforeigntitle}{#1}}
 \newcommand{\imprimirtituloestrangeiro}{\theforeigntitle}
 
-
 % Comandos de dados - autor (use \and para multiplos autores)
 \newcommand{\autor}[1]{\author{#1}}
 \newcommand{\imprimirautor}{\theauthor}
@@ -908,8 +906,6 @@
 }
 % ---
 
-
-
 % ------------------------------------------------------------------------
 % ------------------------------------------------------------------------
 % Comandos e ambientes de editoracao APENDICES e ANEXOS
@@ -993,7 +989,6 @@
 \tocpartanexos%
 \@ifstar{\appendixpage*}{\partpage}}
 % ---
-
 
 % ------------------------------------------------------------------------
 % ------------------------------------------------------------------------
@@ -1093,7 +1088,6 @@
 }
 % ---
 
-
 % ---
 % Folha de rosto
 %   usar \imprimirfolhaderosto* casodeseje imprimir algo no verso da
@@ -1157,7 +1151,6 @@
      \imprimirfolhaderostostar
      \imprimirfolhaderostonostar
 }
-
 
 % ---
 \makeatother

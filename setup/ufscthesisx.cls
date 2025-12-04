@@ -30,10 +30,6 @@
 
 \makeatletter
 
-
-
-
-
 %----------------------------------------------------------------------------------------
 %   PACKAGES AND OTHER DOCUMENT CONFIGURATIONS BEFORE LOADING abntex2
 %----------------------------------------------------------------------------------------
@@ -117,16 +113,6 @@
 
 % q/can-i-silence-a-warning-which-is-coming-from-a-file-like-bigfoot-sty
 \WarningFilter*{hyperref}{Option `hyperfootnotes' has already been used}
-
-
-
-
-
-
-
-
-
-
 
 % Prove acesso a classe 'ufscthesisx'
 \ProvidesClass{setup/ufscthesisx}[2016/11/15 1.0.0 setup/ufscthesisx]
@@ -229,13 +215,6 @@
   % \PackageError{minted}{You must have `pygmentize' installed to use the minted package}{Minted Error}
 \fi
 
-
-
-
-
-
-
-
 % Custom list throw LaTeX Error: Command \mycustomfiction already defined?
 % q/custom-list-throw-latex-error-command-mycustomfiction-already-defined
 \RequirePackage{morewrites}
@@ -282,8 +261,6 @@
 % Why ltablex package breaks the changepage package?
 % q/why-ltablex-package-breaks-the-changepage-package
 \RequirePackage{ltablex}\keepXColumns
-
-
 
 % CONFIGURAÇÕES DE PACOTES
 \newcommand{\ifnotempty}[2]{\ifthenelse{\not\equal{#1}{}}{#2}{}}
@@ -345,7 +322,6 @@
 \providecommand{\imprimircampus}{}
 \newcommand{\campus}[1]{\renewcommand{\imprimircampus}{#1}}
 
-
 \newtheorem{axioma}{Axioma}[chapter]
 \newtheorem{postulado}{Postulado}[chapter]
 \newtheorem{teorema}{Teorema}[chapter]
@@ -354,7 +330,6 @@
 \newtheorem{lema}[teorema]{Lema}
 \newtheorem{proposicao}[teorema]{Proposi\c{c}\~ao}
 
-
 % Commonly used in definitions, conditions, problems and examples.
 \theoremstyle{definition}
 \newtheorem{definicao}{Defini\c{c}\~ao}[chapter]
@@ -362,13 +337,10 @@
 \newtheorem{exercicio}{Exerc\'icio}[section]
 \newtheorem{condicao}{Condi\c{c}\~ao}[chapter]
 
-
 \theoremstyle{remark}
 \newtheorem{observacao}{Observa\c{c}\~ao}
 
 \renewcommand{\qedsymbol}{$\blacksquare$}
-
-
 
 % Margens
 % q/how-to-set-margins-in-memoir-class
@@ -461,7 +433,6 @@
 % q/toc-spacing-in-memoir
 \setlength{\cftbeforechapterskip}{12pt}
 
-
 % Fontes das entradas do sumario
 % q/how-to-make-the-table-of-contents-section-title-upper-case-without-messing-with
 % q/how-to-make-section-name-uppercase-in-toc
@@ -478,7 +449,6 @@
   \oldcontentsline{#1}{#2}%
   }%
 }
-
 
 % No caso de Sumario (TOC) UFSC
 %
@@ -568,7 +538,6 @@
   \prebibhook
 }
 
-
 % Espaçamento depois do título
 \setlength{\afterchapskip}{0.38cm}
 
@@ -625,14 +594,12 @@
 \counterwithin{figure}{chapter}
 \counterwithin{table}{chapter}
 
-
 % Macros for Cross-reference
 \newcommand{\figref}[1]{Figura~\ref{#1}}   % Cross-reference of figures
 \newcommand{\tabref}[1]{Tabela~\ref{#1}}    % Cross-reference of tables
 \newcommand{\eqnref}[1]{\eqref{#1}}      % Cross-reference of equations
 \newcommand{\secref}[1]{Seção~\ref{#1}}  % Cross-reference of equations
 \newcommand{\defref}[1]{Definição~\ref{#1}} %
-
 
 \renewenvironment{resumo}[1][\resumoname]
 {%
@@ -721,7 +688,6 @@
   \bookmarksetup{startatroot}
 }
 
-
 % ------------------------------------------------------------------------
 % ------------------------------------------------------------------------
 % Comandos e ambientes de editoracao APENDICES e ANEXOS
@@ -735,7 +701,6 @@
   % \addcontentsline{toc}{part}{\appendixtocname}
   \appendixpage*
 }
-
 
 % ---
 % Impressão da Capa
@@ -776,7 +741,6 @@
   \end{capa}
 }
 % ---
-
 
 % Conteúdo padrao da Folha de Rosto
 %
@@ -839,7 +803,6 @@
   \pdfstringdefDisableCommands{\let\uppercase\relax}
 }{}
 
-
 % Backward compatibility with `abntex2cite` package `\citeonline` command with the new `biblatex` package
 % q/what-is-the-difference-between-def-and-newcommand
 \let\citeonline\textcite
@@ -868,15 +831,6 @@
 \setcounter{secnumdepth}{6}
 \setcounter{tocdepth}{6}
 
-
-
-
-
-
-
-
-
-
 %% README.md
 %% Copyright 2017 Evandro Coan
 %
@@ -899,8 +853,6 @@
 % 4. `commands_list.tex`
 % 5. `programming.tex`
 % 6. `badboxes.tex`
-
-
 
 % Please tutor the usage of patchcmd and xpatch
 % q/please-tutor-the-usage-of-patchcmd-and-xpatch
@@ -979,7 +931,6 @@
 \@ifpackageloaded{hyperref}{\hypersetup{hyperfootnotes=false}}{\PassOptionsToPackage{hyperfootnotes=false}{hyperref}}
 \usepackage{hyperref}
 
-
 % \lettrine{O}{nce} upon a time...
 % \lettrine[findent=2pt]{\fbox{\textbf{T}}}{ }his thesis deals with...
 %
@@ -1022,8 +973,6 @@
 
 \usepackage{tabularx}
 \usepackage{multirow}
-
-
 
 % The package supports the Text Companion fonts, which provide many text symbols (such as
 % baht, bullet, copyright, musicalnote, onequarter, section, and yen), in the TS1 encoding.
@@ -1452,7 +1401,6 @@
   \fi%
 }
 
-
 \ifAppMotherFuckerExists
   % q/how-to-get-caption-above-listing-with-minted
   % q/latex-minted-package-using-custom-output-directory-build
@@ -1484,7 +1432,6 @@
   % q/red-box-drawn-around-question-mark-operator-in-minted-erlang-code
   \AtBeginEnvironment{code}{\renewcommand{\fcolorbox}[4][]{#4}}
 \else\fi
-
 
 % Memoir class conflict with datetime
 % q/memoir-class-conflict-with-datetime
@@ -1631,7 +1578,6 @@
 }
 % ufscthesis end, https://github.com/UFSC/ufscthesisx/issues/19
 
-
 % Package csquotes Warning: Load 'inputenc' before 'csquotes'
 % Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing
 % q/package-biblatex-warning-babel-polyglossia-detected-but-csquotes-missing
@@ -1702,20 +1648,6 @@
 % q/while-loading-fancyvrb-siunitx-and-bigfoot-i-got-input-stack-size-5000-tex-st
 \xpatchcmd{\FN@allmarks}{266}{256}{}{}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 %% README.md
 %% Copyright 2017 Evandro Coan
 %
@@ -1739,8 +1671,6 @@
 % 5. `programming.tex`
 % 6. `badboxes.tex`
 
-
-
 %
 % Settings
 %
@@ -1748,16 +1678,12 @@
 % Basic settings for hyperref package
 \hypersetup{colorlinks,linkcolor=darkblue,citecolor=darkgreen}
 
-
-
 % q/how-to-fix-useshorthands-defineshorthand-usage-on-bookmark-entries
 \def\HyPsd@LetUnexpandableSpace#1{%
   \if\noexpand~\noexpand#1%
   \else
   \expandafter\@firstofone
   \fi{\expandafter\futurelet\expandafter#1\expandafter\@gobble\space\relax}}
-
-
 
 % How could the `\everypar` justification statement be used?
 % q/how-could-the-everypar-justification-statement-be-used
@@ -1775,8 +1701,6 @@
     \else \box\linebox \fi
   \fi
 }
-
-
 
 % How could the `\everypar` justification statement be used?
 % q/how-could-the-everypar-justification-statement-be-used
@@ -1802,8 +1726,6 @@
   \exhyphenpenalty=10000%
 }
 {\par}
-
-
 
 % Some text \brkurl{http://www.example.com/this/directory/here}
 %
@@ -1856,8 +1778,6 @@
   \relax%
 }
 
-
-
 % Change background color for text block
 % q/change-background-color-for-text-block
 \usepackage{framed}
@@ -1872,8 +1792,6 @@
   boxsep=0pt,
   unbreakable,
 }
-
-
 
 % Make first row of table all bold
 %
@@ -1903,7 +1821,6 @@
 {%
   \gdef\currentrowstyle{#1}#1\ignorespaces
 }
-
 
 % q/why-abntex2-class-is-inserting-a-new-line-after-the-chapter-title
 % q/how-to-automatically-put-a-go-to-summary-go-back-on-each-section
@@ -1987,8 +1904,6 @@
   \oldAddGoTotableofcontents%
 }
 
-
-
 %
 % New commands
 %
@@ -1997,7 +1912,6 @@
 % q/push-long-words-in-a-new-line
 \newcommand\lword[1]{\leavevmode\nobreak\hskip0pt plus\linewidth\penalty50\hskip0pt plus-\linewidth\nobreak{#1}}
 \newcommand\lurl[1]{\leavevmode\nobreak\hskip0pt plus\linewidth\penalty50\hskip0pt plus-\linewidth\nobreak{\url{#1}}}
-
 
 % For the new command \latex
 % q/space-after-latex-commands
@@ -2008,8 +1922,6 @@
 
 % Create a bold title all in upper case.
 \newcommand{\Title}[1]{\textbf{\MakeUppercase{#1}}}
-
-
 
 % How to create my own list of things
 % q/how-to-create-my-own-list-of-things
@@ -2035,8 +1947,6 @@
   \addcontentsline{tpc}{textpreliminarycounter}{\protect\numberline{\thetextpreliminarycounter}#1}\par%
 }
 
-
-
 % Unable to link to inserted pages with pdfpages
 % Solution from http://tex.stackexchange.com/questions/25105/unable-to-link-to-inserted-pages-with-pdfpages
 \newcounter{includepdfpage}
@@ -2054,13 +1964,9 @@
   \includepdf[pages=#1,pagecommand=\addlabelstoallincludedpages{#2},scale=#4]{#3}%
 }
 
-
-
 % \MakeUppercase in \section and \chapter with hyperref cause trouble
 % q/makeuppercase-in-section-and-chapter-with-hyperref-cause-trouble
 \newcommand{\HyperrefUppercase}[1]{\texorpdfstring{\MakeTextUppercase{#1}}{#1}}
-
-
 
 % Example about hyphenation with ttfamily font
 % q/example-about-hyphenation-with-ttfamily-font
@@ -2084,8 +1990,6 @@
   \selectfont
 }
 \DeclareTextFontCommand{\textvtt}{\vttfamily}
-
-
 
 % Logical String Length
 % q/logical-string-length
@@ -2111,18 +2015,6 @@
   \fi
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
 %% README.md
 %% Copyright 2017 Evandro Coan
 %
@@ -2145,8 +2037,6 @@
 % 4. `commands_list.tex`
 % 5. `programming.tex`
 % 6. `badboxes.tex`
-
-
 
 % Bad Boxes settings
 
@@ -2203,18 +2093,6 @@
   }
 }{}
 
-
-
-
-
-
-
-
-
-
-
-
-
 %% README.md
 %% Copyright 2017 Evandro Coan
 %
@@ -2237,8 +2115,6 @@
 % 4. `commands_list.tex`
 % 5. `programming.tex`
 % 6. `badboxes.tex`
-
-
 
 % Writing code in latex document. Usage: \begin & \end {lstlisting}
 % http://stackoverflow.com/questions/3175105/writing-code-in-latex-document
@@ -2711,12 +2587,6 @@
     tag=[s]
 }
 
-
-
-
-
-
-
 % Ao contrario da norma abnt-6027-2012, que as figuras estejam listadas na Lista de
 % Ilustrações,  a UFSC pede que as figuras estejam na Lista de Figuras.
 %
@@ -2787,6 +2657,5 @@
   Equação~(#1)\null
   }
 }}{}}{}
-
 
 \makeatother
