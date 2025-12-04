@@ -390,9 +390,9 @@
     \ifthenelse{\equal{\ABNTEXisarticle}{true}}{%
       \setlength\beforechapskip{\baselineskip}%
       \renewcommand{\chaptitlefont}{\ABNTEXsectionfont\ABNTEXsectionfontsize}%
-    }{%else
-       \setlength{\beforechapskip}{0pt}%
-       \renewcommand{\chaptitlefont}{\ABNTEXchapterfont\ABNTEXchapterfontsize}%
+    }{
+      \setlength{\beforechapskip}{0pt}%
+      \renewcommand{\chaptitlefont}{\ABNTEXchapterfont\ABNTEXchapterfontsize}%
     }
 
     \renewcommand{\chapnumfont}{\chaptitlefont}
@@ -420,8 +420,10 @@
 
     % Impressão do nome do capítulo
     \renewcommand{\printchaptername}{%
-       \chaptitlefont%
-       \ifthenelse{\boolean{abntex@apendiceousecao}}{\appendixname}{}%
+      \chaptitlefont%
+      \ifthenelse{\boolean{abntex@apendiceousecao}}{%
+        \appendixname%
+      }{}%
     }
 
     % Impressão do título do capítulo
