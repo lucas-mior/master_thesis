@@ -22,14 +22,16 @@
 %% This work consists of a bunch of files. But originally there were 2 files
 %% which are renamed as follows:
 %% Deleted the `abntex2-modelo-img-marca.pdf`
-%% Renamed the `abntex2-modelo-include-comandos.tex, v-1.9.2 laurocesar` to `chapter_1.tex`
+%% Renamed the `abntex2-modelo-include-comandos.tex, v-1.9.2 laurocesar`
+%%          to `chapter_1.tex`
 %%
 % ---
 % Este capítulo, utilizado por diferentes exemplos do abnTeX2, ilustra o uso de
 % comandos do abnTeX2 e de LaTeX.
 % ---
 
-% The \phantomsection command is needed to create a link to a place in the document that is not a
+% The \phantomsection command is needed
+% to create a link to a place in the document that is not a
 % figure, equation, table, section, subsection, chapter, etc.
 % questions/44088/when-do-i-need-to-invoke-phantomsection
 \phantomsection
@@ -38,8 +40,10 @@
 \chapter[\lang{Abbreviation for the Table of Contents}{Abreviação para o Sumário}]
 {
     \lang
-    {Long title to present in the chapter, Axioms, Theorems, Postulates, corollaries, lemmas}
-    {Longo título apresentar no capítulo, Axiomas, Teoremas, Postulados, corolários, lemas}
+    {Long title to present in the chapter, Axioms, Theorems, Postulates,
+     corollaries, lemmas}
+    {Longo título apresentar no capítulo, Axiomas, Teoremas, Postulados,
+     corolários, lemas}
 }
 
 \label{cap_exemplos}
@@ -72,11 +76,13 @@ caso contrário eles seriam chamados teoremas). Em muitos contextos, "axioma",
 "postulado" e "hipótese" são usados como sinônimos. -- \showfont
 
 \begin{axioma}[Axioma de Igualdade -- \showfont]
-Supondo $\mathfrak{L}$, uma linguagem de primeira ordem. para cada variável $x$, a fórmula $x = x$ é universalmente válida. -- \showfont
+Supondo $\mathfrak{L}$, uma linguagem de primeira ordem. para cada variável $x$,
+a fórmula $x = x$ é universalmente válida. -- \showfont
 \end{axioma}
 
 \begin{postulado}[Postulado de Igualdade -- \showfont]
-    Supondo $\mathfrak{L}$, uma linguagem de primeira ordem. para cada variável $x$, a fórmula $x = x$ é universalmente válida. -- \showfont
+    Supondo $\mathfrak{L}$, uma linguagem de primeira ordem. para cada variável
+    $x$, a fórmula $x = x$ é universalmente válida. -- \showfont
 \end{postulado}
 
 \section{Teorema}
@@ -287,8 +293,8 @@ Outra forma é utilizar o pacote pdflscape -- \showfont
 \section{Codificação dos arquivos: UTF8}
 % ---
 
-A codificação de todos os arquivos do \abnTeX{} é \texttt{UTF8}. É necessário que
-você utilize a mesma codificação nos documentos que escrever, inclusive nos
+A codificação de todos os arquivos do \abnTeX{} é \texttt{UTF8}. É necessário
+que você utilize a mesma codificação nos documentos que escrever, inclusive nos
 arquivos de base bibliográficas |.bib| -- \showfont.
 
 % ---
@@ -316,9 +322,10 @@ deve-se observar apenas o recuo \cite[5.3]{NBR10520:2002}.
 \end{lstlisting}
 
 O ambiente \texttt{citacao} pode receber como parâmetro opcional um nome de
-idioma previamente carregado nas opções da classe (\autoref{sec-hifenizacao}). Nesse
-caso, o texto da citação é automaticamente escrito em itálico e a hifenização é
-ajustada para o idioma selecionado na opção do ambiente. Por exemplo -- \showfont:
+idioma previamente carregado nas opções da classe (\autoref{sec-hifenizacao}).
+Nesse caso, o texto da citação é automaticamente escrito em itálico e a
+hifenização é ajustada para o idioma selecionado na opção do ambiente. Por
+exemplo -- \showfont:
 
 \begin{lstlisting}[language=tex]
 \begin{citacao}[english]
@@ -333,24 +340,24 @@ Text in English language in italic with correct hyphenation. -- \showfont
 \end{citacao}
 
 \index{citações!simples}Citações simples, com até três linhas, devem ser
-incluídas com aspas. Observe que em \LaTeX{} as aspas iniciais são diferentes das
-finais: ``Amor é fogo que arde sem se ver''. -- \showfont
+incluídas com aspas. Observe que em \LaTeX{} as aspas iniciais são diferentes
+das finais: ``Amor é fogo que arde sem se ver''. -- \showfont
 
 % ---
 \section{Notas de rodapé}
 % ---
 
 As notas de rodapé são detalhadas pela NBR 14724:2011 na seção 5.2.1\footnote{As
-notas devem ser digitadas ou datilografadas dentro das margens, ficando
-separadas do texto por um espaço simples de entre as linhas e por filete de 5
-cm, a partir da margem esquerda. Devem ser alinhadas, a partir da segunda linha
-da mesma nota, abaixo da primeira letra da primeira palavra, de forma a destacar
-o expoente, sem espaço entre elas e com fonte menor -- \showfont
-\textcite[5.2.1]{NBR14724:2011}. -- \showfont}\footnote{Caso uma série de notas sejam
-criadas sequencialmente, o \abnTeX{} instrui o \LaTeX{} para que uma vírgula seja
-colocada após cada número do expoente que indica a nota de rodapé no corpo do
-texto. -- \showfont}\footnote{Verifique se os números do expoente possuem uma vírgula para
-dividi-los no corpo do texto. -- \showfont}.
+    notas devem ser digitadas ou datilografadas dentro das margens, ficando
+    separadas do texto por um espaço simples de entre as linhas e por filete de
+    5 cm, a partir da margem esquerda. Devem ser alinhadas, a partir da segunda
+    linha da mesma nota, abaixo da primeira letra da primeira palavra, de forma
+a destacar o expoente, sem espaço entre elas e com fonte menor -- \showfont
+\textcite[5.2.1]{NBR14724:2011}. -- \showfont}\footnote{Caso uma série de notas
+sejam criadas sequencialmente, o \abnTeX{} instrui o \LaTeX{} para que uma
+vírgula seja colocada após cada número do expoente que indica a nota de rodapé
+no corpo do texto. -- \showfont}\footnote{Verifique se os números do expoente
+    possuem uma vírgula para dividi-los no corpo do texto. -- \showfont}.
 
 % ---
 \section{Tabelas}
@@ -386,9 +393,9 @@ acadêmicos -- \showfont.
 
 \begin{table}[htb]
 \IBGEtab{%
-  \caption[Um Exemplo de tabela alinhada que pode ser longa
-  ou curta, conforme padrão IBGE.]{Um Exemplo de tabela alinhada que pode ser longa
-  ou curta, conforme padrão IBGE. -- \showfont}%
+  \caption[Um Exemplo de tabela alinhada que pode ser longa ou curta, conforme
+  padrão IBGE.]{Um Exemplo de tabela alinhada que pode ser longa ou curta,
+  conforme padrão IBGE. -- \showfont}%
   \label{tabela-ibge}
 }{%
   \begin{tabular}{ccc}
@@ -414,8 +421,9 @@ acadêmicos -- \showfont.
 % What does [t] and [ht] mean?
 % questions/8652/what-does-t-and-ht-mean
 \begin{table}[!ht]
-    \caption[Exemplo de tabela utilizando o pacote \emph{siunitx} e \emph{resizebox}]{Exemplo
-        de tabela utilizando o pacote \emph{siunitx} e \emph{resizebox}  -- \showfont.}
+    \caption[Exemplo de tabela utilizando o pacote \emph{siunitx} e
+    \emph{resizebox}]{Exemplo de tabela utilizando o pacote \emph{siunitx} e
+    \emph{resizebox}  -- \showfont.}
     \label{tab:SimulationResults}
     \centering
     \resizebox{\linewidth}{!}{%
@@ -496,11 +504,11 @@ impressas, uma vez que imagens vetorias são perfeitamente escaláveis para
 qualquer dimensão. Nesse caso, se for utilizar o Microsoft Excel para produzir
 gráficos, ou o Microsoft Word para produzir ilustrações, exporte-os como PDF e
 os incorpore ao documento conforme o exemplo abaixo. No entanto, para manter a
-coerência no uso de software livre (já que você está usando \LaTeX{} e \abnTeX{}),
-teste a ferramenta \textsf{InkScape}\index{InkScape}
+coerência no uso de software livre (já que você está usando \LaTeX{} e
+\abnTeX{}), teste a ferramenta \textsf{InkScape}\index{InkScape}
 (\url{http://inkscape.org/}). Ela é uma excelente opção de código-livre para
-produzir ilustrações vetoriais, similar ao CorelDraw\index{CorelDraw} ou ao Adobe
-Illustrator\index{Adobe Illustrator}. De todo modo, caso não seja possível
+produzir ilustrações vetoriais, similar ao CorelDraw\index{CorelDraw} ou ao
+Adobe Illustrator\index{Adobe Illustrator}. De todo modo, caso não seja possível
 utilizar arquivos de imagens como PDF, utilize qualquer outro formato, como
 JPEG, GIF, BMP, etc. Nesse caso, você pode tentar aprimorar as imagens
 incorporadas com o software livre \textsf{Gimp}\index{Gimp}
@@ -508,7 +516,8 @@ incorporadas com o software livre \textsf{Gimp}\index{Gimp}
 Photoshop\index{Adobe Photoshop}. -- \showfont
 
 \begin{figure}[htb]
-    \caption[Gráfico produzido em Excel e salvo como PDF]{Gráfico produzido em Excel e salvo como PDF -- \showfont}
+    \caption[Gráfico produzido em Excel e salvo como PDF]{Gráfico produzido em
+             Excel e salvo como PDF -- \showfont}
     \label{fig_grafico}
     \begin{center}
         \includegraphics[scale=0.35]{fig/abntex2-modelo-img-grafico.pdf}
@@ -520,9 +529,10 @@ Photoshop\index{Adobe Photoshop}. -- \showfont
 \subsection{Figuras em minipages}
 % ---
 
-Minipages são usadas para inserir textos ou outros elementos em quadros
-com tamanhos e posições controladas. Veja o exemplo da
-\autoref{fig_minipage_imagem1} e da \autoref{fig_minipage_grafico2} -- \showfont.
+Minipages são usadas para inserir textos ou outros elementos em quadros com
+tamanhos e posições controladas. Veja o exemplo da
+\autoref{fig_minipage_imagem1} e da \autoref{fig_minipage_grafico2} --
+\showfont.
 
 \begin{figure}[htb]
 \label{teste}
@@ -578,7 +588,8 @@ Este é o conteúdo do primeiro quadro.\\
 \fonte{Teste. -- \showfont}
 \end{quadro}
 
-Além do \autoref{quad:quadro_modelo1}, também é possível especificar outra ordem de posicionamento como [htb] -- \showfont:
+Além do \autoref{quad:quadro_modelo1}, também é possível especificar outra ordem
+de posicionamento como [htb] -- \showfont:
 
 \begin{quadro}[htb]
 \caption[Legenda do segundo quadro.]{Legenda do segundo quadro. -- \showfont}
@@ -739,8 +750,9 @@ Para mais informações, consulte \textcite[p. 47-52 e 135]{memoir} -- \showfont
 \section{Inclusão de código fonte}\label{sec-codeinsert}
 % ---
 
-\begin{lstlisting}[caption={[Leitura dos dados simulados e conversão para estados topológicos.]{Leitura
-    dos dados simulados e conversão para estados topológicos. -- \showfont}},label={lst:leituradadossim}]
+\begin{lstlisting}[caption={[Leitura dos dados simulados e conversão para
+estados topológicos.]{Leitura dos dados simulados e conversão para estados
+topológicos. -- \showfont}},label={lst:leituradadossim}]
 % Pré definições iniciais
 nsub=3;  % Numero de Submódulos
 nbits=2*nsub; % Numero de bits necessários para representar os estados
@@ -756,7 +768,9 @@ state=fi(bin2dec(binstates),0,nbits,0); % Objeto numérico de ponto-fixo
 
 \end{lstlisting}
 
-\begin{lstlisting}[language=Python,caption={[Python example]{Python example -- \showfont}}]
+\begin{lstlisting}[
+language=Python,caption={[Python example]{Python example -- \showfont}}
+]
 import numpy as np
 
 def incmatrix(genl1,genl2):
@@ -814,8 +828,8 @@ Para incluir documentos sem quebra de páginas, utilize -- \showfont:
 
 Geralmente os editores \LaTeX{}, como o
 TeXlipse\footnote{\url{http://texlipse.sourceforge.net/} -- \showfont}, o
-Texmaker\footnote{\url{http://www.xm1math.net/texmaker/} -- \showfont}, entre outros,
-compilam os documentos automaticamente, de modo que você não precisa se
+Texmaker\footnote{\url{http://www.xm1math.net/texmaker/} -- \showfont}, entre
+outros, compilam os documentos automaticamente, de modo que você não precisa se
 preocupar com isso -- \showfont.
 
 No entanto, você pode compilar os documentos \LaTeX{} usando os seguintes
@@ -835,7 +849,8 @@ comandos, que devem ser digitados no \emph{Prompt de Comandos} do Windows ou no
 \end{lstlisting}
 
 \begin{lstlisting}[language=bash]
-a very long and totruous path which you can check to see if it breaks and where at the end of the line
+a very long and totruous path which you can check to see if it breaks and where
+at the end of the line
 \end{lstlisting}
 
 % ---
@@ -876,8 +891,8 @@ Esta seção testa o uso de divisões de documentos. Esta é a
 \subsection{Divisões do documento: subseção}\label{sec-divisoes-subsection}
 
 Isto é uma subseção. Veja a \autoref{sec-divisoes-subsubsection}, que é uma
-\texttt{subsubsection  } do \LaTeX{}, mas é impressa chamada de ``subseção'' porque
-no Português não temos a palavra ``subsubseção'' -- \showfont.
+\texttt{subsubsection  } do \LaTeX{}, mas é impressa chamada de ``subseção''
+porque no Português não temos a palavra ``subsubseção'' -- \showfont.
 
 \subsubsection{Divisões do documento: subsubseção}
 \label{sec-divisoes-subsubsection}
@@ -893,9 +908,9 @@ Isto é outra subsubseção -- \showfont.
 Isto é uma subseção -- \showfont.
 
 % ---
-\section[Exemplo muito longo]{Este é um exemplo de nome de seção longo. Ele deve estar
-alinhado à esquerda e a segunda e demais linhas devem iniciar logo abaixo da
-primeira palavra da primeira linha -- \showfont}
+\section[Exemplo muito longo]{Este é um exemplo de nome de seção longo. Ele deve
+estar alinhado à esquerda e a segunda e demais linhas devem iniciar logo abaixo
+da primeira palavra da primeira linha -- \showfont}
 % ---
 
 Isso atende à norma \textcite[seções de 5.2.2 a 5.2.4]{NBR14724:2011}
@@ -930,7 +945,8 @@ classe \textsf{abntex2}. Porém, mesmo assim a opção \texttt{brazil} deve ser
 informada como a última opção da classe para que todos os pacotes reconheçam o
 idioma. Vale ressaltar que a última opção de idioma é a utilizada por padrão no
 documento. Desse modo, caso deseje escrever um texto em inglês que tenha
-citações em português e em francês, você deveria usar o preâmbulo como abaixo -- \showfont:
+citações em português e em francês, você deveria usar o preâmbulo como abaixo --
+\showfont:
 
 \begin{verbatim}
 \documentclass[
@@ -952,14 +968,14 @@ Exemplo de hifenização em inglês\footnote{Extraído de:
 
 % questions/20987/changing-babel-package-inside-a-single-chapter
 \begin{otherlanguage*}{english}
-\textit{Text in English language. This environment switches all language\hyp{}definitions,
-like the language specific names for figures, tables etc. to the other
-language. The starred version of this environment typesets the main text
-according to the rules of the other language, but keeps the language specific
-string for ancillary things like figures, in the main language of the document.
-The environment hyphenrules switches only the hyphenation patterns used; it can
-also be used to disallow hyphenation by using the language name
-`nohyphenation'. -- \showfont}
+\textit{Text in English language. This environment switches all
+    language\hyp{}definitions, like the language specific names for figures,
+    tables etc. to the other language. The starred version of this environment
+    typesets the main text according to the rules of the other language, but
+    keeps the language specific string for ancillary things like figures, in the
+    main language of the document.  The environment hyphenrules switches only
+    the hyphenation patterns used; it can also be used to disallow hyphenation
+    by using the language name `nohyphenation'. -- \showfont}
 \end{otherlanguage*}
 
 Exemplo de hifenização em francês\footnote{Extraído de:
@@ -980,9 +996,9 @@ connecter à leur compte. -- \showfont}
 Pequeno texto em espanhol\footnote{Extraído de:
 \url{http://internacional.elpais.com/internacional/2013/02/17/actualidad/1361102009_913423.html} -- \showfont}:
 
-\foreignlanguage{spanish}{\textit{Decenas de miles de personas ovacionan al pontífice en su
-penúltimo ángelus dominical, el primero desde que anunciase su renuncia. El Papa se
-centra en la crítica al materialismo}} -- \showfont.
+\foreignlanguage{spanish}{\textit{Decenas de miles de personas ovacionan al
+pontífice en su penúltimo ángelus dominical, el primero desde que anunciase su
+renuncia. El Papa se centra en la crítica al materialismo}} -- \showfont.
 
 O idioma geral do texto por ser alterado como no exemplo seguinte -- \showfont:
 
@@ -992,8 +1008,8 @@ O idioma geral do texto por ser alterado como no exemplo seguinte -- \showfont:
 
 Isso altera automaticamente a hifenização e todos os nomes constantes de
 referências do documento para o idioma inglês. Consulte o manual da classe
-\cite{abntex2classe} para obter orientações adicionais sobre internacionalização de
-documentos produzidos com \abnTeX{} -- \showfont.
+\cite{abntex2classe} para obter orientações adicionais sobre internacionalização
+de documentos produzidos com \abnTeX{} -- \showfont.
 
 A \autoref{sec-citacao} descreve o ambiente \texttt{citacao} que pode receber
 como parâmetro um idioma a ser usado na citação -- \showfont.
@@ -1033,7 +1049,8 @@ que devem estar envoltos em chaves. A regra geral é sempre usar a acentuação
 neste modo quando houver conversão para letras maiúsculas -- \showfont.
 
 \begin{table}[htbp]
-\caption[Tabela de conversão de acentuação]{Tabela de conversão de acentuação. -- \showfont}
+\caption[Tabela de conversão de acentuação]
+{Tabela de conversão de acentuação. -- \showfont}
 \label{tabela-acentos}
 \centering
 \begin{tabular}{ll}\hline\hline
@@ -1071,8 +1088,8 @@ em \url{https://code.google.com/p/abntex2/wiki/ComoContribuir}.
 
 % questions/264586/invisible-overfull-hbox-in-toc
 % questions/53513/hyperref-token-not-allowed
-\section{Quer customizar os modelos do \texorpdfstring{\newline}{}\abnTeX{} para sua instituição ou
-universidade?}
+\section{Quer customizar os modelos do \texorpdfstring{\newline}{}\abnTeX{} para
+    sua instituição ou universidade?}
 
 Veja como customizar o \abnTeX{} em:
 \url{https://code.google.com/p/abntex2/wiki/ComoCustomizar}.

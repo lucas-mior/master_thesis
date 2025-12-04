@@ -1,6 +1,6 @@
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 %   Thesis Tweaks and Utilities
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 \makeatletter
 
 % Uncomment this if you are debugging pages' badness Underfull & Overflow
@@ -72,7 +72,8 @@
   \setlength\midchapskip{15pt}
   \setlength\afterchapskip{15pt}
 
-  % Memoir: Warnings “The material used in the headers is too large” w/ accented titles
+  % Memoir:
+  % Warnings “The material used in the headers is too large” w/ accented titles
   % questions/387293/how-to-change-the-page-layout-with-memoir
   \setheadfoot{30.0pt}{\footskip}
   \checkandfixthelayout
@@ -116,7 +117,8 @@
   % RGB colors in absolute values from 0 to 255 by using `RGB` tag
   \definecolor{darkblue}{RGB}{26,13,178}
 
-  % Colors names definitions as RGB colors in percentage notation by using `rgb` tag
+  % Colors names definitions
+  % as RGB colors in percentage notation by using `rgb` tag
   \definecolor{mygreen}{rgb}{0,0.6,0}
   \definecolor{mygray}{rgb}{0.5,0.5,0.5}
   \definecolor{mymauve}{rgb}{0.58,0,0.82}
@@ -163,7 +165,8 @@
 % \newcommand{\bibliographyfontsize}{\fontsize{10.0pt}{10.5pt}\selectfont}
 % \renewcommand*{\bibfont}{\bibliographyfontsize}
 
-% Uncomment this to insert the abstract into your bibliography entries when the abstract is available
+% Uncomment this to insert the abstract
+% into your bibliography entries when the abstract is available
 % questions/398666/how-to-correctly-insert-and-justify-abstract
 \ifadvisor
 \else
@@ -329,16 +332,19 @@
 \renewcommand{\cftparagraphfont}{\ABNTEXsubsubsubsectionfont\color{black}}
 \renewcommand{\cftparagraphpagefont}{\ABNTEXsubsubsubsectionfont\color{black}}
 
-% Memoir has another mechanism for the job: \cftsetindents{‹kind›}{indent}{numwidth}. Here kind is
-% chapter, section, or whatever; the indent specifies the ‘margin’ before the entry starts; and the
-% width is of the box into which the number is typeset (so needs to be wide enough for the largest
-% number, with the necessary spacing to separate it from what comes after it in the line.
+% Memoir has another mechanism for the job:
+% \cftsetindents{‹kind›}{indent}{numwidth}. Here kind is chapter, section, or
+% whatever; the indent specifies the ‘margin’ before the entry starts; and the
+% width is of the box into which the number is typeset (so needs to be wide
+% enough for the largest number, with the necessary spacing to separate it from
+% what comes after it in the line.
 % http://www.tex.ac.uk/FAQ-tocloftwrong.html
 % questions/264668/memoir-indentation-of-unnumbered-sections-in-table-of-contents
 % questions/394227/memoir-toc-indent-the-second-line-by-numberspace
 %
-% `\cftlastnumwidth` and these `\cftsetindents` are defined by the abntex2 class,
-% obeying the `ABNTEXsumario-abnt-6027-2012`. \newlength{\cftlastnumwidth}
+% `\cftlastnumwidth` and these `\cftsetindents` are defined by the abntex2
+% class, obeying the `ABNTEXsumario-abnt-6027-2012`.
+% \newlength{\cftlastnumwidth}
 % \setlength{\cftlastnumwidth}{\cftsubsubsectionnumwidth}
 % \addtolength{\cftlastnumwidth}{-1em}
 
