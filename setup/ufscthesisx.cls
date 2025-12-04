@@ -289,7 +289,9 @@
 \newcommand{\UFSCbiblioteca}[1]{\renewcommand{\imprimirbiblioteca}{#1}}
 
 \providecommand{\abnteximprimirinstituicaosigla}{}
-\newcommand{\UFSCinstituicaoSigla}[1]{\renewcommand{\abnteximprimirinstituicaosigla}{#1}}
+\newcommand{\UFSCinstituicaoSigla}[1]{%
+  \renewcommand{\abnteximprimirinstituicaosigla}{#1}
+}
 
 \providecommand{\imprimirano}{}
 \newcommand{\UFSCano}[1]{\renewcommand{\imprimirano}{#1}}
@@ -307,8 +309,9 @@
 % inclui subtitulo na capa, folha de rosto e ficha catalografica
 % lrsantos11/abntex2-ufsc/commit/fd30245353dcc49e193d281c78104afe54df9fe7
 %
-% Cria o comando UFSCsubtitulo. A norma define que o TITULO deve ser em caixa alta
-% negrito, mas o subtitulo deve ser em caixa baixa.
+% Cria o comando UFSCsubtitulo.
+% A norma define que o TITULO deve ser em caixa alta negrito,
+% mas o subtitulo deve ser em caixa baixa.
 \providecommand{\imprimirsubtitulo}{}
 \newcommand{\UFSCsubtitulo}[1]{\renewcommand{\imprimirsubtitulo}{#1}}
 
@@ -414,26 +417,61 @@
 % Fontes padroes de part, chapter, section, subsection e subsubsection
 \renewcommand{\ABNTEXfontereduzida}{\fontsize{10pt}{12pt}\selectfont}
 
-\renewcommand{\ABNTEXchapterfont}{\sffamily\fontseries{bx}\fontshape{n}\selectfont}
-\renewcommand{\ABNTEXchapterfontsize}{\normalsize\selectfont}
-\renewcommand{\ABNTEXpartfont}{\sffamily\fontseries{bx}\fontshape{n}\selectfont}
-\renewcommand{\ABNTEXpartfontsize}{\Huge\selectfont}
-\renewcommand{\ABNTEXsectionfont}{\sffamily\fontseries{m}\fontshape{n}\selectfont}
-\renewcommand{\ABNTEXsectionfontsize}{\normalsize\selectfont}
-\renewcommand{\ABNTEXsubsectionfont}{\sffamily\fontseries{b}\fontshape{n}\selectfont}
-\renewcommand{\ABNTEXsubsectionfontsize}{\normalsize\selectfont}
-\renewcommand{\ABNTEXsubsubsectionfont}{\sffamily\fontseries{m}\fontshape{n}\selectfont}
-\renewcommand{\ABNTEXsubsubsectionfontsize}{\normalsize\selectfont}
-\renewcommand{\ABNTEXsubsubsubsectionfont}{\sffamily\fontseries{m}\fontshape{it}\selectfont}
-\renewcommand{\ABNTEXsubsubsubsectionfontsize}{\normalsize\selectfont}
+\renewcommand{\ABNTEXchapterfont}{%
+  \sffamily\fontseries{bx}\fontshape{n}
+  \selectfont
+}
+\renewcommand{\ABNTEXchapterfontsize}{%
+  \normalsize
+  \selectfont
+}
+\renewcommand{\ABNTEXpartfont}{%
+  \sffamily\fontseries{bx}\fontshape{n}
+  \selectfont
+}
+\renewcommand{\ABNTEXpartfontsize}{%
+  \Huge
+  \selectfont
+}
+\renewcommand{\ABNTEXsectionfont}{%
+  \sffamily\fontseries{m}\fontshape{n}
+  \selectfont
+}
+\renewcommand{\ABNTEXsectionfontsize}{%
+  \normalsize
+  \selectfont
+}
+\renewcommand{\ABNTEXsubsectionfont}{%
+  \sffamily\fontseries{b}\fontshape{n}
+  \selectfont
+}
+\renewcommand{\ABNTEXsubsectionfontsize}{%
+  \normalsize
+  \selectfont
+}
+\renewcommand{\ABNTEXsubsubsectionfont}{%
+  \sffamily\fontseries{m}\fontshape{n}
+  \selectfont
+}
+\renewcommand{\ABNTEXsubsubsectionfontsize}{%
+  \normalsize
+  \selectfont
+}
+\renewcommand{\ABNTEXsubsubsubsectionfont}{%
+  \sffamily\fontseries{m}\fontshape{it}
+  \selectfont
+}
+\renewcommand{\ABNTEXsubsubsubsectionfontsize}{%
+  \normalsize
+  \selectfont
+}
 
 % Tamanho da fonte para a epígrafe UFSC
 \expandafter\def\expandafter\epigrafe\expandafter{\epigrafe\ABNTEXfontereduzida}
 
 % Comando que simula a finalizacao de uma parte no bookmark e
 % adiciona espaco de \part no sumario
-\renewcommand{\ABNTEXphantompart}
-{%
+\renewcommand{\ABNTEXphantompart}{%
   \bookmarksetup{startatroot}%
   \phantomsection%
   \addtocontents{toc}{\vspace{0em}}
@@ -499,25 +537,29 @@
   \addtocontents{toc}{\cftsetindents{chapter}{0em}{\cftlastnumwidth}}
 }
 %
-\renewcommand{\ABNTEXtocinnonumchapter}
-{%
-  \addtocontents{toc}{\cftsetindents{chapter}{\cftlastnumwidth}{\cftnumberboxnumberwidth}}%
+\renewcommand{\ABNTEXtocinnonumchapter}{%
+  \addtocontents{toc}{%
+    \cftsetindents{chapter}{\cftlastnumwidth}{\cftnumberboxnumberwidth}
+  }%
   \cftinserthook{toc}{A}
 }
-\renewcommand{\ABNTEXtocprintchapternonum}
-{%
-  \addtocontents{toc}{\cftsetindents{chapter}{\cftlastnumwidth}{\cftnumberboxnumberwidth}}
+\renewcommand{\ABNTEXtocprintchapternonum}{%
+  \addtocontents{toc}{%
+    \cftsetindents{chapter}{\cftlastnumwidth}{\cftnumberboxnumberwidth}
+  }%
 }
 %
-\renewcommand{\ABNTEXtocpartapendices}
-{%
-  \addtocontents{toc}{\cftsetindents{chapter}{\cftlastnumwidth}{\cftnumberboxnumberwidth}}
+\renewcommand{\ABNTEXtocpartapendices}{%
+  \addtocontents{toc}{%
+    \cftsetindents{chapter}{\cftlastnumwidth}{\cftnumberboxnumberwidth}
+  }%
   \cftinserthook{toc}{A}
 }
 %
-\renewcommand{\ABNTEXtocpartanexos}
-{%
-  \addtocontents{toc}{\cftsetindents{chapter}{\cftlastnumwidth}{\cftnumberboxnumberwidth}}
+\renewcommand{\ABNTEXtocpartanexos}{%
+  \addtocontents{toc}{%
+    \cftsetindents{chapter}{\cftlastnumwidth}{\cftnumberboxnumberwidth}
+  }%
   \cftinserthook{toc}{A}
 }
 
@@ -637,7 +679,9 @@
 %
 % How to disable paragraphs inside my environment with \let\par\relax?
 % q/how-to-disable-paragraphs-inside-my-environment-with-let-par-relax
-\xapptocmd{\resumo}{\setlength{\parindent}{0pt}\SingleSpacing\let\parOriginal\par\let\par\relax}{}{}
+\xapptocmd{\resumo}{%
+  \setlength{\parindent}{0pt}\SingleSpacing\let\parOriginal\par\let\par\relax
+}{}{}
 \xpretocmd{\endresumo}{\endgraf}{}{}
 
 % \UFSCimprimirPalavrasChave{Palavras-chaves}{latex. abntex. editoração de texto.}
