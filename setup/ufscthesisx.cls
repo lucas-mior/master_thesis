@@ -1693,16 +1693,18 @@
 % Criação de estilo
 \newglossarystyle{mylong1}{% modificado de a/166209/151962
   \setglossarystyle{long}%
-  \renewenvironment{theglossary}%
-  {\begin{longtable}[l]{@{}p{\dimexpr 3.0cm-\tabcolsep}p{0.78\hsize}}}% <-- change the value here
+  \renewenvironment{theglossary}{%
+    \begin{longtable}[l]{@{}p{\dimexpr 3.0cm-\tabcolsep}p{0.78\hsize}}
+  }% <-- change the value here
   {\end{longtable}}%
 }
 
 % Só um pequeno récuo em relação ao primeiro
 \newglossarystyle{mylong2}{% modificado de a/166209/151962
   \setglossarystyle{long}%
-  \renewenvironment{theglossary}%
-  {\begin{longtable}[l]{@{}p{\dimexpr 2.0cm-\tabcolsep}p{0.86\hsize}}}% <-- change the value here
+  \renewenvironment{theglossary}{%
+    \begin{longtable}[l]{@{}p{\dimexpr 2.0cm-\tabcolsep}p{0.86\hsize}}
+  }% <-- change the value here
   {\end{longtable}}%
 }
 
@@ -1933,8 +1935,7 @@
 \@namedef{OT1-zwidthchar}{255}
 \@namedef{T1-zwidthchar}{"17}
 
-\def\brkurl#1
-{%
+\def\brkurl#1{%
   \edef\savedhchar{\the\hyphenchar\font}%
   \global\setbox1\hbox{}%
   \setbox0=\vbox
@@ -1951,7 +1952,9 @@
     \ifvoid4 \else%
     \global\setbox1\hbox%
     {%
-      \unhbox4\unskip\unskip\discretionary{\hbox{\rlap{$\leftarrow$}}}{}{}\unhbox1%
+      \unhbox4\unskip\unskip\discretionary{%
+        \hbox{\rlap{$\leftarrow$}}%
+      }{}{}\unhbox1%
     }%
     \unskip%
     \unskip%
