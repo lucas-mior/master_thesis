@@ -1107,11 +1107,13 @@
 % A comprehensive (SI) units package
 \usepackage{siunitx}
 \sisetup{detect-all}
-\sisetup{scientific-notation = fixed,
-         fixed-exponent = 0,
-         round-mode = places,
-         round-precision = 2,
-         output-decimal-marker = {,} }
+\sisetup{
+  scientific-notation = fixed,
+  fixed-exponent = 0,
+  round-mode = places,
+  round-precision = 2,
+  output-decimal-marker = {,}
+}
 \DeclareSIUnit \VA {VA} % apparent power
 
 % We need to load it after `siunitx` package,
@@ -1290,10 +1292,28 @@
 \def\listofquadrosname{List of Frames}
 \def\quadrosname{Frame}
 
-\DeclareFloatingEnvironment[fileext=loq,placement={!hbtp},name=\quadrosname,within=chapter,listname=\listofquadrosname]{quadro}
+\DeclareFloatingEnvironment[
+  fileext=loq,
+  placement={!hbtp},
+  name=\quadrosname,
+  within=chapter,
+  listname=\listofquadrosname
+]{quadro}
 
-\@ifpackageloaded{babel}{\@ifpackagewith{babel}{brazil}{\addto\captionsbrazil{\renewcommand{\quadrosname}{Quadro}}}{}}{}
-\@ifpackageloaded{babel}{\@ifpackagewith{babel}{brazil}{\addto\captionsbrazil{\renewcommand{\listofquadrosname}{Lista de Quadros}}}{}}{}
+\@ifpackageloaded{babel}{%
+  \@ifpackagewith{babel}{brazil}{%
+    \addto\captionsbrazil{%
+      \renewcommand{\quadrosname}{Quadro}
+    }
+  }{}
+}{}
+\@ifpackageloaded{babel}{%
+  \@ifpackagewith{babel}{brazil}{%
+    \addto\captionsbrazil{%
+      \renewcommand{\listofquadrosname}{Lista de Quadros}
+    }
+  }{}
+}{}
 
 % Create cleveref names for quadro environment captions
 % https://github.com/abntex/abntex2/issues/176
@@ -1301,16 +1321,52 @@
 % q/here-is-another-example-where-cleveref-does-not-capitalize-when-it-should
 \crefname{quadro}{frame}{frames}
 \Crefname{quadro}{Frame}{Frames}
-\@ifpackageloaded{babel}{\@ifpackagewith{babel}{brazil}{\addto\captionsbrazil{\crefname{quadro}{quadro}{quadros}}}{}}{}
-\@ifpackageloaded{babel}{\@ifpackagewith{babel}{brazil}{\addto\captionsbrazil{\Crefname{quadro}{Quadro}{Quadros}}}{}}{}
+\@ifpackageloaded{babel}{%
+  \@ifpackagewith{babel}{brazil}{%
+    \addto\captionsbrazil{%
+      \crefname{quadro}{quadro}{quadros}
+    }
+  }{}
+}{}
+\@ifpackageloaded{babel}{%
+  \@ifpackagewith{babel}{brazil}{%
+    \addto\captionsbrazil{
+      \Crefname{quadro}{Quadro}{Quadros}
+    }
+  }{}
+}{}
 
 % fix fig. being used instead of figure
 % q/cleveref-capitalise-option-not-working-with-babel-translations
-\@ifpackageloaded{babel}{\@ifpackagewith{babel}{brazil}{\addto\captionsbrazil{\crefname{figure}{Figura}{Figuras}}}{}}{}
-\@ifpackageloaded{babel}{\@ifpackagewith{babel}{brazil}{\addto\captionsbrazil{\Crefname{figure}{Figura}{Figuras}}}{}}{}
+\@ifpackageloaded{babel}{%
+  \@ifpackagewith{babel}{brazil}{%
+    \addto\captionsbrazil{%
+      \crefname{figure}{Figura}{Figuras}
+    }
+  }{}
+}{}
+\@ifpackageloaded{babel}{%
+  \@ifpackagewith{babel}{brazil}{%
+    \addto\captionsbrazil{
+      \Crefname{figure}{Figura}{Figuras}
+    }
+  }{}
+}{}
 
-\@ifpackageloaded{babel}{\@ifpackagewith{babel}{english}{\addto\captionsenglish{\crefname{figure}{figure}{figures}}}{}}{}
-\@ifpackageloaded{babel}{\@ifpackagewith{babel}{english}{\addto\captionsenglish{\Crefname{figure}{Figure}{Figures}}}{}}{}
+\@ifpackageloaded{babel}{%
+  \@ifpackagewith{babel}{english}{%
+    \addto\captionsenglish{%
+      \crefname{figure}{figure}{figures}
+    }
+  }{}
+}{}
+\@ifpackageloaded{babel}{%
+  \@ifpackagewith{babel}{english}{%
+    \addto\captionsenglish{%
+      \Crefname{figure}{Figure}{Figures}
+    }
+  }{}
+}{}
 
 % Caption package and Memoir
 % https://groups.google.com/forum/#!topic/comp.text.tex/RzpI2ATMev0
@@ -1383,8 +1439,12 @@
 
     % q/what-is-the-plain-tex-equivalent-of-settowidth
     \newlength\cftquadroinitialnumwidth
-    \settowidth\cftquadroinitialnumwidth{\cftquadropresnum\cftquadroaftersnum ab}%
-    \setlength\cftquadronumwidth{\dimexpr\cftquadrooldnumwidth+\cftquadroinitialnumwidth}%
+    \settowidth\cftquadroinitialnumwidth{%
+      \cftquadropresnum\cftquadroaftersnum ab%
+    }%
+    \setlength\cftquadronumwidth{%
+      \dimexpr\cftquadrooldnumwidth+\cftquadroinitialnumwidth%
+    }%
     \renewcommand\cftquadroaftersnum{\hfill\textendash\hfill}%
   }
 
@@ -1401,9 +1461,15 @@
   \newcommand{\calculatelfigureheader}{%
     % q/what-is-the-plain-tex-equivalent-of-settowidth
     \newlength\cftfigureinitialnumwidth
-    \settowidth\cftfigureinitialnumwidth{\cftfigurepresnum\cftfigureaftersnum a}%
-    \setlength\cftfigurenumwidth{\dimexpr\cftfigureoldnumwidth+\cftfigureinitialnumwidth}%
-    \renewcommand\cftfigureaftersnum{\hfill\textendash\hfill}%
+    \settowidth\cftfigureinitialnumwidth{%
+      \cftfigurepresnum\cftfigureaftersnum a%
+    }%
+    \setlength\cftfigurenumwidth{%
+      \dimexpr\cftfigureoldnumwidth+\cftfigureinitialnumwidth%
+    }%
+    \renewcommand\cftfigureaftersnum{%
+      \hfill\textendash\hfill%
+    }%
   }
 
   % q/how-to-automatically-add-text-immediately-after-begindocument
@@ -1419,7 +1485,9 @@
     % q/what-is-the-plain-tex-equivalent-of-settowidth
     \newlength\cfttableinitialnumwidth
     \settowidth\cfttableinitialnumwidth{\cfttablepresnum\cfttableaftersnum a}%
-    \setlength\cfttablenumwidth{\dimexpr\cfttableoldnumwidth+\cfttableinitialnumwidth}%
+    \setlength\cfttablenumwidth{%
+      \dimexpr\cfttableoldnumwidth+\cfttableinitialnumwidth%
+    }%
     \renewcommand\cfttableaftersnum{\hfill\textendash\hfill}%
   }
 
@@ -1429,8 +1497,20 @@
   % q/setting-entries-of-list-of-listings-in-latex-package-listings
   % q/you-cant-use-a-prefix-with-charfb-error-when-importing-csv-into-latex
   % q/why-latex-does-not-tell-me-which-command-is-undefined
-  \@ifpackageloaded{babel}{\@ifpackagewith{babel}{brazil}{\addto\captionsbrazil{\renewcommand{\lstlistingname}{Código}}}{}}{}
-  \@ifpackageloaded{babel}{\@ifpackagewith{babel}{brazil}{\addto\captionsbrazil{\renewcommand{\lstlistlistingname}{Lista de Códigos}}}{}}{}
+  \@ifpackageloaded{babel}{%
+    \@ifpackagewith{babel}{brazil}{%
+      \addto\captionsbrazil{%
+        \renewcommand{\lstlistingname}{Código}
+      }
+    }{}
+  }{}
+  \@ifpackageloaded{babel}{%
+    \@ifpackagewith{babel}{brazil}{%
+      \addto\captionsbrazil{%
+        \renewcommand{\lstlistlistingname}{Lista de Códigos}
+      }
+    }{}
+  }{}
 
   \@ifpackageloaded{babel}{\@ifpackagewith{babel}{english}{\addto\captionsenglish{\renewcommand{\lstlistingname}{Code}}}{}}{}
   \@ifpackageloaded{babel}{\@ifpackagewith{babel}{english}{\addto\captionsenglish{\renewcommand{\lstlistlistingname}{List of Codes}}}{}}{}
@@ -1968,8 +2048,7 @@
   \fi
 }
 
-\newcommand{\removeGoToSummary}
-{%
+\newcommand{\removeGoToSummary}{%
   \@ifundefined{oldAddGoToprintparttitle}{}{\let\printparttitle\oldAddGoToprintparttitle}
   \@ifundefined{oldAddGoToSectionformat}{}{\let\Sectionformat\oldAddGoToSectionformat}
 
@@ -2699,27 +2778,31 @@
   \renewcommand{\paragraphautorefname}{Parágrafo}
 }}{}}{}
 
-\@ifpackageloaded{babel}{\@ifpackagewith{babel}{english}{\addto\captionsenglish{%
-  \renewcommand{\UFSCcovername}{Cover}
-  \renewcommand{\ABNTEXorientadorname}{Supervisor}
-  \renewcommand{\ABNTEXcoorientadorname}{Co\hyp{}supervisor}
-  \renewcommand{\ABNTEXfolhadeaprovacaoname}{Approval}
-  \renewcommand{\ABNTEXfolhaderostoname}{Title Page}
-  \renewcommand{\ABNTEXerrataname}{Errata Sheet}
-  \renewcommand{\listfigurename}{List of Illustrations}
-  \renewcommand{\listtablename}{List of Tables}
-  \renewcommand{\listfigurename}{List of Figures}
-  \renewcommand{\ABNTEXlistadesiglasname}{List of Abbreviations and Acronyms}
-  \renewcommand{\ABNTEXlistadesimbolosname}{List of Symbols}
-  \renewcommand{\tableautorefname}{Table}
-  \renewcommand{\figureautorefname}{Figure}
-  \renewcommand{\chapterautorefname}{Chapter}
-  \renewcommand{\pageautorefname}{Page}
-  \renewcommand{\sectionautorefname}{Section}
-  \renewcommand{\subsectionautorefname}{Subsection}
-  \renewcommand{\subsubsectionautorefname}{Subsubsection}
-  \renewcommand{\paragraphautorefname}{Paragraph}
-}}{}}{}
+\@ifpackageloaded{babel}{%
+  \@ifpackagewith{babel}{english}{%
+    \addto\captionsenglish{%
+      \renewcommand{\UFSCcovername}{Cover}
+      \renewcommand{\ABNTEXorientadorname}{Supervisor}
+      \renewcommand{\ABNTEXcoorientadorname}{Co\hyp{}supervisor}
+      \renewcommand{\ABNTEXfolhadeaprovacaoname}{Approval}
+      \renewcommand{\ABNTEXfolhaderostoname}{Title Page}
+      \renewcommand{\ABNTEXerrataname}{Errata Sheet}
+      \renewcommand{\listfigurename}{List of Illustrations}
+      \renewcommand{\listtablename}{List of Tables}
+      \renewcommand{\listfigurename}{List of Figures}
+      \renewcommand{\ABNTEXlistadesiglasname}{List of Abbreviations and Acronyms}
+      \renewcommand{\ABNTEXlistadesimbolosname}{List of Symbols}
+      \renewcommand{\tableautorefname}{Table}
+      \renewcommand{\figureautorefname}{Figure}
+      \renewcommand{\chapterautorefname}{Chapter}
+      \renewcommand{\pageautorefname}{Page}
+      \renewcommand{\sectionautorefname}{Section}
+      \renewcommand{\subsectionautorefname}{Subsection}
+      \renewcommand{\subsubsectionautorefname}{Subsubsection}
+      \renewcommand{\paragraphautorefname}{Paragraph}
+    }
+  }{}
+}{}
 
 % Muda equação para 'Equação (n)'
 % q/autoref-does-not-expand-abbreviation-automatically-at-beginning-of-line
