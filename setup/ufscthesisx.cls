@@ -1497,7 +1497,13 @@
   % q/setting-entries-of-list-of-listings-in-latex-package-listings
   % q/you-cant-use-a-prefix-with-charfb-error-when-importing-csv-into-latex
   % q/why-latex-does-not-tell-me-which-command-is-undefined
-  \@ifpackageloaded{babel}{\@ifpackagewith{babel}{brazil}{\addto\captionsbrazil{\renewcommand{\lstlistingname}{Código}}}{}}{}
+  \@ifpackageloaded{babel}{%
+    \@ifpackagewith{babel}{brazil}{%
+      \addto\captionsbrazil{%
+        \renewcommand{\lstlistingname}{Código}
+      }
+    }{}
+  }{}
   \@ifpackageloaded{babel}{\@ifpackagewith{babel}{brazil}{\addto\captionsbrazil{\renewcommand{\lstlistlistingname}{Lista de Códigos}}}{}}{}
 
   \@ifpackageloaded{babel}{\@ifpackagewith{babel}{english}{\addto\captionsenglish{\renewcommand{\lstlistingname}{Code}}}{}}{}
