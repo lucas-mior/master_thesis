@@ -156,8 +156,9 @@
 % \DeclareFieldFormat{url}{Disponível~em:\addspace\url{#1}}
 
 % q/how-to-make-biblatex-url-links-generated-with-brackets-around-it-url-correctly
-\DeclareFieldFormat{url}
-{\bibstring{urlfrom}\addcolon\space\textless\url{#1}\textgreater}
+\DeclareFieldFormat{url}{%
+  \bibstring{urlfrom}\addcolon\space\textless\url{#1}\textgreater
+}
 \DefineBibliographyStrings{brazil}{urlfrom = {Disponível em}}
 \DefineBibliographyStrings{english}{urlfrom = {Available from}}
 
@@ -172,8 +173,7 @@
 % into your bibliography entries when the abstract is available
 % q/how-to-correctly-insert-and-justify-abstract
 \ifadvisor\else
-  \DeclareFieldFormat{abstract}%
-  {%
+  \DeclareFieldFormat{abstract}{%
     \par\justifying
     \begin{adjustwidth}{1cm}{}
       \textbf{\bibsentence\bibstring{abstract}:} #1
