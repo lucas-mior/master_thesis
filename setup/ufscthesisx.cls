@@ -533,8 +533,7 @@
 
 \newlength{\cftnumberboxnumberwidth}
 \setlength{\cftnumberboxnumberwidth}{2em}
-\renewcommand{\ABNTEXtocprintchapter}
-{%
+\renewcommand{\ABNTEXtocprintchapter}{%
   \addtocontents{toc}{\cftsetindents{chapter}{0em}{\cftlastnumwidth}}
 }
 %
@@ -583,8 +582,7 @@
 \renewcommand{\cftparagraphpagefont}{\cftparagraphfont}
 
 % Ajusta entrada Referencias
-\renewcommand{\bibsection}
-{%
+\renewcommand{\bibsection}{%
   \chapter*{\bibname}
   \bibmark
   \ifnobibintoc\else
@@ -607,16 +605,14 @@
 \setlength{\ABNTEXcitacaorecuo}{3cm} %4, mas abntex2 está somando 1cm
 
 % Comando para inverter sobrenome e nome
-\newcommand{\ufscthesisx@inverter}[1]
-{%
+\newcommand{\ufscthesisx@inverter}[1]{%
   \StrBehind{#1}{{}},
   \StrBefore{#1}{{}}
 }
 
 % Comandos auxiliares
 % q/how-can-i-see-the-line-spacing-between-lines
-\newcommand{\UFSCshowFont}
-{%
+\newcommand{\UFSCshowFont}{%
   (\foreignlanguage{english}
   {%
     encoding: \f@encoding{},
@@ -631,8 +627,7 @@
 }
 
 % Comandos auxiliares
-\newcommand{\UFSCjustShowFont}
-{%
+\newcommand{\UFSCjustShowFont}{%
   (\foreignlanguage{english}
   {%
     \f@encoding{},
@@ -657,8 +652,7 @@
 \newcommand{\secref}[1]{Seção~\ref{#1}}     % Cross-reference of equations
 \newcommand{\defref}[1]{Definição~\ref{#1}} %
 
-\renewenvironment{resumo}[1][\ABNTEXresumoname]
-{%
+\renewenvironment{resumo}[1][\ABNTEXresumoname]{%
   % Fixed double bookmark entries as `\ABNTEXpretextualchapter`
   % bellow is already calling `\ABNTEXPRIVATEbookmarkthis`
   % \ABNTEXPRIVATEbookmarkthis{#1}
