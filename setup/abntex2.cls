@@ -1045,7 +1045,7 @@
 
     \vfill
     \begin{center}
-    \ABNTEXchapterfont\bfseries\LARGE\imprimirtitulo
+    \ABNTEXchapterfont\bfseries\LARGE\thetitle
     \end{center}
     \vfill
 
@@ -1077,7 +1077,7 @@
 
     \vspace*{\fill}\vspace*{\fill}
     \begin{center}
-      \ABNTEXchapterfont\bfseries\Large\imprimirtitulo
+      \ABNTEXchapterfont\bfseries\Large\thetitle
     \end{center}
     \vspace*{\fill}
 
