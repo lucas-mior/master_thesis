@@ -91,9 +91,10 @@
 \ProcessOptions\relax
 \LoadClass{memoir}
 
-% sumario=abnt-6027-2012 : Sumário conforme recomendação da ABNT NBR 6027:2012, que
-%    soh pode ser usado com memoir v3.6k ou superior
-%    \settocpreprocessor \changes{v3.6k}{2012/09/18}{Added}
+% sumario=abnt-6027-2012:
+% Sumário conforme recomendação da ABNT NBR 6027:2012, que
+% soh pode ser usado com memoir v3.6k ou superior
+% \settocpreprocessor \changes{v3.6k}{2012/09/18}{Added}
 \ifdefined\settocpreprocessor
 \else
   \setboolean{ABNTEXsumario-tradicional}{true}
@@ -130,7 +131,9 @@
 % ------------------------------------------------------------------------
 
 % Do pacote de if/them/else
-\newcommand{\abntex@UFSCifNotEmpty}[2]{\ifthenelse{\not\equal{#1}{}}{#2}{}}
+\newcommand{\abntex@UFSCifNotEmpty}[2]{
+  \ifthenelse{\not\equal{#1}{}}{#2}{}
+}
 
 % Define o comando \ABNTEXfonte que respeita as configurações de caption do memoir ou do caption
 \newcommand{\ABNTEXfonte}[2][\ABNTEXfontename]{%
