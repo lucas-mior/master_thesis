@@ -1297,7 +1297,7 @@
 \def\listofquadrosname{List of Frames}
 \def\quadrosname{Frame}
 
-\DeclareFloatingEnvironment[
+\DeclareFloatingEnvironment[%
   fileext=loq,
   placement={!hbtp},
   name=\quadrosname,
@@ -1741,11 +1741,11 @@
 % q/printnoidxglossaries-vs-printglossaries
 \newcommand{\imprimirlistadesiglas}{%
   \pdfbookmark[0]{\ABNTEXlistadesiglasname}{acn}
-  \printnoidxglossary[
-  style=mylong1,
-  type=acronym,
-  sort=letter,
-  title={\ABNTEXlistadesiglasname\vspace{-0.2cm}}
+  \printnoidxglossary[%
+    style=mylong1,
+    type=acronym,
+    sort=letter,
+    title={\ABNTEXlistadesiglasname\vspace{-0.2cm}}
   ]
   \cleardoublepage
 }
@@ -1754,11 +1754,11 @@
 % q/printnoidxglossaries-vs-printglossaries
 \newcommand{\imprimirlistadesimbolos}{%
   \pdfbookmark[0]{\ABNTEXlistadesimbolosname}{sbl}
-  \printnoidxglossary[
-  style=mylong2,
-  type=simbolos,
-  sort=use,
-  title={\ABNTEXlistadesimbolosname}
+  \printnoidxglossary[%
+    style=mylong2,
+    type=simbolos,
+    sort=use,
+    title={\ABNTEXlistadesimbolosname}
   ]
   \cleardoublepage
 }
@@ -1768,10 +1768,10 @@
 \newcommand{\imprimirglossario}{
   \cleardoublepage
   \pdfbookmark[0]{\glossaryname}{glo}
-  \printnoidxglossary[
-  type=main,
-  sort=use,
-  title={\glossaryname}
+  \printnoidxglossary[%
+    type=main,
+    sort=use,
+    title={\glossaryname}
   ]
 }
 % ufscthesis end, https://github.com/UFSC/ufscthesisx/issues/19
