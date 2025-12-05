@@ -8,8 +8,9 @@
     \begin{center}
       {%
         {\ABNTEXchapterfont\MakeUppercase{\thetitle}}%
-        \UFSCifNotEmpty{\imprimirsubtitulo}
-                     {{\ABNTEXchapterfont:} \imprimirsubtitulo}
+        \UFSCifNotEmpty{\imprimirsubtitulo}{%
+          {\ABNTEXchapterfont:} \imprimirsubtitulo%
+        }
       }
 
     \end{center}
@@ -18,9 +19,7 @@
       \EngAndPor{
         This \abnteximprimirtipotrabalho~was
         considered appropriate to get the \imprimirformacao,
-        \UFSCifNotEmpty{%
-          \imprimirarea%
-        }{%
+        \UFSCifNotEmpty{\imprimirarea}{%
           in the area of \imprimirarea,%
         }
         and it was approved by the
@@ -28,9 +27,7 @@
       }{
         Este(a) \abnteximprimirtipotrabalho~foi
         julgado adequado(a) para obtenção do Título de \imprimirformacao{},
-        \UFSCifNotEmpty{%
-          \imprimirarea%
-        }{%
+        \UFSCifNotEmpty{\imprimirarea}{%
           na área de concentração de \imprimirarea,%
         } e foi aprovado em sua forma final pelo
         \imprimirprograma~ do \imprimircentro~da \abnteximprimirinstituicao.

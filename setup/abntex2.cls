@@ -1026,7 +1026,9 @@
   \addtolength{\leftskip}{\ABNTEXcitacaorecuo}%
   \item[]%
   \begin{SingleSpace}%
-  \ifthenelse{\not\equal{#1}{default}}{\itshape\selectlanguage{#1}}{}%
+  \ifthenelse{\not\equal{#1}{default}}{%
+    \itshape\selectlanguage{#1}%
+  }{}%
   \ABNTEXfontereduzida%
 }{%
   \end{SingleSpace}%
