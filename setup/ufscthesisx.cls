@@ -1719,7 +1719,7 @@
 }
 
 % Só um pequeno récuo em relação ao primeiro
-\newglossarystyle{mylong2}{% modificado de a/166209/151962
+\newglossarystyle{UFSClong2}{% modificado de a/166209/151962
   \setglossarystyle{long}%
   \renewenvironment{theglossary}{%
     \begin{longtable}[l]{@{}p{\dimexpr 2.0cm-\tabcolsep}p{0.86\hsize}}
