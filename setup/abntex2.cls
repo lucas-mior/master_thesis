@@ -938,7 +938,7 @@
     \renewcommand{\appendixtocname}{#2}
   }
   \renewcommand{\appendixpagename}{#2}
-  \ABNTEXswitchchapname{#1}% Corrected from \switchapname -> \ABNTEXswitchchapname
+  \ABNTEXswitchchapname{#1}  % Corrected \switchapname -> \ABNTEXswitchchapname
   \renewcommand*{\cftappendixname}{#1 \space}
 }
 
