@@ -121,8 +121,7 @@
 }
 
 % Color settings across the document
-\@ifpackageloaded{xcolor}
-{
+\@ifpackageloaded{xcolor}{
   % RGB colors in absolute values from 0 to 255 by using `RGB` tag
   \definecolor{darkblue}{RGB}{26,13,178}
 
@@ -144,8 +143,7 @@
 
   % PDF Hyperlinks settings
   \@ifpackageloaded{hyperref}{
-    \hypersetup
-    {
+    \hypersetup{
       colorlinks=true,  % false: boxed links; true: colored links
       linkcolor=black,  % color of internal links
       citecolor=black,  % color of links to bibliography
@@ -375,8 +373,7 @@
 % Use \setlength\cftsectionnumwidth{4em} to override all these values at once
 \ifadvisor
 \else
-  \makechapterstyle{fixedabntex2indentation}
-  {%
+  \makechapterstyle{fixedabntex2indentation}{%
     \renewcommand{\chapterheadstart}{}
     \setlength{\beforechapskip}{20pt}
     \setlength{\midchapskip}{20pt}
