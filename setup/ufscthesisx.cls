@@ -1729,13 +1729,13 @@
 \newcommand{\siglalista}[2]{\newacronym{#1}{#1}{#2}}
 
 % q/printnoidxglossaries-vs-printglossaries
-\newglossary{simbolos}{simbolos}{sbl}{simbolos}
+\newglossary{UFSCsimbolos}{UFSCsimbolos}{sbl}{UFSCsimbolos}
 
 % Só dá entrada na lista. Ainda não funciona com o limarka
 % q/printnoidxglossaries-vs-printglossaries
 \newcommand{\UFSCaddSymbol}[3]{%
   \newglossaryentry{#1}{%
-    type=simbolos,
+    type=UFSCsimbolos,
     name=#2,
     description=#3
   }%

@@ -845,7 +845,7 @@
   \cleardoublepage
 }
 
-% Lista de simbolos
+% Lista de símbolos
 \newenvironment{abntexEnvSimbolos}{%
   \ABNTEXpretextualchapter{\ABNTEXlistadesimbolosname}
   \begin{symbols}
