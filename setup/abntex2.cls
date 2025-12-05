@@ -1159,7 +1159,9 @@
                             {\abnteximprimirinstituicao\vspace*{\fill}}
     }
 
-    {\large\abnteximprimirorientadorRotulo~\abnteximprimirorientador\par}
+    {%
+      \large\abnteximprimirorientadorRotulo~\abnteximprimirorientador\par
+    }
     \abntex@UFSCifNotEmpty{\abnteximprimircoorientador}{%
       {\large\abnteximprimircoorientadorRotulo~\abnteximprimircoorientador}%
     }%
