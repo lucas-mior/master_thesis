@@ -1754,19 +1754,6 @@
   \cleardoublepage
 }
 
-% imprime lista de símbolos na ordem em que aparece no texto
-% q/printnoidxglossaries-vs-printglossaries
-\newcommand{\UFSCimprimirListaSimbolos}{%
-  \pdfbookmark[0]{\ABNTEXlistadesimbolosname}{sbl}
-  \printnoidxglossary[%
-    style=mylong2,
-    type=simbolos,
-    sort=use,
-    title={\ABNTEXlistadesimbolosname}
-  ]
-  \cleardoublepage
-}
-
 % imprime glossário
 % q/printnoidxglossaries-vs-printglossaries
 \newcommand{\imprimirglossario}{
