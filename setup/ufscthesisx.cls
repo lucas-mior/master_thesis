@@ -2816,62 +2816,59 @@
 % que as figuras estejam listadas na Lista de Ilustrações,
 % a UFSC pede que as figuras estejam na Lista de Figuras.
 %
-% Remove the colon appended to variables by 'abntex2' because they show up on places they shouldn't
+% Remove the colon appended to variables by 'abntex2'
+% because they show up on places they shouldn't
 %
 % q/why-latex-does-not-tell-me-which-command-is-undefined
 % q/how-to-add-babel-captions-to-newfloat-package-environments
 % q/how-to-override-command-on-my-preamble-after-its-redefinition-by-my-class-with
-\@ifpackageloaded{babel}{%
-  \@ifpackagewith{babel}{brazil}{%
-    \addto\captionsbrazil{%
-      \renewcommand{\ABNTEXorientadorname}{Orientador}
-      \renewcommand{\ABNTEXcoorientadorname}{Coorientador}
-      \renewcommand{\quadrosname}{Quadro}
-      \renewcommand{\ABNTEXfolhadeaprovacaoname}{Folha de Aprovação}
-      \renewcommand{\ABNTEXfolhaderostoname}{Folha de Rosto}
-      \renewcommand{\listfigurename}{Lista de Ilustrações}
-      \renewcommand{\listtablename}{Lista de Tabelas}
-      \renewcommand{\listofquadrosname}{Lista de Quadros}
-      \renewcommand{\listfigurename}{Lista de Figuras}
-      \renewcommand{\ABNTEXlistadesiglasname}{Lista de Abreviaturas e Siglas}
-      \renewcommand{\ABNTEXlistadesimbolosname}{Lista de Símbolos}
-      \renewcommand{\tableautorefname}{Tabela}
-      \renewcommand{\figureautorefname}{Figura}
-      \renewcommand{\chapterautorefname}{Capítulo}
-      \renewcommand{\pageautorefname}{Página}
-      \renewcommand{\sectionautorefname}{Seção}
-      \renewcommand{\subsectionautorefname}{Subseção}
-      \renewcommand{\subsubsectionautorefname}{Subsubseção}
-      \renewcommand{\paragraphautorefname}{Parágrafo}
-    }
-  }{}
-}{}
+\@ifpackageloaded{babel}{\@ifpackagewith{babel}{brazil}{%
+  \addto\captionsbrazil{%
+    \renewcommand{\ABNTEXorientadorname}{Orientador}
+    \renewcommand{\ABNTEXcoorientadorname}{Coorientador}
+    \renewcommand{\quadrosname}{Quadro}
+    \renewcommand{\ABNTEXfolhadeaprovacaoname}{Folha de Aprovação}
+    \renewcommand{\ABNTEXfolhaderostoname}{Folha de Rosto}
+    \renewcommand{\listfigurename}{Lista de Ilustrações}
+    \renewcommand{\listtablename}{Lista de Tabelas}
+    \renewcommand{\listofquadrosname}{Lista de Quadros}
+    \renewcommand{\listfigurename}{Lista de Figuras}
+    \renewcommand{\ABNTEXlistadesiglasname}{Lista de Abreviaturas e Siglas}
+    \renewcommand{\ABNTEXlistadesimbolosname}{Lista de Símbolos}
+    \renewcommand{\tableautorefname}{Tabela}
+    \renewcommand{\figureautorefname}{Figura}
+    \renewcommand{\chapterautorefname}{Capítulo}
+    \renewcommand{\pageautorefname}{Página}
+    \renewcommand{\sectionautorefname}{Seção}
+    \renewcommand{\subsectionautorefname}{Subseção}
+    \renewcommand{\subsubsectionautorefname}{Subsubseção}
+    \renewcommand{\paragraphautorefname}{Parágrafo}
+  }
+}{}}{}
 
-\@ifpackageloaded{babel}{%
-  \@ifpackagewith{babel}{english}{%
-    \addto\captionsenglish{%
-      \renewcommand{\UFSCcovername}{Cover}
-      \renewcommand{\ABNTEXorientadorname}{Supervisor}
-      \renewcommand{\ABNTEXcoorientadorname}{Co\hyp{}supervisor}
-      \renewcommand{\ABNTEXfolhadeaprovacaoname}{Approval}
-      \renewcommand{\ABNTEXfolhaderostoname}{Title Page}
-      \renewcommand{\ABNTEXerrataname}{Errata Sheet}
-      \renewcommand{\listfigurename}{List of Illustrations}
-      \renewcommand{\listtablename}{List of Tables}
-      \renewcommand{\listfigurename}{List of Figures}
-      \renewcommand{\ABNTEXlistadesiglasname}{List of Abbreviations and Acronyms}
-      \renewcommand{\ABNTEXlistadesimbolosname}{List of Symbols}
-      \renewcommand{\tableautorefname}{Table}
-      \renewcommand{\figureautorefname}{Figure}
-      \renewcommand{\chapterautorefname}{Chapter}
-      \renewcommand{\pageautorefname}{Page}
-      \renewcommand{\sectionautorefname}{Section}
-      \renewcommand{\subsectionautorefname}{Subsection}
-      \renewcommand{\subsubsectionautorefname}{Subsubsection}
-      \renewcommand{\paragraphautorefname}{Paragraph}
-    }
-  }{}
-}{}
+\@ifpackageloaded{babel}{\@ifpackagewith{babel}{english}{%
+  \addto\captionsenglish{%
+    \renewcommand{\UFSCcovername}{Cover}
+    \renewcommand{\ABNTEXorientadorname}{Supervisor}
+    \renewcommand{\ABNTEXcoorientadorname}{Co\hyp{}supervisor}
+    \renewcommand{\ABNTEXfolhadeaprovacaoname}{Approval}
+    \renewcommand{\ABNTEXfolhaderostoname}{Title Page}
+    \renewcommand{\ABNTEXerrataname}{Errata Sheet}
+    \renewcommand{\listfigurename}{List of Illustrations}
+    \renewcommand{\listtablename}{List of Tables}
+    \renewcommand{\listfigurename}{List of Figures}
+    \renewcommand{\ABNTEXlistadesiglasname}{List of Abbreviations and Acronyms}
+    \renewcommand{\ABNTEXlistadesimbolosname}{List of Symbols}
+    \renewcommand{\tableautorefname}{Table}
+    \renewcommand{\figureautorefname}{Figure}
+    \renewcommand{\chapterautorefname}{Chapter}
+    \renewcommand{\pageautorefname}{Page}
+    \renewcommand{\sectionautorefname}{Section}
+    \renewcommand{\subsectionautorefname}{Subsection}
+    \renewcommand{\subsubsectionautorefname}{Subsubsection}
+    \renewcommand{\paragraphautorefname}{Paragraph}
+  }
+}{}}{}
 
 % Muda equação para 'Equação (n)'
 % q/autoref-does-not-expand-abbreviation-automatically-at-beginning-of-line
