@@ -1699,7 +1699,6 @@
   acronym,         % criação de acrônimos
   translate=babel, % Faz o papel de \providetranslation
   nopostdot,       % Não é colocado ponto ao final da entrada
-  sort=use
 ]{glossaries}
 
 % Só dá entrada na lista. Ainda não funciona com o limarka
@@ -1741,19 +1740,6 @@
     name=#2,
     description=#3
   }%
-}
-
-% imprime lista de siglas ordenado alfabeticamente
-% q/printnoidxglossaries-vs-printglossaries
-\newcommand{\UFSCimprimirListaSiglas}{%
-  \pdfbookmark[0]{\ABNTEXlistadesiglasname}{acn}
-  \printnoidxglossary[%
-    style=mylong1,
-    type=acronym,
-    sort=letter,
-    title={\ABNTEXlistadesiglasname\vspace{-0.2cm}}
-  ]
-  \cleardoublepage
 }
 
 % imprime glossário

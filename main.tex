@@ -36,7 +36,7 @@
 \pdfobjcompresslevel=0
 
 % Uncomment `\englishtrue` to set the document default language to English
-\englishtrue
+% \englishtrue
 \advisortrue
 
 % q/how-to-expand-ifthenelse-so-that-it-can-be-used-in-parshape
@@ -97,6 +97,8 @@
 \UFSCaddSymbol{alpha}{\ensuremath{\alpha}}{Alpha particle}
 \UFSCaddSymbol{F}{\ensuremath{F}}{Force}
 \UFSCaddSymbol{rho}{\ensuremath{\rho}}{Density}
+
+\UFSCaddSigla{ABNT}{Brazilian Association of Technical Standards}
 
 % Utilize o arquivo references.bib para incluir sua bibliografia.
 % http://tug.ctan.org/tex-archive/macros/latex/contrib/cleveref/cleveref.pdf
@@ -574,12 +576,20 @@
   \ifforcedinclude\else
     \cleardoublepage
   \fi
-  \include{12_siglas.tex}
+  % imprime lista de siglas ordenado alfabeticamente
+  % q/printnoidxglossaries-vs-printglossaries
+  \pdfbookmark[0]{\ABNTEXlistadesiglasname}{acn}
+  \printnoidxglossary[%
+    style=mylong1,
+    type=acronym,
+    sort=letter,
+    title={\ABNTEXlistadesiglasname\vspace{-0.2cm}}
+  ]
+  \cleardoublepage
 
   \ifforcedinclude\else
     \cleardoublepage
   \fi
-
   % imprime lista de símbolos na ordem em que aparece no texto
   % q/printnoidxglossaries-vs-printglossaries
   \pdfbookmark[0]{\ABNTEXlistadesimbolosname}{sbl}
