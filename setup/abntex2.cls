@@ -1070,9 +1070,13 @@
 \newcommand{\ABNTEXassinatura}{\@ifstar{\ABNTEXsign}{\ABNTEXcsign}}
 % assinatura com estrela
 \newcommand{\ABNTEXsign}[1]{%
-  \parbox[t]{\ABNTEXsignwidth}{\SingleSpacing\vspace*{\ABNTEXsignskip}\centering%
-  \rule{\ABNTEXsignwidth}{\ABNTEXsignthickness}\\%
-  \nopagebreak #1\par}%
+  \parbox[t]{\ABNTEXsignwidth}{%
+    \SingleSpacing%
+    \vspace*{\ABNTEXsignskip}%
+    \centering%
+    \rule{\ABNTEXsignwidth}{\ABNTEXsignthickness}\\%
+    \nopagebreak #1\par%
+  }%
 }
 % assinatura sem estrela
 \newcommand{\ABNTEXcsign}[1]%
