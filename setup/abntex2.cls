@@ -61,11 +61,22 @@
 \setboolean{ABNTEXuppersubsection}{false}
 \setboolean{ABNTEXuppersubsubsection}{false}
 \setboolean{ABNTEXuppersubsubsubsection}{false}
-\DeclareOption{chapter=TITLE}{\setboolean{ABNTEXupperchapter}{true}}
-\DeclareOption{section=TITLE}{\setboolean{ABNTEXuppersection}{true}}
-\DeclareOption{subsection=TITLE}{\setboolean{ABNTEXuppersubsection}{true}}
-\DeclareOption{subsubsection=TITLE}{\setboolean{ABNTEXuppersubsubsection}{true}}
-\DeclareOption{subsubsubsection=TITLE}{\setboolean{ABNTEXuppersubsubsubsection}{true}}
+
+\DeclareOption{chapter=TITLE}{%
+  \setboolean{ABNTEXupperchapter}{true}
+}
+\DeclareOption{section=TITLE}{%
+  \setboolean{ABNTEXuppersection}{true}
+}
+\DeclareOption{subsection=TITLE}{%
+  \setboolean{ABNTEXuppersubsection}{true}
+}
+\DeclareOption{subsubsection=TITLE}{%
+  \setboolean{ABNTEXuppersubsubsection}{true}
+}
+\DeclareOption{subsubsubsection=TITLE}{%
+  \setboolean{ABNTEXuppersubsubsubsection}{true}
+}
 %
 % Opções de diagramação de sumários
 % sumario=tradicional    : Sumário tradicional do LaTeX/Memoir
