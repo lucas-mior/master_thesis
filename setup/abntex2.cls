@@ -735,8 +735,12 @@
 % Comandos de dados para CAPA e FOLHA DE ROSTO
 % ------------------------------------------------------------------------
 
-\newcommand{\ABNTEXtituloestrangeiro}[1]{\providecommand{\abntextheforeigntitle}{#1}}
-\newcommand{\ABNTEXimprimirtituloestrangeiro}{\abntextheforeigntitle}
+\newcommand{\ABNTEXtituloestrangeiro}[1]{%
+  \providecommand{\abntextheforeigntitle}{#1}%
+}
+\newcommand{\ABNTEXimprimirtituloestrangeiro}{%
+  \abntextheforeigntitle%
+}
 
 \let\olddate\date
 \renewcommand{\date}[1]{\AtBeginDocument{\olddate{#1}}}
