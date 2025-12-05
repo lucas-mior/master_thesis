@@ -40,7 +40,7 @@
 \advisortrue
 
 % q/how-to-expand-ifthenelse-so-that-it-can-be-used-in-parshape
-\newcommand{\lang}[2]{%
+\newcommand{\EngAndPor}[2]{%
   \ifenglish#1\else#2\fi%
 }
 \newcommand{\advisor}[2]{%
@@ -83,7 +83,7 @@
 %                       citecounter=true}{biblatex}
 \documentclass[%
   % q/changing-the-cleveref-package-language-conjunction-definition
-  \lang{english}{brazilian,brazil},
+  \EngAndPor{english}{brazilian,brazil},
   12pt,          % Padrão UFSC para versão final
   a4paper,       % Padrão UFSC para versão final
   oneside,       % Impressão nos dois lados da folha
@@ -108,7 +108,7 @@
 % FIXME: Preencha com seus dados
 \author{\brazilword{Escreva aqui o Nome completo do Autor ou da Autora}}
 \title{
-  \lang{%
+  \EngAndPor{%
     Work Title\protect\\Could be break into two lines%
   }{%
     Título do trabalho\protect\\Pode ser Quebrado em duas linhas%
@@ -116,31 +116,31 @@
 }
 
 % FIXME: Se houver subtítulo
-\UFSCsubtitulo{\lang{Subtitle}{Subtítulo}}
+\UFSCsubtitulo{\EngAndPor{Subtitle}{Subtítulo}}
 
 % FIXME: Siglas para grau de formação
 % Dr./Dra., Me./Ma, Bel. Bela. (inglês: PhD., MSc., Bs.)
-\ABNTEXorientador[\lang{Supervisor}{Orientador(a)}]{%
-  \brazilword{Nome completo do Orientador(a)}, \lang{Phd.}{Dr.}
+\ABNTEXorientador[\EngAndPor{Supervisor}{Orientador(a)}]{%
+  \brazilword{Nome completo do Orientador(a)}, \EngAndPor{Phd.}{Dr.}
 }
 
 % FIXME: Se houver coorientador, descomente a linha abaixo
-% \ABNTEXcoorientador[\lang{Co-supervisor}{Coorientador(a)}]
-% {\brazilword{Nome do coorientador(a)}, \lang{Phd.}{Dr.}}
+% \ABNTEXcoorientador[\EngAndPor{Co-supervisor}{Coorientador(a)}]
+% {\brazilword{Nome do coorientador(a)}, \EngAndPor{Phd.}{Dr.}}
 
 % FIXME: Preencher com o nome do Coordenador de TCCs/Teses do seu curso
-\UFSCcoordenador[\lang{Coordinator}{Coordenador(a)}]{%
-  \brazilword{Nome do Coordenador(a)}, \lang{Phd.}{Dr.}
+\UFSCcoordenador[\EngAndPor{Coordinator}{Coordenador(a)}]{%
+  \brazilword{Nome do Coordenador(a)}, \EngAndPor{Phd.}{Dr.}
 }
 
 % FIXME: Local da sua defesa
 \ABNTEXlocal{%
-  \brazilword{Florianópolis, Santa Catarina} -- \lang{Brazil}{Brasil}
+  \brazilword{Florianópolis, Santa Catarina} -- \EngAndPor{Brazil}{Brasil}
 }
 
 % FIXME: Ano da sua defesa
 \UFSCano{2019}
-\UFSCbiblioteca{\lang{University Library}{Biblioteca Universitária}}
+\UFSCbiblioteca{\EngAndPor{University Library}{Biblioteca Universitária}}
 
 % FIXME: Sigla da sua instituição
 \UFSCinstituicaoSigla{UFSC}
@@ -148,21 +148,21 @@
 
 % FIXME: Preencha com 
 % Tese, Dissertação, Trabalho de Conclusão de Curso, Bachelor's Thesis, etc
-\ABNTEXtipotrabalho{\lang{Bachelor\s Thesis}{Trabalho de Conclusão de Curso}}
+\ABNTEXtipotrabalho{\EngAndPor{Bachelor\s Thesis}{Trabalho de Conclusão de Curso}}
 
 % FIXME: Se houver Área de Concentração, descomente a linha abaixo
-% \UFSCarea{\lang{Formal Languages}{Linguagens Formais}}
+% \UFSCarea{\EngAndPor{Formal Languages}{Linguagens Formais}}
 
 % FIXME: Preencha com Doutor, Bacharel ou Mestrando
 \UFSCformacao{%
-  \lang{%
+  \EngAndPor{%
     Bachelor of Science degree in Computer Science
   }{%
     Bacharel em Ciências da Computação
   }%
 }
 \UFSCprograma{%
-  \lang{%
+  \EngAndPor{%
     Undergraduate Program in Computer Science
   }{%
     Programa de Graduação em Ciências da Computação
@@ -171,7 +171,7 @@
 
 % FIXME: Preencha com Departamento de XXXXXX, Centro de XXXXXX
 \UFSCcentro{%
-  \lang{
+  \EngAndPor{
     INE -- Department of Informatics and Statistics, CTC -- Technological Center
   }{%
     INE -- Departamento de Informática e Estatística, CTC -- Centro Tecnológico
@@ -182,12 +182,12 @@
 \UFSCcampus{\brazilword{Campus Reitor João David Ferreira Lima}}
 
 % FIXME: Data da sua defesa
-\ABNTEXdata{\lang{30 of march of}{30 de março de} 2019}
+\ABNTEXdata{\EngAndPor{30 of march of}{30 de março de} 2019}
 
 % O preambulo deve conter tipo do trabalho, objetivo, nome da instituição e a
 % área de concentração.
 \ABNTEXpreambulo{%
-  \lang{%
+  \EngAndPor{%
     \abnteximprimirtipotrabalho~submitted to the \imprimirprograma~of
     \abnteximprimirinstituicao~for degree acquirement in \imprimirformacao.%
   }{%
@@ -217,7 +217,7 @@
   pdftitle={\thetitle},
   pdfauthor={\theauthor},
   pdfkeywords={
-    \lang{%
+    \EngAndPor{%
       \palavraschaveinglessemitem
     }{%
       \palavraschaveportuguessemitem
@@ -638,7 +638,7 @@
 
   % PARTE
   \ifforcedinclude\else
-    \part{\lang{Research}{Pesquisa}}
+    \part{\EngAndPor{Research}{Pesquisa}}
   \fi
   \label{primeira_parte}
 
@@ -653,7 +653,7 @@
 
   % PARTE
   \ifforcedinclude\else
-    \part{\lang{Implementation}{Implementação}}
+    \part{\EngAndPor{Implementation}{Implementação}}
   \fi
   \label{segunda_parte}
 
@@ -681,7 +681,7 @@
 
     % q/using-bibtex-to-make-a-list-of-references-without-having-citations-in-the-body
     % \nocite{*}
-    \printbibliography[title=\lang{REFERENCES}{REFERÊNCIAS}]
+    \printbibliography[title=\EngAndPor{REFERENCES}{REFERÊNCIAS}]
   \endgroup
 
   % Glossário, consulte o manual da classe abntex2
