@@ -376,15 +376,17 @@
 %\captionnamefont{\ABNTEXfontereduzida}
 %\captiontitlefont{\ABNTEXfontereduzida}
 
-% Para uso com pacotes subfig e caption dentro do memoir se estes forem carregados ou não.
+% Para uso com pacotes subfig e caption
+% dentro do memoir se estes forem carregados ou não.
 % É necessário para que os comandos \ABNTEXIBGEtab e \ABNTEXfonte funcionem
-% independente do carregamento de pacotes externos ao memoir que tratam captions.
+% independente do carregamento de pacotes externos ao memoir que tratam captions
 \newcommand{\ABNTEXIBGEtabfontsize}{\ABNTEXfontereduzida}
 \AtBeginDocument{%
-  % comandos auxiliares para manipular os captions dentro do comando \ABNTEXIBGEtab.
+  % comandos auxiliares para manipular os captions dentro de \ABNTEXIBGEtab.
   \newcommand{\ABNTEXconfigurecaptions}{\captionstyle[\raggedright]{}}
   \newcommand{\ABNTEXconfigureseparator}{\captiondelim{\ABNTEXcaptiondelim}}
-  % Define o comando \ABNTEXIBGEtab{}{}{} com caption e legenda da largura do conteúdo tabular, tabular*, etc
+  % Define o comando \ABNTEXIBGEtab{}{}{}
+  % com caption e legenda da largura do conteúdo tabular, tabular*, etc
   % Parece funcionar com qualque pacote
   \newsavebox{\myptabbox}
   \newlength{\myptabboxwidth}
