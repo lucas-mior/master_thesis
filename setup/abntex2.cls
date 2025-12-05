@@ -888,7 +888,7 @@
   \renewcommand\theHchapter{anexochapback.\arabic{chapter}}
 }
 % Anexos - ambiente
-\newenvironment{abntexEnvAnexosenv}{%
+\newenvironment{abntexEnvAnexos}{%
   \cftinserthook{toc}{AAA}
 
   \ABNTEXPRIVATEapendiceconfig{\ABNTEXanexoname}{\ABNTEXanexosname}
