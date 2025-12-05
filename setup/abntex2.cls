@@ -1044,8 +1044,16 @@
 %   página no caso de estar no modo twoside. Util para imprimir a Ficha
 %   Bibliografica. Porem, se estiver no modo oneside, a versao sem estrela
 %   é identica.
-\newenvironment{abntexEnvFolhaderosto}[1][\ABNTEXfolhaderostoname]{\clearpage\ABNTEXPRIVATEbookmarkthis{#1}}{\cleardoublepage}
-\newenvironment{abntexEnvFolhaderosto*}[1][\ABNTEXfolhaderostoname]{\clearpage\ABNTEXPRIVATEbookmarkthis{#1}}{\newpage}%
+\newenvironment{abntexEnvFolhaderosto}[1][\ABNTEXfolhaderostoname]{%
+  \clearpage\ABNTEXPRIVATEbookmarkthis{#1}
+}{%
+  \cleardoublepage
+}
+\newenvironment{abntexEnvFolhaderosto*}[1][\ABNTEXfolhaderostoname]{%
+  \clearpage\ABNTEXPRIVATEbookmarkthis{#1}
+}{%
+  \newpage
+}%
 
 % Conteudo padrao da Folha de Rosto
 \newcommand{\ABNTEXfolhaderostocontent}{%
