@@ -657,7 +657,11 @@
           \printchapternum%
           \afterchapternum%
         }%
-        \parbox[t]{\columnwidth-\chapternamenumlength}{\ABNTEXchapterupperifneeded{##1}}
+        \parbox[t]{%
+          \columnwidth-\chapternamenumlength%
+        }{%
+          \ABNTEXchapterupperifneeded{##1}%
+        }
       }%
     }%
   }
