@@ -81,7 +81,7 @@
 % Opções de diagramação de sumários
 % sumario=tradicional    : Sumário tradicional do LaTeX/Memoir
 % sumario=abnt-6027-2012 : Sumário conforme recomendação da ABNT NBR 6027:2012
-\newboolean{ABNTEXsumario-tradicional}     %true=titles of chapter/appendix in uppercase
+\newboolean{ABNTEXsumario-tradicional}  % titles of chapter/appendix uppercase
 \newboolean{ABNTEXsumario-abnt-6027-2012}
 \setboolean{ABNTEXsumario-tradicional}{false}
 \setboolean{ABNTEXsumario-abnt-6027-2012}{true}
@@ -146,7 +146,8 @@
   \ifthenelse{\not\equal{#1}{}}{#2}{}
 }
 
-% Define o comando \ABNTEXfonte que respeita as configurações de caption do memoir ou do caption
+% Define o comando \ABNTEXfonte
+% que respeita as configurações de caption do memoir ou do caption
 \newcommand{\ABNTEXfonte}[2][\ABNTEXfontename]{%
   \M@gettitle{#2}%
   \memlegendinfo{#2}%
@@ -168,7 +169,11 @@
     \else%
       \caption@set{labelseparator}{colon}%
     \fi%
-    \@makecaption{\ABNTEXfontereduzida #1}{\ignorespaces\ABNTEXfontereduzida #2}\par
+    \@makecaption{%
+      \ABNTEXfontereduzida #1%
+    }{%
+      \ignorespaces\ABNTEXfontereduzida #2%
+    }\par
   \endgroup%
 }
 
