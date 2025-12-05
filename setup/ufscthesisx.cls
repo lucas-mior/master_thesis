@@ -2123,9 +2123,6 @@
 % q/space-after-latex-commands
 \usepackage{xspace}
 
-% Create a bold title all in upper case.
-\newcommand{\Title}[1]{\textbf{\MakeUppercase{#1}}}
-
 % q/how-to-create-my-own-list-of-things
 \newcommand{\UFSCtextPreliminaryListName}{Short Table of Contents}
 \newlistof{textpreliminarycontents}{tpc}{\UFSCtextPreliminaryListName}
