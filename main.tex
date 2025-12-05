@@ -580,7 +580,17 @@
   \ifforcedinclude\else
     \cleardoublepage
   \fi
-  \UFSCimprimirListaSimbolos
+
+  % imprime lista de símbolos na ordem em que aparece no texto
+  % q/printnoidxglossaries-vs-printglossaries
+  \pdfbookmark[0]{\ABNTEXlistadesimbolosname}{sbl}
+  \printnoidxglossary[%
+    style=mylong2,
+    type=simbolos,
+    sort=use,
+    title={\ABNTEXlistadesimbolosname}
+  ]
+  \cleardoublepage
 
   % How to remove the self-reference of the ToC from the ToC?
   % q/how-to-remove-the-self-reference-of-the-toc-from-the-toc
