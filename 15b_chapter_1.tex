@@ -756,7 +756,7 @@ state=fi(bin2dec(binstates),0,nbits,0); % Objeto numérico de ponto-fixo
 
 \end{lstlisting}
 
-\begin{lstlisting}[
+\begin{lstlisting}[%
 language=Python,caption={[Python example]{Python example }}
 ]
 import numpy as np
@@ -906,17 +906,17 @@ nome dos idiomas que o seu texto contém. Por exemplo (para melhor
 visualização, as opções foram quebras em diferentes linhas) :
 
 \begin{verbnobox}[\small]
-\documentclass[
-12pt, % Tamanho da fonte
-a5paper, % Tamanho do papel
-twoside, % Impressão nos dois lados da folha
-english,
-brazil,
-%sumario=tradicional,
-%sumario=abnt-6027-2012, % memoir v3.6k ou superior
-sumario=UFSC,
-chapter=TITLE, % Título de capítulos em caixa alta
-section=TITLE  % Título de seções em caixa alta
+\documentclass[%
+  12pt,    % Tamanho da fonte
+  a5paper, % Tamanho do papel
+  twoside, % Impressão nos dois lados da folha
+  english,
+  brazil,
+  %sumario=tradicional,
+  %sumario=abnt-6027-2012, % memoir v3.6k ou superior
+  sumario=UFSC,
+  chapter=TITLE, % Título de capítulos em caixa alta
+  section=TITLE  % Título de seções em caixa alta
 ]{ufsc-inep-thesis}
 \end{verbnobox}
 
@@ -929,15 +929,15 @@ citações em português e em francês, você deveria usar o preâmbulo como aba
 :
 
 \begin{verbatim}
-\documentclass[
-    12pt,
-    openright,
-    twoside,
-    a5paper,
-    french,
-    brazil,
-    english
-    ]{ufsc-inep-thesis}
+\documentclass[%
+  12pt,
+  openright,
+  twoside,
+  a5paper,
+  french,
+  brazil,
+  english
+  ]{ufsc-inep-thesis}
 \end{verbatim}
 
 A lista completa de idiomas suportados, bem como outras opções de hifenização,
