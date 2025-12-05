@@ -1733,7 +1733,7 @@
 
 % Só dá entrada na lista. Ainda não funciona com o limarka
 % q/printnoidxglossaries-vs-printglossaries
-\newcommand{\simbololista}[3]{%
+\newcommand{\UFSCaddSymbol}[3]{%
   \newglossaryentry{#1}{%
     type=simbolos,
     name=#2,
