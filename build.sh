@@ -17,7 +17,8 @@ while pdflatex -halt-on-error -interaction=nonstopmode main.tex \
 done
 
 printf "%b" "$GRE"
-pdflatex -halt-on-error -interaction=nonstopmode main.tex
+pdflatex -halt-on-error -interaction=nonstopmode main.tex \
+    | grep -v "/usr/share/tex"
 
 end_sec=$(date +%s)
 end_nsec=$(date +%N)
