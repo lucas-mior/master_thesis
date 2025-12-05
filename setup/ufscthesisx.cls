@@ -2821,27 +2821,31 @@
 % q/why-latex-does-not-tell-me-which-command-is-undefined
 % q/how-to-add-babel-captions-to-newfloat-package-environments
 % q/how-to-override-command-on-my-preamble-after-its-redefinition-by-my-class-with
-\@ifpackageloaded{babel}{\@ifpackagewith{babel}{brazil}{\addto\captionsbrazil{%
-  \renewcommand{\ABNTEXorientadorname}{Orientador}
-  \renewcommand{\ABNTEXcoorientadorname}{Coorientador}
-  \renewcommand{\quadrosname}{Quadro}
-  \renewcommand{\ABNTEXfolhadeaprovacaoname}{Folha de Aprovação}
-  \renewcommand{\ABNTEXfolhaderostoname}{Folha de Rosto}
-  \renewcommand{\listfigurename}{Lista de Ilustrações}
-  \renewcommand{\listtablename}{Lista de Tabelas}
-  \renewcommand{\listofquadrosname}{Lista de Quadros}
-  \renewcommand{\listfigurename}{Lista de Figuras}
-  \renewcommand{\ABNTEXlistadesiglasname}{Lista de Abreviaturas e Siglas}
-  \renewcommand{\ABNTEXlistadesimbolosname}{Lista de Símbolos}
-  \renewcommand{\tableautorefname}{Tabela}
-  \renewcommand{\figureautorefname}{Figura}
-  \renewcommand{\chapterautorefname}{Capítulo}
-  \renewcommand{\pageautorefname}{Página}
-  \renewcommand{\sectionautorefname}{Seção}
-  \renewcommand{\subsectionautorefname}{Subseção}
-  \renewcommand{\subsubsectionautorefname}{Subsubseção}
-  \renewcommand{\paragraphautorefname}{Parágrafo}
-}}{}}{}
+\@ifpackageloaded{babel}{%
+  \@ifpackagewith{babel}{brazil}{%
+    \addto\captionsbrazil{%
+      \renewcommand{\ABNTEXorientadorname}{Orientador}
+      \renewcommand{\ABNTEXcoorientadorname}{Coorientador}
+      \renewcommand{\quadrosname}{Quadro}
+      \renewcommand{\ABNTEXfolhadeaprovacaoname}{Folha de Aprovação}
+      \renewcommand{\ABNTEXfolhaderostoname}{Folha de Rosto}
+      \renewcommand{\listfigurename}{Lista de Ilustrações}
+      \renewcommand{\listtablename}{Lista de Tabelas}
+      \renewcommand{\listofquadrosname}{Lista de Quadros}
+      \renewcommand{\listfigurename}{Lista de Figuras}
+      \renewcommand{\ABNTEXlistadesiglasname}{Lista de Abreviaturas e Siglas}
+      \renewcommand{\ABNTEXlistadesimbolosname}{Lista de Símbolos}
+      \renewcommand{\tableautorefname}{Tabela}
+      \renewcommand{\figureautorefname}{Figura}
+      \renewcommand{\chapterautorefname}{Capítulo}
+      \renewcommand{\pageautorefname}{Página}
+      \renewcommand{\sectionautorefname}{Seção}
+      \renewcommand{\subsectionautorefname}{Subseção}
+      \renewcommand{\subsubsectionautorefname}{Subsubseção}
+      \renewcommand{\paragraphautorefname}{Parágrafo}
+    }
+  }{}
+}{}
 
 \@ifpackageloaded{babel}{%
   \@ifpackagewith{babel}{english}{%
