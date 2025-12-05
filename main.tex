@@ -84,9 +84,9 @@
 \documentclass[%
   % q/changing-the-cleveref-package-language-conjunction-definition
   \lang{english}{brazilian,brazil},
-  12pt, % Padrão UFSC para versão final
-  a4paper, % Padrão UFSC para versão final
-  oneside, % Impressão nos dois lados da folha
+  12pt,          % Padrão UFSC para versão final
+  a4paper,       % Padrão UFSC para versão final
+  oneside,       % Impressão nos dois lados da folha
   chapter=TITLE, % Título de capítulos em caixa alta
   section=TITLE, % Título de seções em caixa alta
   % draft,
@@ -114,16 +114,18 @@
 
 % FIXME: Siglas para grau de formação
 % Dr./Dra., Me./Ma, Bel. Bela. (inglês: PhD., MSc., Bs.)
-\ABNTEXorientador[\lang{Supervisor}{Orientador(a)}]
-{\brazilword{Nome completo do Orientador(a)}, \lang{Phd.}{Dr.}}
+\ABNTEXorientador[\lang{Supervisor}{Orientador(a)}]{%
+  \brazilword{Nome completo do Orientador(a)}, \lang{Phd.}{Dr.}
+}
 
 % FIXME: Se houver coorientador, descomente a linha abaixo
 % \ABNTEXcoorientador[\lang{Co-supervisor}{Coorientador(a)}]
 % {\brazilword{Nome do coorientador(a)}, \lang{Phd.}{Dr.}}
 
 % FIXME: Preencher com o nome do Coordenador de TCCs/Teses do seu curso
-\UFSCcoordenador[\lang{Coordinator}{Coordenador(a)}]
-{\brazilword{Nome do Coordenador(a)}, \lang{Phd.}{Dr.}}
+\UFSCcoordenador[\lang{Coordinator}{Coordenador(a)}]{%
+  \brazilword{Nome do Coordenador(a)}, \lang{Phd.}{Dr.}
+}
 
 % FIXME: Local da sua defesa
 \ABNTEXlocal{%
@@ -146,9 +148,12 @@
 % \UFSCarea{\lang{Formal Languages}{Linguagens Formais}}
 
 % FIXME: Preencha com Doutor, Bacharel ou Mestrando
-\UFSCformacao{\lang
-  {Bachelor of Science degree in Computer Science}
-  {Bacharel em Ciências da Computação}%
+\UFSCformacao{%
+  \lang{%
+    Bachelor of Science degree in Computer Science
+  }{%
+    Bacharel em Ciências da Computação
+  }%
 }
 \UFSCprograma{%
   \lang{%

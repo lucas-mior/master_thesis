@@ -1732,10 +1732,13 @@
 
 % Só dá entrada na lista. Ainda não funciona com o limarka
 % q/printnoidxglossaries-vs-printglossaries
-\newcommand{\simbololista}[3]{\newglossaryentry{#1}{%
-  type=simbolos,
-  name=#2,
-  description=#3}}
+\newcommand{\simbololista}[3]{%
+  \newglossaryentry{#1}{%
+    type=simbolos,
+    name=#2,
+    description=#3
+  }%
+}
 
 % imprime lista de siglas ordenado alfabeticamente
 % q/printnoidxglossaries-vs-printglossaries
@@ -1986,8 +1989,7 @@
 \usepackage{framed}
 \usepackage[most]{tcolorbox}
 \definecolor{shadecolor}{RGB}{219, 229, 241}
-\newtcolorbox{bluebox}
-{%
+\newtcolorbox{bluebox}{%
   colback=shadecolor,
   grow to right by=8mm,
   grow to left by=8mm,
