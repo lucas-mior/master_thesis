@@ -608,16 +608,24 @@
 
   % tamanhos de fontes de section, subsection, subsubsection e subsubsubsection
   \setsecheadstyle{%
-    \ABNTEXsectionfont\ABNTEXsectionfontsize\ABNTEXsectionupperifneeded%
+    \ABNTEXsectionfont%
+    \ABNTEXsectionfontsize%
+    \ABNTEXsectionupperifneeded%
   }
   \setsubsecheadstyle{%
-    \ABNTEXsubsectionfont\ABNTEXsubsectionfontsize\ABNTEXsubsectionupperifneeded%
+    \ABNTEXsubsectionfont%
+    \ABNTEXsubsectionfontsize%
+    \ABNTEXsubsectionupperifneeded%
   }
   \setsubsubsecheadstyle{%
-    \ABNTEXsubsubsectionfont\ABNTEXsubsubsectionfontsize\ABNTEXsubsubsectionupperifneeded%
+    \ABNTEXsubsubsectionfont%
+    \ABNTEXsubsubsectionfontsize%
+    \ABNTEXsubsubsectionupperifneeded%
   }
   \ABNTEXsetsubsubsubsecheadstyle{%
-    \ABNTEXsubsubsubsectionfont\ABNTEXsubsubsubsectionfontsize\ABNTEXsubsubsubsectionupperifneeded%
+    \ABNTEXsubsubsubsectionfont%
+    \ABNTEXsubsubsubsectionfontsize%
+    \ABNTEXsubsubsubsectionupperifneeded%
   }
 
   % impressao do numero do capitulo
