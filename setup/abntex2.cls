@@ -177,7 +177,8 @@
   \endgroup%
 }
 
-% Define o comando \notas que respeita as configurações de caption do memoir ou do caption
+% Define o comando \notas
+% que respeita as configurações de caption do memoir ou do caption
 \newcommand{\ABNTEXnota}[2][\ABNTEXnotaname]{\ABNTEXfonte[#1]{#2}}
 
 % Customiza listas
