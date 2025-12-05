@@ -51,11 +51,11 @@
 % Opcoes chapter=TITLE, section=TITLE, subsection=TITLE e
 % subsubsection=TITLE: titulos em letras maiusculas
 %
-\newboolean{ABNTEXupperchapter}     %true=titles of chapter/appendix in uppercase
-\newboolean{ABNTEXuppersection}     %true=titles of sections in uppercase
-\newboolean{ABNTEXuppersubsection}  %true=titles of subsections in uppercase
-\newboolean{ABNTEXuppersubsubsection}  %true=titles of subsubsections in uppercase
-\newboolean{ABNTEXuppersubsubsubsection}  %true=titles of subsubsubsections in uppercase
+\newboolean{ABNTEXupperchapter}
+\newboolean{ABNTEXuppersection}
+\newboolean{ABNTEXuppersubsection}
+\newboolean{ABNTEXuppersubsubsection}
+\newboolean{ABNTEXuppersubsubsubsection}
 \setboolean{ABNTEXupperchapter}{false}
 \setboolean{ABNTEXuppersection}{false}
 \setboolean{ABNTEXuppersubsection}{false}
