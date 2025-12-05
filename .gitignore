@@ -23,3 +23,5 @@ latexcache/
 *.png
 *.jpg
 tags
+setup/abntex2.tex
+setup/ufscthesisx.tex
