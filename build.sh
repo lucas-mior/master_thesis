@@ -9,7 +9,8 @@ start_sec=$(date +%s)
 start_nsec=$(date +%N)
 
 while pdflatex -halt-on-error -interaction=nonstopmode main.tex \
-      | tee /dev/tty | grep "Please (re)run Biber"; do
+      2>&1 | grep -v "/usr/share/tex" | tee /dev/tty \
+      | grep "Please (re)run Biber"; do
     printf "%b" "$BLU"
     biber main
     printf "%b" "$RED"
