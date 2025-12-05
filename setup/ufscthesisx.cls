@@ -1756,7 +1756,7 @@
 
 % imprime lista de símbolos na ordem em que aparece no texto
 % q/printnoidxglossaries-vs-printglossaries
-\newcommand{\imprimirlistadesimbolos}{%
+\newcommand{\UFSCimprimirListaSimbolos}{%
   \pdfbookmark[0]{\ABNTEXlistadesimbolosname}{sbl}
   \printnoidxglossary[%
     style=mylong2,
