@@ -848,8 +848,12 @@
 % ------------------------------------------------------------------------
 
 % Definicoes compartilhadas entre Apendices e Anexos
-\newcommand\@switch[1]{ \@writefile{toc}{\renewcommand*{\cftappendixname}{#1 \space}} }
-\newcommand{\ABNTEXswitchchapname}[1]{ \protected@write \@auxout {}{\string\@switch{#1} }}
+\newcommand\@switch[1]{%
+  \@writefile{toc}{\renewcommand*{\cftappendixname}{#1 \space}}
+}
+\newcommand{\ABNTEXswitchchapname}[1]{
+  \protected@write \@auxout {}{\string\@switch{#1} }%
+}
 
 \newcommand{\ABNTEXPRIVATEapendiceconfig}[2]{%
   \setboolean{abntex@apendiceousecao}{true}%
