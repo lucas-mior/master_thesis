@@ -6,9 +6,13 @@
     \theauthor
 
     \begin{center}
-      \ABNTEXchapterfont\bfseries\MakeUppercase
-      \thetitle
-      \UFSCifNotEmpty{\imprimirsubtitulo}{: \imprimirsubtitulo}
+      {
+        \ABNTEXchapterfont
+        \bfseries
+        \MakeUppercase
+        \thetitle
+      }
+      \UFSCifNotEmpty{\imprimirsubtitulo}{{\ABNTEXchapterfont:} \imprimirsubtitulo}
     \end{center}
 
     \begin{minipage}{\textwidth}
@@ -56,7 +60,8 @@
 
   \UFSCifNotEmpty{\abnteximprimircoorientador}{%
     \ABNTEXassinatura{%
-      \textbf{\abnteximprimircoorientador} \\ \abnteximprimircoorientadorRotulo \\
+      \textbf{\abnteximprimircoorientador}
+      \abnteximprimircoorientadorRotulo \\
       \abnteximprimirinstituicao~--~\abnteximprimirinstituicaosigla
     }
   }
