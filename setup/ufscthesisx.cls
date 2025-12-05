@@ -405,7 +405,9 @@
 % Set the UFSC epigrafe font size
 % Changing font size in an example environment
 % q/changing-font-size-in-an-example-environment
-\expandafter\def\expandafter\abntexEnvEpigrafe\expandafter{\abntexEnvEpigrafe\UFSCcaptionSize}
+\expandafter\def\expandafter\abntexEnvEpigrafe\expandafter{%
+  \abntexEnvEpigrafe\UFSCcaptionSize%
+}
 
 % Selects a roman (i.e., serifed) font family
 % \renewcommand{\rmdefault}{cmr}
@@ -2478,7 +2480,13 @@
   tabsize=2,
   keywords={true,false,null,y,n},
   keywordstyle=\color{darkgray},
-  basicstyle={\small\fontfamily{zi4}\selectfont\YAMLkeystyle}, % assuming a key comes first
+  basicstyle={%
+    % assuming a key comes first
+    \small%
+    \fontfamily{zi4}%
+    \selectfont%
+    \YAMLkeystyle%
+  },
   sensitive=false,
   comment=[l]{\#},
   comment=[l]{\/\/},
@@ -2487,14 +2495,19 @@
   stringstyle=\YAMLvaluestyle\fontfamily{zi4}\selectfont,
   moredelim=[l][\color{orange}]{\&},
   moredelim=[l][\color{magenta}]{*},
-  moredelim=**[il][\YAMLcolonstyle{:}\YAMLvaluestyle]{:} % switch to value style at :
+  moredelim=**[il][\YAMLcolonstyle{:}\YAMLvaluestyle]{:} % switch to value style
 }
 
 \lstdefinestyle{ufscthesisx_style}{
   aboveskip=3mm,
   belowskip=3mm,
   backgroundcolor=\color{white},
-  basicstyle={\small\fontfamily{zi4}\selectfont},    % the size of the fonts that are used for the code
+  basicstyle={%
+    % the size of the fonts that are used for the code
+    \small%
+    \fontfamily{zi4}%
+    \selectfont%
+  },
   breakatwhitespace=true,
   breaklines=true,
   captionpos=t,
@@ -2816,58 +2829,59 @@
 % que as figuras estejam listadas na Lista de Ilustrações,
 % a UFSC pede que as figuras estejam na Lista de Figuras.
 %
-% Remove the colon appended to variables by 'abntex2' because they show up on places they shouldn't
+% Remove the colon appended to variables by 'abntex2'
+% because they show up on places they shouldn't
 %
 % q/why-latex-does-not-tell-me-which-command-is-undefined
 % q/how-to-add-babel-captions-to-newfloat-package-environments
 % q/how-to-override-command-on-my-preamble-after-its-redefinition-by-my-class-with
-\@ifpackageloaded{babel}{\@ifpackagewith{babel}{brazil}{\addto\captionsbrazil{%
-  \renewcommand{\ABNTEXorientadorname}{Orientador}
-  \renewcommand{\ABNTEXcoorientadorname}{Coorientador}
-  \renewcommand{\quadrosname}{Quadro}
-  \renewcommand{\ABNTEXfolhadeaprovacaoname}{Folha de Aprovação}
-  \renewcommand{\ABNTEXfolhaderostoname}{Folha de Rosto}
-  \renewcommand{\listfigurename}{Lista de Ilustrações}
-  \renewcommand{\listtablename}{Lista de Tabelas}
-  \renewcommand{\listofquadrosname}{Lista de Quadros}
-  \renewcommand{\listfigurename}{Lista de Figuras}
-  \renewcommand{\ABNTEXlistadesiglasname}{Lista de Abreviaturas e Siglas}
-  \renewcommand{\ABNTEXlistadesimbolosname}{Lista de Símbolos}
-  \renewcommand{\tableautorefname}{Tabela}
-  \renewcommand{\figureautorefname}{Figura}
-  \renewcommand{\chapterautorefname}{Capítulo}
-  \renewcommand{\pageautorefname}{Página}
-  \renewcommand{\sectionautorefname}{Seção}
-  \renewcommand{\subsectionautorefname}{Subseção}
-  \renewcommand{\subsubsectionautorefname}{Subsubseção}
-  \renewcommand{\paragraphautorefname}{Parágrafo}
-}}{}}{}
+\@ifpackageloaded{babel}{\@ifpackagewith{babel}{brazil}{%
+  \addto\captionsbrazil{%
+    \renewcommand{\ABNTEXorientadorname}{Orientador}
+    \renewcommand{\ABNTEXcoorientadorname}{Coorientador}
+    \renewcommand{\quadrosname}{Quadro}
+    \renewcommand{\ABNTEXfolhadeaprovacaoname}{Folha de Aprovação}
+    \renewcommand{\ABNTEXfolhaderostoname}{Folha de Rosto}
+    \renewcommand{\listfigurename}{Lista de Ilustrações}
+    \renewcommand{\listtablename}{Lista de Tabelas}
+    \renewcommand{\listofquadrosname}{Lista de Quadros}
+    \renewcommand{\listfigurename}{Lista de Figuras}
+    \renewcommand{\ABNTEXlistadesiglasname}{Lista de Abreviaturas e Siglas}
+    \renewcommand{\ABNTEXlistadesimbolosname}{Lista de Símbolos}
+    \renewcommand{\tableautorefname}{Tabela}
+    \renewcommand{\figureautorefname}{Figura}
+    \renewcommand{\chapterautorefname}{Capítulo}
+    \renewcommand{\pageautorefname}{Página}
+    \renewcommand{\sectionautorefname}{Seção}
+    \renewcommand{\subsectionautorefname}{Subseção}
+    \renewcommand{\subsubsectionautorefname}{Subsubseção}
+    \renewcommand{\paragraphautorefname}{Parágrafo}
+  }
+}{}}{}
 
-\@ifpackageloaded{babel}{%
-  \@ifpackagewith{babel}{english}{%
-    \addto\captionsenglish{%
-      \renewcommand{\UFSCcovername}{Cover}
-      \renewcommand{\ABNTEXorientadorname}{Supervisor}
-      \renewcommand{\ABNTEXcoorientadorname}{Co\hyp{}supervisor}
-      \renewcommand{\ABNTEXfolhadeaprovacaoname}{Approval}
-      \renewcommand{\ABNTEXfolhaderostoname}{Title Page}
-      \renewcommand{\ABNTEXerrataname}{Errata Sheet}
-      \renewcommand{\listfigurename}{List of Illustrations}
-      \renewcommand{\listtablename}{List of Tables}
-      \renewcommand{\listfigurename}{List of Figures}
-      \renewcommand{\ABNTEXlistadesiglasname}{List of Abbreviations and Acronyms}
-      \renewcommand{\ABNTEXlistadesimbolosname}{List of Symbols}
-      \renewcommand{\tableautorefname}{Table}
-      \renewcommand{\figureautorefname}{Figure}
-      \renewcommand{\chapterautorefname}{Chapter}
-      \renewcommand{\pageautorefname}{Page}
-      \renewcommand{\sectionautorefname}{Section}
-      \renewcommand{\subsectionautorefname}{Subsection}
-      \renewcommand{\subsubsectionautorefname}{Subsubsection}
-      \renewcommand{\paragraphautorefname}{Paragraph}
-    }
-  }{}
-}{}
+\@ifpackageloaded{babel}{\@ifpackagewith{babel}{english}{%
+  \addto\captionsenglish{%
+    \renewcommand{\UFSCcovername}{Cover}
+    \renewcommand{\ABNTEXorientadorname}{Supervisor}
+    \renewcommand{\ABNTEXcoorientadorname}{Co\hyp{}supervisor}
+    \renewcommand{\ABNTEXfolhadeaprovacaoname}{Approval}
+    \renewcommand{\ABNTEXfolhaderostoname}{Title Page}
+    \renewcommand{\ABNTEXerrataname}{Errata Sheet}
+    \renewcommand{\listfigurename}{List of Illustrations}
+    \renewcommand{\listtablename}{List of Tables}
+    \renewcommand{\listfigurename}{List of Figures}
+    \renewcommand{\ABNTEXlistadesiglasname}{List of Abbreviations and Acronyms}
+    \renewcommand{\ABNTEXlistadesimbolosname}{List of Symbols}
+    \renewcommand{\tableautorefname}{Table}
+    \renewcommand{\figureautorefname}{Figure}
+    \renewcommand{\chapterautorefname}{Chapter}
+    \renewcommand{\pageautorefname}{Page}
+    \renewcommand{\sectionautorefname}{Section}
+    \renewcommand{\subsectionautorefname}{Subsection}
+    \renewcommand{\subsubsectionautorefname}{Subsubsection}
+    \renewcommand{\paragraphautorefname}{Paragraph}
+  }
+}{}}{}
 
 % Muda equação para 'Equação (n)'
 % q/autoref-does-not-expand-abbreviation-automatically-at-beginning-of-line
@@ -2886,10 +2900,14 @@
   }{}
 }{}
 
-\@ifpackageloaded{babel}{\@ifpackagewith{babel}{brazil}{\addto\captionsbrazil{%
-  \def\equationautorefname~#1\null{%
-  Equação~(#1)\null
-  }
-}}{}}{}
+\@ifpackageloaded{babel}{%
+  \@ifpackagewith{babel}{brazil}{%
+    \addto\captionsbrazil{%
+      \def\equationautorefname~#1\null{%
+        Equação~(#1)\null
+     }
+    }
+  }{}
+}{}
 
 \makeatother

@@ -81,7 +81,7 @@
 % Opções de diagramação de sumários
 % sumario=tradicional    : Sumário tradicional do LaTeX/Memoir
 % sumario=abnt-6027-2012 : Sumário conforme recomendação da ABNT NBR 6027:2012
-\newboolean{ABNTEXsumario-tradicional}     %true=titles of chapter/appendix in uppercase
+\newboolean{ABNTEXsumario-tradicional}  % titles of chapter/appendix uppercase
 \newboolean{ABNTEXsumario-abnt-6027-2012}
 \setboolean{ABNTEXsumario-tradicional}{false}
 \setboolean{ABNTEXsumario-abnt-6027-2012}{true}
@@ -146,7 +146,8 @@
   \ifthenelse{\not\equal{#1}{}}{#2}{}
 }
 
-% Define o comando \ABNTEXfonte que respeita as configurações de caption do memoir ou do caption
+% Define o comando \ABNTEXfonte
+% que respeita as configurações de caption do memoir ou do caption
 \newcommand{\ABNTEXfonte}[2][\ABNTEXfontename]{%
   \M@gettitle{#2}%
   \memlegendinfo{#2}%
@@ -168,11 +169,16 @@
     \else%
       \caption@set{labelseparator}{colon}%
     \fi%
-    \@makecaption{\ABNTEXfontereduzida #1}{\ignorespaces\ABNTEXfontereduzida #2}\par
+    \@makecaption{%
+      \ABNTEXfontereduzida #1%
+    }{%
+      \ignorespaces\ABNTEXfontereduzida #2%
+    }\par
   \endgroup%
 }
 
-% Define o comando \notas que respeita as configurações de caption do memoir ou do caption
+% Define o comando \notas
+% que respeita as configurações de caption do memoir ou do caption
 \newcommand{\ABNTEXnota}[2][\ABNTEXnotaname]{\ABNTEXfonte[#1]{#2}}
 
 % Customiza listas
@@ -185,7 +191,9 @@
 
 % q/illegal-parameter-number-in-definition-of-enitc-after-using-setlistenumerat
 \let\@itemenumerateoptional\@item
-\patchcmd\@itemenumerateoptional{\if@noitemarg}{\iftrue}{}{\FAILEDCREATEENUMERAOPTIONAL}
+\patchcmd\@itemenumerateoptional{\if@noitemarg}{\iftrue}{}{%
+  \FAILEDCREATEENUMERAOPTIONAL%
+}
 \newcommand\enumerateoptionallabelformat[1]{#1~\@itemlabel}
 
 % q/enumitem-revert-nolistsep
@@ -368,15 +376,17 @@
 %\captionnamefont{\ABNTEXfontereduzida}
 %\captiontitlefont{\ABNTEXfontereduzida}
 
-% Para uso com pacotes subfig e caption dentro do memoir se estes forem carregados ou não.
+% Para uso com pacotes subfig e caption
+% dentro do memoir se estes forem carregados ou não.
 % É necessário para que os comandos \ABNTEXIBGEtab e \ABNTEXfonte funcionem
-% independente do carregamento de pacotes externos ao memoir que tratam captions.
+% independente do carregamento de pacotes externos ao memoir que tratam captions
 \newcommand{\ABNTEXIBGEtabfontsize}{\ABNTEXfontereduzida}
 \AtBeginDocument{%
-  % comandos auxiliares para manipular os captions dentro do comando \ABNTEXIBGEtab.
+  % comandos auxiliares para manipular os captions dentro de \ABNTEXIBGEtab.
   \newcommand{\ABNTEXconfigurecaptions}{\captionstyle[\raggedright]{}}
   \newcommand{\ABNTEXconfigureseparator}{\captiondelim{\ABNTEXcaptiondelim}}
-  % Define o comando \ABNTEXIBGEtab{}{}{} com caption e legenda da largura do conteúdo tabular, tabular*, etc
+  % Define o comando \ABNTEXIBGEtab{}{}{}
+  % com caption e legenda da largura do conteúdo tabular, tabular*, etc
   % Parece funcionar com qualque pacote
   \newsavebox{\myptabbox}
   \newlength{\myptabboxwidth}
@@ -399,8 +409,9 @@
   \let\ABNTEXibgetab\ABNTEXIBGEtab
 }
 
-% Altera os comandos \ABNTEXconfigurecaptions e \ABNTEXconfigureseparator para trabalhar com
-% o pacote caption e amigos.
+% Altera os comandos
+% \ABNTEXconfigurecaptions e \ABNTEXconfigureseparator
+% para trabalhar com o pacote caption e amigos.
 \AtEndPackage{caption}{%
   \AtBeginDocument{%
     \DeclareCaptionLabelSeparator{barr}{\ABNTEXcaptiondelim}
@@ -475,9 +486,10 @@
 \cftinsertcode{A}{\renewcommand{\cftchapteraftersnum}{\hfill\textendash\hfill}}
 
 % No caso de Sumario (TOC) tradicional
-\ifthenelse{\boolean{ABNTEXsumario-tradicional}}{}{} % essa linha não faz nada,
-                                                     % mas se houver necessidade de alterar o comportamento
-                                                     % do sumário tradicional altere aqui.
+\ifthenelse{\boolean{ABNTEXsumario-tradicional}}{%
+  % se houver necessidade de alterar o comportamento
+  % do sumário tradicional altere aqui.
+}{}
 
 % No caso de Sumario (TOC) especifico da ABNT-6027-2012
 
@@ -550,10 +562,12 @@
     \bibmark
     \ifnobibintoc\else
     \phantomsection
-    \addcontentsline{toc}{chapter}{\texorpdfstring{\MakeTextUppercase{\bibname}}{\bibname}}
+    \addcontentsline{toc}{chapter}{%
+      \texorpdfstring{\MakeTextUppercase{\bibname}}{\bibname}%
+    }
     \fi
     \prebibhook
-}
+  }
 
 }{}
 
@@ -597,10 +611,26 @@
   \renewcommand{\partnamefont}{\ABNTEXpartfont\ABNTEXpartfontsize}
 
   % tamanhos de fontes de section, subsection, subsubsection e subsubsubsection
-  \setsecheadstyle{\ABNTEXsectionfont\ABNTEXsectionfontsize\ABNTEXsectionupperifneeded}
-  \setsubsecheadstyle{\ABNTEXsubsectionfont\ABNTEXsubsectionfontsize\ABNTEXsubsectionupperifneeded}
-  \setsubsubsecheadstyle{\ABNTEXsubsubsectionfont\ABNTEXsubsubsectionfontsize\ABNTEXsubsubsectionupperifneeded}
-  \ABNTEXsetsubsubsubsecheadstyle{\ABNTEXsubsubsubsectionfont\ABNTEXsubsubsubsectionfontsize\ABNTEXsubsubsubsectionupperifneeded}
+  \setsecheadstyle{%
+    \ABNTEXsectionfont%
+    \ABNTEXsectionfontsize%
+    \ABNTEXsectionupperifneeded%
+  }
+  \setsubsecheadstyle{%
+    \ABNTEXsubsectionfont%
+    \ABNTEXsubsectionfontsize%
+    \ABNTEXsubsectionupperifneeded%
+  }
+  \setsubsubsecheadstyle{%
+    \ABNTEXsubsubsectionfont%
+    \ABNTEXsubsubsectionfontsize%
+    \ABNTEXsubsubsectionupperifneeded%
+  }
+  \ABNTEXsetsubsubsubsecheadstyle{%
+    \ABNTEXsubsubsubsectionfont%
+    \ABNTEXsubsubsubsectionfontsize%
+    \ABNTEXsubsubsubsectionupperifneeded%
+  }
 
   % impressao do numero do capitulo
   \renewcommand{\chapternamenum}{}
@@ -619,11 +649,23 @@
     }{%
     \ifthenelse{\boolean{abntex@apendiceousecao}}{%
         \centering%
-        \settowidth{\chapternamenumlength}{\printchaptername\printchapternum\afterchapternum}%
+        \settowidth{\chapternamenumlength}{%
+          \printchaptername%
+          \printchapternum%
+          \afterchapternum%
+        }%
         \ABNTEXchapterupperifneeded{##1}%
       }{%
-        \settowidth{\chapternamenumlength}{\printchaptername\printchapternum\afterchapternum}%
-        \parbox[t]{\columnwidth-\chapternamenumlength}{\ABNTEXchapterupperifneeded{##1}}
+        \settowidth{\chapternamenumlength}{%
+          \printchaptername%
+          \printchapternum%
+          \afterchapternum%
+        }%
+        \parbox[t]{%
+          \columnwidth-\chapternamenumlength%
+        }{%
+          \ABNTEXchapterupperifneeded{##1}%
+        }
       }%
     }%
   }
@@ -655,9 +697,21 @@
 % -----
 % Cabecalho padrao
 \makepagestyle{abntheadings}
-\makeevenhead{abntheadings}{\ABNTEXfontereduzida\thepage}{}{\ABNTEXfontereduzida\textit\leftmark}
-\makeoddhead{abntheadings}{\ABNTEXfontereduzida\textit\rightmark}{}{\ABNTEXfontereduzida\thepage}
-\makeheadrule{abntheadings}{\textwidth}{\normalrulethickness}
+\makeevenhead{abntheadings}{%
+  \ABNTEXfontereduzida\thepage%
+}{}{%
+  \ABNTEXfontereduzida\textit\leftmark%
+}
+\makeoddhead{abntheadings}{%
+  \ABNTEXfontereduzida\textit\rightmark%
+}{}{%
+  \ABNTEXfontereduzida\thepage%
+}
+\makeheadrule{abntheadings}{%
+  \textwidth%
+}{%
+  \normalrulethickness%
+}
 
 % Cabecalho do inicio do capitulo
 \makepagestyle{abntchapfirst}
@@ -697,8 +751,12 @@
 % Comandos de dados para CAPA e FOLHA DE ROSTO
 % ------------------------------------------------------------------------
 
-\newcommand{\ABNTEXtituloestrangeiro}[1]{\providecommand{\abntextheforeigntitle}{#1}}
-\newcommand{\ABNTEXimprimirtituloestrangeiro}{\abntextheforeigntitle}
+\newcommand{\ABNTEXtituloestrangeiro}[1]{%
+  \providecommand{\abntextheforeigntitle}{#1}%
+}
+\newcommand{\ABNTEXimprimirtituloestrangeiro}{%
+  \abntextheforeigntitle%
+}
 
 \let\olddate\date
 \renewcommand{\date}[1]{\AtBeginDocument{\olddate{#1}}}
@@ -706,7 +764,9 @@
 \newcommand{\ABNTEXimprimirdata}{\thedate}
 
 \providecommand{\abnteximprimirinstituicao}{}
-\newcommand{\ABNTEXinstituicao}[1]{\renewcommand{\abnteximprimirinstituicao}{#1}}
+\newcommand{\ABNTEXinstituicao}[1]{%
+  \renewcommand{\abnteximprimirinstituicao}{#1}%
+}
 
 \providecommand{\abnteximprimirlocal}{}
 \newcommand{\ABNTEXlocal}[1]{\renewcommand{\abnteximprimirlocal}{#1}}
@@ -729,14 +789,21 @@
 }
 
 \providecommand{\abnteximprimirtipotrabalho}{}
-\newcommand{\ABNTEXtipotrabalho}[1]{\renewcommand{\abnteximprimirtipotrabalho}{#1}}
+\newcommand{\ABNTEXtipotrabalho}[1]{%
+  \renewcommand{\abnteximprimirtipotrabalho}{#1}%
+}
 
 % ------------------------------------------------------------------------
 % Comandos e ambientes de editoracao PRE-TEXTUAIS
 % ------------------------------------------------------------------------
 
 % Ambiente para definicao da Capa
-\newenvironment{abntexEnvCapa}{\begin{titlingpage}}{\end{titlingpage}\cleardoublepage}
+\newenvironment{abntexEnvCapa}{%
+  \begin{titlingpage}%
+}{%
+  \end{titlingpage}%
+  \cleardoublepage%
+}
 
 % Titulos em lingua estrangeira para artigos: ABNT NBR 6022:2018
 \ifthenelse{\equal{\ABNTEXisarticle}{true}}{%
@@ -875,7 +942,7 @@
     \renewcommand{\appendixtocname}{#2}
   }
   \renewcommand{\appendixpagename}{#2}
-  \ABNTEXswitchchapname{#1}% Corrected from \switchapname -> \ABNTEXswitchchapname
+  \ABNTEXswitchchapname{#1}  % Corrected \switchapname -> \ABNTEXswitchchapname
   \renewcommand*{\cftappendixname}{#1 \space}
 }
 
@@ -1007,9 +1074,13 @@
 \newcommand{\ABNTEXassinatura}{\@ifstar{\ABNTEXsign}{\ABNTEXcsign}}
 % assinatura com estrela
 \newcommand{\ABNTEXsign}[1]{%
-  \parbox[t]{\ABNTEXsignwidth}{\SingleSpacing\vspace*{\ABNTEXsignskip}\centering%
-  \rule{\ABNTEXsignwidth}{\ABNTEXsignthickness}\\%
-  \nopagebreak #1\par}%
+  \parbox[t]{\ABNTEXsignwidth}{%
+    \SingleSpacing%
+    \vspace*{\ABNTEXsignskip}%
+    \centering%
+    \rule{\ABNTEXsignwidth}{\ABNTEXsignthickness}\\%
+    \nopagebreak #1\par%
+  }%
 }
 % assinatura sem estrela
 \newcommand{\ABNTEXcsign}[1]%
@@ -1044,8 +1115,16 @@
 %   página no caso de estar no modo twoside. Util para imprimir a Ficha
 %   Bibliografica. Porem, se estiver no modo oneside, a versao sem estrela
 %   é identica.
-\newenvironment{abntexEnvFolhaderosto}[1][\ABNTEXfolhaderostoname]{\clearpage\ABNTEXPRIVATEbookmarkthis{#1}}{\cleardoublepage}
-\newenvironment{abntexEnvFolhaderosto*}[1][\ABNTEXfolhaderostoname]{\clearpage\ABNTEXPRIVATEbookmarkthis{#1}}{\newpage}%
+\newenvironment{abntexEnvFolhaderosto}[1][\ABNTEXfolhaderostoname]{%
+  \clearpage\ABNTEXPRIVATEbookmarkthis{#1}
+}{%
+  \cleardoublepage
+}
+\newenvironment{abntexEnvFolhaderosto*}[1][\ABNTEXfolhaderostoname]{%
+  \clearpage\ABNTEXPRIVATEbookmarkthis{#1}
+}{%
+  \newpage
+}%
 
 % Conteudo padrao da Folha de Rosto
 \newcommand{\ABNTEXfolhaderostocontent}{%
