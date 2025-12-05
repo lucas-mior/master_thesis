@@ -1732,10 +1732,13 @@
 
 % Só dá entrada na lista. Ainda não funciona com o limarka
 % q/printnoidxglossaries-vs-printglossaries
-\newcommand{\simbololista}[3]{\newglossaryentry{#1}{%
-  type=simbolos,
-  name=#2,
-  description=#3}}
+\newcommand{\simbololista}[3]{%
+  \newglossaryentry{#1}{%
+    type=simbolos,
+    name=#2,
+    description=#3
+  }%
+}
 
 % imprime lista de siglas ordenado alfabeticamente
 % q/printnoidxglossaries-vs-printglossaries
