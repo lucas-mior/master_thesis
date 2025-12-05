@@ -50,7 +50,11 @@ contidos.
         \UFSCifNotEmpty{\imprimirsubtitulo}{~:~\imprimirsubtitulo}%
         ~/~\theauthor%
         ;~\abnteximprimirorientadorRotulo,~\abnteximprimirorientador%
-        \UFSCifNotEmpty{\abnteximprimircoorientador}{;~\abnteximprimircoorientadorRotulo,~\abnteximprimircoorientador}%
+        \UFSCifNotEmpty{%
+          \abnteximprimircoorientador%
+        }{%
+          ;~\abnteximprimircoorientadorRotulo,~\abnteximprimircoorientador%
+        }%
         ~--~\abnteximprimirlocal,~\ABNTEXimprimirdata.
 
         % Prints how much pages there are on the document
@@ -58,7 +62,8 @@ contidos.
         \hspace{0.5cm} \pageref{LastPage} p.
         \bigskip
 
-        \hspace{0.5cm} \abnteximprimirtipotrabalho~--~\abnteximprimirinstituicao,
+        \hspace{0.5cm}
+        \abnteximprimirtipotrabalho~--~\abnteximprimirinstituicao,
         \imprimircentro,~\imprimirprograma.
         \bigskip
 
@@ -69,11 +74,19 @@ contidos.
         % q/how-to-define-inparaenum-in-the-preamble
         \hspace{0.5cm}
         \begin{inparaenum}
-            \EngAndPor{\palavraschaveinglescomvirgula}{\palavraschaveportuguescomvirgula}%
+          \EngAndPor{%
+            \palavraschaveinglescomvirgula%
+          }{%
+            \palavraschaveportuguescomvirgula%
+          }
         \end{inparaenum}%
         \begin{inparaenum}[I.]
             \item \abnteximprimirorientador~
-            \UFSCifNotEmpty{\abnteximprimircoorientador}{\item \abnteximprimircoorientador~}
+            \UFSCifNotEmpty{%
+              \abnteximprimircoorientador%
+            }{%
+              \item \abnteximprimircoorientador~%
+            }
             \item \imprimirprograma~
             \item \thetitle~
         \end{inparaenum}%
