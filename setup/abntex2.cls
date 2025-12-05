@@ -848,8 +848,12 @@
 % ------------------------------------------------------------------------
 
 % Definicoes compartilhadas entre Apendices e Anexos
-\newcommand\@switch[1]{ \@writefile{toc}{\renewcommand*{\cftappendixname}{#1 \space}} }
-\newcommand{\ABNTEXswitchchapname}[1]{ \protected@write \@auxout {}{\string\@switch{#1} }}
+\newcommand\@switch[1]{%
+  \@writefile{toc}{\renewcommand*{\cftappendixname}{#1 \space}}
+}
+\newcommand{\ABNTEXswitchchapname}[1]{
+  \protected@write \@auxout {}{\string\@switch{#1} }%
+}
 
 \newcommand{\ABNTEXPRIVATEapendiceconfig}[2]{%
   \setboolean{abntex@apendiceousecao}{true}%
@@ -948,12 +952,32 @@
 % Ambiente para alineas e e subalineas (incisos)
 % ABNT NBR 6024/2012 - 4.2 e 4.3
 \newlist{alineas}{enumerate}{2}
-\setlist[alineas,1]{label={\alph*)},topsep=0pt,itemsep=0pt,leftmargin=\parindent+\labelwidth-\labelsep}%
-\setlist[alineas,2]{label={--},topsep=0pt,itemsep=0pt,leftmargin=*}
+\setlist[alineas,1]{%
+  label={\alph*)},
+  topsep=0pt,
+  itemsep=0pt,
+  leftmargin=\parindent+\labelwidth-\labelsep
+}%
+\setlist[alineas,2]{%
+  label={--},
+  topsep=0pt,
+  itemsep=0pt,
+  leftmargin=*
+}
 \newlist{subalineas}{enumerate}{1}
-\setlist[subalineas,1]{label={--},topsep=0pt,itemsep=0pt,leftmargin=*}%
+\setlist[subalineas,1]{%
+  label={--},
+  topsep=0pt,
+  itemsep=0pt,
+  leftmargin=*
+}%
 \newlist{incisos}{enumerate}{1}
-\setlist[incisos,1]{label={--},topsep=0pt,itemsep=0pt,leftmargin=*}%
+\setlist[incisos,1]{%
+  label={--},
+  topsep=0pt,
+  itemsep=0pt,
+  leftmargin=*
+}%
 
 % Comando \ABNTEXassinatura for signature
 % width of the line and text under the line
