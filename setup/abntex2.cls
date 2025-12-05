@@ -773,7 +773,9 @@
 }
 
 \providecommand{\abnteximprimirtipotrabalho}{}
-\newcommand{\ABNTEXtipotrabalho}[1]{\renewcommand{\abnteximprimirtipotrabalho}{#1}}
+\newcommand{\ABNTEXtipotrabalho}[1]{%
+  \renewcommand{\abnteximprimirtipotrabalho}{#1}%
+}
 
 % ------------------------------------------------------------------------
 % Comandos e ambientes de editoracao PRE-TEXTUAIS
