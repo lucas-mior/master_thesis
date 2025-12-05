@@ -805,11 +805,11 @@
     \vspace*{\fill}\vspace*{\fill}
     \begin{center}
 
-      {
-        \ABNTEXchapterfont\MakeUppercase{\thetitle}
+      {%
+        {\ABNTEXchapterfont\MakeUppercase{\thetitle}}%
+        \UFSCifNotEmpty{\imprimirsubtitulo}
+                     {{\ABNTEXchapterfont:} \par \imprimirsubtitulo}
       }
-      \abntex@UFSCifNotEmpty{\imprimirsubtitulo}
-                            {{\ABNTEXchapterfont\!:} \\ \imprimirsubtitulo}
 
     \end{center}
     \vspace*{\fill}
