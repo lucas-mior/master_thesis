@@ -1986,8 +1986,7 @@
 \usepackage{framed}
 \usepackage[most]{tcolorbox}
 \definecolor{shadecolor}{RGB}{219, 229, 241}
-\newtcolorbox{bluebox}
-{%
+\newtcolorbox{bluebox}{%
   colback=shadecolor,
   grow to right by=8mm,
   grow to left by=8mm,
