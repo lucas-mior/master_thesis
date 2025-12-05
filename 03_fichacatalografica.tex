@@ -20,68 +20,84 @@ contidos.
 % http://portalbu.ufsc.br/ficha
 % http://portal.bu.ufsc.br/servicos/ficha-de-identificacao-da-obra/
 \begin{abntexEnvFichacatalografica}
-    \vspace*{\fill}
+  \vspace*{\fill}
 
-    \begin{center}
+  \begin{center}
 
-        \EngAndPor
-        {Cataloging at source by the University Library of the Federal
-         University of Santa Catarina.}
-        {Catalogação na fonte pela Biblioteca Universitária da Universidade
-         Federal de Santa Catarina.}
+    \EngAndPor{%
+      Cataloging at source by the
+      University Library of the Federal University of Santa Catarina.
+    }{%
+      Catalogação na fonte pela Biblioteca Universitária da Universidade
+      Federal de Santa Catarina.
+    }
 
-        \EngAndPor
-        {File compiled at \currenttime h of the day \today.}
-        {Arquivo compilado às \currenttime h do dia \today.}
+    \EngAndPor{%
+      File compiled at \currenttime h of the day \today.
+    }{%
+      Arquivo compilado às \currenttime h do dia \today.
+    }
 
-        \framebox[\textwidth]
-        {
-            % q/use-the-value-of-title-with-removed-linebreak
-            \begin{minipage}{0.98\textwidth}
-            \begingroup \let\\=\space
+    \framebox[\textwidth]{
+      % q/use-the-value-of-title-with-removed-linebreak
+      \begin{minipage}{0.98\textwidth}
+      \begingroup \let\\=\space
 
-                \ttfamily
-                \theauthor
+        \ttfamily
+        \theauthor
 
-                \hspace{0.5cm} \thetitle%
-                \UFSCifNotEmpty{\imprimirsubtitulo}{~:~\imprimirsubtitulo}%
-                ~/~\theauthor%
-                ;~\abnteximprimirorientadorRotulo,~\abnteximprimirorientador%
-                \UFSCifNotEmpty{\abnteximprimircoorientador}{;~\abnteximprimircoorientadorRotulo,~\abnteximprimircoorientador}%
-                ~--~\abnteximprimirlocal,~\ABNTEXimprimirdata.
+        \hspace{0.5cm} \thetitle%
+        \UFSCifNotEmpty{\imprimirsubtitulo}{~:~\imprimirsubtitulo}%
+        ~/~\theauthor%
+        ;~\abnteximprimirorientadorRotulo,~\abnteximprimirorientador%
+        \UFSCifNotEmpty{%
+          \abnteximprimircoorientador%
+        }{%
+          ;~\abnteximprimircoorientadorRotulo,~\abnteximprimircoorientador%
+        }%
+        ~--~\abnteximprimirlocal,~\ABNTEXimprimirdata.
 
-                % Prints how much pages there are on the document
-                % and links to the last page
-                \hspace{0.5cm} \pageref{LastPage} p.
-                \bigskip
+        % Prints how much pages there are on the document
+        % and links to the last page
+        \hspace{0.5cm} \pageref{LastPage} p.
+        \bigskip
 
-                \hspace{0.5cm} \abnteximprimirtipotrabalho~--~\abnteximprimirinstituicao,
-                \imprimircentro,~\imprimirprograma.
-                \bigskip
+        \hspace{0.5cm}
+        \abnteximprimirtipotrabalho~--~\abnteximprimirinstituicao,
+        \imprimircentro,~\imprimirprograma.
+        \bigskip
 
-                \hspace{0.5cm} \EngAndPor{Includes references}{Inclui referências}
-                \bigskip
+        \hspace{0.5cm} \EngAndPor{Includes references}{Inclui referências}
+        \bigskip
 
-                % q/using-lower-case-roman-numerals-in-enumerate-lists
-                % q/how-to-define-inparaenum-in-the-preamble
-                \hspace{0.5cm}
-                \begin{inparaenum}
-                    \EngAndPor{\palavraschaveinglescomvirgula}{\palavraschaveportuguescomvirgula}%
-                \end{inparaenum}%
-                \begin{inparaenum}[I.]
-                    \item \abnteximprimirorientador~
-                    \UFSCifNotEmpty{\abnteximprimircoorientador}{\item \abnteximprimircoorientador~}
-                    \item \imprimirprograma~
-                    \item \thetitle~
-                \end{inparaenum}%
-                \bigskip
+        % q/using-lower-case-roman-numerals-in-enumerate-lists
+        % q/how-to-define-inparaenum-in-the-preamble
+        \hspace{0.5cm}
+        \begin{inparaenum}
+          \EngAndPor{%
+            \palavraschaveinglescomvirgula%
+          }{%
+            \palavraschaveportuguescomvirgula%
+          }
+        \end{inparaenum}%
+        \begin{inparaenum}[I.]
+          \item \abnteximprimirorientador~
+          \UFSCifNotEmpty{%
+            \abnteximprimircoorientador%
+          }{%
+            \item \abnteximprimircoorientador~%
+          }
+          \item \imprimirprograma~
+          \item \thetitle~
+        \end{inparaenum}%
+        \bigskip
 
-                \hspace{7.75cm} CDU 02:141:005.7
+        \hspace{7.75cm} CDU 02:141:005.7
 
-            \endgroup
-            \end{minipage}
-        }
+      \endgroup
+      \end{minipage}
+    }
 
-    \end{center}
+  \end{center}
 
 \end{abntexEnvFichacatalografica}
