@@ -1743,7 +1743,7 @@
 
 % imprime lista de siglas ordenado alfabeticamente
 % q/printnoidxglossaries-vs-printglossaries
-\newcommand{\imprimirlistadesiglas}{%
+\newcommand{\UFSCimprimirListaSiglas}{%
   \pdfbookmark[0]{\ABNTEXlistadesiglasname}{acn}
   \printnoidxglossary[%
     style=mylong1,
