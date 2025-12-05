@@ -1719,7 +1719,7 @@
 }
 
 % Só um pequeno récuo em relação ao primeiro
-\newglossarystyle{mylong2}{% modificado de a/166209/151962
+\newglossarystyle{UFSClong2}{% modificado de a/166209/151962
   \setglossarystyle{long}%
   \renewenvironment{theglossary}{%
     \begin{longtable}[l]{@{}p{\dimexpr 2.0cm-\tabcolsep}p{0.86\hsize}}
@@ -1728,7 +1728,7 @@
 }
 
 % Só dá entrada na lista. Ainda não funciona com o limarka
-\newcommand{\siglalista}[2]{\newacronym{#1}{#1}{#2}}
+\newcommand{\UFSCaddSigla}[2]{\newacronym{#1}{#1}{#2}}
 
 % q/printnoidxglossaries-vs-printglossaries
 \newglossary{UFSCsimbolos}{UFSCsimbolos}{sbl}{UFSCsimbolos}
