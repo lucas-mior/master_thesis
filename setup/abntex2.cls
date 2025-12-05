@@ -191,7 +191,9 @@
 
 % q/illegal-parameter-number-in-definition-of-enitc-after-using-setlistenumerat
 \let\@itemenumerateoptional\@item
-\patchcmd\@itemenumerateoptional{\if@noitemarg}{\iftrue}{}{\FAILEDCREATEENUMERAOPTIONAL}
+\patchcmd\@itemenumerateoptional{\if@noitemarg}{\iftrue}{}{%
+  \FAILEDCREATEENUMERAOPTIONAL%
+}
 \newcommand\enumerateoptionallabelformat[1]{#1~\@itemlabel}
 
 % q/enumitem-revert-nolistsep
