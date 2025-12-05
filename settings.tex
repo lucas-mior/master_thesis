@@ -38,14 +38,14 @@
 
 % Spacing between lines and paragraphs
 % q/ifpackageloaded-question
-\@ifclassloaded{memoir}
-{
+\@ifclassloaded{memoir}{
   % New custom chapter style VZ14, see other chapters styles in:
-  % http://repositorios.cpai.unb.br/ctan/info/latex-samples/MemoirChapStyles/MemoirChapStyles.pdf
+  % http://repositorios.cpai.unb.br
+  % /ctan/info/latex-samples/MemoirChapStyles/MemoirChapStyles.pdf
   \newcommand\thickhrulefill{
     \leavevmode \leaders \hrule height 1ex \hfill \kern \z@
   }
-  \makechapterstyle{VZ14} { %
+  \makechapterstyle{VZ14} {%
     % \thispagestyle{empty}
     \setlength\beforechapskip{50pt}
     \setlength\midchapskip{20pt}
@@ -406,13 +406,19 @@
       \ABNTEXsectionfont\ABNTEXsectionfontsize\ABNTEXsectionupperifneeded
     }
     \setsubsecheadstyle{
-      \ABNTEXsubsectionfont\ABNTEXsubsectionfontsize\ABNTEXsubsectionupperifneeded
+      \ABNTEXsubsectionfont%
+      \ABNTEXsubsectionfontsize%
+      \ABNTEXsubsectionupperifneeded
     }
     \setsubsubsecheadstyle{
-      \ABNTEXsubsubsectionfont\ABNTEXsubsubsectionfontsize\ABNTEXsubsubsectionupperifneeded
+      \ABNTEXsubsubsectionfont%
+      \ABNTEXsubsubsectionfontsize%
+      \ABNTEXsubsubsectionupperifneeded
     }
     \ABNTEXsetsubsubsubsecheadstyle{
-      \ABNTEXsubsubsubsectionfont\ABNTEXsubsubsubsectionfontsize\ABNTEXsubsubsubsectionupperifneeded
+      \ABNTEXsubsubsubsectionfont%
+      \ABNTEXsubsubsubsectionfontsize%
+      \ABNTEXsubsubsubsectionupperifneeded
     }
 
     % Impressão do número do capítulo
@@ -429,14 +435,16 @@
     % Impressão do título do capítulo
     \def\printchaptertitle##1{%
       \chaptitlefont%
-      \ifthenelse{\boolean{abntex@innonumchapter}}{\centering\ABNTEXchapterupperifneeded{##1}}{%
-      \ifthenelse{\boolean{abntex@apendiceousecao}}{%
-        \centering%
-        \settowidth{\chapternamenumlength}{\printchaptername\printchapternum\afterchapternum}%
-        \ABNTEXchapterupperifneeded{##1}%
+      \ifthenelse{\boolean{abntex@innonumchapter}}{%
+        \centering\ABNTEXchapterupperifneeded{##1}
       }{%
-        \settowidth{\chapternamenumlength}{\printchaptername\printchapternum\afterchapternum}%
-        \parbox[t]{\columnwidth-\chapternamenumlength}{\ABNTEXchapterupperifneeded{##1}}}%
+        \ifthenelse{\boolean{abntex@apendiceousecao}}{%
+          \centering%
+          \settowidth{\chapternamenumlength}{\printchaptername\printchapternum\afterchapternum}%
+          \ABNTEXchapterupperifneeded{##1}%
+        }{%
+          \settowidth{\chapternamenumlength}{\printchaptername\printchapternum\afterchapternum}%
+          \parbox[t]{\columnwidth-\chapternamenumlength}{\ABNTEXchapterupperifneeded{##1}}}%
       }%
     }
 
