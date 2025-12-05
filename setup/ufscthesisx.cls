@@ -405,7 +405,9 @@
 % Set the UFSC epigrafe font size
 % Changing font size in an example environment
 % q/changing-font-size-in-an-example-environment
-\expandafter\def\expandafter\abntexEnvEpigrafe\expandafter{\abntexEnvEpigrafe\UFSCcaptionSize}
+\expandafter\def\expandafter\abntexEnvEpigrafe\expandafter{%
+  \abntexEnvEpigrafe\UFSCcaptionSize%
+}
 
 % Selects a roman (i.e., serifed) font family
 % \renewcommand{\rmdefault}{cmr}
