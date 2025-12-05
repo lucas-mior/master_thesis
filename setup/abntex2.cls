@@ -416,15 +416,21 @@
   \AtBeginDocument{%
     \DeclareCaptionLabelSeparator{barr}{\ABNTEXcaptiondelim}
     \DeclareCaptionFont{ABNTEXfontereduzida}{\ABNTEXfontereduzida}
-      \captionsetup{format=hang,
-                    labelseparator=barr,
-                    %labelfont=ABNTEXfontereduzida,
-                    %font=ABNTEXfontereduzida
-                    }
-      \renewcommand{\ABNTEXconfigurecaptions}{%
-                  \captionsetup{justification=justified,%
-                                singlelinecheck=false}}
-      \renewcommand{\ABNTEXconfigureseparator}{\captionsetup{labelsep=colon}}
+    \captionsetup{
+      format=hang,
+      labelseparator=barr,
+      %labelfont=ABNTEXfontereduzida,
+      %font=ABNTEXfontereduzida
+    }
+    \renewcommand{\ABNTEXconfigurecaptions}{%
+      \captionsetup{%
+        justification=justified,%
+        singlelinecheck=false
+      }%
+    }
+    \renewcommand{\ABNTEXconfigureseparator}{%
+      \captionsetup{labelsep=colon}%
+    }
   }
 }
 
@@ -521,19 +527,19 @@
   %
   \renewcommand{\ABNTEXtocinnonumchapter}{%
     \addtocontents{toc}{\cftsetindents{chapter}{\cftlastnumwidth}{2em}}%
-    \cftinserthook{toc}{A}}
-  %
+    \cftinserthook{toc}{A}%
+  } %
   \renewcommand{\ABNTEXtocprintchapternonum}{%
-    \addtocontents{toc}{\cftsetindents{chapter}{\cftlastnumwidth}{2em}}}
-  %
+    \addtocontents{toc}{\cftsetindents{chapter}{\cftlastnumwidth}{2em}}%
+  }%
   \renewcommand{\ABNTEXtocpartapendices}{%
     \addtocontents{toc}{\cftsetindents{part}{\cftlastnumwidth}{2em}}
-    \cftinserthook{toc}{A}}
-  %
+    \cftinserthook{toc}{A}
+  }%
   \renewcommand{\ABNTEXtocpartanexos}{%
     \addtocontents{toc}{\cftsetindents{part}{\cftlastnumwidth}{2em}}
-    \cftinserthook{toc}{A}}
-  %
+    \cftinserthook{toc}{A}
+  }%
   \setlength{\cftbeforechapterskip}{1em}
   %
   % Fontes das entradas do sumario
