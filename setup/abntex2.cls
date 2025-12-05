@@ -405,8 +405,9 @@
   \let\ABNTEXibgetab\ABNTEXIBGEtab
 }
 
-% Altera os comandos \ABNTEXconfigurecaptions e \ABNTEXconfigureseparator para trabalhar com
-% o pacote caption e amigos.
+% Altera os comandos
+% \ABNTEXconfigurecaptions e \ABNTEXconfigureseparator
+% para trabalhar com o pacote caption e amigos.
 \AtEndPackage{caption}{%
   \AtBeginDocument{%
     \DeclareCaptionLabelSeparator{barr}{\ABNTEXcaptiondelim}
@@ -481,9 +482,10 @@
 \cftinsertcode{A}{\renewcommand{\cftchapteraftersnum}{\hfill\textendash\hfill}}
 
 % No caso de Sumario (TOC) tradicional
-\ifthenelse{\boolean{ABNTEXsumario-tradicional}}{}{} % essa linha não faz nada,
-                                                     % mas se houver necessidade de alterar o comportamento
-                                                     % do sumário tradicional altere aqui.
+\ifthenelse{\boolean{ABNTEXsumario-tradicional}}{%
+  % se houver necessidade de alterar o comportamento
+  % do sumário tradicional altere aqui.
+}{}
 
 % No caso de Sumario (TOC) especifico da ABNT-6027-2012
 
