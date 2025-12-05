@@ -558,10 +558,12 @@
     \bibmark
     \ifnobibintoc\else
     \phantomsection
-    \addcontentsline{toc}{chapter}{\texorpdfstring{\MakeTextUppercase{\bibname}}{\bibname}}
+    \addcontentsline{toc}{chapter}{%
+      \texorpdfstring{\MakeTextUppercase{\bibname}}{\bibname}%
+    }
     \fi
     \prebibhook
-}
+  }
 
 }{}
 
