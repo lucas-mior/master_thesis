@@ -822,6 +822,8 @@
         \SingleSpacing
         {\UFSCcaptionSize\abnteximprimirpreambulo}
 
+        \vspace{1em}
+
         {
           \UFSCcaptionSize\textbf{%
             \abnteximprimirorientadorRotulo:%
