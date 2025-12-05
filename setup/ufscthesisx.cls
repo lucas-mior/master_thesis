@@ -2502,7 +2502,11 @@
   aboveskip=3mm,
   belowskip=3mm,
   backgroundcolor=\color{white},
-  basicstyle={\small\fontfamily{zi4}\selectfont},    % the size of the fonts that are used for the code
+  basicstyle={%
+    \small%
+    \fontfamily{zi4}%
+    \selectfont%
+  },    % the size of the fonts that are used for the code
   breakatwhitespace=true,
   breaklines=true,
   captionpos=t,
