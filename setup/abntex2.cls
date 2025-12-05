@@ -645,10 +645,18 @@
     }{%
     \ifthenelse{\boolean{abntex@apendiceousecao}}{%
         \centering%
-        \settowidth{\chapternamenumlength}{\printchaptername\printchapternum\afterchapternum}%
+        \settowidth{\chapternamenumlength}{%
+          \printchaptername%
+          \printchapternum%
+          \afterchapternum%
+        }%
         \ABNTEXchapterupperifneeded{##1}%
       }{%
-        \settowidth{\chapternamenumlength}{\printchaptername\printchapternum\afterchapternum}%
+        \settowidth{\chapternamenumlength}{%
+          \printchaptername%
+          \printchapternum%
+          \afterchapternum%
+        }%
         \parbox[t]{\columnwidth-\chapternamenumlength}{\ABNTEXchapterupperifneeded{##1}}
       }%
     }%
@@ -782,7 +790,12 @@
 % ------------------------------------------------------------------------
 
 % Ambiente para definicao da Capa
-\newenvironment{abntexEnvCapa}{\begin{titlingpage}}{\end{titlingpage}\cleardoublepage}
+\newenvironment{abntexEnvCapa}{%
+  \begin{titlingpage}%
+}{%
+  \end{titlingpage}%
+  \cleardoublepage%
+}
 
 % Titulos em lingua estrangeira para artigos: ABNT NBR 6022:2018
 \ifthenelse{\equal{\ABNTEXisarticle}{true}}{%
