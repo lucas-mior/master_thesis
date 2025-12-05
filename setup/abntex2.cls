@@ -607,10 +607,18 @@
   \renewcommand{\partnamefont}{\ABNTEXpartfont\ABNTEXpartfontsize}
 
   % tamanhos de fontes de section, subsection, subsubsection e subsubsubsection
-  \setsecheadstyle{\ABNTEXsectionfont\ABNTEXsectionfontsize\ABNTEXsectionupperifneeded}
-  \setsubsecheadstyle{\ABNTEXsubsectionfont\ABNTEXsubsectionfontsize\ABNTEXsubsectionupperifneeded}
-  \setsubsubsecheadstyle{\ABNTEXsubsubsectionfont\ABNTEXsubsubsectionfontsize\ABNTEXsubsubsectionupperifneeded}
-  \ABNTEXsetsubsubsubsecheadstyle{\ABNTEXsubsubsubsectionfont\ABNTEXsubsubsubsectionfontsize\ABNTEXsubsubsubsectionupperifneeded}
+  \setsecheadstyle{%
+    \ABNTEXsectionfont\ABNTEXsectionfontsize\ABNTEXsectionupperifneeded%
+  }
+  \setsubsecheadstyle{%
+    \ABNTEXsubsectionfont\ABNTEXsubsectionfontsize\ABNTEXsubsectionupperifneeded%
+  }
+  \setsubsubsecheadstyle{%
+    \ABNTEXsubsubsectionfont\ABNTEXsubsubsectionfontsize\ABNTEXsubsubsectionupperifneeded%
+  }
+  \ABNTEXsetsubsubsubsecheadstyle{%
+    \ABNTEXsubsubsubsectionfont\ABNTEXsubsubsubsectionfontsize\ABNTEXsubsubsubsectionupperifneeded%
+  }
 
   % impressao do numero do capitulo
   \renewcommand{\chapternamenum}{}
