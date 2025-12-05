@@ -2890,10 +2890,14 @@
   }{}
 }{}
 
-\@ifpackageloaded{babel}{\@ifpackagewith{babel}{brazil}{\addto\captionsbrazil{%
-  \def\equationautorefname~#1\null{%
-  Equação~(#1)\null
-  }
-}}{}}{}
+\@ifpackageloaded{babel}{%
+  \@ifpackagewith{babel}{brazil}{%
+    \addto\captionsbrazil{%
+      \def\equationautorefname~#1\null{%
+        Equação~(#1)\null
+     }
+    }
+  }{}
+}{}
 
 \makeatother
