@@ -748,7 +748,9 @@
 \newcommand{\ABNTEXimprimirdata}{\thedate}
 
 \providecommand{\abnteximprimirinstituicao}{}
-\newcommand{\ABNTEXinstituicao}[1]{\renewcommand{\abnteximprimirinstituicao}{#1}}
+\newcommand{\ABNTEXinstituicao}[1]{%
+  \renewcommand{\abnteximprimirinstituicao}{#1}%
+}
 
 \providecommand{\abnteximprimirlocal}{}
 \newcommand{\ABNTEXlocal}[1]{\renewcommand{\abnteximprimirlocal}{#1}}
