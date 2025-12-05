@@ -418,8 +418,8 @@
 \renewcommand{\ABNTEXfontereduzida}{\fontsize{10pt}{12pt}\selectfont}
 
 \renewcommand{\ABNTEXchapterfont}{%
-  \sffamily\fontseries{bx}\fontshape{n}
-  \selectfont
+  \sffamily\fontseries{bx}\fontshape{n}%
+  \selectfont%
 }
 \renewcommand{\ABNTEXchapterfontsize}{%
   \normalsize
