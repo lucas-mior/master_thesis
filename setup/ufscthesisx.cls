@@ -1728,7 +1728,7 @@
 }
 
 % Só dá entrada na lista. Ainda não funciona com o limarka
-\newcommand{\siglalista}[2]{\newacronym{#1}{#1}{#2}}
+\newcommand{\UFSCaddSigla}[2]{\newacronym{#1}{#1}{#2}}
 
 % q/printnoidxglossaries-vs-printglossaries
 \newglossary{UFSCsimbolos}{UFSCsimbolos}{sbl}{UFSCsimbolos}
