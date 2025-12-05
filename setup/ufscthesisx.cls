@@ -1693,11 +1693,12 @@
   nonumberlist,
   nogroupskip,
   nomain,
-  shortcuts,   % criação de atalhos
-  acronym,  % criação de acrônimos
+  shortcuts,       % criação de atalhos
+  acronym,         % criação de acrônimos
   translate=babel, % Faz o papel de \providetranslation
-  nopostdot  % Não é colocado ponto ao final da entrada
-  ]{glossaries}
+  nopostdot,       % Não é colocado ponto ao final da entrada
+  sort=use
+]{glossaries}
 
 % Só dá entrada na lista. Ainda não funciona com o limarka
 % Retira o espaço do pacote glossaries
@@ -1728,7 +1729,7 @@
 \newcommand{\siglalista}[2]{\newacronym{#1}{#1}{#2}}
 
 % q/printnoidxglossaries-vs-printglossaries
-\newglossary{abntexEnvSimbolos}{abntexEnvSimbolos}{sbl}{abntexEnvSimbolos}
+\newglossary{simbolos}{simbolos}{sbl}{simbolos}
 
 % Só dá entrada na lista. Ainda não funciona com o limarka
 % q/printnoidxglossaries-vs-printglossaries
