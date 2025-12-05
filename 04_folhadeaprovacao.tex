@@ -6,13 +6,12 @@
     \theauthor
 
     \begin{center}
-      {
-        \ABNTEXchapterfont
-        \bfseries
-        \MakeUppercase
-        \thetitle
+      {%
+        {\ABNTEXchapterfont\MakeUppercase{\thetitle}}%
+        \UFSCifNotEmpty{\imprimirsubtitulo}
+                     {{\ABNTEXchapterfont:} \imprimirsubtitulo}
       }
-      \UFSCifNotEmpty{\imprimirsubtitulo}{{\ABNTEXchapterfont:} \imprimirsubtitulo}
+
     \end{center}
 
     \begin{minipage}{\textwidth}
