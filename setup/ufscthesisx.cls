@@ -2480,7 +2480,13 @@
   tabsize=2,
   keywords={true,false,null,y,n},
   keywordstyle=\color{darkgray},
-  basicstyle={\small\fontfamily{zi4}\selectfont\YAMLkeystyle}, % assuming a key comes first
+  basicstyle={%
+    % assuming a key comes first
+    \small%
+    \fontfamily{zi4}%
+    \selectfont%
+    \YAMLkeystyle%
+  },
   sensitive=false,
   comment=[l]{\#},
   comment=[l]{\/\/},
@@ -2489,7 +2495,7 @@
   stringstyle=\YAMLvaluestyle\fontfamily{zi4}\selectfont,
   moredelim=[l][\color{orange}]{\&},
   moredelim=[l][\color{magenta}]{*},
-  moredelim=**[il][\YAMLcolonstyle{:}\YAMLvaluestyle]{:} % switch to value style at :
+  moredelim=**[il][\YAMLcolonstyle{:}\YAMLvaluestyle]{:} % switch to value style
 }
 
 \lstdefinestyle{ufscthesisx_style}{
