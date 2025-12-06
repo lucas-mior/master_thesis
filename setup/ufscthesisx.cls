@@ -1669,7 +1669,7 @@
 % q/class-memoir-error-listing-is-not-a-counter
 \ifAppMotherFuckerExists
   \AtBeginDocument{\counterwithout{listing}{chapter}}
-\else\fi
+\fi
 
 % Permite tamanhos arbitrários para fontes Computer Modern (math warning)
 \RequirePackage{fix-cm}
