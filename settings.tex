@@ -63,15 +63,15 @@
       \@chapapp\space\thechapter\quad\thickhrulefill{}
     }
     \renewcommand\printchapternonum{%
-      \par\thickhrulefill\par\vskip\midchapskip
+      \par\thickhrulefill\par\vskip\midchapskip{}
       \hrule\vskip\midchapskip{}
     }
     \renewcommand\chaptitlefont{\huge\scshape\centering}
     \renewcommand\afterchapternum{%
-      \par\nobreak\vskip\midchapskip\hrule\vskip\midchapskip
+      \par\nobreak\vskip\midchapskip\hrule\vskip\midchapskip{}
     }
     \renewcommand\afterchaptertitle{%
-      \par\vskip\midchapskip\hrule\nobreak\vskip\afterchapskip
+      \par\vskip\midchapskip\hrule\nobreak\vskip\afterchapskip{}
     }
   }
 
@@ -166,7 +166,12 @@
 
 % q/how-to-make-biblatex-url-links-generated-with-brackets-around-it-url-correctly
 \DeclareFieldFormat{url}{%
-  \bibstring{urlfrom}\addcolon\space\textless\url{#1}\textgreater
+  \bibstring{urlfrom}%
+  \addcolon%
+  \space%
+  \textless%
+  \url{#1}%
+  \textgreater
 }
 \DefineBibliographyStrings{brazil}{urlfrom = {Disponível em}}
 \DefineBibliographyStrings{english}{urlfrom = {Available from}}
