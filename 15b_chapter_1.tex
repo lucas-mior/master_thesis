@@ -318,42 +318,42 @@ arquivos de base bibliográficas |.bib| .
 \section{Citações diretas}
 \label{sec-citacao}
 
-\index{citações!diretas}Utilize o ambiente \texttt{citacao} para incluir
+\index{citações!diretas}Utilize o ambiente \texttt{abntexEnvCitacao} para incluir
 citações diretas com mais de três linhas :
 
-\begin{citacao}
+\begin{abntexEnvCitacao}
 As citações diretas, no texto, com mais de três linhas, devem ser
 destacadas com recuo de 4 cm da margem esquerda, com letra menor que a do texto
 utilizado e sem as aspas. No caso de documentos datilografados, deve-se
 observar apenas o recuo \cite[5.3]{NBR10520:2002} .
-\end{citacao}
+\end{abntexEnvCitacao}
 
 Use o ambiente assim :
 
 \begin{lstlisting}[language=tex]
-\begin{citacao}
+\begin{abntexEnvCitacao}
 As citações diretas, no texto, com mais de três linhas [...]
 deve-se observar apenas o recuo \cite[5.3]{NBR10520:2002}.
-\end{citacao}
+\end{abntexEnvCitacao}
 \end{lstlisting}
 
-O ambiente \texttt{citacao} pode receber como parâmetro opcional um nome de
+O ambiente \texttt{abntexEnvCitacao} pode receber como parâmetro opcional um nome de
 idioma previamente carregado nas opções da classe (\autoref{sec-hifenizacao}).
 Nesse caso, o texto da citação é automaticamente escrito em itálico e a
 hifenização é ajustada para o idioma selecionado na opção do ambiente. Por
 exemplo :
 
 \begin{lstlisting}[language=tex]
-\begin{citacao}[english]
+\begin{abntexEnvCitacao}[english]
 Text in English language in italic with correct hyphenation. 
-\end{citacao}
+\end{abntexEnvCitacao}
 \end{lstlisting}
 
 Tem como resultado :
 
-\begin{citacao}[english]
+\begin{abntexEnvCitacao}[english]
 Text in English language in italic with correct hyphenation. 
-\end{citacao}
+\end{abntexEnvCitacao}
 
 \index{citações!simples}Citações simples, com até três linhas, devem ser
 incluídas com aspas. Observe que em \LaTeX{} as aspas iniciais são diferentes
@@ -565,7 +565,7 @@ tamanhos e posições controladas. Veja o exemplo da
 Observe que, segundo a \textcite[seções 4.2.1.10 e 5.8]{NBR14724:2011}, as
 ilustrações devem sempre ter numeração contínua e única em todo o documento:
 
-\begin{citacao}
+\begin{abntexEnvCitacao}
 Qualquer que seja o tipo de ilustração, sua identificação aparece na parte
 superior, precedida da palavra designativa (desenho, esquema, fluxograma,
 fotografia, gráfico, mapa, organograma, planta, quadro, retrato, figura,
@@ -576,7 +576,7 @@ seja produção do próprio autor), legenda, notas e outras informações
 necessárias à sua compreensão (se houver). A ilustração deve ser citada no
 texto e inserida o mais próximo possível do trecho a que se
 refere. \cite[seções 5.8]{NBR14724:2011} 
-\end{citacao}
+\end{abntexEnvCitacao}
 
 \section{Quadros}
 
@@ -1012,7 +1012,7 @@ referências do documento para o idioma inglês. Consulte o manual da classe
 \cite{abntex2classe} para obter orientações adicionais sobre internacionalização
 de documentos produzidos com \abnTeX{} .
 
-A \autoref{sec-citacao} descreve o ambiente \texttt{citacao} que pode receber
+A \autoref{sec-citacao} descreve o ambiente \texttt{abntexEnvCitacao} que pode receber
 como parâmetro um idioma a ser usado na citação .
 
 \section{Consulte o manual da classe \textsf{abntex2}}
