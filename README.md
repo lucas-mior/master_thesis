@@ -21,6 +21,8 @@ make
 make clean
 ```
 
-## Como utilizar (Overleaf)
+## Como utilizar (Overleaf/crixet)
+*Atenção:* O plano gratuito do Overleaf requer que a compilação termine em até
+10 segundos, o que não é suficiente para este template.
 No github do projeto, clique em `Code`, depois em `Download ZIP`.
-No overleaf, carregue o arquivo `.zip`.
+No overleaf/crixet, carregue o arquivo `.zip`.
