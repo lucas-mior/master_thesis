@@ -92,11 +92,13 @@
   \message{Have options been passed for biblatex? YES!^^J}
 \else
   \message{Have options been passed for biblatex? NO!^^J}
-  \PassOptionsToPackage{style=abnt,
-                        backend=biber,
-                        repeatfields=true,
-                        backref=true,
-                        citecounter=true}{biblatex}
+  \PassOptionsToPackage{%
+    style=abnt,
+    backend=biber,
+    repeatfields=true,
+    backref=true,
+    citecounter=true
+  }{biblatex}
 \fi
 
 \AfterClass{memoir}{
