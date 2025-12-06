@@ -268,10 +268,10 @@
 % q/xrightarrow-text
 \makeatletter
 \newcommand{\xRightarrow}[2][]{%
-  \ext@arrow 0359\Rightarrowfill@{#1}{#2}%
+  \ext@arrow0359\Rightarrowfill@{#1}{#2}%
 }
 \newcommand{\xLeftarrow}[2][]{%
-  \ext@arrow 0359\Leftarrowfill@{#1}{#2}%
+  \ext@arrow0359\Leftarrowfill@{#1}{#2}%
 }
 \makeatother
 
@@ -665,18 +665,18 @@
   % PARTE
   \ifforcedinclude\else
     \part{\EngAndPor{Implementation}{Implementação}}
-  \fi
+  \fi%
   \label{segunda_parte}
 
   % Finaliza a parte no bookmark do PDF para que se inicie o bookmark na raiz
   % e adiciona espaço de parte no Sumário
-  \ABNTEXphantompart
+  \ABNTEXphantompart{}
 
   % Conclusão (outro exemplo de capítulo sem numeração e presente no sumário)
   \include{15z_conclusion.tex}
 
   % ELEMENTOS PÓS-TEXTUAIS
-  \ABNTEXpostextual
+  \ABNTEXpostextual{}
   \setlength\beforechapskip{0pt}
   \setlength\midchapskip{15pt}
   \setlength\afterchapskip{15pt}
@@ -703,7 +703,7 @@
   \begin{abntexEnvApendicesenv}
     % Imprime uma página indicando o início dos apêndices
     \ifforcedinclude\else
-      \ABNTEXpartapendices
+      \ABNTEXpartapendices{}
     \fi
     \setlength\beforechapskip{50pt}
     \setlength\midchapskip{20pt}
@@ -715,7 +715,7 @@
   \begin{abntexEnvAnexos}
     % Imprime uma página indicando o início dos anexos
     \ifforcedinclude\else
-      \ABNTEXpartanexos
+      \ABNTEXpartanexos{}
     \fi
     \setlength\beforechapskip{50pt}
     \setlength\midchapskip{20pt}

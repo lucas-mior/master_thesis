@@ -20,10 +20,14 @@
       enumeração de tópicos. Não deve conter citações. Deve usar o verbo na
       voz passiva. Abaixo do resumo, deve-se informar as palavras-chave
       (palavras ou expressões significativas retiradas do texto) ou, termos
-      retirados de thesaurus da área. \englishword{}
+      retirados de thesaurus da área.
 
       \UFSCimprimirPalavrasChave{Palavras-chaves}
-      {\begin{inparaitem}[]\palavrasChavePortugues\end{inparaitem}}
+      {%
+        \begin{inparaitem}[]%
+          \palavrasChavePortugues%
+        \end{inparaitem}%
+      }
 
     \end{abntexEnvResumo}
   \end{otherlanguage*}
@@ -32,8 +36,8 @@
 \newcommand{\imprimirenglishabstract}{%
   % q/changing-babel-package-inside-a-single-chapter
   % q/multiple-language-document-babel-selectlanguage-vs-begin-endotherlanguage
-  \cleardoublepage
-  \phantomsection
+  \cleardoublepage{}
+  \phantomsection{}
   \UFSCaddToTextPreliminaryContent{English's Abstract}
   \begin{otherlanguage*}{english}
   \begin{abntexEnvResumo}[Abstract]
@@ -87,7 +91,6 @@
     Resultados e Discussão e Considerações Finais.  Deve apresentar no
     mínimo duas (02) e, no máximo, cinco (05) páginas contendo a mesma
     formatação em A5 do resumo e do abstract, bem como palavras-chave.
-    \englishword{}
 
     \section*{Objetivos}
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae
