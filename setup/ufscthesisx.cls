@@ -1882,8 +1882,7 @@
 % How could the `\everypar` justification statement be used?
 % q/how-could-the-everypar-justification-statement-be-used
 \newbox\linebox \newbox\snapbox
-\def\eatlines
-{%
+\def\eatlines{%
   \setbox\linebox\lastbox % check the last line
   \ifvoid\linebox
   \else % if it’s not empty
