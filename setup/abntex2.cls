@@ -1020,7 +1020,7 @@
 % Patch the `abntex2` citacao environment removing the extra space from its top
 % q/topsep-itemsep-partopsep-and-parsep-what-does-each-of-them-mean-and-wha
 % q/redefine-environment-to-be-a-synonym-for-another
-\newenvironment*{citacao}[1][default]{%
+\newenvironment*{abntexEnvCitacao}[1][default]{%
   % q/topsep-itemsep-partopsep-and-parsep-what-does-each-of-them-mean-and-wha
   \list{}{\topsep=4pt}%
   \addtolength{\leftskip}{\ABNTEXcitacaorecuo}%
