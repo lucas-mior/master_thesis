@@ -1,8 +1,25 @@
 #!/bin/sh
 
-git filter-branch --tree-filter '
-if [ ! -f fig/UFSC_sigla_fundo_claro.png ]; then
-    mkdir -p fig
-    cp /home/lucas/docs/UFSC_mestrado/thesis/UFSC_sigla_fundo_claro \
-      fig/UFSC_sigla_fundo_claro.png
-fi' -- --all
+SRC=$(readlink -f "$1")
+DST="fig/$(basename "$1")"
+
+if [ -z "$SRC" ] || [ -z "$DST" ]; then
+    echo "Usage: $0 SOURCE"
+    exit 1
+fi
+
+if [ ! -f "$SRC" ]; then
+    echo "Source file does not exist: $SRC"
+    exit 1
+fi
+
+git wip
+rm -rf .git-rewrite
+
+FILTER_BRANCH_SQUELCH_WARNING=1 \
+git filter-branch -f --tree-filter "
+if [ ! -f \"$DST\" ]; then
+    mkdir -p \"\$(dirname \"$DST\")\"
+    cp \"$SRC\" \"$DST\"
+fi
+" -- --all
