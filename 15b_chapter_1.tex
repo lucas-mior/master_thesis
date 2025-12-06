@@ -156,7 +156,7 @@ tipos dessas afirmações:
 
 Alguns outros termos também são usados, por mais que raros e com definição
 menos rigorosa, basicamente sendo usadas quando não se quer usar a a palavra
-``teorema'' :
+``teorema'':
 
 Regra.
 Lei, que também pode se referir a axiomas, regras de dedução e a distribuições
@@ -266,7 +266,7 @@ trecho de código para rotacionar e reduzir a fonte de equações.
 \end{sideways}
 \end{verbatim}
 
-Segue um exemplo de rotação de páginas : \newpage
+Segue um exemplo de rotação de páginas: \newpage
 
 \begin{sideways}%
     \parbox{1\textheight}{%
@@ -321,7 +321,7 @@ arquivos de base bibliográficas |.bib|.
 \label{sec-citacao}
 
 \index{citações!diretas}Utilize o ambiente \texttt{abntexEnvCitacao} para incluir
-citações diretas com mais de três linhas :
+citações diretas com mais de três linhas:
 
 \begin{abntexEnvCitacao}
 As citações diretas, no texto, com mais de três linhas, devem ser
@@ -330,7 +330,7 @@ utilizado e sem as aspas. No caso de documentos datilografados, deve-se
 observar apenas o recuo \cite[5.3]{NBR10520:2002}.
 \end{abntexEnvCitacao}
 
-Use o ambiente assim :
+Use o ambiente assim:
 
 \begin{lstlisting}[language=tex]
 \begin{abntexEnvCitacao}
@@ -343,7 +343,7 @@ O ambiente \texttt{abntexEnvCitacao} pode receber como parâmetro opcional um no
 idioma previamente carregado nas opções da classe (\autoref{sec-hifenizacao}).
 Nesse caso, o texto da citação é automaticamente escrito em itálico e a
 hifenização é ajustada para o idioma selecionado na opção do ambiente. Por
-exemplo :
+exemplo:
 
 \begin{lstlisting}[language=tex]
 \begin{abntexEnvCitacao}[english]
@@ -351,7 +351,7 @@ Text in English language in italic with correct hyphenation.
 \end{abntexEnvCitacao}
 \end{lstlisting}
 
-Tem como resultado :
+Tem como resultado:
 
 \begin{abntexEnvCitacao}[english]
 Text in English language in italic with correct hyphenation. 
@@ -582,7 +582,7 @@ refere. \cite[seções 5.8]{NBR14724:2011}
 
 \section{Quadros}
 
-Depois de definir o ambiente \texttt{quadro} podemos ter um quadro :
+Depois de definir o ambiente \texttt{quadro} podemos ter um quadro:
 
 \begin{quadro}
 \caption[Legenda do primeiro quadro.]{Legenda do primeiro quadro. }
@@ -597,7 +597,7 @@ Este é o conteúdo do primeiro quadro.\\
 \end{quadro}
 
 Além do \autoref{quad:quadro_modelo1}, também é possível especificar outra ordem
-de posicionamento como [htb] :
+de posicionamento como [htb]:
 
 \begin{quadro}[htb]
 \caption[Legenda do segundo quadro.]{Legenda do segundo quadro. }
@@ -614,7 +614,7 @@ Este é o conteúdo do segundo quadro.\\
 \section{Expressões matemáticas}
 
 \index{expressões matemáticas} Use o ambiente \texttt{equation} para escrever
-expressões matemáticas numeradas :
+expressões matemáticas numeradas:
 
 \begin{equation}
   \forall x \in X, \quad \exists \: y \leq \epsilon
@@ -648,14 +648,14 @@ Consulte mais informações sobre expressões matemáticas em
 
 \index{alíneas}\index{subalíneas}\index{incisos}Quando for necessário enumerar
 os diversos assuntos de uma seção que não possua título, esta deve ser
-subdividida em alíneas  \cite[4.2]{NBR6024:2012}:
+subdividida em alíneas~\cite[4.2]{NBR6024:2012}:
 
 \begin{alineas}
 
   \item os diversos assuntos que não possuam título próprio, dentro de uma mesma
-  seção, devem ser subdivididos em alíneas ;
+  seção, devem ser subdivididos em alíneas;
 
-  \item o texto que antecede as alíneas termina em dois pontos ;
+  \item o texto que antecede as alíneas termina em dois pontos;
   \item as alíneas devem ser indicadas alfabeticamente, em letra minúscula,
   seguida de parêntese. Utilizam-se letras dobradas, quando esgotadas as
   letras do alfabeto;
@@ -671,11 +671,11 @@ subdividida em alíneas  \cite[4.2]{NBR6024:2012}:
   \item a segunda e as seguintes linhas do texto da alínea começa sob a
   primeira letra do texto da própria alínea;
 
-  \item subalíneas \cite[4.3]{NBR6024:2012} devem ser conforme as alíneas a
+  \item subalíneas~\cite[4.3]{NBR6024:2012} devem ser conforme as alíneas a
   seguir:
 
   \begin{alineas}
-    \item as subalíneas devem começar por travessão seguido de espaço ;
+    \item as subalíneas devem começar por travessão seguido de espaço;
 
     \item as subalíneas devem apresentar recuo em relação à alínea;
 
@@ -692,10 +692,10 @@ subdividida em alíneas  \cite[4.2]{NBR6024:2012}:
   \texttt{alineas}, como nos exemplos à seguir:
 
   \begin{incisos}
-    \item \textit{Um novo inciso em itálico} ;
+    \item \textit{Um novo inciso em itálico};
   \end{incisos}
 
-  \item Alínea em \textbf{negrito} :
+  \item Alínea em \textbf{negrito}:
 
   \begin{subalineas}
     \item \textit{Uma subalínea em itálico};
@@ -814,13 +814,13 @@ def incmatrix(genl1,genl2):
 apenas escrever tudo em um único. Esse recurso foi utilizado neste
 documento. Para incluir diferentes arquivos em um arquivo principal,
 de modo que cada arquivo incluído fique em uma página diferente, utilize o
-comando :
+comando:
 
 \begin{lstlisting}[language=tex]
   \include{documento-a-ser-incluido.tex}
 \end{lstlisting}
 
-Para incluir documentos sem quebra de páginas, utilize :
+Para incluir documentos sem quebra de páginas, utilize:
 
 \begin{lstlisting}[language=tex]
   \input{documento-a-ser-incluido}      % sem a extensão .tex
@@ -836,7 +836,7 @@ preocupar com isso.
 
 No entanto, você pode compilar os documentos \LaTeX{} usando os seguintes
 comandos, que devem ser digitados no \emph{Prompt de Comandos} do Windows ou no
-\emph{Terminal} do Mac ou do Linux :
+\emph{Terminal} do Mac ou do Linux:
 
 \begin{lstlisting}[
   language=bash,
@@ -864,14 +864,14 @@ at the end of the line
 Ao nomear a \autoref{tab-nivinv} e a \autoref{fig_circulo}, apresentamos um
 exemplo de remissão interna, que também pode ser feita quando indicamos o
 \autoref{cap_exemplos}, que tem o nome \emph{\nameref{cap_exemplos}}. O número
-do capítulo indicado é \ref{cap_exemplos}, que se inicia à
+do capítulo indicado é~\ref{cap_exemplos}, que se inicia à
 \autopageref{cap_exemplos}\footnote{O número da página de uma remissão pode ser
 obtida também assim:
-\pageref{cap_exemplos}. }.
+~\pageref{cap_exemplos}. }.
 Veja a \autoref{sec-divisoes} para outros exemplos de remissões internas entre
 seções, subseções e subsubseções.
 
-O código usado para produzir o texto desta seção é :
+O código usado para produzir o texto desta seção é:
 
 \begin{lstlisting}
 [language=TeX,caption={[TeX example]{TeX example }}]
@@ -897,7 +897,7 @@ Isto é uma subseção. Veja a \autoref{sec-divisoes-subsubsection}, que é uma
 \texttt{subsubsection  } do \LaTeX{}, mas é impressa chamada de ``subseção''
 porque no Português não temos a palavra ``subsubseção''.
 
-\subsubsection{Divisões do documento: subsubseção}
+\subsubsection{Divisões do documento: subsubseção}%
 \label{sec-divisoes-subsubsection}
 
 Isto é uma subsubseção.
@@ -906,7 +906,8 @@ Isto é uma subsubseção.
 
 Isto é outra subsubseção.
 
-\subsection{Divisões do documento: subseção}\label{sec-exemplo-subsec}
+\subsection{Divisões do documento: subseção}%
+\label{sec-exemplo-subsec}
 
 Isto é uma subseção.
 
@@ -917,12 +918,12 @@ da primeira palavra da primeira linha }
 Isso atende à norma \textcite[seções de 5.2.2 a 5.2.4]{NBR14724:2011}
 e \textcite[seções de 3.1 a 3.8]{NBR6024:2012}.
 
-\section{Diferentes idiomas e hifenizações}
+\section{Diferentes idiomas e hifenizações}%
 \label{sec-hifenizacao}
 
 Para usar hifenizações de diferentes idiomas, inclua nas opções do documento o
 nome dos idiomas que o seu texto contém. Por exemplo (para melhor
-visualização, as opções foram quebras em diferentes linhas) :
+visualização, as opções foram quebras em diferentes linhas):
 
 \begin{verbnobox}[\small]
 \documentclass[%
@@ -967,14 +968,16 @@ Exemplo de hifenização em inglês\footnote{Extraído de:
 
 % q/changing-babel-package-inside-a-single-chapter
 \begin{otherlanguage*}{english}
-\textit{Text in English language. This environment switches all
-    language\hyp{}definitions, like the language specific names for figures,
-    tables etc. to the other language. The starred version of this environment
-    typesets the main text according to the rules of the other language, but
-    keeps the language specific string for ancillary things like figures, in the
-    main language of the document.  The environment hyphenrules switches only
-    the hyphenation patterns used; it can also be used to disallow hyphenation
-    by using the language name `nohyphenation'. }
+\textit{%
+  Text in English language. This environment switches all
+  language\hyp{}definitions, like the language specific names for figures,
+  tables etc. to the other language. The starred version of this environment
+  typesets the main text according to the rules of the other language, but
+  keeps the language specific string for ancillary things like figures, in the
+  main language of the document.  The environment hyphenrules switches only
+  the hyphenation patterns used; it can also be used to disallow hyphenation
+  by using the language name `nohyphenation'.
+}
 \end{otherlanguage*}
 
 Exemplo de hifenização em francês\footnote{Extraído de:
@@ -1008,7 +1011,7 @@ Pequeno texto em espanhol\footnote{Extraído de:
   }%
 }
 
-O idioma geral do texto por ser alterado como no exemplo seguinte :
+O idioma geral do texto por ser alterado como no exemplo seguinte:
 
 \begin{verbatim}
   \selectlanguage{english}
@@ -1016,7 +1019,7 @@ O idioma geral do texto por ser alterado como no exemplo seguinte :
 
 Isso altera automaticamente a hifenização e todos os nomes constantes de
 referências do documento para o idioma inglês. Consulte o manual da classe
-\cite{abntex2classe} para obter orientações adicionais sobre internacionalização
+~\cite{abntex2classe} para obter orientações adicionais sobre internacionalização
 de documentos produzidos com \abnTeX{}.
 
 A \autoref{sec-citacao} descreve o ambiente \texttt{abntexEnvCitacao} que pode receber
@@ -1024,7 +1027,7 @@ como parâmetro um idioma a ser usado na citação.
 
 \section{Consulte o manual da classe \textsf{abntex2}}
 
-Consulte o manual da classe \textsf{abntex2} \cite{abntex2classe} para uma
+Consulte o manual da classe \textsf{abntex2}~\cite{abntex2classe} para uma
 referência completa das macros e ambientes disponíveis.
 
 Além disso, o manual possui informações adicionais sobre as normas ABNT
@@ -1063,7 +1066,7 @@ neste modo quando houver conversão para letras maiúsculas.
   ç & \verb+{\c c}+\\
   \bottomrule
   \end{tabular}
-  \ABNTEXfonte{Manual do LaTeX \cite{memoir} }
+  \ABNTEXfonte{Manual do LaTeX~\cite{memoir}}
 \end{table}
 
 \section{Precisa de ajuda?}
