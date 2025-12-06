@@ -1717,7 +1717,7 @@
 \newcommand{\nivel}[1]{\renewcommand{\imprimirnivel}{#1}}
 
 % Criação de estilo
-\newglossarystyle{mylong1}{% modificado de a/166209/151962
+\newglossarystyle{UFSClong1}{% modificado de a/166209/151962
   \setglossarystyle{long}%
   \renewenvironment{theglossary}{%
     \begin{longtable}[l]{@{}p{\dimexpr 3.0cm-\tabcolsep}p{0.78\hsize}}
