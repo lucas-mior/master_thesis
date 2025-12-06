@@ -1703,10 +1703,10 @@
   nonumberlist,
   nogroupskip,
   nomain,
-  shortcuts,       % criação de atalhos
-  acronym,         % criação de acrônimos
+  shortcuts,
+  acronym,
   translate=babel, % Faz o papel de \providetranslation
-  nopostdot,       % Não é colocado ponto ao final da entrada
+  nopostdot,
 ]{glossaries}
 
 % Só dá entrada na lista. Ainda não funciona com o limarka
