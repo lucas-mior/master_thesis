@@ -1866,7 +1866,11 @@
 %
 
 % Basic settings for hyperref package
-\hypersetup{colorlinks,linkcolor=darkblue,citecolor=darkgreen}
+\hypersetup{%
+  colorlinks,
+  linkcolor=darkblue,
+  citecolor=darkgreen
+}
 
 % q/how-to-fix-useshorthands-defineshorthand-usage-on-bookmark-entries
 \def\HyPsd@LetUnexpandableSpace#1{%
