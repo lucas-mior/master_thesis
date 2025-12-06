@@ -585,30 +585,30 @@ refere. \cite[seções 5.8]{NBR14724:2011}
 Depois de definir o ambiente \texttt{quadro} podemos ter um quadro:
 
 \begin{quadro}
-\caption[Legenda do primeiro quadro.]{Legenda do primeiro quadro. }
-\label{quad:quadro_modelo1}
-\centering
-\begin{tabular}{|c|}
-\hline
-Este é o conteúdo do primeiro quadro.\\
-\hline
-\end{tabular}
-\ABNTEXfonte{Teste. }
+  \caption[Legenda do primeiro quadro.]{Legenda do primeiro quadro. }
+  \label{quad:quadro_modelo1}
+  \centering
+  \begin{tabular}{|c|}
+  \toprule
+  Este é o conteúdo do primeiro quadro.\\
+  \bottomrule
+  \end{tabular}
+  \ABNTEXfonte{Teste. }
 \end{quadro}
 
 Além do \autoref{quad:quadro_modelo1}, também é possível especificar outra ordem
 de posicionamento como [htb]:
 
 \begin{quadro}[htb]
-\caption[Legenda do segundo quadro.]{Legenda do segundo quadro. }
-\label{quad:quadro_modelo2}
-\centering
-\begin{tabular}{|c|}
-\hline
-Este é o conteúdo do segundo quadro.\\
-\hline
-\end{tabular}
-\ABNTEXfonte{O autor. }
+  \caption[Legenda do segundo quadro.]{Legenda do segundo quadro. }
+  \label{quad:quadro_modelo2}
+  \centering
+  \begin{tabular}{|c|}
+  \toprule
+  Este é o conteúdo do segundo quadro.\\
+  \bottomrule
+  \end{tabular}
+  \ABNTEXfonte{O autor. }
 \end{quadro}
 
 \section{Expressões matemáticas}
@@ -635,7 +635,7 @@ Também é possível usar colchetes para indicar o início de uma expressão
 matemática que não é numerada.
 
 \[
-\left|\sum_{i=1}^n a_ib_i\right|
+\left|\sum_{i=1}^n {a_i}{b_i}\right|
 \le
 \left(\sum_{i=1}^n a_i^2\right)^{1/2}
 \left(\sum_{i=1}^n b_i^2\right)^{1/2}
@@ -970,7 +970,7 @@ Exemplo de hifenização em inglês\footnote{Extraído de:
 \textit{%
   Text in English language. This environment switches all
   language\hyp{}definitions, like the language specific names for figures,
-  tables etc. to the other language. The starred version of this environment
+  tables etc.\ to the other language. The starred version of this environment
   typesets the main text according to the rules of the other language, but
   keeps the language specific string for ancillary things like figures, in the
   main language of the document.  The environment hyphenrules switches only
