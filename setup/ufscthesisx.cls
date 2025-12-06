@@ -1866,7 +1866,11 @@
 %
 
 % Basic settings for hyperref package
-\hypersetup{colorlinks,linkcolor=darkblue,citecolor=darkgreen}
+\hypersetup{%
+  colorlinks,
+  linkcolor=darkblue,
+  citecolor=darkgreen
+}
 
 % q/how-to-fix-useshorthands-defineshorthand-usage-on-bookmark-entries
 \def\HyPsd@LetUnexpandableSpace#1{%
@@ -1878,8 +1882,7 @@
 % How could the `\everypar` justification statement be used?
 % q/how-could-the-everypar-justification-statement-be-used
 \newbox\linebox \newbox\snapbox
-\def\eatlines
-{%
+\def\eatlines{%
   \setbox\linebox\lastbox % check the last line
   \ifvoid\linebox
   \else % if it’s not empty
