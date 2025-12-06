@@ -1069,7 +1069,7 @@
 % Comando \ABNTEXassinatura for signature
 % width of the line and text under the line
 \newlength{\ABNTEXsignwidth}
-\setlength{\ABNTEXsignwidth}{8cm}
+\setlength{\ABNTEXsignwidth}{10cm}
 % thickness of the line
 \newlength{\ABNTEXsignthickness}
 \setlength{\ABNTEXsignthickness}{1pt}
