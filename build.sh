@@ -3,6 +3,7 @@
 RED="\033[01;38;2;255;000;000m"
 GRE="\033[01;38;2;000;255;000m"
 BLU="\033[01;38;2;000;000;255m"
+PUR="\033[01;38;2;255;000;255m"
 RESET="\033[0m"
 
 start_sec=$(date +%s)
@@ -17,8 +18,11 @@ while pdflatex -halt-on-error -interaction=nonstopmode main.tex \
 done
 
 printf "%b" "$GRE"
-pdflatex -halt-on-error -interaction=nonstopmode main.tex \
-    | grep -v "/usr/share/tex"
+while pdflatex -halt-on-error -interaction=nonstopmode main.tex \
+      2>&1 | grep -v "/usr/share/tex" | tee /dev/tty \
+      | grep -i "Rerun LaTeX."; do
+    printf "%b" "$PUR"
+done
 
 end_sec=$(date +%s)
 end_nsec=$(date +%N)
