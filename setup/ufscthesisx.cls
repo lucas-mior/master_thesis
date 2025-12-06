@@ -2329,7 +2329,8 @@
 % q/latex-listings-with-monospace-fonts
 % q/how-to-have-straight-single-quotes-in-lstlistings
 % q/double-quote-charater-with-listings-create-problem
-\lstset{frame=,
+\lstset{
+  frame=,
   language=Python,% default language
   upquote=true,
   aboveskip=3mm,
