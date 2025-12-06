@@ -43,7 +43,12 @@
   % http://repositorios.cpai.unb.br
   % /ctan/info/latex-samples/MemoirChapStyles/MemoirChapStyles.pdf
   \newcommand\thickhrulefill{
-    \leavevmode \leaders \hrule height 1ex \hfill \kern \z@
+    \leavevmode
+    \leaders{}
+    \hrule height 1ex
+    \hfill
+    \kern{}
+    \z@
   }
   \makechapterstyle{VZ14} {%
     % \thispagestyle{empty}
@@ -53,20 +58,20 @@
     \renewcommand\chapternamenum{}
     \renewcommand\printchaptername{}
     \renewcommand\chapnamefont{\Huge\scshape}
-    \renewcommand\printchapternum {%
+    \renewcommand\printchapternum{%
       \chapnamefont\null\thickhrulefill\quad
-      \@chapapp\space\thechapter\quad\thickhrulefill
+      \@chapapp\space\thechapter\quad\thickhrulefill{}
     }
-    \renewcommand\printchapternonum {%
-      \par\thickhrulefill\par\vskip\midchapskip
-      \hrule\vskip\midchapskip
+    \renewcommand\printchapternonum{%
+      \par\thickhrulefill\par\vskip\midchapskip{}
+      \hrule\vskip\midchapskip{}
     }
     \renewcommand\chaptitlefont{\huge\scshape\centering}
-    \renewcommand\afterchapternum {%
-      \par\nobreak\vskip\midchapskip\hrule\vskip\midchapskip
+    \renewcommand\afterchapternum{%
+      \par\nobreak\vskip\midchapskip\hrule\vskip\midchapskip{}
     }
-    \renewcommand\afterchaptertitle {%
-      \par\vskip\midchapskip\hrule\nobreak\vskip\afterchapskip
+    \renewcommand\afterchaptertitle{%
+      \par\vskip\midchapskip\hrule\nobreak\vskip\afterchapskip{}
     }
   }
 
@@ -82,7 +87,7 @@
   % Warnings “The material used in the headers is too large” w/ accented titles
   % q/how-to-change-the-page-layout-with-memoir
   \setheadfoot{30.0pt}{\footskip}
-  \checkandfixthelayout
+  \checkandfixthelayout{}
 }{}
 
 % Controlling the spacing between one paragraph and another
@@ -161,7 +166,12 @@
 
 % q/how-to-make-biblatex-url-links-generated-with-brackets-around-it-url-correctly
 \DeclareFieldFormat{url}{%
-  \bibstring{urlfrom}\addcolon\space\textless\url{#1}\textgreater
+  \bibstring{urlfrom}%
+  \addcolon%
+  \space%
+  \textless%
+  \url{#1}%
+  \textgreater{}
 }
 \DefineBibliographyStrings{brazil}{urlfrom = {Disponível em}}
 \DefineBibliographyStrings{english}{urlfrom = {Available from}}
@@ -178,7 +188,7 @@
 % q/how-to-correctly-insert-and-justify-abstract
 \ifadvisor\else
   \DeclareFieldFormat{abstract}{%
-    \par\justifying
+    \par\justifying{}
     \begin{adjustwidth}{1cm}{}
       \textbf{\bibsentence\bibstring{abstract}:} #1
     \end{adjustwidth}
@@ -186,10 +196,11 @@
   \renewbibmacro*{finentry}{%
     \iffieldundef{abstract}
     {\finentry}
-    {\finentrypunct
+    {%
+      \finentrypunct{}
       \printfield{abstract}%
       \renewcommand*{\finentrypunct}{}%
-      \finentry
+      \finentry{}
     }
   }
 
@@ -226,7 +237,7 @@
       \message{Is citecounter defined? NO!^^J}
     \else
       \message{Is citecounter defined? YES!^^J}
-      \ifbacktracker
+      \ifbacktracker{}
         \message{Is backtracker defined? YES!^^J}
         \renewbibmacro*{pageref}{%
           % q/how-to-use-a-dot-to-separate-my-new-bibliography-entry
@@ -236,16 +247,16 @@
           }{%
             \printtext{%
               \ifnumgreater{\value{citecounter}}{1}{%
-                \biblatexcitedntimes
+                \biblatexcitedntimes{}
               }{%
-                \biblatexcitedonetime
+                \biblatexcitedonetime{}
               }%
             }%
             \setunit{\addspace}%
             \ifnumgreater{\value{pageref}}{1}{
-              \bibstring{backrefpages}\ppspace
+              \bibstring{backrefpages}\ppspace{}
             }{%
-              \bibstring{backrefpage}\ppspace
+              \bibstring{backrefpage}\ppspace{}
             }%
             \printlist[pageref][-\value{listtotal}]{pageref}%
           }%
@@ -371,15 +382,14 @@
 
 % http://www.tex.ac.uk/FAQ-tocloftwrong.html
 % Use \setlength\cftsectionnumwidth{4em} to override all these values at once
-\ifadvisor
-\else
+\ifadvisor\else
   \makechapterstyle{fixedabntex2indentation}{%
     \renewcommand{\chapterheadstart}{}
     \setlength{\beforechapskip}{20pt}
     \setlength{\midchapskip}{20pt}
     \setlength{\afterchapskip}{15pt}
 
-    \ifx \chapternamenumlength \undefined
+    \ifx\chapternamenumlength\undefined{}
       \newlength{\chapternamenumlength}
     \fi
 
@@ -400,22 +410,24 @@
     % tamanhos de fontes de
     % section, subsection, subsubsection e subsubsubsection
     \setsecheadstyle{
-      \ABNTEXsectionfont\ABNTEXsectionfontsize\ABNTEXsectionupperifneeded
+      \ABNTEXsectionfont%
+      \ABNTEXsectionfontsize%
+      \ABNTEXsectionupperifneeded{}
     }
     \setsubsecheadstyle{
       \ABNTEXsubsectionfont%
       \ABNTEXsubsectionfontsize%
-      \ABNTEXsubsectionupperifneeded
+      \ABNTEXsubsectionupperifneeded{}
     }
     \setsubsubsecheadstyle{
       \ABNTEXsubsubsectionfont%
       \ABNTEXsubsubsectionfontsize%
-      \ABNTEXsubsubsectionupperifneeded
+      \ABNTEXsubsubsectionupperifneeded{}
     }
     \ABNTEXsetsubsubsubsecheadstyle{
       \ABNTEXsubsubsubsectionfont%
       \ABNTEXsubsubsubsectionfontsize%
-      \ABNTEXsubsubsubsectionupperifneeded
+      \ABNTEXsubsubsubsectionupperifneeded{}
     }
 
     % Impressão do número do capítulo

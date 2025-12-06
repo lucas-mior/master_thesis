@@ -280,8 +280,8 @@
 
 % Disable the empty pages automatically put by memoir class,
 % except the ones by \cleardoublepage
-\ifforcedinclude
-  \openany
+\ifforcedinclude{}
+  \openany{}
 \fi
 
 % q/overfull-hbox-in-biblatex
@@ -314,7 +314,7 @@
   \begin{figure}[!htb]
     \centering
     \includegraphics[scale=#3]{#1}
-    \caption{#2}
+    \caption{#2}%
     \label{fig:\imglabel}
   \end{figure}
 }
@@ -347,18 +347,18 @@
     \begin{subfigure}[t]{0.48\textwidth}
       \centering
       \includegraphics[width=#3\linewidth]{#1}
-      \caption{#2}
+      \caption{#2}%
       \label{fig:\imglabelA}
     \end{subfigure}
     \hfill
     \begin{subfigure}[t]{0.48\textwidth}
       \centering
       \includegraphics[width=#6\linewidth]{#4}
-      \caption{#5}
+      \caption{#5}%
       \label{fig:\imglabelB}
     \end{subfigure}
 
-    \caption{#7}
+    \caption{#7}%
     \label{\mainlabel}
   \end{figure}
 }
@@ -367,20 +367,20 @@
   % FIXME: Comment this after finishing the thesis,
   %        so you can start fixing the \flushbottom vs \raggedbottom
   % q/flushbottom-vs-raggedbottom
-  \raggedbottom
+  \raggedbottom{}
 
   % q/double-space-between-sentences
   \frenchspacing
 
   % Uncomment this to put a ←← | ← (Go To Top/Go Back) on each section header
   \ifadvisor\else
-    \addGoToSummary
+    \addGoToSummary{}
   \fi
 
   % ELEMENTOS PRÉ-TEXTUAIS
   \ifforcedinclude\else
     % Fix the \textpreliminarycontents not showing up when @twoside is off
-    \newif\ifufscThesisXisMemoirTwoSidesEnabled
+    \newif\ifufscThesisXisMemoirTwoSidesEnabled{}
 
     % q/how-do-i-check-if-a-document-is-oneside-or-twoside
     \ifthenelse{\boolean{@twoside}}{%
@@ -396,14 +396,14 @@
     \hypersetup{pageanchor=false}
     \ABNTEXPRIVATEbookmarkthis{Capa}
     \UFSCaddToTextPreliminaryContent{Capa}
-    \ABNTEXpretextual
+    \ABNTEXpretextual{}
 
     % \includepdf{fig/FrenteCapaUFSC.pdf}
     % q/blank-page-after-titlingpage
     \ifadvisor\else
       \AtBeginShipoutNext{\AtBeginShipoutNext{\AtBeginShipoutDiscard}}
     \fi
-    \ABNTEXimprimircapa
+    \ABNTEXimprimircapa{}
 
     % q/how-to-fix-destination-with-the-same-identifier-namepage-a-has-been-already
     % q/pdftex-warning-has-been-referenced-but-does-not-exist-replaced-by-a-fixed-one
@@ -423,7 +423,7 @@
       % q/list-of-figures-and-tables-when-there-are-no-figures-or-tables
       \whenlistisnotempty{\UFSCtextPreliminaryListName}{%
         \begin{KeepFromToc}
-          \textpreliminarycontents
+          \textpreliminarycontents{}
         \end{KeepFromToc}
       }
 
@@ -431,7 +431,7 @@
     \fi
 
     % Fix the \textpreliminarycontents not showing up when @twoside is off
-    \ifufscThesisXisMemoirTwoSidesEnabled
+    \ifufscThesisXisMemoirTwoSidesEnabled{}
       \setboolean{@twoside}{true}
     \else
       \setboolean{@twoside}{false}
@@ -458,7 +458,7 @@
     % q/how-to-include-multiple-pages-in-latex
     % \includepdf{fig/Ficha_Catalografica.pdf}
     \ifforcedinclude\else
-      \cleardoublepage
+      \cleardoublepage{}
     \fi
   \fi
 
@@ -470,25 +470,25 @@
   % conteúdo deste arquivo por uma imagem da página assinada pela banca com o
   % comando abaixo:
   \ifforcedinclude\else
-    \cleardoublepage
+    \cleardoublepage{}
   \fi
   \include{04_folhadeaprovacao.tex}
   % \includepdf{fig/folhadeaprovacao_final.pdf}
 
   \ifforcedinclude\else
-    \cleardoublepage
+    \cleardoublepage{}
   \fi
   \ifforcedinclude\else
     \input{05_dedicatoria.tex}
   \fi
 
   \ifforcedinclude\else
-    \cleardoublepage
+    \cleardoublepage{}
   \fi
   \include{06_agradecimentos.tex}
 
   \ifforcedinclude\else
-    \cleardoublepage
+    \cleardoublepage{}
   \fi
   \include{07_epigrafe.tex}
 
@@ -497,7 +497,7 @@
 
   % RESUMOS
   \ifforcedinclude\else
-    \cleardoublepage
+    \cleardoublepage{}
   \fi
   \include{08_resumos.tex}
 
@@ -509,7 +509,7 @@
 
     % inserir lista de figuras
     \ifforcedinclude\else
-      \cleardoublepage
+      \cleardoublepage{}
     \fi
     % q/list-of-figures-and-tables-when-there-are-no-figures-or-tables
     \whenlistisnotempty{\listfigurename}{%
@@ -525,7 +525,7 @@
 
     % inserir lista de quadros
     \ifforcedinclude\else
-      \cleardoublepage
+      \cleardoublepage{}
     \fi
     % q/list-of-figures-and-tables-when-there-are-no-figures-or-tables
     \whenlistisnotempty{\listofquadrosname}{%
@@ -541,7 +541,7 @@
 
     % inserir lista de tabelas
     \ifforcedinclude\else
-      \cleardoublepage
+      \cleardoublepage{}
     \fi
     % q/list-of-figures-and-tables-when-there-are-no-figures-or-tables
     \whenlistisnotempty{\listtablename}{%
@@ -558,7 +558,7 @@
     % inserir códigos fonte (List of Listings `lol`)
     % q/latex-keeps-showing-minted-environment-as-figures-instead-of-listening
     \ifforcedinclude\else
-      \cleardoublepage
+      \cleardoublepage{}
     \fi
     % q/list-of-figures-and-tables-when-there-are-no-figures-or-tables
     \whenlistisnotempty{\lstlistlistingname}{%
@@ -575,7 +575,7 @@
   \fi
 
   \ifforcedinclude\else
-    \cleardoublepage
+    \cleardoublepage{}
   \fi
   % imprime lista de siglas ordenado alfabeticamente
   % q/printnoidxglossaries-vs-printglossaries
@@ -586,10 +586,10 @@
     sort=letter,
     title={\ABNTEXlistadesiglasname\vspace{-0.2cm}}
   ]
-  \cleardoublepage
+  \cleardoublepage{}
 
   \ifforcedinclude\else
-    \cleardoublepage
+    \cleardoublepage{}
   \fi
   % imprime lista de símbolos na ordem em que aparece no texto
   % q/printnoidxglossaries-vs-printglossaries
@@ -600,12 +600,12 @@
     sort=use,
     title={\ABNTEXlistadesimbolosname}
   ]
-  \cleardoublepage
+  \cleardoublepage{}
 
   % How to remove the self-reference of the ToC from the ToC?
   % q/how-to-remove-the-self-reference-of-the-toc-from-the-toc
   \ifforcedinclude\else
-    \cleardoublepage
+    \cleardoublepage{}
   \fi
 
   \begin{KeepFromToc}

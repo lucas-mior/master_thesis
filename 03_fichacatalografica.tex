@@ -33,9 +33,9 @@ contidos.
     }
 
     \EngAndPor{%
-      File compiled at \currenttime h of the day \today.
+      File compiled at \currenttime{} h of the day \today.
     }{%
-      Arquivo compilado às \currenttime h do dia \today.
+      Arquivo compilado às \currenttime{} h do dia \today.
     }
 
     \framebox[\textwidth]{
@@ -44,7 +44,7 @@ contidos.
       \begingroup \let\\=\space
 
         \ttfamily
-        \theauthor
+        \theauthor{}
 
         \hspace{0.5cm} \thetitle%
         \UFSCifNotEmpty{\imprimirsubtitulo}{~:~\imprimirsubtitulo}%
