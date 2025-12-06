@@ -665,7 +665,7 @@
   % PARTE
   \ifforcedinclude\else
     \part{\EngAndPor{Implementation}{Implementação}}
-  \fi
+  \fi%
   \label{segunda_parte}
 
   % Finaliza a parte no bookmark do PDF para que se inicie o bookmark na raiz
@@ -676,7 +676,7 @@
   \include{15z_conclusion.tex}
 
   % ELEMENTOS PÓS-TEXTUAIS
-  \ABNTEXpostextual
+  \ABNTEXpostextual{}
   \setlength\beforechapskip{0pt}
   \setlength\midchapskip{15pt}
   \setlength\afterchapskip{15pt}
@@ -703,7 +703,7 @@
   \begin{abntexEnvApendicesenv}
     % Imprime uma página indicando o início dos apêndices
     \ifforcedinclude\else
-      \ABNTEXpartapendices
+      \ABNTEXpartapendices{}
     \fi
     \setlength\beforechapskip{50pt}
     \setlength\midchapskip{20pt}
