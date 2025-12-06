@@ -842,11 +842,11 @@ comandos, que devem ser digitados no \emph{Prompt de Comandos} do Windows ou no
 \begin{lstlisting}[
   language=bash,
   caption={
-  [Você pode compilar os documentos \LaTeX{} usando os seguintes comandos.]
-  {Você pode compilar os documentos \LaTeX{} usando os seguintes comandos.}
+    [Você pode compilar os documentos \LaTeX{} usando os seguintes comandos.]
+    {Você pode compilar os documentos \LaTeX{} usando os seguintes comandos.}
   },
-  label={lst:compilarLatex}]
-
+  label={lst:compilarLatex}
+]
   pdflatex ARQUIVO_PRINCIPAL.tex
   bibtex ARQUIVO_PRINCIPAL.aux
   makeindex ARQUIVO_PRINCIPAL.idx
@@ -874,8 +874,10 @@ seções, subseções e subsubseções.
 
 O código usado para produzir o texto desta seção é:
 
-\begin{lstlisting}
-[language=TeX,caption={[TeX example]{TeX example }}]
+\begin{lstlisting}[%
+  language=TeX,
+  caption={[TeX example]{TeX example }}
+]
 Ao nomear a \autoref{tab-nivinv} e a \autoref{fig_circulo}, apresentamos um
 exemplo de remissão interna, que também pode ser feita quando indicamos o
 \autoref{cap_exemplos}, que tem o nome \emph{\nameref{cap_exemplos}}. O número
