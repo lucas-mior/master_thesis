@@ -1627,7 +1627,11 @@
   % q/customizing-the-list-of-listings-generated-by-lstlistoflistings
   % q/setting-entries-of-list-of-listings-in-latex-package-listings
   \newenvironment{code}{
-    \captionsetup{type=lstlisting,skip=0pt,position=top}
+    \captionsetup{%
+      type=lstlisting,
+      skip=0pt,
+      position=top
+    }
     \setlength{\abovecaptionskip}{0pt}
     \setlength{\belowcaptionskip}{10pt}
     \setlength{\parskip}{0pt}
@@ -1665,7 +1669,7 @@
 % q/class-memoir-error-listing-is-not-a-counter
 \ifAppMotherFuckerExists
   \AtBeginDocument{\counterwithout{listing}{chapter}}
-\else\fi
+\fi
 
 % Permite tamanhos arbitrários para fontes Computer Modern (math warning)
 \RequirePackage{fix-cm}
