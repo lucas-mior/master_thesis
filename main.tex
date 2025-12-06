@@ -50,7 +50,7 @@
 % q/how-to-make-passoptionstopackage-add-the-option-as-the-last
 % q/changing-the-cleveref-package-language-conjunction-definition
 % q/why-isnt-my-biblatex-language-changing-when-passing-the-language-on-my-document
-\ifenglish
+\ifenglish{}
   \PassOptionsToPackage{brazil,main=english}{babel}
 \else
   \PassOptionsToPackage{main=brazil,english}{babel}
@@ -92,7 +92,7 @@
   % draft,
 ]{setup/ufscthesisx}
 
-\makenoidxglossaries
+\makenoidxglossaries{}
 \UFSCaddSymbol{E_min}{\ensuremath{E_{min}}}{Minimum energy}
 \UFSCaddSymbol{alpha}{\ensuremath{\alpha}}{Alpha particle}
 \UFSCaddSymbol{F}{\ensuremath{F}}{Force}
@@ -221,9 +221,9 @@
   pdfauthor=\theauthor,
   pdfkeywords={
     \EngAndPor{%
-      \palavrasChaveInglessemitem
+      \palavrasChaveInglessemitem{}
     }{%
-      \palavrasChavePortuguessemitem
+      \palavrasChavePortuguessemitem{}
     }
   }
 }
@@ -234,7 +234,7 @@
 % When writing a large document, it is sometimes useful to work on selected
 % sections of the document to speed up compilation time:
 % https://en.wikibooks.org/wiki/TeX/includeonly
-\newif\ifforcedinclude\forcedincludefalse
+\newif\ifforcedinclude\forcedincludefalse{}
 
 % \addtoincludeonly{abntexEnvAgradecimentos}
 % \addtoincludeonly{abntexEnvEpigrafe}
@@ -727,7 +727,7 @@
 
   % INDICE REMISSIVO
   \ifforcedinclude\else
-    \ABNTEXphantompart
+    \ABNTEXphantompart{}
     \printindex
   \fi
 
