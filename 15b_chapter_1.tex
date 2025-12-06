@@ -544,23 +544,23 @@ tamanhos e posições controladas. Veja o exemplo da
 \autoref{fig_minipage_imagem1} e da \autoref{fig_minipage_grafico2} --
 .
 
-\begin{figure}[htb]
+\begin{figure}[htb]%
 \label{teste}
 \centering
   \begin{minipage}{0.49\textwidth}
-    \caption[Imagem 1 da minipage]{Imagem 1 da minipage }
+    \caption[Imagem 1 da minipage]{Imagem 1 da minipage}%
     \label{fig_minipage_imagem1}
     \centering
     \includegraphics[width=\textwidth]{fig/abntex2-modelo-img-marca.pdf}
-    \ABNTEXfonte{Produzido pelos autores }
+    \ABNTEXfonte{Produzido pelos autores}
   \end{minipage}
   \hfill
   \begin{minipage}{0.49\textwidth}
-    \caption[Gráfico 2 da minipage]{Gráfico 2 da minipage }
+    \caption[Gráfico 2 da minipage]{Gráfico 2 da minipage}%
     \label{fig_minipage_grafico2}
     \centering
     \includegraphics[width=\textwidth]{fig/abntex2-modelo-img-grafico.pdf}
-    \ABNTEXfonte{\textcite[p. 24]{araujo2012} }
+    \ABNTEXfonte{\textcite[p. 24]{araujo2012}}
   \end{minipage}
 \end{figure}
 
@@ -593,14 +593,14 @@ Depois de definir o ambiente \texttt{quadro} podemos ter um quadro:
   Este é o conteúdo do primeiro quadro.\\
   \bottomrule
   \end{tabular}
-  \ABNTEXfonte{Teste. }
+  \ABNTEXfonte{Teste.}
 \end{quadro}
 
 Além do \autoref{quad:quadro_modelo1}, também é possível especificar outra ordem
 de posicionamento como [htb]:
 
 \begin{quadro}[htb]
-  \caption[Legenda do segundo quadro.]{Legenda do segundo quadro. }
+  \caption[Legenda do segundo quadro.]{Legenda do segundo quadro.}%
   \label{quad:quadro_modelo2}
   \centering
   \begin{tabular}{c}
@@ -608,7 +608,7 @@ de posicionamento como [htb]:
   Este é o conteúdo do segundo quadro.\\
   \bottomrule
   \end{tabular}
-  \ABNTEXfonte{O autor. }
+  \ABNTEXfonte{O autor.}
 \end{quadro}
 
 \section{Expressões matemáticas}
