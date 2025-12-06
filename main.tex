@@ -566,7 +566,7 @@
       {
         % q/remove-spacing-between-per-chapter-figures-in-lof
         \renewcommand{\addvspace}[1]{}
-        \lstlistoflistings
+        \lstlistoflistings{}
       }
     }{
       \pdfbookmark[0]{\lstlistlistingname}{lol}
@@ -617,7 +617,7 @@
       \hypersetup{hidelinks}
 
       % q/underfull-vbox-badness-10000-with-memoir
-      \raggedbottom
+      \raggedbottom{}
 
       % q/overfull-hbox-warning-for-toc-entries-when-using-memoir-documentclass
       % \makeatletter
@@ -642,7 +642,7 @@
 
   % ELEMENTOS TEXTUAIS
   \clearpage
-  \ABNTEXtextual
+  \ABNTEXtextual{}
   \setlength\beforechapskip{50pt}
   \setlength\midchapskip{20pt}
   \setlength\afterchapskip{20pt}

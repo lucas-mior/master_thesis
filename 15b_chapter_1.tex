@@ -32,18 +32,20 @@
 % to create a link to a place in the document that is not a
 % figure, equation, table, section, subsection, chapter, etc.
 % q/when-do-i-need-to-invoke-phantomsection
-\phantomsection
+\phantomsection{}
 
 % q/is-it-possible-to-keep-my-translation-together-with-original-text
 \chapter[%
   \EngAndPor{Abbreviation for the Table of Contents}
   {Abreviação para o Sumário}
 ]{
-  \EngAndPor
-  {Long title to present in the chapter, Axioms, Theorems, Postulates,
-   corollaries, lemmas}
-  {Longo título apresentar no capítulo, Axiomas, Teoremas, Postulados,
-   corolários, lemas}
+  \EngAndPor{%
+    Long title to present in the chapter,
+    Axioms, Theorems, Postulates, corollaries, lemmas
+  }{%
+    Longo título apresentar no capítulo,
+    Axiomas, Teoremas, Postulados, corolários, lemas
+  }
 }
 
 \label{cap_exemplos}
