@@ -320,7 +320,7 @@ arquivos de base bibliográficas |.bib|.
 \section{Citações diretas}
 \label{sec-citacao}
 
-\index{citações!diretas}Utilize o ambiente \texttt{abntexEnvCitacao} para incluir
+Utilize o ambiente \texttt{abntexEnvCitacao} para incluir
 citações diretas com mais de três linhas:
 
 \begin{abntexEnvCitacao}
@@ -357,7 +357,7 @@ Tem como resultado:
 Text in English language in italic with correct hyphenation. 
 \end{abntexEnvCitacao}
 
-\index{citações!simples}Citações simples, com até três linhas, devem ser
+Citações simples, com até três linhas, devem ser
 incluídas com aspas. Observe que em \LaTeX{} as aspas iniciais são diferentes
 das finais: ``Amor é fogo que arde sem se ver''. 
 
@@ -377,7 +377,7 @@ no corpo do texto. }\footnote{Verifique se os números do expoente
 
 \section{Tabelas}
 
-\index{tabelas}A \autoref{tab-nivinv} é um exemplo de tabela construída em
+A \autoref{tab-nivinv} é um exemplo de tabela construída em
 \LaTeX{}.
 
 % q/how-to-add-a-forced-line-break-inside-a-table-cell
@@ -468,7 +468,7 @@ acadêmicos.
 \clearpage
 \section{Figuras}
 
-\index{figuras}Figuras podem ser criadas diretamente em \LaTeX{},
+Figuras podem ser criadas diretamente em \LaTeX{},
 como o exemplo da \autoref{fig_circulo}.
 
 \begin{figure}[htb]
@@ -517,13 +517,13 @@ qualquer dimensão. Nesse caso, se for utilizar o Microsoft Excel para produzir
 gráficos, ou o Microsoft Word para produzir ilustrações, exporte-os como PDF e
 os incorpore ao documento conforme o exemplo abaixo. No entanto, para manter a
 coerência no uso de software livre (já que você está usando \LaTeX{} e
-\abnTeX{}), teste a ferramenta \textsf{InkScape}\index{InkScape}
+\abnTeX{}), teste a ferramenta \textsf{InkScape}
 (\url{http://inkscape.org/}). Ela é uma excelente opção de código-livre para
 produzir ilustrações vetoriais, similar ao CorelDraw\index{CorelDraw} ou ao
 Adobe Illustrator\index{Adobe Illustrator}. De todo modo, caso não seja possível
 utilizar arquivos de imagens como PDF, utilize qualquer outro formato, como
 JPEG, GIF, BMP, etc. Nesse caso, você pode tentar aprimorar as imagens
-incorporadas com o software livre \textsf{Gimp}\index{Gimp}
+incorporadas com o software livre \textsf{Gimp}
 (\url{http://www.gimp.org/}). Ele é uma alternativa livre ao Adobe
 Photoshop\index{Adobe Photoshop}. 
 
@@ -613,7 +613,7 @@ Este é o conteúdo do segundo quadro.\\
 
 \section{Expressões matemáticas}
 
-\index{expressões matemáticas} Use o ambiente \texttt{equation} para escrever
+Use o ambiente \texttt{equation} para escrever
 expressões matemáticas numeradas:
 
 \begin{equation}
@@ -646,7 +646,7 @@ Consulte mais informações sobre expressões matemáticas em
 
 \section{Enumerações: alíneas e subalíneas}
 
-\index{alíneas}\index{subalíneas}\index{incisos}Quando for necessário enumerar
+Quando for necessário enumerar
 os diversos assuntos de uma seção que não possua título, esta deve ser
 subdividida em alíneas~\cite[4.2]{NBR6024:2012}:
 
@@ -708,14 +708,14 @@ subdividida em alíneas~\cite[4.2]{NBR6024:2012}:
 
 \section{Espaçamento entre parágrafos e linhas}
 
-\index{espaçamento!dos parágrafos}O tamanho do parágrafo, espaço entre a margem
+O tamanho do parágrafo, espaço entre a margem
 e o início da frase do parágrafo, é definido por:
 
 \begin{lstlisting}[language=tex]
   \setlength{\parindent}{1.3cm}
 \end{lstlisting}
 
-\index{espaçamento!do primeiro parágrafo}Por padrão, não há espaçamento no
+Por padrão, não há espaçamento no
 primeiro parágrafo de cada início de divisão do documento
 (\autoref{sec-divisoes}). Porém, você pode definir que o primeiro parágrafo
 também seja indentado, como é o caso deste documento. Para isso, apenas inclua o
@@ -725,15 +725,14 @@ pacote \textsf{indentfirst} no preâmbulo do documento:
   \usepackage{indentfirst}      % Indenta o primeiro parágrafo de cada seção.
 \end{lstlisting}
 
-\index{espaçamento!entre os parágrafos}O espaçamento entre um parágrafo e outro
+O espaçamento entre um parágrafo e outro
 pode ser controlado por meio do comando:
 
 \begin{verbnobox}[\small]
   \setlength{\parskip}{0.2cm}  % tente também \onelineskip
 \end{verbnobox}
 
-\index{espaçamento!entre as linhas}O controle do espaçamento entre linhas é
-definido por:
+O controle do espaçamento entre linhas é definido por:
 
 \begin{lstlisting}[language=tex]
   \OnehalfSpacing       % espaçamento um e meio (padrão);
