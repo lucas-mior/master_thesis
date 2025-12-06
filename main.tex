@@ -574,33 +574,37 @@
   }
   \fi
 
-  \ifforcedinclude\else
+  \ifglossaryexists{acronym}{
+    \ifforcedinclude\else
+      \cleardoublepage
+    \fi
+    % imprime lista de siglas ordenado alfabeticamente
+    % q/printnoidxglossaries-vs-printglossaries
+    \pdfbookmark[0]{\ABNTEXlistadesiglasname}{acn}
+    \printnoidxglossary[%
+      style=mylong1,
+      type=acronym,
+      sort=letter,
+      title={\ABNTEXlistadesiglasname\vspace{-0.2cm}}
+    ]
     \cleardoublepage
-  \fi
-  % imprime lista de siglas ordenado alfabeticamente
-  % q/printnoidxglossaries-vs-printglossaries
-  \pdfbookmark[0]{\ABNTEXlistadesiglasname}{acn}
-  \printnoidxglossary[%
-    style=mylong1,
-    type=acronym,
-    sort=letter,
-    title={\ABNTEXlistadesiglasname\vspace{-0.2cm}}
-  ]
-  \cleardoublepage
+  }{}
 
-  \ifforcedinclude\else
+  \ifglossaryexists{UFSCsimbolos}{
+    \ifforcedinclude\else
+      \cleardoublepage
+    \fi
+    % imprime lista de símbolos na ordem em que aparece no texto
+    % q/printnoidxglossaries-vs-printglossaries
+    \pdfbookmark[0]{\ABNTEXlistadesimbolosname}{sbl}
+    \printnoidxglossary[%
+      style=UFSClong2,
+      type=UFSCsimbolos,
+      sort=use,
+      title={\ABNTEXlistadesimbolosname}
+    ]
     \cleardoublepage
-  \fi
-  % imprime lista de símbolos na ordem em que aparece no texto
-  % q/printnoidxglossaries-vs-printglossaries
-  \pdfbookmark[0]{\ABNTEXlistadesimbolosname}{sbl}
-  \printnoidxglossary[%
-    style=UFSClong2,
-    type=UFSCsimbolos,
-    sort=use,
-    title={\ABNTEXlistadesimbolosname}
-  ]
-  \cleardoublepage
+  }{}
 
   % How to remove the self-reference of the ToC from the ToC?
   % q/how-to-remove-the-self-reference-of-the-toc-from-the-toc
