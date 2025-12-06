@@ -144,83 +144,6 @@
 \RequirePackage{shellesc}
 \RequirePackage{xstring}
 
-% q/warning-when-adding-package-minted
-\StrSubstitute{\jobname}{ }{_}[\mintedjobname]
-\StrSubstitute{\mintedjobname}{*}{_}[\mintedjobname]
-\StrSubstitute{\mintedjobname}{"}{}[\mintedjobname]
-\StrSubstitute{\mintedjobname}{'}{_}[\mintedjobname]
-
-\ifwindows
-  \providecommand{\DeleteFile}[2][]{%
-    \ifthenelse{\equal{#1}{}}%
-      {\IfFileExists{#2}{\ShellEscape{del #2}}{}}%
-      {\IfFileExists{#1/#2}{%
-      \StrSubstitute{#1}{/}{\@backslashchar}[\mintedwindir]
-      \ShellEscape{del \mintedwindir\@backslashchar #2}}{}}
-  }
-\else
-  \providecommand{\DeleteFile}[2][]{%
-  \ifthenelse{\equal{#1}{}}%
-    {\IfFileExists{#2}{\ShellEscape{rm #2}}{}}%
-    {\IfFileExists{#1/#2}{\ShellEscape{rm #1/#2}}{}}
-  }
-\fi
-
-\newboolean{AppMotherFuckerExists}
-\newread\mintedappexistsfile
-
-\newcommand{\UFSCTestAppMotherfuckerExists}[1]{
-  \ifwindows
-  \DeleteFile{\mintedjobname.aex}
-  \ShellEscape{@echo off
-    for \string^\@percentchar i in (#1.exe #1.bat #1.cmd)
-    do set > \mintedjobname.aex <nul: /p
-    x=\string^\@percentchar \string~$PATH:i>> \mintedjobname.aex}
-  %$ <- balance syntax highlighting
-  \immediate\openin\mintedappexistsfile\mintedjobname.aex
-  \expandafter\def\expandafter\@tmp@cr\expandafter{\the\endlinechar}
-  \endlinechar=-1\relax
-  \readline\mintedappexistsfile to \mintedapppathifexists
-  \endlinechar=\@tmp@cr
-  \ifthenelse{\equal{\mintedapppathifexists}{}}{
-    \AppMotherFuckerExistsfalse
-  }{
-    \AppMotherFuckerExiststrue
-  }
-  \immediate\closein\mintedappexistsfile
-  \DeleteFile{\mintedjobname.aex}
-  \else
-  \ShellEscape{which #1 > /dev/null 2>&1 && touch \mintedjobname.aex}
-  \IfFileExists{\mintedjobname.aex}
-    {\AppMotherFuckerExiststrue
-    \DeleteFile{\mintedjobname.aex}}
-    {\AppMotherFuckerExistsfalse}
-  \fi
-}
-
-\UFSCTestAppMotherfuckerExists{pygmentize}
-
-\ifAppMotherFuckerExists
-  % q/testing-for-a-documentclass-option
-  % q/package-minted-warning-unexpected-value-for-option-chapterminted-is-ignored
-  \@ifclasswith{setup/ufscthesisx}{chapter=TITLE}{
-  \begingroup
-  \def\x#1chapter=TITLE,#2\@nil{%
-    \endgroup\def\@classoptionslist{#1#2}%
-  }\expandafter\x\@classoptionslist\@nil
-  }{}
-
-  \@ifclasswith{setup/ufscthesisx}{section=TITLE}{
-  \begingroup
-  \def\x#1section=TITLE,#2\@nil{%
-    \endgroup\def\@classoptionslist{#1#2}%
-  }\expandafter\x\@classoptionslist\@nil
-  }
-\else
-  \PackageWarning{minted}
-  {You must have `pygmentize' installed to use the minted package}
-\fi
-
 % Custom list throw LaTeX Error: Command \mycustomfiction already defined?
 % q/custom-list-throw-latex-error-command-mycustomfiction-already-defined
 \RequirePackage{morewrites}
@@ -1600,47 +1523,6 @@
   \fi%
 }
 
-\ifAppMotherFuckerExists
-  % q/how-to-get-caption-above-listing-with-minted
-  % q/latex-minted-package-using-custom-output-directory-build
-  % q/you-cant-use-a-prefix-with-charfb-error-when-importing-csv-into-latex
-  \usepackage[newfloat,chapter,outputdir=latexcache]{minted}
-
-  % q/minted-setstretch-and-font-size
-  % q/how-to-change-overall-font-size-of-minted
-  \setminted{fontsize=\small,
-             fontfamily=zi4,
-             linenos=true,
-             numberblanklines=true,
-             breaklines=true,
-             breakanywhere=true}
-
-  % q/how-to-change-the-font-size-of-line-numbers-using-the-minted-latex-package
-  \renewcommand\theFancyVerbLine{\normalsize\color{gray}\arabic{FancyVerbLine}}
-
-  % q/adjust-vertical-spacing-between-caption-and-listing-in-koma-scrartcl
-  % q/how-to-replace-a-command-argument-as-2-with-something-else
-  % q/how-to-fix-minted-and-listings-hyphen-alignment-on-my-list-of-codes
-  % q/mixing-minted-with-lstlisting
-  % q/control-spacing-around-table-caption
-  % q/how-to-set-minted-listing-table-of-contents-numwidth/
-  % q/customizing-the-list-of-listings-generated-by-lstlistoflistings
-  % q/setting-entries-of-list-of-listings-in-latex-package-listings
-  \newenvironment{code}{
-    \captionsetup{%
-      type=lstlisting,
-      skip=0pt,
-      position=top
-    }
-    \setlength{\abovecaptionskip}{0pt}
-    \setlength{\belowcaptionskip}{10pt}
-    \setlength{\parskip}{0pt}
-  }{}
-
-  % q/red-box-drawn-around-question-mark-operator-in-minted-erlang-code
-  \AtBeginEnvironment{code}{\renewcommand{\fcolorbox}[4][]{#4}}
-\else\fi
-
 % Memoir class conflict with datetime
 % q/memoir-class-conflict-with-datetime
 % q/difference-between-let-foo-relax-and-def-foo-for-disabling
@@ -1665,11 +1547,6 @@
 % q/chngcntr-counterwithout-not-working
 % q/number-listings-the-same-way-as-figures-and-tables
 \AtBeginDocument{\counterwithout{lstlisting}{chapter}}
-
-% q/class-memoir-error-listing-is-not-a-counter
-\ifAppMotherFuckerExists
-  \AtBeginDocument{\counterwithout{listing}{chapter}}
-\fi
 
 % Permite tamanhos arbitrários para fontes Computer Modern (math warning)
 \RequirePackage{fix-cm}
@@ -2327,10 +2204,6 @@
 % set the font family for lstlisting
 % q/set-the-font-family-for-lstlisting
 \usepackage{courier}
-
-% q/setting-up-specific-font-for-use-in-listings
-% q/setting-font-for-a-minted-environment-in-a-beamer-frame
-\usepackage[varqu]{zi4}
 
 % Latex: Listings with monospace fonts
 % q/latex-listings-with-monospace-fonts
