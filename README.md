@@ -1,0 +1,26 @@
+# Template para TCC/Dissertação/Tese UFSC
+Baseado em
+[UFSC/ufscthesisx](https://github.com/UFSC/ufscthesisx).
+Vários erros foram corrigidos, e foi feita uma refatoração completa
+da estrutura do projeto e dos arquivos `.tex` e `.cls`.
+Avisos emitidos pela ferramentas `chktex` foram corrigidos.
+Deve ser mais fácil fazer a manutenção deste template do que do original.
+
+## Como utilizar (linux nativo)
+```sh
+# download do repositório, por exemplo usando git:
+git clone https://github.com/lucas-mior/master_thesis
+
+# compilar usando o script
+./build.sh
+
+# compilar usando make, alternativamente
+make
+
+# limpar todo o cache
+make clean
+```
+
+## Como utilizar (Overleaf)
+No github do projeto, clique em `Code`, depois em `Download ZIP`.
+No overleaf, carregue o arquivo `.zip`.
