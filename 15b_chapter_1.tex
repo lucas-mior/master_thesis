@@ -339,11 +339,11 @@ deve-se observar apenas o recuo \cite[5.3]{NBR10520:2002}.
 \end{abntexEnvCitacao}
 \end{lstlisting}
 
-O ambiente \texttt{abntexEnvCitacao} pode receber como parâmetro opcional um nome de
-idioma previamente carregado nas opções da classe (\autoref{sec-hifenizacao}).
-Nesse caso, o texto da citação é automaticamente escrito em itálico e a
-hifenização é ajustada para o idioma selecionado na opção do ambiente. Por
-exemplo:
+O ambiente \texttt{abntexEnvCitacao} pode receber como parâmetro opcional um
+nome de idioma previamente carregado nas opções da classe
+(\autoref{sec-hifenizacao}).  Nesse caso, o texto da citação é automaticamente
+escrito em itálico e a hifenização é ajustada para o idioma selecionado na opção
+do ambiente. Por exemplo:
 
 \begin{lstlisting}[language=tex]
 \begin{abntexEnvCitacao}[english]
@@ -377,8 +377,7 @@ no corpo do texto. }\footnote{Verifique se os números do expoente
 
 \section{Tabelas}
 
-A \autoref{tab-nivinv} é um exemplo de tabela construída em
-\LaTeX{}.
+A \autoref{tab-nivinv} é um exemplo de tabela construída em \LaTeX{}.
 
 % q/how-to-add-a-forced-line-break-inside-a-table-cell
 % q/how-to-use-thead-with-left-align-locally-instead-of-globally/
@@ -424,12 +423,14 @@ acadêmicos.
   \bottomrule
 \end{tabular}%
 }{%
-  \ABNTEXfonte{Produzido pelos autores. }%
-  \ABNTEXnota{Esta é uma nota, que diz que os dados são baseados na
-  regressão linear. }%
-  \ABNTEXnota[Anotações]{Uma anotação adicional, que pode ser seguida de várias
-  outras. }%
-  }
+  \ABNTEXfonte{Produzido pelos autores.}%
+  \ABNTEXnota{
+    Esta é uma nota, que diz que os dados são baseados na regressão linear.
+  }%
+  \ABNTEXnota[Anotações]{%
+    Uma anotação adicional, que pode ser seguida de várias outras.
+  }%
+}
 \end{table}
 
 % What does [t] and [ht] mean?
