@@ -46,8 +46,7 @@
     Longo título apresentar no capítulo,
     Axiomas, Teoremas, Postulados, corolários, lemas
   }
-}
-
+}%
 \label{cap_exemplos}
 
 % Why latex is letting my text goes out of the screen?
@@ -85,13 +84,13 @@ caso contrário eles seriam chamados teoremas). Em muitos contextos,
 sinônimos. 
 
 \begin{UFSCaxioma}[Axioma de Igualdade ]
-Supondo $\mathfrak{L}$, uma linguagem de primeira ordem. para cada variável $x$,
-a fórmula $x = x$ é universalmente válida. 
+Supondo $\mathfrak{L}$, uma linguagem de primeira ordem. Para cada variável
+$x$, a fórmula $x = x$ é universalmente válida. 
 \end{UFSCaxioma}
 
 \begin{UFSCpostulado}[Postulado de Igualdade ]
-    Supondo $\mathfrak{L}$, uma linguagem de primeira ordem. para cada variável
-    $x$, a fórmula $x = x$ é universalmente válida. 
+Supondo $\mathfrak{L}$, uma linguagem de primeira ordem. Para cada variável
+$x$, a fórmula $x = x$ é universalmente válida. 
 \end{UFSCpostulado}
 
 \section{Teorema}
@@ -315,7 +314,7 @@ A codificação de todos os arquivos do \abnTeX{} é \texttt{UTF8}. É necessár
 que você utilize a mesma codificação nos documentos que escrever, inclusive nos
 arquivos de base bibliográficas |.bib|.
 
-\section{Citações diretas}
+\section{Citações diretas}%
 \label{sec-citacao}
 
 Utilize o ambiente \texttt{abntexEnvCitacao} para incluir
@@ -380,7 +379,7 @@ A \autoref{tab-nivinv} é um exemplo de tabela construída em \LaTeX{}.
 % q/how-to-add-a-forced-line-break-inside-a-table-cell
 % q/how-to-use-thead-with-left-align-locally-instead-of-globally/
 \begin{table}[htb]
-\caption[Níveis de investigação]{Níveis de investigação. }
+\caption[Níveis de investigação]{Níveis de investigação.}%
 \label{tab-nivinv}
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{p{2.6cm}p{6.0cm}p{2.25cm}p{3.40cm}}
@@ -474,7 +473,7 @@ Figuras podem ser criadas diretamente em \LaTeX{},
 como o exemplo da \autoref{fig_circulo}.
 
 \begin{figure}[htb]
-    \caption[A delimitação do espaço]{A delimitação do espaço }
+    \caption[A delimitação do espaço]{A delimitação do espaço}%
     \label{fig_circulo}
     \begin{center}
         \setlength{\unitlength}{5cm}
@@ -579,7 +578,7 @@ parte inferior, indicar a fonte consultada (elemento obrigatório, mesmo que
 seja produção do próprio autor), legenda, notas e outras informações
 necessárias à sua compreensão (se houver). A ilustração deve ser citada no
 texto e inserida o mais próximo possível do trecho a que se
-refere \cite[seções 5.8]{NBR14724:2011}.
+refere~\cite[seções 5.8]{NBR14724:2011}.
 \end{abntexEnvCitacao}
 
 \section{Quadros}
@@ -587,7 +586,7 @@ refere \cite[seções 5.8]{NBR14724:2011}.
 Depois de definir o ambiente \texttt{quadro} podemos ter um quadro:
 
 \begin{quadro}
-  \caption[Legenda do primeiro quadro.]{Legenda do primeiro quadro. }
+  \caption[Legenda do primeiro quadro.]{Legenda do primeiro quadro.}%
   \label{quad:quadro_modelo1}
   \centering
   \begin{tabular}{c}
