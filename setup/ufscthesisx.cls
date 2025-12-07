@@ -2018,17 +2018,13 @@
 \newcommand{\UFSCtextPreliminaryListName}{Short Table of Contents}
 \newlistof{textpreliminarycontents}{tpc}{\UFSCtextPreliminaryListName}
 
-% Resetting counter
 % q/resetting-counter
-%
 % q/custom-list-throw-latex-error-command-mycustomfiction-already-defined
 \newlistentry{textpreliminarycounter}{tpc}{0}
 
-% Continuing Page Numbering (Roman to Arabic)
 % q/continuing-page-numbering-roman-to-arabic
 \renewcommand{\thetextpreliminarycounter}{\arabic{textpreliminarycounter}}
 
-% Reset section numbering between unnumbered chapters
 % q/reset-section-numbering-between-unnumbered-chapters
 \newcommand{\UFSCaddToTextPreliminaryContent}[1]{%
   \refstepcounter{textpreliminarycounter}%
@@ -2037,7 +2033,6 @@
                   {\protect\numberline{\thetextpreliminarycounter}#1}\par%
 }
 
-% Unable to link to inserted pages with pdfpages
 % q/unable-to-link-to-inserted-pages-with-pdfpages
 \newcounter{includepdfpage}
 \newcounter{currentpagecounter}
