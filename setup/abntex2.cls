@@ -190,8 +190,8 @@
 \RequirePackage{etoolbox}
 
 % q/illegal-parameter-number-in-definition-of-enitc-after-using-setlistenumerat
-\let\@itemenumerateoptional\@item
-\patchcmd\@itemenumerateoptional{\if@noitemarg}{\iftrue}{}{%
+\let\@itemABNTEXenumerateOptional\@item
+\patchcmd\@itemABNTEXenumerateOptional{\if@noitemarg}{\iftrue}{}{%
   \FAILEDCREATEENUMERAOPTIONAL%
 }
 \newcommand\ABNTEXenumerateOptionalLabelFormat[1]{#1~\@itemlabel}
@@ -199,9 +199,9 @@
 % q/enumitem-revert-nolistsep
 % q/how-to-change-list-settings-globally
 % q/why-does-setlistnosep-doesnt-work-in-a-tabular-environment
-\newlist{enumerateoptional}{enumerate}{1}
-\setlist[enumerateoptional]{%
-  before=\let\@item\@itemenumerateoptional,
+\newlist{ABNTEXenumerateOptional}{enumerate}{1}
+\setlist[ABNTEXenumerateOptional]{%
+  before=\let\@item\@itemABNTEXenumerateOptional,
   format=\ABNTEXenumerateOptionalLabelFormat,
   label=\arabic*,
   align=left,
