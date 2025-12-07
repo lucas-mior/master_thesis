@@ -2233,10 +2233,6 @@
   tabsize=4,
   morestring=[b]',
   morestring=[b]",
-  literate = {---}{{\ProcessThreeDashes}}3
-       {>}{{\textcolor{red}\textgreater}}1
-       {|}{{\textcolor{red}\textbar}}1
-       {\ -\ }{{\mdseries\ -\ }}3,
   inputencoding=utf8, % q/listings-in-latex-with-utf-8-or-at-least-german-umlauts
   extendedchars=true, % q/having-problems-with-listings-and-utf-8-can-it-be-fixed
   literate=%
