@@ -154,32 +154,25 @@
 \RequirePackage[utf8]{inputenc}
 \RequirePackage[T1]{fontenc}
 
-% Indent the first section paragraphs
 % q/no-indent-in-the-first-paragraph-in-a-section
 \RequirePackage{indentfirst}
 
-% Is it possible to keep my translation together with original text?
 % q/is-it-possible-to-keep-my-translation-together-with-original-text
 \RequirePackage{comment}
 
-% Please tutor the usage of patchcmd and xpatch
 % q/please-tutor-the-usage-of-patchcmd-and-xpatch
 \RequirePackage{xpatch}
 
-% Why the environment ttfamily is hyphenated,
-% but macro ttfamily is not hyphenating?
 % q/why-the-environment-ttfamily-is-hyphenated-but-macro-ttfamily-is-not-hyphenatin
 \RequirePackage{letltxmacro}
 
-% Theorem packages: which to use, which conflict?
 % q/theorem-packages-which-to-use-which-conflict
 \RequirePackage{amsthm}
 
-% Why is the ifthen package obsolete? (It is used by the abntex2 class)
+% (It is used by the abntex2 class)
 % q/why-is-the-ifthen-package-obsolete
 \RequirePackage{ifthen}
 
-% How to make section name uppercase in ToC?
 % q/how-to-make-section-name-uppercase-in-toc
 \RequirePackage{textcase}
 
@@ -187,11 +180,7 @@
 \RequirePackage{newfloat}
 \RequirePackage{caption}
 
-% How to auto adjust my last table column width,
-% and why is there Underfull \vbox badness on this table?
 % q/how-to-auto-adjust-my-last-table-column-width-and-why-is-there-underfull-vbox/387251
-%
-% Why ltablex package breaks the changepage package?
 % q/why-ltablex-package-breaks-the-changepage-package
 \RequirePackage{ltablex}\keepXColumns
 
@@ -277,7 +266,6 @@
 
 \renewcommand{\qedsymbol}{$\blacksquare$}
 
-% Margens
 % q/how-to-set-margins-in-memoir-class
 \setlrmarginsandblock{3cm}{2cm}{*}
 \setulmarginsandblock{3cm}{2cm}{*}
@@ -297,7 +285,6 @@
 \DeclareCaptionFont{small}{\fontsize{10pt}{12pt}\selectfont}
 \renewcommand{\footnotesize}{\fontsize{10pt}{12pt}\selectfont}
 
-% Set caption font size in memoir
 % q/set-caption-font-size-in-memoir
 % q/controlling-the-spacing-between-lines-with-fontsize-selectfont
 \newcommand{\UFSCcaptionSize}{\fontsize{10pt}{12pt}\selectfont}
@@ -404,7 +391,6 @@
   \addtocontents{toc}{\vspace{0em}}
 }
 
-% TOC Spacing in Memoir
 % q/toc-spacing-in-memoir
 \setlength{\cftbeforechapterskip}{12pt}
 
@@ -591,13 +577,8 @@
 
 % Fix the resumo environment, which does not accept paragraphs on ufscthesisx
 %
-% Changing font size in an example environment
 % q/changing-font-size-in-an-example-environment
-%
-% How to disable automatic indentation on new paragraphs?
 % q/how-to-disable-automatic-indentation-on-new-paragraphs
-%
-% How to disable paragraphs inside my environment with \let\par\relax?
 % q/how-to-disable-paragraphs-inside-my-environment-with-let-par-relax
 \xapptocmd{\resumo}{%
   \setlength{\parindent}{0pt}\SingleSpacing\let\parOriginal\par\let\par\relax
@@ -716,13 +697,8 @@
 
 % Conteúdo padrao da Folha de Rosto
 %
-% Underfull \hbox (badness 10000) message
 % q/underfull-hbox-badness-10000-message
-%
-% Underfull \hbox (badness …) in paragraph at lines x-y
 % q/underfull-hbox-badness-in-paragraph-at-lines-x-y
-%
-% How to add an empty line between paragraphs?
 % q/how-to-add-an-empty-line-between-paragraphs
 \renewcommand{\ABNTEXfolhaderostocontent}{%
   \begin{center}
@@ -775,7 +751,6 @@
   \end{center}
 }
 
-% If document class is equal to something then do not use package
 % q/if-document-class-is-equal-to-something-then-do-not-use-package
 \@ifclassloaded{setup/abntex2}{
   % Package hyperref Warning: Token not allowed in a PDF string?
@@ -837,11 +812,9 @@
 % 5. `programming.tex`
 % 6. `badboxes.tex`
 
-% Please tutor the usage of patchcmd and xpatch
 % q/please-tutor-the-usage-of-patchcmd-and-xpatch
 \usepackage{xpatch}
 
-% Incompatible color definition when using tikz with color package
 % q/incompatible-color-definition-when-using-tikz-with-color-package
 \usepackage{xcolor}
 
@@ -923,7 +896,6 @@
 \usepackage{float}
 
 % bigfoot.sty:61:
-% Package hyperref Warning: Option `hyperfootnotes' has already been used
 % q/bigfoot-sty61-package-hyperref-warning-option-hyperfootnotes-has-already-be
 \@ifpackageloaded{hyperref}{%
   \hypersetup{hyperfootnotes=false}
@@ -941,7 +913,6 @@
 % Allows in-line images such as the example fish picture
 \usepackage{wrapfig}
 
-% How to automatically force latex to not justify the text when it is not wise?
 % q/how-to-automatically-force-latex-to-not-justify-the-text-when-it-is-not-wise
 \usepackage{array,ragged2e}
 
@@ -953,10 +924,7 @@
 % q/ifpackageloaded-question
 \@ifpackageloaded{changepage}{}{\usepackage[strict]{changepage}}
 
-% How to make horizontal lists?
 % q/how-to-make-horizontal-lists
-%
-% Compilation error when including enumitem and paralist packages
 % q/compilation-error-when-including-enumitem-and-paralist-packages
 \usepackage{paralist}
 
@@ -970,7 +938,6 @@
 % very first option (at any level) is not recognized as a valid key, then it
 % will be considered a label with the enumerate-like syntax.
 %
-% No spacing between enumerated items with \usepackage{enumerate}
 % q/no-spacing-between-enumerated-items-with-usepackageenumerate
 \usepackage[shortlabels]{enumitem}
 
@@ -982,8 +949,9 @@
 % such as % baht, bullet, copyright, musicalnote, onequarter, section, and yen)
 % in the TS1 encoding.
 %
-% `LaTeX Error: Option clash for package textcomp` with the package `mathcomp`,
-% it need to be loaded before it.
+% `LaTeX Error:
+% Option clash for package textcomp`
+% with the package `mathcomp`, it need to be loaded before it.
 % q/how-do-you-resolve-the-error-in-latex-option-clash-for-package-inputenc-usepa
 % q/setting-familydefault-as-sfdefault-is-causing-the-arrow-character-%e2%86%92-to-throw-p
 \usepackage[full,warn]{textcomp}
@@ -1019,8 +987,6 @@
 % Needs to be loaded after hyperref
 % http://ctan.sharelatex.com/tex-archive/macros/latex/contrib/hyperref/README.pdf
 %
-% Package incompatibilty between alphalph,
-% and hyperref with amsmath subequations
 % q/package-incompatibilty-between-alphalph-and-hyperref-with-amsmath-subequations
 \usepackage{amsmath}
 \let\equation\gather
@@ -1076,11 +1042,9 @@
 \usepackage{makecell}
 \usepackage{pbox}
 
-% LaTeX not hyphenating properly, text running off page
 % q/latex-not-hyphenating-properly-text-running-off-page
 \usepackage{hyphenat}
 
-% How to use \scalebox around my environment?
 % q/how-to-use-scalebox-around-my-environment
 \usepackage{verbatimbox}
 
@@ -1090,15 +1054,12 @@
 \usepackage{makeidx}
 \makeindex
 
-% Is it possible to keep my translation together with original text?
 % q/is-it-possible-to-keep-my-translation-together-with-original-text
 \usepackage{comment}
 
-% Scoping \raggedbottom to a single page
 % q/scoping-raggedbottom-to-a-single-page
 \usepackage{afterpage}
 
-% Logical String Length
 % q/logical-string-length
 \usepackage{xstring}
 \usepackage{xifthen}
@@ -1109,11 +1070,9 @@
 \usepackage{bookmark}
 \usepackage{calc}
 
-% cannot use \caption under minipage
 % q/cannot-use-caption-under-minipage
 \usepackage{capt-of}
 
-% Custom list throw LaTeX Error: Command \mycustomfiction already defined?
 % q/custom-list-throw-latex-error-command-mycustomfiction-already-defined
 \usepackage{morewrites}
 
@@ -1525,7 +1484,6 @@
   \fi%
 }
 
-% Memoir class conflict with datetime
 % q/memoir-class-conflict-with-datetime
 % q/difference-between-let-foo-relax-and-def-foo-for-disabling
 \let\ordinal\relax
@@ -1649,24 +1607,19 @@
 % q/package-biblatex-warning-babel-polyglossia-detected-but-csquotes-missing
 \usepackage{csquotes}
 
-% Indent the first section paragraphs
 % q/no-indent-in-the-first-paragraph-in-a-section
 \usepackage{indentfirst}
 
-% Why the environment ttfamily is hyphenated,
-% but macro ttfamily is not hyphenating?
 % q/why-the-environment-ttfamily-is-hyphenated-but-macro-ttfamily-is-not-hyphenatin
 \usepackage{letltxmacro}
 
-% Theorem packages: which to use, which conflict?
 % q/theorem-packages-which-to-use-which-conflict
 \usepackage{amsthm}
 
-% Why is the ifthen package obsolete? (It is used by the abntex2 class)
+% (It is used by the abntex2 class)
 % q/why-is-the-ifthen-package-obsolete
 \usepackage{ifthen}
 
-% How to make section name uppercase in ToC?
 % q/how-to-make-section-name-uppercase-in-toc
 \usepackage{textcase}
 
@@ -1677,12 +1630,10 @@
 % \usepackage{subfig}
 % \usepackage{etoolbox}
 %
-% How to create my own caption type with \DeclareCaptionType on memoir class?
 % q/how-to-create-my-own-caption-type-with-declarecaptiontype-on-memoir-class
 \usepackage{caption}
 
 % The package `layouts` causes the
-% Warning: layout scale set to 0.5 on input line
 % q/warning-layout-scale-set-to-0-5-on-input-line
 % \usepackage{layouts}
 
@@ -1694,11 +1645,7 @@
 % q/how-to-add-babel-captions-to-newfloat-package-environments
 \usepackage{newfloat}
 
-% How to auto adjust my last table column width,
-% and why is there Underfull \vbox badness on this table?
 % q/how-to-auto-adjust-my-last-table-column-width-and-why-is-there-underfull-vbox/387251
-%
-% Why ltablex package breaks the changepage package?
 % q/why-ltablex-package-breaks-the-changepage-package
 \usepackage{ltablex}\keepXColumns
 
@@ -1714,8 +1661,6 @@
 \usepackage{bigfoot}
 \let\hypersetup\truehypersetup
 
-% While loading fancyvrb, siunitx and bigfoot,
-% I got input stack size=5000, TeX STOPPED: fatal errors occurred
 % q/while-loading-fancyvrb-siunitx-and-bigfoot-i-got-input-stack-size-5000-tex-st
 \xpatchcmd{\FN@allmarks}{266}{256}{}{}
 
@@ -1760,7 +1705,6 @@
   \expandafter\@firstofone
   \fi{\expandafter\futurelet\expandafter#1\expandafter\@gobble\space\relax}}
 
-% How could the `\everypar` justification statement be used?
 % q/how-could-the-everypar-justification-statement-be-used
 \newbox\linebox \newbox\snapbox
 \def\eatlines{%
@@ -1776,7 +1720,6 @@
   \fi
 }
 
-% How could the `\everypar` justification statement be used?
 % q/how-could-the-everypar-justification-statement-be-used
 \everypar={%
   \setbox0=\lastbox \par%
@@ -1802,8 +1745,6 @@
 
 % Some text \brkurl{http://www.example.com/this/directory/here}
 %
-% How to break long URLs using common hyphenation
-% but adding a line feed indicator?
 % q/how-to-break-long-urls-using-common-hyphenation-but
 \def\addurlspace#1{%
   \ifx\relax#1%
@@ -2048,17 +1989,12 @@
              {#3}%
 }
 
-% \MakeUppercase in \section and \chapter with hyperref cause trouble
 % q/makeuppercase-in-section-and-chapter-with-hyperref-cause-trouble
 \newcommand{\HyperrefUppercase}[1]{%
   \texorpdfstring{\MakeTextUppercase{#1}}{#1}
 }
 
-% Example about hyphenation with ttfamily font
 % q/example-about-hyphenation-with-ttfamily-font
-%
-% Why the environment ttfamily is hyphenated,
-% but macro ttfamily is not hyphenating?
 % q/why-the-environment-ttfamily-is-hyphenated-but-macro-ttfamily-is-not-hyphenatin
 \LetLtxMacro\origttfamily\ttfamily
 \DeclareRobustCommand*{\ttfamily}{%
@@ -2076,7 +2012,6 @@
 }
 \DeclareTextFontCommand{\textvtt}{\vttfamily}
 
-% Logical String Length
 % q/logical-string-length
 \newcommand{\includeonlyfilelist}[0]{}
 \newcommand{\addtoincludeonly}[1]{%
@@ -2116,44 +2051,32 @@
 
 % Bad Boxes settings
 
-% Underfull \hbox in bibliography
 % q/underfull-hbox-in-bibliography
 \apptocmd{\thebibliography}{\raggedright}{}{}
 
-% Underfull \hbox (badness 10000) has occurred while \output is active
 % q/underfull-hbox-badness-10000-has-occurred-while-output-is-active
-%
-% how to suppress “Underfull \vbox (badness 10000) … while \output is active”?
 % q/how-to-suppress-underfull-vbox-badness-10000-while-output-is-active
 \def\@textbottom{\vskip \z@ \@plus 7pt}
 \let\@texttop\relax
 
-% Why Latex is hyphenating some words automatically,
-% but others dont? hyphenmins{22} %left=2, right=2
 % q/why-latex-is-hyphenating-some-words-automatically-but-others-dont
 \@ifpackagewith{babel}{brazil}{  \def\brazilhyphenmins{11} }{}
 \@ifpackagewith{babel}{english}{ \def\englishhyphenmins{11} }{}
 \@ifpackagewith{babel}{french}{  \def\frenchhyphenmins{11} }{}
 
 \@ifpackageloaded{url}{
-  % Bad formatting using URLs in bibtex
   % q/bad-formatting-using-urls-in-bibtex
   \usepackage{etoolbox}
 
-  % How to avoid overfull error with url package?
   % See also the `\usepackage{url}` declarationon the file `basic.tex`.
   % Set this to 2mu or 3mu if URL start troubling again.
   % q/how-to-avoid-overfull-error-with-url-package
   \Urlmuskip=0mu plus 1mu
 
-  % How to fix URL overfull & underfull on emumeration?
   % q/how-to-fix-url-overfull-underfull-on-emumeration
-  %
-  % Forcing linebreaks in \url
   % q/forcing-linebreaks-in-url/10401
   \g@addto@macro{\UrlBreaks}{\UrlOrds}
 
-  % How to fix this url bad box for stackoverflow link?
   % q/how-to-fix-this-url-bad-box-for-stackoverflow-link
   \g@addto@macro{\UrlBreaks}{%
     \do\a\do\b\do\c\do\d\do\e\do\f\do\g%
@@ -2195,15 +2118,12 @@
 % http://stackoverflow.com/questions/3175105/writing-code-in-latex-document
 \usepackage{listings}
 
-% How to insert code with accents with listings?
 % q/how-to-insert-code-with-accents-with-listings
 \usepackage{listingsutf8}
 
-% set the font family for lstlisting
 % q/set-the-font-family-for-lstlisting
 \usepackage{courier}
 
-% Latex: Listings with monospace fonts
 % q/latex-listings-with-monospace-fonts
 % q/how-to-have-straight-single-quotes-in-lstlistings
 % q/double-quote-charater-with-listings-create-problem
