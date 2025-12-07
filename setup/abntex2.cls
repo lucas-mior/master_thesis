@@ -55,6 +55,7 @@
 \newboolean{ABNTEXuppersubsection}
 \newboolean{ABNTEXuppersubsubsection}
 \newboolean{ABNTEXuppersubsubsubsection}
+
 \setboolean{ABNTEXupperchapter}{false}
 \setboolean{ABNTEXuppersection}{false}
 \setboolean{ABNTEXuppersubsection}{false}
@@ -82,8 +83,10 @@
 % sumario=abnt-6027-2012 : Sumário conforme recomendação da ABNT NBR 6027:2012
 \newboolean{ABNTEXsumario-tradicional}  % titles of chapter/appendix uppercase
 \newboolean{ABNTEXsumario-abnt-6027-2012}
+
 \setboolean{ABNTEXsumario-tradicional}{false}
 \setboolean{ABNTEXsumario-abnt-6027-2012}{true}
+
 \DeclareOption{sumario=tradicional}{%
   \setboolean{ABNTEXsumario-tradicional}{true}%
   \setboolean{ABNTEXsumario-abnt-6027-2012}{false}
@@ -382,8 +385,12 @@
 \newcommand{\ABNTEXIBGEtabfontsize}{\ABNTEXfontereduzida}
 \AtBeginDocument{%
   % comandos auxiliares para manipular os captions dentro de \ABNTEXIBGEtab.
-  \newcommand{\ABNTEXconfigurecaptions}{\captionstyle[\raggedright]{}}
-  \newcommand{\ABNTEXconfigureseparator}{\captiondelim{\ABNTEXcaptiondelim}}
+  \newcommand{\ABNTEXconfigurecaptions}{%
+    \captionstyle[\raggedright]{}%
+  }
+  \newcommand{\ABNTEXconfigureseparator}{%
+    \captiondelim{\ABNTEXcaptiondelim}%
+  }
   % Define o comando \ABNTEXIBGEtab{}{}{}
   % com caption e legenda da largura do conteúdo tabular, tabular*, etc
   % Parece funcionar com qualque pacote
