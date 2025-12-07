@@ -999,12 +999,21 @@
 % atalhos para \ABNTEXpartpage ou \appendixpage*
 \newcommand{\ABNTEXpartapendices}{%
   \ABNTEXtocpartapendices%
-  \@ifstar{\appendixpage*}{\ABNTEXpartpage}%
+  \@ifstar{%
+    \appendixpage*%
+  }{%
+    \ABNTEXpartpage%
+  }
 }
 
 \newcommand{\ABNTEXpartanexos}{%
-\ABNTEXtocpartanexos%
-\@ifstar{\appendixpage*}{\ABNTEXpartpage}}
+  \ABNTEXtocpartanexos%
+  \@ifstar{%
+    \appendixpage*%
+  }{%
+    \ABNTEXpartpage%
+  }
+}
 
 % ------------------------------------------------------------------------
 % Comandos e ambientes de editoração CITAÇÃO, ALÍNEA, INCISO, ASSINATURA
@@ -1080,7 +1089,13 @@
 % \ABNTEXassinatura*{name} -> Creates the box with the line and name under
 %     it, but the box has no position assigned. However the line and the
 %     name are centralized with respect to each other.
-\newcommand{\ABNTEXassinatura}{\@ifstar{\ABNTEXsign}{\ABNTEXcsign}}
+\newcommand{\ABNTEXassinatura}{%
+  \@ifstar{%
+    \ABNTEXsign%
+  }{%
+    \ABNTEXcsign%
+  }%
+}
 % assinatura com estrela
 \newcommand{\ABNTEXsign}[1]{%
   \parbox[t]{\ABNTEXsignwidth}{%
@@ -1191,9 +1206,11 @@
 }
 
 \newcommand{\ABNTEXimprimirFolhaDeRosto}[1][\ABNTEXfolhaderostoname]{%
-  \@ifstar
+  \@ifstar{
     \ABNTEXimprimirFolhaDeRostostar
+  }{
     \ABNTEXimprimirFolhaDeRostonostar
+  }
 }
 
 \makeatother
