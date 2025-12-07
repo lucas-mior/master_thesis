@@ -396,7 +396,7 @@
   \abntexEnvEpigrafe\ABNTEXfontereduzida%
 }
 
-% Comando que simula a finalizacao de uma parte no bookmark e
+% Comando que simula a finalização de uma parte no bookmark e
 % adiciona espaco de \part no sumario
 \renewcommand{\ABNTEXphantompart}{%
   \bookmarksetup{startatroot}%
@@ -665,7 +665,7 @@
 }
 
 % ------------------------------------------------------------------------
-% Comandos e ambientes de editoracao APENDICES e ANEXOS
+% Comandos e ambientes de editoração APENDICES e ANEXOS
 % ------------------------------------------------------------------------
 % Imprime uma pagina de divisao no estilo parte
 \renewcommand{\ABNTEXpartpage}{%
@@ -1008,7 +1008,7 @@
 % q/utf8x-vs-utf8-inputenc
 \usepackage[T1]{fontenc}
 
-% Codificacao do documento (conversão automática dos acentos)
+% Codificação do documento (conversão automática dos acentos)
 \usepackage[utf8]{inputenc}
 
 \usepackage{graphicx}
