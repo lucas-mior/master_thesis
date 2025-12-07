@@ -2240,6 +2240,7 @@
   inputencoding=utf8, % q/listings-in-latex-with-utf-8-or-at-least-german-umlauts
   extendedchars=true, % q/having-problems-with-listings-and-utf-8-can-it-be-fixed
   literate=%
+    {*}{{*}}1
     {£}{{\pounds}}1
     {ß}{{\ss}}1
     {à}{{\`a}}1   {À}{{\`A}}1   {à}{{\`{a}}}1 {á}{{\'a}}1   {Á}{{\'A}}1
