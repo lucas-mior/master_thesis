@@ -20,9 +20,8 @@
 %
 % This work has the LPPL maintenance status `maintained'.
 %
-% The Current Maintainer of this work is the abnTeX2 team, led
-% by Lauro César Araujo. Further information are available on
-% https://www.abntex.net.br/
+% The Current Maintainer of this work is the abnTeX2 team, led by Lauro César
+% Araujo. Further information are available on https://www.abntex.net.br/
 %
 % This work consists of the file abntex2.cls.
 
