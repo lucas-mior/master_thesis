@@ -26,7 +26,7 @@
 % This work consists of the file abntex2.cls.
 
 % ------------------------------------------------------------------------
-% Declaração da classe abntex2 como uma extensao da classe memoir
+% Declaração da classe abntex2 como uma extensão da classe memoir
 % ------------------------------------------------------------------------
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{setup/abntex2}[2016/11/15 v1.9.7 setup/abntex2]
@@ -48,7 +48,7 @@
 }
 %
 % opções chapter=TITLE, section=TITLE, subsection=TITLE e
-% subsubsection=TITLE: titulos em letras maiusculas
+% subsubsection=TITLE: títulos em letras maiúsculas
 %
 \newboolean{ABNTEXupperchapter}
 \newboolean{ABNTEXuppersection}
@@ -105,8 +105,8 @@
 \LoadClass{memoir}
 
 % sumario=abnt-6027-2012:
-% Sumário conforme recomendação da ABNT NBR 6027:2012, que
-% soh pode ser usado com memoir v3.6k ou superior
+% Sumário conforme recomendação da ABNT NBR 6027:2012,
+% que só pode ser usado com memoir v3.6k ou superior
 % \settocpreprocessor \changes{v3.6k}{2012/09/18}{Added}
 \ifdefined\settocpreprocessor
 \else
@@ -140,7 +140,7 @@
 }
 
 % ------------------------------------------------------------------------
-% Pacotes adicionais e customizacoes gerais do memoir
+% Pacotes adicionais e customizações gerais do memoir
 % ------------------------------------------------------------------------
 
 % Do pacote de if/them/else
@@ -220,7 +220,7 @@
 % Hifenização e caracteres especiais portugues-brasil por padrao
 \RequirePackage[brazil]{babel}
 %
-% Nomes constantes do abnTeX2 em portugues (definicoes padroes)
+% Nomes constantes do abnTeX2 em portugues (definições padroes)
 \newcommand{\ABNTEXfolhaderostoname}{Folha de rosto}
 \newcommand{\ABNTEXepigraphname}{Ep\'igrafe}
 \newcommand{\ABNTEXdedicatorianame}{Dedicat\'oria}
@@ -279,7 +279,7 @@
   \renewcommand{\paragraphautorefname}{subsubsubsection}
 }
 
-% Pacote que permite realizar operacoes matematicas no codigo TeX
+% Pacote que permite realizar operações matematicas no codigo TeX
 \RequirePackage{calc}
 
 % Margens - NBR 14724/2011 - 5.1 Formato
@@ -350,7 +350,7 @@
 }
 
 % ------------------------------------------------------------------------
-% Configuracoes de layout
+% Configurações de layout
 % ------------------------------------------------------------------------
 
 % Notas de rodape - footnotes - NBR 14724/2011 - 5.2.1
@@ -445,7 +445,7 @@
 }
 
 % -----
-% Configuracoes do TOC
+% Configurações do TOC
 % -----
 % nivel de profundidade (implementa o quinto nivel - subsubsubsection)
 \setsecnumdepth{paragraph}
@@ -497,13 +497,13 @@
 % insere o hifen no anexo/apendice do toc
 \cftinsertcode{A}{\renewcommand{\cftchapteraftersnum}{\hfill\textendash\hfill}}
 
-% No caso de Sumario (TOC) tradicional
+% No caso de Sumário (TOC) tradicional
 \ifthenelse{\boolean{ABNTEXsumario-tradicional}}{%
   % se houver necessidade de alterar o comportamento
   % do sumário tradicional altere aqui.
 }{}
 
-% No caso de Sumario (TOC) especifico da ABNT-6027-2012
+% No caso de Sumário (TOC) especifico da ABNT-6027-2012
 
 \ifthenelse{\boolean{ABNTEXsumario-abnt-6027-2012}}{%
   \settocpreprocessor{chapter}{%
@@ -548,7 +548,7 @@
   }%
   \setlength{\cftbeforechapterskip}{1em}
   %
-  % Fontes das entradas do sumario
+  % Fontes das entradas do sumário
   %
   \renewcommand{\cftpartfont}{\bfseries\large}
   %
@@ -584,7 +584,7 @@
 }{}
 
 % Comando que simula a finalização de uma parte no bookmark e
-% adiciona espaco de \part no sumario
+% adiciona espaço de \part no sumário
 \newcommand{\ABNTEXphantompart}{%
   \bookmarksetup{startatroot}%
   \phantomsection%
@@ -705,7 +705,7 @@
 \chapterstyle{abnt}
 
 % -----
-% Declaracoes de cabecalhos
+% Declarações de cabecalhos
 % -----
 % Cabecalho padrao
 \makepagestyle{abntheadings}
@@ -939,7 +939,7 @@
 % Comandos e ambientes de editoração APENDICES e ANEXOS
 % ------------------------------------------------------------------------
 
-% Definicoes compartilhadas entre Apendices e Anexos
+% Definições compartilhadas entre Apendices e Anexos
 \newcommand\@switch[1]{%
   \@writefile{toc}{\renewcommand*{\cftappendixname}{#1 \space}}
 }
@@ -1035,7 +1035,7 @@
   \setlength{\ABNTEXcitacaorecuo}{4cm}
 }
 
-% Patch the `abntex2` citacao environment removing the extra space from its top
+% Patch the `abntex2` citação environment removing the extra space from its top
 % q/topsep-itemsep-partopsep-and-parsep-what-does-each-of-them-mean-and-wha
 % q/redefine-environment-to-be-a-synonym-for-another
 \newenvironment*{abntexEnvCitacao}[1][default]{%
