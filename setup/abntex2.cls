@@ -26,7 +26,7 @@
 % This work consists of the file abntex2.cls.
 
 % ------------------------------------------------------------------------
-% Declaracao da classe abntex2 como uma extensao da classe memoir
+% Declaração da classe abntex2 como uma extensao da classe memoir
 % ------------------------------------------------------------------------
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{setup/abntex2}[2016/11/15 v1.9.7 setup/abntex2]
@@ -217,7 +217,7 @@
 % Controla os bookmarks do PDF
 \RequirePackage{bookmark}
 
-% Hifenizacao e caracteres especiais portugues-brasil por padrao
+% Hifenização e caracteres especiais portugues-brasil por padrao
 \RequirePackage[brazil]{babel}
 %
 % Nomes constantes do abnTeX2 em portugues (definicoes padroes)
@@ -361,7 +361,7 @@
 % tamanho da fonte do footnote
 \renewcommand{\foottextfont}{\ABNTEXfontereduzida}
 
-% Numeracao continua das figuras
+% Numeração continua das figuras
 \ifthenelse{\equal{\ABNTEXisarticle}{true}}{%
   \counterwithout{section}{chapter}
   \counterwithout{figure}{section}
@@ -463,7 +463,7 @@
 \setafterparaskip{1.0\onelineskip plus 0.5\onelineskip minus 0.2\onelineskip}
 \setparaheadstyle{\normalfont\sffamily\raggedright}%
 
-% lista de ilustracoes
+% lista de ilustrações
 \renewcommand{\cftfigurename}{\figurename\space}
 \renewcommand*{\cftfigureaftersnum}{\hfill\textendash\hfill}
 
@@ -583,7 +583,7 @@
 
 }{}
 
-% Comando que simula a finalizacao de uma parte no bookmark e
+% Comando que simula a finalização de uma parte no bookmark e
 % adiciona espaco de \part no sumario
 \newcommand{\ABNTEXphantompart}{%
   \bookmarksetup{startatroot}%
@@ -596,7 +596,7 @@
 }
 % -----
 
-% Configuracao dos titulos dos capítulos
+% Configuração dos titulos dos capítulos
 % Novo estido do memoir
 % ABNT NBR 14724-2011 - 5.2.2-5.2.4; ABNT NBR 6024-2003 - 3.1-3.8
 \provideboolean{abntex@innonumchapter}
@@ -806,7 +806,7 @@
 }
 
 % ------------------------------------------------------------------------
-% Comandos e ambientes de editoracao PRE-TEXTUAIS
+% Comandos e ambientes de editoração PRE-TEXTUAIS
 % ------------------------------------------------------------------------
 
 % Ambiente para definicao da Capa
@@ -823,7 +823,7 @@
 }{}
 
 % Ficha catalografica
-% (Dados internacionais de catalogação-na-publicacao)
+% (Dados internacionais de catalogação-na-publicação)
 \newenvironment{abntexEnvFichacatalografica}{%
   \thispagestyle{empty}
   \begin{SingleSpacing}
@@ -839,7 +839,7 @@
   \ABNTEXPRIVATEclearpageifneeded
 }
 
-% Folha de aprovacao - NBR 14724/2011 - 4.2.1.3
+% Folha de aprovação - NBR 14724/2011 - 4.2.1.3
 \newenvironment{abntexEnvFolhadeaprovacao}[1][\ABNTEXfolhadeaprovacaoname]{%
   \clearpage%
   \ABNTEXPRIVATEbookmarkthis{#1}%
@@ -934,7 +934,7 @@
 }
 
 % ------------------------------------------------------------------------
-% Comandos e ambientes de editoracao APENDICES e ANEXOS
+% Comandos e ambientes de editoração APENDICES e ANEXOS
 % ------------------------------------------------------------------------
 
 % Definicoes compartilhadas entre Apendices e Anexos
@@ -1025,7 +1025,7 @@
 % Comandos e ambientes de editoração CITAÇÃO, ALÍNEA, INCISO, ASSINATURA
 % ------------------------------------------------------------------------
 
-% Citacao direta com mais de 3 linhas - ABNT NBR 10520/2002 - 5.3
+% Citação direta com mais de 3 linhas - ABNT NBR 10520/2002 - 5.3
 \newlength{\ABNTEXcitacaorecuo}% recuo de 4 cm da margem esquerda
 \ifthenelse{\equal{\ABNTEXistwocolumn}{true}}{%
   \setlength{\ABNTEXcitacaorecuo}{1.8cm}
