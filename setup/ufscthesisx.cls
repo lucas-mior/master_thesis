@@ -1708,17 +1708,23 @@
   \fi{\expandafter\futurelet\expandafter#1\expandafter\@gobble\space\relax}}
 
 % q/how-could-the-everypar-justification-statement-be-used
-\newbox\linebox \newbox\snapbox
+\newbox\linebox
+\newbox\snapbox
+
 \def\eatlines{%
   \setbox\linebox\lastbox % check the last line
-  \ifvoid\linebox
+  \ifvoid%
+    \linebox
   \else % if it’s not empty
-    \unskip\unpenalty % take whatever is
+    \unskip%
+    \unpenalty % take whatever is
     {\eatlines} % above it;
     \setbox\snapbox\hbox{\unhcopy\linebox}
     \ifdim\wd\snapbox<.98\wd\linebox
       \box\snapbox % take the one or the other,
-    \else \box\linebox \fi
+    \else
+      \box\linebox
+    \fi
   \fi
 }
 
