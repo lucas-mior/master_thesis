@@ -2326,48 +2326,6 @@
   {€}{{\EUR}}1
 }
 
-% Defining `lstset` parameters for multiple languages
-% & How can I highlight YAML code in a pretty way with listings?
-%
-% Usage \begin{lstlisting}[style=yaml_style] ... \end{lstlisting}
-%
-% q/defining-lstset-parameters-for-multiple-languages
-% q/how-can-i-highlight-yaml-code-in-a-pretty-way-with-listings
-\newcommand\YAMLcolonstyle{\color{red}\mdseries}
-\newcommand\YAMLkeystyle{\color{black}\bfseries}
-\newcommand\YAMLvaluestyle{\color{blue}\mdseries}
-\newcommand\ProcessThreeDashes{\llap{\color{cyan}\mdseries-{-}-}}
-
-\lstdefinestyle{yaml_style}{
-  frame=,
-  aboveskip=3mm,
-  belowskip=3mm,
-  showstringspaces=false,
-  numbers=left,
-  numberstyle=\color{gray},
-  breaklines=true,
-  breakatwhitespace=true,
-  tabsize=2,
-  keywords={true,false,null,y,n},
-  keywordstyle=\color{darkgray},
-  basicstyle={%
-    % assuming a key comes first
-    \small%
-    \fontfamily{zi4}%
-    \selectfont%
-    \YAMLkeystyle%
-  },
-  sensitive=false,
-  comment=[l]{\#},
-  comment=[l]{\/\/},
-  morecomment=[s]{/*}{*/},
-  commentstyle=\color{purple}\fontfamily{zi4}\selectfont,
-  stringstyle=\YAMLvaluestyle\fontfamily{zi4}\selectfont,
-  moredelim=[l][\color{orange}]{\&},
-  moredelim=[l][\color{magenta}]{*},
-  moredelim=**[il][\YAMLcolonstyle{:}\YAMLvaluestyle]{:} % switch to value style
-}
-
 \lstdefinestyle{ufscthesisx_style}{
   aboveskip=3mm,
   belowskip=3mm,
