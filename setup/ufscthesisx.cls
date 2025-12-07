@@ -2218,7 +2218,11 @@
   aboveskip=3mm,
   belowskip=3mm,
   showstringspaces=false,
-  basicstyle={\small\fontfamily{zi4}\selectfont},
+  basicstyle={%
+    \small%
+    \fontfamily{zi4}%
+    \selectfont%
+  },
   numbers=left,
   numberstyle=\color{gray},
   keywordstyle=\color{blue},
