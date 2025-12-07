@@ -239,7 +239,7 @@
 \newcommand{\ABNTEXfontename}{Fonte}
 \newcommand{\ABNTEXnotaname}{Nota}
 %
-\addto\captionsbrazil{% portugues-brasil
+\addto\captionsbrazil{%
   %% ajusta nomes padroes do babel
   \renewcommand{\bibname}{Refer\^encias}
   \renewcommand{\indexname}{\'Indice}
@@ -252,7 +252,7 @@
   \renewcommand{\subsubsectionautorefname}{subse{\c c}\~ao}
   \renewcommand{\paragraphautorefname}{subse{\c c}\~ao}
 }
-\addto\captionsenglish{% ingles
+\addto\captionsenglish{%
   %% adjusts names from abnTeX2
   \renewcommand{\ABNTEXfolhaderostoname}{Title page}
   \renewcommand{\ABNTEXepigraphname}{Epigraph}
@@ -366,7 +366,7 @@
   \counterwithout{section}{chapter}
   \counterwithout{figure}{section}
   \counterwithout{table}{section}
-}{%else
+}{
   \counterwithout{figure}{chapter}
   \counterwithout{table}{chapter}
 }
@@ -745,7 +745,7 @@
 \newcommand{\ABNTEXtextual}{%
   \ifthenelse{\equal{\ABNTEXisarticle}{true}}{%
     \pagestyle{plain}%
-  }{%else
+  }{
     \pagestyle{abntheadings}%
     \aliaspagestyle{chapter}{abntchapfirst}% customizing chapter pagestyle
   }
@@ -848,7 +848,7 @@
   \end{Spacing}\ABNTEXPRIVATEclearpageifneeded
 }
 
-% Dedicatoria
+% Dedicatória
 \newenvironment{abntexEnvDedicatoria}[1][]{%
   \ifthenelse{\equal{#1}{}}{%
     \ABNTEXPRIVATEbookmarkthis{\ABNTEXdedicatorianame}
