@@ -2326,43 +2326,6 @@
   {€}{{\EUR}}1
 }
 
-\lstdefinestyle{ufscthesisx_style}{
-  aboveskip=3mm,
-  belowskip=3mm,
-  backgroundcolor=\color{white},
-  basicstyle={%
-    % the size of the fonts that are used for the code
-    \small%
-    \fontfamily{zi4}%
-    \selectfont%
-  },
-  breakatwhitespace=true,
-  breaklines=true,
-  captionpos=t,
-  commentstyle=\color{mygreen},
-  columns=flexible,
-  deletekeywords={...},
-  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
-  extendedchars=true,
-  frame=tb,                        % adds a frame around the code
-  keepspaces=true,                 % possibly needs columns=flexible
-  keywordstyle=\color{blue},
-  language=Matlab,
-  morekeywords={*,...},
-  numbers=none,                    % possible values are (none, left, right)
-  numbersep=5pt,                   % how far the line-numbers are from the code
-  numberstyle=\tiny\color{mygray},
-  rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
-  showspaces=false,                % show spaces everywhere adding underscores
-  showstringspaces=false,          % underline spaces within strings only
-  showtabs=false,                  % show tabs within strings adding underscores
-  stepnumber=2,                    % the step between two line-numbers. If it's 1, each line will be numbered
-  stringstyle=\color{mymauve},     % string literal style
-  tabsize=4,
-  texcl=true,                      % Permite o uso de acentuação no código
-  title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
-}
-
 % q/how-to-highlight-python-syntax-in-latex-listings-lstinputlistings-command
 \definecolor{gray}{gray}{0.5}
 \colorlet{commentcolour}{green!50!black}
