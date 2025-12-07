@@ -1852,7 +1852,6 @@
   \relax%
 }
 
-% Change background color for text block
 % q/change-background-color-for-text-block
 \usepackage{framed}
 \usepackage[most]{tcolorbox}

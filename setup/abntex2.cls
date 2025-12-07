@@ -1,30 +1,30 @@
-%% This class is called `setup/abntex2.cls` and not `abntex2.cls`.
-%% It was developed specially for:
-%%   1. https://github.com/evandrocoan/ufscthesisx
-%%   2. https://github.com/evandrocoan/ufscthesisx-setup
-%%
-%% Always get the latest version from:
-%%   1. https://github.com/evandroforks/abntex2/blob/master/tex/latex/abntex2/abntex2.cls
-%%   2. wget https://raw.githubusercontent.com/evandroforks/abntex2/master/tex/latex/abntex2/abntex2.cls
-%%
-%% setup/abntex2.cls, v<VERSION> laurocesar
-%% Copyright 2012-<COPYRIGHT_YEAR> by abnTeX2 group at https://www.abntex.net.br/
-%%
-%% This work may be distributed and/or modified under the
-%% conditions of the LaTeX Project Public License, either version 1.3
-%% of this license or (at your option) any later version.
-%% The latest version of this license is in
-%%   http://www.latex-project.org/lppl.txt
-%% and version 1.3 or later is part of all distributions of LaTeX
-%% version 2005/12/01 or later.
-%%
-%% This work has the LPPL maintenance status `maintained'.
-%%
-%% The Current Maintainer of this work is the abnTeX2 team, led
-%% by Lauro César Araujo. Further information are available on
-%% https://www.abntex.net.br/
-%%
-%% This work consists of the file abntex2.cls.
+% This class is called `setup/abntex2.cls` and not `abntex2.cls`.
+% It was developed specially for:
+%   1. https://github.com/evandrocoan/ufscthesisx
+%   2. https://github.com/evandrocoan/ufscthesisx-setup
+%
+% Always get the latest version from:
+%   1. https://github.com/evandroforks/abntex2/blob/master/tex/latex/abntex2/abntex2.cls
+%   2. wget https://raw.githubusercontent.com/evandroforks/abntex2/master/tex/latex/abntex2/abntex2.cls
+%
+% setup/abntex2.cls, v<VERSION> laurocesar
+% Copyright 2012-<COPYRIGHT_YEAR> by abnTeX2 group at https://www.abntex.net.br/
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.3
+% of this license or (at your option) any later version.
+% The latest version of this license is in
+%   http://www.latex-project.org/lppl.txt
+% and version 1.3 or later is part of all distributions of LaTeX
+% version 2005/12/01 or later.
+%
+% This work has the LPPL maintenance status `maintained'.
+%
+% The Current Maintainer of this work is the abnTeX2 team, led
+% by Lauro César Araujo. Further information are available on
+% https://www.abntex.net.br/
+%
+% This work consists of the file abntex2.cls.
 
 % ------------------------------------------------------------------------
 % Declaracao da classe abntex2 como uma extensao da classe memoir
