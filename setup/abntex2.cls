@@ -819,7 +819,9 @@
 
 % Titulos em lingua estrangeira para artigos: ABNT NBR 6022:2018
 \ifthenelse{\equal{\ABNTEXisarticle}{true}}{%
-\renewcommand{\maketitlehookb}{\LARGE\center\textit{\abntextheforeigntitle}}
+  \renewcommand{\maketitlehookb}{%
+    \LARGE\center\textit{\abntextheforeigntitle}%
+  }
 }{}
 
 % Ficha catalografica
