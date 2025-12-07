@@ -1600,8 +1600,9 @@
   \setglossarystyle{long}%
   \renewenvironment{theglossary}{%
     \begin{longtable}[l]{@{}p{\dimexpr 3.0cm-\tabcolsep}p{0.78\hsize}}
-  }% <-- change the value here
-  {\end{longtable}}%
+  }{%
+    \end{longtable}%
+  }%
 }
 
 % Só um pequeno récuo em relação ao primeiro
@@ -1609,8 +1610,9 @@
   \setglossarystyle{long}%
   \renewenvironment{theglossary}{%
     \begin{longtable}[l]{@{}p{\dimexpr 2.0cm-\tabcolsep}p{0.86\hsize}}
-  }% <-- change the value here
-  {\end{longtable}}%
+  }{%
+    \end{longtable}%
+  }%
 }
 
 % Só dá entrada na lista. Ainda não funciona com o limarka
