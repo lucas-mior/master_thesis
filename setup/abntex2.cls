@@ -222,35 +222,35 @@
 %
 % Nomes constantes do abnTeX2 em portugues (definições padroes)
 \newcommand{\ABNTEXfolhaderostoname}{Folha de rosto}
-\newcommand{\ABNTEXepigraphname}{Ep\'igrafe}
-\newcommand{\ABNTEXdedicatorianame}{Dedicat\'oria}
+\newcommand{\ABNTEXepigraphname}{Epígrafe}
+\newcommand{\ABNTEXdedicatorianame}{Dedicatória}
 \newcommand{\ABNTEXerrataname}{Errata}
 \newcommand{\ABNTEXagradecimentosname}{Agradecimentos}
 \newcommand{\ABNTEXanexoname}{ANEXO}
 \newcommand{\ABNTEXanexosname}{Anexos}
-\newcommand{\ABNTEXapendicename}{AP\^ENDICE}
-\newcommand{\ABNTEXapendicesname}{Ap\^endices}
+\newcommand{\ABNTEXapendicename}{APÊNDICE}
+\newcommand{\ABNTEXapendicesname}{Apêndices}
 \newcommand{\ABNTEXorientadorname}{Orientador:}
 \newcommand{\ABNTEXcoorientadorname}{Coorientador:}
-\newcommand{\ABNTEXfolhadeaprovacaoname}{Folha de aprova\c{c}\~ao}
+\newcommand{\ABNTEXfolhadeaprovacaoname}{Folha de aprovação}
 \newcommand{\ABNTEXresumoname}{Resumo}
 \newcommand{\ABNTEXlistadesiglasname}{Lista de abreviaturas e siglas}
-\newcommand{\ABNTEXlistadesimbolosname}{Lista de s\'imbolos}
+\newcommand{\ABNTEXlistadesimbolosname}{Lista de símbolos}
 \newcommand{\ABNTEXfontename}{Fonte}
 \newcommand{\ABNTEXnotaname}{Nota}
 %
 \addto\captionsbrazil{%
   %% ajusta nomes padroes do babel
-  \renewcommand{\bibname}{Refer\^encias}
-  \renewcommand{\indexname}{\'Indice}
-  \renewcommand{\listfigurename}{Lista de ilustra\c{c}\~{o}es}
+  \renewcommand{\bibname}{Referências}
+  \renewcommand{\indexname}{Índice}
+  \renewcommand{\listfigurename}{Lista de ilustrações}
   \renewcommand{\listtablename}{Lista de tabelas}
   %% ajusta nomes usados com a macro \autoref
-  \renewcommand{\pageautorefname}{p\'agina}
-  \renewcommand{\sectionautorefname}{se{\c c}\~ao}
-  \renewcommand{\subsectionautorefname}{subse{\c c}\~ao}
-  \renewcommand{\subsubsectionautorefname}{subse{\c c}\~ao}
-  \renewcommand{\paragraphautorefname}{subse{\c c}\~ao}
+  \renewcommand{\pageautorefname}{página}
+  \renewcommand{\sectionautorefname}{seção}
+  \renewcommand{\subsectionautorefname}{subseção}
+  \renewcommand{\subsubsectionautorefname}{subseção}
+  \renewcommand{\paragraphautorefname}{subseção}
 }
 \addto\captionsenglish{%
   %% adjusts names from abnTeX2
@@ -809,7 +809,7 @@
 % Comandos e ambientes de editoração PRE-TEXTUAIS
 % ------------------------------------------------------------------------
 
-% Ambiente para definicao da Capa
+% Ambiente para definição da Capa
 \newenvironment{abntexEnvCapa}{%
   \begin{titlingpage}%
 }{%
@@ -817,7 +817,7 @@
   \cleardoublepage%
 }
 
-% Titulos em lingua estrangeira para artigos: ABNT NBR 6022:2018
+% Titulos em língua estrangeira para artigos: ABNT NBR 6022:2018
 \ifthenelse{\equal{\ABNTEXisarticle}{true}}{%
   \renewcommand{\maketitlehookb}{%
     \LARGE\center\textit{\abntextheforeigntitle}%
@@ -868,7 +868,7 @@
   \ABNTEXPRIVATEclearpageifneeded
 }
 
-% Epigrafe
+% Epígrafe
 \newenvironment{abntexEnvEpigrafe}[1][]{%
   \ifthenelse{\equal{#1}{}}{%
     \ABNTEXPRIVATEbookmarkthis{\ABNTEXepigraphname}
