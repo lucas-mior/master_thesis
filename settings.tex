@@ -346,23 +346,42 @@
 }% <<<2
 
 % q/changing-the-font-of-the-numbers-in-the-toc-in-the-memoir-class
-\renewcommand{\cftpartfont}{\ABNTEXpartfont\color{black}}
-\renewcommand{\cftpartpagefont}{\ABNTEXpartfont\color{black}}
-
-\renewcommand{\cftchapterfont}{\ABNTEXchapterfont\color{black}}
-\renewcommand{\cftchapterpagefont}{\ABNTEXchapterfont\color{black}}
-
-\renewcommand{\cftsectionfont}{\ABNTEXsectionfont\color{black}}
-\renewcommand{\cftsectionpagefont}{\ABNTEXsectionfont\color{black}}
-
-\renewcommand{\cftsubsectionfont}{\ABNTEXsubsectionfont\color{black}}
-\renewcommand{\cftsubsectionpagefont}{\ABNTEXsubsectionfont\color{black}}
-
-\renewcommand{\cftsubsubsectionfont}{\ABNTEXsubsubsectionfont\color{black}}
-\renewcommand{\cftsubsubsectionpagefont}{\ABNTEXsubsubsectionfont\color{black}}
-
-\renewcommand{\cftparagraphfont}{\ABNTEXsubsubsubsectionfont\color{black}}
-\renewcommand{\cftparagraphpagefont}{\ABNTEXsubsubsubsectionfont\color{black}}
+\renewcommand{\cftpartfont}{%
+  \ABNTEXpartfont\color{black}%
+}
+\renewcommand{\cftpartpagefont}{%
+  \ABNTEXpartfont\color{black}%
+}
+\renewcommand{\cftchapterfont}{%
+  \ABNTEXchapterfont\color{black}%
+}
+\renewcommand{\cftchapterpagefont}{%
+  \ABNTEXchapterfont\color{black}%
+}
+\renewcommand{\cftsectionfont}{%
+  \ABNTEXsectionfont\color{black}%
+}
+\renewcommand{\cftsectionpagefont}{%
+  \ABNTEXsectionfont\color{black}%
+}
+\renewcommand{\cftsubsectionfont}{%
+  \ABNTEXsubsectionfont\color{black}%
+}
+\renewcommand{\cftsubsectionpagefont}{%
+  \ABNTEXsubsectionfont\color{black}%
+}
+\renewcommand{\cftsubsubsectionfont}{%
+  \ABNTEXsubsubsectionfont\color{black}%
+}
+\renewcommand{\cftsubsubsectionpagefont}{%
+  \ABNTEXsubsubsectionfont\color{black}%
+}
+\renewcommand{\cftparagraphfont}{%
+  \ABNTEXsubsubsubsectionfont\color{black}%
+}
+\renewcommand{\cftparagraphpagefont}{%
+  \ABNTEXsubsubsubsectionfont\color{black}%
+}
 
 % Memoir has another mechanism for the job:
 % \cftsetindents{‹kind›}{indent}{numwidth}. Here kind is chapter, section, or
@@ -449,11 +468,21 @@
       }{%
         \ifthenelse{\boolean{abntex@apendiceousecao}}{%
           \centering%
-          \settowidth{\chapternamenumlength}{\printchaptername\printchapternum\afterchapternum}%
+          \settowidth{\chapternamenumlength}{%
+            \printchaptername%
+            \printchapternum%
+            \afterchapternum%
+          }%
           \ABNTEXchapterupperifneeded{##1}%
         }{%
-          \settowidth{\chapternamenumlength}{\printchaptername\printchapternum\afterchapternum}%
-          \parbox[t]{\columnwidth-\chapternamenumlength}{\ABNTEXchapterupperifneeded{##1}}}%
+          \settowidth{\chapternamenumlength}{%
+            \printchaptername%
+            \printchapternum%
+            \afterchapternum%
+          }%
+          \parbox[t]{\columnwidth-\chapternamenumlength}{%
+            \ABNTEXchapterupperifneeded{##1}}%
+          }%
       }%
     }
 
