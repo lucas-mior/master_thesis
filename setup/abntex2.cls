@@ -194,7 +194,7 @@
 \patchcmd\@itemenumerateoptional{\if@noitemarg}{\iftrue}{}{%
   \FAILEDCREATEENUMERAOPTIONAL%
 }
-\newcommand\enumerateoptionallabelformat[1]{#1~\@itemlabel}
+\newcommand\ABNTEXenumerateOptionalLabelFormat[1]{#1~\@itemlabel}
 
 % q/enumitem-revert-nolistsep
 % q/how-to-change-list-settings-globally
@@ -202,7 +202,7 @@
 \newlist{enumerateoptional}{enumerate}{1}
 \setlist[enumerateoptional]{%
   before=\let\@item\@itemenumerateoptional,
-  format=\enumerateoptionallabelformat,
+  format=\ABNTEXenumerateOptionalLabelFormat,
   label=\arabic*,
   align=left,
   leftmargin=*,
