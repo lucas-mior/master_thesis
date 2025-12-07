@@ -581,7 +581,7 @@
 % q/how-to-disable-automatic-indentation-on-new-paragraphs
 % q/how-to-disable-paragraphs-inside-my-environment-with-let-par-relax
 \xapptocmd{\resumo}{%
-  \setlength{\parindent}{0pt}\SingleSpacing\let\parOriginal\par\let\par\relax
+  \setlength{\parindent}{0pt}\SingleSpacing\let\parOriginal\par\let\par\relax%
 }{}{}
 \xpretocmd{\endresumo}{\endgraf}{}{}
 

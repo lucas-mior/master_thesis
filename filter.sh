@@ -1,7 +1,7 @@
 #!/bin/sh
 
 SRC=$(readlink -f "$1")
-DST="fig/$(basename "$1")"
+DST="./$(basename "$1")"
 
 if [ -z "$SRC" ] || [ -z "$DST" ]; then
     echo "Usage: $0 SOURCE"

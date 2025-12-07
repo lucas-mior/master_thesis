@@ -1155,12 +1155,12 @@
 % Útil para imprimir a Ficha Bibliografica.
 % Se estiver no modo oneside, a versao sem estrela é idêntica.
 \newenvironment{abntexEnvFolhaderosto}[1][\ABNTEXfolhaderostoname]{%
-  \clearpage\ABNTEXPRIVATEbookmarkthis{#1}
+  \clearpage\ABNTEXPRIVATEbookmarkthis{#1}%
 }{%
   \cleardoublepage
 }
 \newenvironment{abntexEnvFolhaderosto*}[1][\ABNTEXfolhaderostoname]{%
-  \clearpage\ABNTEXPRIVATEbookmarkthis{#1}
+  \clearpage\ABNTEXPRIVATEbookmarkthis{#1}%
 }{%
   \newpage
 }%
