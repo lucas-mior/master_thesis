@@ -1007,7 +1007,7 @@
 \@ifstar{\appendixpage*}{\ABNTEXpartpage}}
 
 % ------------------------------------------------------------------------
-% Comandos e ambientes de editoracao CITACAO, ALINEA, INCISO, ASSINATURA
+% Comandos e ambientes de editoração CITAÇÃO, ALÍNEA, INCISO, ASSINATURA
 % ------------------------------------------------------------------------
 
 % Citacao direta com mais de 3 linhas - ABNT NBR 10520/2002 - 5.3

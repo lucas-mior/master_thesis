@@ -654,26 +654,26 @@ subdividida em alíneas~\cite[4.2]{NBR6024:2012}:
 \begin{ABNTEXalineas}
 
   \item os diversos assuntos que não possuam título próprio, dentro de uma mesma
-  seção, devem ser subdivididos em alíneas;
+        seção, devem ser subdivididos em alíneas;
 
   \item o texto que antecede as alíneas termina em dois pontos;
   \item as alíneas devem ser indicadas alfabeticamente, em letra minúscula,
-  seguida de parêntese. Utilizam-se letras dobradas, quando esgotadas as
-  letras do alfabeto;
+        seguida de parêntese. Utilizam-se letras dobradas, quando esgotadas as
+        letras do alfabeto;
 
   \item as letras indicativas das alíneas devem apresentar recuo em relação à
-  margem esquerda;
+        margem esquerda;
 
   \item o texto da alínea deve começar por letra minúscula e terminar em
-  ponto-e-vírgula, exceto a última alínea que termina em ponto final;
+        ponto-e-vírgula, exceto a última alínea que termina em ponto final;
 
   \item o texto da alínea deve terminar em dois pontos, se houver subalínea;
 
   \item a segunda e as seguintes linhas do texto da alínea começa sob a
-  primeira letra do texto da própria alínea;
+        primeira letra do texto da própria alínea;
 
   \item subalíneas~\cite[4.3]{NBR6024:2012} devem ser conforme as alíneas a
-  seguir:
+        seguir:
 
   \begin{ABNTEXalineas}
     \item as subalíneas devem começar por travessão seguido de espaço;
@@ -681,11 +681,11 @@ subdividida em alíneas~\cite[4.2]{NBR6024:2012}:
     \item as subalíneas devem apresentar recuo em relação à alínea;
 
     \item o texto da subalínea deve começar por letra minúscula e terminar em
-    ponto-e-vírgula. A última subalínea deve terminar em ponto final, se não
-    houver alínea subsequente;
+          ponto-e-vírgula. A última subalínea deve terminar em ponto final,
+          se não houver alínea subsequente;
 
     \item a segunda e as seguintes linhas do texto da subalínea começam sob a
-    primeira letra do texto da própria subalínea.
+          primeira letra do texto da própria subalínea.
   \end{ABNTEXalineas}
 
   \item no \abnTeX{} estão disponíveis os ambientes \texttt{ABNTEXincisos} e
@@ -757,9 +757,14 @@ Para mais informações, consulte \textcite[p. 47-52 e 135]{memoir}.
 \section{Inclusão de código fonte}%
 \label{sec-codeinsert}
 
-\begin{lstlisting}[caption={[Leitura dos dados simulados e conversão para
-estados topológicos.]{Leitura dos dados simulados e conversão para estados
-topológicos. }},label={lst:leituradadossim}]
+\begin{lstlisting}[%
+  caption={[%
+    Leitura dos dados simulados e conversão para estados topológicos.
+  ]{%
+    Leitura dos dados simulados e conversão para estados topológicos.
+  }},
+  label={lst:leituradadossim}
+]
 % Pré definições iniciais
 nsub=3;  % Numero de Submódulos
 nbits=2*nsub; % Numero de bits necessários para representar os estados
@@ -776,7 +781,8 @@ state=fi(bin2dec(binstates),0,nbits,0); % Objeto numérico de ponto-fixo
 \end{lstlisting}
 
 \begin{lstlisting}[%
-language=Python,caption={[Python example]{Python example }}
+  language=Python,
+  caption={[Python example]{Python example }}
 ]
 import numpy as np
 
