@@ -1326,8 +1326,8 @@
   \newlistentry{quadro}{loq}{0}
 
   % q/how-to-have-a-dynamic-cft-numwidth-i-e-accordingly-to-the-number-size
-  \newlength\cftquadrooldnumwidth
-  \setlength\cftquadrooldnumwidth{\cftquadronumwidth}
+  \newlength{\cftquadrooldnumwidth}
+  \setlength{\cftquadrooldnumwidth}{\cftquadronumwidth}
 
   % Calculate the size of the header
   % q/what-is-the-use-of-percent-signs-at-the-end-of-lines
@@ -1335,36 +1335,38 @@
     \renewcommand\cftquadropresnum{\quadrosname~}%
 
     % q/what-is-the-plain-tex-equivalent-of-settowidth
-    \newlength\cftquadroinitialnumwidth
-    \settowidth\cftquadroinitialnumwidth{%
+    \newlength{\cftquadroinitialnumwidth}
+    \settowidth{\cftquadroinitialnumwidth}{%
       \cftquadropresnum\cftquadroaftersnum ab%
     }%
-    \setlength\cftquadronumwidth{%
+    \setlength{\cftquadronumwidth}{%
       \dimexpr\cftquadrooldnumwidth+\cftquadroinitialnumwidth%
     }%
-    \renewcommand\cftquadroaftersnum{\hfill\textendash\hfill}%
+    \renewcommand{\cftquadroaftersnum}{%
+      \hfill\textendash\hfill%
+    }%
   }
 
   % q/how-to-automatically-add-text-immediately-after-begindocument
   \AtBeginDocument{\calculatelquadrosheader}
 
   % q/how-to-have-a-dynamic-cft-numwidth-i-e-accordingly-to-the-number-size
-  \newlength\cftfigureoldnumwidth
-  \setlength\cftfigureoldnumwidth{\cftfigurenumwidth}
+  \newlength{\cftfigureoldnumwidth}
+  \setlength{\cftfigureoldnumwidth}{\cftfigurenumwidth}
 
   % Calculate the size of the header
   % q/what-is-the-use-of-percent-signs-at-the-end-of-lines
   % q/list-of-figures-how-to-add-caption-label
   \newcommand{\calculatelfigureheader}{%
     % q/what-is-the-plain-tex-equivalent-of-settowidth
-    \newlength\cftfigureinitialnumwidth
-    \settowidth\cftfigureinitialnumwidth{%
+    \newlength{\cftfigureinitialnumwidth}
+    \settowidth{\cftfigureinitialnumwidth}{%
       \cftfigurepresnum\cftfigureaftersnum a%
     }%
-    \setlength\cftfigurenumwidth{%
+    \setlength{\cftfigurenumwidth}{%
       \dimexpr\cftfigureoldnumwidth+\cftfigureinitialnumwidth%
     }%
-    \renewcommand\cftfigureaftersnum{%
+    \renewcommand{\cftfigureaftersnum}{%
       \hfill\textendash\hfill%
     }%
   }
@@ -1373,16 +1375,16 @@
   \AtBeginDocument{\calculatelfigureheader}
 
   % q/how-to-have-a-dynamic-cft-numwidth-i-e-accordingly-to-the-number-size
-  \newlength\cfttableoldnumwidth
-  \setlength\cfttableoldnumwidth{\cfttablenumwidth}
+  \newlength{\cfttableoldnumwidth}
+  \setlength{\cfttableoldnumwidth}{\cfttablenumwidth}
 
   % Calculate the size of the header
   % q/what-is-the-use-of-percent-signs-at-the-end-of-lines
   \newcommand{\calculateltableheader}{%
     % q/what-is-the-plain-tex-equivalent-of-settowidth
-    \newlength\cfttableinitialnumwidth
-    \settowidth\cfttableinitialnumwidth{\cfttablepresnum\cfttableaftersnum a}%
-    \setlength\cfttablenumwidth{%
+    \newlength{\cfttableinitialnumwidth}
+    \settowidth{\cfttableinitialnumwidth}{\cfttablepresnum\cfttableaftersnum a}%
+    \setlength{\cfttablenumwidth}{%
       \dimexpr\cfttableoldnumwidth+\cfttableinitialnumwidth%
     }%
     \renewcommand\cfttableaftersnum{\hfill\textendash\hfill}%
@@ -1448,8 +1450,8 @@
   \endgroup
 
   % q/why-the-empty-space-size-is-increasing-each-call
-  \newlength\cftlstlistingoldnumwidth
-  \setlength\cftlstlistingoldnumwidth{\cftlstlistingnumwidth}
+  \newlength{\cftlstlistingoldnumwidth}
+  \setlength{\cftlstlistingoldnumwidth}{\cftlstlistingnumwidth}
 
   % Calculate the size of the header
   % q/what-is-the-use-of-percent-signs-at-the-end-of-lines
@@ -1457,8 +1459,8 @@
     \renewcommand\cftlstlistingpresnum{\lstlistingname~}%
 
     % q/what-is-the-plain-tex-equivalent-of-settowidth
-    \newlength\cftlstlistinginitialnumwidth
-    \settowidth\cftlstlistinginitialnumwidth{%
+    \newlength{\cftlstlistinginitialnumwidth}
+    \settowidth{\cftlstlistinginitialnumwidth}{%
       \cftlstlistingpresnum\cftlstlistingaftersnum ab%
     }%
     \setlength\cftlstlistingnumwidth{%
