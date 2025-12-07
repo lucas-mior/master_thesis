@@ -47,7 +47,7 @@
   \PassOptionsToClass{twocolumn}{memoir}%}
 }
 %
-% Opcoes chapter=TITLE, section=TITLE, subsection=TITLE e
+% opções chapter=TITLE, section=TITLE, subsection=TITLE e
 % subsubsection=TITLE: titulos em letras maiusculas
 %
 \newboolean{ABNTEXupperchapter}
@@ -93,7 +93,7 @@
   \setboolean{ABNTEXsumario-tradicional}{false}
 }
 %
-% Repassa demais opcoes a memoir
+% Repassa demais opções a memoir
 %
 \DeclareOption*{%
   \PassOptionsToClass{\CurrentOption}{memoir}%
@@ -112,10 +112,10 @@
 \fi
 
 % ------------------------------------------------------------------------
-% Comandos para tratamento de opcoes proprias
+% Comandos para tratamento de opções proprias
 % ------------------------------------------------------------------------
 
-% Comandos para controlar as opcoes de titulos com letras maiusculas
+% Comandos para controlar as opções de titulos com letras maiusculas
 
 % pacote que prove \MakeTextUppercase
 \RequirePackage{textcase}
