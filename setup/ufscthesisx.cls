@@ -1593,7 +1593,7 @@
 \renewcommand{\glossarypreamble}{\vspace{-0.2cm}}
 
 \providecommand{\imprimirnivel}{}
-\newcommand{\nivel}[1]{\renewcommand{\imprimirnivel}{#1}}
+\newcommand{\UFSCnivel}[1]{\renewcommand{\imprimirnivel}{#1}}
 
 % Criação de estilo
 \newglossarystyle{UFSClong1}{% modificado de a/166209/151962
@@ -1633,7 +1633,7 @@
 
 % imprime glossário
 % q/printnoidxglossaries-vs-printglossaries
-\newcommand{\imprimirglossario}{
+\newcommand{\UFSCimprimirglossario}{
   \cleardoublepage
   \pdfbookmark[0]{\glossaryname}{glo}
   \printnoidxglossary[%
@@ -1869,7 +1869,7 @@
 %
 % Usage:
 % 1. Add `B` on the borders and `^` before each column definition.
-% 2. `\rowstyle{\bfseries}` before the row you want to bold.
+% 2. `\UFSCrowStyle{\bfseries}` before the row you want to bold.
 %
 % Example:
 % \begin{tabularx}{\linewidth}
@@ -1881,7 +1881,7 @@
 %
 % \hline
 %
-% \rowstyle{\bfseries}
+% \UFSCrowStyle{\bfseries}
 % Riscos  & 1 & 2 & 3 & Estratégia de resposta & Ações de prevenção \\ \hline
 %
 %
@@ -1889,7 +1889,7 @@
 \usepackage{array}
 \newcolumntype{B}{>{\global\let\currentrowstyle\relax}}
 \newcolumntype{^}{>{\currentrowstyle}}
-\newcommand{\rowstyle}[1]{%
+\newcommand{\UFSCrowStyle}[1]{%
   \gdef\currentrowstyle{#1}#1\ignorespaces
 }
 
@@ -2002,11 +2002,11 @@
 % Allow to push long words on new lines
 % when they do not fit entirely on the current line.
 % q/push-long-words-in-a-new-line
-\newcommand{\lword}[1]{%
+\newcommand{\UFSClongWord}[1]{%
   \leavevmode\nobreak\hskip0pt %
   plus\linewidth\penalty50\hskip0pt plus-\linewidth\nobreak{#1}%
 }
-\newcommand{\lurl}[1]{%
+\newcommand{\UFSClongURL}[1]{%
   \leavevmode\nobreak\hskip0pt %
   plus\linewidth\penalty50\hskip0pt plus-\linewidth\nobreak{\url{#1}}%
 }
