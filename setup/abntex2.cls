@@ -1143,10 +1143,11 @@
 }
 
 % Folha de rosto
-%   usar \ABNTEXimprimirFolhaDeRosto* casodeseje imprimir algo no verso da
-%   página no caso de estar no modo twoside. Util para imprimir a Ficha
-%   Bibliografica. Porem, se estiver no modo oneside, a versao sem estrela
-%   é identica.
+% usar \ABNTEXimprimirFolhaDeRosto*
+% caso deseje imprimir algo no verso da página
+% no caso de estar no modo twoside.
+% Útil para imprimir a Ficha Bibliografica.
+% Se estiver no modo oneside, a versao sem estrela é idêntica.
 \newenvironment{abntexEnvFolhaderosto}[1][\ABNTEXfolhaderostoname]{%
   \clearpage\ABNTEXPRIVATEbookmarkthis{#1}
 }{%
@@ -1158,7 +1159,7 @@
   \newpage
 }%
 
-% Conteudo padrao da Folha de Rosto
+% Conteúdo padrao da Folha de Rosto
 \newcommand{\ABNTEXfolhaderostocontent}{%
   \begin{center}
 
