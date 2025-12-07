@@ -1352,15 +1352,15 @@
 \@ifclassloaded{memoir}{%
   % q/remove-list-of-newfloat-from-toc
   \newcommand{\AdjustForMemoir}[1]{%
-  \csletcs{kept@listof#1}{listof#1}%
-  \csdef{listof#1}{%
-    \@ifstar{
-      \csappto{newfloat@listof#1@hook}{\append@star}%
-      \csuse{kept@listof#1}%
-    }{%
-      \csuse{kept@listof#1}%
-    }%
-  }
+    \csletcs{kept@listof#1}{listof#1}%
+    \csdef{listof#1}{%
+      \@ifstar{
+        \csappto{newfloat@listof#1@hook}{\append@star}%
+        \csuse{kept@listof#1}%
+      }{%
+        \csuse{kept@listof#1}%
+      }%
+    }
   }
   \def\append@star#1{#1*}
   \AdjustForMemoir{quadro}
