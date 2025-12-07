@@ -627,6 +627,19 @@ A transformada unilateral de Laplace é definida na \autoref{eq:laplace_uni}.
   \mathcal{L}\{f(t)\}(s) = \int_{0}^{\infty} e^{-st} f(t)\, dt
 \end{equation}
 
+Pode-se utilizar a biblioteca \textit{sympy} para calcular algumas
+transformadas:
+\lstinputlisting[%
+  language=python,
+  caption={%
+    \EngAndPor{%
+      Laplace transforms using SymPy
+    }{%
+      Transformadas de laplace usando sympy
+    }
+  },
+]{listings/laplace.py}
+
 Escreva expressões matemáticas entre \$ e \$, como em 
 
 $\lim_{x \to \infty}
@@ -788,6 +801,7 @@ import numpy as np
 
 def incmatrix(genl1,genl2):
     # comentário letra A: áÁàãâÂ
+    # comentário pi: $ \pi = 3.14 \neq \tau$
     m = len(genl1)
     n = len(genl2)
     M = None #to become the incidence matrix

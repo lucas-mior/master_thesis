@@ -2214,6 +2214,7 @@
 \lstset{
   frame=,
   language=Python,% default language
+  texcl=true,
   upquote=true,
   aboveskip=3mm,
   belowskip=3mm,
