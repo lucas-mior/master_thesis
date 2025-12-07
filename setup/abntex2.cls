@@ -1038,28 +1038,28 @@
 
 % Ambiente para alineas e e subalineas (incisos)
 % ABNT NBR 6024/2012 - 4.2 e 4.3
-\newlist{alineas}{enumerate}{2}
-\setlist[alineas,1]{%
+\newlist{ABNTEXalineas}{enumerate}{2}
+\setlist[ABNTEXalineas,1]{%
   label={\alph*)},
   topsep=0pt,
   itemsep=0pt,
   leftmargin=\parindent+\labelwidth-\labelsep
 }%
-\setlist[alineas,2]{%
+\setlist[ABNTEXalineas,2]{%
   label={--},
   topsep=0pt,
   itemsep=0pt,
   leftmargin=*
 }
-\newlist{subalineas}{enumerate}{1}
-\setlist[subalineas,1]{%
+\newlist{ABNTEXsubalineas}{enumerate}{1}
+\setlist[ABNTEXsubalineas,1]{%
   label={--},
   topsep=0pt,
   itemsep=0pt,
   leftmargin=*
 }%
-\newlist{incisos}{enumerate}{1}
-\setlist[incisos,1]{%
+\newlist{ABNTEXincisos}{enumerate}{1}
+\setlist[ABNTEXincisos,1]{%
   label={--},
   topsep=0pt,
   itemsep=0pt,
