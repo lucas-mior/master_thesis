@@ -194,7 +194,7 @@
 \patchcmd\@itemABNTEXenumerateOptional{\if@noitemarg}{\iftrue}{}{%
   \FAILEDCREATEENUMERAOPTIONAL%
 }
-\newcommand\ABNTEXenumerateOptionalLabelFormat[1]{#1~\@itemlabel}
+\newcommand{\ABNTEXenumerateOptionalLabelFormat}[1]{#1~\@itemlabel}
 
 % q/enumitem-revert-nolistsep
 % q/how-to-change-list-settings-globally

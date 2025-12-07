@@ -2001,11 +2001,11 @@
 % Allow to push long words on new lines
 % when they do not fit entirely on the current line.
 % q/push-long-words-in-a-new-line
-\newcommand\lword[1]{%
+\newcommand{\lword}[1]{%
   \leavevmode\nobreak\hskip0pt %
   plus\linewidth\penalty50\hskip0pt plus-\linewidth\nobreak{#1}%
 }
-\newcommand\lurl[1]{%
+\newcommand{\lurl}[1]{%
   \leavevmode\nobreak\hskip0pt %
   plus\linewidth\penalty50\hskip0pt plus-\linewidth\nobreak{\url{#1}}%
 }
