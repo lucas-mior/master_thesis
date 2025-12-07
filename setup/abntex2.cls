@@ -240,12 +240,12 @@
 \newcommand{\ABNTEXnotaname}{Nota}
 %
 \addto\captionsbrazil{%
-  %% ajusta nomes padroes do babel
+  % ajusta nomes padroes do babel
   \renewcommand{\bibname}{Referências}
   \renewcommand{\indexname}{Índice}
   \renewcommand{\listfigurename}{Lista de ilustrações}
   \renewcommand{\listtablename}{Lista de tabelas}
-  %% ajusta nomes usados com a macro \autoref
+  % ajusta nomes usados com a macro \autoref
   \renewcommand{\pageautorefname}{página}
   \renewcommand{\sectionautorefname}{seção}
   \renewcommand{\subsectionautorefname}{subseção}
@@ -253,7 +253,7 @@
   \renewcommand{\paragraphautorefname}{subseção}
 }
 \addto\captionsenglish{%
-  %% adjusts names from abnTeX2
+  % adjusts names from abnTeX2
   \renewcommand{\ABNTEXfolhaderostoname}{Title page}
   \renewcommand{\ABNTEXepigraphname}{Epigraph}
   \renewcommand{\ABNTEXdedicatorianame}{Dedication}
@@ -271,7 +271,7 @@
   \renewcommand{\ABNTEXlistadesimbolosname}{List of symbols}
   \renewcommand{\ABNTEXfontename}{Source}
   \renewcommand{\ABNTEXnotaname}{Note}
-  %% adjusts names used by \autoref
+  % adjusts names used by \autoref
   \renewcommand{\pageautorefname}{page}
   \renewcommand{\sectionautorefname}{section}
   \renewcommand{\subsectionautorefname}{subsection}
