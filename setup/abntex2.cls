@@ -1115,8 +1115,14 @@
   }%
 }
 % assinatura sem estrela
-\newcommand{\ABNTEXcsign}[1]%
-  {\begingroup\par\centering\ABNTEXsign{#1}\par\endgroup}
+\newcommand{\ABNTEXcsign}[1]{%
+  \begingroup%
+    \par%
+    \centering%
+    \ABNTEXsign{#1}%
+    \par%
+  \endgroup
+}
 
 % ------------------------------------------------------------------------
 % IMPRESSOES PADROES DE CAPA E FOLHA DE ROSTO
@@ -1130,7 +1136,7 @@
 
     \vfill
     \begin{center}
-    \ABNTEXchapterfont\bfseries\LARGE\thetitle
+      \ABNTEXchapterfont\bfseries\LARGE\thetitle
     \end{center}
     \vfill
 
