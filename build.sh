@@ -29,8 +29,7 @@ case $target in
     trap cleanup_build EXIT
 
     update_size() {
-        rows=$(tput lines)
-        status_row=$rows
+        status_row=$(tput lines)
     }
     trap update_size WINCH
     update_size
