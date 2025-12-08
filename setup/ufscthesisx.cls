@@ -428,49 +428,49 @@
 % in the previous line OR set standard
 % q/memoir-toc-indent-the-second-line-by-numberspace
 
-% `\cftlastnumwidth` and these `\cftsetindents` are defined by abntex2 class,
-% obeying the `ABNTEXsumario-abnt-6027-2012`. \newlength{\cftlastnumwidth}
-\setlength{\cftlastnumwidth}{\cftsubsubsectionnumwidth}
-\addtolength{\cftlastnumwidth}{1em}
+% `\ABNTEXcftLastNumWidth` and these `\cftsetindents` are defined by abntex2 class,
+% obeying the `ABNTEXsumario-abnt-6027-2012`. \newlength{\ABNTEXcftLastNumWidth}
+\setlength{\ABNTEXcftLastNumWidth}{\cftsubsubsectionnumwidth}
+\addtolength{\ABNTEXcftLastNumWidth}{1em}
 
 % http://www.tex.ac.uk/FAQ-tocloftwrong.html
 % Use \setlength\cftsectionnumwidth{4em} to override all these values
-\cftsetindents{part}         {0em}{\cftlastnumwidth}
-\cftsetindents{chapter}      {0em}{\cftlastnumwidth}
-\cftsetindents{section}      {0em}{\cftlastnumwidth}
-\cftsetindents{subsection}   {0em}{\cftlastnumwidth}
-\cftsetindents{subsubsection}{0em}{\cftlastnumwidth}
-\cftsetindents{paragraph}    {0em}{\cftlastnumwidth}
-\cftsetindents{subparagraph} {0em}{\cftlastnumwidth}
+\cftsetindents{part}         {0em}{\ABNTEXcftLastNumWidth}
+\cftsetindents{chapter}      {0em}{\ABNTEXcftLastNumWidth}
+\cftsetindents{section}      {0em}{\ABNTEXcftLastNumWidth}
+\cftsetindents{subsection}   {0em}{\ABNTEXcftLastNumWidth}
+\cftsetindents{subsubsection}{0em}{\ABNTEXcftLastNumWidth}
+\cftsetindents{paragraph}    {0em}{\ABNTEXcftLastNumWidth}
+\cftsetindents{subparagraph} {0em}{\ABNTEXcftLastNumWidth}
 
 \newlength{\cftnumberboxnumberwidth}
 \setlength{\cftnumberboxnumberwidth}{2em}
 \renewcommand{\ABNTEXtocprintchapter}{%
-  \addtocontents{toc}{\cftsetindents{chapter}{0em}{\cftlastnumwidth}}
+  \addtocontents{toc}{\cftsetindents{chapter}{0em}{\ABNTEXcftLastNumWidth}}
 }
 
 \renewcommand{\ABNTEXtocinnonumchapter}{%
   \addtocontents{toc}{%
-    \cftsetindents{chapter}{\cftlastnumwidth}{\cftnumberboxnumberwidth}
+    \cftsetindents{chapter}{\ABNTEXcftLastNumWidth}{\cftnumberboxnumberwidth}
   }%
   \cftinserthook{toc}{A}
 }
 \renewcommand{\ABNTEXtocprintchapternonum}{%
   \addtocontents{toc}{%
-    \cftsetindents{chapter}{\cftlastnumwidth}{\cftnumberboxnumberwidth}
+    \cftsetindents{chapter}{\ABNTEXcftLastNumWidth}{\cftnumberboxnumberwidth}
   }%
 }
 
 \renewcommand{\ABNTEXtocpartapendices}{%
   \addtocontents{toc}{%
-    \cftsetindents{chapter}{\cftlastnumwidth}{\cftnumberboxnumberwidth}
+    \cftsetindents{chapter}{\ABNTEXcftLastNumWidth}{\cftnumberboxnumberwidth}
   }%
   \cftinserthook{toc}{A}
 }
 
 \renewcommand{\ABNTEXtocpartanexos}{%
   \addtocontents{toc}{%
-    \cftsetindents{chapter}{\cftlastnumwidth}{\cftnumberboxnumberwidth}
+    \cftsetindents{chapter}{\ABNTEXcftLastNumWidth}{\cftnumberboxnumberwidth}
   }%
   \cftinserthook{toc}{A}
 }

@@ -393,11 +393,11 @@
 % q/memoir-indentation-of-unnumbered-sections-in-table-of-contents
 % q/memoir-toc-indent-the-second-line-by-numberspace
 %
-% `\cftlastnumwidth` and these `\cftsetindents` are defined by the abntex2
+% `\ABNTEXcftLastNumWidth` and these `\cftsetindents` are defined by the abntex2
 % class, obeying the `ABNTEXsumario-abnt-6027-2012`.
-% \newlength{\cftlastnumwidth}
-% \setlength{\cftlastnumwidth}{\cftsubsubsectionnumwidth}
-% \addtolength{\cftlastnumwidth}{-1em}
+% \newlength{\ABNTEXcftLastNumWidth}
+% \setlength{\ABNTEXcftLastNumWidth}{\cftsubsubsectionnumwidth}
+% \addtolength{\ABNTEXcftLastNumWidth}{-1em}
 
 % http://www.tex.ac.uk/FAQ-tocloftwrong.html
 % Use \setlength\cftsectionnumwidth{4em} to override all these values at once
@@ -408,8 +408,8 @@
     \setlength{\midchapskip}{20pt}
     \setlength{\afterchapskip}{15pt}
 
-    \ifx\chapternamenumlength\undefined{}
-      \newlength{\chapternamenumlength}
+    \ifx\ABNTEXchapterNameNumLength\undefined{}
+      \newlength{\ABNTEXchapterNameNumLength}
     \fi
 
     % tamanhos de fontes de chapter e part
@@ -468,19 +468,19 @@
       }{%
         \ifthenelse{\boolean{abntex@apendiceousecao}}{%
           \centering%
-          \settowidth{\chapternamenumlength}{%
+          \settowidth{\ABNTEXchapterNameNumLength}{%
             \printchaptername%
             \printchapternum%
             \afterchapternum%
           }%
           \ABNTEXchapterupperifneeded{##1}%
         }{%
-          \settowidth{\chapternamenumlength}{%
+          \settowidth{\ABNTEXchapterNameNumLength}{%
             \printchaptername%
             \printchapternum%
             \afterchapternum%
           }%
-          \parbox[t]{\columnwidth-\chapternamenumlength}{%
+          \parbox[t]{\columnwidth-\ABNTEXchapterNameNumLength}{%
             \ABNTEXchapterupperifneeded{##1}}%
           }%
       }%

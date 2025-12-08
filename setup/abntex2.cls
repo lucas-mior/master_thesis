@@ -390,13 +390,13 @@
   % Define o comando \ABNTEXIBGEtab{}{}{}
   % com caption e legenda da largura do conteúdo tabular, tabular*, etc
   % Parece funcionar com qualque pacote
-  \newsavebox{\myptabbox}
-  \newlength{\myptabboxwidth}
+  \newsavebox{\ABNTEXmyPtabBox}
+  \newlength{\ABNTEXmyPtabBoxWidth}
   \newcommand{\ABNTEXIBGEtab}[3]{%
-    \savebox{\myptabbox}{{\ABNTEXIBGEtabfontsize #2}}%
-    \settowidth{\myptabboxwidth}{\usebox{\myptabbox}}%
+    \savebox{\ABNTEXmyPtabBox}{{\ABNTEXIBGEtabfontsize #2}}%
+    \settowidth{\ABNTEXmyPtabBoxWidth}{\usebox{\ABNTEXmyPtabBox}}%
     \centering%
-    \parbox{\myptabboxwidth}{%
+    \parbox{\ABNTEXmyPtabBoxWidth}{%
       \ABNTEXconfigurecaptions
       #1%
       \par%
@@ -480,9 +480,9 @@
 % macros para configurar o Sumário conforme 6027-2012 ou tradicional cft
 \cftinsertcode{A}{}
 
-\newlength{\cftlastnumwidth}
-\setlength{\cftlastnumwidth}{\cftsubsubsectionnumwidth}
-\addtolength{\cftlastnumwidth}{1em}
+\newlength{\ABNTEXcftLastNumWidth}
+\setlength{\ABNTEXcftLastNumWidth}{\cftsubsubsectionnumwidth}
+\addtolength{\ABNTEXcftLastNumWidth}{1em}
 
 \newcommand{\ABNTEXtocprintchapter}{}
 \newcommand{\ABNTEXtocinnonumchapter}{}
@@ -516,30 +516,30 @@
 %
 \ifthenelse{\boolean{ABNTEXsumario-abnt-6027-2012}}{%
 
-  \cftsetindents{part}{0em}{\cftlastnumwidth}
-  \cftsetindents{chapter}{0em}{\cftlastnumwidth}
-  \cftsetindents{section}{0em}{\cftlastnumwidth}
-  \cftsetindents{subsection}{0em}{\cftlastnumwidth}
-  \cftsetindents{subsubsection}{0em}{\cftlastnumwidth}
-  \cftsetindents{paragraph}{0em}{\cftlastnumwidth}
-  \cftsetindents{subparagraph}{0em}{\cftlastnumwidth}
+  \cftsetindents{part}{0em}{\ABNTEXcftLastNumWidth}
+  \cftsetindents{chapter}{0em}{\ABNTEXcftLastNumWidth}
+  \cftsetindents{section}{0em}{\ABNTEXcftLastNumWidth}
+  \cftsetindents{subsection}{0em}{\ABNTEXcftLastNumWidth}
+  \cftsetindents{subsubsection}{0em}{\ABNTEXcftLastNumWidth}
+  \cftsetindents{paragraph}{0em}{\ABNTEXcftLastNumWidth}
+  \cftsetindents{subparagraph}{0em}{\ABNTEXcftLastNumWidth}
   %
   \renewcommand{\ABNTEXtocprintchapter}{%
-    \addtocontents{toc}{\cftsetindents{chapter}{0em}{\cftlastnumwidth}}}
+    \addtocontents{toc}{\cftsetindents{chapter}{0em}{\ABNTEXcftLastNumWidth}}}
   %
   \renewcommand{\ABNTEXtocinnonumchapter}{%
-    \addtocontents{toc}{\cftsetindents{chapter}{\cftlastnumwidth}{2em}}%
+    \addtocontents{toc}{\cftsetindents{chapter}{\ABNTEXcftLastNumWidth}{2em}}%
     \cftinserthook{toc}{A}%
   } %
   \renewcommand{\ABNTEXtocprintchapternonum}{%
-    \addtocontents{toc}{\cftsetindents{chapter}{\cftlastnumwidth}{2em}}%
+    \addtocontents{toc}{\cftsetindents{chapter}{\ABNTEXcftLastNumWidth}{2em}}%
   }%
   \renewcommand{\ABNTEXtocpartapendices}{%
-    \addtocontents{toc}{\cftsetindents{part}{\cftlastnumwidth}{2em}}
+    \addtocontents{toc}{\cftsetindents{part}{\ABNTEXcftLastNumWidth}{2em}}
     \cftinserthook{toc}{A}
   }%
   \renewcommand{\ABNTEXtocpartanexos}{%
-    \addtocontents{toc}{\cftsetindents{part}{\cftlastnumwidth}{2em}}
+    \addtocontents{toc}{\cftsetindents{part}{\ABNTEXcftLastNumWidth}{2em}}
     \cftinserthook{toc}{A}
   }%
   \setlength{\cftbeforechapterskip}{1em}
@@ -600,8 +600,8 @@
 \makechapterstyle{abnt}{%
   \renewcommand{\chapterheadstart}{}
 
-  \ifx \chapternamenumlength \undefined
-    \newlength{\chapternamenumlength}
+  \ifx \ABNTEXchapterNameNumLength \undefined
+    \newlength{\ABNTEXchapterNameNumLength}
   \fi
 
   % tamanhos de fontes de chapter e part
@@ -657,20 +657,20 @@
     }{%
     \ifthenelse{\boolean{abntex@apendiceousecao}}{%
         \centering%
-        \settowidth{\chapternamenumlength}{%
+        \settowidth{\ABNTEXchapterNameNumLength}{%
           \printchaptername%
           \printchapternum%
           \afterchapternum%
         }%
         \ABNTEXchapterupperifneeded{##1}%
       }{%
-        \settowidth{\chapternamenumlength}{%
+        \settowidth{\ABNTEXchapterNameNumLength}{%
           \printchaptername%
           \printchapternum%
           \afterchapternum%
         }%
         \parbox[t]{%
-          \columnwidth-\chapternamenumlength%
+          \columnwidth-\ABNTEXchapterNameNumLength%
         }{%
           \ABNTEXchapterupperifneeded{##1}%
         }
