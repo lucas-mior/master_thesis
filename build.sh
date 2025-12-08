@@ -13,29 +13,20 @@ case $target in
     start_sec=$(date +%s)
     start_nsec=$(date +%N)
 
-    pdflatex -halt-on-error -interaction=nonstopmode main.tex
-    if [ ! -e "main.pdf" ]; then
+    while pdflatex -halt-on-error -interaction=nonstopmode main.tex \
+          2>&1 | grep -v "/usr/share/tex" \
+          | grep "Please (re)run Biber"; do
+        printf "%b" "$BLU"
         biber main
-        pdflatex -halt-on-error -interaction=nonstopmode main.tex
-        if [ ! -e "main.pdf" ]; then
-            exit 1
-        fi
-    fi
+        printf "%b" "$RED"
+    done
 
-    # while pdflatex -halt-on-error -interaction=nonstopmode main.tex \
-    #       2>&1 | grep -v "/usr/share/tex" \
-    #       | grep "Please (re)run Biber"; do
-    #     printf "%b" "$BLU"
-    #     biber main
-    #     printf "%b" "$RED"
-    # done
-
-    # printf "%b" "$GRE"
-    # while pdflatex -halt-on-error -interaction=nonstopmode main.tex \
-    #       2>&1 | grep -v "/usr/share/tex" \
-    #       | grep -i "Rerun LaTeX."; do
-    #     printf "%b" "$PUR"
-    # done
+    printf "%b" "$GRE"
+    while pdflatex -halt-on-error -interaction=nonstopmode main.tex \
+          2>&1 | grep -v "/usr/share/tex" \
+          | grep -i "Rerun LaTeX."; do
+        printf "%b" "$PUR"
+    done
 
     end_sec=$(date +%s)
     end_nsec=$(date +%N)
@@ -46,6 +37,11 @@ case $target in
 
     printf "%b" "$RESET"
     echo "Total compilation time: ${elapsed} s"
+    if [ ! -e "main.pdf" ]; then
+        error "Error compiling main.tex"
+        exit 1
+    fi
+
     ;;
 "check")
     chktex -n17 -n8 -n9 -n10 -n44 "main.tex"
