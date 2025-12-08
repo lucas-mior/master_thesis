@@ -1007,20 +1007,12 @@
 % atalhos para \ABNTEXpartpage ou \appendixpage*
 \newcommand{\ABNTEXpartapendices}{%
   \ABNTEXtocpartapendices%
-  \@ifstar{%
-    \appendixpage*%
-  }{%
-    \ABNTEXpartpage%
-  }
+  \@ifstar \appendixpage* \ABNTEXpartpage
 }
 
 \newcommand{\ABNTEXpartanexos}{%
   \ABNTEXtocpartanexos%
-  \@ifstar{%
-    \appendixpage*%
-  }{%
-    \ABNTEXpartpage%
-  }
+  \@ifstar \appendixpage* \ABNTEXpartpage
 }
 
 % ------------------------------------------------------------------------
@@ -1098,11 +1090,7 @@
 %     it, but the box has no position assigned. However the line and the
 %     name are centralized with respect to each other.
 \newcommand{\ABNTEXassinatura}{%
-  \@ifstar{%
-    \ABNTEXsign%
-  }{%
-    \ABNTEXcsign%
-  }%
+  \@ifstar \ABNTEXsign \ABNTEXcsign
 }
 % assinatura com estrela
 \newcommand{\ABNTEXsign}[1]{%
@@ -1221,11 +1209,7 @@
 }
 
 \newcommand{\ABNTEXimprimirFolhaDeRosto}[1][\ABNTEXfolhaderostoname]{%
-  \@ifstar{
-    \ABNTEXimprimirFolhaDeRostostar
-  }{
-    \ABNTEXimprimirFolhaDeRostonostar
-  }
+  \@ifstar \ABNTEXimprimirFolhaDeRostostar \ABNTEXimprimirFolhaDeRostonostar
 }
 
 \makeatother
