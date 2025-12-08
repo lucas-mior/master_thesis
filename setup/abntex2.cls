@@ -899,7 +899,7 @@
   \setlength{\absparindent}{0pt}
 }
 
-\newenvironment{resumo}[1][\ABNTEXresumoname]{%
+\newenvironment{abntexEnvResumo}[1][\ABNTEXresumoname]{%
   \ABNTEXPRIVATEbookmarkthis{#1}
   \renewcommand{\abstractnamefont}{\chaptitlefont}
   \renewcommand{\abstractname}{\ABNTEXchapterupperifneeded{#1}}

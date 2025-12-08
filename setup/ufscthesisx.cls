@@ -564,7 +564,7 @@
 \newcommand{\secref}[1]{Seção~\ref{#1}}     % Cross-reference of equations
 \newcommand{\defref}[1]{Definição~\ref{#1}} %
 
-\renewenvironment{resumo}[1][\ABNTEXresumoname]{%
+\renewenvironment{abntexEnvResumo}[1][\ABNTEXresumoname]{%
   % Fixed double bookmark entries as `\ABNTEXpretextualchapter`
   % bellow is already calling `\ABNTEXPRIVATEbookmarkthis`
   % \ABNTEXPRIVATEbookmarkthis{#1}
@@ -580,10 +580,10 @@
 % q/changing-font-size-in-an-example-environment
 % q/how-to-disable-automatic-indentation-on-new-paragraphs
 % q/how-to-disable-paragraphs-inside-my-environment-with-let-par-relax
-\xapptocmd{\resumo}{%
+\xapptocmd{\abntexEnvResumo}{%
   \setlength{\parindent}{0pt}\SingleSpacing\let\parOriginal\par\let\par\relax%
 }{}{}
-\xpretocmd{\endresumo}{\endgraf}{}{}
+\xpretocmd{\endabntexEnvResumo}{\endgraf}{}{}
 
 % \UFSCimprimirPalavrasChave{Palavras-chaves}{latex. abntex. editoração de texto.}
 \newcommand{\UFSCimprimirPalavrasChave}[2]{%
