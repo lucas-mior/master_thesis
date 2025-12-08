@@ -18,5 +18,6 @@ rm -rf .git-rewrite
 
 FILTER_BRANCH_SQUELCH_WARNING=1 \
 git filter-branch -f --tree-filter "
+mkdir -p $(dirname "$DST")
 cp -f \"$SRC\" \"$DST\"
 " -- --all
