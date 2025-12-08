@@ -112,9 +112,11 @@ case $target in
         exit 1
     fi
     ;;
+
 "check")
     chktex -n17 -n8 -n9 -n10 -n44 "main.tex"
     ;;
+
 "clear"|"clean")
     set -e
     if [ ! -f .gitignore ]; then
