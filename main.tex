@@ -382,7 +382,7 @@
 
 % ELEMENTOS PRÉ-TEXTUAIS
 \ifforcedinclude\else
-  % Fix the \textpreliminarycontents not showing up when @twoside is off
+  % Fix the \UFSCtextPreliminaryContents not showing up when @twoside is off
   \newif\ifufscThesisXisMemoirTwoSidesEnabled{}
 
   % q/how-do-i-check-if-a-document-is-oneside-or-twoside
@@ -416,9 +416,9 @@
   % Command \mycustomfiction already defined?
   % q/custom-list-throw-latex-error-command-mycustomfiction-already-defined
   \ifadvisor\else
-    % Manually add the `\textpreliminarycontents` to the Table of
+    % Manually add the `\UFSCtextPreliminaryContents` to the Table of
     % Contents here to keep the hyper link pointing to the beginning of
-    % the page, instead of the beginning of `\textpreliminarycontents`
+    % the page, instead of the beginning of `\UFSCtextPreliminaryContents`
     % q/when-do-i-need-to-invoke-phantomsection
     \phantomsection\addcontentsline{toc}{chapter}
       {\UFSCtextPreliminaryListName}
@@ -426,14 +426,14 @@
     % q/list-of-figures-and-tables-when-there-are-no-figures-or-tables
     \UFSCwhenListIsNotEmpty{\UFSCtextPreliminaryListName}{%
       \begin{KeepFromToc}
-        \textpreliminarycontents{}
+        \UFSCtextPreliminaryContents{}
       \end{KeepFromToc}
     }
 
     \clearpage
   \fi
 
-  % Fix the \textpreliminarycontents not showing up when @twoside is off
+  % Fix the \UFSCtextPreliminaryContents not showing up when @twoside is off
   \ifufscThesisXisMemoirTwoSidesEnabled{}
     \setboolean{@twoside}{true}
   \else
@@ -569,7 +569,7 @@
     {
       % q/remove-spacing-between-per-chapter-figures-in-lof
       \renewcommand{\addvspace}[1]{}
-      \lstlistoflistings{}
+      \UFSClstListOfListings{}
     }
   }{
     \pdfbookmark[0]{\lstlistlistingname}{lol}
