@@ -8,6 +8,14 @@ RESET="\033[0m"
 
 target="${1:-build}"
 
+alias grep='grep --color=auto'
+program=$(basename "$0")
+
+error () {
+    >&2 printf "$program" "$@"
+    return
+}
+
 case $target in
 "build")
     start_sec=$(date +%s)
