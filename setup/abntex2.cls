@@ -1003,12 +1003,20 @@
 % atalhos para \ABNTEXpartpage ou \appendixpage*
 \newcommand{\ABNTEXpartapendices}{%
   \ABNTEXtocpartapendices%
-  \@ifstar \appendixpage* \ABNTEXpartpage
+  \@ifstar{%
+    \appendixpage*%
+  }{%
+    \ABNTEXpartpage%
+  }
 }
 
 \newcommand{\ABNTEXpartanexos}{%
   \ABNTEXtocpartanexos%
-  \@ifstar \appendixpage* \ABNTEXpartpage
+  \@ifstar{%
+    \appendixpage*%
+  }{%
+    \ABNTEXpartpage%
+  }
 }
 
 % ------------------------------------------------------------------------
