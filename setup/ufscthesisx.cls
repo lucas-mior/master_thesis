@@ -557,13 +557,6 @@
 \counterwithin{figure}{chapter}
 \counterwithin{table}{chapter}
 
-% Macros for Cross-reference
-\newcommand{\UFSCfigRef}[1]{Figura~\ref{#1}}    % Cross-reference of figures
-\newcommand{\UFSCtabRef}[1]{Tabela~\ref{#1}}    % Cross-reference of tables
-\newcommand{\UFSCeqnRef}[1]{\eqref{#1}}         % Cross-reference of equations
-\newcommand{\UFSCsecRef}[1]{Seção~\ref{#1}}     % Cross-reference of equations
-\newcommand{\UFSCdefRef}[1]{Definição~\ref{#1}} %
-
 \renewenvironment{abntexEnvResumo}[1][\ABNTEXresumoname]{%
   % Fixed double bookmark entries as `\ABNTEXpretextualchapter`
   % bellow is already calling `\ABNTEXPRIVATEbookmarkthis`
