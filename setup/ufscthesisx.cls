@@ -2223,14 +2223,14 @@
     \renewcommand{\listfigurename}{Lista de Figuras}
     \renewcommand{\ABNTEXlistadesiglasname}{Lista de Abreviaturas e Siglas}
     \renewcommand{\ABNTEXlistadesimbolosname}{Lista de Símbolos}
-    \renewcommand{\tableautorefname}{Tabela}
-    \renewcommand{\figureautorefname}{Figura}
-    \renewcommand{\chapterautorefname}{Capítulo}
-    \renewcommand{\pageautorefname}{Página}
-    \renewcommand{\sectionautorefname}{Seção}
-    \renewcommand{\subsectionautorefname}{Subseção}
-    \renewcommand{\subsubsectionautorefname}{Subsubseção}
-    \renewcommand{\paragraphautorefname}{Parágrafo}
+    \renewcommand{\tableautorefname}{\mbox{Tabela}}
+    \renewcommand{\figureautorefname}{\mbox{Figura}}
+    \renewcommand{\chapterautorefname}{\mbox{Capítulo}}
+    \renewcommand{\pageautorefname}{\mbox{Página}}
+    \renewcommand{\sectionautorefname}{\mbox{Seção}}
+    \renewcommand{\subsectionautorefname}{\mbox{Subseção}}
+    \renewcommand{\subsubsectionautorefname}{\mbox{Subsubseção}}
+    \renewcommand{\paragraphautorefname}{\mbox{Parágrafo}}
   }
 }{}}{}
 
@@ -2247,14 +2247,14 @@
     \renewcommand{\listfigurename}{List of Figures}
     \renewcommand{\ABNTEXlistadesiglasname}{List of Abbreviations and Acronyms}
     \renewcommand{\ABNTEXlistadesimbolosname}{List of Symbols}
-    \renewcommand{\tableautorefname}{Table}
-    \renewcommand{\figureautorefname}{Figure}
-    \renewcommand{\chapterautorefname}{Chapter}
-    \renewcommand{\pageautorefname}{Page}
-    \renewcommand{\sectionautorefname}{Section}
-    \renewcommand{\subsectionautorefname}{Subsection}
-    \renewcommand{\subsubsectionautorefname}{Subsubsection}
-    \renewcommand{\paragraphautorefname}{Paragraph}
+    \renewcommand{\tableautorefname}{\mbox{Table}}
+    \renewcommand{\figureautorefname}{\mbox{Figure}}
+    \renewcommand{\chapterautorefname}{\mbox{Chapter}}
+    \renewcommand{\pageautorefname}{\mbox{Page}}
+    \renewcommand{\sectionautorefname}{\mbox{Section}}
+    \renewcommand{\subsectionautorefname}{\mbox{Subsection}}
+    \renewcommand{\subsubsectionautorefname}{\mbox{Subsubsection}}
+    \renewcommand{\paragraphautorefname}{\mbox{Paragraph}}
   }
 }{}}{}
 
