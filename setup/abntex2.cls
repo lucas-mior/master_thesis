@@ -357,7 +357,7 @@
 % tamanho da fonte do footnote
 \renewcommand{\foottextfont}{\ABNTEXfontereduzida}
 
-% Numeração continua das figuras
+% Numeração contínua das figuras
 \ifthenelse{\equal{\ABNTEXisarticle}{true}}{%
   \counterwithout{section}{chapter}
   \counterwithout{figure}{section}
