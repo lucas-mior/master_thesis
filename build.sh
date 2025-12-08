@@ -9,6 +9,7 @@ RESET="\033[0m"
 target="${1:-build}"
 
 alias grep='grep --color=auto'
+alias pdflatex='pdflatex -halt-on-error -interaction=nonstopmode'
 program=$(basename "$0")
 
 error () {
@@ -21,7 +22,7 @@ case $target in
     start_sec=$(date +%s)
     start_nsec=$(date +%N)
 
-    while pdflatex -halt-on-error -interaction=nonstopmode main.tex \
+    while pdflatex main.tex \
           2>&1 | grep -v "/usr/share/tex" \
           | grep "Please (re)run Biber"; do
         printf "%b" "$BLU"
@@ -30,7 +31,7 @@ case $target in
     done
 
     printf "%b" "$GRE"
-    while pdflatex -halt-on-error -interaction=nonstopmode main.tex \
+    while pdflatex main.tex \
           2>&1 | grep -v "/usr/share/tex" \
           | grep -i "Rerun LaTeX."; do
         printf "%b" "$PUR"
