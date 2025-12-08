@@ -695,6 +695,7 @@
 % q/how-to-add-an-empty-line-between-paragraphs
 \renewcommand{\ABNTEXfolhaderostocontent}{%
   \begin{center}
+  \begin{hyphenrules}{nohyphenation}
     \theauthor
 
     \vspace*{\fill}\vspace*{\fill}
@@ -741,6 +742,7 @@
       \imprimirano\par
     }
 
+  \end{hyphenrules}
   \end{center}
 }
 
