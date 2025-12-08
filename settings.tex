@@ -52,9 +52,9 @@
   }
   \makechapterstyle{VZ14} {%
     % \thispagestyle{empty}
-    \setlength\beforechapskip{50pt}
-    \setlength\midchapskip{20pt}
-    \setlength\afterchapskip{20pt}
+    \setlength{\beforechapskip}{50pt}
+    \setlength{\midchapskip}{20pt}
+    \setlength{\afterchapskip}{20pt}
     \renewcommand\chapternamenum{}
     \renewcommand\printchaptername{}
     \renewcommand\chapnamefont{\Huge\scshape}
@@ -79,9 +79,9 @@
   % \chapterstyle{VZ14}
 
   % http://mirrors.ibiblio.org/CTAN/macros/latex/contrib/memoir/memman.pdf
-  \setlength\beforechapskip{0pt}
-  \setlength\midchapskip{15pt}
-  \setlength\afterchapskip{15pt}
+  \setlength{\beforechapskip}{0pt}
+  \setlength{\midchapskip}{15pt}
+  \setlength{\afterchapskip}{15pt}
 
   % Memoir:
   % Warnings “The material used in the headers is too large” w/ accented titles
@@ -400,7 +400,7 @@
 % \addtolength{\ABNTEXcftLastNumWidth}{-1em}
 
 % http://www.tex.ac.uk/FAQ-tocloftwrong.html
-% Use \setlength\cftsectionnumwidth{4em} to override all these values at once
+% Use \setlength{\cftsectionnumwidth}{4em} to override all these values at once
 \ifadvisor\else
   \makechapterstyle{fixedabntex2indentation}{%
     \renewcommand{\chapterheadstart}{}
@@ -414,7 +414,7 @@
 
     % tamanhos de fontes de chapter e part
     \ifthenelse{\equal{\ABNTEXisarticle}{true}}{%
-      \setlength\beforechapskip{\baselineskip}%
+      \setlength{\beforechapskip}{\baselineskip}%
       \renewcommand{\chaptitlefont}{\ABNTEXsectionfont\ABNTEXsectionfontsize}%
     }{
       \setlength{\beforechapskip}{0pt}%
