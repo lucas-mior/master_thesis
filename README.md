@@ -14,9 +14,6 @@ git clone https://github.com/lucas-mior/master_thesis
 # compilar usando o script
 ./build.sh
 
-# compilar usando make, alternativamente
-make
-
 # limpar todo o cache
 make clean
 ```
