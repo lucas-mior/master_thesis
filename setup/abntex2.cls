@@ -206,7 +206,7 @@
   leftmargin=*,
 }
 
-% Controla as referencias internas do PDF
+% Controla as referências internas do PDF
 \RequirePackage{hyperref}
 \pdfstringdefDisableCommands{\def\\{, }\def\and{; }}
 
@@ -563,7 +563,7 @@
   \renewcommand{\cftparagraphfont}{\footnotesize}
   \renewcommand{\cftparagraphpagefont}{\cftparagraphfont}
   %
-  % Ajusta entrada Referencias
+  % Ajusta entrada Referências
   %
   \renewcommand{\bibsection}{%
     \chapter*{\bibname}
