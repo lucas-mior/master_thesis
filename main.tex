@@ -703,7 +703,11 @@
 %   \glossary
 % \fi
 
+\ifforcedinclude\else
+  \cleardoublepage{}
+\fi
 \begin{abntexEnvApendicesenv}
+  \pdfbookmark[-1]{\ABNTEXapendicesname}{anchor_appendice}
   % Imprime uma página indicando o início dos apêndices
   \ifforcedinclude\else
     \ABNTEXpartapendices{}
@@ -717,7 +721,11 @@
     My appendice B.
 \end{abntexEnvApendicesenv}
 
+\ifforcedinclude\else
+  \cleardoublepage{}
+\fi
 \begin{abntexEnvAnexos}
+  \pdfbookmark[-1]{\ABNTEXanexosname}{anchor_annex}
   % Imprime uma página indicando o início dos anexos
   \ifforcedinclude\else
     \ABNTEXpartanexos{}
