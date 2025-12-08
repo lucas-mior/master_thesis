@@ -650,12 +650,6 @@
 \setlength\midchapskip{20pt}
 \setlength\afterchapskip{20pt}
 
-% PARTE
-\ifforcedinclude\else
-  \part{\EngAndPor{Research}{Pesquisa}}
-\fi%
-\label{primeira_parte}
-
 % Introdução (exemplo de capítulo sem numeração, mas presente no Sumário)
 \include{15a_intro.tex}
 
@@ -664,12 +658,6 @@
 
 % Capítulo de revisão de literatura
 \include{15b_chapter_2.tex}
-
-% PARTE
-\ifforcedinclude\else
-  \part{\EngAndPor{Implementation}{Implementação}}
-\fi%
-\label{segunda_parte}
 
 % Finaliza a parte no bookmark do PDF para que se inicie o bookmark na raiz
 % e adiciona espaço de parte no Sumário
