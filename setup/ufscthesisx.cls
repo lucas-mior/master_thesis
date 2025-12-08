@@ -142,7 +142,6 @@
 
 % https://github.com/evandrocoan/ufscthesisx-light/runs/915876094?check_suite_focus=true#step:5:658
 \RequirePackage{ifthen} % q/why-is-the-ifthen-package-obsolete
-\RequirePackage{ifplatform}
 \RequirePackage{shellesc}
 \RequirePackage{xstring}
 
@@ -1058,7 +1057,6 @@
 % q/logical-string-length
 \usepackage{xstring}
 \usepackage{xifthen}
-\usepackage{ifplatform}
 \usepackage{shellesc}
 
 % abntex2
