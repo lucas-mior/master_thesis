@@ -693,7 +693,7 @@
   \renewcommand{\afterchapternum}{}
 
   % impressao do capitulo não numerado
-  \renewcommand\printchapternonum{%
+  \renewcommand{\printchapternonum}{%
     \ABNTEXtocprintchapternonum%
     \setboolean{abntex@innonumchapter}{true}%
   }
@@ -977,7 +977,7 @@
 
   \ABNTEXPRIVATEapendiceconfig{\ABNTEXanexoname}{\ABNTEXanexosname}
   \appendix
-  \renewcommand\theHchapter{anexochapback.\arabic{chapter}}
+  \renewcommand{\theHchapter}{anexochapback.\arabic{chapter}}
 }
 % Anexos - ambiente
 \newenvironment{abntexEnvAnexos}{%
@@ -985,7 +985,7 @@
 
   \ABNTEXPRIVATEapendiceconfig{\ABNTEXanexoname}{\ABNTEXanexosname}
   \begin{appendix}
-  \renewcommand\theHchapter{anexochapback.\arabic{chapter}}
+  \renewcommand{\theHchapter}{anexochapback.\arabic{chapter}}
 }{%
   \end{appendix}
   \setboolean{abntex@apendiceousecao}{false}
