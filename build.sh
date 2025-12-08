@@ -85,6 +85,11 @@ case $target in
         fi
     done
 
+    if [ ! -e "main.pdf" ]; then
+        error "Error compiling main.tex"
+        exit 1
+    fi
+
     while true; do
         out="$(run_pdflatex_raw \
                | display_status "$PUR" "Running Latex... (nlatex=$nlatex)" \
