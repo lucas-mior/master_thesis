@@ -54,6 +54,16 @@ case $target in
 "check")
     chktex -n17 -n8 -n9 -n10 -n44 "main.tex"
     ;;
+"clear"|"clean")
+    set -e
+    if [ ! -f .gitignore ]; then
+        error ".gitignore not found"
+        exit 1
+    fi
+
+    git ls-files -i -o --exclude-from=.gitignore -z \
+        | xargs -0 rm -rf --
+    ;;
 *)
     echo "usage: $(basename "$0") <build|check>"
     ;;

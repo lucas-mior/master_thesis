@@ -15,7 +15,7 @@ git clone https://github.com/lucas-mior/master_thesis
 ./build.sh
 
 # limpar todo o cache
-make clean
+./build.sh clean
 ```
 
 ## Como utilizar (Overleaf/Crixet)
