@@ -128,6 +128,6 @@ case $target in
         | xargs -0 rm -vrf --
     ;;
 *)
-    echo "usage: $(basename "$0") <build|check>"
+    echo "usage: $(basename "$0") <build|check|clean>"
     ;;
 esac
