@@ -240,19 +240,19 @@
 % https://en.wikibooks.org/wiki/TeX/includeonly
 \newif\ifforcedinclude\forcedincludefalse{}
 
-% \addtoincludeonly{03_fichacatalografica.tex}
-% \addtoincludeonly{04_folhadeaprovacao.tex}
-% \addtoincludeonly{06_agradecimentos.tex}
-% \addtoincludeonly{07_epigrafe.tex}
-% \addtoincludeonly{08_resumos.tex}
+% \UFSCaddToIncludeOnly{03_fichacatalografica.tex}
+% \UFSCaddToIncludeOnly{04_folhadeaprovacao.tex}
+% \UFSCaddToIncludeOnly{06_agradecimentos.tex}
+% \UFSCaddToIncludeOnly{07_epigrafe.tex}
+% \UFSCaddToIncludeOnly{08_resumos.tex}
 
 % Part 1
-% \addtoincludeonly{15a_intro.tex}
-% \addtoincludeonly{15b_chapter_1.tex}
-% \addtoincludeonly{15b_chapter_2.tex}
+% \UFSCaddToIncludeOnly{15a_intro.tex}
+% \UFSCaddToIncludeOnly{15b_chapter_1.tex}
+% \UFSCaddToIncludeOnly{15b_chapter_2.tex}
 
 % Part 2
-% \addtoincludeonly{15z_conclusion.tex}
+% \UFSCaddToIncludeOnly{15z_conclusion.tex}
 
 % Control whether the full document will be generated
 % Note: It will also generate severals errors like the following, can be ignored
@@ -262,8 +262,8 @@
 % of the document, before uncommenting these lines.
 %
 % Uncomment these lines to only partially generate the document
-% \ifnum\StrLen{\includeonlyfilelist}>0\relax
-%   \includeonly{\includeonlyfilelist}
+% \ifnum\StrLen{\UFSCincludeOnlyFileList}>0\relax
+%   \includeonly{\UFSCincludeOnlyFileList}
 % \fi
 % \forcedincludetrue
 
@@ -377,7 +377,7 @@
 
 % Uncomment this to put a ←← | ← (Go To Top/Go Back) on each section header
 \ifadvisor\else
-  \addGoToSummary{}
+  \UFSCaddGoToSummary{}
 \fi
 
 % ELEMENTOS PRÉ-TEXTUAIS
@@ -424,7 +424,7 @@
       {\UFSCtextPreliminaryListName}
 
     % q/list-of-figures-and-tables-when-there-are-no-figures-or-tables
-    \whenlistisnotempty{\UFSCtextPreliminaryListName}{%
+    \UFSCwhenListIsNotEmpty{\UFSCtextPreliminaryListName}{%
       \begin{KeepFromToc}
         \textpreliminarycontents{}
       \end{KeepFromToc}
@@ -515,7 +515,7 @@
     \cleardoublepage{}
   \fi
   % q/list-of-figures-and-tables-when-there-are-no-figures-or-tables
-  \whenlistisnotempty{\listfigurename}{%
+  \UFSCwhenListIsNotEmpty{\listfigurename}{%
     \UFSCaddToTextPreliminaryContent{\listfigurename}
     {
       % q/remove-spacing-between-per-chapter-figures-in-lof
@@ -531,7 +531,7 @@
     \cleardoublepage{}
   \fi
   % q/list-of-figures-and-tables-when-there-are-no-figures-or-tables
-  \whenlistisnotempty{\listofquadrosname}{%
+  \UFSCwhenListIsNotEmpty{\listofquadrosname}{%
     \UFSCaddToTextPreliminaryContent{\listofquadrosname}
     {
       % q/remove-spacing-between-per-chapter-figures-in-lof
@@ -547,7 +547,7 @@
     \cleardoublepage{}
   \fi
   % q/list-of-figures-and-tables-when-there-are-no-figures-or-tables
-  \whenlistisnotempty{\listtablename}{%
+  \UFSCwhenListIsNotEmpty{\listtablename}{%
     \UFSCaddToTextPreliminaryContent{\listtablename}
     {
       % q/remove-spacing-between-per-chapter-figures-in-lof
@@ -564,7 +564,7 @@
     \cleardoublepage{}
   \fi
   % q/list-of-figures-and-tables-when-there-are-no-figures-or-tables
-  \whenlistisnotempty{\lstlistlistingname}{%
+  \UFSCwhenListIsNotEmpty{\lstlistlistingname}{%
     \UFSCaddToTextPreliminaryContent{\lstlistlistingname}
     {
       % q/remove-spacing-between-per-chapter-figures-in-lof
@@ -633,7 +633,7 @@
 
     % Add the table of contents to the brief table of contents
     % q/list-of-figures-and-tables-when-there-are-no-figures-or-tables
-    \whenlistisnotempty{\contentsname}{%
+    \UFSCwhenListIsNotEmpty{\contentsname}{%
       \UFSCaddToTextPreliminaryContent{\contentsname}
       \tableofcontents
     }{

@@ -9,6 +9,6 @@ while read -r pair; do
      echo "old=$old"
      echo "new=$new"
      for f in **/*.cls *.tex; do
-         sed -Ei 's/'$old'/'$new'/g' "$f"
+         sed -Ei 's/\\'$old'/\\'$new'/g' "$f"
      done
 done < renames

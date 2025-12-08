@@ -558,11 +558,11 @@
 \counterwithin{table}{chapter}
 
 % Macros for Cross-reference
-\newcommand{\figref}[1]{Figura~\ref{#1}}    % Cross-reference of figures
-\newcommand{\tabref}[1]{Tabela~\ref{#1}}    % Cross-reference of tables
-\newcommand{\eqnref}[1]{\eqref{#1}}         % Cross-reference of equations
-\newcommand{\secref}[1]{Seção~\ref{#1}}     % Cross-reference of equations
-\newcommand{\defref}[1]{Definição~\ref{#1}} %
+\newcommand{\UFSCfigRef}[1]{Figura~\ref{#1}}    % Cross-reference of figures
+\newcommand{\UFSCtabRef}[1]{Tabela~\ref{#1}}    % Cross-reference of tables
+\newcommand{\UFSCeqnRef}[1]{\eqref{#1}}         % Cross-reference of equations
+\newcommand{\UFSCsecRef}[1]{Seção~\ref{#1}}     % Cross-reference of equations
+\newcommand{\UFSCdefRef}[1]{Definição~\ref{#1}} %
 
 \renewenvironment{abntexEnvResumo}[1][\ABNTEXresumoname]{%
   % Fixed double bookmark entries as `\ABNTEXpretextualchapter`
@@ -1180,8 +1180,8 @@
 % q/how-can-i-make-hyperref-stop-thinking-there-are-undefined-references
 % q/cleveref-capitalise-option-not-working-with-babel-translations
 \usepackage[nameinlink,capitalise,noabbrev]{cleveref}
-\newcommand*{\typeref}[1]{\Cref{#1}}
-\newcommand*{\fullref}[1]{\Cref{#1}: \nameRefs{#1}}
+\newcommand*{\UFSCtypeRef}[1]{\Cref{#1}}
+\newcommand*{\UFSCfullRef}[1]{\Cref{#1}: \nameRefs{#1}}
 
 % q/creating-new-captions-and-caption-counters
 \def\listofquadrosname{List of Frames}
@@ -1310,7 +1310,7 @@
 
 \@ifclassloaded{memoir}{%
   % q/remove-list-of-newfloat-from-toc
-  \newcommand{\AdjustForMemoir}[1]{%
+  \newcommand{\UFSCAdjustForMemoir}[1]{%
     \csletcs{kept@listof#1}{listof#1}%
     \csdef{listof#1}{%
       \@ifstar{
@@ -1322,7 +1322,7 @@
     }
   }
   \def\append@star#1{#1*}
-  \AdjustForMemoir{quadro}
+  \UFSCAdjustForMemoir{quadro}
   \newlistentry{quadro}{loq}{0}
 
   % q/how-to-have-a-dynamic-cft-numwidth-i-e-accordingly-to-the-number-size
@@ -1331,7 +1331,7 @@
 
   % Calculate the size of the header
   % q/what-is-the-use-of-percent-signs-at-the-end-of-lines
-  \newcommand{\calculatelquadrosheader}{%
+  \newcommand{\UFSCcalculatelQuadrosHeader}{%
     \renewcommand\cftquadropresnum{\quadrosname~}%
 
     % q/what-is-the-plain-tex-equivalent-of-settowidth
@@ -1348,7 +1348,7 @@
   }
 
   % q/how-to-automatically-add-text-immediately-after-begindocument
-  \AtBeginDocument{\calculatelquadrosheader}
+  \AtBeginDocument{\UFSCcalculatelQuadrosHeader}
 
   % q/how-to-have-a-dynamic-cft-numwidth-i-e-accordingly-to-the-number-size
   \newlength{\cftfigureoldnumwidth}
@@ -1357,7 +1357,7 @@
   % Calculate the size of the header
   % q/what-is-the-use-of-percent-signs-at-the-end-of-lines
   % q/list-of-figures-how-to-add-caption-label
-  \newcommand{\calculatelfigureheader}{%
+  \newcommand{\UFSCcalculatelFigureHeader}{%
     % q/what-is-the-plain-tex-equivalent-of-settowidth
     \newlength{\cftfigureinitialnumwidth}
     \settowidth{\cftfigureinitialnumwidth}{%
@@ -1372,7 +1372,7 @@
   }
 
   % q/how-to-automatically-add-text-immediately-after-begindocument
-  \AtBeginDocument{\calculatelfigureheader}
+  \AtBeginDocument{\UFSCcalculatelFigureHeader}
 
   % q/how-to-have-a-dynamic-cft-numwidth-i-e-accordingly-to-the-number-size
   \newlength{\cfttableoldnumwidth}
@@ -1380,7 +1380,7 @@
 
   % Calculate the size of the header
   % q/what-is-the-use-of-percent-signs-at-the-end-of-lines
-  \newcommand{\calculateltableheader}{%
+  \newcommand{\UFSCcalculatelTableHeader}{%
     % q/what-is-the-plain-tex-equivalent-of-settowidth
     \newlength{\cfttableinitialnumwidth}
     \settowidth{\cfttableinitialnumwidth}{\cfttablepresnum\cfttableaftersnum a}%
@@ -1391,7 +1391,7 @@
   }
 
   % q/how-to-automatically-add-text-immediately-after-begindocument
-  \AtBeginDocument{\calculateltableheader}
+  \AtBeginDocument{\UFSCcalculatelTableHeader}
 
   % q/setting-entries-of-list-of-listings-in-latex-package-listings
   % q/you-cant-use-a-prefix-with-charfb-error-when-importing-csv-into-latex
@@ -1455,7 +1455,7 @@
 
   % Calculate the size of the header
   % q/what-is-the-use-of-percent-signs-at-the-end-of-lines
-  \newcommand{\calculatelstlistingsheader}{%
+  \newcommand{\UFSCcalculatelstListingsHeader}{%
     \renewcommand\cftlstlistingpresnum{\lstlistingname~}%
 
     % q/what-is-the-plain-tex-equivalent-of-settowidth
@@ -1470,14 +1470,14 @@
   }
 
   % q/how-to-automatically-add-text-immediately-after-begindocument
-  \AtBeginDocument{\calculatelstlistingsheader}
+  \AtBeginDocument{\UFSCcalculatelstListingsHeader}
 }{}
 
 % q/list-of-figures-and-tables-when-there-are-no-figures-or-tables
 % q/why-pdfbookmark-keeps-adding-to-the-pdf-bookmarks-while-addcontentslinetoc-d
 % q/how-to-stop-newsavebox-giving-me-bad-boxes-warnings-or-how-to-use-better-names
 % q/how-memoir-prints-the-titles-of-the-content-pages
-\newcommand{\whenlistisnotempty}[3]{
+\newcommand{\UFSCwhenListIsNotEmpty}[3]{
   \setbox0\vbox{#2}%
   \typeout{The height of the list '#1' is '\the\ht0'}%
   \ifdim\ht0>35pt%
@@ -1855,7 +1855,7 @@
 
 \RequirePackage{amssymb}
 \RequirePackage{hyperref}
-\newcommand{\goToSummaryText}{{%
+\newcommand{\UFSCgoToSummaryText}{{%
   \small\mdseries
   \hyperlink{summary}{\textcolor{ultramarine}{$\leftleftarrows$}}
   {$|$}
@@ -1871,7 +1871,7 @@
   \isabntexloadedtrue%
 }{}
 
-\newcommand{\addGoToSummary}{%
+\newcommand{\UFSCaddGoToSummary}{%
   \@ifundefined{printparttitle}{%
     \message{%
       printparttitle patch for addGoToSummary could NOT
@@ -1879,7 +1879,7 @@
     }%
   }{%
     \let\oldAddGoToprintparttitle\printparttitle
-    \xapptocmd{\printparttitle}{~\protect\goToSummaryText}{}{}
+    \xapptocmd{\printparttitle}{~\protect\UFSCgoToSummaryText}{}{}
   }
   \@ifundefined{Sectionformat}{%
     \message{%
@@ -1888,16 +1888,16 @@
     }%
   }{%
     \let\oldAddGoToSectionformat\Sectionformat
-    \xapptocmd{\Sectionformat}{~\protect\goToSummaryText}{}{}
+    \xapptocmd{\Sectionformat}{~\protect\UFSCgoToSummaryText}{}{}
   }
 
   \ifismemoirloaded
     \ifisabntexloaded
       \let\oldAddGoToABNTEXchapterupperifneeded\ABNTEXchapterupperifneeded
-      \xapptocmd{\ABNTEXchapterupperifneeded}{~\protect\goToSummaryText}{}{}
+      \xapptocmd{\ABNTEXchapterupperifneeded}{~\protect\UFSCgoToSummaryText}{}{}
     \else
       \let\oldAddGoToprintchaptertitle\printchaptertitle
-      \xapptocmd{\printchaptertitle}{~\protect\goToSummaryText}{}{}
+      \xapptocmd{\printchaptertitle}{~\protect\UFSCgoToSummaryText}{}{}
     \fi
   \else
     \@ifundefined{Chapterformat}{%
@@ -1907,7 +1907,7 @@
       }%
     }{%
       \let\oldAddGoToChapterformat\Chapterformat
-      \xapptocmd{\Chapterformat}{~\protect\goToSummaryText}{}{}
+      \xapptocmd{\Chapterformat}{~\protect\UFSCgoToSummaryText}{}{}
     }
   \fi
 }
@@ -1986,19 +1986,19 @@
 \newcounter{includepdfpage}
 \newcounter{currentpagecounter}
 
-\newcommand{\addlabelstoallincludedpages}[1]{%
+\newcommand{\UFSCaddLabelsToAllIncludedPages}[1]{%
   \refstepcounter{includepdfpage}%
   \stepcounter{currentpagecounter}%
   \label{#1.\thecurrentpagecounter}%
 }
-\newcommand{\modifiedincludepdf}[4]{%
+\newcommand{\UFSCmodifiedIncludePdf}[4]{%
   \setcounter{currentpagecounter}{0}%
-  \includepdf[pages=#1,pagecommand=\addlabelstoallincludedpages{#2},scale=#4]
+  \includepdf[pages=#1,pagecommand=\UFSCaddLabelsToAllIncludedPages{#2},scale=#4]
              {#3}%
 }
 
 % q/makeuppercase-in-section-and-chapter-with-hyperref-cause-trouble
-\newcommand{\HyperrefUppercase}[1]{%
+\newcommand{\UFSCHyperrefUppercase}[1]{%
   \texorpdfstring{\MakeTextUppercase{#1}}{#1}
 }
 
@@ -2021,16 +2021,16 @@
 \DeclareTextFontCommand{\textvtt}{\vttfamily}
 
 % q/logical-string-length
-\newcommand{\includeonlyfilelist}[0]{}
-\newcommand{\addtoincludeonly}[1]{%
-  \StrLen{\includeonlyfilelist}[\includeonlyfilelistlen]
+\newcommand{\UFSCincludeOnlyFileList}[0]{}
+\newcommand{\UFSCaddToIncludeOnly}[1]{%
+  \StrLen{\UFSCincludeOnlyFileList}[\UFSCincludeOnlyFileListlen]
 
   % How to concatenate strings into a single command?
   % q/how-to-concatenate-strings-into-a
-  \ifnum\includeonlyfilelistlen>0
-    \g@addto@macro\includeonlyfilelist{,#1}
+  \ifnum\UFSCincludeOnlyFileListlen>0
+    \g@addto@macro\UFSCincludeOnlyFileList{,#1}
   \else
-    \g@addto@macro\includeonlyfilelist{#1}
+    \g@addto@macro\UFSCincludeOnlyFileList{#1}
   \fi
 }
 
@@ -2203,9 +2203,9 @@
 \colorlet{promptcolour}{green!50!black}
 \colorlet{specmethodcolour}{violet}
 
-\newcommand*{\literatecolour}{\textcolor{literatecolour}}
+\newcommand*{\UFSCliterateColour}{\textcolor{literatecolour}}
 
-\newcommand*{\pythonprompt}{\textcolor{promptcolour}{{>}{>}{>}}}
+\newcommand*{\UFSCpythonPrompt}{\textcolor{promptcolour}{{>}{>}{>}}}
 
 % Ao contrario da norma abnt-6027-2012,
 % que as figuras estejam listadas na Lista de Ilustrações,
