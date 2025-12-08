@@ -349,7 +349,7 @@
 % Configurações de layout
 % ------------------------------------------------------------------------
 
-% Notas de rodape - footnotes - NBR 14724/2011 - 5.2.1
+% Notas de rodapé - footnotes - NBR 14724/2011 - 5.2.1
 \setlength{\footmarkwidth}{1.2em} % largura do footnotemark
 \setlength{\footmarksep}{0em}
 \footmarkstyle{\footnotesize{\textsuperscript{#1}}\hfill}
