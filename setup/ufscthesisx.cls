@@ -564,7 +564,7 @@
 \newcommand{\secref}[1]{Seção~\ref{#1}}     % Cross-reference of equations
 \newcommand{\defref}[1]{Definição~\ref{#1}} %
 
-\renewenvironment{abntexEnvResumo}[1][\ABNTEXresumoname]{%
+\renewenvironment{resumo}[1][\ABNTEXresumoname]{%
   % Fixed double bookmark entries as `\ABNTEXpretextualchapter`
   % bellow is already calling `\ABNTEXPRIVATEbookmarkthis`
   % \ABNTEXPRIVATEbookmarkthis{#1}

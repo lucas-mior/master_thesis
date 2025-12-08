@@ -899,7 +899,7 @@
   \setlength{\absparindent}{0pt}
 }
 
-\newenvironment{abntexEnvResumo}[1][\ABNTEXresumoname]{%
+\newenvironment{resumo}[1][\ABNTEXresumoname]{%
   \ABNTEXPRIVATEbookmarkthis{#1}
   \renewcommand{\abstractnamefont}{\chaptitlefont}
   \renewcommand{\abstractname}{\ABNTEXchapterupperifneeded{#1}}
@@ -908,7 +908,7 @@
   \end{abstract}\ABNTEXPRIVATEclearpageifneeded
 }
 
-\newenvironment{abntexEnvResumoumacoluna}[1][\ABNTEXresumoname]{%
+\newenvironment{resumoumacoluna}[1][\ABNTEXresumoname]{%
   \ABNTEXPRIVATEbookmarkthis{#1}
   \renewcommand{\abstractnamefont}{\chaptitlefont}
   \renewcommand{\abstractname}{\ABNTEXchapterupperifneeded{#1}}
