@@ -87,6 +87,7 @@ case $target in
 
     if [ ! -e "main.pdf" ]; then
         error "Error compiling main.tex"
+        echo "$out" | grep -B5 -A20 "\!"
         exit 1
     fi
 
@@ -114,6 +115,7 @@ case $target in
 
     if [ ! -e "main.pdf" ]; then
         error "Error compiling main.tex"
+        echo "$out" | grep -B5 -A20 "\!"
         exit 1
     fi
     ;;
