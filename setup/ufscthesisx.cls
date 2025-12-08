@@ -2126,6 +2126,7 @@
 
 % q/set-the-font-family-for-lstlisting
 \usepackage{courier}
+\usepackage[scaled]{beramono}
 
 % q/latex-listings-with-monospace-fonts
 % q/how-to-have-straight-single-quotes-in-lstlistings
@@ -2139,9 +2140,7 @@
   belowskip=3mm,
   showstringspaces=false,
   basicstyle={%
-    \small%
-    \fontfamily{zi4}%
-    \selectfont%
+    \small\ttfamily
   },
   numbers=left,
   numberstyle=\color{gray},
