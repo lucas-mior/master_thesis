@@ -2214,7 +2214,6 @@
   \addto\captionsbrazil{%
     \renewcommand{\ABNTEXorientadorname}{Orientador}
     \renewcommand{\ABNTEXcoorientadorname}{Coorientador}
-    \renewcommand{\quadrosname}{Quadro}
     \renewcommand{\ABNTEXfolhadeaprovacaoname}{Folha de Aprovação}
     \renewcommand{\ABNTEXfolhaderostoname}{Folha de Rosto}
     \renewcommand{\listfigurename}{Lista de Ilustrações}
@@ -2223,6 +2222,7 @@
     \renewcommand{\listfigurename}{Lista de Figuras}
     \renewcommand{\ABNTEXlistadesiglasname}{Lista de Abreviaturas e Siglas}
     \renewcommand{\ABNTEXlistadesimbolosname}{Lista de Símbolos}
+    \renewcommand{\quadrosname}{\mbox{Quadro}}
     \renewcommand{\tableautorefname}{\mbox{Tabela}}
     \renewcommand{\figureautorefname}{\mbox{Figura}}
     \renewcommand{\chapterautorefname}{\mbox{Capítulo}}
