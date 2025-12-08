@@ -2125,7 +2125,6 @@
 \usepackage{listingsutf8}
 
 % q/set-the-font-family-for-lstlisting
-\usepackage{courier}
 \usepackage[scaled]{beramono}
 
 % q/latex-listings-with-monospace-fonts
