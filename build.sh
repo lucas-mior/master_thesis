@@ -51,7 +51,7 @@ case $target in
         printf "\033[K\n"
     }
 
-    run_and_display() {
+    display_status() {
         color="$1"
         msg="$2"
 
@@ -69,18 +69,20 @@ case $target in
 
     while true; do
         out="$(run_pdflatex_raw \
-               | run_and_display "$RED" "Running Latex..." \
+               | display_status "$RED" "Running Latex..." \
                | tee /dev/tty)"
 
         if printf "%s\n" "$out" | grep -q "Please (re)run Biber"; then
-            biber main | run_and_display "$BLU" "Running Biber..."
+            biber main | display_status "$BLU" "Running Biber..."
         else
             break
         fi
     done
 
     while true; do
-        out="$(run_pdflatex_raw | run_and_display "$PUR" "Running Latex...")"
+        out="$(run_pdflatex_raw \
+               | display_status "$PUR" "Running Latex..." \
+               | tee /dev/tty)"
 
         if printf "%s\n" "$out" | grep -qi "Rerun LaTeX."; then
             continue
