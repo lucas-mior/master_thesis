@@ -332,7 +332,7 @@
   \addtocounter{abntex@bookmarkcounter}{1}%
   \ABNTEXPRIVATEbookmarkthis{#1}%
   \chapter*[#1]{#1}%
-  }
+}
 \provideboolean{abntex@apendiceousecao}
 \setboolean{abntex@apendiceousecao}{false}
 
