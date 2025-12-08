@@ -87,7 +87,7 @@ case $target in
 
     while true; do
         out="$(run_pdflatex_raw \
-               | display_status "$RED" "Running Latex... (nlatex=$nlatex)" \
+               | display_status "$PUR" "Running Latex... (nlatex=$nlatex)" \
                | tee /dev/tty)"
         nlatex=$((nlatex+1))
 
