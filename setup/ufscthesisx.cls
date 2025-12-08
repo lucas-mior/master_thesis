@@ -2147,6 +2147,7 @@
   breaklines=true,
   breakatwhitespace=true,
   tabsize=4,
+  xleftmargin=\parindent,
   morestring=[b]',
   morestring=[b]",
   inputencoding=utf8, % q/listings-in-latex-with-utf-8-or-at-least-german-umlauts
