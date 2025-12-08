@@ -2285,4 +2285,9 @@
   }{}
 }{}
 
+\let\oldautoref\autoref
+\renewcommand{\autoref}[1]{%
+  \unskip~\oldautoref{#1}%
+}
+
 \makeatother
