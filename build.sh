@@ -33,7 +33,6 @@ case $target in
         status_row=$rows
     }
     trap update_size WINCH
-    update_size
 
     start_sec=$(date +%s)
     start_nsec=$(date +%N)
@@ -47,14 +46,15 @@ case $target in
         printf "%b" "$1"
         printf "%s" "$2"
         printf "%b" "$RESET"
+        printf "\n"
     }
 
     while true; do
         out="$(run_pdflatex)"
         echo "$out"
 
+        print_status "$BLU" "Running Biber..."
         if echo "$out" | grep -q "Please (re)run Biber"; then
-            print_status "$BLU" "Running Biber..."
             biber main
         else
             break
@@ -65,8 +65,9 @@ case $target in
         out="$(run_pdflatex)"
         echo "$out"
 
+        print_status "$PUR" "Rerunning LaTeX..."
         if echo "$out" | grep -qi "Rerun LaTeX."; then
-            print_status "$PUR" "Rerunning LaTeX..."
+            continue
         else
             break
         fi
@@ -97,7 +98,7 @@ case $target in
     fi
 
     git ls-files -i -o --exclude-from=.gitignore -z \
-        | xargs -0 rm -rf --
+        | xargs -0 rm -vrf --
     ;;
 *)
     echo "usage: $(basename "$0") <build|check>"
