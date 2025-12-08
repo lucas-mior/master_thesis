@@ -30,11 +30,11 @@ while read -r line; do
 
     i=$((i+1))
     j=$(echo "$i % 100" | bc)
-    # if [ "$j" -eq 0 ]; then
+    if [ "$j" -eq 0 ]; then
       tput cup $((progress_row - 1)) 0
       printf "$RED Progress: %d/%d (%.2f%%) $RESET" \
           "$count" "$total" "$(awk "BEGIN{print $count*100/$total}")"
       tput cup $((rows - 2)) 0
-    # fi
+    fi
 
 done < <(seq "$total")

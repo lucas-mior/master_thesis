@@ -33,46 +33,76 @@ case $target in
         status_row=$rows
     }
     trap update_size WINCH
+    update_size
 
     start_sec=$(date +%s)
     start_nsec=$(date +%N)
 
-    run_pdflatex() {
-        pdflatex main.tex 2>&1 | grep -v "/usr/share/tex" | grep -v "^\[debug\]"
+    run_pdflatex_raw() {
+        pdflatex main.tex 2>&1 \
+            | grep -v "/usr/share/tex" \
+            | grep -v "^\[debug\]"
     }
 
-    print_status() {
+    draw_status() {
+        color="$1"
+        msg="$2"
         tput cup $((status_row - 1)) 0
-        printf "%b" "$1"
-        printf "%s" "$2"
-        printf "%b" "$RESET"
-        printf "\n"
+        printf "%b%s%b" "$color" "$msg" "$RESET"
+        printf "\033[K"
     }
 
-    while true; do
-        out="$(run_pdflatex)"
-        echo "$out"
+    run_and_display() {
+        color="$1"
+        msg="$2"
 
-        print_status "$BLU" "Running Biber..."
-        if echo "$out" | grep -q "Please (re)run Biber"; then
+        while IFS= read -r ln; do
+            update_size
+
+            tput cup $((status_row - 2)) 0
+            printf "\033[J"
+
+            printf "%s\n" "$ln"
+
+            draw_status "$color" "$msg"
+        done
+    }
+
+    # ---------------------------------------------------------
+    # First phase: handle "Please (re)run Biber"
+    # ---------------------------------------------------------
+    while true; do
+        out="$(run_pdflatex_raw)"
+
+        printf "%s\n" "$out" \
+            | run_and_display "$BLU" "Running Biber..."
+
+        if printf "%s\n" "$out" | grep -q "Please (re)run Biber"; then
             biber main
         else
             break
         fi
     done
 
+    # ---------------------------------------------------------
+    # Second phase: handle "Rerun LaTeX."
+    # ---------------------------------------------------------
     while true; do
-        out="$(run_pdflatex)"
-        echo "$out"
+        out="$(run_pdflatex_raw)"
 
-        print_status "$PUR" "Rerunning LaTeX..."
-        if echo "$out" | grep -qi "Rerun LaTeX."; then
-            continue
+        printf "%s\n" "$out" \
+            | run_and_display "$PUR" "Rerunning LaTeX..."
+
+        if printf "%s\n" "$out" | grep -qi "Rerun LaTeX."; then
+            :
         else
             break
         fi
     done
 
+    # ---------------------------------------------------------
+    # Finish
+    # ---------------------------------------------------------
     end_sec=$(date +%s)
     end_nsec=$(date +%N)
 
@@ -80,7 +110,7 @@ case $target in
                   -v s2="$end_sec" -v n2="$end_nsec" \
         'BEGIN { printf "%.3f\n", (s2 - s1) + (n2 - n1)/1000000000 }')
 
-    print_status "$GRE" "Done. Total compilation time: ${elapsed} s"
+    draw_status "$GRE" "Done. Total compilation time: ${elapsed} s"
 
     if [ ! -e "main.pdf" ]; then
         error "Error compiling main.tex"
