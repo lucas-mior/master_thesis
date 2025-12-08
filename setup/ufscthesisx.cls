@@ -498,8 +498,8 @@
   \chapter*{\bibname}
   \bibmark
   \ifnobibintoc\else
-  \phantomsection
-  \addcontentsline{toc}{chapter}{\uppercase{\bibname}}
+    \phantomsection
+    \addcontentsline{toc}{chapter}{\uppercase{\bibname}}
   \fi
   \prebibhook
 }
