@@ -68,26 +68,22 @@ case $target in
     }
 
     while true; do
-        out="$(run_pdflatex_raw)"
-
-        printf "%s\n" "$out" \
-            | run_and_display "$BLU" "Running Biber..."
+        out="$(run_pdflatex_raw \
+               | run_and_display "$RED" "Running Latex..." \
+               | tee /dev/tty)"
 
         if printf "%s\n" "$out" | grep -q "Please (re)run Biber"; then
-            biber main
+            biber main | run_and_display "$BLU" "Running Biber..."
         else
             break
         fi
     done
 
     while true; do
-        out="$(run_pdflatex_raw)"
-
-        printf "%s\n" "$out" \
-            | run_and_display "$PUR" "Rerunning LaTeX..."
+        out="$(run_pdflatex_raw | run_and_display "$PUR" "Running Latex...")"
 
         if printf "%s\n" "$out" | grep -qi "Rerun LaTeX."; then
-            :
+            continue
         else
             break
         fi
