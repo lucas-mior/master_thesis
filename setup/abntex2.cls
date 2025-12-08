@@ -3,10 +3,6 @@
 %   1. https://github.com/evandrocoan/ufscthesisx
 %   2. https://github.com/evandrocoan/ufscthesisx-setup
 %
-% Always get the latest version from:
-%   1. https://github.com/evandroforks/abntex2/blob/master/tex/latex/abntex2/abntex2.cls
-%   2. wget https://raw.githubusercontent.com/evandroforks/abntex2/master/tex/latex/abntex2/abntex2.cls
-%
 % setup/abntex2.cls, v<VERSION> laurocesar
 % Copyright 2012-<COPYRIGHT_YEAR> by abnTeX2 group at https://www.abntex.net.br/
 %
