@@ -48,7 +48,7 @@ case $target in
         msg="$2"
         tput cup $((status_row - 1)) 0
         printf "%b%s%b" "$color" "$msg" "$RESET"
-        printf "\033[K"
+        printf "\033[K\n"
     }
 
     run_and_display() {
@@ -67,9 +67,6 @@ case $target in
         done
     }
 
-    # ---------------------------------------------------------
-    # First phase: handle "Please (re)run Biber"
-    # ---------------------------------------------------------
     while true; do
         out="$(run_pdflatex_raw)"
 
@@ -83,9 +80,6 @@ case $target in
         fi
     done
 
-    # ---------------------------------------------------------
-    # Second phase: handle "Rerun LaTeX."
-    # ---------------------------------------------------------
     while true; do
         out="$(run_pdflatex_raw)"
 
@@ -99,15 +93,12 @@ case $target in
         fi
     done
 
-    # ---------------------------------------------------------
-    # Finish
-    # ---------------------------------------------------------
     end_sec=$(date +%s)
     end_nsec=$(date +%N)
 
     elapsed=$(awk -v s1="$start_sec" -v n1="$start_nsec" \
                   -v s2="$end_sec" -v n2="$end_nsec" \
-        'BEGIN { printf "%.3f\n", (s2 - s1) + (n2 - n1)/1000000000 }')
+              'BEGIN { printf "%.3f\n", (s2 - s1) + (n2 - n1)/1000000000 }')
 
     draw_status "$GRE" "Done. Total compilation time: ${elapsed} s"
 
