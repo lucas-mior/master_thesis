@@ -1,9 +1,9 @@
 #!/bin/sh
 
-RED="\033[0;38;2;255;000;000m"
-GRE="\033[0;38;2;000;255;000m"
-BLU="\033[0;38;2;000;000;255m"
-PUR="\033[0;38;2;255;000;255m"
+RED="\033[01;38;2;255;000;000m"
+GRE="\033[01;38;2;000;255;000m"
+BLU="\033[01;38;2;000;000;255m"
+PUR="\033[01;38;2;255;000;255m"
 RESET="\033[0m"
 
 target="${1:-build}"
@@ -67,13 +67,19 @@ case $target in
         done
     }
 
+    nlatex=1
+    nbiber=1
+
     while true; do
         out="$(run_pdflatex_raw \
-               | display_status "$RED" "Running Latex..." \
+               | display_status "$RED" "Running Latex... (nlatex=$nlatex)" \
                | tee /dev/tty)"
+        nlatex=$((nlatex+1))
 
         if printf "%s\n" "$out" | grep -q "Please (re)run Biber"; then
-            biber main | display_status "$BLU" "Running Biber..."
+            biber main \
+                | display_status "$BLU" "Running Biber... (nbiber=$nbiber)"
+            nbiber=$((nbiber+1))
         else
             break
         fi
@@ -81,8 +87,9 @@ case $target in
 
     while true; do
         out="$(run_pdflatex_raw \
-               | display_status "$PUR" "Running Latex..." \
+               | display_status "$RED" "Running Latex... (nlatex=$nlatex)" \
                | tee /dev/tty)"
+        nlatex=$((nlatex+1))
 
         if printf "%s\n" "$out" | grep -qi "Rerun LaTeX."; then
             continue
