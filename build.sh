@@ -40,7 +40,8 @@ case $target in
     run_pdflatex_raw() {
         pdflatex main.tex 2>&1 \
             | grep -v "/usr/share/tex" \
-            | grep -v "^\[debug\]"
+            | grep -v "^\[debug\]" \
+            | cat -s
     }
 
     draw_status() {
