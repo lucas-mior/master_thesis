@@ -467,7 +467,7 @@
 \renewcommand{\cfttablename}{\tablename\space}
 \renewcommand*{\cfttableaftersnum}{\hfill\textendash\hfill}
 
-% fonte das partes e do capitulo do TOC
+% fonte das partes e do capítulo do TOC
 \renewcommand{\tocheadstart}{\ABNTEXchapterfont}
 
 % leaders para os capítulos
@@ -640,16 +640,16 @@
     \ABNTEXsubsubsubsectionupperifneeded%
   }
 
-  % impressao do numero do capitulo
+  % impressao do numero do capítulo
   \renewcommand{\chapternamenum}{}
 
-  % impressao do nome do capitulo
+  % impressao do nome do capítulo
   \renewcommand{\printchaptername}{%
     \chaptitlefont%
     \ifthenelse{\boolean{abntex@apendiceousecao}}{\appendixname}{}%
   }
 
-  % impressao do titulo do capitulo
+  % impressao do titulo do capítulo
   \def\printchaptertitle##1{%
     \chaptitlefont%
     \ifthenelse{\boolean{abntex@innonumchapter}}{%
@@ -678,7 +678,7 @@
     }%
   }
 
-  % impressao do numero do capitulo
+  % impressao do numero do capítulo
   \renewcommand{\printchapternum}{%
     \ABNTEXtocprintchapter%
     \setboolean{abntex@innonumchapter}{false}%
@@ -692,7 +692,7 @@
   }
   \renewcommand{\afterchapternum}{}
 
-  % impressao do capitulo não numerado
+  % impressao do capítulo não numerado
   \renewcommand{\printchapternonum}{%
     \ABNTEXtocprintchapternonum%
     \setboolean{abntex@innonumchapter}{true}%
@@ -721,7 +721,7 @@
   \normalrulethickness%
 }
 
-% Cabecalho do inicio do capitulo
+% Cabecalho do inicio do capítulo
 \makepagestyle{abntchapfirst}
 \makeoddhead{abntchapfirst}{}{}{\ABNTEXfontereduzida\thepage}
 
