@@ -91,17 +91,12 @@ case $target in
         exit 1
     fi
 
-    while true; do
+    while [ "$nbiber" -gt 1 ] && \
+          printf "%s\n" "$out" | grep -qi "Rerun LaTeX."; do
         out="$(run_pdflatex_raw \
                | display_status "$PUR" "Running Latex... (nlatex=$nlatex)" \
                | tee /dev/tty)"
         nlatex=$((nlatex+1))
-
-        if printf "%s\n" "$out" | grep -qi "Rerun LaTeX."; then
-            continue
-        else
-            break
-        fi
     done
 
     end_sec=$(date +%s)
