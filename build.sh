@@ -9,7 +9,7 @@ RESET="\033[0m"
 target="${1:-build}"
 
 alias grep='grep --color=auto'
-alias pdflatex='pdflatex -halt-on-error -interaction=nonstopmode'
+alias pdflatex='pdflatex -synctex=1 -halt-on-error -interaction=nonstopmode'
 program=$(basename "$0")
 
 error () {
