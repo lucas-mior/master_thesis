@@ -1335,7 +1335,9 @@
   \newcommand{\UFSCcalculatelTableHeader}{%
     % q/what-is-the-plain-tex-equivalent-of-settowidth
     \newlength{\cfttableinitialnumwidth}
-    \settowidth{\cfttableinitialnumwidth}{\cfttablepresnum\cfttableaftersnum a}%
+    \settowidth{\cfttableinitialnumwidth}{%
+      \cfttablepresnum\cfttableaftersnum a%
+    }%
     \setlength{\cfttablenumwidth}{%
       \dimexpr\cfttableoldnumwidth+\cfttableinitialnumwidth%
     }%
@@ -1418,10 +1420,10 @@
       \cftlstlistingpresnum\cftlstlistingaftersnum ab%
     }%
     \setlength{\cftlstlistingnumwidth}{%
-      \dimexpr\cftlstlistingoldnumwidth+\cftlstlistinginitialnumwidth+2pt%
+      \dimexpr\cftlstlistingoldnumwidth+\cftlstlistinginitialnumwidth%
     }%
     \renewcommand{\cftlstlistingaftersnum}{%
-      \hfill\textendash\hfill
+      \hfill\textendash\hfill%
     }%
   }
 
