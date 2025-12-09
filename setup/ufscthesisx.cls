@@ -1152,10 +1152,6 @@
     \addto\captionsbrazil{%
       \renewcommand{\quadrosname}{Quadro}
     }
-  }{}
-}{}
-\@ifpackageloaded{babel}{%
-  \@ifpackagewith{babel}{brazil}{%
     \addto\captionsbrazil{%
       \renewcommand{\listofquadrosname}{Lista de Quadros}
     }
