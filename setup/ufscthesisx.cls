@@ -1267,7 +1267,8 @@
 
   % Calculate the size of the header
   % q/what-is-the-use-of-percent-signs-at-the-end-of-lines
-  \newcommand{\UFSCcalculatelQuadrosHeader}{%
+  % q/how-to-automatically-add-text-immediately-after-begindocument
+  \AtBeginDocument{
     \renewcommand{\cftquadropresnum}{\quadrosname~}%
 
     % q/what-is-the-plain-tex-equivalent-of-settowidth
@@ -1282,9 +1283,6 @@
       \hfill\textendash\hfill%
     }%
   }
-
-  % q/how-to-automatically-add-text-immediately-after-begindocument
-  \AtBeginDocument{\UFSCcalculatelQuadrosHeader}
 
   % q/how-to-have-a-dynamic-cft-numwidth-i-e-accordingly-to-the-number-size
   \newlength{\cftfigureoldnumwidth}
@@ -1314,7 +1312,8 @@
 
   % Calculate the size of the header
   % q/what-is-the-use-of-percent-signs-at-the-end-of-lines
-  \newcommand{\UFSCcalculatelTableHeader}{%
+  % q/how-to-automatically-add-text-immediately-after-begindocument
+  \AtBeginDocument{
     % q/what-is-the-plain-tex-equivalent-of-settowidth
     \newlength{\cfttableinitialnumwidth}
     \settowidth{\cfttableinitialnumwidth}{%
@@ -1327,9 +1326,6 @@
       \hfill\textendash\hfill%
     }%
   }
-
-  % q/how-to-automatically-add-text-immediately-after-begindocument
-  \AtBeginDocument{\UFSCcalculatelTableHeader}
 
   % q/setting-entries-of-list-of-listings-in-latex-package-listings
   % q/you-cant-use-a-prefix-with-charfb-error-when-importing-csv-into-latex
