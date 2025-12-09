@@ -1293,7 +1293,8 @@
   % Calculate the size of the header
   % q/what-is-the-use-of-percent-signs-at-the-end-of-lines
   % q/list-of-figures-how-to-add-caption-label
-  \newcommand{\UFSCcalculatelFigureHeader}{%
+  % q/how-to-automatically-add-text-immediately-after-begindocument
+  \AtBeginDocument{
     % q/what-is-the-plain-tex-equivalent-of-settowidth
     \newlength{\cftfigureinitialnumwidth}
     \settowidth{\cftfigureinitialnumwidth}{%
@@ -1306,9 +1307,6 @@
       \hfill\textendash\hfill%
     }%
   }
-
-  % q/how-to-automatically-add-text-immediately-after-begindocument
-  \AtBeginDocument{\UFSCcalculatelFigureHeader}
 
   % q/how-to-have-a-dynamic-cft-numwidth-i-e-accordingly-to-the-number-size
   \newlength{\cfttableoldnumwidth}
