@@ -441,34 +441,34 @@
 \cftsetindents{paragraph}    {0em}{\ABNTEXcftLastNumWidth}
 \cftsetindents{subparagraph} {0em}{\ABNTEXcftLastNumWidth}
 
-\newlength{\UFSCcftNumberBoxNumberWidth}
-\setlength{\UFSCcftNumberBoxNumberWidth}{2em}
+\newlength{\cftnumberboxnumberwidth}
+\setlength{\cftnumberboxnumberwidth}{2em}
 \renewcommand{\ABNTEXtocprintchapter}{%
   \addtocontents{toc}{\cftsetindents{chapter}{0em}{\ABNTEXcftLastNumWidth}}
 }
 
 \renewcommand{\ABNTEXtocinnonumchapter}{%
   \addtocontents{toc}{%
-    \cftsetindents{chapter}{\ABNTEXcftLastNumWidth}{\UFSCcftNumberBoxNumberWidth}
+    \cftsetindents{chapter}{\ABNTEXcftLastNumWidth}{\cftnumberboxnumberwidth}
   }%
   \cftinserthook{toc}{A}
 }
 \renewcommand{\ABNTEXtocprintchapternonum}{%
   \addtocontents{toc}{%
-    \cftsetindents{chapter}{\ABNTEXcftLastNumWidth}{\UFSCcftNumberBoxNumberWidth}
+    \cftsetindents{chapter}{\ABNTEXcftLastNumWidth}{\cftnumberboxnumberwidth}
   }%
 }
 
 \renewcommand{\ABNTEXtocpartapendices}{%
   \addtocontents{toc}{%
-    \cftsetindents{chapter}{\ABNTEXcftLastNumWidth}{\UFSCcftNumberBoxNumberWidth}
+    \cftsetindents{chapter}{\ABNTEXcftLastNumWidth}{\cftnumberboxnumberwidth}
   }%
   \cftinserthook{toc}{A}
 }
 
 \renewcommand{\ABNTEXtocpartanexos}{%
   \addtocontents{toc}{%
-    \cftsetindents{chapter}{\ABNTEXcftLastNumWidth}{\UFSCcftNumberBoxNumberWidth}
+    \cftsetindents{chapter}{\ABNTEXcftLastNumWidth}{\cftnumberboxnumberwidth}
   }%
   \cftinserthook{toc}{A}
 }
@@ -1278,8 +1278,8 @@
   \newlistentry{quadro}{loq}{0}
 
   % q/how-to-have-a-dynamic-cft-numwidth-i-e-accordingly-to-the-number-size
-  \newlength{\UFSCcftQuadroOldNumWidth}
-  \setlength{\UFSCcftQuadroOldNumWidth}{\cftquadronumwidth}
+  \newlength{\cftquadrooldnumwidth}
+  \setlength{\cftquadrooldnumwidth}{\cftquadronumwidth}
 
   % Calculate the size of the header
   % q/what-is-the-use-of-percent-signs-at-the-end-of-lines
@@ -1287,12 +1287,12 @@
     \renewcommand{\cftquadropresnum}{\quadrosname~}%
 
     % q/what-is-the-plain-tex-equivalent-of-settowidth
-    \newlength{\UFSCcftQuadroInitialNumWidth}
-    \settowidth{\UFSCcftQuadroInitialNumWidth}{%
+    \newlength{\cftquadroinitialnumwidth}
+    \settowidth{\cftquadroinitialnumwidth}{%
       \cftquadropresnum\cftquadroaftersnum ab%
     }%
     \setlength{\cftquadronumwidth}{%
-      \dimexpr\UFSCcftQuadroOldNumWidth+\UFSCcftQuadroInitialNumWidth%
+      \dimexpr\cftquadrooldnumwidth+\cftquadroinitialnumwidth%
     }%
     \renewcommand{\cftquadroaftersnum}{%
       \hfill\textendash\hfill%
@@ -1303,20 +1303,20 @@
   \AtBeginDocument{\UFSCcalculatelQuadrosHeader}
 
   % q/how-to-have-a-dynamic-cft-numwidth-i-e-accordingly-to-the-number-size
-  \newlength{\UFSCcftFigureOldNumWidth}
-  \setlength{\UFSCcftFigureOldNumWidth}{\cftfigurenumwidth}
+  \newlength{\cftfigureoldnumwidth}
+  \setlength{\cftfigureoldnumwidth}{\cftfigurenumwidth}
 
   % Calculate the size of the header
   % q/what-is-the-use-of-percent-signs-at-the-end-of-lines
   % q/list-of-figures-how-to-add-caption-label
   \newcommand{\UFSCcalculatelFigureHeader}{%
     % q/what-is-the-plain-tex-equivalent-of-settowidth
-    \newlength{\UFSCcftFigureInitialNumWidth}
-    \settowidth{\UFSCcftFigureInitialNumWidth}{%
+    \newlength{\cftfigureinitialnumwidth}
+    \settowidth{\cftfigureinitialnumwidth}{%
       \cftfigurepresnum\cftfigureaftersnum a%
     }%
     \setlength{\cftfigurenumwidth}{%
-      \dimexpr\UFSCcftFigureOldNumWidth+\UFSCcftFigureInitialNumWidth%
+      \dimexpr\cftfigureoldnumwidth+\cftfigureinitialnumwidth%
     }%
     \renewcommand{\cftfigureaftersnum}{%
       \hfill\textendash\hfill%
@@ -1327,17 +1327,17 @@
   \AtBeginDocument{\UFSCcalculatelFigureHeader}
 
   % q/how-to-have-a-dynamic-cft-numwidth-i-e-accordingly-to-the-number-size
-  \newlength{\UFSCcftTableOldNumWidth}
-  \setlength{\UFSCcftTableOldNumWidth}{\cfttablenumwidth}
+  \newlength{\cfttableoldnumwidth}
+  \setlength{\cfttableoldnumwidth}{\cfttablenumwidth}
 
   % Calculate the size of the header
   % q/what-is-the-use-of-percent-signs-at-the-end-of-lines
   \newcommand{\UFSCcalculatelTableHeader}{%
     % q/what-is-the-plain-tex-equivalent-of-settowidth
-    \newlength{\UFSCcftTableInitialNumWidth}
-    \settowidth{\UFSCcftTableInitialNumWidth}{\cfttablepresnum\cfttableaftersnum a}%
+    \newlength{\cfttableinitialnumwidth}
+    \settowidth{\cfttableinitialnumwidth}{\cfttablepresnum\cfttableaftersnum a}%
     \setlength{\cfttablenumwidth}{%
-      \dimexpr\UFSCcftTableOldNumWidth+\UFSCcftTableInitialNumWidth%
+      \dimexpr\cfttableoldnumwidth+\cfttableinitialnumwidth%
     }%
     \renewcommand{\cfttableaftersnum}{\hfill\textendash\hfill}%
   }
@@ -1402,8 +1402,8 @@
   \endgroup
 
   % q/why-the-empty-space-size-is-increasing-each-call
-  \newlength{\UFSCcftLstListingOldNumWidth}
-  \setlength{\UFSCcftLstListingOldNumWidth}{\cftlstlistingnumwidth}
+  \newlength{\cftlstlistingoldnumwidth}
+  \setlength{\cftlstlistingoldnumwidth}{\cftlstlistingnumwidth}
 
   % Calculate the size of the header
   % q/what-is-the-use-of-percent-signs-at-the-end-of-lines
@@ -1411,12 +1411,12 @@
     \renewcommand{\cftlstlistingpresnum}{\lstlistingname~}%
 
     % q/what-is-the-plain-tex-equivalent-of-settowidth
-    \newlength{\UFSCcftLstListingInitialNumwidth}
-    \settowidth{\UFSCcftLstListingInitialNumwidth}{%
+    \newlength{\cftlstlistinginitialnumwidth}
+    \settowidth{\cftlstlistinginitialnumwidth}{%
       \cftlstlistingpresnum\cftlstlistingaftersnum ab%
     }%
     \setlength{\cftlstlistingnumwidth}{%
-      \dimexpr\UFSCcftLstListingOldNumWidth+\UFSCcftLstListingInitialNumwidth+2pt%
+      \dimexpr\cftlstlistingoldnumwidth+\cftlstlistinginitialnumwidth+2pt%
     }%
     \renewcommand{\cftlstlistingaftersnum}{\hfill\textendash\hfill}%
   }
