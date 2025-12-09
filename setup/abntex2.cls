@@ -606,7 +606,7 @@
 
   % tamanhos de fontes de chapter e part
   \ifthenelse{\equal{\ABNTEXisarticle}{true}}{%
-    \setlength\beforechapskip{\baselineskip}%
+    \setlength{\beforechapskip}{\baselineskip}%
     \renewcommand{\chaptitlefont}{\ABNTEXsectionfont\ABNTEXsectionfontsize}%
   }{
     \setlength{\beforechapskip}{0pt}%
@@ -882,8 +882,8 @@
   % em artigos, margens e fontes são as mesmas de memoir
 }{%
   % Ajusta as margens para serem a mesma do documento
-  \setlength\absleftindent{0cm}
-  \setlength\absrightindent{0cm}
+  \setlength{\absleftindent}{0cm}
+  \setlength{\absrightindent}{0cm}
   % Garante que a fonte do texto do abstract será a mesma do documento, pois
   % na classe memoir está \small
   \renewcommand{\abstracttextfont}{\normalfont\normalsize}

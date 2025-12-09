@@ -646,9 +646,9 @@
 % ELEMENTOS TEXTUAIS
 \clearpage
 \ABNTEXtextual{}
-\setlength\beforechapskip{50pt}
-\setlength\midchapskip{20pt}
-\setlength\afterchapskip{20pt}
+\setlength{\beforechapskip}{50pt}
+\setlength{\midchapskip}{20pt}
+\setlength{\afterchapskip}{20pt}
 
 % Introdução (exemplo de capítulo sem numeração, mas presente no Sumário)
 \include{15a_intro.tex}
@@ -668,15 +668,15 @@
 
 % ELEMENTOS PÓS-TEXTUAIS
 \ABNTEXpostextual{}
-\setlength\beforechapskip{0pt}
-\setlength\midchapskip{15pt}
-\setlength\afterchapskip{15pt}
+\setlength{\beforechapskip}{0pt}
+\setlength{\midchapskip}{15pt}
+\setlength{\afterchapskip}{15pt}
 
 % Referências bibliográficas
 \begingroup
   % q/how-to-modify-line-spacing-per-entry-of-bibliography
   % q/how-can-i-put-more-space-between-bibliography-entries-biblatex
-  \setlength\bibitemsep{\baselineskip}
+  \setlength{\bibitemsep}{\baselineskip}
   \ifadvisor\else
     \linespread{1.18}\selectfont
   \fi

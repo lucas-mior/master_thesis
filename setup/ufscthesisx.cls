@@ -433,7 +433,7 @@
 \addtolength{\ABNTEXcftLastNumWidth}{1em}
 
 % http://www.tex.ac.uk/FAQ-tocloftwrong.html
-% Use \setlength\cftsectionnumwidth{4em} to override all these values
+% Use \setlength{\cftsectionnumwidth}{4em} to override all these values
 \cftsetindents{part}         {0em}{\ABNTEXcftLastNumWidth}
 \cftsetindents{chapter}      {0em}{\ABNTEXcftLastNumWidth}
 \cftsetindents{section}      {0em}{\ABNTEXcftLastNumWidth}
@@ -1456,7 +1456,7 @@
     \settowidth{\UFSCcftLstListingInitialNumwidth}{%
       \cftlstlistingpresnum\cftlstlistingaftersnum ab%
     }%
-    \setlength\cftlstlistingnumwidth{%
+    \setlength{\cftlstlistingnumwidth}{%
       \dimexpr\UFSCcftLstListingOldNumWidth+\UFSCcftLstListingInitialNumwidth+2pt%
     }%
     \renewcommand\cftlstlistingaftersnum{\hfill\textendash\hfill}%
