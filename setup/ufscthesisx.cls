@@ -1872,7 +1872,10 @@
     }%
   }{%
     \let\oldAddGoToprintparttitle\printparttitle
-    \xapptocmd{\printparttitle}{~\protect\UFSCgoToSummaryText}{}{}
+    \xapptocmd{\printparttitle}{%
+      ~\protect%
+      \UFSCgoToSummaryText%
+    }{}{}
   }
   \@ifundefined{Sectionformat}{%
     \message{%
@@ -1881,16 +1884,25 @@
     }%
   }{%
     \let\oldAddGoToSectionformat\Sectionformat
-    \xapptocmd{\Sectionformat}{~\protect\UFSCgoToSummaryText}{}{}
+    \xapptocmd{\Sectionformat}{%
+      ~\protect%
+      \UFSCgoToSummaryText%
+    }{}{}
   }
 
   \ifismemoirloaded
     \ifisabntexloaded
       \let\oldAddGoToABNTEXchapterupperifneeded\ABNTEXchapterupperifneeded
-      \xapptocmd{\ABNTEXchapterupperifneeded}{~\protect\UFSCgoToSummaryText}{}{}
+      \xapptocmd{\ABNTEXchapterupperifneeded}{%
+        ~\protect%
+        \UFSCgoToSummaryText%
+      }{}{}
     \else
       \let\oldAddGoToprintchaptertitle\printchaptertitle
-      \xapptocmd{\printchaptertitle}{~\protect\UFSCgoToSummaryText}{}{}
+      \xapptocmd{\printchaptertitle}{%
+        ~\protect%
+        \UFSCgoToSummaryText%
+      }{}{}
     \fi
   \else
     \@ifundefined{Chapterformat}{%
@@ -1900,7 +1912,10 @@
       }%
     }{%
       \let\oldAddGoToChapterformat\Chapterformat
-      \xapptocmd{\Chapterformat}{~\protect\UFSCgoToSummaryText}{}{}
+      \xapptocmd{\Chapterformat}{%
+        ~\protect%
+        \UFSCgoToSummaryText%
+      }{}{}
     }
   \fi
 }
