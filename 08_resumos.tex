@@ -52,9 +52,10 @@
 }
 
 \makeatletter
-\ifenglish{}
-  \imprimirbrazilabstract
 
+\imprimirbrazilabstract
+
+\ifenglish{}
   % q/times-new-roman-in-latex-just-some-text
   % q/how-to-force-output-to-a-left-or-right-page
   % q/do-not-display-chapter-title-in-memoir-class
@@ -177,8 +178,6 @@
     {\begin{inparaitem}[]\palavrasChavePortugues\end{inparaitem}}
 
   \end{otherlanguage*}
-\else
-  \imprimirbrazilabstract
 \fi
 
 \imprimirenglishabstract
