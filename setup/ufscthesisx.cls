@@ -646,46 +646,6 @@
   \appendixpage*
 }
 
-% Impressão da Capa
-\renewcommand{\ABNTEXimprimircapa}{%
-  \begin{abntexEnvCapa}%
-
-    \center
-    {%
-      % https://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions
-      \includegraphics[width=1.84cm,keepaspectratio]{UFSC_sigla_fundo_claro.png}
-
-      {%
-        % q/controlling-the-spacing-between-lines-with-fontsize-selectfont
-        \OnehalfSpacing
-        \MakeTextUppercase{\abnteximprimirinstituicao}\par
-        \MakeTextUppercase{\imprimircampus}\par
-        \MakeTextUppercase{\imprimirprograma}\par
-      }
-    }
-
-    \vfill
-
-    \theauthor
-
-    \vfill
-    {%
-      \center
-      {\ABNTEXchapterfont\MakeUppercase{\thetitle}}%
-      \UFSCifNotEmpty{\imprimirsubtitulo}{%
-        {\ABNTEXchapterfont:} \par \imprimirsubtitulo%
-      }
-    }
-    \vfill
-
-    {%
-      \abnteximprimirlocal\par
-      \imprimirano\par
-    }
-    \vspace*{1cm}
-  \end{abntexEnvCapa}
-}
-
 % Conteúdo padrao da Folha de Rosto
 %
 % q/underfull-hbox-badness-10000-message
