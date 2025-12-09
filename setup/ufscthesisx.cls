@@ -2170,6 +2170,29 @@
   }
 }{}}{}
 
+% \renewcommand*\l@lstlisting[2]{%
+%   \par\noindent
+%   % #1 = listing number and caption text
+%   % #2 = page number
+%   \textbf{#1}\hfill#2\par
+% }
+
+% \renewcommand{\cftlstlistingfont}{\itshape}  % entry font
+% \renewcommand{\cftlstlistingpagefont}{\normalfont} % page number font
+% \setlength{\cftlstlistingindent}{1em}
+% \setlength{\cftlstlistingnumwidth}{3em}
+
+\AtBeginDocument{%
+\renewcommand\lstlistoflistings{\bgroup
+  \let\contentsname\lstlistlistingname
+  \def\numberline##1{\hb@xt@\@tempdima{##1.\hfil}}% <--- added by egreg
+  \def\l@lstlisting##1##2{\@dottedtocline{1}{0em}{2.3em}{Listing ##1}{##2}}%
+  \let\lst@temp\@starttoc \def\@starttoc##1{\lst@temp{lol}}%
+  \cleardoublepage %<---------------
+  \addcontentsline{toc}{chapter}{Listings}%
+  \tableofcontents \egroup}%
+}
+
 % Muda equação para 'Equação (n)'
 % q/autoref-does-not-expand-abbreviation-automatically-at-beginning-of-line
 % q/combining-autoref-and-eqref
