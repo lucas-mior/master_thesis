@@ -53,7 +53,7 @@
 
 \makeatletter
 \ifenglish{}
-  \@ifundefined{imprimirbrazilabstract}{}{\imprimirbrazilabstract}
+  \imprimirbrazilabstract
 
   % q/times-new-roman-in-latex-just-some-text
   % q/how-to-force-output-to-a-left-or-right-page
@@ -178,11 +178,11 @@
 
   \end{otherlanguage*}
 
-  \@ifundefined{imprimirenglishabstract}{}{\imprimirenglishabstract}
+  \imprimirenglishabstract
 
 \else
-  \@ifundefined{imprimirbrazilabstract}{}{\imprimirbrazilabstract}
-  \@ifundefined{imprimirenglishabstract}{}{\imprimirenglishabstract}
+  \imprimirbrazilabstract
+  \imprimirenglishabstract
 \fi
 
 \makeatother
