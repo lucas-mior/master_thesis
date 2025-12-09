@@ -2183,14 +2183,17 @@
 % \setlength{\cftlstlistingnumwidth}{3em}
 
 \AtBeginDocument{%
-\renewcommand\lstlistoflistings{\bgroup
-  \let\contentsname\lstlistlistingname
-  \def\numberline##1{\hb@xt@\@tempdima{##1.\hfil}}% <--- added by egreg
-  \def\l@lstlisting##1##2{\@dottedtocline{1}{0em}{2.3em}{Listing ##1}{##2}}%
-  \let\lst@temp\@starttoc \def\@starttoc##1{\lst@temp{lol}}%
-  \cleardoublepage %<---------------
-  \addcontentsline{toc}{chapter}{Listings}%
-  \tableofcontents \egroup}%
+  \renewcommand\lstlistoflistings{%
+    \bgroup
+    \let\contentsname\lstlistlistingname
+    \def\numberline##1{\hb@xt@\@tempdima{##1.\hfil}}% <--- added by egreg
+    \def\l@lstlisting##1##2{\@dottedtocline{1}{0em}{2.3em}{Listing ##1}{##2}}%
+    \let\lst@temp\@starttoc \def\@starttoc##1{\lst@temp{lol}}%
+    \cleardoublepage
+    \addcontentsline{toc}{chapter}{Listings}%
+    \tableofcontents
+    \egroup%
+  }%
 }
 
 % Muda equação para 'Equação (n)'
