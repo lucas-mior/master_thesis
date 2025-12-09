@@ -1727,14 +1727,6 @@
   \vbox\bgroup \everypar={}\def\par{\endgraf\eatlines\egroup}%
 }
 
-% Creates a new environment which can be used as:
-%
-% \begin{foo}
-%   Text...
-%
-%   Text ...
-% \end{foo}
-%
 % q/push-long-words-in-a-new-line
 \newenvironment{foo}{%
   \par%
