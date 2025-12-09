@@ -1169,10 +1169,6 @@
     \addto\captionsbrazil{%
       \crefname{quadro}{quadro}{quadros}
     }
-  }{}
-}{}
-\@ifpackageloaded{babel}{%
-  \@ifpackagewith{babel}{brazil}{%
     \addto\captionsbrazil{
       \Crefname{quadro}{Quadro}{Quadros}
     }
