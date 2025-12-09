@@ -1324,7 +1324,7 @@
   % Calculate the size of the header
   % q/what-is-the-use-of-percent-signs-at-the-end-of-lines
   \newcommand{\UFSCcalculatelQuadrosHeader}{%
-    \renewcommand\cftquadropresnum{\quadrosname~}%
+    \renewcommand{\cftquadropresnum}{\quadrosname~}%
 
     % q/what-is-the-plain-tex-equivalent-of-settowidth
     \newlength{\UFSCcftQuadroInitialNumWidth}
@@ -1379,7 +1379,7 @@
     \setlength{\cfttablenumwidth}{%
       \dimexpr\UFSCcftTableOldNumWidth+\UFSCcftTableInitialNumWidth%
     }%
-    \renewcommand\cfttableaftersnum{\hfill\textendash\hfill}%
+    \renewcommand{\cfttableaftersnum}{\hfill\textendash\hfill}%
   }
 
   % q/how-to-automatically-add-text-immediately-after-begindocument
