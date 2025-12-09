@@ -1,5 +1,4 @@
 # ufscthesisx
-
 Esta é uma classe LaTeX.
 
 O modelo disponibilizado pela Biblioteca Universitária da UFSC em 2015,
@@ -9,11 +8,9 @@ portanto tratou-se de buscar a criação deste novo modelo que utiliza a classe 
 Esse projeto não está vinculado a nenhum órgão da UFSC.
 
 Qualquer problema com a utilização ou com o modelo em si,
-basta criar um issue aqui no GitHub no nosso issue tracker: [issues](../../issues)
-
+basta criar um issue aqui no GitHub.
 
 ### Utilizando `git`
-
 No diretório do seu projeto faça um clone (recursivo) dos arquivos do repositório,
 em uma pasta chamada `setup` dentro do template da sua tese:
 ```bash
@@ -45,7 +42,6 @@ caso você seja usuário de `git`,
 é fazer o clone desse repositório como um submodulo de sua tese,
 e em seu arquivo principal incluir o seguinte cabeçalho para carregar os pacotes básicos mencionados acima.
 
-
 ### Mudanças
 
 Para ver as mudanças, acesse o histórico do `git` no endereço [commits/master](../../commits/master).
@@ -55,7 +51,6 @@ Ou clone este repositório e execute seguinte comando do cliente git:
 # https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History
 git log
 ```
-
 
 ## Compilação
 
@@ -99,7 +94,6 @@ Por conveniência,
 você também pode chamar `make latex debug=1` qualquer outra coisa desde que não seja vazio.
 Você também pode diretamente editar o arquivo `setup/makefile.mk` e
 descomentar a linha `# ENABLE_DEBUG_MODE := true` para ativar o modo debug permanentemente.
-
 
 ## Licença
 
