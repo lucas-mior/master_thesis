@@ -1182,10 +1182,6 @@
     \addto\captionsbrazil{%
       \crefname{figure}{Figura}{Figuras}
     }
-  }{}
-}{}
-\@ifpackageloaded{babel}{%
-  \@ifpackagewith{babel}{brazil}{%
     \addto\captionsbrazil{
       \Crefname{figure}{Figura}{Figuras}
     }
@@ -1197,10 +1193,6 @@
     \addto\captionsenglish{%
       \crefname{figure}{figure}{figures}
     }
-  }{}
-}{}
-\@ifpackageloaded{babel}{%
-  \@ifpackagewith{babel}{english}{%
     \addto\captionsenglish{%
       \Crefname{figure}{Figure}{Figures}
     }
@@ -1349,10 +1341,6 @@
       \addto\captionsbrazil{%
         \renewcommand{\lstlistingname}{Código}
       }
-    }{}
-  }{}
-  \@ifpackageloaded{babel}{%
-    \@ifpackagewith{babel}{brazil}{%
       \addto\captionsbrazil{%
         \renewcommand{\lstlistlistingname}{Lista de Códigos}
       }
@@ -1364,10 +1352,6 @@
       \addto\captionsenglish{%
         \renewcommand{\lstlistingname}{Code}
       }
-    }{}
-  }{}
-  \@ifpackageloaded{babel}{%
-    \@ifpackagewith{babel}{english}{%
       \addto\captionsenglish{%
         \renewcommand{\lstlistlistingname}{List of Codes}
       }
@@ -1379,10 +1363,6 @@
       \addto\captionsbrazil{%
         \crefname{listing}{código}{códigos}
       }
-    }{}
-  }{}
-  \@ifpackageloaded{babel}{%
-    \@ifpackagewith{babel}{brazil}{%
       \addto\captionsbrazil{%
         \Crefname{listing}{Código}{Códigos}
       }
