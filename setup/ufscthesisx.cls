@@ -18,7 +18,6 @@
 %
 % This work consists of the file `abntex2-ufsc.sty` renamed as follows:
 % Renamed the `abntex2.cls, v-1.9.6 laurocesar` to `setup/ufscthesisx.sty`
-%
 
 % Define versão necessária do LaTeX
 \NeedsTeXFormat{LaTeX2e}
