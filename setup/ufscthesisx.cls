@@ -1697,7 +1697,8 @@
   \if\noexpand~\noexpand#1%
   \else
   \expandafter\@firstofone
-  \fi{\expandafter\futurelet\expandafter#1\expandafter\@gobble\space\relax}}
+  \fi{\expandafter\futurelet\expandafter#1\expandafter\@gobble\space\relax}%
+}
 
 % q/how-could-the-everypar-justification-statement-be-used
 \newbox\linebox
