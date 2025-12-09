@@ -1448,7 +1448,7 @@
   % Calculate the size of the header
   % q/what-is-the-use-of-percent-signs-at-the-end-of-lines
   \newcommand{\UFSCcalculatelstListingsHeader}{%
-    \renewcommand\cftlstlistingpresnum{\lstlistingname~}%
+    \renewcommand{\cftlstlistingpresnum}{\lstlistingname~}%
 
     % q/what-is-the-plain-tex-equivalent-of-settowidth
     \newlength{\UFSCcftLstListingInitialNumwidth}
@@ -1458,7 +1458,7 @@
     \setlength{\cftlstlistingnumwidth}{%
       \dimexpr\UFSCcftLstListingOldNumWidth+\UFSCcftLstListingInitialNumwidth+2pt%
     }%
-    \renewcommand\cftlstlistingaftersnum{\hfill\textendash\hfill}%
+    \renewcommand{\cftlstlistingaftersnum}{\hfill\textendash\hfill}%
   }
 
   % q/how-to-automatically-add-text-immediately-after-begindocument
@@ -1651,7 +1651,7 @@
 % Option `hyperfootnotes' has 1`hyperfootnotes' has already been used
 % q/bigfoot-sty61-package-hyperref-warning-option-hyperfootnotes-has-already-be
 \let\truehypersetup\hypersetup
-\renewcommand\hypersetup[1]{}
+\renewcommand{\hypersetup}[1]{}
 \usepackage{bigfoot}
 \let\hypersetup\truehypersetup
 
