@@ -2182,18 +2182,18 @@
 % \setlength{\cftlstlistingindent}{1em}
 % \setlength{\cftlstlistingnumwidth}{3em}
 
-\AtBeginDocument{%
-  \renewcommand\lstlistoflistings{%
-    \bgroup
-      \let\contentsname\lstlistlistingname
-      \def\numberline##1{\hb@xt@\@tempdima{##1.\hfil}}
-      \def\l@lstlisting##1##2{\@dottedtocline{1}{0em}{2.3em}{Listing ##1}{##2}}%
-      \let\lst@temp\@starttoc \def\@starttoc##1{\lst@temp{lol}}%
-      \cleardoublepage
-      \tableofcontents
-    \egroup%
-  }%
-}
+% \AtBeginDocument{%
+%   \renewcommand\lstlistoflistings{%
+%     \bgroup
+%       \let\contentsname\lstlistlistingname
+%       \def\numberline##1{\hb@xt@\@tempdima{##1.\hfil}}
+%       \def\l@lstlisting##1##2{\@dottedtocline{1}{0em}{2.3em}{Listing ##1}{##2}}%
+%       \let\lst@temp\@starttoc \def\@starttoc##1{\lst@temp{lol}}%
+%       \cleardoublepage
+%       \tableofcontents
+%     \egroup%
+%   }%
+% }
 
 % Muda equação para 'Equação (n)'
 % q/autoref-does-not-expand-abbreviation-automatically-at-beginning-of-line
