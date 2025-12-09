@@ -1339,7 +1339,9 @@
     \setlength{\cfttablenumwidth}{%
       \dimexpr\cfttableoldnumwidth+\cfttableinitialnumwidth%
     }%
-    \renewcommand{\cfttableaftersnum}{\hfill\textendash\hfill}%
+    \renewcommand{\cfttableaftersnum}{%
+      \hfill\textendash\hfill%
+    }%
   }
 
   % q/how-to-automatically-add-text-immediately-after-begindocument
@@ -1418,7 +1420,9 @@
     \setlength{\cftlstlistingnumwidth}{%
       \dimexpr\cftlstlistingoldnumwidth+\cftlstlistinginitialnumwidth+2pt%
     }%
-    \renewcommand{\cftlstlistingaftersnum}{\hfill\textendash\hfill}%
+    \renewcommand{\cftlstlistingaftersnum}{%
+      \hfill\textendash\hfill
+    }%
   }
 
   % q/how-to-automatically-add-text-immediately-after-begindocument
