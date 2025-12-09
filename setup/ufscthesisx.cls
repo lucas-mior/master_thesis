@@ -1407,7 +1407,7 @@
 
   % Calculate the size of the header
   % q/what-is-the-use-of-percent-signs-at-the-end-of-lines
-  \newcommand{\UFSCcalculatelstListingsHeader}{%
+  \newcommand{\calculatelstlistingsheader}{%
     \renewcommand{\cftlstlistingpresnum}{\lstlistingname~}%
 
     % q/what-is-the-plain-tex-equivalent-of-settowidth
@@ -1422,7 +1422,7 @@
   }
 
   % q/how-to-automatically-add-text-immediately-after-begindocument
-  \AtBeginDocument{\UFSCcalculatelstListingsHeader}
+  \AtBeginDocument{\calculatelstlistingsheader}
 }{}
 
 % q/list-of-figures-and-tables-when-there-are-no-figures-or-tables
