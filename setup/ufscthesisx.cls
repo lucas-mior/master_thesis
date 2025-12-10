@@ -1372,6 +1372,36 @@
     }{}
   }{}
 
+  \begingroup
+    \let\newcounter\@gobble\let\setcounter\@gobbletwo
+    \globaldefs\@ne \let\c@loldepth\@ne
+    \newlistof{listings}{lol}{\lstlistlistingname}
+    \newlistof{lstlistoflistings}{lol}{\lstlistlistingname}
+    \newlistentry{lstlisting}{lol}{0}
+  \endgroup
+
+  % q/why-the-empty-space-size-is-increasing-each-call
+  \newlength{\cftlstlistingoldnumwidth}
+  \setlength{\cftlstlistingoldnumwidth}{\cftlstlistingnumwidth}
+
+  % Calculate the size of the header
+  % q/what-is-the-use-of-percent-signs-at-the-end-of-lines
+  % q/how-to-automatically-add-text-immediately-after-begindocument
+  \AtBeginDocument{
+    \renewcommand{\cftlstlistingpresnum}{\lstlistingname~}%
+
+    % q/what-is-the-plain-tex-equivalent-of-settowidth
+    \newlength{\cftlstlistinginitialnumwidth}
+    \settowidth{\cftlstlistinginitialnumwidth}{%
+      \cftlstlistingpresnum\cftlstlistingaftersnum ab%
+    }%
+    \setlength{\cftlstlistingnumwidth}{%
+      \dimexpr\cftlstlistingoldnumwidth+\cftlstlistinginitialnumwidth%
+    }%
+    \renewcommand{\cftlstlistingaftersnum}{%
+      \hfill\textendash\hfill%
+    }%
+  }
 }{}
 
 % q/list-of-figures-and-tables-when-there-are-no-figures-or-tables
