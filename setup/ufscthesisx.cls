@@ -1362,7 +1362,6 @@
     \let\newcounter\@gobble\let\setcounter\@gobbletwo
     \globaldefs\@ne \let\c@loldepth\@ne
     \newlistof{listings}{lol}{\lstlistlistingname}
-    \newlistof{lstlistoflistings}{lol}{\lstlistlistingname}
     \newlistentry{lstlisting}{lol}{0}
   \endgroup
 
