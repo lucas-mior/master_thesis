@@ -1553,7 +1553,7 @@
 % q/how-to-add-babel-captions-to-newfloat-package-environments
 \usepackage{newfloat}
 
-% q/how-to-auto-adjust-my-last-table-column-width-and-why-is-there-underfull-vbox/387251
+% q/how-to-auto-adjust-my-last-table-column-width-and-why-is-there-underfull-vbox
 % q/why-ltablex-package-breaks-the-changepage-package
 \usepackage{ltablex}\keepXColumns
 
