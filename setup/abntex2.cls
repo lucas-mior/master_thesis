@@ -180,7 +180,7 @@
 \newcommand{\ABNTEXnota}[2][\ABNTEXnotaname]{\ABNTEXfonte[#1]{#2}}
 
 % Customiza listas
-\RequirePackage[shortlabels]{enumitem}
+\RequirePackage[shortlabels,inline]{enumitem}
 
 % q/how-to-recognize-the-enumerate-shortlabels-in-my-custom-environment
 % q/how-to-define-commands-before-loading-the-hyperref-package-which-is-loaded-by

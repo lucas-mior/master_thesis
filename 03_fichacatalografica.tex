@@ -74,23 +74,23 @@
         % q/using-lower-case-roman-numerals-in-enumerate-lists
         % q/how-to-define-inparaenum-in-the-preamble
         \hspace{0.5cm}
-        \begin{inparaenum}
+        \begin{enumerate*}[itemjoin={,\space}, after*={,}]
           \EngAndPor{%
-            \palavrasChaveInglescomvirgula%
+            \palavrasChaveIngles%
           }{%
-            \palavrasChavePortuguescomvirgula%
-          }
-        \end{inparaenum}%
-        \begin{inparaenum}[I.]
+            \palavrasChavePortugues%
+          }%
+        \end{enumerate*}%
+        \begin{enumerate*}[label=\Roman*., itemjoin={,\space}]
           \item \abnteximprimirorientador{}
           \UFSCifNotEmpty{%
             \abnteximprimircoorientador%
           }{%
             \item \abnteximprimircoorientador~%
-          }
-          \item \imprimirprograma{}
-          \item \thetitle{}
-        \end{inparaenum}%
+          }%
+          \item \imprimirprograma{}%
+          \item \thetitle{}%
+        \end{enumerate*}%
         \bigskip
 
         \hspace{7.75cm} CDU 02:141:005.7

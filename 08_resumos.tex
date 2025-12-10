@@ -25,9 +25,9 @@
 
     \UFSCimprimirPalavrasChave{Palavras-chaves}
     {%
-      \begin{inparaitem}[]%
+      \begin{itemize*}[itemjoin={; },label={}]
         \palavrasChavePortugues%
-      \end{inparaitem}%
+      \end{itemize*}
     }
 
   \end{abntexEnvResumo}
@@ -153,7 +153,11 @@
     dui semper, dictum eros at, suscipit felis.
 
     \UFSCimprimirPalavrasChave{Palavras-chaves}
-    {\begin{inparaitem}[]\palavrasChavePortugues\end{inparaitem}}
+    {%
+      \begin{itemize*}[itemjoin={; },label={}]
+        \palavrasChavePortugues%
+      \end{itemize*}
+    }
 
   \end{otherlanguage*}
 \fi
@@ -169,7 +173,11 @@
     This is the English abstract.
 
     \UFSCimprimirPalavrasChave{Keywords}
-    {\begin{inparaitem}[]\palavrasChaveIngles\end{inparaitem}}
+    {%
+      \begin{itemize*}[itemjoin={; },label={}]
+        \palavrasChaveIngles%
+      \end{itemize*}
+    }
 
 \end{abntexEnvResumo}
 \end{otherlanguage*}

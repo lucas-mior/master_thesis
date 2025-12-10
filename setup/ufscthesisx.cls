@@ -595,7 +595,7 @@
   }{%
     \message{^^JNotice palavraschaveufsc: #1 is defined with '#2'^^J}%
   }
-  {\expandafter\g@addto@macro\csname#1\endcsname{\item #2. }}
+  {\expandafter\g@addto@macro\csname#1\endcsname{\item #2}}
 
   \@ifundefined{#1comvirgula}{%
     \message{^^JNotice palavraschaveufsc: #1 is undefined with '#2'^^J}
@@ -603,7 +603,7 @@
   }{%
     \message{^^JNotice palavraschaveufsc: #1 is defined with '#2'^^J}%
   }
-  {\expandafter\g@addto@macro\csname#1comvirgula\endcsname{\item #2, }}
+  {\expandafter\g@addto@macro\csname#1comvirgula\endcsname{\item #2}}
 
   \@ifundefined{#1semitem}{%
     \message{^^JNotice palavraschaveufsc: #1 is undefined with '#2'^^J}
@@ -611,7 +611,7 @@
   }{%
     \message{^^JNotice palavraschaveufsc: #1 is defined with '#2'^^J}%
   }
-  {\expandafter\g@addto@macro\csname#1semitem\endcsname{#2. }}
+  {\expandafter\g@addto@macro\csname#1semitem\endcsname{#2}}
 }
 
 % ------------------------------------------------------------------------
