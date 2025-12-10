@@ -101,28 +101,28 @@
 % q/how-to-remove-space-before-enumerate
 % q/behaviour-of-enumitem-setlist
 \advisor{}{
-    \setlist*[enumerate]{label=\arabic*,}
-    \setlist*[ABNTEXenumerateOptional]{label=\arabic*,}
+  \setlist*[enumerate]{label=\arabic*,}
+  \setlist*[ABNTEXenumerateOptional]{label=\arabic*,}
 
-    % q/space-after-float-with-h
-    % q/how-can-i-reduce-padding-after-figure
-    \AtBeginEnvironment{figure}{
-      % Vertical space above & below [h] floats
-      \setlength{\intextsep}{5pt}
-      % Vertical space below (above) [t] ([b]) floats
-      % \setlength{\textfloatsep}{10pt}
-      % \setlength{\abovecaptionskip}{10pt}
-      % \setlength{\belowcaptionskip}{5pt}
-    }
+  % q/space-after-float-with-h
+  % q/how-can-i-reduce-padding-after-figure
+  \AtBeginEnvironment{figure}{
+    % Vertical space above & below [h] floats
+    \setlength{\intextsep}{5pt}
+    % Vertical space below (above) [t] ([b]) floats
+    % \setlength{\textfloatsep}{10pt}
+    % \setlength{\abovecaptionskip}{10pt}
+    % \setlength{\belowcaptionskip}{5pt}
+  }
 
-    % Patch the `abntex2`
-    % citacao environment removing the extra space from its top
-    % q/topsep-itemsep-partopsep-and-parsep-what-does-each-of-them-mean-and-wha
-    \xpatchcmd{\citacao}
-    {\list{}}
-    {\list{}{\topsep=0pt}}
-    {}
-    {\FAILEDPATCHINGCITACAO}
+  % Patch the `abntex2`
+  % citacao environment removing the extra space from its top
+  % q/topsep-itemsep-partopsep-and-parsep-what-does-each-of-them-mean-and-wha
+  \xpatchcmd{\citacao}
+  {\list{}}
+  {\list{}{\topsep=0pt}}
+  {}
+  {\FAILEDPATCHINGCITACAO}
 }
 
 % Color settings across the document
