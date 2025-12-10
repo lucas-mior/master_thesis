@@ -140,7 +140,7 @@
 % ------------------------------------------------------------------------
 
 % Do pacote de if/them/else
-\newcommand{\abntex@UFSCifNotEmpty}[2]{%
+\newcommand{\abntexUFSCifNotEmpty}[2]{%
   \ifthenelse{\not\equal{#1}{}}{#2}{}
 }
 
@@ -1170,7 +1170,7 @@
     \end{center}
     \vspace*{\fill}
 
-    \abntex@UFSCifNotEmpty{\abnteximprimirpreambulo}{%
+    \abntexUFSCifNotEmpty{\abnteximprimirpreambulo}{%
       \hspace{.45\textwidth}
       \begin{minipage}{.5\textwidth}
         \SingleSpacing
@@ -1180,7 +1180,7 @@
     }%
 
     {%
-      \abntex@UFSCifNotEmpty{\abnteximprimirinstituicao}{%
+      \abntexUFSCifNotEmpty{\abnteximprimirinstituicao}{%
         \abnteximprimirinstituicao\vspace*{\fill}%
       }
     }
@@ -1188,7 +1188,7 @@
     {%
       \large\abnteximprimirorientadorRotulo~\abnteximprimirorientador\par
     }
-    \abntex@UFSCifNotEmpty{\abnteximprimircoorientador}{%
+    \abntexUFSCifNotEmpty{\abnteximprimircoorientador}{%
       {\large\abnteximprimircoorientadorRotulo~\abnteximprimircoorientador}%
     }%
     \vspace*{\fill}

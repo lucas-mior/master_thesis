@@ -641,64 +641,6 @@
   \appendixpage*
 }
 
-% Conteúdo padrao da Folha de Rosto
-%
-% q/underfull-hbox-badness-10000-message
-% q/underfull-hbox-badness-in-paragraph-at-lines-x-y
-% q/how-to-add-an-empty-line-between-paragraphs
-\renewcommand{\ABNTEXfolhaderostocontent}{%
-  \begin{center}
-  \begin{hyphenrules}{nohyphenation}
-    \theauthor
-
-    \vspace*{\fill}\vspace*{\fill}
-    \begin{center}
-
-      {%
-        {\ABNTEXchapterfont\MakeUppercase{\thetitle}}%
-        \UFSCifNotEmpty{\imprimirsubtitulo}{%
-          {\ABNTEXchapterfont:} \par \imprimirsubtitulo%
-        }
-      }
-
-    \end{center}
-    \vspace*{\fill}
-
-    \abntex@UFSCifNotEmpty{\abnteximprimirpreambulo}
-    {%
-      \hspace{\textwidth}
-      \begin{adjustwidth*}{8cm}{}%8.5
-
-        \SingleSpacing
-        {\UFSCcaptionSize\abnteximprimirpreambulo}
-
-        \vspace{1em}
-
-        {
-          \UFSCcaptionSize\textbf{%
-            \abnteximprimirorientadorRotulo:%
-          }~\abnteximprimirorientador\par
-          \abntex@UFSCifNotEmpty{\abnteximprimircoorientador}
-          {
-            \textbf{%
-              \abnteximprimircoorientadorRotulo:%
-            }~\abnteximprimircoorientador%
-          }
-        }
-
-      \end{adjustwidth*}
-    }
-
-    \vspace*{\fill}
-    {%
-      \abnteximprimirlocal\par
-      \imprimirano\par
-    }
-
-  \end{hyphenrules}
-  \end{center}
-}
-
 % q/if-document-class-is-equal-to-something-then-do-not-use-package
 \@ifclassloaded{setup/abntex2}{
   % Package hyperref Warning: Token not allowed in a PDF string?
