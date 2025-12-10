@@ -427,7 +427,7 @@
 % q/memoir-toc-indent-the-second-line-by-numberspace
 
 % `\ABNTEXcftLastNumWidth` and these `\cftsetindents` are defined by abntex2 class,
-% obeying the `ABNTEXsumario-abnt-6027-2012`. \newlength{\ABNTEXcftLastNumWidth}
+% obeying the `ABNTEXsumario-abnt-6027-2012`.
 \setlength{\ABNTEXcftLastNumWidth}{\cftsubsubsectionnumwidth}
 \addtolength{\ABNTEXcftLastNumWidth}{1em}
 
