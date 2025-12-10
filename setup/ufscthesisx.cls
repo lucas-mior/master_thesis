@@ -976,12 +976,6 @@
 % q/how-to-use-scalebox-around-my-environment
 \usepackage{verbatimbox}
 
-% LaTeX/Indexing
-% https://www.sharelatex.com/learn/Indices
-% https://en.wikibooks.org/wiki/LaTeX/Indexing
-\usepackage{makeidx}
-\makeindex
-
 % q/is-it-possible-to-keep-my-translation-together-with-original-text
 \usepackage{comment}
 
