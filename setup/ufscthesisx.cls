@@ -929,7 +929,6 @@
 
 \usepackage{amssymb}
 \usepackage{mathrsfs}
-\usepackage{pdflscape}
 \usepackage{epstopdf}
 
 % Para incluir links
