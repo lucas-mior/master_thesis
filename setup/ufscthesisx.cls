@@ -72,6 +72,10 @@
   \RequirePackage{float}
 }
 
+\AfterClass{memoir}{
+  \RequirePackage{listings}
+}
+
 % The class `abntex2`
 % loads the package `enumitem`, but `paralist` must be loaded before it
 % q/compilation-error-when-including-enumitem-and-paralist-packages
@@ -950,7 +954,6 @@
 \usepackage{pdflscape}
 \usepackage{epstopdf}
 \usepackage{multirow}
-\usepackage{listings}
 
 % Para incluir links
 \usepackage{url}
