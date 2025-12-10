@@ -951,9 +951,6 @@
 % Para incluir links
 \usepackage{url}
 
-% Pacote necessário para a lista de siglas.
-\usepackage{booktabs}
-
 % A comprehensive (SI) units package
 \usepackage{siunitx}
 \sisetup{detect-all}
