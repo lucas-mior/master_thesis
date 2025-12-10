@@ -1201,20 +1201,4 @@
   \end{center}
 }
 
-\newcommand{\ABNTEXimprimirFolhaDeRostostar}[1]{%
-  \begin{abntexEnvFolhaderosto*}{#1}
-    \ABNTEXfolhaderostocontent
-  \end{abntexEnvFolhaderosto*}
-}
-
-\newcommand{\ABNTEXimprimirFolhaDeRostonostar}[1]{%
-  \begin{abntexEnvFolhaderosto}{#1}
-    \ABNTEXfolhaderostocontent
-  \end{abntexEnvFolhaderosto}
-}
-
-\newcommand{\ABNTEXimprimirFolhaDeRosto}[1][\ABNTEXfolhaderostoname]{%
-  \@ifstar \ABNTEXimprimirFolhaDeRostostar \ABNTEXimprimirFolhaDeRostonostar
-}
-
 \makeatother
