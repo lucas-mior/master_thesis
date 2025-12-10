@@ -904,7 +904,7 @@
 % q/blank-page-after-titlingpage
 \usepackage{atbegshi}
 
-% Selecao de codigos de fonte
+% Seleção de códigos de fonte
 % q/why-should-i-use-usepackaget1fontenc
 %
 % Will allow all displayable utf8 characters to be available as input
