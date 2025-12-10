@@ -8,6 +8,9 @@ RESET="\033[0m"
 
 target="${1:-build}"
 
+alias trace_on='set -x'
+alias trace_off='{ set +x; } 2>/dev/null'
+
 alias grep='grep --color=auto'
 alias pdflatex='pdflatex -synctex=1 -halt-on-error -interaction=nonstopmode'
 program=$(basename "$0")
@@ -71,15 +74,24 @@ case $target in
     nlatex=1
     nbiber=1
 
+    if [ ! -e "main.pdf" ]; then
+        draft="-draftmode"
+    fi
+
     while true; do
-        out="$(run_pdflatex_raw \
+        trace_on
+        out="$(run_pdflatex_raw $draft \
                | display_status "$RED" "Running Latex... (nlatex=$nlatex)" \
                | tee /dev/tty)"
+        trace_off
         nlatex=$((nlatex+1))
+        draft=""
 
         if printf "%s\n" "$out" | grep -q "Please (re)run Biber"; then
+            trace_on
             biber main \
                 | display_status "$BLU" "Running Biber... (nbiber=$nbiber)"
+            trace_off
             nbiber=$((nbiber+1))
         else
             break
@@ -94,9 +106,11 @@ case $target in
 
     while [ "$nbiber" -gt 1 ] && \
           printf "%s\n" "$out" | grep -qi "Rerun LaTeX."; do
+        trace_on
         out="$(run_pdflatex_raw \
                | display_status "$PUR" "Running Latex... (nlatex=$nlatex)" \
                | tee /dev/tty)"
+        trace_off
         nlatex=$((nlatex+1))
     done
 
