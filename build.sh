@@ -76,6 +76,7 @@ case $target in
 
     if [ ! -e "main.pdf" ]; then
         draft="-draftmode"
+        nbiber=2
     fi
 
     while true; do
@@ -101,7 +102,7 @@ case $target in
     fi
 
     while [ "$nbiber" -gt 1 ] && \
-          printf "%s\n" "$out" | grep -qi "Rerun LaTeX."; do
+        printf "%s\n" "$out" | grep -qEi "(Rerun LaTeX|pdfdraftmode)"; do
         out="$(run_pdflatex_raw \
                | display_status "$PUR" "Running Latex... (nlatex=$nlatex)" \
                | tee /dev/tty)"
