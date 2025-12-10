@@ -576,12 +576,6 @@
   \@ifundefined{parOriginal}{}{\parOriginal}\vspace{\onelineskip}\textbf{#1}: #2
 }
 
-% Create a list of things like (\usepackage{paralist})
-%   \UFSCaddKeyword{englishkeywordslist}{keyword 1}
-%   \UFSCaddKeyword{englishkeywordslist}{keyword 2}
-%   \begin{inparaitem}[]\englishkeywordslist\end{inparaitem}
-%   \begin{inparaenum}\englishkeywordslist\end{inparaenum}
-%
 % q/how-to-define-inparaenum-in-the-preamble
 % q/lonely-item-perhaps-a-missing-list-environment-missing-package
 % q/how-do-you-define-one-macro-with-arguments-inside-another
@@ -1011,7 +1005,6 @@
 \usepackage{shellesc}
 
 % abntex2
-\usepackage{bookmark}
 \usepackage{calc}
 
 % q/cannot-use-caption-under-minipage
