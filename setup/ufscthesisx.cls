@@ -76,15 +76,6 @@
   \RequirePackage{listings}
 }
 
-% The class `abntex2`
-% loads the package `enumitem`, but `paralist` must be loaded before it
-% q/compilation-error-when-including-enumitem-and-paralist-packages
-\AfterClass{memoir}{
-  % How to make horizontal lists?
-  % q/how-to-make-horizontal-lists
-  \RequirePackage{paralist}
-}
-
 % q/newline-linebreak-in-message
 % q/biblatex-error-incompatible-backref-package
 % q/backreferencing-in-classicthesis-package-does-not-work
@@ -887,10 +878,6 @@
 % q/ifpackageloaded-question
 \@ifpackageloaded{changepage}{}{\usepackage[strict]{changepage}}
 
-% q/how-to-make-horizontal-lists
-% q/compilation-error-when-including-enumitem-and-paralist-packages
-\usepackage{paralist}
-
 % Replace the `paralist` package implementation of enumerate lists
 \usepackage{enumerate}
 
@@ -1372,7 +1359,7 @@
     }{}
   }{}
 
-  \begingroup
+  \begingroup\makeatletter
     \let\newcounter\@gobble\let\setcounter\@gobbletwo
     \globaldefs\@ne \let\c@loldepth\@ne
     \newlistof{listings}{lol}{\lstlistlistingname}
