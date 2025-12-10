@@ -1180,8 +1180,9 @@
     }%
 
     {%
-      \abntex@UFSCifNotEmpty{\abnteximprimirinstituicao}
-                            {\abnteximprimirinstituicao\vspace*{\fill}}
+      \abntex@UFSCifNotEmpty{\abnteximprimirinstituicao}{%
+        \abnteximprimirinstituicao\vspace*{\fill}%
+      }
     }
 
     {%

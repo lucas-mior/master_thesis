@@ -51,9 +51,7 @@
         }%
         ~/~\theauthor% chktex 39
         {;}~\abnteximprimirorientadorRotulo,~\abnteximprimirorientador%
-        \UFSCifNotEmpty{%
-          \abnteximprimircoorientador%
-        }{%
+        \UFSCifNotEmpty{\abnteximprimircoorientador}{%
           {;}~\abnteximprimircoorientadorRotulo,~\abnteximprimircoorientador%
         }%
         ~--~\abnteximprimirlocal,~\ABNTEXimprimirdata.%chktex 39
@@ -83,9 +81,7 @@
         \end{enumerate*}%
         \begin{enumerate*}[label=\Roman*., itemjoin={,\space}]
           \item \abnteximprimirorientador{}
-          \UFSCifNotEmpty{%
-            \abnteximprimircoorientador%
-          }{%
+          \UFSCifNotEmpty{\abnteximprimircoorientador}{%
             \item \abnteximprimircoorientador~%
           }%
           \item \imprimirprograma{}%
