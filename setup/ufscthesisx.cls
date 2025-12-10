@@ -586,8 +586,8 @@
 }
 
 % Create a list of things like (\usepackage{paralist})
-%   \UFSCpalavrasChave{englishkeywordslist}{keyword 1}
-%   \UFSCpalavrasChave{englishkeywordslist}{keyword 2}
+%   \UFSCaddKeyword{englishkeywordslist}{keyword 1}
+%   \UFSCaddKeyword{englishkeywordslist}{keyword 2}
 %   \begin{inparaitem}[]\englishkeywordslist\end{inparaitem}
 %   \begin{inparaenum}\englishkeywordslist\end{inparaenum}
 %
@@ -597,7 +597,7 @@
 % q/defining-macros-with-arguments
 % q/macro-defining-macro
 % q/removing-a-backslash-when-passing-arguments-to-newcommand
-\newcommand{\UFSCpalavrasChave}[2]{%
+\newcommand{\UFSCaddKeyword}[2]{%
   \@ifundefined{#1}{%
     \message{^^JNotice palavraschaveufsc: #1 is undefined with '#2'^^J}
     \expandafter\newcommand\csname#1\endcsname{}
