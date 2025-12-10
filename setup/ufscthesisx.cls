@@ -898,9 +898,6 @@
 % Tamanho das fontes
 \usepackage{anyfontsize}
 
-% Usa a fonte Latin Modern
-\usepackage{lmodern}
-
 % q/blank-page-after-titlingpage
 \usepackage{atbegshi}
 
