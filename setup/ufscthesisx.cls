@@ -852,12 +852,6 @@
 }
 \usepackage{hyperref}
 
-% \lettrine{O}{nce} upon a time...
-% \lettrine[findent=2pt]{\fbox{\textbf{T}}}{ }his thesis deals with...
-%
-% q/starting-a-paragraph-with-a-big-letter
-\usepackage{lettrine}
-
 % q/how-to-automatically-force-latex-to-not-justify-the-text-when-it-is-not-wise
 \usepackage{array,ragged2e}
 
