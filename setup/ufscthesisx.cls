@@ -931,7 +931,6 @@
 \usepackage{mathrsfs}
 \usepackage{pdflscape}
 \usepackage{epstopdf}
-\usepackage{multirow}
 
 % Para incluir links
 \usepackage{url}
