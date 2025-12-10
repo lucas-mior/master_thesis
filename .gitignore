@@ -14,6 +14,7 @@ latexcache/
 *.lol
 *.loq
 *.lot
+*.fmt
 *.mw
 *.run.xml
 *.synctex.gz
