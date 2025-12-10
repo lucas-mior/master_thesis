@@ -952,7 +952,6 @@
 \usepackage{url}
 
 % Pacote necessário para a lista de siglas.
-\usepackage{nomencl}
 \usepackage{booktabs}
 
 % A comprehensive (SI) units package
