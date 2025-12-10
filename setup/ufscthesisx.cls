@@ -1528,7 +1528,7 @@
 % Always use it as should improve full justification
 % q/texttt-overfull-hbox-problem
 % q/should-i-load-microtype-with-pdflatex
-\usepackage[factor=1100,stretch=10,shrink=10]{microtype}
+% \usepackage[factor=1100,stretch=10,shrink=10]{microtype}
 
 % q/how-to-add-babel-captions-to-newfloat-package-environments
 \usepackage{newfloat}
