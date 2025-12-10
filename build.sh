@@ -41,7 +41,7 @@ case $target in
     start_nsec=$(date +%N)
 
     run_pdflatex_raw() {
-        pdflatex main.tex 2>&1 \
+        pdflatex $draft main.tex 2>&1 \
             | grep -v "/usr/share/tex" \
             | grep -v "^\[debug\]" \
             | cat -s
@@ -79,7 +79,7 @@ case $target in
     fi
 
     while true; do
-        out="$(run_pdflatex_raw $draft \
+        out="$(run_pdflatex_raw \
                | display_status "$RED" "Running Latex... (nlatex=$nlatex)" \
                | tee /dev/tty)"
         nlatex=$((nlatex+1))
