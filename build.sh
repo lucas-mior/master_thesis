@@ -92,6 +92,10 @@ case $target in
         else
             break
         fi
+        out="$(run_pdflatex_raw \
+               | display_status "$RED" "Running Latex... (nlatex=$nlatex)" \
+               | tee /dev/tty)"
+        nlatex=$((nlatex+1))
     done
 
     if [ ! -e "main.pdf" ]; then
