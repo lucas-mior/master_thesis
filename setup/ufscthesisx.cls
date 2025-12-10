@@ -858,9 +858,6 @@
 % q/starting-a-paragraph-with-a-big-letter
 \usepackage{lettrine}
 
-% Allows in-line images such as the example fish picture
-\usepackage{wrapfig}
-
 % q/how-to-automatically-force-latex-to-not-justify-the-text-when-it-is-not-wise
 \usepackage{array,ragged2e}
 
