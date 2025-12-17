@@ -10,6 +10,7 @@ Deve ser mais fácil fazer a manutenção deste template do que do original.
 ```sh
 # download do repositório, por exemplo usando git:
 git clone https://github.com/lucas-mior/master_thesis
+cd master_thesis
 
 # compilar usando o script
 ./build.sh
@@ -22,5 +23,6 @@ git clone https://github.com/lucas-mior/master_thesis
 *Atenção:* O plano gratuito do Overleaf requer que a compilação termine em até
 10 segundos, o que não é suficiente para este template.
 Recomendo usar o [Crixet](https://crixet.com/).
+
 No github do projeto, clique em `Code`, depois em `Download ZIP`.
 No overleaf/crixet, carregue o arquivo `.zip`.
